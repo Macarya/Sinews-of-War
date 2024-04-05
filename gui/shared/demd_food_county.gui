@@ -1,0 +1,71 @@
+types FoodCounty
+{
+    type food_county_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_demd_food!#  [demd_food|E] Consumption Ratio: [Province.GetCounty.GetTitle.MakeScope.Var('food_ratio').GetValue|%0]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_food|E] is produced by [demd_job_farmers|E], and is necessary to sustain a [county|E]'s [demd_population|E]. Insufficient #defender_color Food#! supplies will result in lowered birth rate, increased, death rate, and outward migration.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Demanded: [Province.GetCounty.GetTitle.MakeScope.Var('food_demanded').GetValue)|1]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Net: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('urban_food_net')|1]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+					datacontext = "[GuiScope.SetRoot(Province.GetCounty.GetTitle.MakeScope).GetScriptValueBreakdown('urban_food_net')]"
+					tooltipwidget = {
+						widget_value_breakdown_tooltip = {}
+					}
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Stockpile: [Province.GetCounty.GetTitle.MakeScope.Var('food_stockpile').GetValue)|1]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                
+            }
+        }
+    }
+}

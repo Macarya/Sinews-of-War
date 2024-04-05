@@ -1,0 +1,31 @@
+faithEconomySetup = {
+	every_religion_global = {
+        every_faith = {
+            resetFaithRateMults = yes
+        }
+    }
+}
+
+faithEconomy = {
+    resetFaithRateMults = yes
+	demd_add_doctrine_bonuses = yes
+}
+
+resetFaithRateMults = {
+    resetFaithRateMult = { resource = food }
+	resetFaithRateMult = { resource = fervor }
+	resetFaithRateMult = { resource = vigor }
+	resetFaithRateMult = { resource = goods }
+	resetFaithRateMult = { resource = knight_capacity }
+    resetFaithRateMult = { resource = manpower }
+    resetFaithRateMult = { resource = public_order }
+    resetFaithRateMult = { resource = sanitation }
+    resetFaithRateMult = { resource = trade_power }
+    resetFaithRateMult = { resource = trade_value }
+	resetFaithRateMult = { resource = birth_rate }
+	resetFaithRateMult = { resource = food_districts } disabled since unused
+}
+
+resetFaithRateMult = {
+    set_variable = { name = $resource$_faith_production_mult value = 0 }
+}

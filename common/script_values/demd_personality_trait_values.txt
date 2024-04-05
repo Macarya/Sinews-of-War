@@ -1,0 +1,89 @@
+﻿#################################
+# Personality trait bonuses are event options with base ai weights of 1 each
+#################################
+
+parental_trait_inheritance_multiplier = 0.5
+parental_opposite_trait_inheritance_multiplier = -0.5
+
+guardian_trait_inheritance_multiplier = 0.15
+guardian_opposite_trait_inheritance_multiplier = -0.15
+
+faith_trait_virtue_inheritance_multiplier = 0.15
+faith_opposite_trait_virtue_inheritance_multiplier = -0.15
+
+faith_trait_sin_inheritance_multiplier = -0.15
+faith_opposite_trait_sin_inheritance_multiplier = 0.15
+
+culture_trait_inheritance_multiplier = 0.15
+culture_opposite_trait_inheritance_multiplier = -0.15
+
+dynasty_trait_inheritance_multiplier = 0.1
+
+negative_trait_vigor_bonus = {
+	value = culture.culture_negative_trait_vigor_bonus
+}
+	
+culture_negative_trait_vigor_bonus = {
+	value = var:vigor
+	subtract = 50
+	multiply = -0.01
+}
+
+positive_trait_vigor_bonus = {
+	value = culture.culture_positive_trait_vigor_bonus
+}
+	
+culture_positive_trait_vigor_bonus = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.01
+}
+
+#################################
+# Childhood trait choices are a random list with base values of 20 each
+#################################
+
+childhood_trait_culture_bonus = 10
+childhood_trait_culture_malus = -10
+childhood_trait_court_bonus = 5
+childhood_trait_court_malus = -5
+
+childhood_trait_bonus_per_dynasty_perk = 1
+
+rowdy_stat_average = {
+	value = intrigue
+	add = diplomacy
+	subtract = stewardship
+	divide = 3
+}
+
+bossy_stat_average = {
+	value = stewardship
+	add = martial
+	subtract = diplomacy
+	divide = 3
+}
+
+charming_stat_average = {
+	value = intrigue
+	add = diplomacy
+	subtract = stewardship
+	divide = 3
+}
+
+curious_stat_average = {
+	value = learning
+	add = diplomacy
+	subtract = martial
+	divide = 3
+}
+
+pensive_stat_average = {
+	value = learning
+	add = stewardship
+	subtract = intrigue
+	divide = 3
+}
+
+childhood_trait_parent_stat_mult = 0.5
+childhood_trait_guardian_stat_mult = 0.2

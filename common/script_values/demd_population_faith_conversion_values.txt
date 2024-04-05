@@ -1,0 +1,141 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+
+#############################
+# Progress Modifiers
+#############################
+
+court_chaplain_conversion_ai_weight = {
+	value = court_chaplain_conversion_base
+	add = scope:county.progress_from_county_faith_population
+	add = scope:county.progress_from_neighboring_county_faith_population
+	add = scope:county.progress_from_neighboring_councillor_faith_population
+	add = court_chaplain_conversion_terrain_malus
+	add = 100
+	min = 0.001
+}
+
+progress_from_county_faith_population = {
+	value = var:county_population	
+	multiply = faith.fervor
+	multiply = 0.01
+	multiply = -0.005	
+}
+
+progress_from_neighboring_county_faith_population = {
+	value = 0
+	every_in_list = {
+		variable = county_neighbors
+		limit = { faith = prev.faith }
+		add = var:county_population
+	}
+	multiply = faith.fervor
+	multiply = 0.01
+	multiply = -0.0025
+}
+
+progress_from_neighboring_councillor_faith_population = {
+	value = 0
+	every_in_list = {
+		variable = county_neighbors
+		limit = { faith = scope:councillor_liege.faith }
+		add = var:county_population
+	}
+	multiply = scope:councillor_liege.faith.fervor
+	multiply = 0.01
+	if = { limit = { NOT = { scope:councillor_liege = { has_perk = religious_icon_perk } } } multiply = 0.0025 }
+	else = { multiply = 0.00375 }	
+}
+
+court_chaplain_conversion_terrain_malus = {
+	value = scope:county.var:terrain_conversion_defense_bonus
+	multiply = court_chaplain_conversion_base
+}
+
+conversion_holy_site_of_converter = {
+	value = court_chaplain_conversion_base
+	multiply = 0.3
+}
+conversion_holy_site_of_converted = {
+	value = court_chaplain_conversion_base
+	multiply = -0.3
+}
+
+court_chaplain_conversion_capital_bonus = {
+	value = 0.25
+	multiply = court_chaplain_conversion_base
+}
+
+court_chaplain_conversion_recent_rebellion_bonus = {
+	value = court_chaplain_conversion_base
+}
+
+######################################################################################################
+
+###################
+# Pop Factors 
+court_chaplain_conversion_pop_bonuses = {
+	add = {
+		value = scope:county.progress_from_county_faith_population
+		desc = COURT_CHAPLAIN_CONVERSION_FERVOR_COUNTY
+	}
+	
+	# Neighboring Councillor Faith Population
+	add = {
+		value = scope:county.progress_from_neighboring_councillor_faith_population
+		desc = COURT_CHAPLAIN_CONVERSION_FERVOR_NEIGHBORS_POS
+	}
+	
+	# Neighboring County Faith Population
+	add = {
+		value = scope:county.progress_from_neighboring_county_faith_population
+		desc = COURT_CHAPLAIN_CONVERSION_FERVOR_NEIGHBORS_NEG
+	}
+
+	# From Terrain
+	if = {
+		limit = { scope:county.var:terrain_conversion_defense_bonus > 0 }
+		add = {
+			value = scope:councillor.court_chaplain_conversion_terrain_malus
+			desc = COURT_CHAPLAIN_CONVERSION_TERRAIN_MALUS
+		}
+	}
+	
+	# liege capital
+	if = {
+		limit = { scope:councillor_liege.capital_county = scope:county }
+		add = {
+			value = court_chaplain_conversion_capital_bonus
+			desc = COURT_CHAPLAIN_CONVERSION_CAPITAL_BONUS
+		}
+	}			
+
+	# Recent Rebellion
+	if = {
+		limit = { scope:county = { has_county_modifier = county_increased_opinion_modifier } }
+		add = {
+			value = scope:councillor.court_chaplain_conversion_recent_rebellion_bonus
+			desc = county_increased_opinion_modifier
+		}
+	}
+	
+	# Holy Site
+	if = {
+		limit = { scope:county.title_province.barony = { is_holy_site_of = scope:county.faith } }
+		add = {
+			value = scope:councillor.conversion_holy_site_of_converted
+			desc = COURT_CHAPLAIN_CONVERSION_HOLY_SITE_OF_CONVERTED
+		}
+	}
+	if = {
+		limit = { scope:county.title_province.barony = { is_holy_site_of = scope:councillor_liege.faith } }
+		add = {
+			value = scope:councillor.conversion_holy_site_of_converter
+			desc = COURT_CHAPLAIN_CONVERSION_HOLY_SITE_OF_CONVERTER
+		}
+	}
+}

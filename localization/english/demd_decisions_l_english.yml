@@ -1,0 +1,16 @@
+﻿l_english:
+
+plague_seclude_court:0 "Seclude Court"
+plague_seclude_court_decision:0 "Seclude Court"
+plague_seclude_court_decision_desc:0 "Secluding our court will reduce the risk of [courtiers|E] catching [demd_plague|E], but may not be popular among the people."
+plague_seclude_court_decision_tooltip:0 "$plague_seclude_court_decision_desc$"
+plague_seclude_court_confirm:0 "Shut the Gates"
+
+plague_unseclude_court:0 "Leave Seclusion"
+plague_unseclude_court_confirm:0 "Open the Gates"
+
+demd_fortify_eastern_marches:0 "Fortify the Eastern Marches"
+demd_fortify_eastern_marches_decision:0 "Fortify the Eastern Marches"
+demd_fortify_eastern_marches_decision_desc:0 "The threat posed by raiders from the steppes led East Frankish rulers to  order one men in nine to take up residence in a fortified enclave. The men living in the strongholds maintained them and constructed quarters for their confamiliares, who continued to reside in their own dwellings in the countryside. Those living permanently in the fort were also responsible for the safe keeping of one-third of the total harvest that the other eight hauled there. The eight also planted and harvested grain on the holdings of the ninth and stored it in his abode. Although the other eight did not normally reside within the fortress, their lives revolved around it. All of the agrarii milites attended assemblies so that they might learn in peace-time what they must do against the enemy in times of necessity."
+demd_fortify_eastern_marches_decision_tooltip:0 ""
+demd_fortify_eastern_marches_confirm:0 "Strengthen our Defenses"

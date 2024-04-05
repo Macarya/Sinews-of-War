@@ -1,0 +1,34 @@
+﻿l_english:
+
+ek_excavation_minor.0001.t:0 "[excavation_county.GetNameNoTier]: Minor Event"
+ek_excavation_minor.0001.desc:0 "Event Description"
+ek_excavation_minor.0001.a:0 "Event Option"
+
+ek_excavation_minor.0002.t:0 "[excavation_county.GetNameNoTier]: Minor Event"
+ek_excavation_minor.0002.desc:0 "Event Description"
+ek_excavation_minor.0002.a:0 "Event Option"
+
+ek_excavation_minor.0003.t:0 "[excavation_county.GetNameNoTier]: Minor Event"
+ek_excavation_minor.0003.desc:0 "Event Description"
+ek_excavation_minor.0003.a:0 "Event Option"
+
+ek_excavation_minor.0004.t:0 "[excavation_county.GetNameNoTier]: Minor Event"
+ek_excavation_minor.0004.desc:0 "Event Description"
+ek_excavation_minor.0004.a:0 "Event Option"
+
+ek_excavation_minor.0005.t:0 "[excavation_county.GetNameNoTier]: Minor Event"
+ek_excavation_minor.0005.desc:0 "Event Description"
+ek_excavation_minor.0005.a:0 "Event Option"
+
+ek_excavation_minor.0006.t:0 "[excavation_county.GetNameNoTier]: Minor Event"
+ek_excavation_minor.0006.desc:0 "Event Description"
+ek_excavation_minor.0006.a:0 "Event Option"
+
+
+ek_excavation_minor_good_01_desc:0 "You allowed your workers to have the evening off as a reward for hard work, making them more motivated.\n#P +[EmptyScope.ScriptValue('excavation_progress_small')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+ek_excavation_minor_good_02_desc:0 "Your workers have achieved an important breakthrough, making them more motivated.\n#P +[EmptyScope.ScriptValue('excavation_progress_medium')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+ek_excavation_minor_good_03_desc:0 "Your workers find a stash of contraband, like alcohol or trinkets. You allow them to keep them, making them much more motivated.\n#P +[EmptyScope.ScriptValue('excavation_progress_large')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+
+ek_excavation_minor_bad_01_desc:0 "One of your workers has suffered a grevious injury while carrying a large weight, making your workers more hesitant to work.\n#N [EmptyScope.ScriptValue('excavation_progress_small')|0%]#! @icon_excavation_progress!# [excavation_progress|E]"
+ek_excavation_minor_bad_02_desc:0 "Superstition spreads between your workers, making them more hesitant to work.\n#N [EmptyScope.ScriptValue('excavation_progress_medium')|0%]#! @icon_excavation_progress!# [excavation_progress|E]"
+ek_excavation_minor_bad_03_desc:0 "Some of your workers have gone missing and they are nowhere to be found, making your workers much more hesitant to work.\n#N [EmptyScope.ScriptValue('excavation_progress_large')|0%]#! @icon_excavation_progress!# [excavation_progress|E]"

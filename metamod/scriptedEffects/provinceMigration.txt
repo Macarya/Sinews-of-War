@@ -1,0 +1,112 @@
+provinceMigrationSetup = {
+
+	every_county = {
+		
+		set_variable = { name = migration_growth_percent value = 0 }
+		set_variable = { name = migration_growth value = var:migration_growth_percent } # done to suppress log error for unused var 
+		
+		# error avoidance
+		set_variable = { name = food_ratio value = 1 }
+		set_variable = { name = public_order value = 1 }
+		set_variable = { name = total_death_rate value = 0 }
+		set_variable = { name = maxPairwise value = 0.1 }
+		
+		
+		if = {
+			limit = { var:num_neighbors > 0 }
+			set_variable = {
+				name = max_migration_percent
+				value = {
+					value = 1
+					divide = var:num_neighbors
+					subtract = {
+						value = 0.1
+						divide = var:num_neighbors
+					}
+				}
+			}
+		}
+		else = {
+			set_variable = { name = max_migration_percent value = 0.9 }
+		}
+		remove_variable = num_neighbors
+		
+		set_variable = { name = migration_pull value = 1 }
+	}
+}
+
+world_migration_start = {
+	# needed since migration grabs provinces out of order so this must be zeroed first!
+    every_county = {
+		
+		# reset migration growth
+        set_variable = { name = migration_growth value = 0 }
+		
+		# calculate max pairwise migration
+        set_variable = {
+            name = maxPairwise
+            value = {
+                value = var:population
+                multiply = var:max_migration_percent
+            }
+        }
+		
+		# set migration pull
+		set_variable = { name = migration_pull value = migration_pull_target }
+    }
+}
+
+county_migration = {
+    # main loop
+    save_temporary_scope_as = home
+
+	every_in_list = {
+		variable = county_neighbors
+
+		# Optimize by checking if prov id[a] < id[b] (saves 50% of perf. cost)
+		if = {
+			limit = {
+				prev.var:id < var:id
+				# looks dumb but the first prev.var:id is province 1's ID and the second is province 2's bc compare_value is a scope change
+			}
+			# Check both have enough pop to make it meaningful
+			if = {
+				limit = {
+					var:population > 0.1
+					scope:home.var:population > 0.1
+				}
+				
+				set_variable = { name = migrationPairwise value = migration_pairwise }
+				clamp_variable = { name = migrationPairwise min = 0 max = scope:home.var:maxPairwise }
+				clamp_variable = { name = migrationPairwise min = 0 max = var:maxPairwise }
+				   
+				change_variable = { name = migration_growth add = var:migrationPairwise }
+				scope:home = { change_variable = { name = migration_growth subtract = prev.var:migrationPairwise } }
+			}
+		}
+	}	
+}
+
+world_migration_end = {
+	# apply migration growth
+    every_county = {
+		
+		# for gui
+		set_variable = {
+			name = migration_growth_percent
+			value = {
+				value = var:migration_growth
+				divide = var:population
+			}
+		}
+
+        # add migration growth
+        change_variable = { 
+			name = population 
+			add = var:migration_growth 
+		}
+		clamp_variable = { name = population min = 0.1 max = 1000000 }
+    }
+}
+
+

@@ -1,0 +1,34 @@
+﻿l_spanish:
+
+
+ refused_to_send_mission_opinion:0 "Rechazó enviar una misión"
+ demd_request_mission_interaction_tooltip:0 "La [capital|E] del [county|E] del objetivo comenzará un intento de conversión de [faith|E] contra la [capital|E] de tu [county|E]"
+
+ demd_mission_subject_can_attack:0 "El [county|E] [capital|E] tiene un mayor [demd_faith_conversion_attack|E] que la [demd_faith_conversion_defense|E] de la [capital|E] del [county|E]"
+
+ DEMD_REQUEST_MISSIONARIES_NOTIFICATION:0 "Misioneros solicitados"
+
+ demd_request_mission_interaction:0 "Solicitar misioneros"
+
+ demd_request_mission_interaction_desc:0 "Envía una petición de misionarios a un gobernante vecino. La [capital|E] del condado comenzará un intento de conversión de [faith|E] contra la [capital|E] de tu [county|E]."
+
+ demd_mission_no_faith_conv:0 "La [capital|E] de tu [county|E] no está convirtiéndose ya a una [faith|E] diferente."
+
+
+
+
+
+################
+
+ faith_convert_with_learning_decision:0 "Predicar mi Fe"
+ faith_convert_with_learning_decision_desc:0 "Tu [faith|E] no ha enraizado en ningún [counties|E]. Intentarás un [demd_faith_conversion_attack|E] contra la [capital|E] de tu [county|E] según la cantidad de [fervor|E] y la habilidad [learning|E] del [realm_priest|E]."
+
+ faith_convert_with_learning_can_attack:0 "Tu habilidad [learning|E] y el [fervor|E] es más alto que la [demd_faith_conversion_defense|E] de la [capital|E] de tu [county|E]"
+
+ faith_convert_with_learning_effect_desc:0 "[scope:recipient.GetFullName] comenzará un [demd_faith_conversion_attack|E] contra su [capital|E] del [county|E]"
+
+ faith_convert_with_learning_effect_actor_desc:0 "[scope:actor.GetFullName] comenzará un [demd_faith_conversion_attack|E] contra su [capital|E] del [county|E]"
+
+ faith_convert_with_learning_decision_tooltip:0 "La media de tu habilidad de [learning|E] y la de tu [realm_priest|E] junto con el [fervor|E] de la [faith|E] es más alto que la [demd_faith_conversion_defense|E] de la [capital|E] del [county|E]"
+
+ faith_convert_with_learning_decision_confirm:0 "Comenzar conversión"

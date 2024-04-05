@@ -1,0 +1,63 @@
+﻿plague_seclude_court = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+
+	desc = plague_seclude_court_decision_desc
+	selection_tooltip = plague_seclude_court_decision_tooltip
+	major = yes
+	
+	ai_check_interval = 30
+	
+	is_shown = {
+		exists = capital_county
+		capital_county = { has_county_modifier = plague_present }
+		NOT = { has_character_modifier = secluded_court }
+	}
+	
+	effect = {
+		add_character_modifier = secluded_court
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 10
+		ai_value_modifier = {
+			ai_compassion = -0.5
+		}
+	}
+}
+
+plague_unseclude_court = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+
+	desc = plague_seclude_court_decision_desc
+	selection_tooltip = plague_seclude_court_decision_tooltip
+	major = yes
+	
+	ai_check_interval = 30
+	
+	is_shown = {
+		has_character_modifier = secluded_court
+	}
+	
+	effect = {
+		remove_character_modifier = secluded_court
+	}
+	
+	ai_potential = {
+		trigger_if = {
+			limit = { exists = capital_county }		
+			capital_county = { NOT = { has_county_modifier = plague_present } }
+		}
+		trigger_else = {
+			always = yes
+		}
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+

@@ -1,0 +1,820 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+county_population = {
+	value = var:population
+	every_in_list = { variable = county_provinces
+		add = var:population
+	}
+}
+
+culture_population = {
+	value = 0
+	every_culture_county = {
+		add = var:county_population
+	}
+}
+
+demd_jobs_per_district = 1
+demd_farmer_to_noble_ratio = 0.02
+demd_farm_percent_used_at_start = 0.7
+
+demd_district_overbuild_ratio = 1.1 # don't set to < 1!
+
+demd_goods_to_trade_value_constant = 0.15
+
+###
+
+urban_food_net = {
+	value = {
+		value = var:food_imported_from_baronies_display
+		desc = "Imported: From [county|E] [baronies|E]"
+	}
+	add = {
+		value = var:food_imported_from_demesne_display
+		desc = "Imported: From [domain|E] [baronies|E]"
+	}
+	add = {
+		value = var:food_imported_from_vassals_display
+		desc = "Imported: From [vassal|E] [baronies|E]"
+	}	
+	subtract = {
+		value = var:food_consumed
+		desc = "Consumed by [demd_population|E]"
+	}
+	subtract = {
+		value = var:food_depreciation
+		desc = "Depreciated"
+	}
+}
+
+rural_food_net = {
+	value = {
+		value = var:food_produced
+		desc = "Produced by [demd_job_farmers|E]"
+	}
+	subtract = {
+		value = var:food_taxed_to_gold
+		desc = "Taxed: to [holder|E]'s treasury as [gold|E]"
+	}
+	if = {
+		limit = { NOT = { county.holder.capital_county = county } }
+		subtract = {
+			value = food_to_capital
+			desc = "Taxed: To [domain|E] [capital|E] as [demd_food|E]"
+		}
+	}
+	if = {
+		limit = { county.holder = { is_independent_ruler = no } }
+		subtract = {
+			value = food_to_liege
+			desc = "Taxed: To [liege|E] [capital|E] as [demd_food|E]"
+		}
+	}
+	subtract = {
+		value = var:food_exported
+		desc = "Exported: To [county_capital|E] as [demd_food|E]"
+	}
+	subtract = {
+		value = var:food_consumed
+		desc = "Consumed by [demd_population|E]"
+	}
+	subtract = {
+		value = var:food_depreciation
+		desc = "Depreciated"
+	}
+}
+
+food_base_output = {
+	value = 1.5
+	subtract = {
+		value = var:food_producers_count
+		divide = {
+			value = var:food_districts_max
+			multiply = demd_jobs_per_district
+		}
+		multiply = 0.5
+	}
+}
+
+food_base_demand = 1
+
+food_depreciation_rate = 0.1
+
+food_base_price = 0.3
+
+starting_urban_population = {
+	value = anticipated_county_surplus
+	divide = food_base_demand
+	multiply = 1.1
+}
+
+anticipated_county_surplus = {
+	value = 0
+	every_in_list = { variable = county_provinces
+		limit = { has_holding = yes }
+		add = anticipated_province_surplus
+	}
+}
+
+anticipated_province_surplus = {
+	value = var:food_producers_count
+	multiply = food_produced_per_capita
+	subtract = {
+		value = var:population
+		divide = food_base_demand
+	}
+	multiply = food_exported_percent_of_surplus
+}
+
+food_produced_per_capita = {
+	value = food_base_output
+	multiply = {
+		value = 1
+		add = var:soil_fertility_mult_target
+		add = county.var:county_weather_fertility_mult
+		add = county.var:trade_node.var:node_weather_fertility_mult
+		add = faith.var:food_faith_production_mult
+		add = culture.var:food_cultural_production_mult
+		add = var:capital_production_multiplier
+	}
+	min = 1 # debug
+}
+
+food_taxed = {
+	value = var:food_produced
+	multiply = county.var:effective_tax_rate
+}
+
+food_to_capital = {
+	value = var:food_taxed
+	multiply = 0.25
+}
+
+food_to_liege = {
+	value = var:food_taxed
+	multiply = county.var:food_to_liege_rate
+}
+
+food_consumed = {
+	value = var:food_demanded
+	max = var:food_stockpile
+}
+
+food_demanded = { 
+	value = var:population
+	multiply = food_base_demand
+}
+
+food_stockpile_excess = {
+	value = var:food_stockpile
+	subtract = food_stockpile_target
+	min = 0
+}
+
+food_exported = {
+	value = food_exported_per_capita
+	multiply = var:food_producers_count
+}
+food_exported_per_capita = {
+	value = var:food_produced_per_capita
+	subtract = food_base_demand
+	multiply = food_exported_percent_of_surplus
+	min = 0
+}
+food_exported_percent_of_surplus = 0.5
+
+food_stockpile_target = {
+	value = 0.25
+	multiply = var:food_demanded
+}
+
+###
+
+rural_goods_net = {
+	value = {
+		value = goods_imported
+		desc = "Imported from [county_capital|E]"
+	}
+	subtract = {
+		value = var:goods_depreciation
+		desc = "Depreciated"
+	}
+}
+
+urban_goods_net = {
+	value = {
+		value = var:goods_produced
+		desc = "Produced by [demd_job_artisans|E]"
+	}
+	add = {
+		value = trade_value_to_goods
+		desc = "From [demd_trade_value|E]"
+	}
+	subtract = {
+		value = var:goods_taxed
+		desc = "Taxed: to [county|E] [holder|E]'s treasury"
+	}
+	subtract = {
+		value = goods_exported
+		desc = "Exported to [county|E] [baronies|E]"
+	}
+	subtract = {
+		value = var:goods_depreciation
+		desc = "Depreciated"
+	}
+}
+
+goods_imported = {
+	if = {
+		limit = { NOT = { county.var:food_imported_from_baronies_display = 0 } }
+		value = var:food_exported
+		divide = county.var:food_imported_from_baronies_display
+		multiply = county.var:goods_exported
+	}
+}
+goods_exported = {
+	value = goods_exported_per_capita
+	multiply = var:goods_producers_count
+}
+goods_exported_per_capita = {
+	value = var:goods_produced_per_capita
+	subtract = goods_base_demand
+	multiply = goods_exported_percent_of_surplus
+	min = 0
+}
+goods_exported_percent_of_surplus = 0.5
+
+goods_base_output = 1
+goods_base_demand = 0.6
+
+goods_depreciation_rate = {
+	value = base_goods_depreciation_rate
+	if = {
+		limit = { has_variable = public_order }
+		multiply = {
+			value = 1
+			add = public_order_capital_deprecation_multiplier
+		}
+	}
+}
+
+base_goods_depreciation_rate = 0.1
+
+goods_produced_per_capita = {
+	value = goods_base_output
+	multiply = {
+		value = 1
+		add = faith.var:goods_faith_production_mult
+		add = culture.var:goods_cultural_production_mult
+		add = var:capital_production_multiplier
+		add = building_goods_bonus
+	}
+}
+
+goods_base_price = 0.45
+
+capital_production_multiplier = {
+	value = var:goods_stockpile
+	divide = var:population
+	multiply = 0.03
+	min = 0
+	max = 1
+}
+
+###
+
+knight_capacity_base_output = 1
+
+knight_capacity_produced_per_capita = {
+	value = knight_capacity_base_output
+	multiply = {
+		value = 1
+		add = faith.var:knight_capacity_faith_production_mult
+		add = culture.var:knight_capacity_cultural_production_mult
+	}
+}
+
+###
+
+prov_construction_capacity = {
+	value = 1
+	add = {
+		value = var:food_districts_count
+		multiply = 0.1
+	}
+}
+
+prov_food_districts_max_buildable = {
+	value = var:food_districts_max
+	subtract = var:food_districts_count
+	min = 0
+}
+
+county_construction_capacity = {
+	value = 1
+	add = {
+		value = var:goods_districts_count
+		multiply = 0.1
+	}
+}
+
+county_districts_to_build = {
+	value = expected_population
+	divide = demd_jobs_per_district
+	subtract = var:goods_districts_count
+	min = 0
+	max = var:county_construction_capacity
+}
+
+county_unused_construction_capacity = {
+	value = var:county_construction_capacity
+	subtract = var:county_districts_to_build
+	min = 0
+}
+
+prov_districts_to_build = {
+	value = expected_population
+	divide = demd_jobs_per_district
+	subtract = var:food_districts_count
+	min = 0
+	max = prov_food_districts_max_buildable
+	max = var:prov_construction_capacity
+}
+
+prov_unused_construction_capacity = {
+	value = var:prov_construction_capacity
+	subtract = var:prov_districts_to_build
+	min = 0
+}
+
+total_unused_construction_capacity = {
+	value = var:county_unused_construction_capacity
+	every_county_province = { 
+		limit = { has_variable = prov_unused_construction_capacity } 
+		add = var:prov_unused_construction_capacity
+	}
+}
+
+expected_population = {
+	value = var:population
+	multiply = {
+		value = 1
+		add = var:growth_rate 
+		add = var:internal_migration_growth_percent
+		add = var:migration_growth_percent
+	}
+	min = var:population
+}
+
+internal_migration_growth_percent = {
+	value = var:internal_migration_growth
+	divide = var:population
+}
+
+##############################################################################################
+
+demd_sanitation_base_target = 0.4
+
+sanitation_from_development = {
+	value = development_level
+	multiply = 0.0025
+}
+
+sanitation_from_urbanization = {
+	value = var:population
+	divide = var:county_population
+	multiply = -0.75
+}
+
+sanitation_target = {
+	value = demd_sanitation_base_target
+	add = sanitation_from_development
+	add = sanitation_from_urbanization
+	add = edicts_sanitation_bonus
+	add = var:terrain_sanitation_bonus
+	add = faith.var:sanitation_faith_production_mult
+	add = culture.var:sanitation_cultural_production_mult
+}
+
+sanitation_delta = {
+	value = sanitation_target
+	subtract = var:sanitation
+	multiply = 0.1
+}
+
+outbreak_risk = {
+	value = var:sanitation
+	multiply = -0.9
+	add = 1
+	multiply = 10
+}
+
+
+
+##############################################################################################
+
+opinion_public_order = {
+	value = county.county_opinion
+	if = {
+		limit = { county.county_opinion < 0 }
+		divide = 200		
+	}
+	else = {
+		divide = 800
+	}
+}
+
+demd_public_order_base_target = 0.4
+
+public_order_from_development = {
+	value = development_level
+	multiply = 0.0025
+}
+
+public_order_from_urbanization = {
+	value = var:population
+	divide = var:county_population
+	multiply = -0.5
+}
+
+public_order_target = {
+	value = demd_public_order_base_target
+	add = edicts_public_order_bonus
+	add = public_order_from_development
+	add = public_order_from_urbanization
+	subtract = var:total_death_rate
+	add = faith.var:public_order_faith_production_mult
+	add = culture.var:public_order_cultural_production_mult
+	add = opinion_public_order 
+	add = building_public_order_bonus
+	add = public_order_from_vigor
+}
+
+public_order_from_vigor = {
+	value = culture.culture_public_order_from_vigor
+}
+
+culture_public_order_from_vigor = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.002
+}
+
+public_order_capital_deprecation_multiplier_display = {
+	value = public_order_capital_deprecation_multiplier
+	multiply = base_goods_depreciation_rate
+}
+
+public_order_capital_deprecation_multiplier = {
+	if = {
+		limit = { has_variable = public_order }
+		value = 1
+		subtract = var:public_order
+	}
+	else = { value = 0 }
+}
+
+public_order_delta = {
+	value = public_order_target
+	subtract = var:public_order
+	multiply = 0.1
+}
+
+##############################################################################################
+
+tax_percent_base = 0.05
+tax_percent_per_edict_level = 0.025
+
+population_tax = {
+	value = food_producers_tax
+	if = {
+		limit = { county.title_province = this }
+		add = county.goods_producers_tax 
+		add = county.tariff_tax		
+		subtract = county.demd_total_edict_expense
+	}
+	if = {
+		limit = { 
+			county.var:trade_node.var:node_owner = {
+				exists = capital_province
+				capital_province = prev
+			}
+		}
+		add = county.var:trade_node.node_owner_dividend
+	}
+}
+
+food_producers_tax = {
+	value = var:food_taxed_to_gold
+	multiply = food_base_price
+}
+
+goods_taxed_display = {
+	value = county.var:goods_taxed
+}
+
+goods_producers_tax = {
+	value = var:goods_taxed
+	multiply = goods_base_price
+}
+
+trade_value_to_goods = {
+	value = var:trade_value
+	multiply = {
+		value = 1
+		subtract = var:effective_tax_rate
+	}
+}
+
+trade_value_to_gold_display = {
+	value = county.trade_value_to_gold
+}
+
+trade_value_to_gold = {
+	value = var:trade_value
+	multiply = var:effective_tax_rate	
+}
+
+tariff_tax = {
+	value = trade_value_to_gold
+	multiply = goods_base_price
+}
+
+base_tax_rate = {
+	value = tax_percent_base
+	add = {
+		value = var:tax_setting
+		multiply = tax_percent_per_edict_level
+	}
+}
+
+effective_tax_rate = {
+	value = base_tax_rate
+	multiply = tax_rate_mult
+}
+
+tax_rate_mult = {
+	value = 1
+}
+
+##############################################################################################
+
+centralization_perk_trade_power = 0.25
+
+produced_trade_value = {
+	value = var:goods_produced
+	multiply = demd_goods_to_trade_value_constant
+	multiply = {
+		value = 1
+		add = culture.var:trade_value_cultural_production_mult
+		add = faith.var:trade_value_faith_production_mult
+		add = building_trade_value_bonus
+	}
+}
+
+trade_power = {
+    value = var:produced_trade_value
+	multiply = {
+		value = 1
+		add = var:terrain_trade_power_bonus
+		add = edicts_trade_power_bonus
+		add = faith.var:trade_power_faith_production_mult
+		add = culture.var:trade_power_cultural_production_mult
+		add = trade_power_ruler_bonus
+		add = trade_power_quarantine_malus
+		add = building_trade_power_bonus
+		add = strategic_location_trade_power_bonus
+		add = node_owner_trade_power_bonus
+		min = 0.01
+	}
+	if = {
+		limit = { demd_is_strategic_location_open_to_trade = no }
+		multiply = {
+			value = 1
+			add = trade_power_from_blockade
+		}
+	}
+}
+
+trade_power_from_blockade = -0.9
+
+strategic_location_trade_power_bonus = {
+	if = {
+		limit = { has_county_modifier = demd_strategic_location }
+		value = strategic_location_modifier_bonus
+	}
+	else = { value = 0 }
+}
+
+node_owner_trade_power_bonus = {
+	if = {
+		limit = { holder = var:trade_node.var:node_owner }
+		value = node_owner_modifier_bonus
+	}
+	else = { value = 0 }
+}
+
+strategic_location_modifier_bonus = 1
+node_owner_modifier_bonus = 0.5
+
+trade_power_quarantine_malus = {
+	if = {
+		limit = { has_county_modifier = quarantine }
+		value = quarantine_trade_power_reduction
+	}
+	else = { value = 0 }
+}
+
+trade_power_ruler_bonus = {
+	value = 0
+	if = {
+		limit = { holder = { has_perk = centralization_perk } }
+		add = centralization_perk_trade_power
+	}	
+}
+
+##############################################################################################
+manpower_percent_base = 0.03
+manpower_percent_per_edict_level = 0.015
+
+garrison_manpower_percent_base = 0.3
+garrison_manpower_percent_per_edict_level = 0.05
+
+garrison_manpower_percent = {
+	value = garrison_manpower_percent_base
+	add = {
+		value = county.var:public_order_setting
+		multiply = garrison_manpower_percent_per_edict_level
+	}
+}
+
+county_manpower = {
+	value = 0
+	every_in_list = { variable = county_provinces
+		limit = { has_holding = yes }
+		add = var:manpower 
+	}
+}
+
+title_province_effective_population = {
+	value = var:population
+	add = county.var:population
+}
+
+manpower_base_percent = {
+	value = manpower_percent_base
+	add = {
+		value = county.var:manpower_setting
+		multiply = manpower_percent_per_edict_level
+	}
+}
+
+manpower_total_percent = {
+	value = manpower_base_percent
+	multiply = manpower_mult
+}
+
+manpower_mult = {
+	value = 1
+	add = culture.var:manpower_cultural_production_mult
+	add = faith.var:manpower_faith_production_mult
+	add = manpower_opinion_factor
+	add = manpower_tribal_mult
+	add = building_manpower_bonus
+	add = vigor_manpower_mult
+}
+
+vigor_manpower_mult = {
+	value = culture.culture_vigor_manpower_mult
+}
+
+culture_vigor_manpower_mult = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.004
+}
+
+manpower_tribal_mult = {
+	if = {
+		limit = { county.title_province = { has_holding_type = tribal_holding } }
+		value = 0.65
+	}
+	else = {
+		value = 0 
+	}
+}
+
+manpower_opinion_factor = {
+	value = county.county_opinion
+	if = {
+		limit = { county.county_opinion < 0 }
+		divide = 100		
+	}
+	else = {
+		divide = 400
+	}
+}
+
+manpower_cultural_production_mult_display = {
+	value = culture.var:manpower_cultural_production_mult
+	multiply = manpower_base_percent
+}
+
+manpower_faith_production_mult_display = {
+	value = faith.var:manpower_faith_production_mult
+	multiply = manpower_base_percent
+}
+
+manpower_building_mult_display = {
+	value = building_manpower_bonus
+	multiply = manpower_base_percent
+}
+
+manpower_opinion_factor_display = {
+	value = manpower_opinion_factor
+	multiply = manpower_base_percent
+}
+
+manpower_tribal_mult_display = {
+	value = manpower_tribal_mult
+	multiply = manpower_base_percent
+}
+
+vigor_manpower_mult_display = {
+	value = vigor_manpower_mult
+	multiply = manpower_base_percent	
+}
+
+##############################################################################################
+
+node_weather_fertility_mult_delta = {
+	value = var:node_weather_fertility_mult
+	multiply = -0.2
+}
+
+county_weather_fertility_mult_delta = {
+	value = var:county_weather_fertility_mult
+	multiply = -0.2
+}
+
+food_districts_max = {
+	value = var:food_districts_province
+	multiply = {
+		value = 1
+		add = county.edicts_food_districts_bonus
+		add = culture.var:food_districts_cultural_production_mult
+		add = faith.var:food_districts_faith_production_mult
+		add = food_districts_max_development_mult
+		add = building_food_districts_bonus
+	}
+}
+
+food_districts_max_development_mult = {
+	value = county.development_level
+	divide = 100
+}
+
+##############################################################################################
+
+supply_limit = {
+	value = base_supply_limit
+	add = supply_limit_from_food
+}
+base_supply_limit = 2000
+supply_limit_from_food = {
+	value = var:food_produced
+	divide = food_base_demand
+	multiply = 200 # * 1000 (scaling factor) / 1.3 (hardcoded own territory bonus) / 10 (surplus ratio)
+}
+
+##############################################################################################
+
+food_districts_to_remove = {
+	value = excess_food_districts
+	multiply = 0.25
+}
+
+excess_food_districts = {	 
+	value = var:food_districts_count # Existant
+	subtract = { # minus Filled
+		value = var:food_producers_count
+		divide = demd_jobs_per_district
+	}
+}
+
+goods_districts_to_remove = {
+	value = excess_goods_districts
+	multiply = 0.25
+}
+
+excess_goods_districts = {	 
+	value = var:goods_districts_count # Existant
+	subtract = { # minus Filled
+		value = var:goods_producers_count
+		divide = demd_jobs_per_district
+	}
+}

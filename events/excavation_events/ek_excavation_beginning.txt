@@ -1,0 +1,142 @@
+﻿
+namespace = ek_excavation_beginning
+
+ek_excavation_beginning.0001 = {
+	type = character_event
+	title = ek_excavation_beginning.0001.t
+	desc = ek_excavation_beginning.0001.desc
+	theme = excavation_exterior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:excavation_leader
+		animation = martial
+	}
+	
+	trigger = {
+		scope:story = { var:ruins_type = flag:egyptian }
+		excavation_story_event_standard_trigger = yes
+	}
+	
+	immediate = { excavation_story_event_standard_setup = yes }
+	
+	option = { 
+		name = ek_excavation_beginning.0001.a
+		
+		alter_excavation_quality = { operation = add amount = small }
+		
+		ai_chance = { base = 100 }
+	}
+}
+
+ek_excavation_beginning.0002 = {
+	type = character_event
+	title = ek_excavation_beginning.0002.t
+	desc = ek_excavation_beginning.0002.desc
+	theme = excavation_exterior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:chaplain
+		animation = learning
+	}
+	
+	trigger = {
+		scope:story = { var:ruins_type = flag:egyptian }
+		excavation_story_event_standard_trigger = yes		
+	}
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+		cp:councillor_court_chaplain = { save_scope_as = chaplain }
+	}
+	
+	option = { 
+		name = ek_excavation_beginning.0002.a
+
+		alter_excavation_quality = { operation = add amount = small }
+		
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+ek_excavation_beginning.0003 = {
+	type = character_event
+	title = ek_excavation_beginning.0003.t
+	desc = ek_excavation_beginning.0003.desc
+	theme = excavation_exterior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:chaplain
+		animation = learning
+	}
+	
+	trigger = {
+		scope:story = { var:ruins_type = flag:egyptian  }
+		excavation_story_event_standard_trigger = yes
+	}
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+	}
+	
+	option = { 
+		name = ek_excavation_beginning.0003.a
+
+		alter_excavation_quality = { operation = add amount = small }
+		
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+ek_excavation_beginning.0004 = {
+	type = character_event
+	title = ek_excavation_beginning.0004.t
+	desc = ek_excavation_beginning.0004.desc
+	theme = excavation_exterior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:chaplain
+		animation = learning
+	}
+	
+	trigger = {
+		scope:story = { var:ruins_type = flag:egyptian }
+		excavation_story_event_standard_trigger = yes
+	}
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+	}
+	
+	option = { 
+		name = ek_excavation_beginning.0004.a
+
+		alter_excavation_quality = { operation = add amount = small }
+		
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+
+

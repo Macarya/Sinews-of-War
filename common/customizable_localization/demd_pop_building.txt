@@ -1,0 +1,692 @@
+﻿
+
+###########################
+
+demd_edict_req_tax_rate_extortionate = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:tax_setting = 3
+		}
+		localization_key = demd_edict_req_tax_rate_extortionate_pass
+	}
+	text = {
+		localization_key = demd_edict_req_tax_rate_extortionate_fail
+	}
+}
+
+demd_edict_req_tax_rate_high = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:tax_setting = 4
+				var:tax_setting = 2
+			}
+		}
+		localization_key = demd_edict_req_tax_rate_high_pass
+	}
+	text = {
+		localization_key = demd_edict_req_tax_rate_high_fail
+	}
+}
+
+demd_edict_req_tax_rate_moderate = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:tax_setting = 3
+				var:tax_setting = 1
+			}
+		}
+		localization_key = demd_edict_req_tax_rate_moderate_pass
+	}
+	text = {
+		localization_key = demd_edict_req_tax_rate_moderate_fail
+	}
+}
+
+demd_edict_req_tax_rate_low = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:tax_setting = 2
+				var:tax_setting = 0
+			}
+		}
+		localization_key = demd_edict_req_tax_rate_low_pass
+	}
+	text = {
+		localization_key = demd_edict_req_tax_rate_low_fail
+	}
+}
+
+
+demd_edict_req_tax_rate_none = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:tax_setting = 1
+		}
+		localization_key = demd_edict_req_tax_rate_none_pass
+	}
+	text = {
+		localization_key = demd_edict_req_tax_rate_none_fail
+	}
+}
+
+###########################
+
+demd_edict_req_manpower_rate_extortionate = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:manpower_setting = 3 
+		}
+		localization_key = demd_edict_req_manpower_rate_extortionate_pass
+	}
+	text = {
+		localization_key = demd_edict_req_manpower_rate_extortionate_fail
+	}
+}
+
+demd_edict_req_manpower_rate_high = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:manpower_setting = 4
+				var:manpower_setting = 2
+			}
+		}
+		localization_key = demd_edict_req_manpower_rate_high_pass
+	}
+	text = {
+		localization_key = demd_edict_req_manpower_rate_high_fail
+	}
+}
+
+demd_edict_req_manpower_rate_moderate = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:manpower_setting = 3
+				var:manpower_setting = 1
+			}
+		}
+		localization_key = demd_edict_req_manpower_rate_moderate_pass
+	}
+	text = {
+		localization_key = demd_edict_req_manpower_rate_moderate_fail
+	}
+}
+
+demd_edict_req_manpower_rate_low = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:manpower_setting = 2
+				var:manpower_setting = 0
+			}
+		}
+		localization_key = demd_edict_req_manpower_rate_low_pass
+	}
+	text = {
+		localization_key = demd_edict_req_manpower_rate_low_fail
+	}
+}
+
+
+demd_edict_req_manpower_rate_none = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:manpower_setting = 1
+		}
+		localization_key = demd_edict_req_manpower_rate_none_pass
+	}
+	text = {
+		localization_key = demd_edict_req_manpower_rate_none_fail
+	}
+}
+
+demd_tax_edict_cooldown = {
+	type = landed_title
+	text = {
+		trigger = {	
+			has_variable = tax_setting_changed
+		}
+		localization_key = demd_edict_on_cooldown
+	}
+	text = {
+		localization_key = demd_edict_not_on_cooldown
+	}
+}
+
+demd_manpower_edict_cooldown = {
+	type = landed_title
+	text = {
+		trigger = {	
+			has_variable = manpower_setting_changed
+		}
+		localization_key = demd_edict_on_cooldown
+	}
+	text = {
+		localization_key = demd_edict_not_on_cooldown
+	}
+}
+
+####################################
+
+demd_edict_req_public_order_extravagant = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:public_order_setting = 3
+		}
+		localization_key = demd_edict_req_public_order_extravagant_pass
+	}
+	text = {
+		localization_key = demd_edict_req_public_order_extravagant_fail
+	}
+}
+
+demd_edict_req_public_order_high = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:public_order_setting = 4
+				var:public_order_setting = 2
+			}
+		}
+		localization_key = demd_edict_req_public_order_high_pass
+	}
+	text = {
+		localization_key = demd_edict_req_public_order_high_fail
+	}
+}
+
+demd_edict_req_public_order_moderate = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:public_order_setting = 3
+				var:public_order_setting = 1
+			}
+		}
+		localization_key = demd_edict_req_public_order_moderate_pass
+	}
+	text = {
+		localization_key = demd_edict_req_public_order_moderate_fail
+	}
+}
+
+demd_edict_req_public_order_low = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:public_order_setting = 2
+				var:public_order_setting = 0
+			}
+		}
+		localization_key = demd_edict_req_public_order_low_pass
+	}
+	text = {
+		localization_key = demd_edict_req_public_order_low_fail
+	}
+}
+
+
+demd_edict_req_public_order_none = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:public_order_setting = 1
+		}
+		localization_key = demd_edict_req_public_order_none_pass
+	}
+	text = {
+		localization_key = demd_edict_req_public_order_none_fail
+	}
+}
+
+demd_public_order_edict_cooldown = {
+	type = landed_title
+	text = {
+		trigger = {	
+			has_variable = public_order_setting_changed
+		}
+		localization_key = demd_edict_on_cooldown
+	}
+	text = {
+		localization_key = demd_edict_not_on_cooldown
+	}
+}
+
+####################################
+
+demd_edict_req_sanitation_extravagant = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:sanitation_setting = 3
+		}
+		localization_key = demd_edict_req_sanitation_extravagant_pass
+	}
+	text = {
+		localization_key = demd_edict_req_sanitation_extravagant_fail
+	}
+}
+
+demd_edict_req_sanitation_high = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:sanitation_setting = 4
+				var:sanitation_setting = 2
+			}
+		}
+		localization_key = demd_edict_req_sanitation_high_pass
+	}
+	text = {
+		localization_key = demd_edict_req_sanitation_high_fail
+	}
+}
+
+demd_edict_req_sanitation_moderate = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:sanitation_setting = 3
+				var:sanitation_setting = 1
+			}
+		}
+		localization_key = demd_edict_req_sanitation_moderate_pass
+	}
+	text = {
+		localization_key = demd_edict_req_sanitation_moderate_fail
+	}
+}
+
+demd_edict_req_sanitation_low = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:sanitation_setting = 2
+				var:sanitation_setting = 0
+			}
+		}
+		localization_key = demd_edict_req_sanitation_low_pass
+	}
+	text = {
+		localization_key = demd_edict_req_sanitation_low_fail
+	}
+}
+
+
+demd_edict_req_sanitation_none = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:sanitation_setting = 1
+		}
+		localization_key = demd_edict_req_sanitation_none_pass
+	}
+	text = {
+		localization_key = demd_edict_req_sanitation_none_fail
+	}
+}
+
+demd_sanitation_edict_cooldown = {
+	type = landed_title
+	text = {
+		trigger = {	
+			has_variable = sanitation_setting_changed
+		}
+		localization_key = demd_edict_on_cooldown
+	}
+	text = {
+		localization_key = demd_edict_not_on_cooldown
+	}
+}
+
+####################################
+
+demd_edict_req_irrigation_extravagant = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:irrigation_setting = 3
+		}
+		localization_key = demd_edict_req_irrigation_extravagant_pass
+	}
+	text = {
+		localization_key = demd_edict_req_irrigation_extravagant_fail
+	}
+}
+
+demd_edict_req_irrigation_high = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:irrigation_setting = 4
+				var:irrigation_setting = 2
+			}
+		}
+		localization_key = demd_edict_req_irrigation_high_pass
+	}
+	text = {
+		localization_key = demd_edict_req_irrigation_high_fail
+	}
+}
+
+demd_edict_req_irrigation_moderate = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:irrigation_setting = 3
+				var:irrigation_setting = 1
+			}
+		}
+		localization_key = demd_edict_req_irrigation_moderate_pass
+	}
+	text = {
+		localization_key = demd_edict_req_irrigation_moderate_fail
+	}
+}
+
+demd_edict_req_irrigation_low = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:irrigation_setting = 2
+				var:irrigation_setting = 0
+			}
+		}
+		localization_key = demd_edict_req_irrigation_low_pass
+	}
+	text = {
+		localization_key = demd_edict_req_irrigation_low_fail
+	}
+}
+
+
+demd_edict_req_irrigation_none = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:irrigation_setting = 1
+		}
+		localization_key = demd_edict_req_irrigation_none_pass
+	}
+	text = {
+		localization_key = demd_edict_req_irrigation_none_fail
+	}
+}
+
+demd_irrigation_edict_cooldown = {
+	type = landed_title
+	text = {
+		trigger = {	
+			has_variable = irrigation_setting_changed
+		}
+		localization_key = demd_edict_on_cooldown
+	}
+	text = {
+		localization_key = demd_edict_not_on_cooldown
+	}
+}
+
+####################################
+
+demd_edict_req_infrastructure_extravagant = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:infrastructure_setting = 3
+		}
+		localization_key = demd_edict_req_infrastructure_extravagant_pass
+	}
+	text = {
+		localization_key = demd_edict_req_infrastructure_extravagant_fail
+	}
+}
+
+demd_edict_req_infrastructure_high = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:infrastructure_setting = 4
+				var:infrastructure_setting = 2
+			}
+		}
+		localization_key = demd_edict_req_infrastructure_high_pass
+	}
+	text = {
+		localization_key = demd_edict_req_infrastructure_high_fail
+	}
+}
+
+demd_edict_req_infrastructure_moderate = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:infrastructure_setting = 3
+				var:infrastructure_setting = 1
+			}
+		}
+		localization_key = demd_edict_req_infrastructure_moderate_pass
+	}
+	text = {
+		localization_key = demd_edict_req_infrastructure_moderate_fail
+	}
+}
+
+demd_edict_req_infrastructure_low = {
+	type = landed_title
+	text = {
+		trigger = {	
+			OR = {
+				var:infrastructure_setting = 2
+				var:infrastructure_setting = 0
+			}
+		}
+		localization_key = demd_edict_req_infrastructure_low_pass
+	}
+	text = {
+		localization_key = demd_edict_req_infrastructure_low_fail
+	}
+}
+
+
+demd_edict_req_infrastructure_none = {
+	type = landed_title
+	text = {
+		trigger = {	
+			var:infrastructure_setting = 1
+		}
+		localization_key = demd_edict_req_infrastructure_none_pass
+	}
+	text = {
+		localization_key = demd_edict_req_infrastructure_none_fail
+	}
+}
+
+demd_infrastructure_edict_cooldown = {
+	type = landed_title
+	text = {
+		trigger = {	
+			has_variable = infrastructure_setting_changed
+		}
+		localization_key = demd_edict_on_cooldown
+	}
+	text = {
+		localization_key = demd_edict_not_on_cooldown
+	}
+}
+
+demd_show_title_stats = {
+	type = landed_title
+	text = {
+		trigger = {	
+			tier > tier_county
+		}
+		localization_key = DEMD_TITLE_STATE_TOOLTIP
+	}
+	text = {
+		localization_key = DEMD_TITLE_STATE_TOOLTIP_NONE
+	}
+}
+
+demd_infrastructure_edict_get_modifier = {
+	type = landed_title
+	text = {
+		trigger = { var:infrastructure_setting = 0 }
+		localization_key = demd_infrastructure_modifier_0
+	}
+	text = {
+		trigger = { var:infrastructure_setting = 1 }
+		localization_key = demd_infrastructure_modifier_1
+	}
+	text = {
+		trigger = { var:infrastructure_setting = 2 }
+		localization_key = demd_infrastructure_modifier_2
+	}
+	text = {
+		trigger = { var:infrastructure_setting = 3 }
+		localization_key = demd_infrastructure_modifier_3
+	}
+	text = {
+		localization_key = demd_infrastructure_modifier_4
+	}
+}
+
+demd_irrigation_edict_get_modifier = {
+	type = landed_title
+	text = {
+		trigger = { var:irrigation_setting = 0 }
+		localization_key = demd_irrigation_modifier_0
+	}
+	text = {
+		trigger = { var:irrigation_setting = 1 }
+		localization_key = demd_irrigation_modifier_1
+	}
+	text = {
+		trigger = { var:irrigation_setting = 2 }
+		localization_key = demd_irrigation_modifier_2
+	}
+	text = {
+		trigger = { var:irrigation_setting = 3 }
+		localization_key = demd_irrigation_modifier_3
+	}
+	text = {
+		localization_key = demd_irrigation_modifier_4
+	}
+}
+
+demd_sanitation_edict_get_modifier = {
+	type = landed_title
+	text = {
+		trigger = { var:sanitation_setting = 0 }
+		localization_key = demd_sanitation_modifier_0
+	}
+	text = {
+		trigger = { var:sanitation_setting = 1 }
+		localization_key = demd_sanitation_modifier_1
+	}
+	text = {
+		trigger = { var:sanitation_setting = 2 }
+		localization_key = demd_sanitation_modifier_2
+	}
+	text = {
+		trigger = { var:sanitation_setting = 3 }
+		localization_key = demd_sanitation_modifier_3
+	}
+	text = {
+		localization_key = demd_sanitation_modifier_4
+	}
+}
+
+demd_public_order_edict_get_modifier = {
+	type = landed_title
+	text = {
+		trigger = { var:public_order_setting = 0 }
+		localization_key = demd_public_order_modifier_0
+	}
+	text = {
+		trigger = { var:public_order_setting = 1 }
+		localization_key = demd_public_order_modifier_1
+	}
+	text = {
+		trigger = { var:public_order_setting = 2 }
+		localization_key = demd_public_order_modifier_2
+	}
+	text = {
+		trigger = { var:public_order_setting = 3 }
+		localization_key = demd_public_order_modifier_3
+	}
+	text = {
+		localization_key = demd_public_order_modifier_4
+	}
+}
+
+demd_tax_edict_get_modifier = {
+	type = landed_title
+	text = {
+		trigger = { var:tax_setting = 0 }
+		localization_key = demd_tax_modifier_0
+	}
+	text = {
+		trigger = { var:tax_setting = 1 }
+		localization_key = demd_tax_modifier_1
+	}
+	text = {
+		trigger = { var:tax_setting = 2 }
+		localization_key = demd_tax_modifier_2
+	}
+	text = {
+		trigger = { var:tax_setting = 3 }
+		localization_key = demd_tax_modifier_3
+	}
+	text = {
+		localization_key = demd_tax_modifier_4
+	}
+}
+
+demd_manpower_edict_get_modifier = {
+	type = landed_title
+	text = {
+		trigger = { var:manpower_setting = 0 }
+		localization_key = demd_manpower_modifier_0
+	}
+	text = {
+		trigger = { var:manpower_setting = 1 }
+		localization_key = demd_manpower_modifier_1
+	}
+	text = {
+		trigger = { var:manpower_setting = 2 }
+		localization_key = demd_manpower_modifier_2
+	}
+	text = {
+		trigger = { var:manpower_setting = 3 }
+		localization_key = demd_manpower_modifier_3
+	}
+	text = {
+		localization_key = demd_manpower_modifier_4
+	}
+}

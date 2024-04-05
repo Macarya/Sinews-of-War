@@ -1,0 +1,72 @@
+types GoodsProvince
+{
+    type goods_province_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_demd_goods!#  [demd_capital|E]: +[Province.MakeScope.Var('capital_production_multiplier').GetValue|0%]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_goods|E] are produced by [demd_job_artisans|E], and the amount of goods stockpiled per capita, or [demd_capital|E], represents a key component of a [barony|E]'s standard of living. [demd_capital|E] is a key factor in [demd_migration_pull|E] and gives a production bonus to all [demd_resources|E].#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+                
+
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Net: [Province.MakeScope.ScriptValue('rural_goods_net')|1]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+					datacontext = "[GuiScope.SetRoot(Province.MakeScope).GetScriptValueBreakdown('rural_goods_net')]"
+					tooltipwidget = {
+						widget_value_breakdown_tooltip = {}
+					}
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Stockpile: [Province.MakeScope.Var('goods_stockpile').GetValue|1]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Annual Depreciation Rate: [Province.MakeScope.ScriptValue('goods_depreciation_rate')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

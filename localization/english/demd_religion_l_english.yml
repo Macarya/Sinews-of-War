@@ -1,0 +1,160 @@
+﻿l_english:
+
+tenets_desc:0 "..."
+
+DOCTRINE_REQUIRED_SPIRITUAL_HEAD_OF_FAITH:0 "Requires spiritual [head_of_faith|E] [doctrine|E]"
+
+demd_dummy:0 "..."
+demd_dummy_name:0 "..."
+special_doctrine_demd_dummy_01:0 "..."
+demd_demd_always_missing:0 "..."
+special_doctrine_demd_dummy_01_name:0 "..."
+special_doctrine_demd_dummy_01_desc:0 "..."
+
+doctrine_slavery_name:0 "Slavery"
+doctrine_slavery_desc:0 "Who can be enslaved by adherents of this faith."
+
+doctrine_slavery_faith_name:0 "Faith"
+doctrine_slavery_faith_desc:0 "The prime cause of slavery is sin, which brings man under the dominion of his fellow - that which does not happen save by the judgment of God, with whom is no unrighteousness, and who knows how to award fit punishments to every variety of offence."
+doctrine_parameter_slavery_faith:0 "Slaves can only be taken from [counties|E] with a [faith|E] we consider [faith_hostile|L] or greater after a [raid|E] or [siege|E]."
+
+doctrine_slavery_accepted_name:0 "Accepted"
+doctrine_slavery_accepted_desc:0 "For that some should rule and others be ruled is a thing not only necessary, but expedient; from the hour of their birth, some are marked out for subjection, others for rule."
+doctrine_parameter_slavery_accepted:0 "Slaves can be taken from all [counties|E] after a [raid|E] or [siege|E]"
+
+doctrine_slavery_heritage_name:0 "Heritage"
+doctrine_slavery_heritage_desc:0 "Slavery — subordination to the superior race — is his natural and normal condition."
+doctrine_parameter_slavery_heritage:0 "Slaves can only be taken from [counties|E] with a [culture|E] whose heritage differs from ours after a [raid|E] or [siege|E]."
+
+doctrine_slavery_crime_name:0 "Criminal"
+doctrine_slavery_crime_desc:0 "Those who deny freedom to others, deserve it not for themselves."
+doctrine_parameter_slavery_illegal:0 "Slaves cannot be taken after a [raid|E] or [siege|E]."
+
+doctrine_parameter_demd_can_raze:0 "Can Raze [baronies|E] after a [siege|E]"
+
+doctrine_parameter_reduced_vigor_loss_from_religious_disunity:0 "[EmptyScope.ScriptValue('pluralist_religious_unity_vigor_loss')|=$-0%] @icon_culture!# [vigor|E] loss from religious disunity within your [culture|E]"
+doctrine_parameter_increased_vigor_loss_from_religious_disunity:0 "[EmptyScope.ScriptValue('fundamentalist_religious_unity_vigor_loss')|=$-0%] @icon_culture!# [vigor|E] loss from religious disunity within your [culture|E]"
+
+
+# catholic
+holy_order_lazarus:0 "Knights of Saint Lazarus"
+holy_order_james:0 "Order of Saint James of Altopascio"
+holy_order_michael:0 "Order of Saint Michael of the Wings"
+holy_order_ghost:0 "Order of the Holy Ghost"
+holy_order_mountjoy:0 "Order of Mountjoy"
+holy_order_thomas:0 "Order of Saint Thomas of Canterbury" 
+holy_order_jordi:0 "Order of Sant Jordi d'Alfama"
+holy_order_militia:0 "Militia of the Faith of Jesus Christ" 
+holy_order_aviz:0 "Order of Aviz"
+holy_order_aubrac:0 "Order of Aubrac" 
+holy_order_truxillo:0 "Order of Truxillo"
+holy_order_monfrague:0 "Order of Monfragüe" 
+holy_order_livonia:0 "Livonian Brothers of the Sword" 
+holy_order_peace:0 "Order of the Faith and Peace"
+holy_order_red:0 "Knights of the Cross with the Red Star" 
+holy_order_mary:0 "Order of the Blessed Virgin Mary"
+holy_order_montesa:0 "Order of Montesa" 
+holy_order_dragon:0 "Order of the Dragon"
+holy_order_maurice:0 "Order of Saint Maurice"
+holy_order_tower:0 "Order of the Tower and Sword" 
+holy_order_bethlehem:0 "Order of Our Lady of Bethlehem" 
+holy_order_george:0 "Sacred Military Constantinian Order of Saint George" 
+holy_order_george_2:0 "Order of Saint George of Carinthia"  
+holy_order_stephen:0 "Order of Saint Stephen Pope and Martyr"
+holy_order_catherine:0 "Order of Saint Catherine" 
+holy_order_anthony:0 "Order of Saint Anthony" 
+holy_order_hubert:0 "Order of Saint Hubert" 
+holy_order_jerome:0 "Order of Saint Jerome"
+holy_order_spirit:0 "Order of the Holy Spirit" 
+holy_order_peter:0 "Order of Saint Peter"
+holy_order_seraph:0 "Order of the Seraphim"
+holy_order_blood:0 "Order of the Blood of Jesus Christ"
+holy_order_most:0 "Supreme Order of the Most Holy Annunciation"
+
+# generic christian
+holy_order_gabriel:0 "Order of the Angel Gabriel"
+holy_order_michael:0 "Order of the Angel Michael"
+holy_order_raphael:0 "Order of the Angel Raphael"
+holy_order_uriel:0 "Order of the Angel Uriel"
+holy_order_apostles:0 "Order of the Apostles of Christ"
+holy_order_eva:0 "Order of the Evangelists"
+holy_order_pentecost:0 "Order of the Pentecost"
+holy_order_conc:0 "Order of the Immaculate Conception"
+holy_order_magi:0 "Order of the Magi"
+holy_order_kin:0 "Order of the Holy Kinship"
+holy_order_trinity:0 "Order of the Trinity"
+holy_order_cross:0 "Order of the Way of the Cross"
+holy_order_heart:0 "Order of the Sacred Heart"
+holy_order_cruc:0 "Order of the Crucifixion"
+holy_order_supper:0 "Order of the Last Supper"
+holy_order_anastasis:0 "Order of the Anastasis"
+holy_order_savior:0 "Order of Christ the Savior"
+holy_order_shepherd:0 "Order of Christ the Shepherd"
+holy_order_majesty:0 "Order of Christ in Majesty"
+holy_order_virtues:0 "Order of the Holy Virtues"
+holy_order_lamb:0 "Order of the Lamb"
+
+# muslim
+holy_order_mus_star:0 "Order of the Star and Crescent"
+holy_order_mus_virg:0 "Order of the Seventy-Two Virgins"  
+holy_order_mus_martyr:0 "Order of the Fiery Martyrdom"  
+holy_order_mus_harams:0 "Order of the Purgation of the Haram" 
+holy_order_mus_jihad:0 "Order of Eternal Jihad" 
+holy_order_mus_allah:0 "Order of the Way of Allah" 
+holy_order_mus_proph:0 "Order of the Prophet" 
+holy_order_mus_mess:0 "Order of the Messenger" 
+holy_order_mus_rub:0 "Order of the Rub el Hizb" 
+holy_order_mus_seal:0 "Order of the Seal of Muhammed" 
+holy_order_mus_mecca:0 "Order of Mecca" 
+holy_order_mus_medina:0 "Order of Medina" 
+holy_order_mus_buraq:0 "Order of Buraq, Steed of the Prophet" 
+holy_order_mus_proph:0 "Order of the Prophet" 
+holy_order_mus_nectar:0 "Order of the Nectar of Martyrdom" 
+holy_order_mus_aisha:0 "Order of Aisha" 
+
+# slavic
+holy_order_slp_rod:0 "Chosen of Rod"
+holy_order_slp_sud:0 "Faithful of Sud"
+holy_order_slp_zhiva:0 "Lodge of Zhiva"
+holy_order_slp_triglav:0 "Brotherhood of Triglav"
+holy_order_slp_svarog:0 "Order of Svarog's Hammer"
+holy_order_slp_perun:0 "Warriors of Perun" 
+holy_order_slp_vyraj:0 "Order of Vyraj"
+holy_order_slp_svet:0 "Svetovid's Lightbringers" 
+holy_order_slp_ognebog:0 "Order of Ognebog's Flame"
+holy_order_slp_dazbog:0 "Servants of Dazhbog"
+holy_order_slp_jutrobog:0 "Sons of Jutrobog"
+holy_order_slp_chur:0 "Chur's Army"
+holy_order_slp_dogoda:0 "Champions of Dogoda"
+holy_order_slp_ipabog:0 "Companions of Ipabog"
+holy_order_slp_kresnik:0 "Kresnik's Guardians"
+holy_order_slp_nemiza:0 "Nemiza's Servants"
+holy_order_slp_radegast:0 "Sons of Radegast" 
+holy_order_slp_porevit:0 "Porevit's Champions"  
+holy_order_slp_rugievit:0 "Rugievit's Faithful" 
+holy_order_slp_veles:0 "Brotherhood of Veles" 
+holy_order_slp_belobog:0 "Belobog's Light" 
+
+# norse
+holy_order_ger_loki:0 "Chosen of Loki"
+holy_order_ger_frigg:0 "Faithful of Frigg"
+holy_order_ger_heimdall:0 "Lodge of Heimdall"
+holy_order_ger_vidar:0 "Brotherhood of Vidar"
+holy_order_ger_thor:0 "Order of Thor's Hammer"
+holy_order_ger_idun:0 "Warriors of Idun" 
+holy_order_ger_bragi:0 "Order of Bragi"
+
+
+
+
+
+
+
+
+
+
+holy_site_jg_znojmo_name:0 "Znojmo"
+holy_site_jg_znojmo_effect_name:0 "From [holy_site|E] #weak ($holy_site_jg_znojmo_name$)#!"
+
+holy_site_jg_wroclaw_name:0 "Wroclaw"
+holy_site_jg_wroclaw_effect_name:0 "From [holy_site|E] #weak ($holy_site_jg_wroclaw_name$)#!"

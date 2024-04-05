@@ -1,0 +1,61 @@
+﻿l_english:
+
+excavation_add_minor_artifacts_small:0 "#P +[EmptyScope.ScriptValue('excavation_minor_artifacts_small')|0]#! @icon_minor_artifacts!# [minor_artifacts|E]"
+excavation_add_minor_artifacts_medium:0 "#P +[EmptyScope.ScriptValue('excavation_minor_artifacts_medium')|0]#! @icon_minor_artifacts!# [minor_artifacts|E]"
+excavation_add_minor_artifacts_large:0 "#P +[EmptyScope.ScriptValue('excavation_minor_artifacts_large')|0]#! @icon_minor_artifacts!# [minor_artifacts|E]"
+excavation_add_minor_artifacts_huge:0 "#P +[EmptyScope.ScriptValue('excavation_minor_artifacts_huge')|0]#! @icon_minor_artifacts!# [minor_artifacts|E]"
+
+excavation_subtract_minor_artifacts_small:0 "#N [EmptyScope.ScriptValue('excavation_minor_artifacts_small')|0%]#! @icon_minor_artifacts!# [minor_artifacts|E]"
+excavation_subtract_minor_artifacts_medium:0 "#N [EmptyScope.ScriptValue('excavation_minor_artifacts_medium')|0%]#! @icon_minor_artifacts!# [minor_artifacts|E]"
+excavation_subtract_minor_artifacts_large:0 "#N [EmptyScope.ScriptValue('excavation_minor_artifacts_large')|0%]#! @icon_minor_artifacts!# [minor_artifacts|E]"
+excavation_subtract_minor_artifacts_huge:0 "#N [EmptyScope.ScriptValue('excavation_minor_artifacts_huge')|0%]#! @icon_minor_artifacts!# [minor_artifacts|E]"
+
+excavation_add_quality_small:0 "#P +[EmptyScope.ScriptValue('excavation_quality_small')|0]#! @icon_excavation_quality!# [excavation_quality|E]"
+excavation_add_quality_medium:0 "#P +[EmptyScope.ScriptValue('excavation_quality_medium')|0]#! @icon_excavation_quality!# [excavation_quality|E]"
+excavation_add_quality_large:0 "#P +[EmptyScope.ScriptValue('excavation_quality_large')|0]#! @icon_excavation_quality!# [excavation_quality|E]"
+excavation_add_quality_huge:0 "#P +[EmptyScope.ScriptValue('excavation_quality_huge')|0]#! @icon_excavation_quality!# [excavation_quality|E]"
+
+excavation_subtract_quality_small:0 "#N -[EmptyScope.ScriptValue('excavation_quality_small')|0]#! @icon_excavation_quality!# [excavation_quality|E]"
+excavation_subtract_quality_medium:0 "#N -[EmptyScope.ScriptValue('excavation_quality_medium')|0]#! @icon_excavation_quality!# [excavation_quality|E]"
+excavation_subtract_quality_large:0 "#N -[EmptyScope.ScriptValue('excavation_quality_large')|0]#! @icon_excavation_quality!# [excavation_quality|E]"
+excavation_subtract_quality_huge:0 "#N -[EmptyScope.ScriptValue('excavation_quality_huge')|0]#! @icon_excavation_quality!# [excavation_quality|E]"
+
+excavation_add_progress_small:0 "#P +[EmptyScope.ScriptValue('excavation_progress_small')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+excavation_add_progress_medium:0 "#P +[EmptyScope.ScriptValue('excavation_progress_medium')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+excavation_add_progress_large:0 "#P +[EmptyScope.ScriptValue('excavation_progress_large')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+excavation_add_progress_huge:0 "#P +[EmptyScope.ScriptValue('excavation_progress_huge')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+
+excavation_subtract_progress_small:0 "#N -[EmptyScope.ScriptValue('excavation_progress_small')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+excavation_subtract_progress_medium:0 "#N -[EmptyScope.ScriptValue('excavation_progress_medium')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+excavation_subtract_progress_large:0 "#N -[EmptyScope.ScriptValue('excavation_progress_large')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+excavation_subtract_progress_huge:0 "#N -[EmptyScope.ScriptValue('excavation_progress_huge')|0]#! @icon_excavation_progress!# [excavation_progress|E]"
+
+game_concept_excavation_progress:0 "Excavation Progress"
+game_concept_excavation_progress_desc:0 "#defender_color Excavation Progress#! is the accumulated progress towards the next stage of an excavation. When excavation progress is 100%, there will be a roll for a breakthrough to the next stage." 
+
+game_concept_excavation_breakthrough_chance:0 "Breakthrough Chance"
+game_concept_excavation_breakthrough:0 "Breakthrough"
+game_concept_excavation_breakthrough_chance_desc:0 "When the accumulated progress towards the next stage of an excavation reaches 100%, there will be a roll for a breakthrough to the next stage. #defender_color Excavation Breakthrough Chance#! is the odds of this roll succeeding." 
+game_concept_excavation_next_roll:0 "Next Roll"
+
+game_concept_excavation_leader:0 "Excavation Leader"
+game_concept_excavation_leader_desc:0 "An #defender_color Excavation Leader#! is required to progress an [excavation|E]."
+
+game_concept_excavation_skill:0 "Excavation Skill"
+game_concept_excavation_skill_desc:0 "#defender_color Excavation Skill#! is a measure of the qualities necessary to successfully run an [excavation|E]. It controls [excavation_progress|E] and [excavation_breakthrough_chance|E]." 
+ 
+
+game_concept_excavation_stage:0 "Excavation Stage"
+game_concept_excavation_stage_desc:0 "Each [excavation|E] has a certain number of stages. After [excavation_progress|E] reaches 100%, the odds of advancing to the next stage is [excavation_breakthrough_chance|E]." 
+
+game_concept_excavation_quality:0 "Excavation Quality"
+game_concept_excavation_quality_desc:0 "#defender_color Excavation Quality#! controls the bonuses received at each stage of an excavation." 
+
+game_concept_minor_artifacts:0 "Minor Artifacts"
+game_concept_minor_artifacts_desc:0 "#defender_color Minor Artifacts#! are objects of value found during an [excavation|E]. They may be sold for [gold|E] or [development|E] at the end of the excavation." 
+
+game_concept_excavation:0 "Excavation"
+game_concept_excavation_desc:0 "#defender_color Excavations#! are expeditions to ancient ruins in search of treasure." 
+
+can_afford_excavation:0 "Can afford an excavation: @icon_check!#"
+cannot_afford_excavation:0 "Can afford an excavation: @icon_cross!#"

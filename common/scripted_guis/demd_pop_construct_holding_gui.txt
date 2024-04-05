@@ -1,0 +1,20 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_show_holding_expansion = {
+	scope = province
+ 	is_shown = { 
+		county = {
+			has_variable = expansion_target
+			var:expansion_target = prev
+		}
+	}
+	is_valid = { 
+		always = yes
+	} 
+	effect = { 
+	}
+}

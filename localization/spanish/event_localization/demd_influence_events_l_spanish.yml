@@ -1,0 +1,13 @@
+﻿l_spanish:
+
+######################
+# Events
+######################
+
+# 1001: ???
+ demd_pop_influence.1001.t:0 "[county.GetName]: Ejemplo de evento de influencia"
+ demd_pop_influence.1001.desc:0 "TEXTO INFERIOR"
+
+ demd_pop_influence.1001.a:0 "Favorecer al [demd_noble_estate|E]"
+ demd_pop_influence.1001.b:0 "Favorecer al [demd_clergy_estate|E]"
+ demd_pop_influence.1001.c:0 "Favorecer al [demd_burgher_estate|E]"

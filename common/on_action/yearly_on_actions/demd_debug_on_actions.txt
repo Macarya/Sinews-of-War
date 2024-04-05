@@ -1,0 +1,18 @@
+﻿yearly_global_pulse = {
+	on_actions = {demd_debug}
+}
+
+demd_debug = {
+	effect = {
+		every_county = {
+			title_province = {
+				# causing errors - disabled for now
+				# debug_log ="[GetCurrentDate.GetYear];[Scope.Province.GetCounty.GetTitle.GetKey];[Scope.Province.GetCounty.GetTitle.GetDeJureLiege.GetKey];[Scope.Province.GetCounty.GetTitle.GetDeJureLiege.GetDeJureLiege.GetKey];[Scope.Province.GetCounty.GetTitle.GetDeJureLiege.GetDeJureLiege.GetDeJureLiege.GetKey];[Scope.Province.MakeScope.Var('population').GetValue|1];[Scope.Province.GetCountyCapitalProvince.MakeScope.Var('goods_producers_count').GetValue|2];[Scope.Province.GetCountyCapitalProvince.MakeScope.Var('food_districts_count').GetValue|2];[Scope.Province.GetCountyCapitalProvince.MakeScope.Var('goods_districts_count').GetValue|1];[Scope.Province.GetCountyCapitalProvince.MakeScope.ScriptValue('growth_rate_display')|%1];[Scope.Province.GetCountyCapitalProvince.MakeScope.Var('gross_tax').GetValue|1];[Scope.Province.GetCountyCapitalProvince.MakeScope.ScriptValue('disease_death_rate')|%1];[Scope.Province.GetCountyCapitalProvince.MakeScope.Var('culture_conversion_progress').GetValue|1];[Scope.Province.GetCountyCapitalProvince.MakeScope.Var('faith_conversion_progress').GetValue|1];[Scope.Province.GetCountyCapitalProvince.MakeScope.Var('free_manpower')|1]"
+			}	
+		}
+		every_in_global_list = {
+			variable = trade_nodes_global
+			# debug_log = "[GetCurrentDate.GetYear];[Scope.Title.GetKey];[Scope.Title.MakeScope.Var('outbound_trade').GetValue|2];[Scope.Title.MakeScope.Var('inbound_trade').GetValue|2]"
+		}
+	}
+}

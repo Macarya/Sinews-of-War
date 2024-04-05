@@ -1,0 +1,107 @@
+﻿l_english:
+
+demd_pop_religious_conversion_gain_lose_small:0 "[this.Custom,('demd_pop_religious_conversion_gain_lose_small')]"
+demd_pop_religious_conversion_gain_lose_medium:0 "[this.Custom,('demd_pop_religious_conversion_gain_lose_medium')]"
+demd_pop_religious_conversion_gain_lose_large:0 "[this.Custom,('demd_pop_religious_conversion_gain_lose_large')]"
+demd_pop_religious_conversion_gain_lose_huge:0 "[this.Custom,('demd_pop_religious_conversion_gain_lose_huge')]"
+
+demd_pop_religious_conversion_gain_lose_reverse_small:0 "[this.Custom,('demd_pop_religious_conversion_gain_lose_reverse_small')]"
+demd_pop_religious_conversion_gain_lose_reverse_medium:0 "[this.Custom,('demd_pop_religious_conversion_gain_lose_reverse_medium')]"
+demd_pop_religious_conversion_gain_lose_reverse_large:0 "[this.Custom,('demd_pop_religious_conversion_gain_lose_reverse_large')]"
+demd_pop_religious_conversion_gain_lose_reverse_huge:0 "[this.Custom,('demd_pop_religious_conversion_gain_lose_reverse_huge')]"
+
+demd_pop_religious_conversion_gain_small:0 "[county.GetName]: +10 [game_concept_demd_religious_conversion_progress|E]"
+demd_pop_religious_conversion_gain_medium:0 "[county.GetName]: +20 [game_concept_demd_religious_conversion_progress|E]"
+demd_pop_religious_conversion_gain_large:0 "[county.GetName]: +30 [game_concept_demd_religious_conversion_progress|E]"
+demd_pop_religious_conversion_gain_huge:0 "[county.GetName]: +50 [game_concept_demd_religious_conversion_progress|E]"
+
+demd_pop_religious_conversion_lose_small:0 "[county.GetName]: -10 [game_concept_demd_religious_conversion_progress|E]"
+demd_pop_religious_conversion_lose_medium:0 "[county.GetName]: -20 [game_concept_demd_religious_conversion_progress|E]"
+demd_pop_religious_conversion_lose_large:0 "[county.GetName]: -30 [game_concept_demd_religious_conversion_progress|E]"
+demd_pop_religious_conversion_lose_huge:0 "[county.GetName]: -50 [game_concept_demd_religious_conversion_progress|E]"
+
+# 1001: New Faith, Old Places 
+demd_pop_religious_conversion.1001.t:0 "[county.GetName]: New Faith, Old Places"
+demd_pop_religious_conversion.1001.desc:0 "With conversion ongoing in [county.GetNameNoTierNoTooltip] we are left unsure of what to do with [undesirable_faith.GetName] [undesirable_faith.HouseOfWorshipPlural].\n\nA bad move could draw the ire of the recent converts and true believers alike. Our policy going forward must take into account not only disaffected places of worship but also new [undesirable_faith.HouseOfWorshipPlural]."
+
+demd_pop_religious_conversion.1001.a:0 "Ignore their [undesirable_faith.HouseOfWorshipPlural]. We will build greater [desirable_faith.HouseOfWorshipPlural] of our own."
+demd_pop_religious_conversion.1001.b:0 "Convert any abandoned [undesirable_faith.HouseOfWorshipPlural] to [desirable_faith.HouseOfWorshipPlural]."
+demd_pop_religious_conversion.1001.c:0 "They are forbidden from constructing any new [undesirable_faith.HouseOfWorshipPlural] without our consent."
+demd_pop_religious_conversion.1001.d:0 "Burn every last [undesirable_faith.HouseOfWorship]!" #Callous
+burned_local_temple: "Burned Local Temples"
+burned_local_temples_desc:0 "Burn the heretics!"
+
+# 1002: Sons of [undesirable_faith.WarGodName]
+demd_pop_religious_conversion.1002.t:0 "[county.GetName]: Sons of [undesirable_faith.WarGodName]"
+demd_pop_religious_conversion.1002.desc:0 "The [undesirable_faith.GetName] population in [county.GetNameNoTierNoTooltip] has been getting restive of late. Local magistrates report that a group of thugs, styling themselves the "Sons of [undesirable_faith.WarGodName]" have been attacking our [desirable_faith.PriestNeuterPlural] and desecrating our [desirable_faith.HouseOfWorshipPlural].\n\nThough they have long managed to evade capture for the most part, we have finally managed to corner them at one of their underground meetings. All the exits have been sealed, so now it only remains to decide their fate."
+
+demd_pop_religious_conversion.1002.a:0 " By [desirable_faith.HighGodName],get them dead or alive!" #Wroth/Zealous loses stress
+demd_pop_religious_conversion.1002.a.success:0 "The [undesirable_faith.GetAdherentNamePlural] bandits are wiped out."
+demd_pop_religious_conversion.1002.a.failure:0 "You are wounded."
+demd_pop_religious_conversion.1002.b:0 "The ringleader must have been skilled to evade my agents thus far. Make him an offer." #Gregarious loses stress
+demd_pop_religious_conversion.1002.b.success:0 "The ringleader enters my service."
+demd_pop_religious_conversion.1002.b.failure:0 "My offer is discovered."
+demd_pop_religious_conversion.1002.c:0 "Kill the leaders and force the rest to convert."
+demd_pop_religious_conversion.1002.d:0 "Let those who can pay ransom leave. Kill the rest."
+demd_pop_religious_conversion.1002.e:0 "Let's not take any risks. Bar the exits and burn the entire building." #Callous/Sadistic/Paranoid
+
+# 1003: A Prayer to Whom It May Concern
+demd_pop_religious_conversion.1003.t:0 "[county.GetName]: A Prayer to Whom It May Concern" #Maybe only if Chaplain is Zealous?
+demd_pop_religious_conversion.1003.desc:0 "My Court Chaplain storms into my council, visibly distraught:\n\n"My lord,... the [undesirable_faith.GetAdherentNamePlural] in [county.GetNameNoTierNoTooltip] have been slowly learning the precepts of [desirable_faith.GetName], well, not without some minor heresies of course, but today, I caught one of the elderly heathens sneaking a prayer to “[undesirable_faith.HighGodName], [desirable_faith.HighGodName] and whom it may concern..." This cannot be allowed to continue! We must publicly whip the impudent whelp until he repudiates this mockery of our beliefs!""
+
+demd_pop_religious_conversion.1003.a:0 "Fetch the offender! I'll deliver the lashes myself!" #You are Diligent/Callous/Sadistic/Zealous
+demd_pop_religious_conversion.1003.b:0 "Calm down! Take some measures but don't go overboard."
+demd_pop_religious_conversion.1003.c:0 "Sermons are required, not lashings. Syncretism is a normal step on the way to redemption"
+demd_pop_religious_conversion.1003.d:0 "I don't see the harm in it. Instruct him further but don't bother the community about it."
+
+#1004: Beyond Death
+demd_pop_religious_conversion.1004.t:0 "[county.GetName]: Beyond Death"
+demd_pop_religious_conversion.1004.desc:0 "As I am visiting a local temple among the many infidels of[county.GetNameNoTierNoTooltip], one of the missionaries approaches me. He explains that the locals have started to question the finality of their souls, and more specifically that of their loved ones who won't convert.\n\nThe priest is split on how to answer them and wants me to personally deal with it despite my many recriminations. Should I be consoling them to subtly entice conversion or scare them with the worst of all tales?"
+
+demd_pop_religious_conversion.1004.a:0 "A:The suffering of the infidels are too many to count in [desirable_faith.NegativeAfterlife]. Repent or suffer the consequences!"
+demd_pop_religious_conversion.1004.b:0 "B:You have already shown your devotion to the true faith and now you must save the souls of your loved ones, even if they aren't being bad persons."
+demd_pop_religious_conversion.1004.c:0 "Damn it [desirable_faith.PriestNeuter]!, this is your job! Deal with it, appropriately and ask your hierarchy"
+
+#1005: Quarter Troops
+demd_pop_religious_conversion.1005.t:0 "[county.GetName]: Quarter Troops"
+demd_pop_religious_conversion.1005.desc:0 "My Marshal recently approached me about the problem of garrisoning troops among the heathens of [County]. We cannot effectively control the land and defend it according to my Councillor and it would be better if some small relays were established among the populace. This measure is unlikely to be popular but we could restrict to the populace that practice other Faiths than our own.\n\nSoldiers are known to be rowdy and rude and some grievous incidents could happen, the [undesirable_faith.GetAdherentNamePlural] are likely to quickly migrate or convert to stop these vexations."
+
+demd_pop_religious_conversion.1005.a:0 "Order the troops to all be quartered and fed in [undesirable_faith.GetAdherentNamePlural] households. Suppress any complaints"
+demd_pop_religious_conversion.1005.b:0 "Quarter the troops in all households but discriminate against the [undesirable_faith.GetAdherentNamePlural]."
+demd_pop_religious_conversion.1005.c:0 "This is a terrible idea, my troops are safer behind walls and my subjects more obedient that way."
+
+#1006: Book Burning
+demd_pop_religious_conversion.1006.t:0 "[county.GetName]: Book Burning" #Maybe if Chaplain is Zealous
+demd_pop_religious_conversion.1006.desc:0 "My Court Chaplain came in storming today, he was ranting and raving about some books containing insults and falsehoods against [desirable_faith.HighGodName]. He called for the immediate rounding up and public destruction of these books. After further probing he turns out the books in question is the tradition of the [undesirable_faith.GetAdherentNamePlural], the [undesirable_faith.ReligiousText]!"
+
+demd_pop_religious_conversion.1006.a:0 "Order the troops to all be quartered and fed in [undesirable_faith.GetAdherentNamePlural] households. Suppress any complaints"
+demd_pop_religious_conversion.1006.b:0 "Prepare a debate between their foremost scholar and my Court Chaplain."
+demd_pop_religious_conversion.1006.b.success:0 "The [undesirable_faith.GetAdherentName] Scholar is thoroughly beaten and the resolve of the [undesirable_faith.GetAdherentNamePlural shaken! We can proceed with the burning more easily and some of them are convinced we aren't so wrong..."
+demd_pop_religious_conversion.1006.b.failure:0 "Using masterful rhetoric and logic the [undesirable_faith.GetAdherentName] Scholar has thoroughly proven his case and...it seems we are the baddies? Either way this book burning will be less impactful and more inflammatory that we originally thought. The [undesirable_faith.GetAdherentNamePlural] stand defiant"
+demd_pop_religious_conversion.1006.c:0 "Abandon this foolish idea right now!"
+
+#1007: State Rites
+demd_pop_religious_conversion.1007.t:0 "[county.GetName]: State Rites" 
+demd_pop_religious_conversion.1007.desc:0 "As a ruler I regularly must make myself appear outwardly as a pious [desirable_faith.GetAdherentName]. To this effect we conduct state rites that put my rule under the divine stewardship of [desirable_faith.HighGodName].\n\nWhile it is both an honor and a duty few amongst my fellow [desirable_faith.GetAdherentNamePlural] would refuse, the case of the [undesirable_faith.GetAdherentNamePlural] officials poses problems. They say that their faith doesn't condone celebration as prescribed by my own faith!\n\nShould we include them by force, allow whomever wishes to participate to do so, or just exclude them altogether?"
+
+demd_pop_religious_conversion.1007.a:0 "This is ruling business! They will attend or resign."
+demd_pop_religious_conversion.1007.b:0 "Let them attend if they wish to...This will separate the truly loyal servants we can rely on"
+demd_pop_religious_conversion.1007.c:0 "Bah, we don't need them at #bold MY#! ceremony."
+
+#1008: Renouncing the Faith
+demd_pop_religious_conversion.1008.t:0 "[county.GetName]: Renouncing the Faith" #Should later only fire if Chaplain is Sadistic/Callous
+demd_pop_religious_conversion.1008.desc:0 "When they convert, former [undesirable_faith.GetAdherentNamePlural] must follow the usual customs and rites to be properly inducted into the [desirable_faith.GetName] faith.\n\nHowever, we have reason to believe false conversions may have taken place and some weren't sincere in their dedication to [desirable_faith.HighGodName].\n\nMy clerks have suggested we take more radical measures to root out the uncertain and liars...Like making them trample or destroy the symbols of their former worship. It may be harsh, but if their heart is in the right place it should be easy to do."
+
+demd_pop_religious_conversion.1008.a:0 "Confiscate some symbols to test their newfound faith in [desirable_faith.HighGodName]!"
+demd_pop_religious_conversion.1008.b:0 "No it is cruel, no need"
+demd_pop_religious_conversion.1008.c:0 "No it is cruel #S and#! unnecessary. What is wrong with you? You're no longer my [desirable_faith.PriestNeuter]!" 
+#You are Compassionate, planned
+
+
+
+
+
+
+
+
+

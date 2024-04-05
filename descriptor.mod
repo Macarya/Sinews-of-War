@@ -1,0 +1,15 @@
+version="1.1.0"
+tags={
+	"Balance"
+	"Gameplay"
+	"Historical"
+	"Warfare"
+	"Decisions"
+	"Events"
+	"Fixes"
+	"Religion"
+}
+name="Sinews of War - 1.12 Update Dev Branch"
+picture="thumbnail.png"
+supported_version="1.12.*"
+remote_file_id="3113107852"

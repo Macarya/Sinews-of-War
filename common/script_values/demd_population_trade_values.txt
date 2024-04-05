@@ -1,0 +1,697 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+###################
+
+demd_trade_route_raid_value_loc_scope = {
+	value = scope:councillor_liege.capital_county.var:trade_node.demd_trade_route_raid_value
+}
+
+demd_trade_route_raid_value_char = {
+	if = {
+		limit = { exists = capital_county }
+		value = capital_county.var:trade_node.demd_trade_route_raid_value
+	}
+	else = { value = 1 }
+}
+
+demd_trade_route_raid_value = {
+	value = var:trade_node_wealth
+	multiply = raid_trade_routes_mil_strength_ratio
+	multiply = 0.1
+	min = 1
+}
+
+demd_trade_node_seizure_value_char = {
+	if = {
+		limit = { exists = capital_county }
+		value = capital_county.var:trade_node.demd_trade_node_seizure_value
+	}
+	else = { value = 100 }
+}
+
+demd_trade_node_seizure_value = {
+	value = var:trade_node_wealth
+	multiply = 0.1
+	min = 100
+}
+
+raid_trade_routes_mil_strength_ratio = {
+	if = { 
+		limit = {
+			exists = scope:councillor_liege.capital_county
+			scope:councillor_liege.capital_county.var:trade_node.var:node_owner.current_military_strength > 0 			
+		}
+		value = scope:councillor_liege.current_military_strength	
+		divide = scope:councillor_liege.capital_county.var:trade_node.var:node_owner.current_military_strength
+	}
+	else = { value = 100 }
+	min = 0.25
+	max = 4
+}
+
+raid_trade_routes_min_military_strength = {
+	value = scope:councillor_liege.capital_county.var:trade_node.var:node_owner.current_military_strength
+	multiply = raid_trade_routes_min_military_strength_ratio
+}
+
+raid_trade_routes_min_military_strength_ratio = 0.25
+
+startup_trade_node_wealth = {
+	value = trade_node_wealth_base_gain
+	divide = {
+		value = node_owner_dividend_mult
+		multiply = percent_strategic_locations_held
+		min = 0.001
+	}
+	min = 100
+	max = 2000
+}
+
+node_owner_dividend_from_county_scope = {
+	value = var:trade_node.node_owner_dividend
+}
+
+node_owner_dividend = {
+	value = var:trade_node_wealth
+	multiply = node_owner_dividend_mult
+	multiply = percent_strategic_locations_held
+	min = 1
+}
+
+node_owner_dividend_mult = 0.005
+
+trade_node_wealth_annual_decay = 0.05
+
+trade_node_wealth_monthly_gain = {
+	value = {
+		value = trade_node_wealth_base_gain
+		desc = "Base Gain"
+	}
+	subtract = {
+		value = node_owner_dividend
+		desc = "[demd_node_owner_dividend|E]"
+	}
+}
+
+trade_node_wealth_base_gain = {
+	value = var:total_collected_trade_value
+	multiply = trade_node_wealth_gained_scaling_factor
+}
+
+trade_node_wealth_gained_scaling_factor = 0.01
+###################
+
+
+
+node_trade_power = {
+	every_in_list = {
+		variable = trade_node_counties
+		add = var:trade_power
+	}
+}
+
+total_collected_trade_value = {
+	value = var:imported_collected_trade_value
+	add = var:domestic_collected_trade_value
+}
+
+imported_collected_trade_value = {
+	every_in_list = {
+		variable = node_linkages
+		add = var:linkage_passed_trade_value
+	}
+}
+
+domestic_collected_trade_value = {
+	value = var:node_produced_trade_value
+	multiply = node_trade_efficiency
+}
+
+node_produced_trade_value = {
+	every_in_list = {
+		variable = trade_node_counties
+		add = var:produced_trade_value
+	}
+}
+
+###################
+
+#character_trade_post_purchase_value = {
+#	every_sub_realm_county = {
+#		limit = {
+#			holder = prev
+#			has_variable = trade_post_story
+#			var:trade_post_story.story_owner = prev  
+#		}
+#		add = trade_post_purchase_value
+#	}
+#}
+
+#trade_post_purchase_value = {
+#	value = trade_post_trade_value
+#	multiply = 240
+#}
+
+#trade_post_trade_value = {
+#	value = var:trade_post_location.var:trade_value
+#	multiply = 0.25
+#}
+###################
+
+linkage_passed_trade_value = {
+	value = var:linkage_trade_value
+	subtract = var:linkage_trade_tariffs
+}
+
+linkage_trade_tariffs = {
+	if = {
+		limit = { has_variable_list = linkage_counties }
+		value = var:linkage_trade_value
+		multiply = linkage_tariff_rate
+	}
+	else = { value = 0 }
+}
+
+linkage_tariff_rate = {
+	if = {
+		limit = { has_variable = has_monopoly }
+		value = 0.2
+	}
+	else = { value = 0.1 }
+}
+
+linkage_tariff_base_rate = 0.1
+linkage_tariff_monopoly_rate = 0.2
+
+
+linkage_trade_value = {
+	
+	value = var:home_node.var:domestic_collected_trade_value
+	add = var:linked_node.var:domestic_collected_trade_value
+	multiply = linkage_trade_value_scaling_factor
+	multiply = linkage_trade_efficiency
+}
+
+linkage_trade_value_scaling_factor = 0.05 # to-do: scale with number of luxury goods present in node A but not B & B but not A
+
+linkage_trade_power = {
+	every_in_list = { 
+		variable = linkage_counties
+		limit = { 
+			demd_is_county_linkage_open_to_trade = yes
+		}
+		add = var:trade_power
+	}
+}
+
+linkage_trade_efficiency = {
+	if = {
+		limit = { demd_is_overall_linkage_open_to_trade = no }
+		value = linkage_trade_efficiency_min
+	}
+	else = {
+		value = percent_linkages_open_to_trade
+		min = linkage_trade_efficiency_min
+	}
+}
+linkage_trade_efficiency_min = 0.1
+
+percent_linkages_open_to_trade = {
+	if = {
+		limit = { var:num_linkages > 0 }
+		every_in_list = {
+			variable = linkage_counties
+			if = {
+				limit = { 
+					demd_is_county_linkage_open_to_trade = yes
+				}
+				add = 1
+			}
+		}
+		divide = var:num_linkages
+	}
+	else = { value = 1 }
+}
+
+collected_trade_linkage_tariffs = {
+	if = {
+		limit = { 
+			has_variable_list = county_trade_links
+			demd_is_county_linkage_open_to_trade = yes
+		}
+		value = {
+			every_in_list = {
+				variable = county_trade_links
+				limit = { var:linkage_trade_power > 0 }
+				add = {
+					value = prev.var:trade_power
+					divide = var:linkage_trade_power
+					multiply = var:linkage_trade_tariffs
+					desc = "[Story.MakeScope.Var('linked_node').Struggle.GetName]"
+				}
+			}
+		}
+	}
+	else = {
+		value = 0
+	}
+}
+###################
+
+node_trade_efficiency = {
+	value = base_trade_efficiency_from_phase
+	multiply = {
+		value = trade_efficiency_from_strategic_locations_open_to_trade
+	}
+}
+
+base_trade_efficiency_from_phase = {
+	if = { 
+		limit = { has_struggle_phase_parameter = demd_trade_node_increased_collected_trade_value }
+		value = demd_trade_node_increased_collected_trade_value
+	}
+	else_if = {
+		limit = { has_struggle_phase_parameter = demd_trade_node_reduced_collected_trade_value }
+		value = demd_trade_node_reduced_collected_trade_value
+	}
+	else = {
+		value = 1
+	}
+}
+demd_trade_node_increased_collected_trade_value = 1.5
+demd_trade_node_reduced_collected_trade_value = 0.5
+
+trade_efficiency_from_strategic_locations_open_to_trade = {
+	value = percent_strategic_locations_open_to_trade
+	min = 0.1
+}
+
+percent_strategic_locations_open_to_trade = {
+	if = {
+		limit = { var:num_strategic_locations > 0 }
+		every_in_list = {
+			variable = strategic_locations
+			limit = { 
+				demd_is_strategic_location_open_to_trade = yes
+			}
+			add = 1
+		}
+		divide = var:num_strategic_locations
+	}
+	else = { value = 1 }
+}
+
+percent_strategic_locations_held = {
+	if = {
+		limit = { var:num_strategic_locations > 0 }
+		every_in_list = {
+			variable = strategic_locations
+			if = {
+				limit = {
+					demd_is_strategic_location_controlled = yes
+				}
+				add = 1
+			}
+		}
+		divide = var:num_strategic_locations
+	}
+	else = { value = 1 }
+}
+
+percent_strategic_locations_held_character = {
+	save_temporary_scope_as = char
+	capital_county.var:trade_node = {
+		every_in_list = {
+			variable = strategic_locations
+			if = {
+				limit = {
+					holder = {
+						OR = {
+							this = scope:char
+							any_liege_or_above = {
+								this = scope:char
+							}
+						}
+					}
+				}
+				add = 1
+			}
+		}
+		divide = var:num_strategic_locations
+	}
+}
+
+###################
+
+trade_route_population = {
+	every_in_list = {
+		variable = trade_node_counties
+		add = var:county_population
+	}
+}
+
+###################
+
+marshal_raid_trade_base = 1.0
+
+#########################################
+######### PROMOTE CULTURE TASK ##########
+#########################################
+
+marshal_raid_trade_base = 1.5
+
+marshal_raid_trade_monthly_increase = {
+	add = martial
+	divide = 4
+}
+
+marshal_raid_trade_contextual_bonuses = {
+	# Relation Bonuses/Penalties
+	if = { # Friend
+		limit = {
+			scope:councillor_liege = {
+				has_relation_friend = scope:councillor
+				NOT = { has_relation_best_friend = scope:councillor }
+			}
+		}
+		add = {
+			value = scope:councillor.marshal_raid_trade_monthly_increase_friend_bonus
+			desc = COUNCILLOR_IS_YOUR_FRIEND
+		}
+	}
+	if = { # Best Friend
+		limit = {
+			scope:councillor_liege = {
+				has_relation_best_friend = scope:councillor
+			}
+		}
+		add = {
+			value = scope:councillor.marshal_raid_trade_monthly_increase_best_friend_bonus
+			desc = COUNCILLOR_IS_YOUR_BEST_FRIEND
+		}
+	}
+	if = { # Rival
+		limit = {
+			scope:councillor_liege = {
+				has_relation_rival = scope:councillor
+				NOT = { has_relation_nemesis = scope:councillor }
+			}
+		}
+		add = {
+			value = scope:councillor.marshal_raid_trade_monthly_increase_rival_bonus
+			desc = COUNCILLOR_IS_YOUR_RIVAL
+		}
+	}
+	if = { # Nemesis
+		limit = {
+			scope:councillor_liege = {
+				has_relation_nemesis = scope:councillor
+			}
+		}
+		add = {
+			value = scope:councillor.marshal_raid_trade_monthly_increase_nemesis_bonus
+			desc = COUNCILLOR_IS_YOUR_NEMESIS
+		}
+	}
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = {
+			value = marshal_raid_trade_erudition_bonus
+			desc = ERUDITION_DYNASTY_PERK_BONUS_VALUE
+		}
+	}
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = {
+			value = scope:councillor.marshal_raid_trade_family_business_bonus
+			desc = FAMILY_BUSINESS_BONUS_VALUE
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:councillor_liege.culture = {
+				is_hybrid_culture = yes
+				culture_age < culture_hybrid_cooldown
+				any_parent_culture = {
+					this = scope:county.culture
+				}
+			}
+		}
+		add = {
+			value = scope:councillor.promote_culture_hybrid_culture_vs_parents_bonus
+			desc = marshal_raid_trade_HYBRID_VS_PARENTS_BONUS_MODIFIER
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:councillor_liege.faith = {
+				has_doctrine_parameter = same_faith_promote_culture_bonus_active
+			}
+			scope:county.faith = scope:councillor_liege.faith
+		}
+		add = {
+			value = scope:councillor.promote_culture_communal_identity_bonus
+			desc = marshal_raid_trade_COMMUNAL_IDENTITY_BONUS_MODIFIER
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:councillor_liege.faith = { has_doctrine_parameter = easier_to_convert_culture_in_same_faith_mountains }
+			scope:county = {
+				faith = scope:councillor_liege.faith
+				any_county_province = {
+					OR = {
+						terrain = mountains
+						terrain = desert_mountains
+					}
+				}
+			}
+		}
+		add = {
+			value = scope:councillor.promote_culture_easier_to_convert_culture_in_same_faith_mountains_bonus
+			desc = marshal_raid_trade_EASIER_TO_CONVERT_CULTURE_IN_SAME_FAITH_MOUNTAINS_BONUS
+		}
+	}
+	if = {
+		limit = {
+			scope:councillor_liege.culture = {
+				has_innovation = innovation_east_settling
+			}
+		}
+		add = {
+			value = scope:councillor.promote_culture_east_settling_bonus
+			desc = marshal_raid_trade_INNOVATION_BONUS_EAST_SETTLING
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = { has_county_modifier = 6210_architect_county_modifier }
+		}
+		add = {
+			value = scope:councillor.6210_architect_promote_culture_bonus
+			desc = COURT_CHAPLAIN_CONVERSION_LOCAL_COUNTY_MODIFIERS
+		}
+	}
+		#Reduce for various county modifiers.
+	# Cultural Traditions
+	## Bonuses
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county.culture = { has_cultural_parameter = easier_to_convert_county_culture_with_heritage }
+			scope:councillor_liege.culture = { has_same_culture_heritage = scope:county.culture }
+		}
+		add = {
+			value = conversion_culture_easier_to_culture_change_with_heritage_value
+			desc = TRADITION_EASIER_TO_CULTURE_CONVERT_WITH_HERITAGE_MODIFIER
+		}
+	}
+	## Penalties
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county.culture = { has_cultural_parameter = harder_to_convert_county_culture_without_heritage }
+			NOT = {
+				scope:councillor_liege.culture = { has_same_culture_heritage = scope:county.culture }
+			}
+		}
+		add = {
+			value = conversion_culture_resistant_to_culture_change_without_heritage_value
+			desc = TRADITION_HARDER_TO_CULTURE_CONVERT_WITHOUT_HERITAGE_MODIFIER
+		}
+	}
+	# Struggles
+	## Penalties
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				any_county_struggle = { has_struggle_phase_parameter = county_culture_conversion_in_region_proceeds_slower }
+			}
+		}
+		add = {
+			value = conversion_culture_resistant_to_culture_change_due_to_struggle_phase_value
+			desc = STRUGGLE_HARDER_TO_CULTURE_CONVERT_DUE_TO_STRUGGLE_PHASE_MODIFIER
+		}
+	}
+	## Bonuses
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				any_county_struggle = { has_struggle_phase_parameter = county_culture_conversion_in_region_proceeds_faster }
+			}
+		}
+		add = {
+			value = conversion_culture_accepting_of_culture_change_due_to_struggle_phase_value
+			desc = STRUGGLE_EASIER_TO_CULTURE_CONVERT_DUE_TO_STRUGGLE_PHASE_MODIFIER
+		}
+	}
+	# Decisions
+	if = {
+		limit = {
+			OR = {
+				scope:councillor_liege.culture = { has_cultural_pillar = heritage_goidelic }
+				scope:councillor_liege.culture = { has_cultural_pillar = heritage_brythonic }
+			}
+			exists = scope:county
+			scope:county = {
+				has_county_modifier = reclaim_britannia_culture_modifier
+				NOR= {
+					culture = { has_cultural_pillar = heritage_goidelic }
+					culture = { has_cultural_pillar = heritage_brythonic }
+				}
+			}
+		}
+		add = {
+			value = promote_culture_reclaimed_brittania_bonus
+			desc = marshal_raid_trade_RECLAIMING_BRITANNIA
+		}
+	}
+	# Events
+	if = { 
+		limit = {
+			exists = scope:county
+			scope:county = {
+				has_county_modifier = governance_1073_conversion_resistance_modifier
+			}
+		}
+		add = {
+			value = scope:councillor.promote_culture_local_traditions_respected_penalty
+			desc = marshal_raid_trade_LOCAL_TRADITIONS_RESPECTED
+		}
+	}
+	if = {
+		limit  = {
+			exists = scope:county
+			scope:county = {
+				has_county_modifier = county_shuubiyya_modifier
+			}
+		}
+		add = {
+			value = scope:councillor.promote_culture_shuubiyya_penalty
+			desc = marshal_raid_trade_SHUUBIYYA
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = {
+				OR = {
+					has_county_modifier = enthusiastic_nomad_settlement_saharan_modifier
+					has_county_modifier = nomad_settlement_saharan_modifier
+				}
+			}
+		}
+		add = {
+			value = scope:councillor.promote_culture_allowed_nomad_settlement_penalty
+			desc = marshal_raid_trade_ALLOWED_NOMAD_SETTLEMENT
+		}
+	}
+	if = {
+		limit = {
+			exists = scope:county
+			scope:county = { has_county_modifier = hold_court_8190_vassal_modifier }
+		}
+		add = {
+			value = scope:councillor.court_8190_vassal_modifier_value
+			desc = COURT_CHAPLAIN_CONVERSION_LOCAL_COUNTY_MODIFIERS
+		}
+	}
+}
+
+marshal_raid_trade_monthly_increase_friend_bonus = {
+	value = marshal_raid_trade_monthly_increase
+	multiply = {
+		value = council_friend_impact_percentage
+		divide = 100
+	}
+}
+
+marshal_raid_trade_base_total = {
+	add = marshal_raid_trade_base
+	add = marshal_raid_trade_monthly_increase
+}
+
+marshal_raid_trade_monthly_increase_best_friend_bonus = {
+	value = marshal_raid_trade_base_total
+	multiply = {
+		value = council_best_friend_impact_percentage
+		divide = 100
+	}
+}
+marshal_raid_trade_monthly_increase_rival_bonus = {
+	value = marshal_raid_trade_base_total
+	multiply = {
+		value = council_rival_impact_percentage
+		divide = 100
+	}
+}
+marshal_raid_trade_monthly_increase_nemesis_bonus = {
+	value = marshal_raid_trade_base_total
+	multiply = {
+		value = council_nemesis_impact_percentage
+		divide = 100
+	}
+}
+
+marshal_raid_trade_erudition_bonus = {
+	add = marshal_raid_trade_base_total
+	multiply = {
+		add = erudition_legacy_5_percentage
+		divide = 100
+	}
+}
+
+marshal_raid_trade_family_business_bonus = {
+	add = marshal_raid_trade_base_total
+	multiply = {
+		add = family_business_councillors_percentage
+		divide = 100
+	}
+}
+
+marshal_raid_trade_raiding_soldiers = {
+	value = scope:councillor_liege.current_military_strength
+	divide = 1000
+}
+
+
+###
+hyper_massive_struggle_catalyst_gain = 400
+kilo_massive_struggle_catalyst_gain = 50
+mega_massive_struggle_catalyst_gain = 100
+giga_massive_struggle_catalyst_gain = 200
+

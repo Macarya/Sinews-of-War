@@ -1,0 +1,281 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+demd_add_doctrine_bonuses = {
+
+	if = {
+		limit = { has_doctrine = tenet_armed_pilgrimages }
+		change_variable = { name = manpower_faith_production_mult add = 0.10 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_unrelenting_faith }
+		change_variable = { name = manpower_faith_production_mult add = 0.20 }
+		change_variable = { name = fervor_faith_production_mult add = 3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_communal_possessions }
+		change_variable = { name = food_faith_production_mult add = 0.10 }
+		change_variable = { name = public_order_faith_production_mult add = -0.10 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_pacifism }
+		change_variable = { name = manpower_faith_production_mult add = -0.20 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_sacrificial_ceremonies }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_ritual_cannibalism }
+		change_variable = { name = public_order_faith_production_mult add = -0.10 }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_vows_of_poverty }
+		change_variable = { name = trade_value_faith_production_mult add = -0.20 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_exaltation_of_pain }
+		change_variable = { name = public_order_faith_production_mult add = -0.10 }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_hedonistic }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_pastoral_isolation }
+		change_variable = { name = trade_power_faith_production_mult add = -0.20 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_dharmic_pacifism }
+		change_variable = { name = manpower_faith_production_mult add = -0.20 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_ritual_hospitality }
+		change_variable = { name = public_order_faith_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_carnal_exaltation }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_warmonger }
+		change_variable = { name = manpower_faith_production_mult add = 0.10 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_communal_identity }
+		change_variable = { name = vigor_faith_production_mult add = 4.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_divine_marriage }
+		change_variable = { name = birth_rate_faith_production_mult add = -0.15 }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_legalism }
+		change_variable = { name = public_order_faith_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_sacred_childbirth }
+		change_variable = { name = sanitation_faith_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_sanctity_of_nature }
+		change_variable = { name = food_faith_production_mult add = 0.10 }
+		change_variable = { name = goods_faith_production_mult add = -0.10 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_pursuit_of_power }
+		change_variable = { name = public_order_faith_production_mult add = -0.10 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_human_sacrifice }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+		change_variable = { name = public_order_faith_production_mult add = -0.10 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_gruesome_festivals }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+		change_variable = { name = public_order_faith_production_mult add = -0.15 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_communion }
+		change_variable = { name = public_order_faith_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_adaptive }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = tenet_polyamory }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_homosexuality_accepted }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_deviancy_virtuous }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_witchcraft_accepted }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece }
+		change_variable = { name = birth_rate_faith_production_mult add = -0.02 }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_clerical_function_recruitment }
+		change_variable = { name = manpower_faith_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_monogamy }
+		change_variable = { name = public_order_faith_production_mult add = 0.05 }
+		change_variable = { name = birth_rate_faith_production_mult add = 0.03 }
+		change_variable = { name = fervor_faith_production_mult add = 3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_bastardry_none }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_pluralism_pluralistic }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_spiritual_head }
+		change_variable = { name = fervor_faith_production_mult add = 2.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_homosexuality_crime }
+		change_variable = { name = fervor_faith_production_mult add = 3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_adultery_women_accepted }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_pluralism_fundamentalist }
+		change_variable = { name = fervor_faith_production_mult add = 5.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_theocracy_temporal }
+		change_variable = { name = fervor_faith_production_mult add = 2.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_clerical_gender_male_only }
+		change_variable = { name = fervor_faith_production_mult add = 3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_clerical_gender_either }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_deviancy_accepted }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_gender_equal }
+		change_variable = { name = birth_rate_faith_production_mult add = -0.10 }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_adultery_men_accepted }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment }
+		change_variable = { name = fervor_faith_production_mult add = 3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_polygamy }
+		change_variable = { name = public_order_faith_production_mult add = -0.05 }
+		change_variable = { name = birth_rate_faith_production_mult add = -0.03 }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_kinslaying_accepted }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_witchcraft_virtuous }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_gender_male_dominated }
+		change_variable = { name = fervor_faith_production_mult add = 5.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_clerical_succession_spiritual_appointment }
+		change_variable = { name = fervor_faith_production_mult add = 3.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_gender_female_dominated }
+		change_variable = { name = birth_rate_faith_production_mult add = -0.15 }
+		change_variable = { name = fervor_faith_production_mult add = -10.00 }
+	}
+
+	if = {
+		limit = { has_doctrine = doctrine_consanguinity_unrestricted }
+		change_variable = { name = birth_rate_faith_production_mult add = -0.05 }
+		change_variable = { name = fervor_faith_production_mult add = -6.00 }
+	}
+
+}

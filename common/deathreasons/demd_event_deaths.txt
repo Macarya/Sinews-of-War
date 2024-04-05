@@ -1,0 +1,21 @@
+﻿
+death_pit_trap = {
+	icon = "death_natural.dds"
+}
+death_giant_boulder = {
+	icon = "death_natural.dds"
+}
+death_brigand_attack = {
+	icon = "death_murder.dds"
+}
+
+
+death_mudflow_army_saving = {
+	icon = "death_natural.dds"
+}
+death_mudflow_army_escaping = {
+	icon = "death_natural.dds"
+}
+death_mudflow_army_trapped = {
+	icon = "death_natural.dds"
+}

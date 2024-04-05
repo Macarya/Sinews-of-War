@@ -1,0 +1,47 @@
+﻿
+
+demd_player_holds_trade_node = {
+	scope = character
+ 	is_shown = { 
+		any_player = { 
+			any_character_struggle = {
+				prev = var:node_owner 
+			}
+		}
+	}
+}
+
+demd_is_overall_linkage_open_to_trade_gui = {
+	scope = story
+	is_shown = {
+		demd_is_overall_linkage_open_to_trade = yes
+	}
+}
+
+demd_is_county_open_to_trade_gui = {
+	scope = landed_title
+	is_shown = {
+		demd_is_strategic_location_open_to_trade = no
+	}
+}
+
+demd_is_county_owned_by_node_owner_gui = {
+	scope = landed_title
+	is_shown = {
+		var:trade_node.var:node_owner = holder
+	}
+}
+
+demd_is_county_strategic_location_gui = {
+	scope = landed_title
+	is_shown = {
+		has_county_modifier = demd_strategic_location
+	}
+}
+
+demd_is_county_trade_node_capital_gui = {
+	scope = landed_title
+	is_shown = {
+		var:trade_node.var:node_owner.capital_county = this
+	}
+}

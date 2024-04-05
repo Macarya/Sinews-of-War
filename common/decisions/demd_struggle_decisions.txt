@@ -1,0 +1,77 @@
+﻿demd_trade_node_struggle_end_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	
+	ai_check_interval = 0
+
+	desc = demd_trade_node_struggle_end_decision_desc
+	selection_tooltip = demd_trade_node_struggle_end_decision_tooltip
+	major = yes
+	
+	is_shown = {
+		always = no
+	}
+	
+	effect = {
+
+	}
+	
+	ai_potential = {
+		always = no
+	}
+
+	ai_will_do = {
+		base = 10
+	}
+}
+
+demd_trade_node_struggle_seize_control_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	
+	ai_check_interval = 360
+
+	desc = demd_trade_node_struggle_seize_control_decision_desc
+	selection_tooltip = demd_trade_node_struggle_seize_control_decision_tooltip
+	major = yes
+	
+	is_shown = {
+		exists = capital_county
+		NOT = { capital_county.var:trade_node.var:node_owner = this }		
+		any_sub_realm_county = {
+			has_county_modifier = demd_strategic_location
+		}
+		capital_county.var:trade_node = {
+			has_struggle_phase_parameter = demd_trade_node_struggle_can_seize_control_decision
+		}
+	}
+	
+	is_valid = {
+		demd_can_seize_control_by_decision = yes
+	}
+	
+	effect = {
+		save_scope_as = new_owner
+		capital_county.var:trade_node = {
+			save_scope_as = struggle
+		}
+		capital_county.var:trade_node.var:node_owner = {
+			add_opinion = {
+				target = scope:new_owner
+				modifier = demd_seized_trade_node_opinion
+			}
+		}
+		demd_transfer_trade_node_ownership_decision = yes
+	}
+	
+	cost = {	
+		gold = demd_trade_node_seizure_value_char
+		prestige = demd_trade_node_seizure_value_char
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}

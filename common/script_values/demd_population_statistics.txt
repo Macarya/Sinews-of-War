@@ -1,0 +1,109 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_title_farmers = {
+	value = 0
+	every_in_de_jure_hierarchy = {
+		limit = { tier = tier_county }
+		every_county_province = {
+			limit = { has_holding = yes }
+			add = var:food_producers_count
+		}
+	}
+}
+
+demd_title_nobles = {
+	value = 0
+	every_in_de_jure_hierarchy = {
+		limit = { tier = tier_county }
+		every_county_province = {
+			limit = { has_holding = yes }
+			add = var:knight_capacity_producers_count
+		}
+	}
+}
+
+demd_title_artisans = {
+	value = 0
+	every_in_de_jure_hierarchy = {
+		limit = { tier = tier_county }
+		add = var:goods_producers_count
+	}
+}
+
+demd_title_population = {
+	value = 0
+	every_in_de_jure_hierarchy = {
+		limit = { tier = tier_county }
+		add = var:county_population
+	}
+}
+
+demd_title_growth = {
+	value = 0
+	every_in_de_jure_hierarchy = {
+		limit = { tier = tier_county }
+		add = var:internal_growth
+		every_county_province = {
+			limit = { has_holding = yes }
+			add = var:internal_growth
+		}
+	}
+	divide = demd_title_population
+}
+
+demd_title_migration = {
+	value = 0
+	every_in_de_jure_hierarchy = {
+		limit = { tier = tier_county }
+		add = var:migration_growth
+	}
+	divide = demd_title_population
+}
+
+#############
+
+demd_county_stats_farmers = {
+	value = 0
+	every_county_province = {
+		limit = { has_holding = yes }
+		add = var:food_producers_count
+	}
+}
+
+demd_county_stats_nobles = {
+	value = 0
+	every_county_province = {
+		limit = { has_holding = yes }
+		add = var:knight_capacity_producers_count
+	}
+}
+
+demd_county_stats_growth = {
+	value = var:internal_growth
+	every_county_province = {
+		limit = { has_holding = yes }
+		add = var:internal_growth
+	}
+	divide = var:county_population
+}
+
+demd_county_stats_migration = {
+	value = var:migration_growth
+	divide = var:county_population
+}
+
+demd_county_stats_food = {
+	value = var:food_consumed
+	every_county_province = {
+		limit = { has_holding = yes }
+		add = var:food_consumed
+	}
+	divide = {
+		value = var:county_population
+		multiply = food_base_demand
+	}
+}

@@ -1,0 +1,140 @@
+﻿demd_build_city = {
+	if = {
+		limit = { NOT = { has_holding_type = city_holding } }
+		set_holding_type = city_holding
+	}
+	province_owner = {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_barony
+				NOT = { has_government = republic_government }
+			}
+			change_government = republic_government
+		}
+	}
+}
+
+demd_build_church = {
+	if = {
+		limit = { NOT = { has_holding_type = church_holding } }
+		set_holding_type = church_holding
+	}
+	province_owner = {
+		if = {
+			limit = {
+				highest_held_title_tier = tier_barony
+				NOT = { has_government = theocracy_government }
+			}
+			# change_government = theocracy_government
+		}
+	}
+}
+
+demd_build_castle = {
+	if = {
+		limit = { NOT = { has_holding_type = castle_holding } }
+		set_holding_type = castle_holding
+	}
+	province_owner = {
+		if = {
+			limit = { liege = { has_government = clan_government } }
+			if = {
+				limit = {
+					highest_held_title_tier = tier_barony
+					NOT = { has_government = clan_government }
+				}
+				change_government = clan_government
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					highest_held_title_tier = tier_barony
+					NOT = { has_government = feudal_government }
+				}
+				change_government = feudal_government
+			}		
+		}
+	}
+}
+
+demd_build_minor_holding = {
+	if = {
+		limit = {
+			county = {
+				NOT = {
+					any_county_province = {
+						has_building_or_higher = castle_01
+					}
+				}
+			}						
+		}
+		demd_build_castle = yes
+	}
+	else_if = {
+		limit = {
+			county = {
+				NOT = {
+					any_county_province = {
+						has_building_or_higher = temple_01
+					}
+				}
+			}						
+		}
+		demd_build_church = yes
+	}
+	else_if = {
+		limit = {
+			county = {
+				NOT = {
+					any_county_province = {
+						has_building_or_higher = city_01
+					}
+				}
+			}						
+		}
+		demd_build_city = yes		
+	}
+	else_if = {
+		limit = { culture = { has_cultural_parameter = ai_more_likely_to_castle } }
+		demd_build_castle = yes	
+	}
+	else_if = {
+		limit = { culture = { has_cultural_parameter = ai_more_likely_to_city } }
+		demd_build_city = yes	
+	}
+	else_if = {
+		limit = { culture = { has_cultural_parameter = ai_more_likely_to_church } }
+		demd_build_church = yes	
+	}
+	else = {
+		random_list = {
+			1 = {
+				modifier = {
+					county.holder = {  
+						OR = {
+							has_government = feudal_government
+							has_government = clan_government
+						}
+					}
+					add = 10					
+				}
+				demd_build_castle = yes							
+			}
+			1 = {
+				modifier = {
+					county.holder = { has_government = republic_government }
+					add = 10					
+				}
+				demd_build_city = yes
+			}	
+			1 = {
+				modifier = {
+					county.holder = { has_government = theocracy_government }
+					add = 10					
+				}
+				demd_build_church = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,3570 @@
+﻿###############################
+# starter traits
+###############################
+
+# +learning/stewardship -intrigue
+demd_acquire_pensive_modifier = {
+	modifier = {		
+		exists = real_father
+		add = {
+			real_father = {
+				value = pensive_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			mother = {
+				value = pensive_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				add = {
+					value = pensive_stat_average
+					multiply = childhood_trait_guardian_stat_mult
+				}
+			}
+		}		
+	}
+	modifier = {
+		culture = { has_cultural_parameter = pensive_trait_more_common }
+		add = childhood_trait_culture_bonus
+	}
+	modifier = {
+		culture = { has_cultural_parameter = pensive_trait_less_common }
+		add = childhood_trait_culture_malus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			OR = {
+				has_court_type = court_scholarly
+				has_court_type = court_administrative
+			}
+		}
+		add = childhood_trait_court_bonus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			has_court_type = court_intrigue
+		}
+		add = childhood_trait_court_malus
+	}
+}
+
+# +learning/diplomacy -martial
+demd_acquire_curious_modifier = {
+	modifier = {		
+		exists = real_father
+		add = {
+			real_father = {
+				value = curious_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			mother = {
+				value = curious_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				add = {
+					value = curious_stat_average
+					multiply = childhood_trait_guardian_stat_mult
+				}
+			}
+		}		
+	}
+	modifier = {
+		culture = { has_cultural_parameter = curious_trait_more_common }
+		add = childhood_trait_culture_bonus
+	}
+	modifier = {
+		culture = { has_cultural_parameter = curious_trait_less_common }
+		add = childhood_trait_culture_malus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			OR = {
+				has_court_type = court_scholarly
+				has_court_type = court_diplomatic
+			}
+		}
+		add = childhood_trait_court_bonus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			has_court_type = court_warlike
+		}
+		add = childhood_trait_court_malus
+	}
+}
+
+# +intrigue/diplomacy -stewardship
+demd_acquire_charming_modifier = {
+	modifier = {		
+		exists = real_father
+		add = {
+			real_father = {
+				value = charming_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			mother = {
+				value = charming_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				add = {
+					value = charming_stat_average
+					multiply = childhood_trait_guardian_stat_mult
+				}
+			}
+		}		
+	}	
+	modifier = {
+		culture = { has_cultural_parameter = charming_trait_more_common }
+		add = childhood_trait_culture_bonus
+	}
+	modifier = {
+		culture = { has_cultural_parameter = charming_trait_less_common }
+		add = childhood_trait_culture_malus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			OR = {
+				has_court_type = court_intrigue
+				has_court_type = court_diplomatic
+			}
+		}
+		add = childhood_trait_court_bonus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			has_court_type = court_administrative
+		}
+		add = childhood_trait_court_malus
+	}
+}
+
+# +intrigue/diplomacy -stewardship
+demd_acquire_bossy_modifier = {
+	modifier = {		
+		exists = real_father
+		add = {
+			real_father = {
+				value = bossy_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			mother = {
+				value = bossy_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				add = {
+					value = bossy_stat_average
+					multiply = childhood_trait_guardian_stat_mult
+				}
+			}
+		}		
+	}
+	modifier = {
+		culture = { has_cultural_parameter = bossy_trait_more_common }
+		add = childhood_trait_culture_bonus
+	}
+	modifier = {
+		culture = { has_cultural_parameter = bossy_trait_less_common }
+		add = childhood_trait_culture_malus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			OR = {
+				has_court_type = court_warlike
+				has_court_type = court_administrative
+			}
+		}
+		add = childhood_trait_court_bonus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			has_court_type = court_diplomatic
+		}
+		add = childhood_trait_court_malus
+	}
+}
+
+# +intrigue/diplomacy -stewardship
+demd_acquire_rowdy_modifier = {
+	modifier = {		
+		exists = real_father
+		add = {
+			real_father = {
+				value = rowdy_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			mother = {
+				value = rowdy_stat_average
+				multiply = childhood_trait_parent_stat_mult
+			}
+		}
+	}
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				add = {
+					value = rowdy_stat_average
+					multiply = childhood_trait_guardian_stat_mult
+				}
+			}
+		}		
+	}
+	modifier = {
+		culture = { has_cultural_parameter = rowdy_trait_more_common }
+		add = childhood_trait_culture_bonus
+	}
+	modifier = {
+		culture = { has_cultural_parameter = rowdy_trait_less_common }
+		add = childhood_trait_culture_malus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			OR = {
+				has_court_type = court_warlike
+				has_court_type = court_intrigue
+			}
+		}
+		add = childhood_trait_court_bonus
+	}
+	modifier = {
+		exists = location.province_owner
+		location.province_owner = {
+			has_royal_court = yes
+			has_court_type = court_scholarly
+		}
+		add = childhood_trait_court_malus
+	}
+}
+
+###############################
+# vengeful / forgiving
+###############################
+
+demd_acquire_vengeful_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = vengeful }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = forgiving }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = vengeful }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = forgiving }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = vengeful }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = forgiving }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = vengeful }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = vengeful }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = forgiving }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = forgiving }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = vengeful_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = vengeful_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_forgiving_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = forgiving }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = vengeful }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = forgiving }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = vengeful }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = forgiving }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = vengeful }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = forgiving }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = forgiving }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = vengeful }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = vengeful }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = forgiving_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = forgiving_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}	
+}
+
+###############################
+# brave / craven
+###############################
+
+demd_acquire_brave_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = brave }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = craven }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = brave }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = craven }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = brave }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = craven }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = brave }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = brave }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = craven }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = craven }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = brave_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = brave_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = positive_trait_vigor_bonus
+	}
+}
+
+demd_acquire_craven_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = craven }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = brave }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = craven }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = brave }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = craven }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = brave }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = craven }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = craven }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = brave }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = brave }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = craven_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = craven_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = negative_trait_vigor_bonus
+	}
+}
+
+###############################
+# wrathful / calm
+###############################
+
+demd_acquire_wrathful_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = wrathful }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = calm }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = wrathful }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = calm }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = wrathful }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = calm }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = wrathful }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = wrathful }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = calm }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = calm }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = wrathful_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = wrathful_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_calm_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = calm }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = wrathful }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = calm }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = wrathful }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = calm }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = wrathful }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = calm }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = calm }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = wrathful }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = wrathful }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = calm_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = calm_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+###############################
+# lustful / chaste
+###############################
+
+demd_acquire_lustful_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = lustful }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = chaste }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = lustful }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = chaste }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = lustful }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = chaste }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = lustful }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = lustful }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = chaste }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = chaste }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+}
+
+demd_acquire_chaste_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = chaste }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = lustful }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = chaste }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = lustful }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = chaste }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = lustful }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = chaste }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = chaste }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = lustful }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = lustful }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+}
+
+###############################
+# ambitious / content
+###############################
+
+demd_acquire_ambitious_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = ambitious }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = content }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = ambitious }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = content }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = ambitious }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = content }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = ambitious }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = ambitious }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = content }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = content }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = ambitious_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = ambitious_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = positive_trait_vigor_bonus
+	}
+}
+
+demd_acquire_content_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = content }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = ambitious }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = content }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = ambitious }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = content }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = ambitious }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = content }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = content }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = ambitious }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = ambitious }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = content_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = content_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = negative_trait_vigor_bonus
+	}
+}
+
+###############################
+# diligent / lazy
+###############################
+
+demd_acquire_diligent_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = diligent }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = lazy }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = diligent }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = lazy }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = diligent }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = lazy }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = diligent }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = diligent }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = lazy }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = lazy }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = diligent_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = diligent_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = positive_trait_vigor_bonus
+	}
+}
+
+demd_acquire_lazy_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = lazy }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = diligent }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = lazy }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = diligent }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = lazy }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = diligent }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = lazy }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = lazy }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = diligent }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = diligent }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = lazy_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = lazy_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = negative_trait_vigor_bonus
+	}
+}
+
+###############################
+# stubborn / fickle
+###############################
+
+demd_acquire_stubborn_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = stubborn }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = fickle }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = stubborn }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = fickle }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = stubborn }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = fickle }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = stubborn }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = stubborn }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = fickle }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = fickle }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = stubborn_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = stubborn_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_fickle_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = fickle }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = stubborn }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = fickle }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = stubborn }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = fickle }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = stubborn }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = fickle }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = fickle }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = stubborn }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = stubborn }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = fickle_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = fickle_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+###############################
+# generous / greedy
+###############################
+
+demd_acquire_generous_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = generous }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = greedy }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = generous }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = greedy }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = generous }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = greedy }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = generous }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = generous }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = greedy }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = greedy }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = generous_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = generous_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = positive_trait_vigor_bonus
+	}
+}
+
+demd_acquire_greedy_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = greedy }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = generous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = greedy }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = generous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = greedy }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = generous }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = greedy }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = greedy }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = generous }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = generous }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = greedy_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = greedy_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = negative_trait_vigor_bonus
+	}
+}
+
+###############################
+# gregarious / shy
+###############################
+
+demd_acquire_gregarious_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = gregarious }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = shy }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = gregarious }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = shy }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = gregarious }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = shy }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = gregarious }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = gregarious }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = shy }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = shy }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = gregarious_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = gregarious_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_shy_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = shy }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = gregarious }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = shy }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = gregarious }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = shy }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = gregarious }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = shy }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = shy }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = gregarious }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = gregarious }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = shy_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = shy_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+###############################
+# honest / deceitful
+###############################
+
+demd_acquire_honest_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = honest }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = deceitful }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = honest }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = deceitful }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = honest }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = deceitful }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = honest }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = honest }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = deceitful }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = deceitful }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = honest_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = honest_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = positive_trait_vigor_bonus
+	}
+}
+
+demd_acquire_deceitful_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = deceitful }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = honest }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = deceitful }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = honest }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = deceitful }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = honest }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = deceitful }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = deceitful }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = honest }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = honest }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = deceitful_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = deceitful_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = negative_trait_vigor_bonus
+	}
+}
+
+###############################
+# humble / arrogant
+###############################
+
+demd_acquire_humble_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = humble }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = arrogant }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = humble }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = arrogant }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = humble }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = arrogant }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = humble }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = humble }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = arrogant }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = arrogant }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = humble_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = humble_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_arrogant_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = arrogant }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = humble }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = arrogant }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = humble }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = arrogant }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = humble }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = arrogant }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = arrogant }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = humble }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = humble }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = arrogant_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = arrogant_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+###############################
+# just / arbitrary
+###############################
+
+demd_acquire_just_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = just }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = arbitrary }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = just }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = arbitrary }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = just }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = arbitrary }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = just }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = just }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = arbitrary }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = arbitrary }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = just_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = just_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = positive_trait_vigor_bonus
+	}
+}
+
+demd_acquire_arbitrary_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = arbitrary }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = just }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = arbitrary }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = just }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = arbitrary }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = just }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = arbitrary }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = arbitrary }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = just }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = just }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = arbitrary_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = arbitrary_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = negative_trait_vigor_bonus
+	}
+}
+
+###############################
+# patient / impatient
+###############################
+
+demd_acquire_patient_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = patient }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = impatient }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = patient }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = impatient }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = patient }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = impatient }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = patient }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = patient }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = impatient }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = impatient }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = patient_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = patient_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_impatient_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = impatient }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = patient }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = impatient }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = patient }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = impatient }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = patient }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = impatient }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = impatient }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = patient }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = patient }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = impatient_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = impatient_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+###############################
+# temperate / gluttonous
+###############################
+
+demd_acquire_temperate_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = temperate }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = gluttonous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = temperate }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = gluttonous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = temperate }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = gluttonous }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = temperate }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = temperate }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = gluttonous }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = gluttonous }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = temperate_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = temperate_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = positive_trait_vigor_bonus
+	}
+}
+
+demd_acquire_gluttonous_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = gluttonous }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = temperate }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = gluttonous }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = temperate }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = gluttonous }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = temperate }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = gluttonous }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = gluttonous }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = temperate }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = temperate }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = gluttonous_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = gluttonous_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = negative_trait_vigor_bonus
+	}
+}
+
+###############################
+# trusting / paranoid
+###############################
+
+demd_acquire_trusting_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = trusting }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = paranoid }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = trusting }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = paranoid }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = trusting }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = paranoid }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = trusting }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = trusting }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = paranoid }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = paranoid }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = trusting_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = trusting_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_paranoid_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = paranoid }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = trusting }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = paranoid }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = trusting }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = paranoid }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = trusting }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = paranoid }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = paranoid }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = trusting }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = trusting }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = paranoid_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = paranoid_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+###############################
+# zealous / cynical
+###############################
+
+demd_acquire_zealous_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = zealous }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = cynical }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = zealous }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = cynical }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = zealous }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = cynical }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = zealous }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = zealous }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = cynical }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = cynical }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = zealous_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = zealous_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = positive_trait_vigor_bonus
+	}
+}
+
+demd_acquire_cynical_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = cynical }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = zealous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = cynical }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = zealous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = cynical }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = zealous }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = cynical }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = cynical }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = zealous }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = zealous }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = cynical_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = cynical_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+	modifier = {
+		add = negative_trait_vigor_bonus
+	}
+}
+
+###############################
+# compassionate / callous / sadistic
+###############################
+
+demd_acquire_compassionate_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = compassionate }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = callous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = sadistic }
+					add = {
+						value = parental_opposite_trait_inheritance_multiplier
+						multiply = 2
+					}
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = compassionate }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = callous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = sadistic }
+					add = {
+						value = parental_opposite_trait_inheritance_multiplier
+						multiply = 2
+					}
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = compassionate }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = callous }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = sadistic }
+				add = {
+					value = guardian_opposite_trait_inheritance_multiplier
+					multiply = 2
+				}
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = compassionate }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = compassionate }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = callous }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = callous }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = sadistic }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = sadistic }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = compassionate_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = compassionate_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_callous_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = callous }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = compassionate }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = sadistic }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = callous }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = compassionate }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = sadistic }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = callous }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = compassionate }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = sadistic }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = callous }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = callous }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = compassionate }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = compassionate }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = sadistic }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = sadistic }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = callous_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = callous_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}
+
+demd_acquire_sadistic_modifier = {
+	# Genetics
+	modifier = {		
+		exists = real_father	
+		add = {
+			value = 0
+			real_father = {
+				if = {
+					limit = { has_trait = sadistic }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = callous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = compassionate }
+					add = {
+						value = parental_opposite_trait_inheritance_multiplier
+						multiply = 2
+					}
+				}
+			}		
+		}
+	}
+	modifier = {		
+		exists = mother		
+		add = {
+			value = 0
+			mother = {
+				if = {
+					limit = { has_trait = sadistic }
+					add = parental_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = callous }
+					add = parental_opposite_trait_inheritance_multiplier
+				}
+				else_if = {
+					limit = { has_trait = compassionate }
+					add = {
+						value = parental_opposite_trait_inheritance_multiplier
+						multiply = 2
+					}
+				}
+			}		
+		}
+	}
+	
+	# Guardians
+	modifier = {
+		add = {
+			value = 0
+			every_relation = {
+				type = guardian
+				limit = { has_trait = sadistic }
+				add = guardian_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = callous }
+				add = guardian_opposite_trait_inheritance_multiplier
+			}
+			every_relation = {
+				type = guardian
+				limit = { has_trait = compassionate }
+				add = {
+					value = guardian_opposite_trait_inheritance_multiplier
+					multiply = 2
+				}
+			}
+		}		
+	}
+	
+	# Faith
+	modifier = {		
+		add = {
+			value = 0
+			faith = {
+				if = {
+					limit = { trait_is_virtue = sadistic }
+					add = faith_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = sadistic }
+					add = faith_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = callous }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = callous }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+				
+				if = {
+					limit = { trait_is_virtue = compassionate }
+					add = faith_opposite_trait_virtue_inheritance_multiplier
+				}
+				else_if = {
+					limit = { trait_is_sin = compassionate }
+					add = faith_opposite_trait_sin_inheritance_multiplier
+				}
+			}
+		}
+	}
+	
+	modifier = {
+	 	culture = { has_cultural_parameter = sadistic_trait_more_common }
+		add = culture_trait_inheritance_multiplier
+	}
+	modifier = {
+	 	culture = { has_cultural_parameter = sadistic_trait_less_common }
+		add = culture_opposite_trait_inheritance_multiplier
+	}
+}

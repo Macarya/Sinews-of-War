@@ -1,0 +1,75 @@
+﻿###############################
+# Fire
+###############################
+
+disaster_fire_01 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/disaster_fire_01.PNG"
+		environment = "environment_event_feast"
+		ambience = "file:/music/sow_sound_tracks/fire_event_1.mp3"
+	}
+}
+
+###############################
+# Flood
+###############################
+
+disaster_flood_01 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/disaster_flood_01.png"
+		environment = "environment_event_corridor"
+		ambience = "file:/music/sow_sound_tracks/cue_flood_event_1.mp3"
+	}
+}
+
+disaster_flood_02 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/disaster_flood_02.png"
+		environment = "environment_event_corridor"
+		ambience = "file:/music/sow_sound_tracks/cue_flood_event_1.mp3"
+	}
+}
+
+disaster_flood_03 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/disaster_flood_03.png"
+		environment = "environment_event_corridor"
+		ambience = "file:/music/sow_sound_tracks/cue_flood_event_1.mp3"
+	}
+}
+
+disaster_mudflow_01 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/disaster_mudflow_01.png"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_day"
+	}
+}
+
+disaster_mudflow_02 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/disaster_mudflow_02.png"
+		environment = "environment_event_forest"
+		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_day"
+	}
+}
+
+disaster_mudflow_03 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/disaster_mudflow_03.png"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_night"
+	}
+}
+
+###############################
+# Drought
+###############################
+
+disaster_drought_01 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/disaster_drought_01.png"
+		environment = "environment_event_desert"
+		ambience = "file:/music/sow_sound_tracks/cue_drought_event_1.mp3"
+	}
+}

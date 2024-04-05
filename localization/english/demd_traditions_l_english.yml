@@ -1,0 +1,196 @@
+﻿l_english:
+
+unlock_maa_mangonel:0 "Can recruit [GetMaA('mangonel').GetName] as [men_at_arms|E]"
+unlock_maa_trebuchet:0 "Can recruit [GetMaA('trebuchet').GetName] as [men_at_arms|E]"
+unlock_maa_onager:0 "Can recruit [GetMaA('onager').GetName] as [men_at_arms|E]"
+unlock_maa_armored_horsemen:0 "Can recruit [GetMaA('armored_horsemen').GetName] as [men_at_arms|E]"
+unlock_maa_crossbowmen:0 "Can recruit [GetMaA('crossbowmen').GetName] as [men_at_arms|E]"
+unlock_maa_armored_footmen:0 "Can recruit [GetMaA('armored_footmen').GetName] as [men_at_arms|E]"
+
+favors_skirmishers:0 "Favors [skirmishers|E]"
+favors_archers:0 "Favors [archers|E]"
+favors_pikemen:0 "Favors [spearmen|E]"
+favors_light_cavalry:0 "Favors [light_cavalry|E]"
+favors_heavy_cavalry:0 "Favors [heavy_cavalry|E]"
+favors_archer_cavalry:0 "Favors [archer_cavalry|E]"
+favors_camel_cavalry:0 "Favors [camel_cavalry|E]"
+favors_elephant_cavalry:0 "Favors [elephant_cavalry|E]"
+favors_heavy_infantry:0 "Favors [heavy_infantry|E]"
+
+tradition_demd_dummy_name:0 ""
+tradition_demd_dummy_desc:0 ""
+
+tradition_warrior_bishops_name:0 "Warrior Bishops"
+tradition_warrior_bishops_desc:0 "The majority of bishops of this culture are born into aristocratic or knightly kindreds which pride themselves upon their proficiency in warfare. They maintain large armed retinues consisting of ministeriales sustained by hereditary fiefs and bound by oaths of fealty, and readily commit them to the military purposes of their feudal overlords."
+culture_parameter_theocratic_vassals_pay_more:0 "Theocratic [vassals|E] above the rank of [baron|E] provide more [taxes|E] and [levies|E]"
+
+tradition_ottonian_reforms_name:0 "Ottonian Reforms"
+tradition_ottonian_reforms_desc:0 "Urbes are not simply to protect ourselves and our food and fodder from invaders. In war, they are enclosures from which field operations can be conducted. In peace, they are places to assemble for training and to accustom ourselves to regulation and discipline."
+
+culture_parameter_unlock_maa_armati_milites:0 "Can recruit [GetMaA('armati_milites').GetName] as [men_at_arms|E]"
+culture_parameter_unlock_maa_agrarii_milites:0 "Can recruit [GetMaA('agrarii_milites').GetName] as [men_at_arms|E]"
+culture_parameter_next_level_marches:0 "The #V $building_type_march_01$#! line of [buildings|E] can be constructed one [era|E] early"
+culture_parameter_march_building_bonuses:0 "The #V $building_type_march_01$#! line of [buildings|E] has additional bonuses"
+
+culture_parameter_unlock_maa_psiloi:0 "Can recruit [GetMaA('psiloi').GetName] as [men_at_arms|E]"
+culture_parameter_unlock_maa_skoutatoi:0 "Can recruit [GetMaA('skoutatoi').GetName] as [men_at_arms|E]"
+
+culture_parameter_ai_more_likely_to_church:0 "[rulers|E] of this [culture|E] are more likely to construct [temple|E] [holdings|E]"
+
+culture_parameter_harder_to_convert_character_culture:0 "[characters|E] are less likely to accept culture conversion"
+culture_parameter_easier_to_convert_character_culture:0 "[characters|E] are more likely to accept culture conversion"
+
+culture_parameter_claimant_factions_more_common:0 "[claimant_factions|E] are more common"
+
+culture_parameter_prevent_intracultural_war_vigor_loss:0 "Intracultural wars do not result in a loss of [vigor|E]"
+doctrine_parameter_prevent_intracultural_war_vigor_loss:0 "Intracultural wars do not result in a loss of [vigor|E] if this is the dominant [faith|E]"
+
+not_communal_spiritual_or_stoic_desc:1 "The [culture|E] does not have the $ethos_communal_name$, $ethos_spiritual_name$ or $ethos_stoic_name$ [ethos|E]"
+not_communal_bureaucratic_or_stoic_desc: "The [culture|E] does not have the $ethos_communal_name$, $ethos_bureaucratic_name$ or $ethos_stoic_name$ [ethos|E]"
+culture_head_heavy_inf_and_cavalry_desc:0 "You do not have #V 500#! [heavy_infantry|E] and #V 200#! [heavy_cavalry|E]"
+
+armati_milites:0 "Armati Milites"
+armati_milites_desc:0 "Chain mail protected Ottonian heavy cavalry from the stings of hostile arrows, allowing them to charge heavy warhorses headlong into close combat with the enemy. After making contact, sturdy iron weapons enabled these formidable centaurs to cut their more lightly armed opponents to pieces."
+agrarii_milites:0 "Agrarii Milites"
+agrarii_milites_desc:0 "Foot soldiers who reside in the countryside surrounding an urbs and assemble there periodically for military exercises that prepared them to participate in expeditions."
+skoutatoi:0 "Skoutatoi"
+psiloi:0 "Psiloi"
+
+culture_parameter_unlock_maa_landsknecht:0 "Can unlock the $innovation_zweihanders$ [innovation|E] and [GetMaA('landsknecht').GetName] [men_at_arms|E] in the $culture_era_late_medieval$ [era]"
+
+
+
+
+
+
+
+ethos_egalitarian_name:0 "Cosmopolitan"
+
+################################
+# Court Type Unlocks
+################################
+
+culture_parameter_unlock_administrative_court:0 "Unlocks the Administrative [royal_court|E]"
+culture_parameter_unlock_intrigue_court:0 "Unlocks the Intrigue [royal_court|E]"
+culture_parameter_unlock_warlike_court:0 "Unlocks the Warlike [royal_court|E]"
+culture_parameter_unlock_scholarly_court:0 "Unlocks the Scholarly [royal_court|E]"
+culture_parameter_unlock_diplomatic_court:0 "Unlocks the Diplomatic [royal_court|E]"
+
+################################
+# Education Outcomes
+################################
+
+culture_parameter_diplomacy_education_better_outcomes:0 "[children|E] tend to do better in the [diplomacy|E] [education|E]"
+culture_parameter_martial_education_better_outcomes:0 "[children|E] tend to do better in the [martial|E] [education|E]"
+culture_parameter_stewardship_education_better_outcomes:0 "[children|E] tend to do better in the [stewardship|E] [education|E]"
+culture_parameter_learning_education_better_outcomes:0 "[children|E] tend to do better in the [learning|E] [education|E]"
+culture_parameter_intrigue_education_better_outcomes:0 "[children|E] tend to do better in the [intrigue|E] [education|E]"
+culture_parameter_diplomacy_education_worse_outcomes:0 "[children|E] tend to do worse in the [diplomacy|E] [education|E]"
+culture_parameter_martial_education_worse_outcomes:0 "[children|E] tend to do worse in the [martial|E] [education|E]"
+culture_parameter_stewardship_education_worse_outcomes:0 "[children|E] tend to do worse in the [stewardship|E] [education|E]"
+culture_parameter_learning_education_worse_outcomes:0 "[children|E] tend to do worse in the [learning|E] [education|E]"
+culture_parameter_intrigue_education_worse_outcomes:0 "[children|E] tend to do worse in the [intrigue|E] [education|E]"
+
+################################
+# Trait Likelihoods
+################################
+
+culture_parameter_rowdy_trait_more_common:0 "[children|E] are more likely to get the [GetTrait('rowdy').GetName( GetNullCharacter )] [trait|E]"
+culture_parameter_pensive_trait_more_common:0 "[children|E] are more likely to get the [GetTrait('pensive').GetName( GetNullCharacter )] [trait|E]"
+culture_parameter_bossy_trait_more_common:0 "[children|E] are more likely to get the [GetTrait('bossy').GetName( GetNullCharacter )] [trait|E]"
+culture_parameter_charming_trait_more_common:0 "[children|E] are more likely to get the [GetTrait('charming').GetName( GetNullCharacter )] [trait|E]"
+culture_parameter_curious_trait_more_common:0 "[children|E] are more likely to get the [GetTrait('curious').GetName( GetNullCharacter )] [trait|E]"
+
+culture_parameter_rowdy_trait_less_common:0 "[children|E] are less likely to get the [GetTrait('rowdy').GetName( GetNullCharacter )] [trait|E]"
+culture_parameter_pensive_trait_less_common:0 "[children|E] are less likely to get the [GetTrait('pensive').GetName( GetNullCharacter )] [trait|E]"
+culture_parameter_bossy_trait_less_common:0 "[children|E] are less likely to get the [GetTrait('bossy').GetName( GetNullCharacter )] [trait|E]"
+culture_parameter_charming_trait_less_common:0 "[children|E] are less likely to get the [GetTrait('charming').GetName( GetNullCharacter )] [trait|E]"
+culture_parameter_curious_trait_less_common:0 "[children|E] are less likely to get the [GetTrait('curious').GetName( GetNullCharacter )] [trait|E]"
+
+culture_parameter_brave_trait_more_common:0 "The [GetTrait('brave').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_brave_trait_less_common:0 "The [GetTrait('brave').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_craven_trait_more_common:0 "The [GetTrait('craven').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_craven_trait_less_common:0 "The [GetTrait('craven').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_calm_trait_more_common:0 "The [GetTrait('calm').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_calm_trait_less_common:0 "The [GetTrait('calm').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_wrathful_trait_more_common:0 "The [GetTrait('wrathful').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_wrathful_trait_less_common:0 "The [GetTrait('wrathful').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_chaste_trait_more_common:0 "The [GetTrait('chaste').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_chaste_trait_less_common:0 "The [GetTrait('chaste').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_lustful_trait_more_common:0 "The [GetTrait('lustful').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_lustful_trait_less_common:0 "The [GetTrait('lustful').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_content_trait_more_common:0 "The [GetTrait('content').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_content_trait_less_common:0 "The [GetTrait('content').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_ambitious_trait_more_common:0 "The [GetTrait('ambitious').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_ambitious_trait_less_common:0 "The [GetTrait('ambitious').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_diligent_trait_more_common:0 "The [GetTrait('diligent').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_diligent_trait_less_common:0 "The [GetTrait('diligent').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_lazy_trait_more_common:0 "The [GetTrait('lazy').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_lazy_trait_less_common:0 "The [GetTrait('lazy').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_fickle_trait_more_common:0 "The [GetTrait('fickle').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_fickle_trait_less_common:0 "The [GetTrait('fickle').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_stubborn_trait_more_common:0 "The [GetTrait('stubborn').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_stubborn_trait_less_common:0 "The [GetTrait('stubborn').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_forgiving_trait_more_common:0 "The [GetTrait('forgiving').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_forgiving_trait_less_common:0 "The [GetTrait('forgiving').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_vengeful_trait_more_common:0 "The [GetTrait('vengeful').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_vengeful_trait_less_common:0 "The [GetTrait('vengeful').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_generous_trait_more_common:0 "The [GetTrait('generous').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_generous_trait_less_common:0 "The [GetTrait('generous').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_greedy_trait_more_common:0 "The [GetTrait('greedy').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_greedy_trait_less_common:0 "The [GetTrait('greedy').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_gregarious_trait_more_common:0 "The [GetTrait('gregarious').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_gregarious_trait_less_common:0 "The [GetTrait('gregarious').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_shy_trait_more_common:0 "The [GetTrait('shy').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_shy_trait_less_common:0 "The [GetTrait('shy').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_honest_trait_more_common:0 "The [GetTrait('honest').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_honest_trait_less_common:0 "The [GetTrait('honest').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_deceitful_trait_more_common:0 "The [GetTrait('deceitful').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_deceitful_trait_less_common:0 "The [GetTrait('deceitful').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_humble_trait_more_common:0 "The [GetTrait('humble').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_humble_trait_less_common:0 "The [GetTrait('humble').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_arrogant_trait_more_common:0 "The [GetTrait('arrogant').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_arrogant_trait_less_common:0 "The [GetTrait('arrogant').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_just_trait_more_common:0 "The [GetTrait('just').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_just_trait_less_common:0 "The [GetTrait('just').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_arbitrary_trait_more_common:0 "The [GetTrait('arbitrary').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_arbitrary_trait_less_common:0 "The [GetTrait('arbitrary').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_patient_trait_more_common:0 "The [GetTrait('patient').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_patient_trait_less_common:0 "The [GetTrait('patient').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_impatient_trait_more_common:0 "The [GetTrait('impatient').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_impatient_trait_less_common:0 "The [GetTrait('impatient').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_temperate_trait_more_common:0 "The [GetTrait('temperate').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_temperate_trait_less_common:0 "The [GetTrait('temperate').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_gluttonous_trait_more_common:0 "The [GetTrait('gluttonous').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_gluttonous_trait_less_common:0 "The [GetTrait('gluttonous').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_trusting_trait_more_common:0 "The [GetTrait('trusting').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_trusting_trait_less_common:0 "The [GetTrait('trusting').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_paranoid_trait_more_common:0 "The [GetTrait('paranoid').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_paranoid_trait_less_common:0 "The [GetTrait('paranoid').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_zealous_trait_more_common:0 "The [GetTrait('zealous').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_zealous_trait_less_common:0 "The [GetTrait('zealous').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_cynical_trait_more_common:0 "The [GetTrait('cynical').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_cynical_trait_less_common:0 "The [GetTrait('cynical').GetName( GetNullCharacter )] [trait|E] is less common"
+
+culture_parameter_compassionate_trait_more_common:0 "The [GetTrait('compassionate').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_compassionate_trait_less_common:0 "The [GetTrait('compassionate').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_callous_trait_more_common:0 "The [GetTrait('callous').GetName( GetNullCharacter )] [trait|E] is more common"
+culture_parameter_callous_trait_less_common:0 "The [GetTrait('callous').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_sadistic_trait_less_common:0 "The [GetTrait('sadistic').GetName( GetNullCharacter )] [trait|E] is less common"
+culture_parameter_sadistic_trait_more_common:0 "The [GetTrait('sadistic').GetName( GetNullCharacter )] [trait|E] is more common"
+

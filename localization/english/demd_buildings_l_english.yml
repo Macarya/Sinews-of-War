@@ -1,0 +1,44 @@
+﻿l_english:
+
+building_supertype_episcopal_cities: "Episcopal City Fortifications"
+
+building_type_demd_walls_of_regensburg_01:0 "$building_supertype_episcopal_cities$"
+building_demd_walls_of_regensburg_01:0 "Walls of Regensburg"
+building_demd_walls_of_regensburg_01_desc:0 "The episcopal fortress city of Regensburg was protected by a circuit wall, approximately 2,700 meters in length, and a moat guarded the city on three sides, while the Danube protected 900 meters of river frontage. Altogether this fortress, enclosing approximately 800,000 square meters, was able to shelter a large portion of the surrounding population, who in turn assisted in its defense."
+
+building_type_demd_walls_of_eichstatt_01:0 "$building_supertype_episcopal_cities$"
+building_demd_walls_of_eichstatt_01:0 "Walls of Eichstatt"
+building_demd_walls_of_eichstatt_01_desc:0 "The episcopal fortress city of Eichstätt, strategically situated on the Altmühl River, was granted permission by Louis the Child granted to raise extensive fortifications around the urban core. Another fortification on the Michelsberg promontory 15 kilometers down river near Kipfenberg was erected to shelter forces capable of making sorties against an army besieging Eichstätt and block traffic moving up the Altmühl. A final impressive fortress on the rugged Frauenberg near Kehlheim where the Altmühl meets the Danube."
+
+building_type_demd_walls_of_freising_01:0 "$building_supertype_episcopal_cities$"
+building_demd_walls_of_freising_01:0 "Walls of Freising"
+building_demd_walls_of_freising_01_desc:0 "The episcopal fortress city of Freising, which the Hungarians had been unable to take in 910, towered above the Erdingermoos and the wetlands near the confluence of the Amper with the Isar."
+
+building_type_demd_walls_of_passau_01:0 "$building_supertype_episcopal_cities$"
+building_demd_walls_of_passau_01:0 "Walls of Passau"
+building_demd_walls_of_passau_01_desc:0 "The episcopal fortress city of Passau enjoyed a formidable defensive position at the confluence of the Danube, Inn, and Ilz rivers. The city is protected on three sides by water, and additional fortifications likely existed across the Danube to the north where Veste Oberhaus was later built in the 13th century."
+
+building_type_demd_walls_of_salzburg_01:0 "$building_supertype_episcopal_cities$"
+building_demd_walls_of_salzburg_01:0 "Walls of Salzburg"
+building_demd_walls_of_salzburg_01_desc:0 "By the tenth century stout walls protected the episcopal city of Salzburg. A second line of defense was provided by the Festungsberg, towering 120 m over the city center below."
+
+building_type_demd_walls_of_augsburg_01:0 "$building_supertype_episcopal_cities$"
+building_demd_walls_of_augsburg_01:0 "Walls of Augsburg"
+building_demd_walls_of_augsburg_01_desc:0 "When the Magyars besieged the city prior to the Battle of Lechfeld in 955, Bishop Ulrich led his milites out of the fortress to engage the enemy in hand-to-hand combat. Perched on his war-horse, but bearing no weapons and wearing only a stola for protection against the missiles that were flying all around him, Bishop Ulrich directed the fierce fighting that ensued in front of the gate. Finally the leader of the Hungarian band fell mortally wounded, causing his followers to flee to their camp."
+
+building_type_demd_ennsburg_01:0 "Ennsburg"
+building_demd_ennsburg_01:0 "Ennsburg"
+building_demd_ennsburg_01_desc:0 "Following the first Hungarian raids into Bavaria, a fortress at an Enns crossing near the ancient town of Lorch was raised in the early 10th century to impede Hungarian ingress and egress to Bavaria."
+
+building_type_demd_schlossberg_01:0 "Schloßberg"
+building_demd_schlossberg_01:0 "Schloßberg"
+building_demd_schlossberg_01_desc:0 "Schloßberg Hill towers 123 meters over the city of Graz below. In the 12th century, a castle was built on the Schloßberg, which also gave the city of Graz its name via #weak gradec#!, the Slovenian term for small castle."
+
+building_type_demd_walls_of_vienna_01:0 "Walls of Vienna"
+building_type_demd_walls_of_vienna_01_desc:0 "$building_demd_walls_of_vienna_01_desc$"
+building_demd_walls_of_vienna_01:0 "Walls of Vienna"
+building_demd_walls_of_vienna_01_desc:0 "Vienna's first wall, the Burgmauer, were built on the foundations of the walls of the Roman settlement. A second wall enclosing a much larger area was financed by Duke Leopold of Austria’s share of the enormous ransom that Richard the Lionheart paid to the Holy Roman Emperor for his release."
+
+building_demd_type_nuremberg_castle_01:0 "Nuremberg Castle"
+building_demd_nuremberg_castle_01:0 "Nuremberg Castle"
+building_demd_nuremberg_castle_01_desc:0 "Considered to be one of Europe's most formidable medieval fortifications, it represented the power and importance of the Holy Roman Empire and the outstanding role of the Imperial City of Nuremberg. The first castle was built by the Salian kings in the 11th century, and it was expanded by the Hohenstaufen emperors."

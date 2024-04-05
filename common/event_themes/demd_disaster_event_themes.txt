@@ -1,0 +1,52 @@
+﻿ ### Use @generic_event_theme_sound for new themes.
+ ### Please notify audio dept. if new themes occur.
+
+ @generic_event_theme_sound = "event:/SFX/Events/Themes/sfx_event_theme_type_generic"
+ 
+disaster_flood = {
+	icon = {
+		reference = "gfx/interface/icons/events/flood_event_icon_1.dds"
+	}
+	sound = {
+		reference = @generic_event_theme_sound
+	}
+	background = {
+		reference = disaster_flood_01
+	}
+}
+
+disaster_fire = {
+	icon = {
+		reference = "gfx/interface/icons/events/flood_event_icon_1.dds"
+	}
+	sound = {
+		reference = @generic_event_theme_sound
+	}
+	background = {
+		reference = disaster_fire_01
+	}
+}
+
+disaster_siege = {
+	icon = {
+		reference = "gfx/interface/icons/event_types/type_war.dds"
+	}
+	sound = {
+		reference = "event:/SFX/Events/Themes/sfx_event_theme_type_war"
+	}
+	background = {
+		reference = disaster_fire_01
+	}
+}
+
+disaster_drought = {
+	icon = {
+		reference = "gfx/interface/icons/events/drought_event_icon_1.dds"
+	}
+	sound = {
+		reference = @generic_event_theme_sound
+	}
+	background = {
+		reference = disaster_drought_01
+	}
+}

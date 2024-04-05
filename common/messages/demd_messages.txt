@@ -1,0 +1,42 @@
+﻿### Toast SFX
+@default_toast_soundeffect = "event:/SFX/UI/Notifications/Toasts/sfx_ui_notification_toast_generic"
+@toast_soundeffect_neutral = "event:/SFX/UI/Notifications/Toasts/sfx_ui_notifications_toast_neutral"
+@toast_soundeffect_good = "event:/SFX/UI/Notifications/Toasts/sfx_ui_notifications_toast_positive"
+@toast_soundeffect_bad = "event:/SFX/UI/Notifications/Toasts/sfx_ui_notifications_toast_negative"
+
+
+### Message SFX
+@default_msg_soundeffect = "event:/SFX/UI/Notifications/Messages/sfx_ui_message_theme_neutral"
+@msg_neutral_soundeffect = "event:/SFX/UI/Notifications/Messages/sfx_ui_message_theme_neutral"
+@msg_good_soundeffect = "event:/SFX/UI/Notifications/Messages/sfx_ui_message_theme_positive"
+@msg_bad_soundeffect = "event:/SFX/UI/Notifications/Messages/sfx_ui_message_theme_negative"
+
+### Descriptions
+# desc = event_message_effect
+# desc = event_message_text
+# desc = event_message_text_and_effect
+# desc = event_message_effect_and_text
+
+###EVENT MESSAGES###
+
+msg_flood_bad = {
+    display = feed
+	icon = "water_droplet"
+	title = event_message_title
+	desc = event_message_text_and_effect
+	#tooltip = "My Tooltip"
+	style = bad
+	soundeffect = @msg_bad_soundeffect
+	
+}
+
+msg_flood_good = {
+	display = feed
+	icon = "water_droplet"
+	title = event_message_title
+	desc = event_message_text_and_effect
+	#tooltip = "My Tooltip"
+	style = good
+	soundeffect = @msg_good_soundeffect
+	
+}

@@ -1,0 +1,18 @@
+﻿l_spanish:
+#ERAS
+ culture_era_tribal:0 "Tribal"
+ culture_era_tribal_desc:0 "En una [culture|E], la era tribal se caracteriza por la falta de leyes escritas y de un gobierno institucionalizado. Los gobernantes con un [tribal_government|E] solo pueden hacer uso de las [innovations|E] de la era Tribal."
+ culture_era_early_medieval:0 "Alta Edad Media"
+ culture_era_early_medieval_desc:0 "La Alta Edad Media se caracteriza por patrimonializar el poder, con los gobernantes estableciendo el orden por la fuerza. En esta etapa convulsa se asientan importantes [innovations|E] que permitirán el establecimiento de un poder central."
+ culture_era_high_medieval:0 "Plena Edad Media"
+ culture_era_high_medieval_desc:0 "Durante la Plena Edad Media aparece una clase guerrera que asiste a la administración y protección del territorio que el monarca no puede manejar personalmente. Aparecen innovaciones agrícolas que permiten un mejor abastecimiento y una mayor seguridad y protección del señorío."
+ culture_era_late_medieval:0 "Baja Edad Media"
+ culture_era_late_medieval_desc:0 "La Baja Edad Media marca el ocaso del mundo feudal. Los monarcas empiezan a ejercer mayor autoridad sobre sus vasallos más díscolos y dirigen sus ambiciones más allá de su territorio. Las ciudades prosperan y los contactos e intercambios de bienes e ideas comienzan."
+ culture_era_transitional:0 "Transicional"
+ culture_era_transitional_desc:0 "La era de Transición evidencia el ascenso de una clase media. Burócratas, artesanos, mercaderes y prestamistas que empiezan a disfrutar de los privilegios de las clases más altas, excepto de los del monarca."
+ culture_era_early_renaissance:0 "Renacimiento inicial"
+ culture_era_early_renaissance_desc:0 "El Renacimiento Inicial es la etapa de los conquistadores y estatistas que navegan el traicionero camino de la gloria para expandir sus reinos más allá de lo que se creía posible. Algunos caen nada más levantarse, pero su cumbre está presidida por importantes avances en el comercio, la cultura y la ciencia."
+ culture_era_high_renaissance:0 "Alto Renacimiento"
+ culture_era_high_renaissance_desc:0 "El Alto Renacimiento representa la era de la unificación y la prosperidad, donde los disgregados y fragmentados territorios feudales se ven inmersos en un nuevo orden en el que el monarca representa la base de un Estado justo y fuerte. Los avances en la administración se formalizan en instituciones que ya no están sujetas a intrigas y arrogancia, sino a un gobierno basado en la ley."
+ culture_era_late_renaissance:0 "Renacimiento Tardío"
+ culture_era_late_renaissance_desc:0 "El Renacimiento Tardío marca el nacimiento de las naciones a través de conflictos donde las particularidades locales y regionales son controladas mediante la fuerza. Un estado fuerte está marcado por la innovación y el prestigio de sus innovaciones en arte, cultura y lengua, así como en la fuerza de su ejército más potente y mortal."

@@ -1,0 +1,52 @@
+steward_develop_county_monthly_increase = {
+	add = stewardship
+	multiply = 0.1
+}
+
+steward_develop_county_unused_construction_capacity = {
+	if = {
+		limit = { exists = scope:county }
+		value = steward_develop_county_base_total
+		multiply = {
+			value = scope:county.total_unused_construction_capacity
+			multiply = 0.02
+		}
+	}
+}
+
+steward_develop_county_total = {
+	add = steward_develop_county_base
+	add = steward_develop_county_monthly_increase
+	add = steward_develop_county_unused_construction_capacity
+	add = steward_develop_county_monthly_increase_friend_bonus
+	add = steward_develop_county_monthly_increase_best_friend_bonus
+	add = steward_develop_county_monthly_increase_rival_bonus
+	add = steward_develop_county_monthly_increase_nemesis_bonus
+	add = steward_develop_county_perk_bonus_monthly_increase
+	if = {
+		limit = {
+			councillor_liege_has_erudition_legacy_5_perk = yes
+		}
+		add = steward_develop_county_erudition_bonus_monthly_increase
+	}
+	if = {
+		limit = {
+			councillor_liege_has_family_business_bonus = yes
+		}
+		add = steward_develop_county_family_business_monthly_increase
+	}
+	if = {
+		limit = { 
+			exists = scope:county
+			scope:county = { NOT = { any_county_province = { has_variable = expansion_target } } } 			
+		}
+		add = steward_develop_county_unused_construction_capacity
+	}
+}
+
+steward_promote_culture_base = 0.15
+
+steward_promote_culture_monthly_increase = {
+	add = stewardship
+	divide = 25
+}

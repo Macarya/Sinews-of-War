@@ -1,0 +1,31 @@
+﻿demd_has_greater_than_low_imperial_decay = {
+	custom_description = {
+		text = demd_has_greater_than_low_imperial_decay
+		has_variable = imperial_decay
+		var:imperial_decay > low_imperial_decay
+	}
+}
+
+demd_has_greater_than_medium_imperial_decay = {
+	custom_description = {
+		text = demd_has_greater_than_medium_imperial_decay
+		has_variable = imperial_decay
+		var:imperial_decay > medium_imperial_decay
+	}
+}
+
+demd_has_greater_than_high_imperial_decay = {
+	custom_description = {
+		text = demd_has_greater_than_high_imperial_decay
+		has_variable = imperial_decay
+		var:imperial_decay > high_imperial_decay
+	}
+}
+
+demd_has_greater_than_very_high_imperial_decay = {
+	custom_description = {
+		text = demd_has_greater_than_very_high_imperial_decay
+		has_variable = imperial_decay
+		var:imperial_decay > very_high_imperial_decay
+	}
+}

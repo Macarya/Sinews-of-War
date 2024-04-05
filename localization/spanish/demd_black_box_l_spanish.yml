@@ -1,0 +1,340 @@
+﻿l_spanish:
+
+######################
+# Influence Tooltips
+######################
+
+demd_add_influence_noble_small:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_small')|0%]#! @icon_demd_noble!# [demd_noble_estate|E] [demd_influence|E]"
+demd_add_influence_noble_medium:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_medium')|0%]#! @icon_demd_noble!# [demd_noble_estate|E] [demd_influence|E]"
+demd_add_influence_noble_large:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_large')|0%]#! @icon_demd_noble!# [demd_noble_estate|E] [demd_influence|E]"
+demd_add_influence_noble_huge:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_huge')|0%]#! @icon_demd_noble!# [demd_noble_estate|E] [demd_influence|E]"
+
+demd_subtract_influence_noble_small:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_small')|0%]#! @icon_demd_noble!# [demd_noble_estate|E] [demd_influence|E]"
+demd_subtract_influence_noble_medium:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_medium')|0%]#! @icon_demd_noble!# [demd_noble_estate|E] [demd_influence|E]"
+demd_subtract_influence_noble_large:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_large')|0%]#! @icon_demd_noble!# [demd_noble_estate|E] [demd_influence|E]"
+demd_subtract_influence_noble_huge:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_huge')|0%]#! @icon_demd_noble!# [demd_noble_estate|E] [demd_influence|E]"
+
+demd_add_influence_clergy_small:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_small')|0%]#! @icon_demd_priest!# [demd_clergy_estate|E] [demd_influence|E]"
+demd_add_influence_clergy_medium:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_medium')|0%]#! @icon_demd_priest!# [demd_clergy_estate|E] [demd_influence|E]"
+demd_add_influence_clergy_large:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_large')|0%]#! @icon_demd_priest!# [demd_clergy_estate|E] [demd_influence|E]"
+demd_add_influence_clergy_huge:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_huge')|0%]#! @icon_demd_priest!# [demd_clergy_estate|E] [demd_influence|E]"
+
+demd_subtract_influence_clergy_small:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_small')|0%]#! @icon_demd_priest!# [demd_clergy_estate|E] [demd_influence|E]"
+demd_subtract_influence_clergy_medium:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_medium')|0%]#! @icon_demd_priest!# [demd_clergy_estate|E] [demd_influence|E]"
+demd_subtract_influence_clergy_large:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_large')|0%]#! @icon_demd_priest!# [demd_clergy_estate|E] [demd_influence|E]"
+demd_subtract_influence_clergy_huge:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_huge')|0%]#! @icon_demd_priest!# [demd_clergy_estate|E] [demd_influence|E]"
+
+demd_add_influence_burgher_small:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_small')|0%]#! @icon_demd_merchant!# [demd_burgher_estate|E] [demd_influence|E]"
+demd_add_influence_burgher_medium:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_medium')|0%]#! @icon_demd_merchant!# [demd_burgher_estate|E] [demd_influence|E]"
+demd_add_influence_burgher_large:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_large')|0%]#! @icon_demd_merchant!# [demd_burgher_estate|E] [demd_influence|E]"
+demd_add_influence_burgher_huge:0 "#P +[EmptyScope.ScriptValue('demd_influence_change_huge')|0%]#! @icon_demd_merchant!# [demd_burgher_estate|E] [demd_influence|E]"
+
+demd_subtract_influence_burgher_small:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_small')|0%]#! @icon_demd_merchant!# [demd_burgher_estate|E] [demd_influence|E]"
+demd_subtract_influence_burgher_medium:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_medium')|0%]#! @icon_demd_merchant!# [demd_burgher_estate|E] [demd_influence|E]"
+demd_subtract_influence_burgher_large:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_large')|0%]#! @icon_demd_merchant!# [demd_burgher_estate|E] [demd_influence|E]"
+demd_subtract_influence_burgher_huge:0 "#N -[EmptyScope.ScriptValue('demd_influence_change_huge')|0%]#! @icon_demd_merchant!# [demd_burgher_estate|E] [demd_influence|E]"
+
+######################
+# Land Ownership Tooltips
+######################
+demd_add_land_ownership_noble_small:0 "#P +[EmptyScope.ScriptValue('demd_land_ownership_change_small')|0%]#! @icon_demd_noble!# [demd_land_ownership|E]"
+demd_add_land_ownership_noble_medium:0 "#P +[EmptyScope.ScriptValue('demd_land_ownership_change_medium')|0%]#! @icon_demd_noble!# [demd_land_ownership|E]"
+demd_add_land_ownership_noble_large:0 "#P +[EmptyScope.ScriptValue('demd_land_ownership_change_large')|0%]#! @icon_demd_noble!# [demd_land_ownership|E]"
+demd_add_land_ownership_noble_huge:0 "#P +[EmptyScope.ScriptValue('demd_land_ownership_change_huge')|0%]#! @icon_demd_noble!# [demd_land_ownership|E]"
+
+demd_subtract_land_ownership_noble_small:0 "#N -[EmptyScope.ScriptValue('demd_land_ownership_change_small')|0%]#! @icon_demd_noble!# [demd_land_ownership|E]"
+demd_subtract_land_ownership_noble_medium:0 "#N -[EmptyScope.ScriptValue('demd_land_ownership_change_medium')|0%]#! @icon_demd_noble!# [demd_land_ownership|E]"
+demd_subtract_land_ownership_noble_large:0 "#N -[EmptyScope.ScriptValue('demd_land_ownership_change_large')|0%]#! @icon_demd_noble!# [demd_land_ownership|E]"
+demd_subtract_land_ownership_noble_huge:0 "#N -[EmptyScope.ScriptValue('demd_land_ownership_change_huge')|0%]#! @icon_demd_noble!# [demd_land_ownership|E]"
+
+######################
+# Single Building Tooltips
+######################
+
+demd_add_barracks_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Barracks [building|E] Level"
+demd_add_trade_post_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Trade Post [building|E] Level"
+demd_add_temple_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Temple [building|E] Level"
+demd_add_university_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# University [building|E] Level"
+demd_add_theater_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Theater [building|E] Level"
+demd_add_walls_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Walls [building|E] Level"
+demd_add_sewer_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Sewer [building|E] Level"
+demd_add_hospital_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Hospital [building|E] Level"
+
+demd_subtract_barracks_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Barracks [building|E] Level"
+demd_subtract_trade_post_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Trade Post [building|E] Level"
+demd_subtract_temple_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Temple [building|E] Level"
+demd_subtract_university_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# University [building|E] Level"
+demd_subtract_theater_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Theater [building|E] Level"
+demd_subtract_walls_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Walls [building|E] Level"
+demd_subtract_sewer_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Sewer [building|E] Level"
+demd_subtract_hospital_level_small:0 "#P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# Hospital [building|E] Level"
+
+demd_add_barracks_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Barracks [building|E] Level"
+demd_add_trade_post_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Trade Post [building|E] Level"
+demd_add_temple_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Temple [building|E] Level"
+demd_add_university_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# University [building|E] Level"
+demd_add_theater_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Theater [building|E] Level"
+demd_add_walls_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Walls [building|E] Level"
+demd_add_sewer_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Sewer [building|E] Level"
+demd_add_hospital_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Hospital [building|E] Level"
+
+demd_subtract_barracks_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Barracks [building|E] Level"
+demd_subtract_trade_post_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Trade Post [building|E] Level"
+demd_subtract_temple_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Temple [building|E] Level"
+demd_subtract_university_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# University [building|E] Level"
+demd_subtract_theater_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Theater [building|E] Level"
+demd_subtract_walls_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Walls [building|E] Level"
+demd_subtract_sewer_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Sewer [building|E] Level"
+demd_subtract_hospital_level_medium:0 "#P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# Hospital [building|E] Level"
+
+demd_add_barracks_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Barracks [building|E] Level"
+demd_add_trade_post_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Trade Post [building|E] Level"
+demd_add_temple_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Temple [building|E] Level"
+demd_add_university_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# University [building|E] Level"
+demd_add_theater_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Theater [building|E] Level"
+demd_add_walls_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Walls [building|E] Level"
+demd_add_sewer_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Sewer [building|E] Level"
+demd_add_hospital_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Hospital [building|E] Level"
+
+demd_subtract_barracks_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Barracks [building|E] Level"
+demd_subtract_trade_post_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Trade Post [building|E] Level"
+demd_subtract_temple_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Temple [building|E] Level"
+demd_subtract_university_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# University [building|E] Level"
+demd_subtract_theater_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Theater [building|E] Level"
+demd_subtract_walls_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Walls [building|E] Level"
+demd_subtract_sewer_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Sewer [building|E] Level"
+demd_subtract_hospital_level_large:0 "#P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# Hospital [building|E] Level"
+
+demd_add_barracks_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Barracks [building|E] Level"
+demd_add_trade_post_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Trade Post [building|E] Level"
+demd_add_temple_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Temple [building|E] Level"
+demd_add_university_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# University [building|E] Level"
+demd_add_theater_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Theater [building|E] Level"
+demd_add_walls_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Walls [building|E] Level"
+demd_add_sewer_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Sewer [building|E] Level"
+demd_add_hospital_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Hospital [building|E] Level"
+
+demd_subtract_barracks_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Barracks [building|E] Level"
+demd_subtract_trade_post_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Trade Post [building|E] Level"
+demd_subtract_temple_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Temple [building|E] Level"
+demd_subtract_university_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# University [building|E] Level"
+demd_subtract_theater_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Theater [building|E] Level"
+demd_subtract_walls_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Walls [building|E] Level"
+demd_subtract_sewer_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Sewer [building|E] Level"
+demd_subtract_hospital_level_huge:0 "#P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# Hospital [building|E] Level"
+
+######################
+# All Buildings Tooltips
+######################
+
+demd_subtract_building_count_small:0 "All [buildings|E]: #N -[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# [building|E] Level"
+demd_subtract_building_count_medium:0 "All [buildings|E]: #N -[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# [building|E] Level"
+demd_subtract_building_count_large:0 "All [buildings|E]: #N -[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# [building|E] Level"
+demd_subtract_building_count_huge:0 "All [buildings|E]: #N -[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# [building|E] Level"
+
+demd_add_building_count_small:0 "All [buildings|E]: #P +[EmptyScope.ScriptValue('demd_building_change_small')|0]#! @icon_building!# [building|E] Level"
+demd_add_building_count_medium:0 "All [buildings|E]: #P +[EmptyScope.ScriptValue('demd_building_change_medium')|0]#! @icon_building!# [building|E] Level"
+demd_add_building_count_large:0 "All [buildings|E]: #P +[EmptyScope.ScriptValue('demd_building_change_large')|0]#! @icon_building!# [building|E] Level"
+demd_add_building_count_huge:0 "All [buildings|E]: #P +[EmptyScope.ScriptValue('demd_building_change_huge')|0]#! @icon_building!# [building|E] Level"
+
+######################
+# District Tooltips
+######################
+
+demd_add_goods_districts_miniscule:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_miniscule')|0%]#!"
+demd_add_goods_districts_small:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_small')|0%]#!"
+demd_add_goods_districts_medium:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_medium')|0%]#!"
+demd_add_goods_districts_large:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_large')|0%]#!"
+demd_add_goods_districts_huge:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_huge')|0%]#!"
+
+demd_subtract_goods_districts_miniscule:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_miniscule')|0%]#!"
+demd_subtract_goods_districts_small:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_small')|0%]#!"
+demd_subtract_goods_districts_medium:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_medium')|0%]#!"
+demd_subtract_goods_districts_large:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_large')|0%]#!"
+demd_subtract_goods_districts_huge:0 "@icon_building!# [demd_goods_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_huge')|0%]#!"
+
+demd_add_food_districts_miniscule:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_miniscule')|0%]#!"
+demd_add_food_districts_small:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_small')|0%]#!"
+demd_add_food_districts_medium:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_medium')|0%]#!"
+demd_add_food_districts_large:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_large')|0%]#!"
+demd_add_food_districts_huge:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_huge')|0%]#!"
+
+demd_subtract_food_districts_miniscule:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_miniscule')|0%]#!"
+demd_subtract_food_districts_small:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_small')|0%]#!"
+demd_subtract_food_districts_medium:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_medium')|0%]#!"
+demd_subtract_food_districts_large:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_large')|0%]#!"
+demd_subtract_food_districts_huge:0 "@icon_building!# [demd_food_districts|E]: #N -[EmptyScope.ScriptValue('demd_district_change_huge')|0%]#!"
+
+######################
+# Population Tooltips
+######################
+
+demd_subtract_population_miniscule:0 "@icon_population!# [demd_population|E]: #N -[EmptyScope.ScriptValue('demd_population_change_miniscule')|0%]#!"
+demd_subtract_population_small:0 "@icon_population!# [demd_population|E]: #N -[EmptyScope.ScriptValue('demd_population_change_small')|0%]#!"
+demd_subtract_population_medium:0 "@icon_population!# [demd_population|E]: #N -[EmptyScope.ScriptValue('demd_population_change_medium')|0%]#!"
+demd_subtract_population_large:0 "@icon_population!# [demd_population|E]: #N -[EmptyScope.ScriptValue('demd_population_change_large')|0%]#!"
+demd_subtract_population_huge:0 "@icon_population!# [demd_population|E]: #N -[EmptyScope.ScriptValue('demd_population_change_huge')|0%]#!"
+
+demd_add_population_miniscule:0 "@icon_population!# [demd_population|E]: #P +[EmptyScope.ScriptValue('demd_population_change_miniscule')|0%]#!"
+demd_add_population_small:0 "@icon_population!# [demd_population|E]: #P +[EmptyScope.ScriptValue('demd_population_change_small')|0%]#!"
+demd_add_population_medium:0 "@icon_population!# [demd_population|E]: #P +[EmptyScope.ScriptValue('demd_population_change_medium')|0%]#!"
+demd_add_population_large:0 "@icon_population!# [demd_population|E]: #P +[EmptyScope.ScriptValue('demd_population_change_large')|0%]#!"
+demd_add_population_huge:0 "@icon_population!# [demd_population|E]: #P +[EmptyScope.ScriptValue('demd_population_change_huge')|0%]#!"
+
+######################
+# Public Order
+######################
+
+demd_subtract_public_order_small:0 "@icon_demd_public_order!# [demd_public_order|E]: #N -[EmptyScope.ScriptValue('demd_public_order_change_small')|0%]#!"
+demd_subtract_public_order_medium:0 "@icon_demd_public_order!# [demd_public_order|E]: #N -[EmptyScope.ScriptValue('demd_public_order_change_medium')|0%]#!"
+demd_subtract_public_order_large:0 "@icon_demd_public_order!# [demd_public_order|E]: #N -[EmptyScope.ScriptValue('demd_public_order_change_large')|0%]#!"
+demd_subtract_public_order_huge:0 "@icon_demd_public_order!# [demd_public_order|E]: #N -[EmptyScope.ScriptValue('demd_public_order_change_huge')|0%]#!"
+
+demd_add_public_order_small:0 "@icon_demd_public_order!# [demd_public_order|E]: #P +[EmptyScope.ScriptValue('demd_public_order_change_small')|0%]#!"
+demd_add_public_order_medium:0 "@icon_demd_public_order!# [demd_public_order|E]: #P +[EmptyScope.ScriptValue('demd_public_order_change_medium')|0%]#!"
+demd_add_public_order_large:0 "@icon_demd_public_order!# [demd_public_order|E]: #P +[EmptyScope.ScriptValue('demd_public_order_change_large')|0%]#!"
+demd_add_public_order_huge:0 "@icon_demd_public_order!# [demd_public_order|E]: #P +[EmptyScope.ScriptValue('demd_public_order_change_huge')|0%]#!"
+
+######################
+# Fertility
+######################
+
+demd_subtract_fertility_small:0 "@icon_demd_fertility!# [demd_fertility|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_small')|0%]#!"
+demd_subtract_fertility_medium:0 "@icon_demd_fertility!# [demd_fertility|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_medium')|0%]#!"
+demd_subtract_fertility_large:0 "@icon_demd_fertility!# [demd_fertility|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_large')|0%]#!"
+demd_subtract_fertility_huge:0 "@icon_demd_fertility!# [demd_fertility|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_huge')|0%]#!"
+
+demd_add_fertility_small:0 "@icon_demd_fertility!# [demd_fertility|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_small')|0%]#!"
+demd_add_fertility_medium:0 "@icon_demd_fertility!# [demd_fertility|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_medium')|0%]#!"
+demd_add_fertility_large:0 "@icon_demd_fertility!# [demd_fertility|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_large')|0%]#!"
+demd_add_fertility_huge:0 "@icon_demd_fertility!# [demd_fertility|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_huge')|0%]#!"
+
+######################
+# Weather
+######################
+
+demd_subtract_county_weather_small:0 "@icon_demd_fertility!# [demd_weather|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_small')|0%]#!"
+demd_subtract_county_weather_medium:0 "@icon_demd_fertility!# [demd_weather|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_medium')|0%]#!"
+demd_subtract_county_weather_large:0 "@icon_demd_fertility!# [demd_weather|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_large')|0%]#!"
+demd_subtract_county_weather_huge:0 "@icon_demd_fertility!# [demd_weather|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_huge')|0%]#!"
+
+demd_add_county_weather_small:0 "@icon_demd_fertility!# [demd_weather|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_small')|0%]#!"
+demd_add_county_weather_medium:0 "@icon_demd_fertility!# [demd_weather|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_medium')|0%]#!"
+demd_add_county_weather_large:0 "@icon_demd_fertility!# [demd_weather|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_large')|0%]#!"
+demd_add_county_weather_huge:0 "@icon_demd_fertility!# [demd_weather|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_huge')|0%]#!"
+
+demd_subtract_node_weather_small:0 "@icon_demd_fertility!# [demd_weather|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_small')|0%]#!"
+demd_subtract_node_weather_medium:0 "@icon_demd_fertility!# [demd_weather|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_medium')|0%]#!"
+demd_subtract_node_weather_large:0 "@icon_demd_fertility!# [demd_weather|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_large')|0%]#!"
+demd_subtract_node_weather_huge:0 "@icon_demd_fertility!# [demd_weather|E]: #N -[EmptyScope.ScriptValue('demd_fertility_change_huge')|0%]#!"
+
+demd_add_node_weather_small:0 "@icon_demd_fertility!# [demd_weather|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_small')|0%]#!"
+demd_add_node_weather_medium:0 "@icon_demd_fertility!# [demd_weather|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_medium')|0%]#!"
+demd_add_node_weather_large:0 "@icon_demd_fertility!# [demd_weather|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_large')|0%]#!"
+demd_add_node_weather_huge:0 "@icon_demd_fertility!# [demd_weather|E]: #P +[EmptyScope.ScriptValue('demd_fertility_change_huge')|0%]#!"
+
+######################
+# Sanitation
+######################
+
+demd_subtract_sanitation_small:0 "@icon_sanitation!# [demd_sanitation|E]: #N -[EmptyScope.ScriptValue('demd_sanitation_change_small')|0%]#!"
+demd_subtract_sanitation_medium:0 "@icon_sanitation!# [demd_sanitation|E]: #N -[EmptyScope.ScriptValue('demd_sanitation_change_medium')|0%]#!"
+demd_subtract_sanitation_large:0 "@icon_sanitation!# [demd_sanitation|E]: #N -[EmptyScope.ScriptValue('demd_sanitation_change_large')|0%]#!"
+demd_subtract_sanitation_huge:0 "@icon_sanitation!# [demd_sanitation|E]: #N -[EmptyScope.ScriptValue('demd_sanitation_change_huge')|0%]#!"
+
+demd_add_sanitation_small:0 "@icon_sanitation!# [demd_sanitation|E]: #P +[EmptyScope.ScriptValue('demd_sanitation_change_small')|0%]#!"
+demd_add_sanitation_medium:0 "@icon_sanitation!# [demd_sanitation|E]: #P +[EmptyScope.ScriptValue('demd_sanitation_change_medium')|0%]#!"
+demd_add_sanitation_large:0 "@icon_sanitation!# [demd_sanitation|E]: #P +[EmptyScope.ScriptValue('demd_sanitation_change_large')|0%]#!"
+demd_add_sanitation_huge:0 "@icon_sanitation!# [demd_sanitation|E]: #P +[EmptyScope.ScriptValue('demd_sanitation_change_huge')|0%]#!"
+
+######################
+# Resource Tooltips
+######################
+
+demd_subtract_goods_stockpile_small:0 "@icon_building!# [demd_goods|E] Stockpile: #N -[EmptyScope.ScriptValue('demd_resource_stockpile_gain_small')|0%]#!"
+demd_subtract_goods_stockpile_medium:0 "@icon_building!# [demd_goods|E] Stockpile: #N -[EmptyScope.ScriptValue('demd_resource_stockpile_gain_medium')|0%]#!"
+demd_subtract_goods_stockpile_large:0 "@icon_building!# [demd_goods|E] Stockpile: #N -[EmptyScope.ScriptValue('demd_resource_stockpile_gain_large')|0%]#!"
+demd_subtract_goods_stockpile_huge:0 "@icon_building!# [demd_goods|E] Stockpile: #N -[EmptyScope.ScriptValue('demd_resource_stockpile_gain_huge')|0%]#!"
+
+demd_subtract_food_stockpile_small:0 "@icon_building!# [demd_food|E] Stockpile: #N -[EmptyScope.ScriptValue('demd_resource_stockpile_gain_small')|0%]#!"
+demd_subtract_food_stockpile_medium:0 "@icon_building!# [demd_food|E] Stockpile: #N -[EmptyScope.ScriptValue('demd_resource_stockpile_gain_medium')|0%]#!"
+demd_subtract_food_stockpile_large:0 "@icon_building!# [demd_food|E] Stockpile: #N -[EmptyScope.ScriptValue('demd_resource_stockpile_gain_large')|0%]#!"
+demd_subtract_food_stockpile_huge:0 "@icon_building!# [demd_food|E] Stockpile: #N -[EmptyScope.ScriptValue('demd_resource_stockpile_gain_huge')|0%]#!"
+
+demd_add_goods_stockpile_small:0 "@icon_building!# [demd_goods|E] Stockpile: #P +[EmptyScope.ScriptValue('demd_resource_stockpile_gain_small')|0%]#!"
+demd_add_goods_stockpile_medium:0 "@icon_building!# [demd_goods|E] Stockpile: #P +[EmptyScope.ScriptValue('demd_resource_stockpile_gain_medium')|0%]#!"
+demd_add_goods_stockpile_large:0 "@icon_building!# [demd_goods|E] Stockpile: #P +[EmptyScope.ScriptValue('demd_resource_stockpile_gain_large')|0%]#!"
+demd_add_goods_stockpile_huge:0 "@icon_building!# [demd_goods|E] Stockpile: #P +[EmptyScope.ScriptValue('demd_resource_stockpile_gain_huge')|0%]#!"
+
+demd_add_food_stockpile_small:0 "@icon_building!# [demd_food|E] Stockpile: #P +[EmptyScope.ScriptValue('demd_resource_stockpile_gain_small')|0%]#!"
+demd_add_food_stockpile_medium:0 "@icon_building!# [demd_food|E] Stockpile: #P +[EmptyScope.ScriptValue('demd_resource_stockpile_gain_medium')|0%]#!"
+demd_add_food_stockpile_large:0 "@icon_building!# [demd_food|E] Stockpile: #P +[EmptyScope.ScriptValue('demd_resource_stockpile_gain_large')|0%]#!"
+demd_add_food_stockpile_huge:0 "@icon_building!# [demd_food|E] Stockpile: #P +[EmptyScope.ScriptValue('demd_resource_stockpile_gain_huge')|0%]#!"
+
+######################
+# Conversion Progress Tooltips
+######################
+
+demd_add_culture_conversion_small:0 "#P +[EmptyScope.ScriptValue('demd_conversion_change_small')|0]#! @icon_culture!# [demd_culture_conversion_progress|E]"
+demd_add_culture_conversion_medium:0 "#P +[EmptyScope.ScriptValue('demd_conversion_change_medium')|0]#! @icon_culture!# [demd_culture_conversion_progress|E]"
+demd_add_culture_conversion_large:0 "#P +[EmptyScope.ScriptValue('demd_conversion_change_large')|0]#! @icon_culture!# [demd_culture_conversion_progress|E]"
+demd_add_culture_conversion_huge:0 "#P +[EmptyScope.ScriptValue('demd_conversion_change_huge')|0]#! @icon_culture!# [demd_culture_conversion_progress|E]"
+
+demd_subtract_culture_conversion_small:0 "#N -[EmptyScope.ScriptValue('demd_conversion_change_small')|0]#! @icon_culture!# [demd_culture_conversion_progress|E]"
+demd_subtract_culture_conversion_medium:0 "#N -[EmptyScope.ScriptValue('demd_conversion_change_medium')|0]#! @icon_culture!# [demd_culture_conversion_progress|E]"
+demd_subtract_culture_conversion_large:0 "#N -[EmptyScope.ScriptValue('demd_conversion_change_large')|0]#! @icon_culture!# [demd_culture_conversion_progress|E]"
+demd_subtract_culture_conversion_huge:0 "#N -[EmptyScope.ScriptValue('demd_conversion_change_huge')|0]#! @icon_culture!# [demd_culture_conversion_progress|E]"
+
+demd_add_faith_conversion_small:0 "#P +[EmptyScope.ScriptValue('demd_conversion_change_small')|0]#! @icon_fervor!# [demd_religious_conversion_progress|E]"
+demd_add_faith_conversion_medium:0 "#P +[EmptyScope.ScriptValue('demd_conversion_change_medium')|0]#! @icon_fervor!# [demd_religious_conversion_progress|E]"
+demd_add_faith_conversion_large:0 "#P +[EmptyScope.ScriptValue('demd_conversion_change_large')|0]#! @icon_fervor!# [demd_religious_conversion_progress|E]"
+demd_add_faith_conversion_huge:0 "#P +[EmptyScope.ScriptValue('demd_conversion_change_huge')|0]#! @icon_fervor!# [demd_religious_conversion_progress|E]"
+
+demd_subtract_faith_conversion_small:0 "#N -[EmptyScope.ScriptValue('demd_conversion_change_small')|0]#! @icon_fervor!# [demd_religious_conversion_progress|E]"
+demd_subtract_faith_conversion_medium:0 "#N -[EmptyScope.ScriptValue('demd_conversion_change_medium')|0]#! @icon_fervor!# [demd_religious_conversion_progress|E]"
+demd_subtract_faith_conversion_large:0 "#N -[EmptyScope.ScriptValue('demd_conversion_change_large')|0]#! @icon_fervor!# [demd_religious_conversion_progress|E]"
+demd_subtract_faith_conversion_huge:0 "#N -[EmptyScope.ScriptValue('demd_conversion_change_huge')|0]#! @icon_fervor!# [demd_religious_conversion_progress|E]"
+
+######################
+# Conversion Power Tooltips
+######################
+
+demd_add_culture_strength_attack_small:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_small')|0]#! @icon_culture_attack!# [demd_culture_strength_attack|E]"
+demd_add_culture_strength_attack_medium:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_medium')|0]#! @icon_culture_attack!# [demd_culture_strength_attack|E]"
+demd_add_culture_strength_attack_large:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_large')|0]#! @icon_culture_attack!# [demd_culture_strength_attack|E]"
+demd_add_culture_strength_attack_huge:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_huge')|0]#! @icon_culture_attack!# [demd_culture_strength_attack|E]"
+
+demd_subtract_culture_strength_attack_small:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_small')|0]#! @icon_culture_attack!# [demd_culture_strength_attack|E]"
+demd_subtract_culture_strength_attack_medium:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_medium')|0]#! @icon_culture_attack!# [demd_culture_strength_attack|E]"
+demd_subtract_culture_strength_attack_large:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_large')|0]#! @icon_culture_attack!# [demd_culture_strength_attack|E]"
+demd_subtract_culture_strength_attack_huge:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_huge')|0]#! @icon_culture_attack!# [demd_culture_strength_attack|E]"
+
+demd_add_faith_strength_attack_small:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_small')|0]#! @icon_fervor_attack!# [demd_faith_strength_attack|E]"
+demd_add_faith_strength_attack_medium:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_medium')|0]#! @icon_fervor_attack!# [demd_faith_strength_attack|E]"
+demd_add_faith_strength_attack_large:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_large')|0]#! @icon_fervor_attack!# [demd_faith_strength_attack|E]"
+demd_add_faith_strength_attack_huge:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_huge')|0]#! @icon_fervor_attack!# [demd_faith_strength_attack|E]"
+
+demd_subtract_faith_strength_attack_small:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_small')|0]#! @icon_fervor_attack!# [demd_faith_strength_attack|E]"
+demd_subtract_faith_strength_attack_medium:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_medium')|0]#! @icon_fervor_attack!# [demd_faith_strength_attack|E]"
+demd_subtract_faith_strength_attack_large:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_large')|0]#! @icon_fervor_attack!# [demd_faith_strength_attack|E]"
+demd_subtract_faith_strength_attack_huge:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_huge')|0]#! @icon_fervor_attack!# [demd_faith_strength_attack|E]"
+
+demd_add_culture_strength_defense_small:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_small')|0]#! @icon_culture_defense!# [demd_culture_strength_defense|E]"
+demd_add_culture_strength_defense_medium:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_medium')|0]#! @icon_culture_defense!# [demd_culture_strength_defense|E]"
+demd_add_culture_strength_defense_large:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_large')|0]#! @icon_culture_defense!# [demd_culture_strength_defense|E]"
+demd_add_culture_strength_defense_huge:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_huge')|0]#! @icon_culture_defense!# [demd_culture_strength_defense|E]"
+
+demd_subtract_culture_strength_defense_small:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_small')|0]#! @icon_culture_defense!# [demd_culture_strength_defense|E]"
+demd_subtract_culture_strength_defense_medium:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_medium')|0]#! @icon_culture_defense!# [demd_culture_strength_defense|E]"
+demd_subtract_culture_strength_defense_large:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_large')|0]#! @icon_culture_defense!# [demd_culture_strength_defense|E]"
+demd_subtract_culture_strength_defense_huge:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_huge')|0]#! @icon_culture_defense!# [demd_culture_strength_defense|E]"
+
+demd_add_faith_strength_defense_small:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_small')|0]#! @icon_fervor_defense!# [demd_faith_strength_defense|E]"
+demd_add_faith_strength_defense_medium:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_medium')|0]#! @icon_fervor_defense!# [demd_faith_strength_defense|E]"
+demd_add_faith_strength_defense_large:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_large')|0]#! @icon_fervor_defense!# [demd_faith_strength_defense|E]"
+demd_add_faith_strength_defense_huge:0 "#P +[EmptyScope.ScriptValue('demd_strength_change_huge')|0]#! @icon_fervor_defense!# [demd_faith_strength_defense|E]"
+
+demd_subtract_faith_strength_defense_small:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_small')|0]#! @icon_fervor_defense!# [demd_faith_strength_defense|E]"
+demd_subtract_faith_strength_defense_medium:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_medium')|0]#! @icon_fervor_defense!# [demd_faith_strength_defense|E]"
+demd_subtract_faith_strength_defense_large:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_large')|0]#! @icon_fervor_defense!# [demd_faith_strength_defense|E]"
+demd_subtract_faith_strength_defense_huge:0 "#N -[EmptyScope.ScriptValue('demd_strength_change_huge')|0]#! @icon_fervor_defense!# [demd_faith_strength_defense|E]"

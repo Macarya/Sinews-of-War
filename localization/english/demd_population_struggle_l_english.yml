@@ -1,0 +1,34 @@
+﻿l_english:
+
+#############################################
+# Sinews of War Patcher
+# by Vertimnus
+# This file was compiled by a machine.
+# It should never be manually edited.
+#############################################
+
+demd_trade_node_struggle_world_europe_west_britannia:0 "Trade Node: $world_europe_west_britannia$"
+demd_trade_node_struggle_world_europe_west_germania:0 "Trade Node: $world_europe_west_germania$"
+demd_trade_node_struggle_world_europe_west_francia:0 "Trade Node: $world_europe_west_francia$"
+demd_trade_node_struggle_world_europe_west_iberia:0 "Trade Node: $world_europe_west_iberia$"
+demd_trade_node_struggle_world_europe_north:0 "Trade Node: $world_europe_north$"
+demd_trade_node_struggle_world_europe_south_east:0 "Trade Node: $world_europe_south_east$"
+demd_trade_node_struggle_world_europe_south_italy:0 "Trade Node: $world_europe_south_italy$"
+demd_trade_node_struggle_world_europe_east:0 "Trade Node: $world_europe_east$"
+demd_trade_node_struggle_world_asia_minor:0 "Trade Node: $world_asia_minor$"
+demd_trade_node_struggle_world_middle_east_jerusalem:0 "Trade Node: $world_middle_east_jerusalem$"
+demd_trade_node_struggle_world_middle_east_arabia:0 "Trade Node: $world_middle_east_arabia$"
+demd_trade_node_struggle_world_middle_east_persia:0 "Trade Node: $world_middle_east_persia$"
+demd_trade_node_struggle_world_india_deccan:0 "Trade Node: $world_india_deccan$"
+demd_trade_node_struggle_world_india_bengal:0 "Trade Node: $world_india_bengal$"
+demd_trade_node_struggle_world_india_rajastan:0 "Trade Node: $world_india_rajastan$"
+demd_trade_node_struggle_world_africa_north_west:0 "Trade Node: $world_africa_north_west$"
+demd_trade_node_struggle_world_africa_north_east:0 "Trade Node: $world_africa_north_east$"
+demd_trade_node_struggle_world_africa_sahara:0 "Trade Node: $world_africa_sahara$"
+demd_trade_node_struggle_world_africa_west:0 "Trade Node: $world_africa_west$"
+demd_trade_node_struggle_world_africa_east:0 "Trade Node: $world_africa_east$"
+demd_trade_node_struggle_world_steppe_tarim:0 "Trade Node: $world_steppe_tarim$"
+demd_trade_node_struggle_world_steppe_west:0 "Trade Node: $world_steppe_west$"
+demd_trade_node_struggle_world_steppe_east:0 "Trade Node: $world_steppe_east$"
+demd_trade_node_struggle_world_tibet:0 "Trade Node: $world_tibet$"
+demd_trade_node_struggle_world_burma:0 "Trade Node: $world_burma$"

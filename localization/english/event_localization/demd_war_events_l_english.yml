@@ -1,0 +1,29 @@
+﻿l_english:
+
+demd_pop_war.1003.t:0 "Fall of [county.GetNameNoTierNoTooltip]"
+demd_pop_war.1003.desc:0 "The county of [county.GetNameNoTierNoTooltip] has fallen to me. We have the run of vast tracts of land, and many of the quivering subjects and shining treasures of [previous_controller.GetTitledFirstName] to choose from.\n\nThe troops stand ready, awaiting my command."
+demd_pop_war.1003.a:0 "Occupy the City"
+demd_pop_war.1003.b:0 "Sack the City"
+demd_pop_war.1003.c:0 "Raze the City"
+
+demd_pop_war.1004.t.occupied:0 "[county.GetNameNoTierNoTooltip] Occupied!"
+demd_pop_war.1004.desc.occupied:0 "After battering down the gates to the settlement of [county.GetNameNoTierNoTooltip], [occupier.GetTitledFirstName] kept [occupier.GetHerHis] troops on a short leash.\n\nMost of the countryside has thus been spared more than the usual looting, but hungry [occupier.GetPrimaryTitle.GetAdjectiveNoTooltip] eyes turn elsewhere..."
+
+demd_pop_war.1004.t.sacked:0 "[barony.GetNameNoTierNoTooltip] Sacked!"
+demd_pop_war.1004.desc.sacked:0 "After a tense siege, [occupier.GetTitledFirstName] has succeeded in penetrating the fortified settlement of [barony.GetNameNoTierNoTooltip], and set [occupier.GetHerHis] soldiers to pillaging everything of value. In short order, they will have stripped half of greater [county.GetNameNoTierNoTooltip] of its wealth!"
+
+demd_pop_war.1004.t.razed:0 "[barony.GetNameNoTierNoTooltip] Razed!"
+demd_pop_war.1004.desc.razed:0 "After battering down the gates to the settlement of [barony.GetNameNoTierNoTooltip], [occupier.GetTitledFirstName] has left only ruins behind. The peasantry tear their hair and weep for their lost family members."
+
+
+demd_pop_war.2001.t:0 "[barony.GetNameNoTierNoTooltip] Raided!"
+demd_pop_war.2001.desc:0 "[raider.GetTitledFirstName] has despoiled the countryside of [barony.GetNameNoTierNoTooltip], burning fields and looting what treasures the peasantry could neither hide nor carry away."
+demd_pop_war.2001.a:0 "[this.GetFaith.HighGodName] preserve us!"
+
+demd_pop_war.3001.t:0 "[barony.GetNameNoTierNoTooltip] Raided!"
+demd_pop_war.3001.desc:0 "I have despoiled the countryside of [barony.GetNameNoTierNoTooltip], burning fields and looting what treasures the peasantry could neither hide nor carry away."
+demd_pop_war.3001.a:0 "[this.GetFaith.HighGodName] favors us!"
+
+rival_sacked_county:0 "[CHARACTER.GetShortUIName|U] sacked the county of [county.GetNameNoTierNoTooltip]."
+rival_razed_county:0 "[CHARACTER.GetShortUIName|U] razed the county of [county.GetNameNoTierNoTooltip]."
+rival_raided_county:0 "[CHARACTER.GetShortUIName|U] raided the county of [county.GetNameNoTierNoTooltip]."

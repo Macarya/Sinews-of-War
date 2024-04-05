@@ -1,0 +1,4 @@
+﻿doctrine_requires_spiritual_head_of_faith_trigger = {
+	first_not = DOCTRINE_REQUIRED_SPIRITUAL_HEAD_OF_FAITH
+	third_not = DOCTRINE_REQUIRED_SPIRITUAL_HEAD_OF_FAITH
+}

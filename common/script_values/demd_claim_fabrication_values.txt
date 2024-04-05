@@ -1,0 +1,138 @@
+﻿court_chaplain_fabrication_duel_value = {
+	value = court_chaplain_target_learning 
+	add = court_chaplain_relative_prestige
+	add = court_chaplain_relative_dynasty_prestige
+	add = court_chaplain_faith_hostility
+	add = court_chaplain_relative_piety
+	add = court_chaplain_relative_rank
+	add = court_chaplain_fabricator_previous_claims
+	add = court_chaplain_target_previous_claims
+	add = court_chaplain_fabricator_trait
+	add = court_chaplain_excommunicated_trait
+	add = court_chaplain_target_fabricator_trait
+	add = court_chaplain_target_excommunicated_trait
+}
+
+########################
+# Multipliers
+
+court_chaplain_target_learning = {
+	value = scope:county.holder.learning
+	desc = FABRICATE_CLAIM_TARGET_LEARNING
+}
+
+
+court_chaplain_faith_hostility = {
+	if = { limit = { faith = scope:county.holder.faith } add = 4 }
+	else_if = { limit = { faith = { faith_hostility_level = { target = scope:county.holder.faith value = 1 } } } add = -4 }
+	else_if = { limit = { faith = { faith_hostility_level = { target = scope:county.holder.faith value = 2 } } } add = -8 }
+	else_if = { limit = { faith = { faith_hostility_level = { target = scope:county.holder.faith value = 3 } } } add = -12 }
+	desc = FABRICATE_CLAIM_FAITH_HOSTILITY
+}
+
+court_chaplain_relative_prestige = {
+	value = scope:county.holder.prestige_level
+	subtract = scope:councillor_liege.prestige_level
+	multiply = 2
+	min = -2
+	desc = FABRICATE_CLAIM_PRESTIGE
+}
+
+court_chaplain_relative_dynasty_prestige = {
+	if = {
+		limit = { exists = scope:county.holder.dynasty }		
+		add = scope:county.holder.dynasty.dynasty_prestige_level
+	}
+	if = {
+		limit = { exists = scope:councillor_liege.dynasty }		
+		subtract = scope:councillor_liege.dynasty.dynasty_prestige_level
+	} 
+	min = -1
+	desc = FABRICATE_CLAIM_DYNASTY_PRESTIGE
+}
+
+court_chaplain_relative_piety = {
+	if = { limit = { faith = scope:county.holder.faith } 
+		value = scope:county.holder.piety_level
+		subtract = scope:councillor_liege.piety_level
+		multiply = 2
+		min = -2
+		desc = FABRICATE_CLAIM_PIETY
+	}
+}
+
+###
+# Rank
+court_chaplain_relative_rank = {
+	value = scope:county.holder.highest_held_title_tier
+	subtract = scope:councillor_liege.highest_held_title_tier
+	min = -1
+	desc = FABRICATE_CLAIM_RANK
+}
+
+###
+# Previous claims
+court_chaplain_fabricator_previous_claims = {	
+	if = { 
+		limit = { scope:councillor_liege = { has_variable = previous_claims_presented } }	
+		value = scope:councillor_liege.var:previous_claims_presented
+	}	
+	desc = COURT_CHAPLAIN_FABRICATOR_PREVIOUS_CLAIMS
+}
+
+court_chaplain_target_previous_claims = {
+	if = { 
+		limit = { scope:county.holder = { has_variable = previous_claims_presented } }	
+		value = scope:county.holder.var:previous_claims_presented
+		multiply = -1
+	}	
+	desc = COURT_CHAPLAIN_TARGET_PREVIOUS_CLAIMS
+}
+
+court_chaplain_fabricator_trait = {
+	if = { 
+		limit = { 
+			OR = {
+				scope:councillor_liege = { has_trait = claim_fabricator }
+				scope:councillor = { has_trait = claim_fabricator }			
+			}
+		}
+		value = 15
+		desc = CLAIM_THRONE_FABRICATOR
+	}
+}
+court_chaplain_excommunicated_trait = {
+	if = { 
+		limit = { 
+			scope:councillor_liege = {
+				has_trait = excommunicated 
+				faith = scope:county.holder.faith
+			}
+		}	
+		value = 10
+		desc = CLAIM_THRONE_EXCOMMUNICATED
+	}
+}
+
+court_chaplain_target_fabricator_trait = {
+	if = { 
+		limit = { scope:county.holder = { has_trait = claim_fabricator } }	
+		value = -10
+		desc = CLAIM_THRONE_TARGET_FABRICATOR
+	}
+}
+
+court_chaplain_target_excommunicated_trait = {
+	if = { 
+		limit = { 
+			scope:county.holder = {
+				has_trait = excommunicated 
+				faith = scope:councillor_liege.faith
+			}
+		}	
+		value = -10
+		desc = CLAIM_THRONE_TARGET_EXCOMMUNICATED
+	}	
+}
+
+

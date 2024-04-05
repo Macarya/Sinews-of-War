@@ -1,0 +1,6 @@
+﻿l_spanish:
+ rule_debug_log:0 "Registro de desarrollo"
+ setting_debug_yes:0 "Sí"
+ setting_debug_yes_desc:0 "Se guardará un registro anual de datos para ser analizados. Provocará un pequeño cuelgue cada 1 de enero"
+ setting_debug_no:0 "No"
+ setting_debug_no_desc:0 "Los datos no se registrarán"

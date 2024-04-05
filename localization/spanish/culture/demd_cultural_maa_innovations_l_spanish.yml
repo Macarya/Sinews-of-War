@@ -1,0 +1,181 @@
+﻿l_spanish:
+
+large_levies_perk_name:0 "Careful Accounting"
+
+innovation_vigmen:0 "Vigmen"
+innovation_vigmen_desc:0 "Warriors in the front present an impenetrable wall of shields to protect archers in the rear. This tactic deters skirmishers while allowing a steady advance."
+
+innovation_bondi:0 "Bondi"
+innovation_bondi_desc:0 "The Bondí are part of a class of free landholders, often competent sailors, that use longships to trade or to go viking. They fight using spears and shields."
+
+
+medium_horsemen:0 "Horsemen"
+medium_horsemen_desc:0 "Armed with spears and shields, Horsemen are a versatile medium cavalry that can serve as a decent shock troop to attack your opponent's flanks."
+medium_horsemen_flavor: "$medium_horsemen_desc$"
+
+war_beast:0 "War Beasts"
+war_beasts:0 "War Beasts"
+war_beast_desc:0 "War Beasts are large animals employed as shock troops."
+war_beasts_desc:0 "War Beasts are large animals employed as shock troops."
+
+innovation_mubarizuns:0 "Royal Camelry"
+innovation_mubarizuns_desc:0 "By collecting riding animals as gifts and tributes from vassals and friendly states, we can maintain stables of enormous size without a comparable drain on state finances."
+innovation_rakibi:0 "Royal Camelry"
+innovation_rakibi_desc:0 "By collecting riding animals as gifts and tributes from vassals and friendly states, we can maintain stables of enormous size without a comparable drain on state finances."
+mubarizun:0 "#defender_color Missile Cavalry#!"
+mubarizun_flavor:0 "#F Camels are far better suited to work and survive in an arid and waterless environment than the horses of conventional cavalry.#!"
+
+innovation_german_heavy_cav:0 "#defender_color Ministeriales#!"
+innovation_german_heavy_cav_desc:0 "The size and purpose of German retinues were unlike anything known in France or England. German counts or bishops thought nothing of retaining a hundred knights or more, and the greater magnates much larger forces."
+german_heavy_cav:0 "#defender_color Heavy Cavalry #!"
+german_heavy_cav_desc:0 "$innovation_german_heavy_cav_desc$"
+german_heavy_cav_flavor:0 "$innovation_german_heavy_cav_desc$"
+
+tabory:0 "Tabory"
+innovation_tabory:0 "Mobile Fortifications"
+innovation_tabory_desc:0 "#F When facing an opponent superior in heavy cavalry, it is advantageous to shelter inside a field fortification during the early stages of the battle. As soon as the enemy's morale is lowered, the infantry inside can sally forth from behind the fortification to strike violently at the enemy.#!"
+tabory:0 "Tabory"
+tabory_flavor:0 "#F War wagons can be grouped into defensive works, used as hardpoints for formations or provide firepower in support of pincer movements. They excel in robbing enemy attacks of their impetus, allowing us to counterattack as they begin to falter.#!"
+tabory_desc:0 "#F War wagons can be grouped into defensive works, used as hardpoints for formations or provide firepower in support of pincer movements. They excel in robbing enemy attacks of their impetus, allowing us to counterattack as they begin to falter.#!"
+
+zbrojni:0 "#defender_color Zbrojni #!"
+innovation_zbrojni:0 "Zbrojni"
+innovation_zbrojni_desc:0 "The forested plains of our homeland demand a different approach to warfare. Our armed men, the Zbrojni, though not as well protected as most heavy infantry, are trained to turn the terrain to their advantage, and have time and time again proven to be good fighters capable of defeating much larger armies thanks to their tactical flexibility."
+zbrojni_flavor:0 "#F Though not as well protected as most heavy infantry, Zbrojni are trained to turn the terrain to their advantage, and can fill the role of skirmishers just as well as that of the traditional anvil of the battle line, thanks to their lighter bulk and training.#!"
+zbrojni_desc:0 "#F Though not as well protected as most heavy infantry, Zbrojni are trained to turn the terrain to their advantage, and can fill the role of skirmishers just as well as that of the traditional anvil of the battle line, thanks to their lighter bulk and training.#!"
+
+janissaries:0 "#defender_color Handgunners #!"
+innovation_janissaries:0 "Gunpowder"
+innovation_janissaries_desc:0 "Gunpowder is the earliest known chemical explosive. It consists of a mixture of sulfur, charcoal, and potassium nitrate, or saltpeter. The sulfur and charcoal act as fuels while the saltpeter is an oxidizer. The first confirmed reference to what can be considered gunpowder in China occurred in the 9th century AD, where it was first used for fire arrows. The earliest Western accounts of a recipe for gunpowder appear in texts written by English philosopher Roger Bacon in the 13th century."
+janissaries_flavor:0 "#F Janissaries began as elite corps made up through the devşirme system of child slavery, by which young Christian boys, notably Armenians, Albanians, Bosnians, Bulgarians, Croats, Greeks and Serbs, were taken from the Balkans, enslaved and converted to Islam, and incorporated into the Ottoman army. They became famed for internal cohesion cemented by strict discipline and order. Unlike typical slaves, they were paid regular salaries. Forbidden to marry before the age of 40 or engage in trade, their complete loyalty to the Sultan was expected.#!"
+janissaries_desc:0 "#F Janissaries began as elite corps made up through the devşirme system of child slavery, by which young Christian boys, notably Armenians, Albanians, Bosnians, Bulgarians, Croats, Greeks and Serbs, were taken from the Balkans, enslaved and converted to Islam, and incorporated into the Ottoman army. They became famed for internal cohesion cemented by strict discipline and order. Unlike typical slaves, they were paid regular salaries. Forbidden to marry before the age of 40 or engage in trade, their complete loyalty to the Sultan was expected.#!"
+
+#caballero:0 "Jinetes"
+#caballero_flavor:0 "#F Jinetes are javelin-armed cavalry adept in harassing their opponents until they give ground or break their formation, whereupon they push a charge home."
+
+# Holy Orders
+
+jomsvikings:0 "Jomsvikings"
+jomsvikings_flavor:0 "#F The Jomsvikings were an order of Viking mercenaries or brigands of the 10th century and 11th century. They were staunchly Pagan and dedicated to the worship of such deities as Odin and Thor. They reputedly would fight for any lord able to pay their substantial fees.#!"
+
+handgunners:0 "Handgunners"
+handgunners_flavor:0 "#F The matchlock arquebus was the first portable shoulder-fired firearm. The addition of the matchlock permitted soldiers to keep both hands steadying the gun and eyes on the target while firing.#!"
+handgunners_desc:0 "#F The matchlock arquebus was the first portable shoulder-fired firearm. The addition of the matchlock permitted soldiers to keep both hands steadying the gun and eyes on the target while firing.#!"
+
+ribauldequins:0 "Ribauldequins"
+ribauldequins_flavor:0 "#F Ribauldequins, or organ guns, are volley gun with many small-caliber iron barrels set up parallel on a platform. When fired in a volley, they unleash a shower of iron shot deadly to massed infantry.#!"
+ribauldequins_desc:0 "#F The matchlock arquebus was the first portable shoulder-fired firearm. The addition of the matchlock permitted soldiers to keep both hands steadying the gun and eyes on the target while firing.#!"
+
+field_guns:0 "Field Guns"
+field_guns_flavor:0 "#F Better gunpowder, cast-iron projectiles, wheeled carriages, and the limber have produced light cannons mobile and deadly enough to be used on the field.#!"
+field_guns_desc:0 "#F Better gunpowder, cast-iron projectiles, wheeled carriages, and the limber have produced light cannons mobile and deadly enough to be used on the field.#!"
+
+coutiliers:0 "#defender_color Medium Cavalry#!"
+coutiliers_flavor:0 "#F Coutiliers were low-ranking professional soldier in Medieval French armies. A coutilier was a member of the immediate entourage of a French knight or a squire called lances fournies. Coutilier were equipped with a helmet, leg armour, a haubergeon, jack or brigandine, a dagger, sword and either a demilance or a voulge.#!"
+coutiliers_desc:0 "#F Coutiliers were low-ranking professional soldier in Medieval French armies. A coutilier was a member of the immediate entourage of a French knight or a squire called lances fournies. Coutilier were equipped with a helmet, leg armour, a haubergeon, jack or brigandine, a dagger, sword and either a demilance or a voulge.#!"
+innovation_coutiliers:0 "Coutiliers"
+innovation_coutiliers_desc:0 "#F Coutiliers were low-ranking professional soldier in Medieval French armies. A coutilier was a member of the immediate entourage of a French knight or a squire called lances fournies. Coutilier were equipped with a helmet, leg armour, a haubergeon, jack or brigandine, a dagger, sword and either a demilance or a voulge.#!"
+
+pavise_crossbowmen:0 "#defender_color Crossbowmen#!"
+pavise_crossbowmen_flavor:0 "#F The crossbow was often used often by urban militias and mercenary forces in central Europe. In the Holy Roman Empire, every city was required to employ a crossbowmaker, and membership in shooting clubs was common among guildsmen. Records of the Guild of St. George in Ghent show an organisation of sophistication, fielding uniformed crossbowmen organised in companies under officers and standard-bearers, with support services such as pavise carriers and surgeons. Crossbowmen also made up a significant proportion of Italian militias, again organised into units with officers, standards and pavise bearers.#!"
+pavise_crossbowmen_desc:0 "#F The crossbow was often used often by urban militias and mercenary forces in central Europe. In the Holy Roman Empire, every city was required to employ a crossbowmaker, and membership in shooting clubs was common among guildsmen. Records of the Guild of St. George in Ghent show an organisation of sophistication, fielding uniformed crossbowmen organised in companies under officers and standard-bearers, with support services such as pavise carriers and surgeons. Crossbowmen also made up a significant proportion of Italian militias, again organised into units with officers, standards and pavise bearers.#!"
+innovation_pavise_crossbowmen:0 "#defender_color Crossbowmen#!"
+innovation_pavise_crossbowmen_desc:0  "#F The crossbow was often used often by urban militias and mercenary forces in central Europe. In the Holy Roman Empire, every city was required to employ a crossbowmaker, and membership in shooting clubs was common among guildsmen. Records of the Guild of St. George in Ghent show an organisation of sophistication, fielding uniformed crossbowmen organised in companies under officers and standard-bearers, with support services such as pavise carriers and surgeons. Crossbowmen also made up a significant proportion of Italian militias, again organised into units with officers, standards and pavise bearers.#!"
+
+billmen:0 "#defender_color Pikemen#!"
+billmen_flavor:0 "#F When most European states were adopting the pike, the English preferred to stick with the billhook, a polearm consisting of a hooked chopping blade with several pointed projections mounted on a staff.#!"
+billmen_desc:0 "#F When most European states were adopting the pike, the English preferred to stick with the billhook, a polearm consisting of a hooked chopping blade with several pointed projections mounted on a staff.#!"
+innovation_billmen:0 "#defender_color High Medieval Weaponry#!"
+innovation_billmen_desc:0 "By the High Middle Ages, advancements in horse-breeding, equipment and metallurgy began to tip the balance of power between heavy cavalry and infantry greatly in favor of the former. Bowmen were no longer able to reliably pierce the thick armor of charging horsemen, and neither could footmen hold ranks against the impetus of their charge. In response, the long neglected crossbow reemerged -  a weapon more suited to contemporary warfare - and so did the pike, both deadly tools of war, promising massed infantry a sliver of a chance against the steel-clad juggernauts that dominated the battlefields of the era."
+
+gallowglass:0 "#defender_color Shock Infantry#!"
+gallowglass_flavor:0 "#F The gallowglasses were a class of elite mercenary warriors who were principally members of the Norse-Gaelic clans of Scotland between the mid 13th century and late 16th century. As Scots, they were Gaels and shared a common background and language with the Irish, but as they were descendants of 10th century Norse settlers who had intermarried with the local population in western Scotland, the Irish called them Gall Gaeil.#!"
+gallowglass_scottish:0 "#defender_color Shock Infantry#!"
+gallowglass_scottish_flavor:0 "#F The gallowglasses were a class of elite mercenary warriors who were principally members of the Norse-Gaelic clans of Scotland between the mid 13th century and late 16th century. As Scots, they were Gaels and shared a common background and language with the Irish, but as they were descendants of 10th century Norse settlers who had intermarried with the local population in western Scotland, the Irish called them Gall Gaeil.#!"
+gallowglass_desc:0 "#F The gallowglasses were a class of elite mercenary warriors who were principally members of the Norse-Gaelic clans of Scotland between the mid 13th century and late 16th century. As Scots, they were Gaels and shared a common background and language with the Irish, but as they were descendants of 10th century Norse settlers who had intermarried with the local population in western Scotland, the Irish called them Gall Gaeil.#!"
+innovation_gallowglass:0 "#defender_color High Medieval Weaponry#!"
+innovation_gallowglass_desc:0 "By the High Middle Ages, advancements in horse-breeding, equipment and metallurgy began to tip the balance of power between heavy cavalry and infantry greatly in favor of the former. Bowmen were no longer able to reliably pierce the thick armor of charging horsemen, and neither could footmen hold ranks against the impetus of their charge. In response, the long neglected crossbow reemerged -  a weapon more suited to contemporary warfare - and so did the pike, both deadly tools of war, promising massed infantry a sliver of a chance against the steel-clad juggernauts that dominated the battlefields of the era."
+dane_axemen:0 "#defender_color Shock Infantry#!"
+dane_axemen_flavor:0 "#F Through the course of the 10th–11th centuries, the Dane axe gained popularity in areas outside Scandinavia where Viking influence was strong, such as England, Ireland and Normandy. Historical accounts depict the Dane axe as the weapon of the warrior elite in this period, such as the Huscarls of Anglo-Saxon England. In the Bayeux tapestry, a visual record of the ascent of William the Conqueror to the throne of England, the axe is almost exclusively wielded by well armoured huscarls. #!"
+
+eastern_heavy_cav:0 "#defender_color Heavy Cavalry#!"
+eastern_heavy_cav_flavor:0 "#F The heavy cavalrymen of the steppe carried maces, lances with a hook and snare and sabers. They protected their horses in the same way as did they themselves, covering them with lamellar armor. Horse armor was divided into five parts and designed to protect every part of the horse, including the forehead, which had a specially crafted plate, which was tied on each side of the neck.#!"
+eastern_heavy_cav_desc:0 "#F The heavy cavalrymen of the steppe carried maces, lances with a hook and snare and sabers. They protected their horses in the same way as did they themselves, covering them with lamellar armor. Horse armor was divided into five parts and designed to protect every part of the horse, including the forehead, which had a specially crafted plate, which was tied on each side of the neck.#!"
+innovation_eastern_heavy_cav:0 "#defender_color Warhorses#!"
+innovation_eastern_heavy_cav_desc:0 "During the decline of the Roman Empire and the Early Middle Ages, much of the quality breeding stock developed during the classical period was lost due to uncontrolled breeding and had to be built up again. The origins of the medieval war horse are obscure, although Spanish horses, whatever their breeding, were the most expensive. In fact, in Germany the word spanjol became the term for quality war horses. As the importance of horse breeding to successful warfare was realized, planned breeding programs increased. Many changes were due to the influence of Islamic culture through both the Crusades and the Moorish invasions of Spain; the Arabs kept extensive pedigrees of their Barb and Arabian horses via an oral tradition. Because they kept careful records, monastics were often given the responsibility for horse breeding by certain members of the nobility, particularly in Spain."
+
+reiters:0 "#defender_color Light Cavalry#!"
+reiters_flavor:0 "#F The Reiter raised firearms to the status of primary weapons for cavalry, as opposed to earlier Western European heavy cavalry which primarily relied upon melee weapons. A Reiter's main weapons were two or more pistols and a sword; most Reiters wore helmets and cuirasses and often additional armor for the arms and legs. In general, commanders expected Reiters to be able to engage their opponents both with firearms and with swords. In the 16th century and up to about 1620, Reiters often formed up in deep blocks and used their firearms in a caracole attack in the hopes of disordering enemy infantry before charging home and engaging in hand-to-hand combat.#!"
+reiters_desc:0 "#F The Reiter raised firearms to the status of primary weapons for cavalry, as opposed to earlier Western European heavy cavalry which primarily relied upon melee weapons. A Reiter's main weapons were two or more pistols and a sword; most Reiters wore helmets and cuirasses and often additional armor for the arms and legs. In general, commanders expected Reiters to be able to engage their opponents both with firearms and with swords. In the 16th century and up to about 1620, Reiters often formed up in deep blocks and used their firearms in a caracole attack in the hopes of disordering enemy infantry before charging home and engaging in hand-to-hand combat.#!"
+innovation_reiters:0 "Reiters"
+innovation_reiters_desc:0 "#F The Reiter raised firearms to the status of primary weapons for cavalry, as opposed to earlier Western European heavy cavalry which primarily relied upon melee weapons. A Reiter's main weapons were two or more pistols and a sword; most Reiters wore helmets and cuirasses and often additional armor for the arms and legs. In general, commanders expected Reiters to be able to engage their opponents both with firearms and with swords. In the 16th century and up to about 1620, Reiters often formed up in deep blocks and used their firearms in a caracole attack in the hopes of disordering enemy infantry before charging home and engaging in hand-to-hand combat.#!"
+
+streltsy:0 "#defender_color Handgunners#!"
+streltsy_flavor:0 "#F The first streltsy units were created by Ivan the Terrible sometime between 1545 and 1550 and armed with arquebuses. During his reign, Russia was fighting wars almost continuously, including the Livonian War in the North and wars against the Khanates in the South. They first saw combat at the Siege of Kazan in 1552. Initially, the streltsy were recruited from among the free tradespeople and from the rural population. Subsequently, military service in this unit became lifelong and hereditary. #!"
+streltsy_desc:0 "#F The first streltsy units were created by Ivan the Terrible sometime between 1545 and 1550 and armed with arquebuses. During his reign, Russia was fighting wars almost continuously, including the Livonian War in the North and wars against the Khanates in the South. They first saw combat at the Siege of Kazan in 1552. Initially, the streltsy were recruited from among the free tradespeople and from the rural population. Subsequently, military service in this unit became lifelong and hereditary. #!"
+innovation_streltsy:0 "#defender_color Gunpowder#!"
+innovation_streltsy_desc:0 "Gunpowder is the earliest known chemical explosive. It consists of a mixture of sulfur, charcoal, and potassium nitrate, or saltpeter. The sulfur and charcoal act as fuels while the saltpeter is an oxidizer. The first confirmed reference to what can be considered gunpowder in China occurred in the 9th century AD, where it was first used for fire arrows. The earliest Western accounts of a recipe for gunpowder appear in texts written by English philosopher Roger Bacon in the 13th century."
+
+tercio:0 "#defender_color Handgunners#!"
+tercio_flavor:0 "#F During the Italian Wars, the Spanish general Gonzalo Fernández de Córdoba, called El Gran Capitán, combined pikemen, arquebusiers and swordsmen into colunelas as a counter to the French army of the Valois kings. By virtue of this combined-arms approach, the formation simultaneously enjoyed the staying power of its pike-armed infantry, the ranged firepower of its arquebusiers, as well as the ability to conduct assaults with sword-and-buckler men.#!"
+tercio_desc:0 "#F During the Italian Wars, the Spanish general Gonzalo Fernández de Córdoba, called El Gran Capitán, combined pikemen, arquebusiers and swordsmen into colunelas as a counter to the French army of the Valois kings. By virtue of this combined-arms approach, the formation simultaneously enjoyed the staying power of its pike-armed infantry, the ranged firepower of its arquebusiers, as well as the ability to conduct assaults with sword-and-buckler men.#!"
+innovation_tercio:0 "#defender_color Gunpowder#!"
+innovation_tercio_desc:0 "Gunpowder is the earliest known chemical explosive. It consists of a mixture of sulfur, charcoal, and potassium nitrate, or saltpeter. The sulfur and charcoal act as fuels while the saltpeter is an oxidizer. The first confirmed reference to what can be considered gunpowder in China occurred in the 9th century AD, where it was first used for fire arrows. The earliest Western accounts of a recipe for gunpowder appear in texts written by English philosopher Roger Bacon in the 13th century."
+
+skoutatoi:0 "#defender_color Skoutatoi#!"
+skoutatoi_flavor:0 "#F The bulk of the Byzantine infantry were the skoutatoi, named after the skouton, a large oval, round or kite-shaped shield. Skoutatoi were equipped with a steel helmet, mail coat, long spear, oval shield, and spatha.#!"
+skoutatoi_desc:0 "#F The bulk of the Byzantine infantry were the skoutatoi, named after the skouton, a large oval, round or kite-shaped shield. Skoutatoi were equipped with a steel helmet, mail coat, long spear, oval shield, and spatha.#!"
+innovation_skoutatoi:0 "Skoutatoi"
+innovation_skoutatoi_desc:0 "#F The bulk of the Byzantine infantry were the skoutatoi, named after the skouton, a large oval, round or kite-shaped shield. Skoutatoi were equipped with a steel helmet, mail coat, long spear, oval shield, and spatha.#!"
+
+winged_hussars:0 "#defender_color Heavy Cavalry#!"
+winged_hussars_flavor:0 "#F Modelled on the Hungarian hussars, the early hussars were light cavalry of exiled Balkan warriors who were sent to Poland as mercenaries. Following the military reforms of king Stephen Báthory in the second half of the 16th century, the hussar unit was adopted by the Polish military and transformed into a heavily armoured shock cavalry. The husaria banners and units participated in the largest cavalry charge in history at the Battle of Vienna in 1683 and were the elite of Polish cavalry until their disbandment in the 1770s.#!"
+winged_hussars_desc:0 "#F Modelled on the Hungarian hussars, the early hussars were light cavalry of exiled Balkan warriors who were sent to Poland as mercenaries. Following the military reforms of king Stephen Báthory in the second half of the 16th century, the hussar unit was adopted by the Polish military and transformed into a heavily armoured shock cavalry. The husaria banners and units participated in the largest cavalry charge in history at the Battle of Vienna in 1683 and were the elite of Polish cavalry until their disbandment in the 1770s.#!"
+innovation_winged_hussars:0 "#defender_color Warhorses#!"
+innovation_winged_hussars_desc:0 "During the decline of the Roman Empire and the Early Middle Ages, much of the quality breeding stock developed during the classical period was lost due to uncontrolled breeding and had to be built up again. The origins of the medieval war horse are obscure, although Spanish horses, whatever their breeding, were the most expensive. In fact, in Germany the word spanjol became the term for quality war horses. As the importance of horse breeding to successful warfare was realized, planned breeding programs increased. Many changes were due to the influence of Islamic culture through both the Crusades and the Moorish invasions of Spain; the Arabs kept extensive pedigrees of their Barb and Arabian horses via an oral tradition. Because they kept careful records, monastics were often given the responsibility for horse breeding by certain members of the nobility, particularly in Spain."
+
+ambushers:0 "#defender_color Light Infantry#!"
+ambushers_flavor:0 "#F Ugric ambushers rush trespassers in their woods from all quarters, making a severe attack and melting back into the forest.#!"
+ambushers_desc:0 "#F Ugric ambushers rush trespassers in their woods from all quarters, making a severe attack and melting back into the forest.#!"
+innovation_ambushers:0 "Väijyttäjät"
+innovation_ambushers_desc:0 "#F Ugric ambushers rush trespassers in their woods from all quarters, making a severe attack and melting back into the forest.#!"
+
+zhanmadao:0 "#defender_color Pikemen#!"
+zhanmadao_flavor:0 "#F Due to the lack of their own cavalry forces, the Song army usually had to rely on anti-cavalry infantry equipped with horse-butchering sabres, large axes, and crossbows to overcome the Khitans and Jurchens. The zhanmadao, the most commonly used anti-cavalry melee weapon during the Song Period, is a sabre with a single long broad blade, and a long handle suitable for two-handed use. It was used as an anti-cavalry weapon, dating from Emperor Cheng of Han, made to slice through a horse's legs. This is mentioned in the Wu Jing Zong Yao, a Song Military Manual from 1072. It featured prominently against the Jin armies in campaigns between 1129 and 1141.#!"
+zhanmadao_desc:0 "#F Due to the lack of their own cavalry forces, the Song army usually had to rely on anti-cavalry infantry equipped with horse-butchering sabres, large axes, and crossbows to overcome the Khitans and Jurchens. The zhanmadao, the most commonly used anti-cavalry melee weapon during the Song Period, is a sabre with a single long broad blade, and a long handle suitable for two-handed use. It was used as an anti-cavalry weapon, dating from Emperor Cheng of Han, made to slice through a horse's legs. This is mentioned in the Wu Jing Zong Yao, a Song Military Manual from 1072. It featured prominently against the Jin armies in campaigns between 1129 and 1141.#!"
+innovation_zhanmadao:0 "#defender_color High Medieval Weaponry#!"
+innovation_zhanmadao_desc:0 "By the High Middle Ages, advancements in horse-breeding, equipment and metallurgy began to tip the balance of power between heavy cavalry and infantry greatly in favor of the former. Bowmen were no longer able to reliably pierce the thick armor of charging horsemen, and neither could footmen hold ranks against the impetus of their charge. In response, the long neglected crossbow reemerged -  a weapon more suited to contemporary warfare - and so did the pike, both deadly tools of war, promising massed infantry a sliver of a chance against the steel-clad juggernauts that dominated the battlefields of the era."
+
+
+psiloi:0 "Psiloi"
+psiloi_flavor:0 "These soldiers, highly trained in the art of bow are formidable archers and highly mobile units. Most of the Imperial archers came from Asia Minor, especially the region around Trebizond on the Black sea, where they were raised, trained and equipped."
+
+innovation_psiloi:0 "Psiloi"
+innovation_psiloi_desc:0 "These soldiers, highly trained in the art of bow are formidable archers and highly mobile units. Most of the Imperial archers came from Asia Minor, especially the region around Trebizond on the Black sea, where they were raised, trained and equipped."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

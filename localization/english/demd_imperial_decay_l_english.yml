@@ -1,0 +1,67 @@
+﻿l_english:
+
+demd_imperial_decay_war_won_huge:0 "[war.GetName] Won: #P +[EmptyScope.ScriptValue('demd_imperial_decay_change_huge')|0]#! [imperial_decay|E]"
+demd_imperial_decay_war_won_huge_desc:0 "[winner.GetTitledFirstName] won the [war.GetName], decreasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #P +[EmptyScope.ScriptValue('demd_imperial_decay_change_huge')|0]#!."
+
+demd_imperial_decay_war_won_large:0 "[war.GetName] Won: #P +[EmptyScope.ScriptValue('demd_imperial_decay_change_large')|0]#! [imperial_decay|E]"
+demd_imperial_decay_war_won_large_desc:0 "[winner.GetTitledFirstName] won the [war.GetName], decreasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #P +[EmptyScope.ScriptValue('demd_imperial_decay_change_large')|0]#!."
+
+demd_imperial_decay_war_won_medium:0 "[war.GetName] Won: #P +[EmptyScope.ScriptValue('demd_imperial_decay_change_medium')|0]#! [imperial_decay|E]"
+demd_imperial_decay_war_won_medium_desc:0 "[winner.GetTitledFirstName] won the [war.GetName], decreasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #P +[EmptyScope.ScriptValue('demd_imperial_decay_change_medium')|0]#!."
+
+demd_imperial_decay_war_won_small:0 "[war.GetName] Won: #P +[EmptyScope.ScriptValue('demd_imperial_decay_change_small')|0]#! [imperial_decay|E]"
+demd_imperial_decay_war_won_small_desc:0 "[winner.GetTitledFirstName] won the [war.GetName], decreasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #P +[EmptyScope.ScriptValue('demd_imperial_decay_change_small')|0]#!."
+
+demd_imperial_decay_war_lost_huge:0 "[war.GetName] lost: #N [EmptyScope.ScriptValue('demd_imperial_decay_change_huge')|0]#! [imperial_decay|E]"
+demd_imperial_decay_war_lost_huge_desc:0 "[winner.GetTitledFirstName] lost the [war.GetName], increasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #N [EmptyScope.ScriptValue('demd_imperial_decay_change_huge')|0]#!."
+
+demd_imperial_decay_war_lost_large:0 "[war.GetName] lost: #N [EmptyScope.ScriptValue('demd_imperial_decay_change_large')|0]#! [imperial_decay|E]"
+demd_imperial_decay_war_lost_large_desc:0 "[winner.GetTitledFirstName] lost the [war.GetName], increasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #N [EmptyScope.ScriptValue('demd_imperial_decay_change_large')|0]#!."
+
+demd_imperial_decay_war_lost_medium:0 "[war.GetName] lost: #N [EmptyScope.ScriptValue('demd_imperial_decay_change_medium')|0]#! [imperial_decay|E]"
+demd_imperial_decay_war_lost_medium_desc:0 "[winner.GetTitledFirstName] lost the [war.GetName], increasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #N [EmptyScope.ScriptValue('demd_imperial_decay_change_medium')|0]#!."
+
+demd_imperial_decay_war_lost_small:0 "[war.GetName] lost: #N [EmptyScope.ScriptValue('demd_imperial_decay_change_small')|0]#! [imperial_decay|E]"
+demd_imperial_decay_war_lost_small_desc:0 "[winner.GetTitledFirstName] lost the [war.GetName], increasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #N [EmptyScope.ScriptValue('demd_imperial_decay_change_small')|0]#!."
+
+###
+
+demd_imperial_decay_succession:0 "[title.GetName] Succession: #N [EmptyScope.ScriptValue('demd_imperial_decay_change_medium')|0]#! [imperial_decay|E]"
+demd_imperial_decay_succession_desc:0 "[new_holder.GetTitledFirstName] succeeded to the [title.GetName], increasing the [imperial_decay|E] of the [winner.GetPrimaryTitle.GetName] by #N [EmptyScope.ScriptValue('demd_imperial_decay_change_medium')|0]#!."
+
+
+###
+
+demd_title_view_imperial_decay:0 "@icon_imperial_decay!# [imperial_decay|E]: [ROOT.Var('imperial_decay').GetValue|0]"
+demd_title_view_imperial_decay_blank:0 ""
+
+imperial_decay_desc_string:0 "$game_concept_imperial_decay_desc$"
+
+imperial_decay_vassal_independence_faction_join_chance:0 "$EFFECT_LIST_BULLET$ [Title.MakeScope.ScriptValue('demd_imperial_decay_independence_faction_join_modifier')|=$-0] Weight to [vassals|E] joining [independence_factions|E]"
+
+imperial_decay_vassal_claimant_faction_join_chance:0 "$EFFECT_LIST_BULLET$ [Title.MakeScope.ScriptValue('demd_imperial_decay_claimant_faction_join_modifier')|=$-0] Weight to [vassals|E] joining [claimant_factions|E]"
+
+imperial_decay_vassal_fracture_faction_join_chance:0 "$EFFECT_LIST_BULLET$ [Title.MakeScope.ScriptValue('demd_imperial_decay_fracture_faction_join_modifier')|=$-0] Weight to [vassals|E] joining [dissolution_factions|E]"
+
+imperial_decay_vassal_tax:0 "$EFFECT_LIST_BULLET$ [Title.MakeScope.ScriptValue('demd_imperial_decay_tax_rate_reduction')|=$+1%] [vassal|E] [tax|E] contribution"
+
+imperial_decay_vassal_manpower:0 "$EFFECT_LIST_BULLET$ [Title.MakeScope.ScriptValue('demd_imperial_decay_tax_rate_reduction')|=$+1%] [vassal|E] [demd_manpower|E] contribution"
+
+demd_has_greater_than_low_imperial_decay:0 "[imperial_decay|E] is greater than [EmptyScope.ScriptValue('low_imperial_decay')]"
+demd_has_greater_than_medium_imperial_decay:0 "[imperial_decay|E] is greater than [EmptyScope.ScriptValue('medium_imperial_decay')]"
+demd_has_greater_than_high_imperial_decay:0 "[imperial_decay|E] is greater than [EmptyScope.ScriptValue('high_imperial_decay')]"
+demd_has_greater_than_very_high_imperial_decay:0 "[imperial_decay|E] is greater than [EmptyScope.ScriptValue('very_high_imperial_decay')]"
+
+demd_has_less_than_low_imperial_decay:0 "[imperial_decay|E] is less than [EmptyScope.ScriptValue('low_imperial_decay')]"
+demd_has_less_than_medium_imperial_decay:0 "[imperial_decay|E] is less than [EmptyScope.ScriptValue('medium_imperial_decay')]"
+demd_has_less_than_high_imperial_decay:0 "[imperial_decay|E] is less than [EmptyScope.ScriptValue('high_imperial_decay')]"
+demd_has_less_than_very_high_imperial_decay:0 "[imperial_decay|E] is less than [EmptyScope.ScriptValue('very_high_imperial_decay')]"
+
+
+
+
+
+
+
+
+

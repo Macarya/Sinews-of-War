@@ -1,0 +1,16 @@
+﻿######################
+dark_insights_prowess_increase_maximum = 3 # The maximum amount of Prowess that can be gained from Dark Insights
+dark_insights_intrigue_increase_maximum = 3 # The maximum amount of Intrigue that can be gained from Dark Insights
+
+# Promising Prospects Perk
+promising_prospects_self_value = 25
+promising_prospects_other_value = 10
+
+# Bellum Justum Perk
+bellum_justum_discount_percentage = 80
+
+# Accomplished Forger Perk
+accomplished_forger_percentage = 33
+
+# True Ruler Perk
+true_ruler_value = 25

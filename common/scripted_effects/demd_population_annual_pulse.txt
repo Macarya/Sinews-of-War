@@ -1,0 +1,921 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+annualPulse = {
+	every_in_global_list = {
+		variable = $list$
+    	change_variable = { name = county_weather_fertility_mult add = county_weather_fertility_mult_delta }
+        change_variable = { name = county_weather_fertility_mult add = { -0.04 0.04 } }
+    	if = {
+    		limit = { has_county_modifier = demd_drought }
+    		change_variable = { name = county_weather_fertility_mult add = drought_yearly_weather_modifier }
+    		random_list = {
+    			0 = { 
+    				modifier = {
+    					add = drought_end_chance
+    				}
+    				demd_end_drought = yes
+    			}
+    			0 = { 
+    				modifier = {
+    					add = drought_end_chance_neg
+    				}
+    			}
+    		}
+    	}	
+    	every_county_province = {
+    		limit = { has_holding = yes }
+            set_variable = { name = food_districts_max value = food_districts_max }
+        	set_variable = {
+        		name = food_producers_max
+        		value = {
+        			value = var:food_districts_count
+        			multiply = demd_jobs_per_district
+        		}		
+        	}
+        	set_variable = {
+        		name = knight_capacity_producers_max
+        		value = {
+        			value = var:population
+        			multiply = demd_farmer_to_noble_ratio
+        		}		
+        	}
+        	set_variable = { name = food_producers_count value = 0 }
+        	set_variable = { name = knight_capacity_producers_count value = 0 }
+        	set_variable = { name = unemployed_count value = var:population }
+            set_variable = {
+                name = temp
+                value = {
+                    value = var:knight_capacity_producers_max
+                    subtract = var:knight_capacity_producers_count
+                }
+            }
+            clamp_variable = { name = temp max = var:unemployed_count min = 0 }
+            if = {
+                limit = {
+                    var:temp > var:knight_capacity_producers_max
+                }
+                change_variable = { name = knight_capacity_producers_count add = var:knight_capacity_producers_max }
+                change_variable = { name = unemployed_count subtract = var:knight_capacity_producers_max }
+            }
+            else = {
+                change_variable = { name = knight_capacity_producers_count add = var:temp }
+                change_variable = { name = unemployed_count subtract = var:temp }
+            }
+            set_variable = {
+                name = temp
+                value = {
+                    value = var:food_producers_max
+                    subtract = var:food_producers_count
+                }
+            }
+            clamp_variable = { name = temp max = var:unemployed_count min = 0 }
+            if = {
+                limit = {
+                    var:temp > var:food_producers_max
+                }
+                change_variable = { name = food_producers_count add = var:food_producers_max }
+                change_variable = { name = unemployed_count subtract = var:food_producers_max }
+            }
+            else = {
+                change_variable = { name = food_producers_count add = var:temp }
+                change_variable = { name = unemployed_count subtract = var:temp }
+            }
+        	set_variable = {
+                name = knight_capacity_produced
+                value = {
+                    value = knight_capacity_produced_per_capita
+                    multiply = var:knight_capacity_producers_count
+                }
+            }
+        	set_variable = { name = food_produced_per_capita value = food_produced_per_capita }
+        	set_variable = {
+        		name = food_produced
+        		value = {
+        			value = var:food_produced_per_capita
+        			multiply = var:food_producers_count
+        		}
+        	}
+        	set_variable = { name = prov_construction_capacity value = prov_construction_capacity }
+        	set_variable = { name = prov_districts_to_build value = prov_districts_to_build }
+        	set_variable = { name = prov_unused_construction_capacity value = prov_unused_construction_capacity }
+            change_variable = { name = food_districts_count add = prov_districts_to_build }
+            set_variable = {
+                name = food_depreciation
+                value = {
+                    value = var:food_stockpile
+                    multiply = food_depreciation_rate
+                }
+            }
+            change_variable = { name = food_stockpile subtract = var:food_depreciation }
+            change_variable = { name = food_stockpile add = var:food_produced }
+        	set_variable = { name = food_taxed value = food_taxed }
+        	change_variable = { name = food_stockpile subtract = var:food_taxed }
+        	set_variable = { name = food_taxed_to_gold value = var:food_taxed }
+        	if = {
+        		limit = { NOT = { county.holder.capital_county = county } }
+        		set_variable = { name = food_taxed_to_capital value = food_to_capital }		
+        		change_variable = { name = food_taxed_to_gold subtract = var:food_taxed_to_capital }
+        		county.holder.capital_county = { 
+        			change_variable = { name = food_imported_from_demesne add = prev.var:food_taxed_to_capital }
+        		}
+        	}
+        	else = {
+        		set_variable = { name = food_taxed_to_capital value = 0 }
+        	}
+        	if = {
+        		limit = { county.holder = { is_independent_ruler = no } }
+        		set_variable = { name = food_taxed_to_liege value = food_to_liege }		
+        		change_variable = { name = food_taxed subtract = var:food_taxed_to_liege }
+        		county.holder.liege.capital_county = { 
+        			change_variable = { name = food_imported_from_vassals add = prev.var:food_taxed_to_liege } 
+        		}
+        	}
+        	else = {
+        		set_variable = { name = food_taxed_to_liege value = 0 }
+        	}
+        	set_variable = { name = food_exported value = food_exported }
+        	change_variable = { name = food_stockpile subtract = var:food_exported }
+        	county = { change_variable = { name = food_imported_from_baronies add = prev.var:food_exported } }
+        	set_variable = { name = food_demanded value = food_demanded }
+        	set_variable = { name = food_consumed value = food_stockpile_excess }
+            change_variable = { name = food_stockpile subtract = var:food_consumed }
+        	set_variable = {
+        		name = food_ratio
+        		value = {
+                    value = {
+                        value = var:food_consumed
+                        divide = var:food_demanded
+                    }
+        		}
+        	}
+            set_variable = {
+                name = goods_depreciation
+                value = {
+                    value = var:goods_stockpile
+                    multiply = goods_depreciation_rate
+                }
+            }
+            change_variable = { name = goods_stockpile subtract = var:goods_depreciation }
+            change_variable = { name = goods_stockpile add = var:goods_imported }
+        	set_variable = { name = capital_production_multiplier value = capital_production_multiplier }
+        	change_variable = { name = food_districts_count subtract = food_districts_to_remove } 
+    	}
+    	if = { 
+    		limit = { 
+    			has_variable = expansion_target 
+    			NOT = { title_province = { has_holding_type = tribal_holding } }
+    		}
+    		var:expansion_target = {		
+    			change_variable = { name = holding_construction_progress add = yearly_holding_construction_progress }
+    			clamp_variable = { name = holding_construction_progress min = 0 max = holding_construction_progress_max }
+    			if = { 
+    				limit = { 
+    					OR = {
+    						var:holding_construction_progress >= holding_construction_progress_max 
+    						has_holding = yes
+    					}
+    				}
+    				county = { 
+                    	random_county_province = {
+                    		limit = { 
+                    			has_variable = holding_construction_progress 
+                    			var:holding_construction_progress < holding_construction_progress_max
+                    			has_holding = no
+                    		}
+                    		county = { set_variable = { name = expansion_target value = prev } }
+                    	}
+    					if = { 
+    						limit = { var:expansion_target = prev }
+    						remove_variable = expansion_target
+    					}
+    				}			
+    			}
+    		}
+    	}
+    	random_list = {
+    		1 = {
+    			trigger_event = { id = demd_pop_fire.1001 days = { 0 365 } }
+    		}
+    		99 = {
+    		}
+    	}
+    	if = {
+    		limit = {
+    			OR = {
+    				has_variable = isOnMinorRiver
+    				is_riverside_county = yes
+    			}
+    		}
+    		random_list = {
+    			2 = {
+    				trigger_event = { id = demd_pop_flood.1001 days = { flood_months_lower flood_months_upper } }
+    			}
+    			98 = {
+    			}
+    		}
+    	}
+    	if = { 
+    		limit = {
+    			has_variable = avalanche_eligible
+    		}
+    		random_list = {
+    			2 = {
+    				trigger_event = { id = demd_pop_avalanche.1001 months = { avalanche_months_lower avalanche_months_upper } }
+    			}
+    			98 = {
+    			}
+    		}
+    	}	
+        save_temporary_scope_as = home
+    	every_in_list = {
+    		variable = county_neighbors
+    		if = {
+    			limit = {
+    				prev.var:id < var:id
+    			}
+    			if = {
+    				limit = {
+    					var:population > 0.1
+    					scope:home.var:population > 0.1
+    				}
+    				set_variable = { name = migrationPairwise value = migration_pairwise }
+    				clamp_variable = { name = migrationPairwise min = 0 max = scope:home.var:maxPairwise }
+    				clamp_variable = { name = migrationPairwise min = 0 max = var:maxPairwise }
+    				change_variable = { name = migration_growth add = var:migrationPairwise }
+    				scope:home = { change_variable = { name = migration_growth subtract = prev.var:migrationPairwise } }
+    			}
+    		}
+    	}	
+    	set_variable = { name = natural_birth_rate value = natural_birth_rate }
+        set_variable = { name = total_death_rate value = total_death_rate }
+    	set_variable = {
+    		name = growth_rate
+    		value = {
+    			value = var:natural_birth_rate
+    			subtract = var:total_death_rate
+    		}
+    	}
+    	clamp_variable = { name = growth_rate min = demd_population_min_growth_rate max = 1 }
+        set_variable = { 
+    		name = internal_growth 
+    		value = {
+    			value = var:growth_rate 
+    			multiply = var:population 
+    		}
+    	}
+        change_variable = { 
+    		name = population 
+    		add = var:internal_growth 
+    	}
+    	clamp_variable = { name = population min = 0.1 max = 1000000 }
+    	every_county_province = {
+    		limit = { has_holding = yes }
+        	set_variable = { name = natural_birth_rate value = natural_birth_rate }
+            set_variable = { name = total_death_rate value = total_death_rate }
+        	set_variable = {
+        		name = growth_rate
+        		value = {
+        			value = var:natural_birth_rate
+        			subtract = var:total_death_rate
+        		}
+        	}
+        	clamp_variable = { name = growth_rate min = demd_population_min_growth_rate max = 1 }
+            set_variable = { 
+        		name = internal_growth 
+        		value = {
+        			value = var:growth_rate 
+        			multiply = var:population 
+        		}
+        	}
+            change_variable = { 
+        		name = population 
+        		add = var:internal_growth 
+        	}
+        	clamp_variable = { name = population min = 0.1 max = 1000000 }
+    	}
+    	every_county_province = {
+    		limit = { has_holding = yes }
+    		set_variable = { name = migration_pull value = migration_pull_target }
+    	}
+    	set_variable = {
+    		name = maxInternalPairwise
+    		value = {
+    			value = var:population
+    			multiply = var:max_internal_migration_percent
+    		}
+    	}
+    	every_county_province = {
+    		limit = { has_holding = yes }
+    		set_variable = { name = internal_migration_growth value = internal_migration_pairwise }
+    		set_variable = {
+    			name = internal_migration_growth_percent
+    			value = {
+    				value = var:internal_migration_growth
+    				divide = var:population
+    			}
+    		}
+    	}
+    	set_variable = { name = internal_migration_growth value = county_internal_migration_growth_sum }
+    	set_variable = {
+    		name = internal_migration_growth_percent
+    		value = {
+    			value = var:internal_migration_growth
+    			divide = var:population
+    		}
+    	}
+    	every_county_province = {
+    		limit = { has_holding = yes }		
+            change_variable = { name = population add = var:internal_migration_growth }	
+    	}
+    	change_variable = { name = population add = var:internal_migration_growth }
+    	set_variable = { name = highest_mp_province value = title_province } 
+    	set_variable = { name = lowest_mp_province value = title_province } 
+    	set_variable = { name = temp value = title_province.var:migration_pull } 
+    	set_variable = { name = temp2 value = title_province.var:migration_pull } 
+    	every_county_province = {
+    		limit = { has_holding = yes }
+    		if = {
+    			limit = { var:migration_pull > county.var:temp }
+    			county = { 
+    				set_variable = { name = highest_mp_province value = prev } 
+    				set_variable = { name = temp value = prev.var:migration_pull } 
+    			}
+    		}
+    		else_if = {
+    			limit = { var:migration_pull < county.var:temp2 }
+    			county = { 
+    				set_variable = { name = lowest_mp_province value = prev } 
+    				set_variable = { name = temp2 value = prev.var:migration_pull } 
+    			}
+    		}
+    	}
+    	if = {
+    		limit = { NOT = { var:highest_mp_province = var:lowest_mp_province } }
+    		set_variable = { name = RtoR_migration value = RtoR_migration_pairwise }
+    		var:highest_mp_province = {
+    			change_variable = { name = population add = county.var:RtoR_migration }
+    		}
+    		var:lowest_mp_province = {
+    			change_variable = { name = population subtract = county.var:RtoR_migration }
+    		}
+    	}
+    	set_variable = { name = county_population value = county_population }
+    	set_variable = { name = effective_tax_rate value = effective_tax_rate }
+    	set_variable = { name = food_to_liege_rate value = holder.food_to_liege_rate }
+        change_variable = {
+            name = public_order
+            add = public_order_delta
+        }
+    	clamp_variable = { name = public_order min = 0 max = 1 }
+        change_variable = {
+            name = sanitation
+            add = sanitation_delta
+        }
+    	clamp_variable = { name = sanitation min = 0 max = 1 }
+        set_variable = {
+    		name = goods_producers_max
+    		value = {
+    			value = var:goods_districts_count
+    			multiply = demd_jobs_per_district
+    		}
+    	}
+    	clamp_variable = { name = goods_producers_max min = 0 max = 1000000 }
+    	set_variable = { name = goods_producers_count value = 0 }
+    	set_variable = { name = unemployed_count value = var:population }
+        set_variable = {
+            name = temp
+            value = {
+                value = var:goods_producers_max
+                subtract = var:goods_producers_count
+            }
+        }
+        clamp_variable = { name = temp max = var:unemployed_count min = 0 }
+        if = {
+            limit = {
+                var:temp > var:goods_producers_max
+            }
+            change_variable = { name = goods_producers_count add = var:goods_producers_max }
+            change_variable = { name = unemployed_count subtract = var:goods_producers_max }
+        }
+        else = {
+            change_variable = { name = goods_producers_count add = var:temp }
+            change_variable = { name = unemployed_count subtract = var:temp }
+        }
+    	set_variable = { name = goods_produced_per_capita value = goods_produced_per_capita }
+        set_variable = {
+            name = goods_produced
+            value = {
+                value = var:goods_produced_per_capita
+                multiply = var:goods_producers_count
+            }
+        }
+        set_variable = { name = produced_trade_value value = produced_trade_value }
+        set_variable = { name = trade_power value = trade_power }
+    	set_variable = { name = collected_trade_linkage_tariffs value = collected_trade_linkage_tariffs }
+        set_variable = { 
+            name = trade_value
+            value = {
+                value = var:produced_trade_value
+                add = var:collected_trade_value 
+    			add = var:collected_trade_linkage_tariffs
+            }
+        }
+        set_variable = {
+            name = food_depreciation
+            value = {
+                value = var:food_stockpile
+                multiply = food_depreciation_rate
+            }
+        }
+        change_variable = { name = food_stockpile subtract = var:food_depreciation }
+    	set_variable = {
+    		name = food_imported
+    		value = {
+    			value = var:food_imported_from_baronies
+    			add = var:food_imported_from_demesne
+    			add = var:food_imported_from_vassals
+    		}
+    	}
+    	change_variable = { name = food_stockpile add = var:food_imported }
+    	set_variable = { name = food_imported_from_baronies_display value = var:food_imported_from_baronies }
+    	set_variable = { name = food_imported_from_demesne_display value = var:food_imported_from_demesne }
+    	set_variable = { name = food_imported_from_vassals_display value = var:food_imported_from_vassals }
+    	set_variable = { name = food_imported_from_baronies value = 0 }
+    	set_variable = { name = food_imported_from_demesne value = 0 }
+    	set_variable = { name = food_imported_from_vassals value = 0 }
+    	set_variable = { name = food_demanded value = food_demanded }
+    	set_variable = { name = food_consumed value = food_stockpile_excess }
+        change_variable = { name = food_stockpile subtract = var:food_consumed }
+    	set_variable = {
+    		name = food_ratio
+    		value = {
+                value = {
+                    value = var:food_consumed
+                    divide = var:food_demanded
+                }
+    		}
+    	}	
+        set_variable = {
+            name = goods_depreciation
+            value = {
+                value = var:goods_stockpile
+                multiply = goods_depreciation_rate
+            }
+        }
+        change_variable = { name = goods_stockpile subtract = var:goods_depreciation }
+        change_variable = { name = goods_stockpile add = var:goods_produced }
+    	change_variable = { name = goods_stockpile add = trade_value_to_goods }
+        set_variable = {
+            name = goods_taxed
+            value = {
+                value = var:goods_produced
+                multiply = var:effective_tax_rate
+            }
+        }
+    	change_variable = { name = goods_stockpile subtract = var:goods_taxed }
+    	set_variable = { name = goods_exported value = goods_exported }
+    	every_county_province = { 
+    		limit = { has_variable = food_exported }
+    		set_variable = { name = goods_imported value = goods_imported }
+    	}
+    	change_variable = { name = goods_stockpile subtract = var:goods_exported }
+    	set_variable = { name = capital_production_multiplier value = capital_production_multiplier }
+    	set_variable = { name = county_construction_capacity value = county_construction_capacity }
+    	set_variable = { name = county_districts_to_build value = county_districts_to_build }
+    	set_variable = { name = county_unused_construction_capacity value = county_unused_construction_capacity }
+        change_variable = { name = goods_districts_count add = county_districts_to_build }
+    	change_variable = { name = goods_districts_count subtract = goods_districts_to_remove } 
+        if = {
+    		limit = {
+    			NOT = { has_county_modifier = plague_immunity }
+    		}
+    		random_list = {
+    			0 = { 
+    				modifier = {
+    					always = yes
+    					add = outbreak_risk
+    				}
+    				trigger_event = { id = demd_pop_disease.1001 days = { 1 360 } }
+    			}
+    			10000 = {
+    			}
+    		}
+    	}
+        if = {
+    		limit = { has_county_modifier = plague_present }
+            every_in_list = {
+                variable = county_neighbors
+                limit = { NOT = { has_county_modifier = plague_immunity } }
+    			random_list = {
+    				50 = {
+    					modifier = {
+    						NOT = { prev = { has_county_modifier = quarantine } }
+    						add = no_quarantine_spread_chance_addition
+    					}
+    					trigger_event = { id = demd_pop_disease.1001 days = { 1 360 } }
+    				}
+    				500 = {
+    				}
+    			}           
+            }
+        }
+        if = {
+            limit = {
+                holder = { is_ai = yes }
+            }
+        	if = {
+        		limit = { 
+        			county.county_opinion < -15	
+        			var:manpower_setting < var:tax_setting
+        			NOT = { has_variable = tax_setting_changed }
+        		}
+        		demd_decrement_edict_setting = { TYPE = tax }
+        	}
+        	else_if = {
+        		limit = { 
+        			county.county_opinion > 15	
+        			var:manpower_setting >= var:tax_setting
+        			NOT = { has_variable = tax_setting_changed }
+        		}
+        		demd_increment_edict_setting = { TYPE = tax }
+        	}
+        	if = {
+        		limit = {
+        			county.county_opinion < -15	
+        			var:manpower_setting >= var:tax_setting 
+        			NOT = { has_variable = manpower_setting_changed }
+        		}
+        		demd_decrement_edict_setting = { TYPE = manpower }
+        	}
+        	else_if = {
+        		limit = {
+        			county.county_opinion > 15	
+        			var:manpower_setting < var:tax_setting 
+        			NOT = { has_variable = manpower_setting_changed }
+        		}
+        		demd_increment_edict_setting = { TYPE = manpower }
+        	}
+        	set_variable = { name = temp value = demd_amenity_level_expected }
+        	if = {
+        		limit = { NOT = { has_variable = public_order_setting_changed } }
+        		if = {
+        			limit = { var:public_order_setting < var:temp }
+        			demd_increment_edict_setting = { TYPE = public_order }
+        		}
+        		else_if = {
+        			limit = { var:public_order_setting > var:temp }
+        			demd_decrement_edict_setting = { TYPE = public_order }
+        		}
+        	}
+        	if = {
+        		limit = { NOT = { has_variable = sanitation_setting_changed } }
+        		if = {
+        			limit = { var:sanitation_setting < var:temp }
+        			demd_increment_edict_setting = { TYPE = sanitation }
+        		}
+        		else_if = {
+        			limit = { var:sanitation_setting > var:temp }
+        			demd_decrement_edict_setting = { TYPE = sanitation }
+        		}	
+        	}
+        	if = {
+        		limit = { NOT = { has_variable = irrigation_setting_changed } }
+        		if = {
+        			limit = { var:irrigation_setting < var:temp }
+        			demd_increment_edict_setting = { TYPE = irrigation }
+        		}
+        		else_if = {
+        			limit = { var:irrigation_setting > var:temp }
+        			demd_decrement_edict_setting = { TYPE = irrigation }
+        		}
+        	}
+        	if = {
+        		limit = { NOT = { has_variable = infrastructure_setting_changed } }
+        		if = {
+        			limit = { var:infrastructure_setting < var:temp }
+        			demd_increment_edict_setting = { TYPE = infrastructure }
+        		}
+        		else_if = {
+        			limit = { var:infrastructure_setting > var:temp }
+        			demd_decrement_edict_setting = { TYPE = infrastructure }
+        		}
+        	}
+    	}	
+    	every_in_list = { 
+    		variable = county_provinces
+    		limit = { has_holding = yes }
+    		set_variable = { name = manpower_total_percent value = manpower_total_percent }
+    		if = {
+    			limit = { county.title_province = this }
+            	set_variable = {
+            		name = manpower
+            		value = {
+            			value = var:population
+            			add = county.var:population
+            			multiply = var:manpower_total_percent
+            			multiply = 1000	
+            		}
+            	}
+            	set_variable = { 
+            		name = garrison 
+            		value = {
+            			value = var:manpower
+            			multiply = garrison_manpower_percent
+            		}
+            	} 
+            	set_variable = { 
+            		name = levy 
+            		value = {
+            			value = var:manpower
+            			multiply = {
+            				value = 1
+            				subtract = garrison_manpower_percent
+            			}
+            			multiply = { 
+            				value = var:population
+            				divide = {
+            					value = var:population
+            					add = county.var:population
+            				}
+            			}
+            		}
+            	} 
+            	set_variable = { 
+            		name = free_manpower 
+            		value = {
+            			value = var:manpower
+            			subtract = var:garrison
+            			subtract = var:levy
+            		}
+            	}
+    		}
+    		else = {
+            	set_variable = {
+            		name = manpower
+            		value = {
+            			value = var:population
+            			multiply = var:manpower_total_percent
+            			multiply = 1000	
+            		}
+            	}
+            	set_variable = { 
+            		name = garrison 
+            		value = {
+            			value = var:manpower
+            			multiply = garrison_manpower_percent
+            		}
+            	} 
+            	set_variable = { 
+            		name = levy 
+            		value = {
+            			value = var:manpower
+            			subtract = var:garrison
+            		}
+            	} 
+    		}
+        	set_variable = { 
+        		name = temp 
+        		value = var:garrison 
+        	}
+            remove_all_province_modifier_instances = demd_prov_garrison_modifier_huge
+            remove_all_province_modifier_instances = demd_prov_garrison_modifier_big
+            remove_all_province_modifier_instances = demd_prov_garrison_modifier_medium
+            remove_all_province_modifier_instances = demd_prov_garrison_modifier_small
+        	if = {
+        		limit = { building_max_garrison > 45 }
+        		while = {
+        			limit = { var:temp > demd_prov_garrison_huge }
+        			add_province_modifier = demd_prov_garrison_modifier_huge
+        			change_variable = { name = temp subtract = demd_prov_garrison_huge }
+        		}
+        		while = {
+        			limit = { var:temp > demd_prov_garrison_big } 
+        			add_province_modifier = demd_prov_garrison_modifier_big
+        			change_variable = { name = temp subtract = demd_prov_garrison_big }
+        		}
+        		while = {
+        			limit = { var:temp > demd_prov_garrison_medium } 
+        			add_province_modifier = demd_prov_garrison_modifier_medium
+        			change_variable = { name = temp subtract = demd_prov_garrison_medium }
+        		}
+        		while = {
+        			limit = { var:temp > demd_prov_garrison_small } 
+        			add_province_modifier = demd_prov_garrison_modifier_small
+        			change_variable = { name = temp subtract = demd_prov_garrison_small }
+        		}
+        	}
+        	set_variable = { 
+        		name = temp 
+        		value = var:levy 
+        	}
+            remove_all_province_modifier_instances = demd_prov_levy_modifier_huge
+            remove_all_province_modifier_instances = demd_prov_levy_modifier_big
+            remove_all_province_modifier_instances = demd_prov_levy_modifier_medium
+            remove_all_province_modifier_instances = demd_prov_levy_modifier_small
+        	if = {
+        		limit = { building_levies > 45 }
+        		while = {
+        			limit = { var:temp > demd_prov_levy_huge } 
+        			add_province_modifier = demd_prov_levy_modifier_huge
+        			change_variable = { name = temp subtract = demd_prov_levy_huge }
+        		}
+        		while = {
+        			limit = { var:temp > prev.demd_prov_levy_big }
+        			add_province_modifier = demd_prov_levy_modifier_big
+        			change_variable = { name = temp subtract = demd_prov_levy_big }
+        		}
+        		while = {
+        			limit = { var:temp > prev.demd_prov_levy_medium } 
+        			add_province_modifier = demd_prov_levy_modifier_medium
+        			change_variable = { name = temp subtract = demd_prov_levy_medium }
+        		}
+        		while = {
+        			limit = { var:temp > prev.demd_prov_levy_small } 
+        			add_province_modifier = demd_prov_levy_modifier_small
+        			change_variable = { name = temp subtract = demd_prov_levy_small }
+        		}
+        	}
+            set_variable = { name = temp value = supply_limit }
+            remove_all_province_modifier_instances = demd_prov_supply_limit_modifier_huge
+        	remove_all_province_modifier_instances = demd_prov_supply_limit_modifier_big
+        	remove_all_province_modifier_instances = demd_prov_supply_limit_modifier_medium
+        	remove_all_province_modifier_instances = demd_prov_supply_limit_modifier_small
+            while = {
+                limit = { var:temp > 12500 }
+                add_province_modifier = demd_prov_supply_limit_modifier_huge
+                change_variable = { name = temp subtract = 12500 }
+            }
+            while = {
+                limit = { var:temp > 2500 }
+                add_province_modifier = demd_prov_supply_limit_modifier_big
+                change_variable = { name = temp subtract = 2500 }
+            }
+            while = {
+                limit = { var:temp > 500 }
+                add_province_modifier = demd_prov_supply_limit_modifier_medium
+                change_variable = { name = temp subtract = 500 }
+            }
+            while = {
+                limit = { var:temp > 100 }
+                add_province_modifier = demd_prov_supply_limit_modifier_small
+                change_variable = { name = temp subtract = 100 }
+            }
+            set_variable = {
+                name = temp
+                value = {
+                    value = population_tax
+                }
+            }
+            remove_all_province_modifier_instances = demd_prov_tax_modifier_huge
+            remove_all_province_modifier_instances = demd_prov_tax_modifier_big
+            remove_all_province_modifier_instances = demd_prov_tax_modifier_medium
+            remove_all_province_modifier_instances = demd_prov_tax_modifier_small
+            while = {
+                limit = { var:temp > 100 }
+                add_province_modifier = demd_prov_tax_modifier_huge
+                change_variable = { name = temp subtract = 100 }
+            }
+            while = {
+                limit = { var:temp > 10 }
+                add_province_modifier = demd_prov_tax_modifier_big
+                change_variable = { name = temp subtract = 10 }
+            }
+            while = {
+                limit = { var:temp > 1 }
+                add_province_modifier = demd_prov_tax_modifier_medium
+                change_variable = { name = temp subtract = 1 }
+            }
+            while = {
+                limit = { var:temp > 0 }
+                add_province_modifier = demd_prov_tax_modifier_small
+                change_variable = { name = temp subtract = 0.1 }
+            }
+    	}
+	}
+}
+
+monthlyPulseTradeNode = {
+	every_in_global_list = {
+		variable = $list$
+    	save_scope_as = trade_node
+    	var:node_owner = {
+    		if = {
+    			limit = { 
+    				OR = {
+    					NOT = { exists = capital_county }
+    					NOT = { prev = capital_county.var:trade_node }
+    				}
+    			}
+    			prev = { demd_transfer_trade_node_ownership_invalid = yes }
+    		}
+    	}
+    	save_scope_as = trade_node
+    	every_in_list = {
+    		variable = strategic_locations
+    		limit = { holder.culture = { scope:trade_node = { NOT = { is_culture_involved_in_struggle = prev } } } }
+    		scope:trade_node = {
+    			demd_add_culture_to_trade_node = { CULTURE = prev.holder.culture }
+    		}
+    	}
+    	every_in_list = {
+    		variable = strategic_locations
+    		limit = { holder.faith = { scope:trade_node = { NOT = { is_faith_involved_in_struggle = prev } } } }
+    		scope:trade_node = {
+    			demd_add_faith_to_trade_node = { FAITH = prev.holder.faith }
+    		}
+    	}
+    	every_in_list = {
+    		variable = involved_faiths
+    		limit = { 
+    			NOT = { 
+    				any_in_list = { 
+    					variable = strategic_locations
+    					holder.faith = prev
+    				}
+    			}
+    		}
+    		prev = { demd_remove_faith_from_trade_node = { FAITH = prev } }
+    	}
+    	every_in_list = {
+    		variable = involved_cultures
+    		limit = { 
+    			NOT = { 
+    				any_in_list = { 
+    					variable = strategic_locations
+    					holder.faith = prev
+    				}
+    			}
+    		}
+    		prev = { demd_remove_culture_from_trade_node = { CULTURE = prev } }
+    	}
+    	set_variable = { name = node_produced_trade_value value = node_produced_trade_value }		
+    	set_variable = { name = node_trade_power value = node_trade_power }
+    	set_variable = { name = domestic_collected_trade_value value = domestic_collected_trade_value }
+    	set_variable = { name = imported_collected_trade_value value = imported_collected_trade_value }
+    	set_variable = { name = total_collected_trade_value value = total_collected_trade_value }
+    	change_variable = { name = trade_node_wealth add = trade_node_wealth_monthly_gain }
+    	every_in_list = {
+    		variable = trade_node_counties
+    		set_variable = {
+    			name = collected_trade_value
+    			value = {
+    				value = var:trade_power
+    				divide = prev.var:node_trade_power
+    				multiply = prev.var:total_collected_trade_value
+    			}
+    		}
+    	}
+    	if = {
+    		limit = { has_game_rule = demd_struggle_variable_fix_on }
+        	save_scope_as = trade_node
+        	if = {
+        		limit = { NOT = { has_variable = backup_county } }
+        		random_in_list = {
+        			variable = trade_node_counties			
+        			add_to_global_variable_list = { name = trade_node_backups_global target = this }
+        			scope:trade_node = { set_variable = { name = backup_county value = prev } }
+        		}
+        	}
+        	var:backup_county = {
+        		save_scope_as = backup_county
+        		set_variable = { name = trade_node_size value = scope:trade_node.var:trade_node_size }
+        		set_variable = { name = num_strategic_locations value = scope:trade_node.var:num_strategic_locations }
+        		set_variable = { name = node_weather_fertility_mult value = scope:trade_node.var:node_weather_fertility_mult }
+        		set_variable = { name = trade_node_wealth value = scope:trade_node.var:trade_node_wealth }
+        		set_variable = { name = num_strategic_locations value = scope:trade_node.var:num_strategic_locations  }
+        		set_variable = { name = node_produced_trade_value value = scope:trade_node.var:node_produced_trade_value }
+        		set_variable = { name = node_trade_power value = scope:trade_node.var:node_trade_power }
+        		set_variable = { name = domestic_collected_trade_value value = scope:trade_node.var:domestic_collected_trade_value }
+        		set_variable = { name = imported_collected_trade_value value = scope:trade_node.var:imported_collected_trade_value }
+        		set_variable = { name = total_collected_trade_value value = scope:trade_node.var:total_collected_trade_value }
+        		set_variable = { name = node_owner value = scope:trade_node.var:node_owner }
+        		scope:trade_node = {
+        			every_in_list = {
+        				variable = trade_node_counties
+        				scope:backup_county = {
+        					add_to_variable_list = { name = trade_node_counties target = prev }
+        				}
+        			}
+        			every_in_list = {
+        				variable = strategic_locations
+        				scope:backup_county = { 
+        					add_to_variable_list = { name = strategic_locations target = prev } 
+        				}				
+        			}
+        			every_in_list = {
+        				variable = node_linkages
+        				scope:backup_county = { 
+        					add_to_variable_list = { name = node_linkages target = prev }
+        				}
+        			}
+        		}		
+        	}
+    	}	
+	}
+}
+

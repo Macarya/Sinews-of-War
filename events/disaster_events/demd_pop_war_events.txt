@@ -1,0 +1,199 @@
+﻿namespace = demd_pop_war
+
+# ask sieger what to do
+demd_pop_war.1003 = {
+	type = character_event
+	title = demd_pop_war.1003.t
+	desc = demd_pop_war.1003.desc
+	theme = disaster_siege
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:previous_controller
+		animation = fear
+		triggered_animation = {
+			trigger = {
+				ai_vengefulness >= medium_positive_ai_value
+				ai_boldness > high_negative_ai_value
+			}
+			animation = rage
+		}
+	}
+	
+	trigger = {
+		exists = capital_county
+		scope:county = { NOT = { has_county_modifier = recently_sacked_modifier } }
+	}
+
+	immediate = {
+		scope:previous_controller = { save_scope_as = previous_controller }	#For loc.
+		save_scope_as = occupier
+		capital_county = { save_scope_as = capital }
+		play_music_cue = "cue_fire_event_1"
+	}
+	
+	# Occupy Peacefully
+	option = {
+		name = demd_pop_war.1003.a
+		
+		demd_occupy_effect = yes		
+		
+		ai_chance = {
+			base = 50
+			ai_occupy_modifier = yes
+		}
+	}
+
+	# Sack
+	option = {
+		name = demd_pop_war.1003.b
+
+		demd_sack_effect = yes		
+		
+		ai_chance = {
+			base = 50
+			ai_sack_modifier = yes
+		}
+	}	
+
+	# Raze
+	option = {
+		name = demd_pop_war.1003.c
+		trigger = { faith = { has_doctrine_parameter = demd_can_raze } }
+		
+		demd_raze_effect = yes
+		
+		ai_chance = {
+			base = 0
+			ai_raze_modifier = yes
+		}
+	}
+
+	after = { scope:previous_controller = { trigger_event = demd_pop_war.1004 } }
+}
+
+# occupation: notify previous owner
+demd_pop_war.1004 = {
+	type = character_event
+	title = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:sack_status = flag:occupied }
+				desc = demd_pop_war.1004.t.occupied
+			}
+			triggered_desc = {
+				trigger = { scope:sack_status = flag:sacked }
+				desc = demd_pop_war.1004.t.sacked
+			}
+			desc = demd_pop_war.1004.t.razed
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:sack_status = flag:occupied }
+				desc = demd_pop_war.1004.desc.occupied
+			}
+			triggered_desc = {
+				trigger = { scope:sack_status = flag:sacked }
+				desc = demd_pop_war.1004.desc.sacked
+			}
+			desc = demd_pop_war.1004.desc.razed
+		}
+	}
+	theme = disaster_siege
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:previous_controller
+		animation = fear
+		triggered_animation = {
+			trigger = {
+				ai_vengefulness >= medium_positive_ai_value
+				ai_boldness > high_negative_ai_value
+			}
+			animation = rage
+		}
+	}
+	immediate = {
+		if = {
+			limit = { scope:sack_status = flag:occupied }
+			show_as_tooltip = { scope:county = { demd_occupy_effect_county = yes } }
+		}
+		else_if = {
+			limit = { scope:sack_status = flag:sacked }
+			show_as_tooltip = { scope:county = { demd_sack_effect_county = yes } }
+		}
+		else_if = {
+			limit = { scope:sack_status = flag:razed }
+			show_as_tooltip = { scope:county = { demd_raze_effect_county = yes } }
+		}
+		
+		play_music_cue = "cue_fire_event_1"
+	}
+	
+	# Oh no...
+	option = {
+		name = raiding.0003.a
+		add_prestige = minor_prestige_loss
+		ai_chance = {
+			base = 50
+			ai_sack_acceptance_modifier = yes
+		}
+	}
+	
+	#I will avenge this slight!
+	option = {
+		name = raiding.0003.b
+		trigger = {
+			NOT = { scope:sack_status = flag:occupied }
+		}
+		if = {
+			limit = { has_relation_rival = scope:occupier }
+			add_prestige = miniscule_prestige_gain
+		}
+		else = {
+			progress_towards_rival_effect = {
+				CHARACTER = scope:occupier
+				OPINION = 0
+				REASON = rival_sacked_county
+			}
+		}
+		stress_impact = { forgiving = minor_stress_impact_gain }
+		ai_chance = {
+			base = 0	#Otherwise every raiding culture will have a million rivals.
+			ai_sack_vengeance_modifier = yes
+		}
+	}		
+
+	#I will pay for the reconstruction.
+	option = {
+		name = raiding.0003.c
+		trigger = {
+			is_independent_ruler = yes
+			NOT = { scope:sack_status = flag:occupied }
+			NOT = { has_government = tribal_government }	#Tribes don't care about development.
+			OR = {
+				is_ai = no
+				short_term_gold >= scope:county.title_province.raid_gold_value
+			}
+		}
+		remove_short_term_gold = scope:county.title_province.raid_gold_value
+		scope:county = {
+			add_county_modifier = {
+				modifier = rebuilding_after_sacking_modifier
+				years = 10
+			}
+		}
+		stress_impact = { lazy = minor_stress_impact_gain }
+		ai_chance = {
+			base = 50
+			ai_sack_rebuilding_modifier = yes
+		}
+	}		
+}
+

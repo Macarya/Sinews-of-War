@@ -1,0 +1,452 @@
+﻿
+
+#######################################
+
+varangian_adventurers_standard_levy_cap_value = 2000
+
+varangian_adventurers_bonus_levies_value = {
+	value = 0
+
+	# Add troops for each appropriate county.
+	every_directly_owned_province = {
+		limit = {
+			county.title_province = this
+			geographical_region = dlc_fp1_region_core_mainland_scandinavia 
+			culture = scope:attacker.culture
+			faith = scope:attacker.faith
+		}
+		add = 1 
+	}
+}
+
+#######################################
+
+demd_raze_acceptance_change = {
+	value = scope:county.var:county_population
+	divide = -5
+}
+
+demd_sack_acceptance_change = {
+	value = scope:county.var:county_population
+	divide = -10
+}
+
+demd_raid_acceptance_change = {
+	value = scope:county.var:county_population
+	divide = -20
+}
+
+#######################################
+
+# Percent of stolen stocks converted to gold (rest is destroyed)
+demd_occupation_stockpile_yield = 0.5
+demd_food_district_value = 0.5
+demd_goods_district_value = 0.5
+
+#######################################
+
+demd_occupy_gold_value = {
+	value = {
+		value = demd_occupy_goods_value
+		desc = "From [Scope.ScriptValue('demd_occupy_goods_taken')|1] [demd_goods|E] taken"
+	}	
+	add = {
+		value = demd_occupy_food_value
+		desc = "From [Scope.ScriptValue('demd_occupy_food_taken')|1] [demd_food|E] taken"
+	}
+	add = {
+		value = demd_occupy_goods_districts_value
+		desc = "From [Scope.ScriptValue('demd_occupy_goods_districts_destroyed')|1] [demd_goods_districts|E] destroyed"
+	}
+	add = {
+		value = demd_occupy_food_districts_value
+		desc = "From [Scope.ScriptValue('demd_occupy_food_districts_destroyed')|1] [demd_food_districts|E] destroyed"
+	}
+	multiply = {
+		value = demd_occupation_stockpile_yield
+		desc = "[EmptyScope.ScriptValue('demd_occupation_stockpile_yield')|%0] Yield Factor"
+	}
+}
+
+demd_occupy_food_value = {
+	value = demd_occupy_food_taken
+	multiply = food_base_price
+}
+
+demd_occupy_food_taken = {
+	value = var:food_stockpile
+	every_county_province = {
+		add = var:food_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_small
+}
+
+demd_occupy_goods_value = {
+	value = demd_occupy_goods_taken
+	multiply = goods_base_price
+}
+
+demd_occupy_goods_taken = {
+	value = var:goods_stockpile
+	every_county_province = {
+		add = var:goods_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_small
+}
+
+demd_occupy_goods_districts_value = {
+	value = demd_occupy_goods_districts_destroyed
+	multiply = demd_goods_district_value
+}
+
+demd_occupy_goods_districts_destroyed = {
+	value = var:goods_districts_count
+	multiply = demd_district_change_small
+}
+
+demd_occupy_food_districts_value = {
+	value = demd_occupy_food_districts_destroyed
+	multiply = demd_food_district_value
+}
+
+demd_occupy_food_districts_destroyed = {
+	value = 0
+	every_county_province = {
+		add = var:food_districts_count
+	}
+	multiply = demd_district_change_small
+}
+
+#######################################
+
+demd_sack_gold_value = {
+	value = {
+		value = demd_sack_goods_value
+		desc = "From [Scope.ScriptValue('demd_sack_goods_taken')|1] [demd_goods|E] taken"
+	}	
+	add = {
+		value = demd_sack_food_value
+		desc = "From [Scope.ScriptValue('demd_sack_food_taken')|1] [demd_food|E] taken"
+	}
+	add = {
+		value = demd_sack_goods_districts_value
+		desc = "From [Scope.ScriptValue('demd_sack_goods_districts_destroyed')|1] [demd_goods_districts|E] destroyed"
+	}
+	add = {
+		value = demd_sack_food_districts_value
+		desc = "From [Scope.ScriptValue('demd_sack_food_districts_destroyed')|1] [demd_food_districts|E] destroyed"
+	}
+	multiply = {
+		value = demd_occupation_stockpile_yield
+		desc = "[EmptyScope.ScriptValue('demd_occupation_stockpile_yield')|%0] Yield Factor"
+	}
+}
+
+demd_sack_goods_districts_value = {
+	value = demd_sack_goods_districts_destroyed
+	multiply = demd_goods_district_value
+}
+
+demd_sack_goods_districts_destroyed = {
+	value = var:goods_districts_count
+	multiply = demd_district_change_medium
+}
+
+demd_sack_food_districts_value = {
+	value = demd_sack_food_districts_destroyed
+	multiply = demd_food_district_value
+}
+
+demd_sack_food_districts_destroyed = {
+	value = 0
+	every_county_province = {
+		add = var:food_districts_count
+	}
+	multiply = demd_district_change_medium
+}
+
+demd_sack_food_value = {
+	value = demd_sack_food_taken
+	multiply = food_base_price
+}
+
+demd_sack_food_taken = {
+	value = var:food_stockpile
+	every_county_province = {
+		add = var:food_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_large
+}
+
+demd_sack_goods_value = {
+	value = demd_sack_goods_taken
+	multiply = goods_base_price
+}
+
+demd_sack_goods_taken = {
+	value = var:goods_stockpile
+	every_county_province = {
+		add = var:goods_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_large
+}
+
+#######################################
+
+demd_raze_gold_value = {
+	value = {
+		value = demd_raze_goods_value
+		desc = "From [Scope.ScriptValue('demd_raze_goods_taken')|1] [demd_goods|E] taken"
+	}	
+	add = {
+		value = demd_raze_food_value
+		desc = "From [Scope.ScriptValue('demd_raze_food_taken')|1] [demd_food|E] taken"
+	}
+	add = {
+		value = demd_raze_goods_districts_value
+		desc = "From [Scope.ScriptValue('demd_raze_goods_districts_destroyed')|1] [demd_goods_districts|E] destroyed"
+	}
+	add = {
+		value = demd_raze_food_districts_value
+		desc = "From [Scope.ScriptValue('demd_raze_food_districts_destroyed')|1] [demd_food_districts|E] destroyed"
+	}
+	multiply = {
+		value = demd_occupation_stockpile_yield
+		desc = "[EmptyScope.ScriptValue('demd_occupation_stockpile_yield')|%0] Yield Factor"
+	}
+}
+
+demd_raze_food_value = {
+	value = demd_raze_food_taken
+	multiply = food_base_price
+}
+
+demd_raze_food_taken = {
+	value = var:food_stockpile
+	every_county_province = {
+		add = var:food_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_huge
+}
+
+demd_raze_goods_value = {
+	value = demd_raze_goods_taken
+	multiply = goods_base_price
+}
+
+demd_raze_goods_taken = {
+	value = var:goods_stockpile
+	every_county_province = {
+		add = var:goods_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_huge
+}
+
+demd_raze_goods_districts_value = {
+	value = demd_raze_goods_districts_destroyed
+	multiply = demd_goods_district_value
+}
+
+demd_raze_goods_districts_destroyed = {
+	value = var:goods_districts_count
+	multiply = demd_district_change_large
+}
+
+demd_raze_food_districts_value = {
+	value = demd_raze_food_districts_destroyed
+	multiply = demd_food_district_value
+}
+
+demd_raze_food_districts_destroyed = {
+	value = 0
+	every_county_province = {
+		add = var:food_districts_count
+	}
+	multiply = demd_district_change_large
+}
+
+#######################################
+
+demd_raid_spared_gold_value = {	
+	value = {
+		value = demd_raid_spared_food_value
+		desc = "From [Scope.ScriptValue('demd_raid_spared_food_taken')|1] [demd_food|E] taken"
+	}
+	add = {
+		value = demd_raid_spared_goods_value
+		desc = "From [Scope.ScriptValue('demd_raid_spared_goods_taken')|1] [demd_goods|E] taken"
+	}
+	add = {
+		value = demd_raid_spared_goods_districts_value
+		desc = "From [Scope.ScriptValue('demd_raid_spared_goods_districts_destroyed')|1] [demd_goods_districts|E] destroyed"
+	}
+	add = {
+		value = demd_raid_spared_food_districts_value
+		desc = "From [Scope.ScriptValue('demd_raid_spared_food_districts_destroyed')|1] [demd_food_districts|E] destroyed"
+	}	
+	multiply = {
+		value = demd_occupation_stockpile_yield
+		desc = "[EmptyScope.ScriptValue('demd_occupation_stockpile_yield')|%0] Yield Factor"
+	}
+}
+
+demd_raid_spared_food_value = {
+	value = demd_raid_spared_food_taken
+	multiply = food_base_price
+}
+
+demd_raid_spared_food_taken = {
+	value = var:food_stockpile
+	every_county_province = {
+		add = var:food_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_miniscule
+}
+
+demd_raid_spared_goods_value = {
+	value = demd_raid_spared_goods_taken
+	multiply = goods_base_price
+}
+
+demd_raid_spared_goods_taken = {
+	value = var:goods_stockpile
+	every_county_province = {
+		add = var:goods_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_miniscule
+}
+
+demd_raid_spared_goods_districts_value = {
+	value = demd_raid_spared_goods_districts_destroyed
+	multiply = demd_goods_district_value
+}
+
+demd_raid_spared_goods_districts_destroyed = {
+	value = var:goods_districts_count
+	multiply = demd_district_change_miniscule
+}
+
+demd_raid_spared_food_districts_value = {
+	value = demd_raid_spared_food_districts_destroyed
+	multiply = demd_food_district_value
+}
+
+demd_raid_spared_food_districts_destroyed = {
+	value = 0
+	every_county_province = {
+		add = var:food_districts_count
+	}
+	multiply = demd_district_change_miniscule
+}
+
+#######################################
+
+demd_raid_plunder_gold_value = {	
+	value = {
+		value = demd_raid_plunder_food_value
+		desc = "From [Scope.ScriptValue('demd_raid_plunder_food_taken')|1] [demd_food|E] taken"
+	}
+	add = {
+		value = demd_raid_plunder_goods_value
+		desc = "From [Scope.ScriptValue('demd_raid_plunder_goods_taken')|1] [demd_goods|E] taken"
+	}
+	add = {
+		value = demd_raid_plunder_goods_districts_value
+		desc = "From [Scope.ScriptValue('demd_raid_plunder_goods_districts_destroyed')|1] [demd_goods_districts|E] destroyed"
+	}
+	add = {
+		value = demd_raid_plunder_food_districts_value
+		desc = "From [Scope.ScriptValue('demd_raid_plunder_food_districts_destroyed')|1] [demd_food_districts|E] destroyed"
+	}	
+	multiply = {
+		value = demd_occupation_stockpile_yield
+		desc = "[EmptyScope.ScriptValue('demd_occupation_stockpile_yield')|%0] Yield Factor"
+	}
+}
+
+demd_raid_plunder_food_value = {
+	value = demd_raid_plunder_food_taken
+	multiply = food_base_price
+}
+
+demd_raid_plunder_food_taken = {
+	value = var:food_stockpile
+	every_county_province = {
+		add = var:food_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_small
+}
+
+demd_raid_plunder_goods_value = {
+	value = demd_raid_plunder_goods_taken
+	multiply = goods_base_price
+}
+
+demd_raid_plunder_goods_taken = {
+	value = var:goods_stockpile
+	every_county_province = {
+		add = var:goods_stockpile
+	}
+	multiply = demd_resource_stockpile_gain_small
+}
+
+demd_raid_plunder_goods_districts_value = {
+	value = demd_raid_plunder_goods_districts_destroyed
+	multiply = demd_goods_district_value
+}
+
+demd_raid_plunder_goods_districts_destroyed = {
+	value = var:goods_districts_count
+	multiply = demd_district_change_small
+}
+
+demd_raid_plunder_food_districts_value = {
+	value = demd_raid_plunder_food_districts_destroyed
+	multiply = demd_food_district_value
+}
+
+demd_raid_plunder_food_districts_destroyed = {
+	value = 0
+	every_county_province = {
+		add = var:food_districts_count
+	}
+	multiply = demd_district_change_small
+}
+
+#######################################
+
+num_slaves_raided_miniscule = {
+	value = county.var:population
+	every_county_province = {
+		limit = { has_holding = yes }
+		add = var:population
+	}
+	multiply = demd_population_transfer_miniscule
+}
+
+num_slaves_raided_small = {
+	value = county.var:population
+	every_county_province = {
+		limit = { has_holding = yes }
+		add = var:population
+	}
+	multiply = demd_population_transfer_small
+}
+
+num_slaves_raided_medium = {
+	value = county.var:population
+	every_county_province = {
+		limit = { has_holding = yes }
+		add = var:population
+	}
+	multiply = demd_population_transfer_medium
+}
+
+num_slaves_raided_large = {
+	value = county.var:population
+	every_county_province = {
+		limit = { has_holding = yes }
+		add = var:population
+	}
+	multiply = demd_population_transfer_large
+}

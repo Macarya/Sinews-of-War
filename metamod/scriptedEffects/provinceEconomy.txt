@@ -1,0 +1,347 @@
+provinceEconomySetup = {
+	# set up manual pop
+	demd_manual_pop_placements = yes
+	
+	every_county = {
+		
+		set_variable = { name = collected_trade_value value = 1 }
+		set_variable = { name = food_to_liege_rate value = 0.05 }
+		
+		set_variable = { name = food_imported_from_baronies value = 0 }
+		set_variable = { name = food_imported_from_baronies_display value = 0 }
+		set_variable = { name = food_imported_from_demesne value = 0 }
+		set_variable = { name = food_imported_from_demesne_display value = 0 }
+		set_variable = { name = food_imported_from_vassals value = 0 }
+		set_variable = { name = food_imported_from_vassals_display value = 0 }
+			
+		every_county_province = {
+			limit = { has_holding = yes }
+			
+			# set up farm districts
+			set_variable = {
+				name = food_districts_count
+				value = {
+					value = food_districts_max
+					multiply = demd_farm_percent_used_at_start
+				}
+			}
+
+			# create as much pop as we can employ in those farm districts
+			set_variable = {
+				name = population
+				value = {
+					value = var:food_districts_count
+					multiply = demd_jobs_per_district
+					multiply = 1.05
+				}
+			}
+			
+			# s
+			set_variable = {
+				name = food_producers_max
+				value = {
+					value = var:population
+				}
+			}
+			set_variable = {
+				name = food_producers_count
+				value = {
+					value = var:food_producers_max
+				}
+			}
+			set_variable = { name = food_stockpile value = food_stockpile_target }
+		}
+		
+		set_variable = { name = population value = starting_urban_population }
+		set_variable = { name = goods_producers_max value = var:population }
+		set_variable = { name = goods_producers_count value = var:goods_producers_max }
+
+		# set up goods districts
+		set_variable = {
+			name = goods_districts_count
+			value = {
+				value = var:population
+				divide = demd_jobs_per_district
+			}
+		}
+		clamp_variable = { name = goods_districts_count max = 1000 min = 1 }
+		
+		# set stockpiles
+		set_variable = { name = food_stockpile value = food_stockpile_target }
+		set_variable = { 
+			name = goods_stockpile 
+			value = {
+				value = var:population
+				multiply = 0.2
+			}
+		}
+		
+		set_variable = { name = county_population value = county_population }
+		
+		# set initial sani / PO
+		set_variable = { name = public_order value = 0.5 }
+			
+	}
+}
+
+county_economy = {
+
+	calculateEffectiveTaxRate = yes
+	
+	calculate_public_order = yes
+	
+	calculate_sanitation = yes
+	
+	assignAllProducers = yes
+	
+	calculateTradeValue = yes
+	
+	manageFoodCounty = yes
+	
+	manageGoods = yes
+	
+	buildDistrictsCounty = yes
+	
+	removeExcessGoodsDistricts = yes
+}
+
+calculateEffectiveTaxRate = {
+	set_variable = { name = effective_tax_rate value = effective_tax_rate }
+		
+	set_variable = { name = food_to_liege_rate value = holder.food_to_liege_rate }
+
+}
+
+######################
+# Sanitation and PO
+######################
+
+calculate_sanitation = {
+		
+    change_variable = {
+        name = sanitation
+        add = sanitation_delta
+    }
+    
+	clamp_variable = { name = sanitation min = 0 max = 1 }
+}
+
+calculate_public_order = {
+		
+    change_variable = {
+        name = public_order
+        add = public_order_delta
+    }
+    
+	clamp_variable = { name = public_order min = 0 max = 1 }
+}
+
+######################
+# Fill all available jobs based on targets
+######################
+
+assignAllProducers = {
+
+    set_variable = {
+		name = goods_producers_max
+		value = {
+			value = var:goods_districts_count
+			multiply = demd_jobs_per_district
+		}
+	}
+	clamp_variable = { name = goods_producers_max min = 0 max = 1000000 }
+
+	# for unemployed
+	set_variable = { name = goods_producers_count value = 0 }
+	set_variable = { name = unemployed_count value = var:population }
+	
+    # fill goods
+    fillJob = { resource = goods amount = var:goods_producers_max }
+	
+	set_variable = { name = goods_produced_per_capita value = goods_produced_per_capita }
+    set_variable = {
+        name = goods_produced
+        value = {
+            value = var:goods_produced_per_capita
+            multiply = var:goods_producers_count
+        }
+    }
+}
+
+fillJob = {
+    # Calculate maximum jobs that can be added (either the number of unemployed or the number of open positions)
+    set_variable = {
+        name = temp
+        value = {
+            value = var:$resource$_producers_max
+            subtract = var:$resource$_producers_count
+        }
+    }
+    clamp_variable = { name = temp max = var:unemployed_count min = 0 }
+
+    # If amount of jobs requested to be filled is less than max, fill jobs in the amount requested
+    if = {
+        limit = {
+            var:temp > $amount$
+        }
+        change_variable = { name = $resource$_producers_count add = $amount$ }
+        change_variable = { name = unemployed_count subtract = $amount$ }
+    }
+
+    # Otherwise, fill job up to the employment limit
+    else = {
+        # add the max
+        change_variable = { name = $resource$_producers_count add = var:temp }
+        change_variable = { name = unemployed_count subtract = var:temp }
+    }
+}
+
+######################
+# Calculate Trade Value and Trade Power
+######################
+
+calculateTradeValue = {
+
+	# trade value produced locally
+    set_variable = { name = produced_trade_value value = produced_trade_value }
+	
+	# trade power
+    set_variable = { name = trade_power value = trade_power }
+	
+	# trade value from tariffs
+	set_variable = { name = collected_trade_linkage_tariffs value = collected_trade_linkage_tariffs }
+		
+    set_variable = { # placeholder
+        name = trade_value
+        value = {
+            value = var:produced_trade_value
+            add = var:collected_trade_value # assigned in market pulse
+			add = var:collected_trade_linkage_tariffs
+        }
+    }
+	
+	
+}
+
+######################
+# Modify stockpiles and calculate consumption
+######################
+
+manageFoodCounty = {
+
+    # remove depreciation from stockpile
+    set_variable = {
+        name = food_depreciation
+        value = {
+            value = var:food_stockpile
+            multiply = food_depreciation_rate
+        }
+    }
+    change_variable = { name = food_stockpile subtract = var:food_depreciation }
+	
+	############
+	
+	# add food imported to stockpile
+	set_variable = {
+		name = food_imported
+		value = {
+			value = var:food_imported_from_baronies
+			add = var:food_imported_from_demesne
+			add = var:food_imported_from_vassals
+		}
+	}
+	
+	change_variable = { name = food_stockpile add = var:food_imported }
+	
+	# save amounts for display
+	set_variable = { name = food_imported_from_baronies_display value = var:food_imported_from_baronies }
+	set_variable = { name = food_imported_from_demesne_display value = var:food_imported_from_demesne }
+	set_variable = { name = food_imported_from_vassals_display value = var:food_imported_from_vassals }
+	
+	# zero the variables for next year
+	set_variable = { name = food_imported_from_baronies value = 0 }
+	set_variable = { name = food_imported_from_demesne value = 0 }
+	set_variable = { name = food_imported_from_vassals value = 0 }
+	
+	############
+	
+	# consume food
+	set_variable = { name = food_demanded value = food_demanded }
+	set_variable = { name = food_consumed value = food_stockpile_excess }
+    change_variable = { name = food_stockpile subtract = var:food_consumed }
+	
+	############
+	
+	# for migr/growth
+	set_variable = {
+		name = food_ratio
+		value = {
+            value = {
+                value = var:food_consumed
+                divide = var:food_demanded
+            }
+		}
+	}	
+}
+
+manageGoods = {
+    # remove depreciation from stockpile
+    set_variable = {
+        name = goods_depreciation
+        value = {
+            value = var:goods_stockpile
+            multiply = goods_depreciation_rate
+        }
+    }
+    change_variable = { name = goods_stockpile subtract = var:goods_depreciation }
+	
+    # add goods produced to stockpile
+    change_variable = { name = goods_stockpile add = var:goods_produced }
+	
+	# add goods from trade value
+	change_variable = { name = goods_stockpile add = trade_value_to_goods }
+	
+	# removed taxed goods from stockpile
+    set_variable = {
+        name = goods_taxed
+        value = {
+            value = var:goods_produced
+            multiply = var:effective_tax_rate
+        }
+    }
+	change_variable = { name = goods_stockpile subtract = var:goods_taxed }
+
+	# send goods to rural provinces
+	set_variable = { name = goods_exported value = goods_exported }
+	
+	every_county_province = { 
+		limit = { has_variable = food_exported }
+		set_variable = { name = goods_imported value = goods_imported }
+	}
+	change_variable = { name = goods_stockpile subtract = var:goods_exported }
+	
+	set_variable = { name = capital_production_multiplier value = capital_production_multiplier }
+
+}	
+
+######################
+# Develop province with new districts
+######################
+
+buildDistrictsCounty = {
+
+	set_variable = { name = county_construction_capacity value = county_construction_capacity }
+	set_variable = { name = county_districts_to_build value = county_districts_to_build }
+	set_variable = { name = county_unused_construction_capacity value = county_unused_construction_capacity }
+	
+    change_variable = { name = goods_districts_count add = county_districts_to_build }
+}
+
+######################
+# District Cleanup
+######################
+
+removeExcessGoodsDistricts = {
+	change_variable = { name = goods_districts_count subtract = goods_districts_to_remove } 
+}
+

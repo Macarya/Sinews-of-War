@@ -1,0 +1,9 @@
+﻿l_english:
+
+demd_pop_flood.1002.t:0 "Flooding in [county.GetNameNoTierNoTooltip]!"
+demd_pop_flood.1002.desc:0 "The city is flooding. Water is washing away goods and people alike, putting in jeopardy the whole community"
+demd_pop_flood.1002.a:0 "Oh no! Quickly move to rescue the people and protect the essential assets!"
+demd_pop_flood.1002.b:0 "I think I will go for a swim." # lunatic trait option
+
+
+

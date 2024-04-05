@@ -1,0 +1,190 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+total_migration_growth_percent = {
+	value = var:migration_growth_percent
+	add = var:internal_migration_growth_percent
+}
+
+migration_pairwise = {
+
+	value = var:migration_pull
+	subtract = scope:home.var:migration_pull
+
+	if = { 
+		limit = { var:migration_pull > scope:home.var:migration_pull }
+		multiply = scope:home.var:population
+	}
+	else = {
+		multiply = var:population
+	}
+	
+	multiply = 0.1
+	
+	# reduce migration across faith lines
+    if = {
+        limit = { faith = { faith_hostility_level = { target = scope:home.faith value = 1 } } }
+        multiply = 0.75
+    }
+    else_if = {
+        limit = { faith = { faith_hostility_level = { target = scope:home.faith value = 2 } } }
+        multiply = 0.5 
+    }
+    else = {
+        limit = { faith = { faith_hostility_level = { target = scope:home.faith value = 3 } } }
+        multiply = 0.25
+    }
+
+    # reduce migration across cultural lines
+    if = {
+        limit = { NOT = { culture = scope:home.culture } }
+		if = {
+			limit = { culture = { cultural_acceptance = { target = scope:home.culture value > 80 } } }
+			multiply = 0.8
+		}
+		else_if = {
+			limit = { culture = { cultural_acceptance = { target = scope:home.culture value > 60 } } }
+			multiply = 0.6
+		}
+		else_if = {
+			limit = { culture = { cultural_acceptance = { target = scope:home.culture value > 40 } } }
+			multiply = 0.4
+		}
+		else = {
+			multiply = 0.2 
+		}
+    }
+	
+}
+
+demd_standard_of_living = {
+	value = migration_pull_from_food	
+	add = migration_pull_from_capital
+	if = { # province factors
+		limit = { has_variable = food_districts_max }
+		add = migration_pull_from_public_order_max
+		add = migration_pull_from_sanitation_max
+	}
+	else = { # county factors
+		add = migration_pull_from_public_order
+		add = migration_pull_from_sanitation
+	}
+}
+
+demd_standard_of_living_opulent = 1.45
+demd_standard_of_living_lavish = 1.4
+demd_standard_of_living_wealthy = 1.35
+demd_standard_of_living_affluent = 1.3
+demd_standard_of_living_prosperous = 1.25
+demd_standard_of_living_secure = 1.2
+demd_standard_of_living_middling = 1.15
+demd_standard_of_living_impoverished = 1.1
+demd_standard_of_living_struggling = 1.05
+demd_standard_of_living_starving = 1.0
+
+migration_pull_target = {
+	value = migration_pull_from_food	
+	add = migration_pull_from_capital
+	add = migration_pull_from_vigor
+	if = { # province factors
+		limit = { has_variable = food_districts_max }
+		add = migration_pull_from_public_order_max
+		add = migration_pull_from_sanitation_max
+		add = prov_opinion_migration_pull
+		add = migration_pull_from_empty_farmland
+	}
+	else = { # county factors
+		add = migration_pull_from_public_order
+		add = migration_pull_from_sanitation
+		add = opinion_migration_pull
+	}
+}
+
+migration_pull_from_vigor = {
+	value = culture.culture_migration_pull_from_vigor
+}
+
+culture_migration_pull_from_vigor = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.005
+}
+
+migration_pull_from_food = {
+	value = var:food_ratio
+}
+
+migration_pull_from_public_order = {
+	value = var:public_order
+	multiply = migration_pull_from_public_order_max
+}
+migration_pull_from_public_order_max = 0.2
+
+migration_pull_from_sanitation = {
+	value = var:sanitation
+	multiply = migration_pull_from_sanitation_max
+}
+migration_pull_from_sanitation_max = 0.2
+
+migration_pull_from_capital = {
+	value = var:capital_production_multiplier
+	multiply = 1.5
+}
+prov_opinion_migration_pull = {
+	value = county.county_opinion
+	if = {
+		limit = { county.county_opinion < 0 }
+		divide = 200		
+	}
+	else = {
+		divide = 800
+	}
+}
+opinion_migration_pull = {
+	value = county_opinion
+	if = {
+		limit = { county_opinion < 0 }
+		divide = 200		
+	}
+	else = {
+		divide = 800
+	}
+}
+migration_pull_from_empty_farmland = { # C * (FP_max - FP_current) / (FP_max)
+	value = percent_farmland_filled
+	multiply = migration_pull_from_empty_farmland_max
+}
+migration_pull_from_empty_farmland_max = 0.25
+
+percent_farmland_filled = { # (FP_max - FP_current) / (FP_max)
+	value = var:food_districts_max
+	multiply = demd_jobs_per_district
+	subtract = var:population
+	divide = {
+		value = var:food_districts_max
+		multiply = demd_jobs_per_district
+	}
+}
+
+###
+
+RtoR_migration_pairwise = {
+	value = migration_headroom_differential
+	multiply = 0.2
+	max = 1
+	min = 0
+}
+
+migration_headroom_differential = {
+	value = var:highest_mp_province.migration_headroom
+	subtract = var:lowest_mp_province.migration_headroom
+}
+
+migration_headroom = {
+	value = var:food_districts_max
+	multiply = demd_jobs_per_district
+	subtract = var:population
+}

@@ -1,0 +1,139 @@
+﻿namespace = demd_vigor
+
+
+demd_vigor.0001 = {
+	type = character_event
+	title = demd_vigor.0001.t
+	desc = demd_vigor.0001.desc
+	theme = learning
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	immediate = { 
+		culture = { 
+			var:dominant_faith = { save_scope_as = dominant_faith }
+			save_scope_as = reformed_culture  
+		}
+	}
+	
+	option = {
+		name = demd_vigor.0001.a
+		trigger = { culture = { NOT = { has_cultural_pillar = ethos_courtly } } }	
+		culture = { demd_low_vigor_reset = { ethos = courtly } }
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = demd_vigor.0001.b
+		trigger = { culture = { NOT = { has_cultural_pillar = ethos_bureaucratic } } }	
+		culture = { demd_low_vigor_reset = { ethos = bureaucratic } }
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = demd_vigor.0001.c
+		trigger = { culture = { NOT = { has_cultural_pillar = ethos_communal } } }	
+		culture = { demd_low_vigor_reset = { ethos = communal } }
+		ai_chance = {
+			base = 15
+		}
+	}
+	option = {
+		name = demd_vigor.0001.d
+		trigger = { culture = { NOT = { has_cultural_pillar = ethos_stoic } } }	
+		culture = { demd_low_vigor_reset = { ethos = stoic } }
+		ai_chance = {
+			base = 15
+		}
+	}
+	option = {
+		name = demd_vigor.0001.e
+		trigger = { culture = { NOT = { has_cultural_pillar = ethos_egalitarian } } }	
+		culture = { demd_low_vigor_reset = { ethos = egalitarian } }
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = demd_vigor.0001.f
+		trigger = { culture = { NOT = { has_cultural_pillar = ethos_bellicose } } }	
+		culture = { demd_low_vigor_reset = { ethos = bellicose } }
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = demd_vigor.0001.g
+		trigger = { culture = { NOT = { has_cultural_pillar = ethos_spiritual } } }	
+		culture = { demd_low_vigor_reset = { ethos = spiritual } }
+		ai_chance = {
+			base = 15
+		}
+	}
+	option = {
+		name = demd_vigor.0001.h
+		add_prestige = major_prestige_loss
+		ai_chance = {
+			base = 0
+		}
+	}
+}	
+
+demd_vigor.0002 = {
+	type = character_event
+	title = demd_vigor.0002.t
+	desc = {
+		desc = demd_vigor.0002.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { culture = { has_cultural_pillar = ethos_bellicose } }
+				desc = demd_vigor.0002.ethos.bellicose
+			}
+			triggered_desc = {
+				trigger = { culture = { has_cultural_pillar = ethos_bureaucratic } }
+				desc = demd_vigor.0002.ethos.bureaucratic
+			}
+			triggered_desc = {
+				trigger = { culture = { has_cultural_pillar = ethos_courtly } }
+				desc = demd_vigor.0002.ethos.courtly
+			}
+			triggered_desc = {
+				trigger = { culture = { has_cultural_pillar = ethos_communal } }
+				desc = demd_vigor.0002.ethos.communal
+			}
+			triggered_desc = {
+				trigger = { culture = { has_cultural_pillar = ethos_stoic } }
+				desc = demd_vigor.0002.ethos.stoic
+			}
+			triggered_desc = {
+				trigger = { culture = { has_cultural_pillar = ethos_spiritual } }
+				desc = demd_vigor.0002.ethos.spiritual
+			}
+			triggered_desc = {
+				trigger = { culture = { has_cultural_pillar = ethos_egalitarian } }
+				desc = demd_vigor.0002.ethos.egalitatian
+			}
+			desc = demd_vigor.0002.ethos.unchanged
+		}
+	}
+	theme = learning
+
+	left_portrait = {
+		character = scope:reformer
+		animation = personality_bold
+	}
+		
+	immediate = { 
+		culture.culture_head = { save_scope_as = reformer } 
+		play_music_cue = "mx_cue_epic_sacral_moment"
+	}
+	option = {
+		name = demd_vigor.0002.a
+	}
+}
+	

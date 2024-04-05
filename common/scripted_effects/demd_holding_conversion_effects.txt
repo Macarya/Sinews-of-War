@@ -1,0 +1,108 @@
+﻿demd_church_holding_construction_benefits = {
+	if = {
+		limit = {
+			county.holder.culture = {
+				has_cultural_parameter = renown_from_temple_construction
+			}
+			exists = county.holder.dynasty
+		}
+		county.holder.dynasty = { add_dynasty_prestige = major_dynasty_prestige_value }
+	}
+	if = {
+		limit = {
+			county.holder.culture = {
+				has_cultural_parameter = extra_piety_from_temple_construction
+			}
+		}
+		county.holder = { add_piety = omega_piety_gain }
+	}
+	else = {
+		county.holder = { add_piety = massive_piety_gain }
+	}
+	save_scope_as = temple_location
+	if = {
+		limit = {
+			county.holder.culture = {
+				has_cultural_parameter = more_fervor_on_church_construction
+			}
+		}
+		county.holder.faith = {
+			change_fervor = {
+				value = 5
+				desc = fervor_gain_built_temple_holding
+			}
+		}
+	}
+	else = {
+		county.holder.faith = {
+			change_fervor = {
+				value = 1
+				desc = fervor_gain_built_temple_holding
+			}
+		}
+	}
+	if = {
+		limit = {
+			county.holder.culture = {
+				has_cultural_parameter = prestige_from_temple_construction
+			}
+		}
+		county.holder = { add_prestige = massive_prestige_gain }
+	}
+}
+
+demd_church_holding_destruction_costs = {
+	if = {
+		limit = { has_holding_type = church_holding }
+		save_scope_as = temple_location
+		if = {
+			limit = {
+				county.holder.culture = {
+					has_cultural_parameter = renown_from_temple_construction
+				}
+				exists = county.holder.dynasty
+			}
+			county.holder.dynasty = { add_dynasty_prestige = major_dynasty_prestige_loss }
+		}
+		if = {
+			limit = {
+				county.holder.culture = {
+					has_cultural_parameter = extra_piety_from_temple_construction
+				}
+			}
+			county.holder = { add_piety = { value = omega_piety_gain multiply = -1 } }
+		}
+		else = {
+			county.holder = { add_piety = massive_piety_loss }
+		}
+		if = {
+			limit = {
+				county.holder.culture = {
+					has_cultural_parameter = more_fervor_on_church_construction
+				}
+			}
+			county.holder.faith = {
+				change_fervor = {
+					value = -5
+					desc = fervor_loss_converted_temple_holding
+				}
+			}
+		}
+		else = {
+			county.holder.faith = {
+				change_fervor = {
+					value = -1
+					desc = fervor_loss_converted_temple_holding
+				}
+			}
+		}
+		if = {
+			limit = {
+				county.holder.culture = {
+					has_cultural_parameter = prestige_from_temple_construction
+				}
+			}
+			county.holder = { add_prestige = massive_prestige_loss }
+		}
+	}
+}

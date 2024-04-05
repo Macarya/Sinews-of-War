@@ -1,0 +1,198 @@
+﻿###############################
+# Excavation
+###############################
+
+excavation_exterior_egyptian_01 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_exterior_egyptian_01.jpg"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+}
+
+excavation_exterior_egyptian_02 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_exterior_egyptian_02.jpg"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+}
+
+excavation_exterior_egyptian_03 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_exterior_egyptian_03.jpg"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+}
+
+excavation_exterior_egyptian_04 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_exterior_egyptian_04.jpg"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+}
+
+excavation_exterior_egyptian_05 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_exterior_egyptian_05.jpg"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+}
+
+excavation_exterior_egyptian_06 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_exterior_egyptian_06.jpg"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+}
+
+excavation_exterior_egyptian_07 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_exterior_egyptian_07.jpg"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+}
+
+excavation_interior_egyptian_01 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_interior_egyptian_01.jpg"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/dungeon"
+	}
+}
+
+excavation_interior_egyptian_02 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_interior_egyptian_02.jpg"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/dungeon"
+	}
+}
+
+excavation_interior_egyptian_03 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_interior_egyptian_03.jpg"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/dungeon"
+	}
+}
+
+excavation_interior_egyptian_04 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_interior_egyptian_04.jpg"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/dungeon"
+	}
+}
+
+excavation_interior_egyptian_05 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_interior_egyptian_05.jpg"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/dungeon"
+	}
+}
+
+excavation_interior_egyptian_06 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_interior_egyptian_06.jpg"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/dungeon"
+	}
+}
+
+excavation_interior_egyptian_07 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_interior_egyptian_07.jpg"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/dungeon"
+	}
+}
+
+excavation_interior_egyptian_08 = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/excavation_interior_egyptian_08.jpg"
+		environment = "environment_event_dungeon"
+		ambience = "event:/SFX/Events/Backgrounds/dungeon"
+	}
+}
+
+terrain_excavation = {
+	background = {
+		trigger = {
+			scope:story.var:excavation_locale.title_province = {
+				terrain = farmlands
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/farms.dds"
+		environment = "environment_event_farms"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+
+	background = { #Desert
+		trigger = {
+			scope:story.var:excavation_locale.title_province = {
+				graphical_wilderness_desert_trigger = yes
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/desert.dds"
+		environment = "environment_event_desert"
+		ambience = "event:/SFX/Events/Backgrounds/desert_day"
+	}
+
+	
+	background = { #forest_pine
+		trigger = {
+			scope:story.var:excavation_locale.title_province = {
+				graphical_wilderness_forest_pine_trigger = yes
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/forest_pine.dds"
+		environment = "environment_event_forest_pine"
+		ambience = "event:/SFX/Events/Backgrounds/coniferous_forest_day"
+	}
+
+	background = { #forest
+		trigger = {
+			scope:story.var:excavation_locale.title_province = {
+				graphical_wilderness_forest_trigger = yes
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/forest.dds"
+		environment = "environment_event_forest"
+		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
+	}
+
+	background = { #mountains
+		trigger = {
+			scope:story.var:excavation_locale.title_province = {
+				graphical_wilderness_mountains_trigger = yes
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mountains.dds"
+		environment = "environment_event_mountains"
+		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
+	}
+
+	background = { #steppe
+		trigger = {
+			scope:story.var:excavation_locale.title_province = {
+				graphical_wilderness_steppe_trigger = yes
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/steppe.dds"
+		environment = "environment_event_steppe"
+		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
+	}
+
+	background = { #Fallback
+		reference = "gfx/interface/illustrations/event_scenes/forest.dds"
+		environment = "environment_event_forest"
+		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
+	}
+}

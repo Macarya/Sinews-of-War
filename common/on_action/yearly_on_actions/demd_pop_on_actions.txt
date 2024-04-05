@@ -1,0 +1,92 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+# Run DEMD pop system annual things that cannot be easily amortized by county
+
+###################
+# Faith
+###################
+on_faith_monthly = {	
+	on_actions = { demd_yearly_faith_pulse }
+}
+
+demd_yearly_faith_pulse = {
+	trigger = { current_month = 1 }
+	effect = { faithEconomy = yes }
+}
+
+###################
+# Culture
+###################
+yearly_culture_pulse = {
+	on_actions = { demd_yearly_culture_pulse }
+}
+
+demd_yearly_culture_pulse = {
+	effect = { cultureEconomy = yes }
+}
+
+###################
+# Fertility
+###################
+yearly_global_pulse = {
+	on_actions = {
+		delay = { days = 75 } # ~ Mar 15
+		demd_yearly_fertility_pulse
+	}
+}
+
+demd_yearly_fertility_pulse = {
+	effect = { fertilitySubRoutine = yes }
+}
+
+###################
+# Migration
+###################
+yearly_global_pulse = {
+	on_actions = {
+		delay = { days = 105 } # ~ Apr 15
+		demd_yearly_migration_pulse
+	}
+}
+
+demd_yearly_migration_pulse = {
+	effect = { 
+		world_migration_end = yes
+		world_migration_start = yes	 
+	}
+}
+
+###################
+# Imperial Decay
+###################
+yearly_global_pulse = {
+	on_actions = {
+		delay = { days = 15 } # ~ Jan 15 (avoid overloading yearly pulse)
+		demd_yearly_imperial_decay
+	}
+}
+
+demd_yearly_imperial_decay = {
+	effect = { 
+		every_empire = {
+			empire_title_pulse = yes
+		}
+	}
+}
+
+###################
+# Knight/Regiment Capacity
+###################
+random_yearly_everyone_pulse = {
+	on_actions = { demd_ruler_pulse }
+}
+
+demd_ruler_pulse = {
+	trigger = { highest_held_title_tier > tier_barony }
+	effect = { ruler_pulse = yes }
+}

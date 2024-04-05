@@ -1,0 +1,21 @@
+﻿start_excavation_trigger = {
+	holder.gold > excavation_start_cost
+	NOT = { has_variable = active_excavation }
+}
+
+county_is_missing_excavation_leader = {
+	has_variable = active_excavation
+	var:active_excavation = {
+		NOT = { has_variable = excavation_leader }
+	}
+}
+
+county_is_eligible_for_egyptian_ruin = {
+	title_province = { geographical_region = world_africa_north_east }
+	NOT = { has_variable = ruins_type }
+}
+
+# Blocks generic events from showing up in unique ruins
+excavation_story_event_standard_trigger = {
+	scope:story = { var:ruins_type_unique = flag:none }
+}

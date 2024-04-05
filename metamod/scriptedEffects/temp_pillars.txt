@@ -1,0 +1,22 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+demd_add_pillar_bonuses = {
+
+	if = {
+		limit = { has_cultural_pillar = martial_custom_equal }
+		change_variable = { name = manpower_cultural_production_mult add = 0.10 }
+		change_variable = { name = birth_rate_cultural_production_mult add = -0.10 }
+	}
+
+	if = {
+		limit = { has_cultural_pillar = martial_custom_female_only }
+		change_variable = { name = manpower_cultural_production_mult add = 0.15 }
+		change_variable = { name = birth_rate_cultural_production_mult add = -0.15 }
+	}
+
+}

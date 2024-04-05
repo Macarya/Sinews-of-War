@@ -1,0 +1,93 @@
+types ManpowerRate
+{
+    type manpower_rate_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_manpower!# [demd_manpower|E] Rate: [Province.MakeScope.ScriptValue('manpower_total_percent')|%1]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_manpower|E] Rate is the percent of a [county|E]'s [demd_population|E] that is available the [ruler|E] as [demd_manpower|E], and used to fill [garrison|E], [levies|E] and [men_at_arms|E].#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Base Rate: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('manpower_base_percent')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('manpower_cultural_production_mult_display')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('manpower_faith_production_mult_display')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [buildings|E]: [Province.MakeScope.ScriptValue('manpower_building_mult_display')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [county_opinion|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('manpower_opinion_factor_display')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [government|E] type: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('manpower_tribal_mult_display')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[vigor|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('vigor_manpower_mult_display')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }				
+            }
+        }
+    }
+}

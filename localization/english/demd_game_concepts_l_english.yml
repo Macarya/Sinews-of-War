@@ -1,0 +1,264 @@
+﻿l_english:
+
+game_concept_recently_acquired_holding:0 "Holding above Domain Limit"
+game_concept_recently_acquired_holdings:0 "Holdings above Domain Limit"
+game_concept_recently_acquired_holding_desc:0 "[holdings|E] that put a ruler above their [domain_limit|E] provide no [taxes|E] or [levies|E]."
+
+##########
+# Population
+##########
+
+game_concept_demd_water:0 "Water"
+game_concept_demd_water_desc:0 "#defender_color Water#! Sources such as rivers, lakes, and oceans are important resources that contribute to [county|E] [fertility|E] and [fort_level|E]."
+
+game_concept_demd_untilled_farmland:0 "Untilled Farmland"
+game_concept_demd_untilled_farmland_desc:0 "#defender_color Untilled Farmland#! is the percentage of a [county|E]'s maximum [demd_food_districts|E] that are unworked. It is a contributor to [demd_migration_pull|E] and [demd_births|E]."
+
+game_concept_demd_population:0 "Population"
+game_concept_demd_population_desc:0 "#defender_color Population#! is the total number of people living in a [county|E]. #defender_color Population#! is necessary to fill the [demd_jobs|E] that drive your economy."
+
+game_concept_demd_growth:0 "Internal Growth"
+game_concept_demd_growth_desc:0 "The internal growth of a [county|E] is a percentage defined by its [demd_births|E] minus its [demd_deaths|E]. Deaths from isolated events like [sieges|E], [raiding|E], and [demd_disasters|E] are not included."
+
+game_concept_demd_births:0 "Birth Rate"
+game_concept_demd_births_desc:0 "The #defender_color Birth Rate#! of a [county|E] is the number of natural births divided by the total [demd_population|E]. It is determined primarily by its [culture|E] and [faith|E]."
+
+game_concept_demd_deaths:0 "Death Rate"
+game_concept_demd_deaths_desc:0 "The #defender_color Death Rate#! of a [county|E] is the number of deaths from all causes except [sieges|E], [raiding|E], and [demd_disasters|E] divided by the total [demd_population|E]. The causes of death are natural deaths, low [demd_sanitation|E], [demd_plagues|E], [demd_famine|E], and [demd_persecution|E]"
+
+game_concept_demd_persecution:0 "Persecution"
+game_concept_demd_persecuted:0 "Persecuted"
+game_concept_demd_tolerance:0 "Tolerance"
+game_concept_demd_persecution_desc:0 "When the level of cultural or religious tolerance set by a [county|E]'s [demd_edicts|E] does not extend to cover its current [culture|E] or [faith|E], the [demd_population|E] is #defender_color Persecuted#!. This results in increased [demd_deaths|E] and reduced [demd_migration_pull|E] and [county_opinion|E], but also lowers [demd_culture_conversion_defense|E] or [demd_faith_conversion_defense|E], respectively, making the [county|E] easier to convert to your own [culture|E] or [faith|E]."
+
+game_concept_demd_plagues:0 "Plagues"
+game_concept_demd_plague:0 "Plague"
+game_concept_demd_quarantine:0 "Quarantine"
+game_concept_demd_plagues_desc:0 "#defender_color Plagues#! are virulent diseases that spread from a county to its neighbors, killing a significant percentage of the [demd_population|E] each year. High levels of [demd_squalor|E] make the appearance and spread of a #defender_color Plague#! more likely, while high levels of [demd_sanitation|E] do the opposite, and reduce the mortality rate from any contracted #defender_color Plague#!. A county will have immunity from #defender_color Plagues#! for a period after infection."
+
+game_concept_demd_disasters:0 "Natural Disasters"
+game_concept_demd_disasters_desc:0 "#defender_color Natural Disasters#! are acts of god that can befall a county. They currently include [demd_fires|E], [demd_floods|E], [demd_avalanches|E], [demd_earthquakes|E], [demd_tsunamis|E], and [demd_eruptions|E]."
+
+game_concept_demd_eruption:0 "Eruption"
+game_concept_demd_eruptions:0 "Eruptions"
+game_concept_demd_eruptions_desc:0 "#defender_color Eruptions#! violently spew forth a deadly mix of molten rock, ash, and toxic gases."
+
+game_concept_demd_flood:0 "Flood"
+game_concept_demd_floods:0 "Floods"
+game_concept_demd_floods_desc:0 "Before modern engineering techniques straitjacketed once-wandering rivers into fixed routes with stabilized banks, #defender_color Floods#! were a common occurrence in medieval cities."
+
+game_concept_demd_drought:0 "Drought"
+game_concept_demd_droughts:0 "Droughts"
+game_concept_demd_droughts_desc:0 "#defender_color Droughts#! were a frequent and serious threat to agricultural productivity in the Middle Ages. Notably, the transition from the Medieval Warm Period to the Little Ice Age was accompanied by severe droughts, resulting in the great famine of 1315-21."
+
+game_concept_demd_fire:0 "Fire"
+game_concept_demd_fires:0 "Fires"
+game_concept_demd_fires_desc:0 "Large and devastating #defender_color Fires#! periodically swept through most major medieval cities. Most medieval houses were mostly built with combustible materials – wood and pitch and tightly crowded together and organized fire brigades and formal fire codes were rare."
+
+game_concept_demd_avalanche:0 "Avalanche"
+game_concept_demd_avalanches:0 "Avalanches"
+game_concept_demd_avalanches_desc:0 "#defender_color Avalanches#! were a constant danger to alpine villages and medieval travellers crossing mountainous terrain."
+
+game_concept_demd_earthquake:0 "Earthquake"
+game_concept_demd_earthquakes:0 "Earthquakes"
+game_concept_demd_earthquakes_desc:0 "#defender_color Earthquakes#! were a cause of devastation in medieval Europe. In some cases, they also triggered devastating [demd_tsunamis|E]."
+
+game_concept_demd_tsunami:0 "Tsunami"
+game_concept_demd_tsunamis:0 "Tsunamis"
+game_concept_demd_tsunamis_desc:0 "#defender_color Tsunamis#! are devastating tidal waves caused by underwater seismic disturbances. The Greek historian Thucydides was the first to argue that ocean earthquakes must be the cause of #defender_color Tsunamis#!."
+
+###
+
+game_concept_demd_job_noble:0 "Noble"
+game_concept_demd_job_nobles:0 "Nobles"
+game_concept_demd_job_noble_desc:0 "#defender_color Noble#! [demd_jobs|E] are provided by [demd_food_districts|E] and produce [demd_knight_capacity|E]."
+
+game_concept_demd_job_artisan:0 "Artisan"
+game_concept_demd_job_artisans:0 "Artisans"
+game_concept_demd_job_artisan_desc:0 "#defender_color Artisan#! [demd_jobs|E] are provided by [demd_goods_districts|E] and produce [demd_goods|E]. [demd_manpower|E] from Artisans is converted into [men_at_arms|E] limit for the [county|E] holder and [garrison|E] for the local [barony|E]"
+
+game_concept_demd_job_farmer:0 "Farmer"
+game_concept_demd_job_farmers:0 "Farmers"
+game_concept_demd_job_farmer_desc:0 "#defender_color Farmer#! [demd_jobs|E] are provided by [demd_food_districts|E] and produce [demd_food|E]. [demd_manpower|E] from Farmers is converted into [levies|E] for the [barony|E] holder and [garrison|E] for the local [barony|E]."
+
+game_concept_demd_job:0 "Job"
+game_concept_demd_jobs:0 "Jobs"
+game_concept_demd_job_desc:0 "#defender_color Jobs#! are provided by [demd_districts|E] and filled by [demd_population|E] in order to produce [demd_resources|E]."
+
+game_concept_demd_manpower:0 "Manpower"
+game_concept_demd_manpower_desc:0 "#defender_color Manpower#! is produced by [demd_population|E] depending on their [demd_job|E]. #defender_color Manpower#! from [demd_job_farmers|E] is used to populate a [barony|E]'s [garrison|E] and [levies|E], while Manpower from [demd_job_artisans|E] is used to provide [men_at_arms|E] capacity to the [county|E] owner and [garrison|E] to the local[barony|E]."
+
+game_concept_demd_resource:0 "Resource"
+game_concept_demd_resources:0 "Resources"
+game_concept_demd_resource_desc:0 "#defender_color Resources#! are produced by [demd_population|E], and include [demd_food|E], [demd_goods|E], [demd_knight_capacity|E], and [demd_research|E]."
+
+game_concept_demd_food:0 "Food"
+game_concept_demd_famine:0 "Famine"
+game_concept_demd_food_desc:0 "#defender_color Food#! is produced by [demd_job_farmers|E], and is necessary to sustain a [county|E]'s [demd_population|E]. Insufficient #defender_color Food#! supplies will result in death and outward migration. #defender_color Food#! is also a minor factor in a [county|E]'s [demd_trade_value|E], [tax|E], and [demd_research|E] production."
+
+game_concept_demd_fertility:0 "Fertility"
+game_concept_demd_fertility_desc:0 "#defender_color Fertility#! is a measure of the agricultural productivity of the land in this county, and is the primary determinant of how much [demd_food|E] each [demd_job_farmer|E] produces. It is divided between a base value, which is determined by [terrain|E], adjacency to rivers, lakes and seas and [demd_winter|E], and a transient value, which is determined by annual [demd_weather|E] fluctuations on the [county|E] level and annual [demd_weather|E] fluctuations on the region level."
+
+game_concept_demd_weather:0 "Weather"
+game_concept_demd_weather_desc:0 "#defender_color Weather#! fluctuates every year on both the [county|E] and regional levels, resulting in temporary changes to the how much [demd_food|E] each [demd_job_farmer|E] produces."
+
+game_concept_demd_winter:0 "Winter Severity"
+game_concept_demd_winter_desc:0 "#defender_color Winter Severity#! is a significant factor in the base [fertility|E] of a [county|E]."
+
+game_concept_demd_goods:0 "Goods"
+game_concept_demd_goods_desc:0 "#defender_color Goods#! are produced by [demd_job_artisans|E], and represent a [county|E]'s general standard of living. #defender_color Goods#! production is a key factor in [demd_migration_pull|E] and typically the primary contributor to its [demd_trade_value|E], [tax|E], and [demd_research|E] production."
+
+game_concept_demd_capital:0 "Capital"
+game_concept_demd_capital_desc:0 "The #defender_color Capital Production Multiplier#! is a linear function of the [barony|E]'s [demd_goods|E] stockpile divided by its [demd_population|E], which is taken to be a measure of the amount of productive capital available per worker. The production rate of [demd_goods|E] and [demd_food|E] as well as (to a lesser degree) the [demd_births|E] scale with this quantity."
+
+game_concept_demd_knight_capacity:0 "Knight Capacity"
+game_concept_demd_knight_capacity_desc:0 "#defender_color Knight Capacity#! is produced by [demd_job_nobles|E]. It increases the number of [knights|E] the [county|E] owner can support."
+
+game_concept_demd_research:0 "Research"
+game_concept_demd_research_desc:0 "#defender_color Research#! is a secondary resource determined largely by [demd_goods|E] production with secondary contributions from [demd_food|E] and [demd_trade_value|E]. #defender_color Research#! output can be increased via the [demd_university|E] building."
+
+game_concept_demd_trade_value:0 "Trade Value"
+game_concept_demd_trade_value_desc:0 "#defender_color Trade Value#! is a secondary resource determined largely by [demd_goods|E] production with a secondary contributions from [demd_food|E]. Half of #defender_color Trade Value#! always stays local, while the other half is sent to the [county|E]'s [demd_trade_node|E]. The #defender_color Trade Value#! of a [county|E] is converted to [taxes|E] by multiplying by the [county|E]'s Tax Rate."
+
+game_concept_demd_tariffs:0 "Tariffs"
+game_concept_demd_tariffs_desc:0 "#defender_color Tariffs#! are the percentage of [demd_trade_value|E] that passes to a [county|E]'s owner as [taxes|E]. #defender_color Tariffs#! are equal to the [demd_trade_value|E] multiplied by the effective tax rate."
+
+game_concept_demd_wealth:0 "Per Capita Wealth"
+game_concept_demd_wealth_desc:0 "#defender_color Per Capita Wealth#! is a measure of the prosperity of the average citizen. It scales linearly with the [demd_goods|E] and [demd_trade_value|E] produced in the [county|E] and inversely with [demd_population|E], and is a major factor in [demd_migration_pull|E]."
+
+game_concept_demd_trade_power:0 "Trade Power"
+game_concept_demd_trade_power_desc:0 "#defender_color Trade Power#! is a measure of a [county|E]'s influence on local and global trade. #defender_color Trade Power#! determines the share this [county|E] receives of [demd_trade_value|E] that its [demd_trade_node|E] collects, and contributes to its [demd_trade_node|E]'s #defender_color Trade Power#!, which determines how much [demd_trade_value|E] is collected by that node. #defender_color Trade Power#! is calculated from a [county|E]'s locally produced [demd_trade_value|E] multiplied by bonuses from [terrain|E] and [demd_edicts|E]."
+
+game_concept_demd_tax_rate:0 "Tax Rate"
+game_concept_demd_tax_rate_desc:0 "#defender_color Tax Rate#! is the percent of a [county|E]'s [demd_food|E], [demd_goods|E] and [demd_trade_value|E] that is confiscated by the [ruler|E]."
+
+game_concept_demd_manpower_rate:0 "Manpower Rate"
+game_concept_demd_manpower_rate_desc:0 "#defender_color Manpower Rate#! is the percent of a [county|E]'s [demd_population|E] that is available the [ruler|E] as [demd_manpower|E], and used to fill [garrison|E], [levies|E] and [men_at_arms|E]."
+
+game_concept_demd_loan:0 "Loan"
+game_concept_demd_loans:0 "Loans"
+game_concept_demd_loan_desc:0 "[rulers|E] can take out #defender_color Loans#! to cover expenses that their [income|E] can't cover. However, more [gold|E] must be paid back than was borrowed, and default may come with consequences."
+
+###
+
+game_concept_demd_regiment_limit:0 "Regiment Limit"
+game_concept_demd_regiment_limit_desc:0 "#defender_color Regiment Limit#! is defined by the [men_at_arms|E] [demd_manpower|E] available to a character dividing by the [demd_manpower|E] required per [regiment|E] ([EmptyScope.ScriptValue('demd_manpower_per_regiment')|0]), rounded up to the nearest whole number."
+game_concept_demd_religious_conversion_progress:0 "Religious Conversion Progress"
+game_concept_demd_religious_conversion_progress_desc:0 "..."
+
+game_concept_vigor:0 "Vigor"
+game_concept_vigor_desc:0 "Vigor is a measure of the health of a [culture|E]. Vigor above 50% gives scaling bonuses to many quantities, and vigor below 50% scaling penalties. At low vigor, a culture is more likely to spawn [divergent_cultures|E]. At critically low vigor, the culture will undergo a reformation, changing its [ethos|E] and any [culture_traditions|E] or [culture_pillars|E] that reduce [vigor|E]."
+
+game_concept_imperial_decay:0 "Imperial Decay"
+game_concept_imperial_decay_desc:0 "Imperial Decay is a measure of the strength of an [empire|E]'s institutions. It ticks up or down every year based on various factors, and decreases with every succession and lost wars, and increases with won wars. The higher the imperial decay, the smaller the [tax|E] and [demd_manpower|E] contributions of [vassals|E], and the greater the weight for [vassals|E] to join [factions|E]."
+
+game_concept_demd_culture_conversion_progress:0 "Culture Conversion Progress"
+game_concept_demd_culture_conversion_progress_desc:0 "..."
+
+game_concept_demd_culture_conversion_regular:0 "Regular Culture Conversion"
+game_concept_demd_culture_conversion_regular_desc:0 "#defender_color Regular Culture Conversions#! are [county|E] to adjacent [county|E]. Yearly Progress is related to the difference between the [demd_culture_conversion_attack|E] of the attacking [counties|E] and the [demd_culture_conversion_defense|E] of the defending [county|E]."
+
+game_concept_demd_culture_conversion_settler:0 "Settler Culture Conversion"
+game_concept_demd_culture_conversion_settler_desc:0 "#defender_color Settler Culture Conversions#! are from [county|E] to [county|E]. Yearly Progress is related to the difference between the sum of the [demd_culture_conversion_attack|E] of the attacking [county|E] and all counties of the same [culture|E] that neighbor it and the [demd_culture_conversion_defense|E] of the defending [county|E]."
+
+game_concept_demd_faith_conversion_regular:0 "Regular Faith Conversion"
+game_concept_demd_faith_conversion_regular_desc:0 "#defender_color Regular Faith Conversions#! are [county|E] to adjacent [county|E]. Yearly Progress is related to the difference between the [demd_faith_conversion_attack|E] of the attacking [counties|E] and the [demd_faith_conversion_defense|E] of the defending [county|E]."
+
+game_concept_demd_faith_conversion_heresy:0 "Heresy Faith Conversion"
+game_concept_demd_faith_conversion_heresy_desc:0 "#defender_color Heresy Faith Conversions#! are from a [county|E] against itself. Yearly Progress is related to the difference between the heresy [demd_faith_conversion_attack|E], and the [demd_faith_conversion_defense|E] of the defending [county|E]."
+
+game_concept_demd_faith_conversion_missionary:0 "Missionary Faith Conversion"
+game_concept_demd_faith_conversion_missionary_desc:0 "#defender_color Missionary Faith Conversions#! are from [county|E] to [county|E]. Yearly Progress is related to the difference between the sum of the [demd_faith_conversion_attack|E] of the attacking [county|E] and all counties of the same [faith|E] that neighbor it and the [demd_faith_conversion_defense|E] of the defending [county|E]."
+
+game_concept_demd_faith_conversion_learning:0 "Learning Faith Conversion"
+game_concept_demd_faith_conversion_learning_desc:0 "#defender_color Learning Faith Conversions#! are from a [ruler|E] against the [capital|E] [county|E]. Yearly Progress is related to the difference between the sum of the average of the [ruler|E]'s and his [realm_priest|E]'s [learning|E] skill and his [faith|E]'s [fervor|E] and the [demd_faith_conversion_defense|E] of the defending [county|E]."
+
+game_concept_demd_faith_conversion_attack:0 "Faith Conversion Attack"
+game_concept_demd_faith_conversion_attack_desc:0 "#defender_color Faith Conversion Attack#! is calculated as a percentage of [demd_faith_conversion_defense|E]. If the summed #defender_color Faith Conversion Attack#! of all [counties|E] bordering the defending [county|E] is higher than the [demd_faith_conversion_defense|E] of the defending [counties|E] a [faith|E] conversion attempt will be initiated."
+
+game_concept_demd_faith_conversion_defense:0 "Faith Conversion Defense"
+game_concept_demd_faith_conversion_defense_desc:0 "#defender_color Faith Conversion Defense#! is calculated as [fervor|E] plus a contribution from local temple buildings. The #defender_color Faith Conversion Defense#! of neighboring [counties|E] of the same [faith|E] is then added. If #defender_color Faith Conversion Defense#! is stronger than the combined [demd_faith_conversion_attack|E] of all neighboring [counties|E] of a given different [faith|E], this county will be protected from [faith|E] conversion attempts."
+
+game_concept_demd_culture_conversion_attack:0 "Culture Conversion Attack"
+game_concept_demd_culture_conversion_attack_desc:0 "#defender_color Culture Conversion Attack#! is calculated as a percentage of [demd_culture_conversion_defense|E]. If #defender_color Culture Conversion Attack#! is stronger than the [demd_culture_conversion_defense|E] of neighboring [counties|E] a [culture|E] conversion attempt will result."
+
+game_concept_demd_culture_conversion_defense:0 "Culture Conversion Defense"
+game_concept_demd_culture_conversion_defense_desc:0 "#defender_color Culture Conversion Defense#! is calculated as [demd_culture_power|E] multiplied by [demd_population|E] multiplied by the contribution from local [buildings|E] and other factors. If #defender_color Culture Conversion Defense#! is stronger than the [demd_culture_conversion_attack|E] of neighboring [counties|E], this county will be protected from [culture|E] conversion attempts."
+
+game_concept_demd_culture_power:0 "Culture Power"
+game_concept_demd_culture_power_desc:0 "#defender_color Culture Power#! is a measure of how advanced a culture is in terms of number of [innovations|E] unlocked. It is a key component in the calculation of [demd_culture_conversion_defense|E] and [demd_culture_conversion_attack|E]."
+
+game_concept_demd_influence:0 "Influence"
+game_concept_demd_influence_desc:0 "#defender_color Influence#! is a measure of the relative power of the estates in a [county|E]. It is chiefly determined by [demd_urbanization|E] and [demd_land_ownership|E]."
+
+game_concept_demd_land_ownership:0 "Noble Land Ownership"
+game_concept_demd_land_ownership_desc:0 "#defender_color Noble Land Ownership#! is a measure of the percent of productive land owned by the nobility as opposed to the clergy in a [county|E]. It is a key component in computing [demd_influence|E]."
+
+game_concept_demd_noble_estate:0 "Noble Estate"
+game_concept_demd_noble_estate_desc:0 "The #defender_color Noble Estate#! ..."
+
+game_concept_demd_clergy_estate:0 "Clergy Estate"
+game_concept_demd_clergy_estate_desc:0 "The #defender_color clergy Estate#! ..."
+
+game_concept_demd_burgher_estate:0 "Burgher Estate"
+game_concept_demd_burgher_estate_desc:0 "The #defender_color burgher Estate#! ..."
+
+
+###
+
+game_concept_demd_public_order:0 "Public Order"
+game_concept_demd_public_order_desc:0 "#defender_color Public Order#! is an inverse measurement of the degree of crime in a [county|E]. Low #defender_color Public Order#! will result in faster [demd_capital|E] depreciation in proportion to the size of the deficit. [demd_migration_pull|E] will also be reduced."
+
+game_concept_demd_crime:0 "Crime"
+game_concept_demd_crime_desc:0 "#defender_color Crime#! is produced by [demd_population|E]. If [demd_crime|E] exceeds #defender_color Public Order#!, production efficiency of all [demd_resources|E] will be reduced in proportion to the size of the deficit. [demd_migration_pull|E] will also be reduced."
+
+game_concept_demd_sanitation:0 "Sanitation"
+game_concept_demd_sanitation_desc:0 "#defender_color Sanitation#! is a measure of how well protected your urban population is from disease. If #defender_color Sanitation#! is less than 100%, excess deaths will occur in proportion to the size of the deficit, [demd_plagues|E] are more likely to spawn in this [county|E], and [characters|E] in this [county|E] are more likely to catch diseases. [demd_migration_pull|E] to the urban center of the county will also be reduced."
+
+game_concept_demd_squalor:0 "Squalor"
+game_concept_demd_squalor_desc:0 "#defender_color Squalor#! is produced by [demd_population|E]. If #defender_color Squalor#! exceeds [demd_sanitation|E], excess deaths will occur in proportion to the size of the deficit. [demd_migration_pull|E] will also be reduced."
+
+game_concept_demd_edict:0 "Edict"
+game_concept_demd_edicts:0 "Edicts"
+game_concept_demd_edict_desc:0 "#defender_color Edicts#! are [county|E] level laws that may be passed by the [county|E] owner from the #defender_color Edicts#! tab in the [county|E] view."
+
+game_concept_demd_urbanization:0 "Urbanization"
+game_concept_demd_urbanization_desc:0 "#defender_color Urbanization#! is determined by the number of [demd_goods_districts|E] in a [county|E] divided by the total number of [demd_districts|E]."
+
+game_concept_demd_construction_cap:0 "Construction Capacity"
+game_concept_demd_construction_cap_desc:0 "#defender_color Construction Capacity#! is the maximum number of [demd_districts|E] that a [county|E] can construct each year. It is determined by the number of [demd_goods_districts|E] present in the [county|E]. Bonuses to #defender_color Construction Capacity#! also improve [building|E] build speed. Whatever is not used to construct districts is pooled at the [county|E] level and used to add progress towards constructing a new [holding|E]. Whatever is not used for that can be applied as extra progress to the Develop County task."
+
+game_concept_demd_food_district:0 "Rural District"
+game_concept_demd_food_districts:0 "Rural Districts"
+game_concept_demd_food_district_desc:0 "#defender_color Rural [demd_districts|E]#! provide [demd_job_farmer|E] and [demd_job_noble|E] [demd_jobs|E]. The number of #defender_color Rural [demd_districts|E]#! that are buildable in a county is limited by the quantity and quality of arable land."
+
+game_concept_demd_goods_district:0 "Urban District"
+game_concept_demd_goods_districts:0 "Urban Districts"
+game_concept_demd_goods_district_desc:0 "#defender_color Urban [demd_districts|E]#! provide [demd_job_artisan|E] [demd_jobs|E]. The percentage of #defender_color Urban Districts#! in a county determines the [demd_urbanization|E] level. An unlimited number of #defender_color Urban [demd_districts|E]#! can be constructed in a county."
+
+game_concept_demd_district:0 "District"
+game_concept_demd_districts:0 "Districts"
+game_concept_demd_district_desc:0 "#defender_color Districts#! are built by [counties|E] to provide [demd_jobs|E] for the [demd_population|E]. [demd_goods_districts|E] provide [demd_job_artisan|E] [demd_jobs|E], while [demd_food_districts|E] provide [demd_job_farmer|E] and [demd_job_noble|E] [demd_jobs|E]. The number of districts a county can build each year is limited by its [demd_construction_cap|E]."
+
+###
+
+game_concept_demd_court:0 "Court"
+game_concept_demd_courts:0 "Courts"
+game_concept_demd_court_desc:0 "#defender_color Court [buildings|E]#! produce [demd_public_order|E]. An unlimited number may be built in each [county|E]."
+
+game_concept_demd_sewer:0 "Sewer"
+game_concept_demd_sewers:0 "Sewers"
+game_concept_demd_sewer_desc:0 "#defender_color Sewer [buildings|E]#! produce [demd_sanitation|E]. An unlimited number may be built in each [county|E]."
+
+game_concept_demd_university:0 "University"
+game_concept_demd_universities:0 "Universities"
+game_concept_demd_university_desc:0 "#defender_color University [buildings|E]#! increase [demd_research|E] rate. A limited number may be built in each [county|E] determined by [innovation|E] progression."
+
+game_concept_demd_migration_pull:0 "Migration Pull"
+game_concept_demd_migration_pull_desc:0 "#defender_color Migration Pull#! is a measure of how desirable a [county|E] is to live in. If a [county|E] has a higher #defender_color Migration Pull#! than neighboring [counties|E], [demd_population|E] will migrate towards it. Significant factors in #defender_color Migration Pull#! are in descending order of significance adequate [demd_food|E] supply, adequate [demd_sanitation|E], adequate [demd_public_order|E], and high [demd_wealth|E]. [demd_persecution|E] will also lower #defender_color Migration Pull#! significantly."
+
+game_concept_demd_migration:0 "Migration"
+game_concept_demd_migration_desc:0 "[demd_population|E] will #defender_color Migrate#! in between neighboring [counties|E] based on the difference in [demd_migration_pull|E] between the two. #defender_color Migration#! rate is slowed by [faith_hostility|E] and [culture|E] differences."
+
+game_concept_demd_standard_of_living:0 "Standard of Living"
+game_concept_demd_standard_of_living_desc:0 "Placeholder"

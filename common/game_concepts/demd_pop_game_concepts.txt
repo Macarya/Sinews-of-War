@@ -1,0 +1,361 @@
+﻿excavation_progress = {
+	parent = excavation
+	alias = { excavation_next_roll }
+	texture = "gfx/interface/icons/excavation/icon_excavation_progress.png"
+}
+
+excavation_leader = {
+	parent = excavation
+	texture = "gfx/interface/icons/excavation/icon_excavation_leader.dds"
+}
+
+excavation_quality = {
+	parent = excavation
+	texture = "gfx/interface/icons/excavation/icon_excavation_quality.png"
+}
+
+excavation_skill = {
+	parent = excavation
+	texture = "gfx/interface/icons/excavation/icon_excavation.png"
+}
+
+excavation_stage = {
+	parent = excavation
+	texture = "gfx/interface/icons/excavation/icon_excavation.png"
+}
+
+excavation_breakthrough_chance = {
+	alias = { excavation_breakthrough }
+	parent = excavation
+	texture = "gfx/interface/icons/excavation/icon_next_roll.png"
+}
+
+minor_artifacts = {
+	parent = excavation
+	texture = "gfx/interface/icons/excavation/icon_minor_artifacts.png"
+}
+
+excavation = {
+	texture = "gfx/interface/icons/excavation/icon_excavation_leader.png"
+}
+
+############
+
+demd_population = {
+	texture = "gfx/interface/icons/demd/jobs/clerk.png"
+}
+
+demd_growth = {
+	texture = "gfx/interface/icons/message_feed/council.dds"
+}
+
+demd_births = {
+	texture = "gfx/interface/icons/message_feed/child.dds"
+}
+
+demd_water = {
+	texture = "gfx/interface/icons/modifiers/county_modifier_flood.dds"
+}
+
+demd_untilled_farmland = {
+	texture = "gfx/interface/icons/demd/resources/food.png"
+}
+
+demd_plagues = {
+	alias = { demd_plague demd_quarantine }
+	texture = "gfx/interface/icons/modifiers/death_disease.dds"
+}
+
+demd_persecution = {
+	alias = { demd_tolerance demd_persecuted }
+	texture = "gfx/interface/icons/modifiers/death_war.dds"
+}
+
+demd_tax_rate = {
+	texture = "gfx/interface/icons/message_feed/secret.dds"
+}
+
+demd_manpower_rate = {
+	texture = "gfx/interface/icons/message_feed/secret.dds"
+}
+demd_deaths = {
+	texture = "gfx/interface/icons/death_reason/death_natural.dds"
+}
+
+demd_disasters = {
+	texture = "gfx/interface/icons/demd/resources/disaster.png"
+}
+
+demd_fires = {
+	parent = demd_disasters
+	alias = { demd_fire }
+	texture = "gfx/interface/icons/modifiers/county_modifier_fire.dds"
+}
+
+demd_floods = {
+	parent = demd_disasters
+	alias = { demd_flood }
+	texture = "gfx/interface/icons/modifiers/county_modifier_flood.dds"
+}
+
+demd_avalanches = {
+	parent = demd_disasters
+	alias = { demd_avalanche }
+	texture = "gfx/interface/icons/modifiers/county_modifier_avalanche.dds"
+}
+
+demd_eruptions = {
+	parent = demd_disasters
+	alias = { demd_eruption }
+	texture = "gfx/interface/icons/modifiers/county_modifier_eruption.dds"
+}
+
+demd_earthquakes = {
+	parent = demd_disasters
+	alias = { demd_earthquake }
+	texture = "gfx/interface/icons/modifiers/county_modifier_earthquake.dds"
+}
+
+demd_droughts = {
+	parent = demd_disasters
+	alias = { demd_drought }
+	texture = "gfx/interface/icons/modifiers/county_modifier_drought.dds"
+}
+
+demd_tsunamis = {
+	parent = demd_disasters
+	alias = { demd_tsunami }
+	texture = "gfx/interface/icons/modifiers/county_modifier_tsunami.dds"
+}
+
+demd_migration = {
+	texture = "gfx/interface/icons/message_feed/guest.dds"
+}
+
+demd_job = {
+	alias = { demd_jobs }
+	texture = "gfx/interface/icons/demd/jobs/clerk.png"
+}
+
+demd_job_noble = {
+	alias = { demd_job_nobles }
+	texture = "gfx/interface/icons/demd/jobs/noble.dds"
+}
+
+demd_job_artisan = {
+	alias = { demd_job_artisans }
+	texture = "gfx/interface/icons/demd/jobs/artisan.png"
+}
+
+demd_job_farmer = {
+	alias = { demd_job_farmers }
+	texture = "gfx/interface/icons/demd/jobs/farmer.dds"
+}
+
+demd_manpower = {
+	texture = "gfx/interface/icons/demd/jobs/guardsman.dds"
+}
+
+demd_regiment_limit = {
+	texture = "gfx/interface/icons/demd/jobs/guardsman.dds"
+}
+
+demd_culture_conversion_progress = {
+	texture = "gfx/interface/icons/message_feed/holy_order.dds"
+}
+
+demd_culture_conversion_attack = {
+	texture = "gfx/interface/icons/demd/icon_culture_attack.dds"
+}
+
+demd_culture_conversion_regular = {
+	texture = "gfx/interface/icons/demd/icon_culture_attack.dds"
+}
+
+demd_culture_conversion_settler = {
+	texture = "gfx/interface/icons/demd/icon_culture_attack.dds"
+}
+
+demd_faith_conversion_defense = {
+	texture = "gfx/interface/icons/demd/icon_fervor_defense.dds"
+}
+
+demd_faith_conversion_attack = {
+	texture = "gfx/interface/icons/demd/icon_fervor_attack.dds"
+}
+
+demd_faith_conversion_regular = {
+	texture = "gfx/interface/icons/demd/icon_fervor_attack.dds"
+}
+
+demd_faith_conversion_missionary = {
+	texture = "gfx/interface/icons/demd/icon_fervor_attack.dds"
+}
+
+demd_faith_conversion_heresy = {
+	texture = "gfx/interface/icons/demd/icon_fervor_attack.dds"
+}
+
+demd_faith_conversion_learning = {
+	texture = "gfx/interface/icons/demd/icon_fervor_attack.dds"
+}
+
+demd_culture_power = {
+	texture = "gfx/interface/icons/icon_culture.dds"
+}
+
+demd_influence = {
+	texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+}
+
+demd_land_ownership = {
+	texture = "gfx/interface/icons/message_feed/titles.dds"
+}
+
+demd_noble_estate = {
+	texture = "gfx/interface/icons/demd/jobs/noble.dds"
+}
+
+demd_clergy_estate = {
+	texture = "gfx/interface/icons/demd/jobs/priest.dds"
+}
+
+demd_burgher_estate = {
+	texture = "gfx/interface/icons/demd/jobs/merchant.dds"
+}
+
+demd_culture_conversion_defense = {
+	texture = "gfx/interface/icons/demd/icon_culture_defense.dds"
+}
+
+demd_religious_conversion_progress = {
+	texture = "gfx/interface/icons/message_feed/religious_councillor_job.dds"
+}
+
+demd_public_order = {
+	texture = "gfx/interface/icons/demd/resources/public_order.dds"
+}
+
+demd_crime = {
+	texture = "gfx/interface/icons/demd/resources/crime.dds"
+}
+
+demd_sanitation = {
+	texture = "gfx/interface/icons/demd/resources/sanitation.dds"
+}
+
+demd_squalor = {
+	texture = "gfx/interface/icons/demd/resources/squalor.dds"
+}
+
+demd_urbanization = {
+	texture = "gfx/interface/icons/icon_holding_cow_metropolis.dds"
+}
+
+demd_construction_cap = {
+	texture = "gfx/interface/icons/message_feed/building.dds"
+}
+
+demd_urbanization = {
+	texture = "gfx/interface/icons/icon_holding_cow_metropolis.dds"
+}
+
+demd_food_district = {
+	parent = demd_district
+	alias = { demd_food_districts }
+	texture = "gfx/interface/icons/message_feed/building.dds"
+}
+
+demd_goods_district = {
+	parent = demd_district
+	alias = { demd_goods_districts }
+	texture = "gfx/interface/icons/message_feed/building.dds"
+}
+
+demd_district = {
+	alias = { demd_districts }
+	texture = "gfx/interface/icons/message_feed/building.dds"
+}
+
+demd_edict = {
+	alias = { demd_edicts }
+	texture = "gfx/interface/icons/title_status/icon_title_law.dds"
+}
+
+demd_loan = {
+	alias = { demd_loans }
+	texture = "gfx/interface/icons/demd/loan.png"
+}
+
+demd_sewer = {
+	alias = { demd_sewers }
+	texture = "gfx/interface/icons/message_feed/building.dds"
+}
+
+demd_university = {
+	alias = { demd_universities }
+	texture = "gfx/interface/icons/message_feed/building.dds"
+}
+
+demd_court = {
+	alias = { demd_courts }
+	texture = "gfx/interface/icons/message_feed/building.dds"
+}
+
+demd_migration_pull = {
+	texture = "gfx/interface/icons/message_feed/guest.dds"
+}
+
+demd_resource = {
+	alias = { demd_resources }
+	texture = "gfx/interface/icons/demd/resources/development.dds"
+}
+
+demd_food = {
+	parent = demd_resource
+	alias = { demd_famine }
+	texture = "gfx/interface/icons/demd/resources/food.png"
+}
+
+demd_fertility = {
+	texture = "gfx/interface/icons/demd/resources/fertility.png"
+}
+
+demd_weather = {
+	texture = "gfx/interface/icons/demd/resources/weather.png"
+}
+
+demd_winter = {
+	texture = "gfx/interface/icons/demd/resources/winter.png"
+}
+
+demd_goods = {
+	parent = demd_resource
+	texture = "gfx/interface/icons/demd/resources/goods.png"
+}
+
+demd_capital = {
+	texture = "gfx/interface/icons/demd/resources/goods.png"
+}
+
+demd_knight_capacity = {
+	parent = demd_resource
+	texture = "gfx/interface/icons/demd/resources/knight_capacity.dds"
+}
+
+demd_research = {
+	parent = demd_resource
+	texture = "gfx/interface/icons/demd/resources/research.png"
+}
+
+demd_construction_cap = {
+	texture = "gfx/interface/icons/demd/construction_capacity.png"
+}
+
+vigor = {
+	texture = "gfx/interface/icons/icon_culture.dds"
+}
+
+imperial_decay = {
+	texture = "gfx/interface/icons/message_feed/tier_down.dds"	
+}

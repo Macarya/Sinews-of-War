@@ -1,0 +1,168 @@
+﻿excavation_start_cost = {
+	value = 100
+}
+
+excavation_stage_progress_max = 1000
+excavation_stage_max = 5
+
+minor_artifacts_development_progress_value = {
+	value = var:minor_artifacts
+	multiply = minor_artifacts_development_progress_value_each
+}
+minor_artifacts_development_progress_value_each = 10
+
+minor_artifacts_gold_value = {
+	value = var:minor_artifacts
+	multiply = minor_artifacts_gold_value_each
+}
+minor_artifacts_gold_value_each = 5
+
+excavation_breakthrough_chance_neg = {
+	value = excavation_breakthrough_chance
+	multiply = -1
+}
+
+excavation_breakthrough_chance = {
+	if = {
+		limit = { has_variable = excavation_leader }
+		add = {
+			value = story_owner.excavation_skill
+			desc = "[excavation_breakthrough_chance|E] of Owner"			
+		}
+		add = {
+			value = var:excavation_leader.excavation_skill
+			desc = "[excavation_breakthrough_chance|E] of Leader"
+		}
+		max = 100
+	}
+	else = {
+		value = 0
+	}
+}
+
+excavation_skill = {
+	value = {
+		value = learning
+		multiply = 2
+		desc = "[learning|E]"
+	}
+	add = {
+		value = martial
+		multiply = 1.2
+		desc = "[martial|E]"
+	}
+	add = {
+		value = stewardship
+		multiply = 0.8
+		desc = "[stewardship|E]"
+	}
+	multiply = 10
+	max = 100
+}
+
+
+
+
+# to be expanded upon later
+monthly_excavation_progress = {
+	value = 0
+	if = {
+		limit = { has_variable = excavation_leader }
+		add = {
+			value = monthly_excavation_progress_owner
+			desc = "[excavation_skill|E] of Owner"			
+		}
+		add = {
+			value = monthly_excavation_progress_leader
+			desc = "[excavation_skill|E] of Leader"	
+		}
+	}
+}
+
+monthly_excavation_progress_owner = {
+	value = story_owner.excavation_skill
+	multiply = 2
+
+}
+
+monthly_excavation_progress_leader = {
+	value = var:excavation_leader.excavation_skill
+	multiply = 2
+}
+
+est_excavation_stage_completion_time = {
+	value = excavation_stage_progress_max
+	subtract = var:excavation_stage_progress
+	divide = monthly_excavation_progress
+}
+
+
+##############################
+
+excavation_progressbar_current_plus_delta = {
+	value = excavation_progressbar_current
+	add = {
+		value = monthly_excavation_progress_display
+		divide = excavation_stage_progress_max
+		multiply = {
+			value = excavation_progressbar_max
+			divide = excavation_stage_max
+		}
+	}
+}
+
+excavation_progressbar_current = {
+	value = var:active_excavation.var:excavation_stage
+	subtract = 1
+	add = {
+		value = var:active_excavation.var:excavation_stage_progress
+		divide = excavation_stage_progress_max
+	}
+	multiply = {
+		value = excavation_progressbar_max
+		divide = excavation_stage_max
+	}
+}
+
+excavation_progressbar_max = {
+	value = 1000
+}
+
+est_excavation_stage_completion_time_display = {
+	value = var:active_excavation.est_excavation_stage_completion_time
+}
+
+monthly_excavation_progress_display = {
+	value = var:active_excavation.monthly_excavation_progress
+}
+
+excavation_stage_progress_display = {
+	value = var:active_excavation.var:excavation_stage_progress
+}
+
+excavation_stage_progress_max_display = {
+	value = excavation_stage_progress_max
+}
+
+excavation_stage_display = {
+	value = var:active_excavation.var:excavation_stage
+}
+
+
+
+
+
+excavation_minor_artifacts_small = 1
+excavation_minor_artifacts_medium = 3
+excavation_minor_artifacts_large = 5
+excavation_minor_artifacts_huge = 10
+
+excavation_quality_small = 1
+excavation_quality_medium = 3
+excavation_quality_large = 5
+excavation_quality_huge = 10
+
+excavation_progress_small = 25
+excavation_progress_medium = 50
+excavation_progress_large = 100
+excavation_progress_huge = 200

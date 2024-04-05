@@ -1,0 +1,36 @@
+﻿l_spanish:
+
+ demd_university_site_valid:0 "No tiene una universidad existente."
+ demd_found_university.t:1 "¡Universidad fundada!"
+ demd_found_university_desc:1 "¡Una nueva institución de aprendizaje ha sido inaugurada!"
+ 
+ demd_bank_loan_events.0001.t:0 "Deuda heredada"
+ demd_bank_loan_events.0001.desc:0 "Marcador de posición"
+ demd_take_bank_loan_desc:1 "Podríamos pedir un préstamo a un banco de nuestro señorío para satisfacer necesidades de fondos a corto plazo. Sin embargo, los bancos no son instituciones de caridad, y esperarán que el préstamo sea saldado con intereses."
+ demd_take_bank_loan_decision:0 "Tomar préstamo"
+ demd_take_bank_loan_decision_tooltip:0 "Tomar préstamo"
+ demd_take_bank_loan_decision_confirm:0 "Aceptar el préstamo"
+ 
+ demd_repay_bank_loan_desc:1 "Al liquidar nuestras deudas con el banco, tendremos disponibles nuevos préstamos en caso de necesitar ayuda financiera."
+ demd_repay_bank_loan_decision:0 "Pagar préstamo pendiente"
+ demd_repay_bank_loan_decision_tooltip:0 "Pagar préstamo pendiente"
+ demd_repay_bank_loan_decision_confirm:0 "Pagar el préstamo"
+ 
+ demd_repay_bank_loan_state_desc:1 "Al liquidar nuestras deudas con el banco, tendremos disponibles nuevos préstamos en caso de necesitar ayuda financiera."
+ demd_repay_bank_loan_state_decision:0 "Pagar préstamo pendiente"
+ demd_repay_bank_loan_state_decision_tooltip:0 "Pagar préstamo pendiente"
+ demd_repay_bank_loan_state_decision_confirm:0 "Pagar el préstamo"
+ 
+ demd_land_reclamation_desc:1 "Las nuevas técnicas de drenaje aprovechando la fuerza de los molinos para poner en marcha las bombas de agua permiten convertir los inútiles humedales en tierras de cultivo."
+ demd_land_reclamation_decision_desc:1 "Las nuevas técnicas de drenaje aprovechando la fuerza de los molinos para poner en marcha las bombas de agua permiten convertir los inútiles humedales en tierras de cultivo."
+ 
+ demd_land_reclamation_decision:0 "Reclamar humedales"
+ demd_land_reclamation_decision_tooltip:0 "Reclamar humedales"
+ demd_land_reclamation_decision_confirm:0 "Drenar la ciénaga"
+ 
+ demd_bank_loan_events.0001:0 "Una deuda inesperada"
+ demd_bank_loan_events.0001_desc:0 "Tras revisar los documentos financieros de tu predecesor, tus sirvientes han descubierto que el título del [CHARACTER.GetPrimaryTitle.GetName] no es la única cosa que has heredado. Parece ser que estás en deuda con un préstamo considerable hecho por el último [CHARACTER.GetTitleAsNameNoTooltip] del [CHARACTER.GetPrimaryTitle.GetName]."
+ demd_bank_loan_events.0001.a:0 "Aceptar la deuda"
+ demd_bank_loan_events.0001.b:0 "Pagar el préstamo"
+ demd_bank_loan_events.0001.c:0 "Pagar el préstamo"
+ demd_bank_loan_events.0001.d:0 "Rechazar la deuda"

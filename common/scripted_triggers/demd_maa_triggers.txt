@@ -1,0 +1,28 @@
+﻿
+has_tier_1_plus_siege_artillery = {	
+	OR = {
+		has_innovation = innovation_catapult
+		has_innovation = innovation_mangonel
+		has_innovation = innovation_trebuchet
+		has_innovation = innovation_bombard
+	}
+}
+
+has_tier_2_plus_siege_artillery = {
+	OR = {
+		has_innovation = innovation_mangonel
+		has_innovation = innovation_trebuchet
+		has_innovation = innovation_bombard
+	}
+}
+
+has_tier_3_plus_siege_artillery = {
+	OR = {
+		has_innovation = innovation_trebuchet
+		has_innovation = innovation_bombard
+	}
+}
+
+has_tier_4_plus_siege_artillery = {
+	has_innovation = innovation_bombard
+}

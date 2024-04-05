@@ -1,0 +1,130 @@
+﻿
+suggestion_assign_excavation_leader = {
+
+	weight = {
+		base = 0
+		modifier = {
+			any_held_title = {
+				tier = tier_county
+				has_variable = active_excavation
+				var:active_excavation = { 
+					OR = {
+						NOT = { has_variable = excavation_leader } 
+						NOR = { 
+							var:excavation_leader = { is_knight_of = prev.story_owner }  
+							var:excavation_leader = { is_courtier_of = prev.story_owner }
+							var:excavation_leader = { is_councillor_of = prev.story_owner } 
+						}
+					}
+				}
+			}
+			add = 1000
+		}
+	}
+
+	check_create_suggestion = {
+		every_held_title = {
+			limit = {
+				tier = tier_county
+				has_variable = active_excavation
+				var:active_excavation = { 
+					OR = {
+						NOT = { has_variable = excavation_leader } 
+						NOR = { 
+							var:excavation_leader = { is_knight_of = prev.story_owner }  
+							var:excavation_leader = { is_courtier_of = prev.story_owner }
+							var:excavation_leader = { is_councillor_of = prev.story_owner } 
+						}
+					}
+				}
+			}
+
+			try_create_suggestion = {
+				suggestion_type = suggestion_assign_excavation_leader
+				landed_title = county
+			}
+		}	
+	}
+
+	effect = {
+		scope:landed_title.title_province = {			
+			open_view_data = {
+				view = holding_view
+			}
+		}
+		pan_camera_to_title = scope:landed_title
+	}
+
+	score = {
+		base = 500
+	}
+
+	is_valid = {
+		any_held_title = {
+			tier = tier_county
+			has_variable = active_excavation
+			var:active_excavation = { 
+				OR = {
+					NOT = { has_variable = excavation_leader } 
+					NOR = { 
+						var:excavation_leader = { is_knight_of = prev.story_owner }  
+						var:excavation_leader = { is_courtier_of = prev.story_owner }
+						var:excavation_leader = { is_councillor_of = prev.story_owner } 
+					}
+				}
+			}
+		}
+	}
+}
+
+suggestion_start_excavation = {
+
+	weight = {
+		base = 0
+		modifier = {
+			any_held_title = {
+				tier = tier_county
+				has_variable = ruins_type
+				NOT = { has_variable = active_excavation }
+			}
+			add = 1000
+		}
+	}
+
+	check_create_suggestion = {
+		every_held_title = {
+			limit = {
+				tier = tier_county
+				has_variable = ruins_type
+				NOT = { has_variable = active_excavation }
+			}
+
+			try_create_suggestion = {
+				suggestion_type = suggestion_start_excavation
+				landed_title = county
+			}
+		}	
+	}
+
+	effect = {
+		scope:landed_title.title_province = {			
+			open_view_data = {
+				view = holding_view
+			}
+		}
+		pan_camera_to_title = scope:landed_title
+	}
+
+	score = {
+		base = 500
+	}
+
+	is_valid = {
+		any_held_title = {
+			tier = tier_county
+			has_variable = ruins_type
+			NOT = { has_variable = active_excavation }
+		}
+		gold > excavation_start_cost
+	}
+}

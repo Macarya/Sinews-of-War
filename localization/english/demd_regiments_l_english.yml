@@ -1,0 +1,10 @@
+﻿l_english: 
+pikemen_screen_mult:0 "[spearmen|E] [screen|E]"
+heavy_infantry_screen_mult:0 "[heavy_infantry|E] [screen|E]"
+heavy_cavalry_screen_mult:0 "[heavy_cavalry|E] [screen|E]"
+archers_screen_mult:0 "[archers|E] [screen|E]"
+
+archers_pursuit_mult:0 "[archers|E] [pursuit|E]"
+pikemen_pursuit_mult:0 "[spearmen|E] [pursuit|E]"
+heavy_infantry_pursuit_mult:0 "[heavy_infantry|E] [pursuit|E]"
+heavy_cavalry_pursuit_mult:0 "[heavy_cavalry|E] [pursuit|E]"

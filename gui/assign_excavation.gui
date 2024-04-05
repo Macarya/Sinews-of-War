@@ -1,0 +1,109 @@
+﻿types Excavations  {
+    type window_assign_excavation_leader = window {
+        size = { 600 600 }
+        position = { 750 0 }
+        layer = middle
+        visible = "[GetVariableSystem.Exists('window_assign_excavation_leader')]"
+    
+        using = Window_Background
+        using = Window_Decoration
+        using = Animation_ShowHide_Standard
+        
+        vbox = {
+            using = Window_Margins
+            restrictparent_min = yes
+    
+            header_pattern = {
+                layoutpolicy_horizontal = expanding
+    
+                blockoverride "header_text"
+                {
+                    raw_text = "Assign Excavation Leader"
+                }
+    
+                blockoverride "button_close"
+                {
+                    onclick = "[GetVariableSystem.Clear( 'window_assign_excavation_leader' )]"
+                }
+            }
+    
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                vbox = {
+                    datacontext = "[GetPlayer.MakeScope.Var('excavation_locale').Title]"
+                    coa_title_medium = {}
+                }
+                scrollbox = {
+                    name = "assign_excavation_leader_scrollarea"
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                    #size = {100% 100%}
+                    size = { 530 800 }
+                    background = {
+                        texture = "gfx/interface/illustrations/lifestyles_background/stewardship_lifestyle.dds"
+                        alpha = 0.3
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 0 0 }
+                            blend_mode = alphamultiply
+                        }
+                    }
+                    blockoverride "scrollbox_content"
+                    {
+                        dynamicgridbox = {
+                            datacontext = "[GetPlayer]"
+                            layoutpolicy_vertical = expanding
+                            allow_outside = yes
+                            ignoreinvisible = yes
+                            maxhorizontalslots = 1
+                            maxverticalslots = 100
+                            block "datamodel" {
+                                datamodel = "[GetPlayer.MakeScope.GetList('excavation_leader_candidates')]"
+                            }
+                            item = {
+                                widget = {
+                                    datacontext = "[Scope.GetCharacter]"
+                                    block "size" {
+                                        size = { 500 121 }
+                                    }
+                                    hbox = {
+                                        portrait_head = {}
+                                        vbox = {
+                                            text_single = {
+                                                fontsize = 20
+                                                raw_text = "[Character.GetFirstName]"
+                                                default_format = "#high"
+                                            }
+                                            text_single = {
+												fontsize = 20
+												raw_text = "[excavation_skill|E]: @icon_excavation!#  [Character.MakeScope.ScriptValue('excavation_skill')|0]"
+												datacontext = "[GuiScope.SetRoot(Character.MakeScope).GetScriptValueBreakdown('excavation_skill')]"
+												tooltipwidget = {
+													widget_value_breakdown_tooltip = {}
+												}
+											} 
+                                            expand = {}
+                                        }
+                                        spacer = {
+                                            size = { 20 10 }
+                                        }
+                                        button = {
+                                            texture = "gfx/interface/icons/title_status/icon_claim_pressed.dds"
+                                            size = { 90 90 }
+                                            tooltip = appoint_new_excavation_leader
+                                            onclick = "[GetScriptedGui('appoint_new_excavation_leader').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('new_excavation_leader',Scope.GetCharacter.MakeScope).End)]"
+                                            onclick = "[GetVariableSystem.Clear( 'window_assign_excavation_leader' )]"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

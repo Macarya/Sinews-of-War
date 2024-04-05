@@ -1,0 +1,95 @@
+types TradeValue
+{
+    type trade_value_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_trade_value!#  Total [demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_value').GetValue|2]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_trade_value|E] is a measure of the luxury goods produced in a [county|E]. Trade Value production is pegged to a percentage of the [demd_goods|E] produced plus any bonuses from [buildings|E]. Half of #defender_color Trade Value#! always stays local, while the other half is sent to the [county|E]'s [demd_trade_node|E], where it is moved through the trade network. The sum of produced and collected #defender_color Trade Value#! of a [county|E] is ultimately converted back to [demd_goods|E].#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Produced [demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('produced_trade_value')|2]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_goods|E] Produced: [Province.GetCounty.GetTitle.MakeScope.Var('goods_produced').GetValue|2] x [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_goods_to_trade_value_constant')|2] #weak ([demd_goods|E] to [demd_trade_value|E] multiplier)#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E]: [Province.GetCounty.GetCulture.MakeScope.Var('trade_value_cultural_production_mult').GetValue|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.GetCounty.GetFaith.MakeScope.Var('trade_value_faith_production_mult').GetValue|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [buildings|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('building_trade_value_bonus')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Collected [demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.Var('collected_trade_value').GetValue|2]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold [demd_trade_node|E] Linkage Tariff [demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.Var('collected_trade_linkage_tariffs').GetValue|2]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

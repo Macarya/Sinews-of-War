@@ -1,0 +1,92 @@
+types Excavation
+{
+    type excavation_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_excavation!#  [excavation|E]: [Province.GetCounty.GetTitle.Custom('get_ruins_name')]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak #defender_color Excavations#! are expeditions to ancient ruins in search of treasure.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "@icon_excavation!#  [excavation_stage|E]: [Province.GetCounty.GetTitle.MakeScope.Var('active_excavation').Story.MakeScope.Var('excavation_stage').GetValue|0]/[EmptyScope.ScriptValue('excavation_stage_max')|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "@icon_excavation_progress!#  [excavation_progress|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('excavation_stage_progress_display')|0]/[Province.GetCounty.GetTitle.MakeScope.ScriptValue('excavation_stage_progress_max_display')|0] (+[Province.GetCounty.GetTitle.MakeScope.ScriptValue('monthly_excavation_progress_display')|1]/mo.)"
+                    align = left
+					autoresize = yes
+					max_width = 400
+					
+					datacontext = "[GuiScope.SetRoot(Province.GetCounty.GetTitle.MakeScope.Var('active_excavation').Story.MakeScope).GetScriptValueBreakdown('monthly_excavation_progress')]"
+					tooltipwidget = {
+						widget_value_breakdown_tooltip = {}
+					}
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "@icon_breakthrough_chance!#  [excavation_breakthrough_chance|E]: [Province.GetCounty.GetTitle.MakeScope.Var('active_excavation').Story.MakeScope.ScriptValue('excavation_breakthrough_chance')|0]%"
+                    align = left
+					autoresize = yes
+					max_width = 400
+					
+					datacontext = "[GuiScope.SetRoot(Province.GetCounty.GetTitle.MakeScope.Var('active_excavation').Story.MakeScope).GetScriptValueBreakdown('excavation_breakthrough_chance')]"
+					tooltipwidget = {
+						widget_value_breakdown_tooltip = {}
+					}
+                }
+				spacer = { size = { 0 14 } }
+			
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "@icon_excavation_quality!#  [excavation_quality|E]: [Province.GetCounty.GetTitle.MakeScope.Var('active_excavation').Story.MakeScope.Var('excavation_quality').GetValue|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "@icon_minor_artifacts!#  [minor_artifacts|E]: [Province.GetCounty.GetTitle.MakeScope.Var('active_excavation').Story.MakeScope.Var('minor_artifacts').GetValue|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }				
+            }
+        }
+    }
+}

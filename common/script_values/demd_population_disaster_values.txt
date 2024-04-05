@@ -1,0 +1,50 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+avalanche_start_month = 11 # November
+avalanche_end_month = 3 # March
+
+avalanche_months_lower = {
+	value = avalanche_start_month
+	subtract = current_month
+	add = 12
+	modulo = 12
+}
+
+avalanche_months_upper = {
+	value = avalanche_end_month
+	subtract = current_month
+	add = 12
+	modulo = 12
+}
+
+##############
+
+flood_start_month = 3 # March
+flood_end_month = 8 # August
+
+flood_months_lower = {
+	value = flood_start_month
+	subtract = current_month
+	add = 12
+	modulo = 12
+}
+
+flood_months_upper = {
+	value = flood_end_month
+	subtract = current_month
+	add = 12
+	modulo = 12
+}
+
+##############
+
+drought_yearly_weather_modifier = -0.03
+drought_end_chance = 20
+drought_end_chance_neg = {
+	value = 100
+	subtract = drought_end_chance
+}

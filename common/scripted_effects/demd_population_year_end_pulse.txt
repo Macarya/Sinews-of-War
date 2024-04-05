@@ -1,0 +1,260 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+world_migration_end = {
+    every_county = {
+		set_variable = {
+			name = migration_growth_percent
+			value = {
+				value = var:migration_growth
+				divide = var:population
+			}
+		}
+        change_variable = { 
+			name = population 
+			add = var:migration_growth 
+		}
+		clamp_variable = { name = population min = 0.1 max = 1000000 }
+    }
+}
+
+ruler_pulse = {
+	set_variable = { name = temp value = ruler_knight_capacity }
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_big
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_medium
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_small
+	while = {
+		limit = { var:temp > 25 }
+		add_character_modifier = demd_char_knight_capacity_modifier_big
+		change_variable = { name = temp subtract = 25 }
+	}
+	while = {
+		limit = { var:temp > 5 }
+		add_character_modifier = demd_char_knight_capacity_modifier_medium
+		change_variable = { name = temp subtract = 5 }
+	}
+	while = {
+		limit = { var:temp > 1 }
+		add_character_modifier = demd_char_knight_capacity_modifier_small
+		change_variable = { name = temp subtract = 1 }
+	}
+	set_variable = {
+		name = ruler_manpower
+		value = ruler_manpower
+	}
+	set_variable = {
+		name = regiment_capacity
+		value = total_regiment_capacity
+	}
+	set_variable = { name = temp value = var:regiment_capacity }
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_big
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_medium
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_small
+	while = {
+		limit = { var:temp > 25 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_big
+		change_variable = { name = temp subtract = 25 }
+	}
+	while = {
+		limit = { var:temp > 5 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_medium
+		change_variable = { name = temp subtract = 5 }
+	}
+	while = {
+		limit = { var:temp > 1 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_small
+		change_variable = { name = temp subtract = 1 }
+	}
+	save_scope_as = usurper
+	if = {
+		limit = { 
+			domain_limit_available > 0 
+			is_ai = yes 
+			has_realm_law_flag = title_revocation_allowed
+		}
+		every_held_title = {
+			limit = { tier = tier_county }
+			every_county_province = {
+				limit = { 
+					has_holding = yes
+					province_owner = { has_same_government = scope:usurper }
+					NOT = { province_owner = scope:usurper }					
+					barony = { is_leased_out = no }
+				}
+				scope:usurper = { add_to_variable_list = { name = temp target = prev } }
+			}
+		}
+		ordered_in_list = {
+			variable = temp
+			order_by = monthly_income
+			position = 0		
+			scope:usurper = { get_title = prev.barony }
+		}
+		clear_variable_list = temp
+	}	
+}
+
+world_migration_start = {
+    every_county = {
+        set_variable = { name = migration_growth value = 0 }
+        set_variable = {
+            name = maxPairwise
+            value = {
+                value = var:population
+                multiply = var:max_migration_percent
+            }
+        }
+		set_variable = { name = migration_pull value = migration_pull_target }
+    }
+}
+
+fertilitySubRoutine = {
+    every_in_global_list = {
+        variable = trade_nodes_global
+    	change_variable = { name = node_weather_fertility_mult add = node_weather_fertility_mult_delta }
+        random_list = { 
+            100 = {
+            }
+            40 = {
+                change_variable = { name = node_weather_fertility_mult add = 0.01 }
+            }
+            40 = {
+                change_variable = { name = node_weather_fertility_mult add = -0.01 }
+            }
+            10 = {
+                change_variable = { name = node_weather_fertility_mult add = 0.02 }
+            }
+            10 = {
+                change_variable = { name = node_weather_fertility_mult add = -0.02 }
+            }
+    		1 = {
+                change_variable = { name = node_weather_fertility_mult add = 0.04 }
+            }
+    		1 = {
+                change_variable = { name = node_weather_fertility_mult add = -0.04 }
+            }
+        }
+	}	
+}
+
+trade_node_pulse = {
+	save_scope_as = trade_node
+	var:node_owner = {
+		if = {
+			limit = { 
+				OR = {
+					NOT = { exists = capital_county }
+					NOT = { prev = capital_county.var:trade_node }
+				}
+			}
+			prev = { demd_transfer_trade_node_ownership_invalid = yes }
+		}
+	}
+	save_scope_as = trade_node
+	every_in_list = {
+		variable = strategic_locations
+		limit = { holder.culture = { scope:trade_node = { NOT = { is_culture_involved_in_struggle = prev } } } }
+		scope:trade_node = {
+			demd_add_culture_to_trade_node = { CULTURE = prev.holder.culture }
+		}
+	}
+	every_in_list = {
+		variable = strategic_locations
+		limit = { holder.faith = { scope:trade_node = { NOT = { is_faith_involved_in_struggle = prev } } } }
+		scope:trade_node = {
+			demd_add_faith_to_trade_node = { FAITH = prev.holder.faith }
+		}
+	}
+	every_in_list = {
+		variable = involved_faiths
+		limit = { 
+			NOT = { 
+				any_in_list = { 
+					variable = strategic_locations
+					holder.faith = prev
+				}
+			}
+		}
+		prev = { demd_remove_faith_from_trade_node = { FAITH = prev } }
+	}
+	every_in_list = {
+		variable = involved_cultures
+		limit = { 
+			NOT = { 
+				any_in_list = { 
+					variable = strategic_locations
+					holder.faith = prev
+				}
+			}
+		}
+		prev = { demd_remove_culture_from_trade_node = { CULTURE = prev } }
+	}
+	set_variable = { name = node_produced_trade_value value = node_produced_trade_value }		
+	set_variable = { name = node_trade_power value = node_trade_power }
+	set_variable = { name = domestic_collected_trade_value value = domestic_collected_trade_value }
+	set_variable = { name = imported_collected_trade_value value = imported_collected_trade_value }
+	set_variable = { name = total_collected_trade_value value = total_collected_trade_value }
+	change_variable = { name = trade_node_wealth add = trade_node_wealth_monthly_gain }
+	every_in_list = {
+		variable = trade_node_counties
+		set_variable = {
+			name = collected_trade_value
+			value = {
+				value = var:trade_power
+				divide = prev.var:node_trade_power
+				multiply = prev.var:total_collected_trade_value
+			}
+		}
+	}
+	if = {
+		limit = { has_game_rule = demd_struggle_variable_fix_on }
+    	save_scope_as = trade_node
+    	if = {
+    		limit = { NOT = { has_variable = backup_county } }
+    		random_in_list = {
+    			variable = trade_node_counties			
+    			add_to_global_variable_list = { name = trade_node_backups_global target = this }
+    			scope:trade_node = { set_variable = { name = backup_county value = prev } }
+    		}
+    	}
+    	var:backup_county = {
+    		save_scope_as = backup_county
+    		set_variable = { name = trade_node_size value = scope:trade_node.var:trade_node_size }
+    		set_variable = { name = num_strategic_locations value = scope:trade_node.var:num_strategic_locations }
+    		set_variable = { name = node_weather_fertility_mult value = scope:trade_node.var:node_weather_fertility_mult }
+    		set_variable = { name = trade_node_wealth value = scope:trade_node.var:trade_node_wealth }
+    		set_variable = { name = num_strategic_locations value = scope:trade_node.var:num_strategic_locations  }
+    		set_variable = { name = node_produced_trade_value value = scope:trade_node.var:node_produced_trade_value }
+    		set_variable = { name = node_trade_power value = scope:trade_node.var:node_trade_power }
+    		set_variable = { name = domestic_collected_trade_value value = scope:trade_node.var:domestic_collected_trade_value }
+    		set_variable = { name = imported_collected_trade_value value = scope:trade_node.var:imported_collected_trade_value }
+    		set_variable = { name = total_collected_trade_value value = scope:trade_node.var:total_collected_trade_value }
+    		set_variable = { name = node_owner value = scope:trade_node.var:node_owner }
+    		scope:trade_node = {
+    			every_in_list = {
+    				variable = trade_node_counties
+    				scope:backup_county = {
+    					add_to_variable_list = { name = trade_node_counties target = prev }
+    				}
+    			}
+    			every_in_list = {
+    				variable = strategic_locations
+    				scope:backup_county = { 
+    					add_to_variable_list = { name = strategic_locations target = prev } 
+    				}				
+    			}
+    			every_in_list = {
+    				variable = node_linkages
+    				scope:backup_county = { 
+    					add_to_variable_list = { name = node_linkages target = prev }
+    				}
+    			}
+    		}		
+    	}
+	}	
+}
+

@@ -1,0 +1,1225 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Must be overwritten by patch for other maps!
+#############################################
+
+demd_preprocess_map = { # 5 traditions
+	title:c_rothenburg.holder = { get_title = title:b_freising } 
+	culture:anglo_saxon = { # 4 traditions
+		add_culture_tradition = tradition_stalwart_defenders
+		remove_variable = tradition_cooldown
+		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
+	}
+	culture:franconian = { 
+		remove_culture_tradition = tradition_castle_keepers
+		add_culture_tradition = tradition_ruling_caste
+		add_culture_tradition = tradition_warrior_bishops 
+		remove_variable = tradition_cooldown
+		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
+	}
+	culture:saxon = { # 4 traditions
+		remove_culture_tradition = tradition_stand_and_fight
+		add_culture_tradition = tradition_ottonian_reforms
+		add_culture_tradition = tradition_warrior_bishops	
+		remove_variable = tradition_cooldown
+		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
+	}	
+	culture:bavarian = { # 5 traditions
+		remove_culture_tradition = tradition_stand_and_fight
+		add_culture_tradition = tradition_ottonian_reforms
+		add_culture_tradition = tradition_warrior_bishops 
+		remove_variable = tradition_cooldown
+		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }	
+	}	
+	culture:swabian = { # 4 traditions
+		add_culture_tradition = tradition_warrior_bishops 
+		remove_variable = tradition_cooldown
+		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
+	}
+	culture:cisalpine = { # 5 traditions
+		add_culture_tradition = tradition_metal_craftsmanship
+		remove_variable = tradition_cooldown
+		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
+	}
+	culture:italian = { # 5 traditions
+		remove_variable = tradition_cooldown
+	}
+
+    
+	# Give it to everyone by default
+	every_religion_global = {
+		every_faith = { 
+			add_doctrine = doctrine_slavery_faith
+		}
+	}
+}
+
+##############################################################
+
+demd_postprocess_map = {
+	title:e_byzantium = { 
+		if = { limit = { current_year < 1000 }
+			set_variable = { name = imperial_decay value = 650 } 
+		}
+		else = { set_variable = { name = imperial_decay value = 800 } }
+	}
+}
+
+##############################################################
+
+demd_set_trade_node_strategic_locations = {
+
+	################
+	# Italy
+	################
+	struggle:demd_trade_node_struggle_world_europe_south_italy = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_roma } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cagliari }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_genoa }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_venezia }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_siracusa }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_palermo }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lombardia }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_firenze }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ancona }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_napoli }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_pisa }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bologna }
+	}
+	
+	################
+	# Iberia
+	################
+	struggle:demd_trade_node_struggle_world_europe_west_iberia = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cordoba } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_granada }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sevilla }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_valencia }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_malaga }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_almeria }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_barcelona }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_toledo }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_navarra }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_burgos }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cuellar }
+	}
+	
+	################
+	# Francia
+	################
+	struggle:demd_trade_node_struggle_world_europe_west_francia = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_provence } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lyon }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bordeaux }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_labourd }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_orleans }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ile_de_france }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_troyes }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bar }
+	}
+	
+	################
+	# Britannia
+	################
+	struggle:demd_trade_node_struggle_world_europe_west_britannia = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_middlesex } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hampton }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lincolnshire }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_north_riding }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dublin }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_desmond }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lothian }
+	}
+	
+	################
+	# Germania
+	################
+	struggle:demd_trade_node_struggle_world_europe_west_germania = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_brugge } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_brabant }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cologne }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_frankfurt }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_augsburg }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_regensburg }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_vienna }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_linz }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mersenburg }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_praha }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_magdeburg }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hamburg }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_stettin }
+	}
+	
+	################
+	# Scandinavia
+	################
+	struggle:demd_trade_node_struggle_world_europe_north = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sogn } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_rogalandi }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_vestfold }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ribe }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_slesvig }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sjaelland }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_skane }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gutland }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sodermannaland }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_praha }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_magdeburg }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hamburg }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_stettin }
+	}
+	
+	################
+	# Eastern Europe
+	################
+	struggle:demd_trade_node_struggle_world_europe_east = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_breslau } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_krakowska }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sandomierska } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_poszony }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_esztergom } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_halych }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kiev } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_pereyaslavl }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_vidzeme }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_reval } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_polotsk }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_minsk }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gnezdovo }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_smolensk } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_vitebsk }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_novgorod }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_yaroslavl }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_nizhny_novgorod } 
+	}
+	
+	################
+	# Balkans
+	################
+	struggle:demd_trade_node_struggle_world_europe_south_east = {
+	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_byzantion } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kalliopolis }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cetina } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ragusa }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dyrrachion }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_beograd } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_naissus }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sredets }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_thessalonika } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_attica }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_messenia }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dorostorum } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_constanta }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_burgas }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_famagusta }
+	}
+	
+	################
+	# Asia Minor
+	################
+	struggle:demd_trade_node_struggle_world_asia_minor = {
+	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_rhodos } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_abydos }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lycia } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_galatia }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sebasteia }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_trebizond } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hayk }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_guria }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tbilisi } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_aran }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dvin }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_abkhazia } 
+	}
+	
+	################
+	# NW Africa
+	################
+	struggle:demd_trade_node_struggle_world_africa_north_west = {
+	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tangiers } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ceuta }	
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_fes } 
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gharb }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_asfi }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_marrakesh } 
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tindouf }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sijilmasa }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tlemcen } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_orania }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tahert }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bejaia } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_wargla } 
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tunis } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kairwan } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mahdiya } 
+	}
+	
+	################
+	# NE Africa
+	################
+	struggle:demd_trade_node_struggle_world_africa_north_east = {
+	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tripolitana } 
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_alexandria }			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_damietta } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cairo }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_siwa }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_asyut } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kharga }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_qus }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_aswan } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_qusayr }
+	}
+	
+	################
+	# Syria
+	################
+	struggle:demd_trade_node_struggle_world_middle_east_jerusalem = {
+	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_jerusalem } 
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_acre }			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tripoli } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_antiocheia }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_aleppo }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_homs } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_damascus }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kerak }		
+	}
+	
+	################
+	# Arabia
+	################
+	struggle:demd_trade_node_struggle_world_middle_east_arabia = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mosul }			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_baghdad } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_raqqa }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_al_aqabah } 
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tabuk }			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_medina } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mecca }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sharaf }				
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mandab }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_muscat }
+
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_uqayr }				
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_qatif }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_basra }		
+	}
+	
+	################
+	# Persia
+	################
+	struggle:demd_trade_node_struggle_world_middle_east_persia = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tabriz }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_rayy }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_isfahan } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_yazd }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_shiraz }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hormuz }				
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bam }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zaranj }
+
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_herat }				
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kabul }	
+
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_balkh }				
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ferghana }
+
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_nasaiya } # osh				
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_samarkand }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bukhara }
+
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_merv } # osh				
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_damghan }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bukhara }			
+	}
+	
+	################
+	# Western Steppe
+	################
+	struggle:demd_trade_node_struggle_world_steppe_west = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_chah }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_derbent }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kerch } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tmutarakan }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sarkel }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_itil }				
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bolghar }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_saqsin }		
+	}
+	
+	################
+	# Eastern Steppe
+	################
+	struggle:demd_trade_node_struggle_world_steppe_east = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kara_khoja }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_shazhou }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_yumen }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_suzhou } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_liangzhou }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_wuluhai }		
+	}
+	
+	################
+	# Tarim Steppe
+	################
+	struggle:demd_trade_node_struggle_world_steppe_tarim = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kashgar }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_khotan }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dunhuang }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_aksu } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_liangzhou }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_wuluhai }		
+	}
+	
+	################
+	# Tibet
+	################
+	struggle:demd_trade_node_struggle_world_tibet = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gilgit }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_leh }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lhasa }				
+	}
+	
+	################
+	# Sahara
+	################
+	struggle:demd_trade_node_struggle_world_africa_sahara = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ghat }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bilma }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_taghaza }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tindouf }
+	}
+	
+	################
+	# W Africa
+	################
+	struggle:demd_trade_node_struggle_world_africa_west = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_takrur }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tirakka }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_jenne }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gao }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_niani }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_awkar }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hodh }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kano }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_garumele }
+	}
+	
+	################
+	# E Africa
+	################
+	struggle:demd_trade_node_struggle_world_africa_east = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_badi }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_aydhab }	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_berbera }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zaila }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dongola }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_abwab }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mogadishu }
+	}
+	
+	################
+	# Rajastan
+	################
+	struggle:demd_trade_node_struggle_world_india_rajastan = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_debul }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mansura }	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_uch }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_multan }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lahur }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_delhi }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mathura }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_khetaka }	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_somnath }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_prayaga }		
+	}
+	
+	################
+	# Deccan
+	################
+	struggle:demd_trade_node_struggle_world_india_deccan = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_venadu }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kerala }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_alupa }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cholamandalam }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_magadha }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_orangallu }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kalyani}
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_trincomalee }
+	}
+	
+	################
+	# Bengal
+	################
+	struggle:demd_trade_node_struggle_world_india_bengal = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_samatata }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bikrampur }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tamralipti }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_goalpara }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_magadha }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_varanasi }
+		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kataka }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_puri }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kalinganagar }
+	}
+	
+	################
+	# Burma
+	################
+	struggle:demd_trade_node_struggle_world_burma = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_thaton }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_pagan }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dagon }
+	}
+}
+
+demd_set_trade_node_linkages = {	
+	################
+	# Italy
+	################
+	struggle:demd_trade_node_struggle_world_europe_south_italy = {
+		add_to_global_variable_list = { name = temp target = title:c_apulia }
+		add_to_global_variable_list = { name = temp target = title:c_ancona }
+		add_to_global_variable_list = { name = temp target = title:c_venezia }
+		add_to_global_variable_list = { name = temp target = title:c_aquileia }
+		add_to_global_variable_list = { name = temp target = title:c_siracusa }
+		demd_add_trade_node_linkage = { NODE = world_europe_south_east }
+		
+		add_to_global_variable_list = { name = temp target = title:c_turin }
+		add_to_global_variable_list = { name = temp target = title:c_trent }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_germania }
+		
+		add_to_global_variable_list = { name = temp target = title:c_genoa }
+		add_to_global_variable_list = { name = temp target = title:c_turin }
+		add_to_global_variable_list = { name = temp target = title:c_cuneo }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_francia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_cagliari }
+		add_to_global_variable_list = { name = temp target = title:c_palermo }
+		add_to_global_variable_list = { name = temp target = title:c_malta }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_west }	
+		
+		add_to_global_variable_list = { name = temp target = title:c_cagliari }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_iberia }
+	}
+		
+	################
+	# Iberia
+	################
+	struggle:demd_trade_node_struggle_world_europe_west_iberia = {
+		add_to_global_variable_list = { name = temp target = title:c_rossello }
+		add_to_global_variable_list = { name = temp target = title:c_urgell }
+		add_to_global_variable_list = { name = temp target = title:c_ipuskoa }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_francia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_cadiz }
+		add_to_global_variable_list = { name = temp target = title:c_sevilla }
+		add_to_global_variable_list = { name = temp target = title:c_almeria }
+		add_to_global_variable_list = { name = temp target = title:c_malaga }
+		add_to_global_variable_list = { name = temp target = title:c_valencia }
+		add_to_global_variable_list = { name = temp target = title:c_mallorca }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_west }
+		
+		add_to_global_variable_list = { name = temp target = title:c_mallorca }
+		demd_add_trade_node_linkage = { NODE = world_europe_south_italy }
+	}
+	
+	################
+	# Francia
+	################
+	struggle:demd_trade_node_struggle_world_europe_west_francia = {
+		add_to_global_variable_list = { name = temp target = title:c_foix }
+		add_to_global_variable_list = { name = temp target = title:c_bordeaux }
+		add_to_global_variable_list = { name = temp target = title:c_carcassonne }
+		add_to_global_variable_list = { name = temp target = title:c_labourd }
+		add_to_global_variable_list = { name = temp target = title:c_provence }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_iberia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_nice }
+		add_to_global_variable_list = { name = temp target = title:c_canavese }
+		add_to_global_variable_list = { name = temp target = title:c_provence }
+		demd_add_trade_node_linkage = { NODE = world_europe_south_italy }
+		
+		add_to_global_variable_list = { name = temp target = title:c_aargau }
+		add_to_global_variable_list = { name = temp target = title:c_besancon }
+
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_europe_west_germania }
+		
+		add_to_global_variable_list = { name = temp target = title:c_rouen }
+		add_to_global_variable_list = { name = temp target = title:c_avranches }
+		add_to_global_variable_list = { name = temp target = title:c_bayeux }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_britannia }
+	}
+	
+	################
+	# Britannia
+	################
+	struggle:demd_trade_node_struggle_world_europe_west_britannia = {
+		add_to_global_variable_list = { name = temp target = title:c_hampton }
+		add_to_global_variable_list = { name = temp target = title:c_kent }
+		add_to_global_variable_list = { name = temp target = title:c_essex }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_francia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_north_riding }
+		add_to_global_variable_list = { name = temp target = title:c_essex }
+		add_to_global_variable_list = { name = temp target = title:c_suffolk }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_germania }
+		
+		add_to_global_variable_list = { name = temp target = title:c_north_riding }
+		add_to_global_variable_list = { name = temp target = title:c_buchan }
+		add_to_global_variable_list = { name = temp target = title:c_lothian }
+		add_to_global_variable_list = { name = temp target = title:c_dunbar }
+		demd_add_trade_node_linkage = { NODE = world_europe_north }
+	}
+	
+	################
+	# Germania
+	################
+	struggle:demd_trade_node_struggle_world_europe_west_germania = {
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_europe_west_francia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_innsbruck }
+		add_to_global_variable_list = { name = temp target = title:c_grisons }
+		add_to_global_variable_list = { name = temp target = title:c_villach }
+		demd_add_trade_node_linkage = { NODE = world_europe_south_italy }
+		
+		add_to_global_variable_list = { name = temp target = title:c_brugge }
+		add_to_global_variable_list = { name = temp target = title:c_hamburg }
+		add_to_global_variable_list = { name = temp target = title:c_holland }
+		add_to_global_variable_list = { name = temp target = title:c_guines }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_britannia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_ditmarschen }
+		add_to_global_variable_list = { name = temp target = title:c_lubeck }
+		add_to_global_variable_list = { name = temp target = title:c_stade }
+		add_to_global_variable_list = { name = temp target = title:c_hamburg }
+		add_to_global_variable_list = { name = temp target = title:c_danzig }
+		add_to_global_variable_list = { name = temp target = title:c_stettin }
+		demd_add_trade_node_linkage = { NODE = world_europe_north }
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_europe_east }
+	}
+	
+	################
+	# Scandinavia
+	################
+	struggle:demd_trade_node_struggle_world_europe_north = {
+		add_to_global_variable_list = { name = temp target = title:c_sogn }
+		add_to_global_variable_list = { name = temp target = title:c_rogalandi }
+		add_to_global_variable_list = { name = temp target = title:c_ribe }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_britannia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_slesvig }
+		add_to_global_variable_list = { name = temp target = title:c_gutland }
+		add_to_global_variable_list = { name = temp target = title:c_skane }
+		add_to_global_variable_list = { name = temp target = title:c_sjaelland }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_germania }
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_europe_east }
+	}
+	
+	################
+	# Eastern Europe
+	################
+	struggle:demd_trade_node_struggle_world_europe_east = {
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_europe_west_germania }
+		
+		add_to_global_variable_list = { name = temp target = title:c_vidzeme }
+		add_to_global_variable_list = { name = temp target = title:c_reval } 	
+		add_to_global_variable_list = { name = temp target = title:c_novgorod }
+		demd_add_trade_node_linkage = { NODE = world_europe_north }
+		
+		add_to_global_variable_list = { name = temp target = title:c_szerem } 	
+		demd_add_trade_node_linkage = { NODE = world_europe_south_east }
+		
+		add_to_global_variable_list = { name = temp target = title:c_nizhny_novgorod }
+		add_to_global_variable_list = { name = temp target = title:c_kiev }
+		demd_add_trade_node_linkage = { NODE = world_steppe_west }
+	}
+	
+	################
+	# Balkans
+	################
+	struggle:demd_trade_node_struggle_world_europe_south_east = {
+	
+		add_to_global_variable_list = { name = temp target = title:c_beograd }
+		add_to_global_variable_list = { name = temp target = title:c_constanta }
+		demd_add_trade_node_linkage = { NODE = world_europe_east }
+		
+		add_to_global_variable_list = { name = temp target = title:c_ragusa } 	
+		add_to_global_variable_list = { name = temp target = title:c_cetina }
+		add_to_global_variable_list = { name = temp target = title:c_dyrrachion }
+		demd_add_trade_node_linkage = { NODE = world_europe_south_italy }
+		
+		add_to_global_variable_list = { name = temp target = title:c_byzantion }
+		add_to_global_variable_list = { name = temp target = title:c_kalliopolis }
+		add_to_global_variable_list = { name = temp target = title:c_thessalonika }
+		add_to_global_variable_list = { name = temp target = title:c_attica }
+		add_to_global_variable_list = { name = temp target = title:c_famagusta }
+		demd_add_trade_node_linkage = { NODE = world_asia_minor }
+		
+		add_to_global_variable_list = { name = temp target = title:c_famagusta }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_jerusalem }
+	
+	}
+	
+	################
+	# Asia Minor
+	################
+	struggle:demd_trade_node_struggle_world_asia_minor = {
+		add_to_global_variable_list = { name = temp target = title:c_ablastha }
+		add_to_global_variable_list = { name = temp target = title:c_melitene }
+		add_to_global_variable_list = { name = temp target = title:c_tall_hamid }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_jerusalem }
+		
+		add_to_global_variable_list = { name = temp target = title:c_mesopotamia }
+		add_to_global_variable_list = { name = temp target = title:c_melitene }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_arabia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_suenik }
+		add_to_global_variable_list = { name = temp target = title:c_vaspurakan }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_persia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_bithynia } 	
+		add_to_global_variable_list = { name = temp target = title:c_abydos }
+		add_to_global_variable_list = { name = temp target = title:c_naxos }
+		add_to_global_variable_list = { name = temp target = title:c_rhodos }
+		demd_add_trade_node_linkage = { NODE = world_europe_south_east }
+		
+		add_to_global_variable_list = { name = temp target = title:c_abkhazia }
+		add_to_global_variable_list = { name = temp target = title:c_shirvan }
+		demd_add_trade_node_linkage = { NODE = world_steppe_west }		
+	}
+	
+	################
+	# NW Africa
+	################
+	struggle:demd_trade_node_struggle_world_africa_north_west = {
+		add_to_global_variable_list = { name = temp target = title:c_ceuta }
+		add_to_global_variable_list = { name = temp target = title:c_tangiers }
+		add_to_global_variable_list = { name = temp target = title:c_orania }
+		add_to_global_variable_list = { name = temp target = title:c_bejaia }
+		demd_add_trade_node_linkage = { NODE = world_europe_west_iberia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_mahdiya }
+		add_to_global_variable_list = { name = temp target = title:c_tunis }
+		add_to_global_variable_list = { name = temp target = title:c_bejaia }
+		demd_add_trade_node_linkage = { NODE = world_europe_south_italy }
+		
+		add_to_global_variable_list = { name = temp target = title:c_ifni }
+		add_to_global_variable_list = { name = temp target = title:c_draa }
+		add_to_global_variable_list = { name = temp target = title:c_sijilmasa }
+		add_to_global_variable_list = { name = temp target = title:c_ghardaia }
+		demd_add_trade_node_linkage = { NODE = world_africa_sahara }
+		
+		add_to_global_variable_list = { name = temp target = title:c_mahdiya } 	
+		add_to_global_variable_list = { name = temp target = title:c_sfax }
+		add_to_global_variable_list = { name = temp target = title:c_gabes }
+		add_to_global_variable_list = { name = temp target = title:c_bir_amir }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_east }
+	}
+	
+	################
+	# NE Africa
+	################
+	struggle:demd_trade_node_struggle_world_africa_north_east = {
+		add_to_global_variable_list = { name = temp target = title:c_damietta }
+		add_to_global_variable_list = { name = temp target = title:c_alexandria }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_jerusalem }
+		
+		add_to_global_variable_list = { name = temp target = title:c_sharkiya }
+		add_to_global_variable_list = { name = temp target = title:c_damietta }
+		add_to_global_variable_list = { name = temp target = title:c_cairo }
+		add_to_global_variable_list = { name = temp target = title:c_qusayr }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_arabia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_djerba }
+		add_to_global_variable_list = { name = temp target = title:c_jafara }
+		add_to_global_variable_list = { name = temp target = title:c_tripolitana }
+		add_to_global_variable_list = { name = temp target = title:c_bejaia }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_west }
+		
+		add_to_global_variable_list = { name = temp target = title:c_aswan }
+		add_to_global_variable_list = { name = temp target = title:c_jabal_quzlum }
+		add_to_global_variable_list = { name = temp target = title:c_qusayr }
+		demd_add_trade_node_linkage = { NODE = world_africa_east }
+		
+		add_to_global_variable_list = { name = temp target = title:c_waddan }
+		demd_add_trade_node_linkage = { NODE = world_africa_sahara }
+	}
+	
+	################
+	# Syria
+	################
+	struggle:demd_trade_node_struggle_world_middle_east_jerusalem = {
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_middle_east_arabia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_ghazza }
+		add_to_global_variable_list = { name = temp target = title:c_acre }
+		add_to_global_variable_list = { name = temp target = title:c_tripolitana }
+		add_to_global_variable_list = { name = temp target = title:c_bejaia }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_east }	
+		
+		add_to_global_variable_list = { name = temp target = title:c_samosata }
+		add_to_global_variable_list = { name = temp target = title:c_marash }
+		add_to_global_variable_list = { name = temp target = title:c_alexandretta }
+		add_to_global_variable_list = { name = temp target = title:c_antiocheia }
+		demd_add_trade_node_linkage = { NODE = world_asia_minor }
+		
+		add_to_global_variable_list = { name = temp target = title:c_acre }
+		add_to_global_variable_list = { name = temp target = title:c_antiocheia }
+		add_to_global_variable_list = { name = temp target = title:c_tripoli }
+		demd_add_trade_node_linkage = { NODE = world_europe_south_east }
+	}
+
+	################
+	# Arabia
+	################
+	struggle:demd_trade_node_struggle_world_middle_east_arabia = {
+		add_to_global_variable_list = { name = temp target = title:c_al_aqabah }
+		add_to_global_variable_list = { name = temp target = title:c_sinai }
+		add_to_global_variable_list = { name = temp target = title:c_farama }
+		add_to_global_variable_list = { name = temp target = title:c_bejaia }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_east }	
+		
+		add_to_global_variable_list = { name = temp target = title:c_mecca }
+		add_to_global_variable_list = { name = temp target = title:c_mandab }
+		demd_add_trade_node_linkage = { NODE = world_africa_east }
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_middle_east_jerusalem }
+
+		add_to_global_variable_list = { name = temp target = title:c_amida }
+		add_to_global_variable_list = { name = temp target = title:c_bakriya }
+		add_to_global_variable_list = { name = temp target = title:c_hakkari }
+		demd_add_trade_node_linkage = { NODE = world_asia_minor }
+
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_middle_east_persia }
+
+		add_to_global_variable_list = { name = temp target = title:c_muscat }
+		demd_add_trade_node_linkage = { NODE = world_india_rajastan }	
+	}
+
+	################
+	# Persia
+	################
+	struggle:demd_trade_node_struggle_world_middle_east_persia = {
+		add_to_global_variable_list = { name = temp target = title:c_tabriz }
+		demd_add_trade_node_linkage = { NODE = world_asia_minor }	
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_middle_east_arabia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_uzboy }
+		add_to_global_variable_list = { name = temp target = title:c_gurganj }
+		add_to_global_variable_list = { name = temp target = title:c_kurdar }
+		add_to_global_variable_list = { name = temp target = title:c_khojand }
+		add_to_global_variable_list = { name = temp target = title:c_oshrusana }
+		demd_add_trade_node_linkage = { NODE = world_steppe_west }
+		
+		add_to_global_variable_list = { name = temp target = title:c_nasaiya }
+		add_to_global_variable_list = { name = temp target = title:c_isfara }
+		add_to_global_variable_list = { name = temp target = title:c_shughnan }
+		demd_add_trade_node_linkage = { NODE = world_steppe_tarim }
+		
+		add_to_global_variable_list = { name = temp target = title:c_wakhan }
+		add_to_global_variable_list = { name = temp target = title:c_chitral }
+		demd_add_trade_node_linkage = { NODE = world_tibet }
+		
+		add_to_global_variable_list = { name = temp target = title:c_kabul }
+		add_to_global_variable_list = { name = temp target = title:c_chitral }
+		demd_add_trade_node_linkage = { NODE = world_india_rajastan }			
+	}
+
+	################
+	# Western Steppe
+	################
+	struggle:demd_trade_node_struggle_world_steppe_west = {
+		add_to_global_variable_list = { name = temp target = title:c_kerch }
+		add_to_global_variable_list = { name = temp target = title:c_tmutarakan }
+		add_to_global_variable_list = { name = temp target = title:c_zichia }
+		add_to_global_variable_list = { name = temp target = title:c_derbent }
+		add_to_global_variable_list = { name = temp target = title:c_cabardinia }
+		demd_add_trade_node_linkage = { NODE = world_asia_minor }	
+		
+		add_to_global_variable_list = { name = temp target = title:c_cykma }
+		add_to_global_variable_list = { name = temp target = title:c_lachyk-uba }
+		add_to_global_variable_list = { name = temp target = title:c_cherkassy }
+		add_to_global_variable_list = { name = temp target = title:c_ladyzyn }
+		demd_add_trade_node_linkage = { NODE = world_europe_east }
+		
+		add_to_global_variable_list = { name = temp target = title:c_garabogazkol }
+		add_to_global_variable_list = { name = temp target = title:c_aralkizil }
+		add_to_global_variable_list = { name = temp target = title:c_chah }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_persia }
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_steppe_east }
+		
+		add_to_global_variable_list = { name = temp target = title:c_kabul }
+		add_to_global_variable_list = { name = temp target = title:c_chitral }
+		demd_add_trade_node_linkage = { NODE = world_india_rajastan }		
+	}
+
+	################
+	# Eastern Steppe
+	################
+	struggle:demd_trade_node_struggle_world_steppe_east = {
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_steppe_west }	
+		
+		add_to_global_variable_list = { name = temp target = title:c_kara_khoja }
+		add_to_global_variable_list = { name = temp target = title:c_yumenguan }
+		add_to_global_variable_list = { name = temp target = title:c_hongliuyuan }
+		demd_add_trade_node_linkage = { NODE = world_steppe_tarim }
+		
+		add_to_global_variable_list = { name = temp target = title:c_aksay }
+		add_to_global_variable_list = { name = temp target = title:c_haltang }
+		add_to_global_variable_list = { name = temp target = title:c_subei }
+		add_to_global_variable_list = { name = temp target = title:c_yalong }
+		add_to_global_variable_list = { name = temp target = title:c_qilin }
+		add_to_global_variable_list = { name = temp target = title:c_shanzhou }
+		add_to_global_variable_list = { name = temp target = title:c_kuozhou }
+		demd_add_trade_node_linkage = { NODE = world_tibet }		
+	}	
+	
+	################
+	# Tarim Steppe
+	################
+	struggle:demd_trade_node_struggle_world_steppe_tarim = {
+		add_to_global_variable_list = { name = temp target = title:c_terek_pass }
+		add_to_global_variable_list = { name = temp target = title:c_kashgar }
+		add_to_global_variable_list = { name = temp target = title:c_yarkand }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_persia }
+
+		add_to_global_variable_list = { name = temp target = title:c_yarkand }
+		add_to_global_variable_list = { name = temp target = title:c_karghalik }
+		add_to_global_variable_list = { name = temp target = title:c_khotan }
+		add_to_global_variable_list = { name = temp target = title:c_keriya }
+		add_to_global_variable_list = { name = temp target = title:c_cherchen }
+		add_to_global_variable_list = { name = temp target = title:c_khotan }
+		demd_add_trade_node_linkage = { NODE = world_tibet }
+
+		add_to_global_variable_list = { name = temp target = title:c_dunhuang }
+		add_to_global_variable_list = { name = temp target = title:c_toksun }
+		demd_add_trade_node_linkage = { NODE = world_steppe_east }			
+	}
+	
+	################
+	# Tibet
+	################
+	struggle:demd_trade_node_struggle_world_tibet = {
+		add_to_global_variable_list = { name = temp target = title:c_kumkol }
+		add_to_global_variable_list = { name = temp target = title:c_memar }
+		add_to_global_variable_list = { name = temp target = title:c_thaldat }
+		add_to_global_variable_list = { name = temp target = title:c_sumdo }
+		add_to_global_variable_list = { name = temp target = title:c_diskit }
+		add_to_global_variable_list = { name = temp target = title:c_gilgit }
+		demd_add_trade_node_linkage = { NODE = world_steppe_tarim }
+		
+		add_to_global_variable_list = { name = temp target = title:c_golaghmuli }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_persia }
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_india_rajastan }
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_india_bengal }
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_steppe_east }			
+	}
+	
+	################
+	# Sahara
+	################
+	struggle:demd_trade_node_struggle_world_africa_sahara = {
+		add_to_global_variable_list = { name = temp target = title:c_zammour }
+		add_to_global_variable_list = { name = temp target = title:c_tindouf }
+		add_to_global_variable_list = { name = temp target = title:c_saoura }
+		add_to_global_variable_list = { name = temp target = title:c_touat }
+		add_to_global_variable_list = { name = temp target = title:c_tamentit }
+		add_to_global_variable_list = { name = temp target = title:c_ghat }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_west }
+		
+		add_to_global_variable_list = { name = temp target = title:c_germa }
+		add_to_global_variable_list = { name = temp target = title:c_zawila }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_east }
+		
+		add_to_global_variable_list = { name = temp target = title:c_bodele }
+		add_to_global_variable_list = { name = temp target = title:c_bilma }
+		add_to_global_variable_list = { name = temp target = title:c_takkeda }
+		add_to_global_variable_list = { name = temp target = title:c_tadmekka }
+		add_to_global_variable_list = { name = temp target = title:c_taghaza }
+		add_to_global_variable_list = { name = temp target = title:c_wadan }
+		add_to_global_variable_list = { name = temp target = title:c_amatlus }
+		demd_add_trade_node_linkage = { NODE = world_africa_west }
+	}
+	
+	################
+	# W Africa
+	################
+	struggle:demd_trade_node_struggle_world_africa_west = {
+		add_to_global_variable_list = { name = temp target = title:c_dhraina }
+		add_to_global_variable_list = { name = temp target = title:c_tagant }
+		add_to_global_variable_list = { name = temp target = title:c_tichitt }
+		add_to_global_variable_list = { name = temp target = title:c_arawan }
+		add_to_global_variable_list = { name = temp target = title:c_gao }
+		add_to_global_variable_list = { name = temp target = title:c_gobir }
+		add_to_global_variable_list = { name = temp target = title:c_garumele }
+		add_to_global_variable_list = { name = temp target = title:c_kanem }
+		add_to_global_variable_list = { name = temp target = title:c_jimi }
+		add_to_global_variable_list = { name = temp target = title:c_ghazzal }
+		demd_add_trade_node_linkage = { NODE = world_africa_sahara }
+		
+		add_to_global_variable_list = { name = temp target = title:c_dar-al-rih }
+		add_to_global_variable_list = { name = temp target = title:c_east_darfur }
+		add_to_global_variable_list = { name = temp target = title:c_kordofan }
+		add_to_global_variable_list = { name = temp target = title:c_south_kordofan }
+		demd_add_trade_node_linkage = { NODE = world_africa_east }
+	}
+	
+	################
+	# E Africa
+	################
+	struggle:demd_trade_node_struggle_world_africa_east = {
+		add_to_global_variable_list = { name = temp target = title:c_tadjoura }
+		add_to_global_variable_list = { name = temp target = title:c_berbera }
+		add_to_global_variable_list = { name = temp target = title:c_zaila }
+		add_to_global_variable_list = { name = temp target = title:c_aydhab }
+		add_to_global_variable_list = { name = temp target = title:c_badi }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_arabia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_kalabsha }
+		add_to_global_variable_list = { name = temp target = title:c_allaqi }
+		demd_add_trade_node_linkage = { NODE = world_africa_north_east } 
+		
+		add_to_global_variable_list = { name = temp target = title:c_wadi_el-milk }
+		add_to_global_variable_list = { name = temp target = title:c_tagali }
+		demd_add_trade_node_linkage = { NODE = world_africa_west }
+	}
+	
+	################
+	# Rajastan
+	################
+	struggle:demd_trade_node_struggle_world_india_rajastan = {
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_india_bengal } 
+		
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_india_deccan }	
+
+		# porous
+		demd_add_trade_node_linkage = { NODE = world_tibet }
+
+		add_to_global_variable_list = { name = temp target = title:c_purushapura }
+		add_to_global_variable_list = { name = temp target = title:c_urgun }
+		add_to_global_variable_list = { name = temp target = title:c_sibi }
+		add_to_global_variable_list = { name = temp target = title:c_bhakkar }
+		add_to_global_variable_list = { name = temp target = title:c_ranikot }
+		add_to_global_variable_list = { name = temp target = title:c_debul }
+		add_to_global_variable_list = { name = temp target = title:c_rajanpur }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_persia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_debul }
+		demd_add_trade_node_linkage = { NODE = world_middle_east_arabia }
+	}
+	
+	################
+	# Deccan
+	################
+	struggle:demd_trade_node_struggle_world_india_deccan = {
+		add_to_global_variable_list = { name = temp target = title:c_mosala }
+		add_to_global_variable_list = { name = temp target = title:c_katukuru }
+		add_to_global_variable_list = { name = temp target = title:c_devagiri }
+		add_to_global_variable_list = { name = temp target = title:c_trikuta }
+		add_to_global_variable_list = { name = temp target = title:c_surparaka }
+		add_to_global_variable_list = { name = temp target = title:c_acalapura }
+		demd_add_trade_node_linkage = { NODE = world_india_rajastan } 
+
+		add_to_global_variable_list = { name = temp target = title:c_mosala }
+		add_to_global_variable_list = { name = temp target = title:c_katukuru }
+		add_to_global_variable_list = { name = temp target = title:c_vairagara }
+		add_to_global_variable_list = { name = temp target = title:c_ramagiri }
+		add_to_global_variable_list = { name = temp target = title:c_acalapura }
+		demd_add_trade_node_linkage = { NODE = world_india_bengal }
+	}
+	
+	################
+	# Bengal
+	################
+	struggle:demd_trade_node_struggle_world_india_bengal = {
+	
+		demd_add_trade_node_linkage = { NODE = world_tibet } 
+		
+		demd_add_trade_node_linkage = { NODE = world_india_rajastan } 
+
+		add_to_global_variable_list = { name = temp target = title:c_vizagipatam }
+		add_to_global_variable_list = { name = temp target = title:c_barasuru }
+		add_to_global_variable_list = { name = temp target = title:c_rayapura }
+		add_to_global_variable_list = { name = temp target = title:c_kiranapura }
+		add_to_global_variable_list = { name = temp target = title:c_tripuri }
+		add_to_global_variable_list = { name = temp target = title:c_chauragarh }
+		demd_add_trade_node_linkage = { NODE = world_india_deccan }
+		
+		add_to_global_variable_list = { name = temp target = title:c_samatata }
+		add_to_global_variable_list = { name = temp target = title:c_manipur }
+		demd_add_trade_node_linkage = { NODE = world_burma }
+	}
+	
+	################
+	# Burma
+	################
+	struggle:demd_trade_node_struggle_world_burma = {
+		add_to_global_variable_list = { name = temp target = title:c_ramu }
+		add_to_global_variable_list = { name = temp target = title:c_thabeik_taung }
+		add_to_global_variable_list = { name = temp target = title:c_kale }
+		demd_add_trade_node_linkage = { NODE = world_india_bengal }
+	}
+}
+
+##############################################################
+
+# For tightly linked culture + faiths where we don't want to spawn a culture member with the court owner's faith
+demd_set_ancestral_faiths = {
+	
+}
+
+##############################################################
+
+
+demd_add_special_buildings = {
+	# Episcopal Fortress Cities
+	province:2943 = { add_special_building = demd_walls_of_freising_01 }
+	province:2960 = { add_special_building = demd_walls_of_passau_01 }
+	province:2964 = { add_special_building = demd_walls_of_regensburg_01 }
+	province:2878 = { add_special_building = demd_walls_of_eichstatt_01 }
+	province:2975 = { add_special_building = demd_walls_of_salzburg_01 }
+	province:2778 = { add_special_building = demd_walls_of_augsburg_01 }
+	
+	# Other Fortifications
+	#province:3086 = { add_special_building_slot = demd_walls_of_vienna_01 }
+	province:3117 = { add_special_building = demd_schlossberg_01 }
+	province:3131 = { 
+		if = { limit = { current_year > 1000 } add_special_building = demd_ennsburg_01 }
+		else = { add_special_building_slot = demd_ennsburg_01 }
+	}
+	province:2877 = { add_special_building_slot = demd_nuremberg_castle_01 }
+}
+
+##############################################################
+
+demd_assign_special_resources = {
+
+	# currently unused
+	
+}
+
+#############################################################################
+
+demd_manual_pop_placements = {
+	demd_fill_with_holdings = { TITLE = e_deccan PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = e_bengal PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = e_rajastan PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_mesopotamia PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_jazira PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_jerusalem PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_syria PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_daylam PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_egypt PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_nikaea PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = d_rayy PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = d_tunis PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = e_france PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = e_spain PERCENT = 100 }
+	
+	demd_fill_with_holdings = { TITLE = k_east_francia PERCENT = 100 } 
+	demd_fill_with_holdings = { TITLE = k_lotharingia PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_frisia PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = d_nordgau PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = d_augsburg PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = d_nordgau PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = d_salzburg PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = d_bavaria PERCENT = 100 }
+	
+	demd_fill_with_holdings = { TITLE = e_italy PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = e_byzantium PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = e_hre PERCENT = 100 }
+	demd_fill_with_holdings = { TITLE = k_england PERCENT = 100 }
+	
+	## Obviously need different versions for 867...
+	# temporarily deleted
+	
+}
+
+demd_fill_with_holdings = {
+	title:$TITLE$ = {
+		every_in_de_jure_hierarchy = {
+			limit = { 
+				tier = tier_county 
+				NOT = { title_province = { has_holding_type = tribal_holding } }
+				NOT = { faith = { has_doctrine = unreformed_faith_doctrine } }
+			}
+			every_county_province = {
+				limit = { has_holding = no }
+				random_list = {
+					0 = {
+						modifier = {
+							always = yes
+							add = $PERCENT$
+						}
+						demd_build_minor_holding = yes
+					}
+					100 = {
+						modifier = {
+							always = yes
+							add = -$PERCENT$
+						}
+						# do nothing
+					}
+				}
+				
+			}
+		}
+	}
+}

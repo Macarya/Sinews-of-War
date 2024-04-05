@@ -1,0 +1,85 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+prov_levies_to_raise = {
+	value = var:population
+	if = {
+		limit = { county.title_province = this }
+		add = county.var:population
+	}
+	multiply = 500 # 1000 in scaling since population is in thousands, then divided by two to balance things
+	multiply = {
+		value = manpower_percent_base
+		add = {
+			value = manpower_percent_per_edict_level	
+			multiply = 2
+		}
+	}
+}
+
+total_county_levies = {
+	value = var:county_population
+	multiply = 600 # 1000 in scaling since population is in thousands, multiplied by 0.6 since 40% of manpower goes to garrison at default edicts
+	multiply = {
+		value = manpower_percent_base
+		add = {
+			value = manpower_percent_per_edict_level	
+			multiply = 2 # assume level 2 edict - the baseline
+		}
+	}
+	if = {
+		limit = { has_county_modifier = county_increased_opinion_modifier } 
+		multiply = {
+			value = 1
+			add = demd_pacified_revolt_levies_mult
+		}
+	}
+}
+
+demd_pacified_revolt_levies_mult = -0.5
+
+county_levies_to_raise = {
+	value = total_county_levies
+	multiply = {
+		value = var:county_population
+		subtract = var:population
+		divide = var:county_population
+	}
+	# Will summon between 75% and 175% of total county levy strength, depending on how much they hate you (most commonly will be 95-110% though, scores between -20 and -35 are the most common)
+	multiply = {
+		value = county_opinion
+		multiply = -0.01
+		add = 0.75
+	}
+}
+
+county_maa_to_raise = {
+	value = total_county_levies
+	multiply = {
+		value = var:population
+		divide = var:county_population
+	}
+	# Will summon between 75% and 175% of total county levy strength, depending on how much they hate you (most commonly will be 95-110% though, scores between -20 and -35 are the most common)
+	multiply = {
+		value = county_opinion
+		multiply = -0.01
+		add = 0.75
+	}
+	divide = 100 # conversion: 100 men per stack of maa
+}
+
+center_of_rebellion_maa_to_raise = {
+	value = 0
+	joined_faction = {
+		every_faction_county_member = {
+			limit = {
+				duchy = scope:local_center_of_rebellion.duchy
+			}
+			add = county_maa_to_raise
+		}
+	}
+	ceiling = yes
+}

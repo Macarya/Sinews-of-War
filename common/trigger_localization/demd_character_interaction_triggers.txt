@@ -1,0 +1,40 @@
+﻿buy_claim_no_excommunication = {
+	global_not = BUY_CLAIM_NO_EXCOMMUNICATION
+}
+
+buy_claim_no_fabricator = {
+	global_not = BUY_CLAIM_NO_FABRICATOR
+}
+
+buy_claim_target_excommunication_or_diff_faith = {
+	global_not = BUY_CLAIM_NO_EXCOMMUNICATION_OR_DIFF_FAITH
+}
+
+buy_claim_piety_level = {
+	global_not = BUY_CLAIM_PIETY_LEVEL
+}
+
+demd_city_holding_isnt_duplicate_desc = {
+	global = demd_city_holding_isnt_duplicate_desc
+	global_not = demd_city_holding_isnt_duplicate_desc 
+}
+
+demd_castle_holding_isnt_duplicate_desc = {
+	global = demd_castle_holding_isnt_duplicate_desc
+	global_not = demd_castle_holding_isnt_duplicate_desc 
+}
+
+demd_church_holding_isnt_duplicate_desc = {
+	global = demd_church_holding_isnt_duplicate_desc
+	global_not = demd_church_holding_isnt_duplicate_desc 
+}
+
+demd_type_is_target_desc = {
+	global = demd_type_is_target_desc
+	global_not = demd_type_is_target_desc
+}
+
+demd_holding_isnt_valid_type_desc = {
+	global = demd_holding_isnt_valid_type_desc
+	global_not = demd_holding_isnt_valid_type_desc
+}

@@ -1,0 +1,203 @@
+﻿namespace = demd_pop_flood
+
+# flood
+demd_pop_flood.1001 = {
+	hidden = yes
+	scope = landed_title
+	immediate = {
+		save_scope_as = county
+		holder = { save_scope_as = county_holder }
+		
+		# send event to county holder
+		if = {
+			limit = { holder = { is_at_location = scope:county.title_province } }
+			holder = {
+				trigger_event = demd_pop_flood.1002
+			}
+		}
+		else = {			
+			random_list = {
+				180 = {
+					holder = {
+						send_interface_message = {
+							type = msg_flood_bad
+							title = demd_mild_flooding
+							desc = demd_mild_flooding_desc
+							right_icon = scope:county
+						}
+					}
+					demd_initiate_mild_flood = yes			
+				}
+				90 = {	
+					holder = {
+						send_interface_message = {
+							type = msg_flood_bad
+							title = demd_moderate_flooding
+							desc = demd_moderate_flooding_desc
+							right_icon = scope:county
+						}
+					}
+					demd_initiate_moderate_flood = yes		
+				}	
+				45 = {	
+					holder = {
+						send_interface_message = {
+							type = msg_flood_bad
+							title = demd_severe_flooding
+							desc = demd_severe_flooding_desc
+							right_icon = scope:county
+						}
+					}
+					demd_initiate_severe_flood = yes		
+				}				
+			}
+		}
+	}
+}
+
+# flood - holder
+demd_pop_flood.1002 = {
+	type = character_event
+	title = demd_pop_flood.1002.t
+	desc = demd_pop_flood.1002.desc
+	theme = disaster_flood
+
+	left_portrait = {
+		character = this
+		animation = stress
+	}
+	
+	immediate = {
+		random_list = {
+			180 = {				
+				trigger_event = { id = demd_pop_flood.1003 days = { 1 10 } }			
+			}
+			90 = {					
+				trigger_event = { id = demd_pop_flood.1004 days = { 1 10 } }					
+			}	
+			45 = {					
+				trigger_event = { id = demd_pop_flood.1005 days = { 1 10 } }			
+			}				
+		}
+	}
+	
+	# Unfortunate
+	option = {
+		name = demd_pop_flood.1002.a
+		
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	# I think I will go for a swim
+	option = {
+		name = demd_pop_flood.1002.b
+		trigger = {
+			OR = {
+				has_trait = lunatic_1
+				has_trait = lunatic_genetic
+			}
+		}
+		stress_impact = {
+			lunatic_1 = minor_stress_loss
+			lunatic_genetic = minor_stress_loss
+		}
+		ai_chance = {
+			base = 50
+		}
+	}	
+}
+
+# MILD FLOODS - scope:county_holder
+demd_pop_flood.1003 = {
+	type = character_event
+	title = demd_pop_flood.1003.t
+	desc = demd_pop_flood.1003.desc
+	theme = disaster_flood
+
+	right_portrait = {
+		character = this
+		animation = stress
+	}
+
+
+	immediate = { #Flood track and damage
+		play_music_cue = "cue_flood_event_2"
+		scope:county = { demd_initiate_mild_flood = yes }
+	}
+
+	# We shall see...
+	option = {
+		name = demd_pop_flood.1003.a
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# MILD FLOODS - scope:county_holder
+demd_pop_flood.1004 = {
+	type = character_event
+	title = demd_pop_flood.1004.t
+	desc = demd_pop_flood.1004.desc
+	theme = disaster_flood
+
+	right_portrait = {
+		character = this
+		animation = stress
+	}
+
+
+	immediate = { #Flood track and damage
+		play_music_cue = "cue_flood_event_2"
+		scope:county = { demd_initiate_moderate_flood = yes }
+	}
+
+	# We shall see...
+	option = {
+		name = demd_pop_flood.1004.a
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# MILD FLOODS - scope:county_holder
+demd_pop_flood.1005 = {
+	type = character_event
+	title = demd_pop_flood.1005.t
+	desc = demd_pop_flood.1005.desc
+	theme = disaster_flood
+
+
+	right_portrait = {
+		character = this
+		animation = stress
+	}
+
+
+	immediate = { #Flood track and damage
+		play_music_cue = "cue_flood_event_2"
+		scope:county = { demd_initiate_severe_flood = yes }
+	}
+
+	# We shall see...
+	option = {
+		name = demd_pop_flood.1005.a
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+
+
+# test event
+demd_pop_flood.9999 = {
+	hidden = yes
+	#type = empty
+	immediate = {
+		capital_county = { trigger_event = demd_pop_flood.1001 }
+	}
+}

@@ -1,0 +1,14 @@
+
+######################################################
+################### FONT TEMPLATES ###################
+######################################################
+
+# Templates that deal with text formatting and positioning.
+
+## Size
+
+template Font_Size_Tiny
+{
+    fontsize = 11
+    size = { 2 19 }
+}

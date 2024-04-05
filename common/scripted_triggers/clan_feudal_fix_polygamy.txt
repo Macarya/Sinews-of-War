@@ -1,0 +1,7 @@
+﻿character_polygamous_in_principle = {
+	OR = {
+		faith = { has_doctrine = doctrine_polygamy }
+		culture = { has_cultural_tradition = tradition_polygamous }
+	}
+	NOT = { culture = { has_cultural_tradition = tradition_monogamous } } #a character may combine tradition_monogamous from their culture with doctrine_polygamy from their faith, in which case they are supposed to be monogamous. that is what this check takes care of.
+}

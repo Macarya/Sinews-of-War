@@ -1,0 +1,12 @@
+﻿
+
+###########################
+
+demd_title_view_subtitle = {
+	type = landed_title
+	text = {
+		trigger = { tier > tier_kingdom }
+		localization_key = demd_title_view_imperial_decay
+	}
+	text = { localization_key = demd_title_view_imperial_decay_blank }
+}

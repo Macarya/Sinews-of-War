@@ -1,0 +1,233 @@
+﻿demd_excavation_site_setup = {
+	if = {
+		limit = {
+			has_game_rule = archaeology_on
+		}
+		# egyptian unique
+		title:c_giza = { 
+			set_variable = { name = ruins_type value = flag:egyptian } 
+			# set_variable = { name = ruins_type_unique value = flag:giza } 
+		}
+		title:c_siwa = { 
+			# set_variable = { name = ruins_type value = flag:egyptian } 
+			# set_variable = { name = ruins_type_unique value = flag:siwa } 
+		}
+		title:c_sinai = { 
+			# set_variable = { name = ruins_type value = flag:egyptian } 
+			# set_variable = { name = ruins_type_unique value = flag:st_catherine } 
+		}
+		title:c_qus = { 
+			# set_variable = { name = ruins_type value = flag:egyptian } 
+			# set_variable = { name = ruins_type_unique value = flag:valley_of_the_kings } 
+		}
+		title:c_bahnasa = { 
+			# set_variable = { name = ruins_type value = flag:egyptian } 
+			# set_variable = { name = ruins_type_unique value = flag:bahnasa } 
+		}
+	}
+}
+
+start_excavation_effect = {
+
+	save_scope_as = excavation_county
+
+	# create story cycle and subtract gold
+	holder = {
+		create_story = {
+			type = story_cycle_excavation
+			save_scope_as = excavation_story
+		}
+		remove_short_term_gold = excavation_start_cost
+	}
+	
+	# Link story cycle to locale
+	scope:excavation_story = { 
+		set_variable = { name = excavation_locale value = scope:excavation_county }
+		set_variable = { name = ruins_type value = scope:excavation_county.var:ruins_type }
+		if = {
+			limit = { scope:excavation_county = { has_variable = ruins_type_unique } }
+			set_variable = { name = ruins_type_unique value = scope:excavation_county.var:ruins_type_unique }
+		}
+		else = {
+			set_variable = { name = ruins_type_unique value = flag:none }
+		}
+		
+		var:excavation_locale = { save_scope_as = excavation_county }
+	}
+	set_variable = { name = active_excavation value = scope:excavation_story }
+}
+
+alter_excavation_minor_artifacts = {
+	custom_tooltip = excavation_$operation$_minor_artifacts_$amount$
+	scope:story = {
+		change_variable = { name = minor_artifacts $operation$ = excavation_minor_artifacts_$amount$ }
+		clamp_variable = { name = minor_artifacts min = 0 max = 2000000 }
+	}
+}
+
+alter_excavation_quality = {
+	custom_tooltip = excavation_$operation$_quality_$amount$
+	scope:story = {
+		change_variable = { name = excavation_quality $operation$ = excavation_quality_$amount$ }
+		clamp_variable = { name = excavation_quality min = 0 max = 2000000 }
+	}
+}
+
+alter_excavation_stage_progress = {
+	custom_tooltip = excavation_$operation$_progress_$amount$
+	scope:story = {
+		change_variable = { name = excavation_stage_progress $operation$ = excavation_progress_$amount$ }
+		clamp_variable = { name = excavation_stage_progress min = 0 max = 2000000 }
+	}
+}
+
+excavation_story_standard_setup = {
+	set_variable = { name = excavation_stage value = 1 }
+	
+	set_variable = { name = minor_artifacts value = 0 }
+	set_variable = { name = excavation_quality value = 1 }
+	set_variable = { name = excavation_stage_progress value =  monthly_excavation_progress }	
+}
+
+excavation_story_event_standard_setup = {
+	scope:story = {
+		var:excavation_locale = { save_scope_as = excavation_county }
+		var:excavation_leader =  { save_scope_as = excavation_leader }
+		story_owner = { save_scope_as = story_owner }
+	}
+}
+
+excavation_story_standard_cleanup = {
+	var:excavation_locale = { 
+		remove_variable = active_excavation
+		remove_variable = excavation_story
+		remove_variable = ruins_type
+		remove_variable = ruins_type_unique
+	}
+}
+
+excavation_story_standard_inheritance = {
+	if = {
+		limit = { always = yes }
+		make_story_owner = story_owner.player_heir
+	}
+	else = {
+		end_story = yes
+	}
+}
+
+excavation_story_standard_pulse = {
+
+	# check if owner is valid
+	if = {
+		limit = {
+			NOT = { story_owner = var:excavation_locale.holder }
+		}
+		make_story_owner = var:excavation_locale.holder
+	}
+
+	# Check if leader is valid
+	if = {
+		limit = { 
+			has_variable = excavation_leader 
+			NOR = { 
+				var:excavation_leader = { is_knight_of = prev.story_owner }  
+				var:excavation_leader = { is_courtier_of = prev.story_owner }
+				var:excavation_leader = { is_councillor_of = prev.story_owner } 
+			}
+		}
+		remove_variable = excavation_leader 
+	}
+		
+	# If we have an excavation leader, proceed
+	if = {
+		limit = { has_variable = excavation_leader }
+		
+		# Advance excavation progress variable
+		change_variable = { name = excavation_stage_progress add = monthly_excavation_progress }
+		
+		# if we haven't had the start event yet
+		if = {
+			limit = { NOT = { has_variable = has_had_start_event } }
+			
+			# send start event and set flag
+			story_owner = { trigger_event = { on_action = excavation_beginning } }
+			set_variable = { name = has_had_start_event }
+		}
+		
+		# If we have finished a stage
+		else_if = {
+			limit = { var:excavation_stage_progress > excavation_stage_progress_max }
+			
+			if = { # If current stage is the end stage
+				limit = { var:excavation_stage >= excavation_stage_max }
+				
+				# Send final stage event
+				roll_for_excavation_breakthrough = { ON_ACTION = excavation_final }
+				
+				if = { # If we finished the excavation
+					limit = { var:excavation_stage > excavation_stage_max }
+					
+					# story cleanup
+					if = {
+						limit = { var:minor_artifacts > 0 }
+						story_owner = { trigger_event = { id = ek_excavation.0001 days = 15 } } # sell minor artifacts
+					}
+					else = { end_story = yes }
+				}							
+			}
+			else = { # If current stage is not end stage
+			
+				# Send stage end event
+				roll_for_excavation_breakthrough = { ON_ACTION = excavation_intermediate }
+								
+			}
+		}
+		
+		# Else, send minor event
+		else = { story_owner = { trigger_event = { on_action = excavation_minor } } }
+	}
+	
+	# assign leader for AI if one is missing
+	else_if = {
+		limit = { story_owner = { is_ai = yes } }
+		
+		autoassign_excavation_leader = yes		
+	}
+}
+
+autoassign_excavation_leader = {
+	story_owner = {
+		ordered_knight = { 
+			limit = { NOT = { has_variable = is_leading_excavation } }
+			order_by = prowess
+			position = 1
+			prev = { set_variable = { name = excavation_leader value = prev } }
+			set_variable = { name = is_leading_excavation }
+		}
+	}
+}
+
+roll_for_excavation_breakthrough = {
+	set_variable = { name = excavation_stage_progress value = 0 }
+	random_list = {
+		0 = {
+			modifier = {
+				always = yes
+				add = excavation_breakthrough_chance
+			}
+			story_owner = {
+				trigger_event = {
+					on_action = $ON_ACTION$
+				}
+			}
+			change_variable = { name = excavation_stage add = 1 }
+		}
+		100 = {
+			modifier = {
+				always = yes
+				add = excavation_breakthrough_chance_neg
+			}			
+		}						
+	}
+}

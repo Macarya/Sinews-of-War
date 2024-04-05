@@ -1,0 +1,4 @@
+﻿l_english:
+
+window_culture_vigor:0 "[vigor|E]: #high [Culture.MakeScope.Var('vigor').GetValue|0]%#!"
+window_culture_vigor_target:0 " [Culture.MakeScope.ScriptValue('vigor_delta')|=+$]"

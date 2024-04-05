@@ -1,0 +1,249 @@
+﻿l_english:
+
+demd_is_controlled_by_node_owner:0 "@icon_check!# #defender_color;italic [demd_controlled|E]#!"
+demd_is_not_controlled_by_node_owner:0 "@icon_cross!# #warning;italic [demd_uncontrolled|N]#!"
+
+demd_linkage_is_open:0 "@icon_check!# #defender_color;italic [demd_open_linkage_gui|E]#!"
+demd_linkage_is_closed:0 "@icon_cross!# #warning;italic [demd_blockaded_linkage_gui|N]#!"
+
+linkage_is_raided:0 "@icon_cross!# #warning;italic [demd_blockaded_linkage_gui|N]#!"
+linkage_is_not_raided:0 "@icon_check!# #defender_color;italic [demd_open_linkage_gui|E]#!"
+
+strategic_location_is_raided:0 "@icon_cross!# #warning;italic [demd_blockaded_strategic_location_gui|N]#!"
+strategic_location_is_not_raided:0 "@icon_check!# #defender_color;italic [demd_open_strategic_location_gui|E]#!"
+
+total_linkage_is_open:0 "@icon_check!# #defender_color;italic [demd_open_node_linkage_gui|E]#!"
+total_linkage_is_blockaded:0 "@icon_cross!# #warning;italic [demd_blockaded_node_linkage_gui|N]#!"
+
+county_is_blockaded:0 "#N [demd_blockaded_strategic_location_gui|N]! [Province.GetCounty.GetTitle.MakeScope.ScriptValue('trade_power_from_blockade')|%1] [demd_trade_power|E]#!"
+county_is_open_to_trade:0 ""
+
+MARSHAL_PROGRESS_BASE:0 "Base Progress"
+
+game_concept_demd_trade_node:0 "Trade Node"
+game_concept_demd_trade_nodes:0 "Trade Nodes"
+game_concept_demd_trade_node_desc:0 "Every [county|E] belongs to a #defender_color Trade Node#!."
+
+game_concept_demd_node_owner_dividend:0 "Node Owner Dividend"
+game_concept_demd_node_owner_dividend_desc:0 "The Trade Node Owner Dividend is a monthly payment made to the [demd_node_owner|E] of a percentage of the [demd_node_wealth|E] depending on how many [demd_node_strategic_locations|E] he controls within the [demd_trade_node|E], representing tariffs paid by merchants for passage within the [demd_trade_node|E]."
+
+game_concept_demd_node_owner:0 "Trade Node Owner"
+game_concept_demd_node_owner_desc:0 "The Trade Node Owner is the [ruler|E] who currently controls the trade routes in a [demd_trade_node|E], and receives a percentage of the [demd_node_wealth|E] monthly depending on how many [demd_node_strategic_locations|E] he controls within the [demd_trade_node|E]. The [counties|E] directly held by the node owner also receive #P +[EmptyScope.ScriptValue('node_owner_modifier_bonus')|0%]#! @icon_trade_power!# [demd_trade_power|E]."
+
+demd_node_owner_dividend:0 "Tariffs from [trade_node.GetName] Received"
+demd_node_owner_dividend_desc:0  "As the owner of [trade_node.GetName], you received @icon_taxes!# [trade_node.MakeScope.ScriptValue('node_owner_dividend')|0] from [trade_node.GetName] controlling [trade_node.MakeScope.ScriptValue('percent_strategic_locations_held')|0%] of [demd_node_strategic_locations|E]"
+
+game_concept_demd_node_trade_power:0 "Node Trade Power"
+game_concept_demd_node_trade_power_gui:0 "Trade Power"
+game_concept_demd_node_trade_power_desc:0 "Node Trade Power is the sum of the [demd_trade_power|E] of all the [counties|E] in a [demd_trade_node|E] that are not [demd_blockaded_strategic_location_gui|E]. The percent a [county|E] has of the [demd_trade_power|E] of its [demd_trade_node|E] determines how much [demd_collected_trade_value|E] it will receive."
+
+game_concept_demd_collected_trade_value:0 "Collected Trade Value"
+game_concept_demd_collected_trade_value_desc:0 "Collected Trade Value in a [demd_trade_node|E] is calculated as the [demd_produced_trade_value|E] times the [demd_node_efficiency|E] plus any [demd_trade_value|E] arriving from [demd_node_linkages|E]. Collected Trade Value is redistributed to [counties|E] in the [demd_trade_node|E] based on their relative [demd_trade_power|E]."
+
+game_concept_demd_node_linkage:0 "Node Linkage"
+game_concept_demd_node_linkages:0 "Node Linkages"
+game_concept_demd_node_linkage_desc:0 "A Node Linkage connects two trade nodes. The amount of trade passing through depends on the [demd_trade_value|E] collected in each node, and the [demd_node_linkage_efficiency|E]. Linkage counties collect a portion of the passing trade as tariffs."
+
+game_concept_demd_node_linkage_efficiency:0 "Node Linkage Efficiency"
+game_concept_demd_node_linkage_efficiency_gui:0 "Efficiency"
+game_concept_demd_node_linkage_efficiency_desc:0 "A Node Linkage connects two trade nodes. The amount of trade passing through depends on the [demd_trade_value|E] collected in each node time a constant factor times the linkage efficiency, which is equal to the percent of the [counties|E] that make up the linkage that are not [demd_blockaded_linkage_gui|E], with a minimum of [EmptyScope.ScriptValue('linkage_trade_efficiency_min')|%0]. If the linked [demd_trade_node|E] itself is [demd_blockaded_linkage_gui|E], then the efficiency is always the minimum [EmptyScope.ScriptValue('linkage_trade_efficiency_min')|%0]."
+
+game_concept_demd_node_strategic_location:0 "Strategic Location"
+game_concept_demd_node_strategic_locations:0 "Strategic Locations"
+game_concept_demd_node_strategic_location_desc:0 "A Strategic Location is a key center of trade in a [demd_trade_node|E]'s internal trade routes. These [counties|E] receive #P +[EmptyScope.ScriptValue('strategic_location_modifier_bonus')|0%]#! @icon_trade_power!# [demd_trade_power|E], and enable the owner and his lieges to use the $task_raid_trade_routes$ marshal task."
+
+game_concept_demd_controlled_strategic_location:0 "Controlled Strategic Location"
+game_concept_demd_controlled:0 "Controlled"
+game_concept_demd_controlled_strategic_locations:0 "Controlled Strategic Locations"
+game_concept_demd_controlled_strategic_location_desc:0 "A Strategic Location is controlled if it is in the same [realm|E] as the [demd_node_owner|E]. Controlled [demd_node_strategic_locations|E] are protected from raiding via the $task_raid_trade_routes$ marshal task. The more [demd_node_strategic_locations|E] controlled by the [demd_node_owner|E], the higher the annual tariff dividend he receives."
+
+game_concept_demd_uncontrolled_strategic_location:0 "Uncontrolled Strategic Location"
+game_concept_demd_uncontrolled:0 "Not controlled"
+game_concept_demd_uncontrolled_strategic_locations:0 "Uncontrolled Strategic Locations"
+game_concept_demd_uncontrolled_strategic_location_desc:0 "A Strategic Location is uncontrolled if it is outside the top [realm|E] of the [demd_node_owner|E]. Uncontrolled [demd_node_strategic_locations|E] are vulnerable to from raiding via the $task_raid_trade_routes$ marshal task. The more [demd_node_strategic_locations|E] controlled by the [demd_node_owner|E], the higher the annual tariff dividend he receives."
+
+game_concept_demd_open_strategic_location:0 "Open Strategic Location"
+game_concept_demd_open_strategic_location_gui:0 "Open to Trade"
+game_concept_demd_open_strategic_locations:0 "Open Strategic Locations"
+game_concept_demd_open_strategic_location_desc:0 "A Strategic Location is open to trade if it is not being raiding via the $task_raid_trade_routes$ marshal task, and the holder and his lieges are not at war with the [demd_node_owner|E], and the [faith_hostility|E] between the holder and the owner is less than [faith_hostile|E]. The more open [demd_node_strategic_locations|E], the higher the [demd_node_efficiency|E]."
+
+game_concept_demd_blockaded_strategic_location:0 "Blockaded Strategic Location"
+game_concept_demd_blockaded_strategic_location_gui:0 "Blockaded"
+game_concept_demd_blockaded_strategic_locations:0 "Blockaded Strategic Locations"
+game_concept_demd_blockaded_strategic_location_desc:0 "A Strategic Location is blockaded if it is being raiding via the $task_raid_trade_routes$ marshal task, or the holder or any of his lieges are at war with the [demd_node_owner|E], or the [faith_hostility|E] between the holder and the owner is at least [faith_hostile|E]. The more blockaded [demd_node_strategic_locations|E], the lower the [demd_node_efficiency|E]."
+
+game_concept_demd_open_linkage:0 "Open Linkage County"
+game_concept_demd_open_linkage_gui:0 "Open to Trade"
+game_concept_demd_open_linkages:0 "Open Linkage Counties"
+game_concept_demd_open_linkage_desc:0 "A Linkage [county|E] is open to trade if it is not being raiding via the $task_raid_trade_routes$ marshal task, and the holder and his lieges are not at war with the [demd_node_owner|E], and the [faith_hostility|E] between the holder and the owner is less than [faith_hostile|E]. The more open counties in the [demd_node_linkage|E], the higher the [demd_node_linkage_efficiency|E]."
+
+game_concept_demd_blockaded_linkage:0 "Blockaded Linkage County"
+game_concept_demd_blockaded_linkage_gui:0 "Blockaded"
+game_concept_demd_blockaded_linkages:0 "Blockaded Linkage Counties"
+game_concept_demd_blockaded_linkage_desc:0 "A Linkage [county|E] is blockaded if it is being raiding via the $task_raid_trade_routes$ marshal task, or the holder or any of his lieges are at war with the [demd_node_owner|E], or the [faith_hostility|E] between the holder and the owner is at least [faith_hostile|E]. The more blockaded counties in the [demd_node_linkage|E], the lower the [demd_node_linkage_efficiency|E]. Blockaded linkage [counties|E] cannot receive [tax|E] from tariffs from [demd_trade_value|E] on passing the [demd_node_linkage|E]."
+
+game_concept_demd_open_node_linkage:0 "Open Node Linkage"
+game_concept_demd_open_node_linkage_gui:0 "Open to Trade"
+game_concept_demd_open_node_linkages:0 "Open Node Linkages"
+game_concept_demd_open_node_linkage_desc:0 "A [demd_node_linkage|E] is open to trade if the owner of the second [demd_trade_node|E] and his lieges are not at war with the [demd_node_owner|E] of the first node, and the [faith_hostility|E] between the two owners is less than [faith_hostile|E]. When the linkage is open, [demd_trade_value|E] passes between the nodes according to the [demd_node_linkage_efficiency|E]."
+
+game_concept_demd_blockaded_node_linkage:0 "Blockaded Node Linkage"
+game_concept_demd_blockaded_node_linkage_gui:0 "Blockaded"
+game_concept_demd_blockaded_node_linkages:0 "Blockaded Node Linkages"
+game_concept_demd_blockaded_node_linkage_desc:0 "A [demd_node_linkage|E] is blockaded if the owner of the second [demd_trade_node|E] or his his lieges are at war with the [demd_node_owner|E] of the first node, or the [faith_hostility|E] between the two owners is at least [faith_hostile|E]. When the linkage is closed, [demd_trade_value|E] passes between the nodes with the minimum [EmptyScope.ScriptValue('linkage_trade_efficiency_min')|0%] [demd_node_linkage_efficiency|E]."
+
+game_concept_demd_node_efficiency:0 "Node Efficiency"
+game_concept_demd_node_efficiency_desc:0 "Node Trade Efficiency is the efficiency with which trade can pass along a [demd_trade_node|E]'s internal trade network. It depends chiefly on the phase of the struggle and what percentage of the [demd_trade_node|E]'s [demd_node_strategic_locations|E] are [demd_open_strategic_location_gui|E]. Node Trade Efficiency is used as a multiplier when converting the [demd_trade_value|E] produced in a [demd_trade_node|E] to the [demd_trade_value|E] collected for redistribution."
+
+game_concept_demd_node_wealth:0 "Node Wealth"
+game_concept_demd_node_wealth_desc:0 "A certain percentage of the [demd_trade_value|E] collected in a [demd_trade_node|E] is stored in the wealth pool, representing the current transient inventories of merchant convoys passing through the area. This pool is what is taken from in the $task_raid_trade_routes$ marshal task."
+
+game_concept_demd_produced_trade_value:0 "Produced Trade Value"
+game_concept_demd_produced_trade_value_desc:0 "Produced Trade Value in a [demd_trade_node|E] is the sum of the [demd_trade_value|E] produced in all the [counties|E] in the region."
+
+game_concept_demd_tariff_trade_value:0 "Tariff Trade Value"
+game_concept_demd_tariff_trade_value_desc:0 "Tariff Trade Value is collected in [demd_node_linkage|E] [counties|E] that are [demd_open_linkage_gui|E] based on the [demd_trade_value|E] of the [demd_node_linkage|E] times the percent of [demd_trade_power|E] that [county|E] has among all the other [demd_node_linkage|E] [counties|E] that are [demd_open_linkage_gui|E] times the tariff rate. Usually the rate is [EmptyScope.ScriptValue('linkage_tariff_base_rate')|0%], but if the same [ruler|E] controls all open counties the rate is [EmptyScope.ScriptValue('linkage_tariff_monopoly_rate')|0%], reflecting the leverage granted by a monopoly of common transit routes between the two nodes."
+
+STRUGGLE_INVOLVEMENT_WINDOW_TRADE_DESC:0 "[demd_trade_value|E] collects in the [demd_trade_node|E] from involved [county|E] production and \neach neighboring [demd_trade_node|E] and is redistributed to involved [counties|E] based on their [demd_trade_power|E]"
+
+demd_trade_node_struggle_phase_stability:0 "Stability"
+demd_trade_node_struggle_phase_stability_desc:0 "The trade routes in this region are stable and prosperous. Commerce flourishes, but newcomers may find it hard to gain a foothold."
+demd_trade_node_struggle_phase_disorder:0 "Disorder"
+demd_trade_node_struggle_phase_disorder_desc:0 "The trade routes in this region are dangerous and seldom-travelled owing to poverty or political instability. Trade volume will remain meager until peace and prosperity is restored to the region."
+demd_trade_node_struggle_phase_opportunity:0 "Opportunity"
+demd_trade_node_struggle_phase_opportunity_desc:0 "The trade routes in this region are volatile and fragile, teetering between prosperity and disintegration, but also providing an ideal opportunity for a new contender to capture control of the region's commerce."
+
+catalyst_occupy_county_desc:0 "Occupy a [county|E] in the region"
+catalyst_raid_county_desc:0 "Raid a [county|E] in the region"
+catalyst_raid_plunder_county_desc:0 "Raid and plunder a [county|E] in the region"
+catalyst_sack_county_desc:0 "Sack a [county|E] in the region"
+catalyst_raze_county_desc:0 "Raze a [county|E] in the region"
+
+catalyst_occupy_strategic_county_desc:0 "Occupy a strategic [county|E] in the region"
+catalyst_raid_strategic_county_desc:0 "Raid a strategic [county|E] in the region"
+catalyst_raid_plunder_strategic_county_desc:0 "Raid and plunder a strategic [county|E] in the region"
+catalyst_sack_strategic_county_desc:0 "Sack a strategic [county|E] in the region"
+catalyst_raze_strategic_county_desc:0 "Raze a strategic [county|E] in the region"
+
+catalyst_court_grandeur_1_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 1"
+catalyst_court_grandeur_2_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 2"
+catalyst_court_grandeur_3_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 3"
+catalyst_court_grandeur_4_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 4"
+catalyst_court_grandeur_5_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 5"
+catalyst_court_grandeur_6_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 6"
+catalyst_court_grandeur_7_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 7"
+catalyst_court_grandeur_8_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 8"
+catalyst_court_grandeur_9_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 9"
+catalyst_court_grandeur_10_desc:0 "(Annual) Maintain a [court_grandeur_level|E] of 10"
+
+
+catalyst_new_building_in_temple_desc:0 "Construct a [building|E] in a [temple|E] [holding|E]"
+catalyst_raided_trade_routes_desc:0 "Raid trade routes in the region"
+
+catalyst_commissioned_illustrious_artifact_desc:0 "Commission an [artifact|E] of $illustrious$ [rarity|E]"
+catalyst_commissioned_famed_artifact_desc:0 "Commission an [artifact|E] of $famed$ [rarity|E]"
+catalyst_commissioned_masterwork_artifact_desc:0 "Commission an [artifact|E] of $masterwork$ [rarity|E]"
+catalyst_seize_trade_node_war_desc:0 "Seize control of the [demd_trade_node|E] by force"
+catalyst_seize_trade_node_decision_desc:0 "Seize control of the [demd_trade_node|E] by economic might"
+
+demd_seized_trade_node_opinion:0 "Seized my [demd_trade_node|E]"
+demd_trade_node_struggle_seize_control_decision:0 "Seize Local [demd_trade_node|E]"
+demd_trade_node_struggle_seize_control_decision_tooltip:0 "$demd_trade_node_struggle_seize_control_decision_desc$"
+demd_trade_node_struggle_seize_control_decision_desc:0 "The trade routes in this region are in a state of flux, and hence ripe for the plucking. Once I control more [demd_node_strategic_locations|E] in the [demd_trade_node|E] than the [demd_node_owner|E], all that remains is to make a small investment!"
+demd_trade_node_struggle_seize_control_decision_confirm:0 "Make it so!"
+
+catalyst_court_grandeur_5_desc:0 "Maintain a [court_grandeur_level|E] of 5-6"
+catalyst_court_grandeur_7_desc:0 "Maintain a [court_grandeur_level|E] of 7-8"
+catalyst_court_grandeur_9_desc:0 "Maintain a [court_grandeur_level|E] of 9-10"
+
+struggle_parameter_demd_can_force_vassalize_strategic_county_holders:0 "Can forcibly vassalize [demd_node_strategic_location|E] holders"
+struggle_parameter_demd_trade_node_struggle_can_seize_control_decision:0 "Can seize control of the [demd_trade_node|E] by decision in addition to war"
+struggle_parameter_demd_can_claim_strategic_trade_county:0 "Can use the $demd_claim_strategic_trade_county$ [casus_belli|E]"
+struggle_parameter_demd_trade_node_normal_collected_trade_value:0 "#P 100%#! @icon_trade_value!# Collected [demd_trade_value|E]"
+struggle_parameter_demd_trade_node_reduced_collected_trade_value:0 "#P [EmptyScope.ScriptValue('demd_trade_node_increased_collected_trade_value')|0%]#! @icon_trade_value!# Collected [demd_trade_value|E]"
+struggle_parameter_demd_trade_node_increased_collected_trade_value:0 "#N [EmptyScope.ScriptValue('demd_trade_node_reduced_collected_trade_value')|0%]#! @icon_trade_value!# Collected [demd_trade_value|E]"
+
+demd_trade_node_struggle_end_decision:0 ""
+demd_trade_node_struggle_end_decision_desc:0 ""
+demd_trade_node_struggle_end_decision_tooltip:0 ""
+demd_trade_node_struggle_end_decision_confirm:0 "End"
+
+task_raid_trade_routes:0 "Raid Trade Routes"
+task_raid_trade_routes_effect_desc:0 "Gain around @icon_taxes!# [SCOPE.ScriptValue('demd_trade_route_raid_value_loc_scope')|0] [gold|E] from [demd_trade_node|E] stockpile\n$TAB$Will decrease [opinion|E] with [demd_trade_node|E] owner\n$TAB$Acts as a negative [struggle_catalyst|E] in your [demd_trade_node|E]"
+
+NOT_in_same_realm_as_trade_node_owner:0 "You are in the same [realm|E] as the [demd_trade_node|E] owner"
+NOT_insufficient_military_to_raid_trade_node:0 "Your current military strength is at least [EmptyScope.ScriptValue('raid_trade_routes_min_military_strength_ratio')|0%] of the [demd_trade_node|E] owner's (minimum [EmptyScope.ScriptValue('raid_trade_routes_min_military_strength')|0] men)"
+NOT_insufficient_wealth_to_raid_trade_node:0 "The local [demd_trade_node|E] has no more wealth to plunder at the moment"
+NOT_must_own_strategic_location:0 "You must own at least one [demd_node_strategic_location|E] in the [demd_trade_node|E] to raid it"
+
+NOT_demd_can_seize_control_by_decision: "You must own more [demd_node_strategic_locations|E] in the [demd_trade_node|E] than the [demd_node_owner|E]"
+demd_can_seize_control_by_decision: "You must own more [demd_node_strategic_locations|E] in the [demd_trade_node|E] than the [demd_node_owner|E]"
+
+event_trade_node_raided:0 "[demd_trade_node|E] Raided!"
+event_trade_node_raided_desc:0 "[councillor_liege.GetTitledFirstName] has raided your [demd_trade_node|E], reducing its wealth by @icon_taxes!# [SCOPE.ScriptValue('demd_trade_route_raid_value_loc_scope')|0]"
+
+demd_transfer_trade_node_ownership_war:0 "[attacker.GetTitledFirstName] gains control of the [struggle.GetName]"
+demd_transfer_trade_node_ownership_war_toast:0 "[attacker.GetTitledFirstName] controls [struggle.GetName]!"
+demd_transfer_trade_node_ownership_war_toast:0 "[attacker.GetTitledFirstName] has seized control of the trade routes in [struggle.GetName] from [defender.GetTitledFirstName]."
+demd_transfer_trade_node_ownership_war_desc:0 "[attacker.GetTitledFirstName] has seized control of [Scope.GetName] from [defender.GetTitledFirstName]!"
+demd_contest_trade_node_ownership:0 "Trade Node Seizure"
+demd_claim_strategic_trade_county:0 "Trade Route Seizure for [county|E]"
+
+demd_transfer_trade_node_ownership_death:0 "[node_heir.GetTitledFirstName] has inherited control of [struggle.GetName]"
+demd_transfer_trade_node_ownership_death_desc:0 "[node_heir.GetTitledFirstName] has inherited control of [struggle.GetName] from [node_owner.GetTitledFirstName]!"
+
+demd_transfer_trade_node_ownership_invalid:0 "[node_heir.GetTitledFirstName] has assumed control of [struggle.GetName]"
+demd_transfer_trade_node_ownership_invalid_desc:0 "[node_heir.GetTitledFirstName] has assumed control of [struggle.GetName] due to [node_owner.GetTitledFirstName] being an invalid owner!"
+
+demd_transfer_trade_node_ownership_decision:0 "[new_owner.GetTitledFirstName] has seized control of [struggle.GetName]"
+demd_transfer_trade_node_ownership_decision_desc:0 "[new_owner.GetTitledFirstName] has inherited control of [struggle.GetName] from [node_owner.GetTitledFirstName]!"
+
+trade_node_war_victory_desc:0 "You seize the local [demd_trade_node|E] from [defender.GetShortUIName|U]."
+trade_node_war_victory_desc_defender:0 "[attacker.GetShortUIName|U] seizes the local [demd_trade_node|E] from [defender.GetShortUIName|U]."
+
+TRADE_NODE_WAR_NAME_FALLBACK:0 "[ATTACKER.GetPrimaryTitle.GetAdjective] Seizure of the Trade Node" 
+TRADE_VASSALIZATION_CB_NAME:0 "Trade Route Seizure"
+
+world_africa_north_west:0 "NW Africa"
+world_africa_north_east:0 "NE Africa"
+
+demd_standard_of_living_opulent:0 "[demd_standard_of_living_opulent|E]"
+demd_standard_of_living_lavish:0 "[demd_standard_of_living_lavish|E]"
+demd_standard_of_living_wealthy:0 "[demd_standard_of_living_wealthy|E]"
+demd_standard_of_living_affluent:0 "[demd_standard_of_living_affluent|E]"
+demd_standard_of_living_prosperous:0 "[demd_standard_of_living_prosperous|E]"
+demd_standard_of_living_secure:0 "[demd_standard_of_living_secure|E]"
+demd_standard_of_living_middling:0 "[demd_standard_of_living_middling|E]"
+demd_standard_of_living_impoverished:0 "[demd_standard_of_living_impoverished|E]"
+demd_standard_of_living_struggling:0 "[demd_standard_of_living_struggling|E]"
+demd_standard_of_living_starving:0 "[demd_standard_of_living_starving|E]"
+
+game_concept_demd_standard_of_living_opulent:0 "Opulent"
+game_concept_demd_standard_of_living_opulent_desc:0 "..."
+
+game_concept_demd_standard_of_living_lavish:0 "Lavish"
+game_concept_demd_standard_of_living_lavish_desc:0 "..."
+
+game_concept_demd_standard_of_living_wealthy:0 "Wealthy"
+game_concept_demd_standard_of_living_wealthy_desc:0 "..."
+
+game_concept_demd_standard_of_living_affluent:0 "Affluent"
+game_concept_demd_standard_of_living_affluent_desc:0 "..."
+
+game_concept_demd_standard_of_living_prosperous:0 "Prosperous"
+game_concept_demd_standard_of_living_prosperous_desc:0 "..."
+
+game_concept_demd_standard_of_living_secure:0 "Secure"
+game_concept_demd_standard_of_living_secure_desc:0 "..."
+
+game_concept_demd_standard_of_living_middling:0 "Middling"
+game_concept_demd_standard_of_living_middling_desc:0 "..."
+
+game_concept_demd_standard_of_living_impoverished:0 "Impoverished"
+game_concept_demd_standard_of_living_impoverished_desc:0 "..."
+
+game_concept_demd_standard_of_living_struggling:0 "Struggling"
+game_concept_demd_standard_of_living_struggling_desc:0 "..."
+
+game_concept_demd_standard_of_living_starving:0 "Starving"
+game_concept_demd_standard_of_living_starving_desc:0 "..."

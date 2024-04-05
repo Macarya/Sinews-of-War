@@ -1,0 +1,5 @@
+﻿base_fervor_increase = {
+	value = fervor_delta
+}
+
+

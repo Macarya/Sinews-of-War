@@ -1,0 +1,66 @@
+﻿
+
+# Error suppression sgui
+demd_on_load = {
+	scope = character
+
+	effect = { 	
+		every_in_global_list = {
+			variable = trade_nodes_global
+
+			if = {
+				limit = { NOT = { has_variable = is_trade_node_struggle } } 
+				
+				save_scope_as = trade_node
+				
+				# get relevant backup	
+				random_in_global_list = { 
+					variable = trade_node_backups_global
+					limit = { var:trade_node = scope:trade_node }
+					
+					save_scope_as = backup_county
+					
+					scope:trade_node = { # single variables
+						set_variable = is_trade_node_struggle
+						set_variable = { name = backup_county value = scope:backup_county }
+						set_variable = { name = trade_node_size value = scope:backup_county.var:trade_node_size }
+						set_variable = { name = num_strategic_locations value = scope:backup_county.var:num_strategic_locations }
+						set_variable = { name = node_weather_fertility_mult value = scope:backup_county.var:node_weather_fertility_mult }
+						set_variable = { name = trade_node_wealth value = scope:backup_county.var:trade_node_wealth }
+						set_variable = { name = num_strategic_locations value = scope:backup_county.var:num_strategic_locations  }
+						set_variable = { name = node_produced_trade_value value = scope:backup_county.var:node_produced_trade_value }
+						set_variable = { name = node_trade_power value = scope:backup_county.var:node_trade_power }
+						set_variable = { name = domestic_collected_trade_value value = scope:backup_county.var:domestic_collected_trade_value }
+						set_variable = { name = imported_collected_trade_value value = scope:backup_county.var:imported_collected_trade_value }
+						set_variable = { name = total_collected_trade_value value = scope:backup_county.var:total_collected_trade_value }
+						set_variable = { name = node_owner value = scope:backup_county.var:node_owner }
+					}
+					
+					# reload node counties
+					every_in_list = {
+						variable = trade_node_counties
+						scope:trade_node = {
+							add_to_variable_list = { name = trade_node_counties target = prev }
+						}
+					}
+
+					# reload strategic locations
+					every_in_list = {
+						variable = strategic_locations
+						scope:trade_node = { 
+							add_to_variable_list = { name = strategic_locations target = prev } 
+						}				
+					}
+					
+					# reload node linkages
+					every_in_list = {
+						variable = node_linkages
+						scope:trade_node = { 
+							add_to_variable_list = { name = node_linkages target = prev }
+						}
+					}
+				}
+			}
+		}
+	}
+}

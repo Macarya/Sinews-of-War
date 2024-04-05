@@ -1,0 +1,62 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+holding_construction_progress_max = 100
+
+yearly_holding_construction_progress = {
+	value = base_yearly_holding_construction_progress
+	add = yearly_holding_construction_progress_from_population
+	add = yearly_holding_construction_progress_from_neighboring_population
+	add = yearly_holding_construction_progress_from_construction_capacity
+	multiply = {
+		value = 1
+		add = yearly_holding_construction_progress_from_vigor
+	}
+}
+
+###
+
+base_yearly_holding_construction_progress = 0.2
+
+yearly_holding_construction_progress_from_population = {
+	value = county.var:county_population
+	
+	divide = 25
+}
+
+yearly_holding_construction_progress_from_neighboring_population = {
+	county = {
+		every_neighboring_county = {
+			add = var:county_population
+			divide = 50
+		}
+	}
+}
+
+yearly_holding_construction_progress_from_construction_capacity = {
+	value = county.county_unused_construction_capacity
+	multiply = 0.5
+}
+
+yearly_holding_construction_progress_from_vigor = {
+	value = base_yearly_holding_construction_progress
+	multiply = culture.culture_construction_progress_from_vigor
+}
+
+culture_construction_progress_from_vigor = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.01
+}
+
+###
+
+holding_construction_years_left = {
+	value = holding_construction_progress_max
+	subtract = var:holding_construction_progress
+	divide = yearly_holding_construction_progress	
+	add = 1 # to round up
+}

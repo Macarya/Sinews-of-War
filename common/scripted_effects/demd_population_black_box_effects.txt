@@ -1,0 +1,587 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_transfer_trade_node_ownership_invalid = {
+	custom_tooltip = demd_transfer_trade_node_ownership_invalid
+	
+	var:node_owner = { save_scope_as = node_owner }		
+	demd_set_initial_node_ownership = yes	
+	var:node_owner = { save_scope_as = node_heir }	
+	save_scope_as = struggle
+	
+	every_involved_ruler = {
+		send_interface_toast = {
+			type = event_stewardship_neutral
+			title = demd_transfer_trade_node_ownership_invalid
+			desc = demd_transfer_trade_node_ownership_invalid_desc
+			left_icon = scope:node_heir
+		}
+	}
+	every_interloper_ruler = {
+		send_interface_toast = {
+			type = event_stewardship_neutral
+			title = demd_transfer_trade_node_ownership_invalid
+			desc = demd_transfer_trade_node_ownership_invalid_desc
+			left_icon = scope:node_heir
+		}
+	}
+}
+
+demd_transfer_trade_node_ownership_death = {
+	custom_tooltip = demd_transfer_trade_node_ownership_death
+	
+	var:node_owner = { save_scope_as = node_owner }
+	var:node_owner.primary_heir = { save_scope_as = node_heir }
+	save_scope_as = struggle
+	
+	set_variable = { name = node_owner value = var:node_owner.primary_heir }
+	every_involved_ruler = {
+		send_interface_toast = {
+			type = event_stewardship_neutral
+			title = demd_transfer_trade_node_ownership_death
+			desc = demd_transfer_trade_node_ownership_death_desc
+			left_icon = scope:node_heir
+		}
+	}
+	every_interloper_ruler = {
+		send_interface_toast = {
+			type = event_stewardship_neutral
+			title = demd_transfer_trade_node_ownership_death
+			desc = demd_transfer_trade_node_ownership_death_desc
+			left_icon = scope:node_heir
+		}
+	}
+}
+
+demd_transfer_trade_node_ownership_decision = {
+	custom_tooltip = demd_transfer_trade_node_ownership_decision	
+	capital_county.var:trade_node = {
+		var:node_owner = { save_scope_as = node_owner }
+		set_variable = { name = node_owner value = root }
+		if = {
+			limit = { phase_has_catalyst = catalyst_seize_trade_node_decision }
+			activate_struggle_catalyst = {
+				catalyst = catalyst_seize_trade_node_decision
+				character = root
+			}
+		}
+		every_involved_ruler = {
+			send_interface_toast = {
+				type = event_stewardship_neutral
+				title = demd_transfer_trade_node_ownership_decision
+				desc = demd_transfer_trade_node_ownership_decision_desc
+				left_icon = root
+			}
+		}
+		every_interloper_ruler = {
+			send_interface_toast = {
+				type = event_stewardship_neutral
+				title = demd_transfer_trade_node_ownership_decision
+				desc = demd_transfer_trade_node_ownership_decision_desc
+				left_icon = root
+			}
+		}
+	}
+}
+
+demd_transfer_trade_node_ownership_war = {
+	custom_tooltip = demd_transfer_trade_node_ownership_war
+	set_variable = { name = node_owner value = scope:attacker }
+	if = {
+		limit = { phase_has_catalyst = catalyst_seize_trade_node_war }
+		activate_struggle_catalyst = {
+			catalyst = catalyst_seize_trade_node_war
+			character = scope:attacker
+		}
+	}
+	every_involved_ruler = {
+		send_interface_toast = {
+			type = event_stewardship_neutral
+			title = demd_transfer_trade_node_ownership_war
+			desc = demd_transfer_trade_node_ownership_war_desc
+			left_icon = scope:attacker
+		}
+	}
+	every_interloper_ruler = {
+		send_interface_toast = {
+			type = event_stewardship_neutral
+			title = demd_transfer_trade_node_ownership_war
+			desc = demd_transfer_trade_node_ownership_war_desc
+			left_icon = scope:attacker
+		}
+	}
+}
+
+reset_building_vars = {
+	reset_regular_building_vars = yes
+	reset_duchy_building_vars = yes
+}
+
+reset_special_building_vars = {
+}
+
+reset_regular_building_vars = {
+	set_variable = { name = building_food_districts_bonus value = startup_building_food_districts_bonus }
+	set_variable = { name = building_goods_bonus value = startup_building_goods_bonus }
+	set_variable = { name = building_trade_value_bonus value = startup_building_trade_value_bonus }
+	set_variable = { name = building_trade_power_bonus value = startup_building_trade_power_bonus }
+	set_variable = { name = building_public_order_bonus value = startup_building_public_order_bonus }
+	set_variable = { name = building_manpower_bonus value = startup_building_manpower_bonus }
+}
+
+reset_duchy_building_vars = {
+
+}
+
+clear_buildings_from_holding = {
+	if = {
+		limit = { has_holding_type = castle_holding }
+		set_holding_type = tribal_holding
+		set_holding_type = castle_holding
+	}
+	else_if = {
+		limit = { has_holding_type = city_holding }
+		set_holding_type = tribal_holding
+		set_holding_type = city_holding
+	}
+	else_if = {
+		limit = { has_holding_type = church_holding }
+		set_holding_type = tribal_holding
+		set_holding_type = church_holding
+	}
+}
+
+reset_migration_pulls = {
+	every_county = {
+		set_variable = { name = migration_pull value = migration_pull_target }
+		every_county_province = {  limit = { has_holding = yes }
+			set_variable = { name = migration_pull value = migration_pull_target }
+		}
+	}
+}
+top_up_urban_pop = {
+	every_county = {
+		set_variable = { 
+			name = population 
+			value = {
+				value = var:food_consumed
+				multiply = 0.9
+			}
+		}
+	}
+}
+
+top_up_goods_districts = {
+	every_county = {
+		# set up goods districts
+		set_variable = {
+			name = goods_districts_count
+			value = {
+				value = var:population
+				divide = demd_jobs_per_district
+			}
+		}
+		clamp_variable = { name = goods_districts_count max = 1000 min = 1 }
+	}
+}
+
+top_up_goods_stockpiles = {
+	every_county = {
+		set_variable = {
+			name = goods_stockpile
+			value = {
+				value = var:goods_produced
+				divide = goods_depreciation_rate
+			}
+		}
+		every_county_province = {  limit = { has_holding = yes }
+			set_variable = {
+				name = goods_stockpile
+				value = {
+					value = var:goods_imported
+					divide = goods_depreciation_rate
+				}
+			}
+		}
+	}
+}
+
+demd_initialize_new_holding = {
+	set_variable = { name = population value = 1 }
+	set_variable = { name = food_consumed value = 1 }
+	set_variable = { name = food_demanded value = 1 }
+	set_variable = { name = food_districts_max value = food_districts_max }
+	set_variable = { name = food_producers_count value = 0.5 }
+	set_variable = { name = food_districts_count value = 2 }
+	set_variable = { name = migration_pull value = migration_pull_target }
+	set_variable = { name = food_stockpile value = 5 }
+	set_variable = { name = goods_stockpile value = 1 }
+	
+	remove_all_province_modifier_instances = demd_prov_garrison_modifier_huge
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_big
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_medium
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_small
+	
+	remove_all_province_modifier_instances = demd_prov_levy_modifier_huge
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_big
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_medium
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_small
+}
+
+#####################################################
+
+demd_initiate_drought = {
+	add_county_modifier = demd_drought
+	send_interface_message = {
+		type = event_steward_task_bad
+		title = demd_drought_message_start
+		desc = demd_drought_message_start_desc
+		right_icon = scope:county
+		tooltip = demd_drought_tooltip
+	}
+}
+
+demd_end_drought = {
+	remove_county_modifier = demd_drought
+	send_interface_message = {
+		type = event_steward_task_good
+		title = demd_drought_message_end
+		desc = demd_drought_message_end_desc
+		right_icon = scope:county
+		tooltip = demd_drought_tooltip
+	}
+}
+
+demd_initiate_mild_flood = {
+	# remove drought if applicable
+	if = {
+		limit = { has_county_modifier = demd_drought }
+		remove_county_modifier = demd_drought
+	}
+	add_county_modifier = { modifier = demd_flood_mild months = 6 }
+	demd_alter_goods_district_count = { amount = miniscule operation = subtract }
+	demd_alter_county_weather = { amount = small operation = subtract }
+	#random_list = {
+	#	90 = { }
+	#	10 = { trigger_event = { id = demd_pop_mudflow.1001 days = { 0 15 } } }
+	#}
+	#trigger_event = { on_action = flood_flavor_events days = { 1 30 } }
+}
+
+demd_initiate_moderate_flood = {
+	# remove drought if applicable
+	if = {
+		limit = { has_county_modifier = demd_drought }
+		remove_county_modifier = demd_drought
+	}
+	add_county_modifier = { modifier = demd_flood_moderate months = 6 }
+	demd_alter_goods_district_count = { amount = small operation = subtract }
+	demd_alter_county_weather = { amount = medium operation = subtract }
+	#random_list = {
+	#	80 = { }
+	#	20 = { trigger_event = { id = demd_pop_mudflow.1001 days = { 0 15 } } }
+	#}
+	#trigger_event = { on_action = flood_flavor_events days = { 1 30 } }
+}
+
+demd_initiate_severe_flood = {
+	# remove drought if applicable
+	if = {
+		limit = { has_county_modifier = demd_drought }
+		remove_county_modifier = demd_drought
+	}
+	add_county_modifier = { modifier = demd_flood_severe months = 6 }
+	demd_alter_county_population = { amount = miniscule operation = subtract }
+	demd_alter_goods_district_count = { amount = medium operation = subtract }
+	demd_alter_county_weather = { amount = large operation = subtract }	
+	#random_list = {
+	#	70 = { }
+	#	30 = { trigger_event = { id = demd_pop_mudflow.1001 days = { 0 15 } } }
+	#}
+	#trigger_event = { on_action = flood_flavor_events days = { 1 30 } }
+}
+
+########################################################
+
+
+
+#####################################################
+# type = food, goods
+# scope = county
+# amount = miniscule, small, medium, large, huge
+# sample usage: reduceDistrictCount = { type = food amount = small operation = subtract }
+
+
+demd_alter_food_district_count = {
+	custom_tooltip = demd_$operation$_food_districts_$amount$
+	every_county_province = {
+		limit = { has_holding = yes }
+		change_variable = {
+			name = food_districts_count
+			multiply = {
+				value = 1
+				$operation$ = demd_district_change_$amount$
+			}
+		}
+		clamp_variable = { name = food_districts_count min = 0 max = 1000000 }
+	}
+}
+
+
+demd_alter_goods_district_count = {	
+	custom_tooltip = demd_$operation$_goods_districts_$amount$		
+	change_variable = {
+		name = goods_districts_count
+		multiply = {
+			value = 1
+			$operation$ = demd_district_change_$amount$
+		}
+	}
+	clamp_variable = { name = goods_districts_count min = 0 max = 1000000 }
+}
+
+#####################################################
+# Scope: landed title (node)
+# operation = add, subtract
+# amount = miniscule, small, medium, large, huge
+# sample usage: demd_alter_county_population = { amount = small operation = subtract }
+
+# use in county scope
+demd_alter_county_population = {
+	custom_tooltip = demd_$operation$_population_$amount$
+	
+	change_variable = {
+		name = population
+		multiply = {
+			value = 1
+			$operation$ = demd_population_change_$amount$
+		}
+	}
+	clamp_variable = { name = population min = 0.1 max = 1000000 }
+	
+	every_county_province = {
+		limit = { has_holding = yes }
+		if = {
+			limit = { has_variable = population }
+			
+			change_variable = {
+				name = population
+				multiply = {
+					value = 1
+					$operation$ = demd_population_change_$amount$
+				}
+			}
+			clamp_variable = { name = population min = 0.1 max = 1000000 }
+		}
+	}
+}
+
+# use in county scope
+demd_alter_urban_population = {
+	custom_tooltip = demd_$operation$_urban_population_$amount$
+		
+	change_variable = {
+		name = population
+		multiply = {
+			value = 1
+			$operation$ = demd_population_change_$amount$
+		}
+	}
+	clamp_variable = { name = population min = 0.1 max = 1000000 }
+}
+
+# use in province scope
+demd_alter_rural_population = {
+	custom_tooltip = demd_$operation$_population_$amount$
+	
+	every_county_province = {
+		limit = { has_holding = yes }
+		if = {
+			limit = { has_variable = population }
+			
+			change_variable = {
+				name = population
+				multiply = {
+					value = 1
+					$operation$ = demd_population_change_$amount$
+				}
+			}
+			clamp_variable = { name = population min = 0.1 max = 1000000 }
+		}
+	}
+}
+
+demd_raid_population = {	
+ 	custom_tooltip = demd_raid_population_$amount$
+	# prev = { capital_county = { save_scope_as = capital } } # SHOULD BE SAVED IN IMMEDIATE BLOCK OF EVENT BEFORE USE!
+	save_temporary_scope_value_as = { name = num_slaves value = num_slaves_raided_$amount$ }
+	
+	change_variable = {
+		name = population
+		multiply = {
+			value = 1
+			subtract = demd_population_transfer_$amount$
+		}
+	}
+	clamp_variable = { name = population min = 0.1 max = 1000000 }	
+	
+	every_county_province = {
+		limit = { has_holding = yes }
+		change_variable = {
+			name = population
+			multiply = {
+				value = 1
+				subtract = demd_population_transfer_$amount$
+			}
+		}
+		clamp_variable = { name = population min = 0.1 max = 1000000 }	
+	}
+	
+	prev.capital_county = { change_variable = { name = population add = scope:num_slaves } }	
+}
+
+#####################################################
+# Scope: county
+# operation = add, subtract
+# amount = small, medium, large, huge
+# sample usage: demd_alter_resource_stockpile = { type = food operation = add amount = small }
+
+# use in prov scope
+demd_alter_food_stockpile = {
+	custom_tooltip = demd_$operation$_food_stockpile_$amount$
+	
+	change_variable = { 
+		name = food_stockpile 
+		multiply = {
+			value = 1
+			$operation$ = demd_resource_stockpile_gain_$amount$
+		}
+	}	
+	every_county_province = {
+		limit = { has_holding = yes }
+		change_variable = { 
+			name = food_stockpile 
+			multiply = {
+				value = 1
+				$operation$ = demd_resource_stockpile_gain_$amount$
+			}
+		}	
+	}
+}
+
+# use in prov scope
+demd_alter_goods_stockpile = {
+	custom_tooltip = demd_$operation$_goods_stockpile_$amount$
+	change_variable = { 
+		name = goods_stockpile 
+		multiply = {
+			value = 1
+			$operation$ = demd_resource_stockpile_gain_$amount$
+		}
+	}
+	
+	every_county_province = {
+		limit = { has_holding = yes }	
+		change_variable = { 
+			name = goods_stockpile 
+			multiply = {
+				value = 1
+				$operation$ = demd_resource_stockpile_gain_$amount$
+			}
+		}
+	}
+}
+
+#####################################################
+# Scope: node (landed title)
+# amount = small, medium, large, huge
+# operation = add, subtract
+# sample usage: demd_alter_node_weather = { amount = small operation = add }
+demd_alter_node_weather = {
+	custom_tooltip = demd_$operation$_node_weather_$amount$
+	if = {
+		limit = { has_variable = node_weather_fertility_mult }
+		
+		change_variable = { name = node_weather_fertility_mult $operation$ = demd_fertility_change_$amount$ }
+
+	}
+}
+
+#####################################################
+# Scope: county
+# amount = small, medium, large, huge
+# operation = add, subtract
+# sample usage: demd_alter_county_weather = { amount = small operation = add }
+demd_alter_county_weather = {
+	custom_tooltip = demd_$operation$_county_weather_$amount$
+	change_variable = { name = county_weather_fertility_mult $operation$ = demd_fertility_change_$amount$ }
+}
+
+#####################################################
+# Scope: county
+# amount = small, medium, large, huge
+# operation = add, subtract
+# sample usage: demd_alter_sanitation = { amount = small operation = add }
+demd_alter_sanitation = {
+	custom_tooltip = demd_$operation$_sanitation_$amount$
+	change_variable = { name = sanitation $operation$ = demd_sanitation_change_$amount$ }		
+	clamp_variable = { name = sanitation min = 0 max = 1 }
+}
+
+#####################################################
+# Scope: county
+# amount = small, medium, large, huge
+# operation = add, subtract
+# sample usage: demd_alter_public_order = { amount = small operation = add }
+demd_alter_public_order = {
+	custom_tooltip = demd_$operation$_public_order_$amount$
+	change_variable = { name = public_order $operation$ = demd_public_order_change_$amount$ }		
+	clamp_variable = { name = public_order min = 0 max = 1 }
+}
+
+#####################################################
+# Scope: culture
+# amount = small, medium, large, huge
+# operation = add, subtract
+# sample usage: demd_alter_vigor = { amount = small operation = add }
+demd_alter_vigor = {
+	custom_tooltip = demd_$operation$_vigor_$amount$
+	change_variable = { name = vigor $operation$ = demd_vigor_change_$amount$ }		
+	clamp_variable = { name = vigor min = 0 max = 100 }
+}
+
+# Version with special localization for use in CB contexts
+demd_alter_vigor_CB = {
+	custom_tooltip = demd_$operation$_vigor_$amount$_CB
+	change_variable = { name = vigor $operation$ = demd_vigor_change_$amount$ }		
+	clamp_variable = { name = vigor min = 0 max = 100 }
+}
+
+# Version with special localization for use in artifact contexts (add only)
+demd_alter_vigor_artifact = {
+	custom_tooltip = demd_$operation$_vigor_$amount$_artifact
+	change_variable = { name = vigor $operation$ = demd_vigor_change_$amount$ }		
+	clamp_variable = { name = vigor min = 0 max = 100 }
+}
+
+#####################################################
+# Scope: culture
+# amount = small, medium, large, huge
+# operation = add, subtract
+# sample usage: demd_alter_imperial_decay = { amount = small operation = add }
+
+demd_alter_imperial_decay = {
+	custom_tooltip = demd_$operation$_imperial_decay_$amount$
+	change_variable = { name = imperial_decay $operation$ = demd_imperial_decay_change_$amount$ }		
+	clamp_variable = { name = imperial_decay min = 0 max = imperial_decay_max }
+}
+
+demd_alter_imperial_decay_CB = {
+	custom_tooltip = demd_$operation$_imperial_decay_CB_$amount$
+	change_variable = { name = imperial_decay $operation$ = demd_imperial_decay_change_$amount$ }		
+	clamp_variable = { name = imperial_decay min = 0 max = imperial_decay_max }
+}
+

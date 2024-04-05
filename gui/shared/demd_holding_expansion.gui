@@ -1,0 +1,86 @@
+types HoldingExpansion
+{
+    type holding_expansion_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_building!#  [holding|E] Expansion Progress: [Province.MakeScope.Var('holding_construction_progress').GetValue|1]/[Province.MakeScope.ScriptValue('holding_construction_progress_max')|0]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [holdings|E] can no longer be built on demand. Instead, there is a waiting period as the [demd_population|E] of a [county|E] expands to a randomly selected empty [barony|E] in the [county|E], after which a [holding|E] may be built for free in that [barony|E].#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Yearly [holding|E] construction progress: [Province.MakeScope.ScriptValue('yearly_holding_construction_progress')|2]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "    Base: [Province.MakeScope.ScriptValue('base_yearly_holding_construction_progress')|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "    From [county|E] [demd_population|E]: [Province.MakeScope.ScriptValue('yearly_holding_construction_progress_from_population')|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "    From neighboring [county|E] [demd_population|E]: [Province.MakeScope.ScriptValue('yearly_holding_construction_progress_from_neighboring_population')|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "    From unused [demd_construction_cap|E]: [Province.MakeScope.ScriptValue('yearly_holding_construction_progress_from_construction_capacity')|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "    From [vigor|E]: [Province.MakeScope.ScriptValue('yearly_holding_construction_progress_from_vigor')|%+=1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

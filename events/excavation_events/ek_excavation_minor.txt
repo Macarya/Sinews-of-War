@@ -1,0 +1,39 @@
+﻿
+namespace = ek_excavation_minor
+
+ek_excavation_minor.0001 = {
+	type = character_event
+	title = ek_excavation_minor.0001.t
+	desc = ek_excavation_minor.0001.desc
+	theme = excavation_interior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:excavation_leader
+		animation = martial
+	}
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+	}
+	
+	option = { 
+		name = ek_excavation_minor.0001.a
+
+		# sample effect
+		alter_excavation_stage_progress = { operation = add amount = small }
+		alter_excavation_quality = { operation = add amount = small }
+		alter_excavation_minor_artifacts = { operation = add amount = small }
+		
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+
+
+

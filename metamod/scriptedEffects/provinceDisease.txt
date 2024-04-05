@@ -1,0 +1,50 @@
+
+county_disease = {
+	# Spawn
+    if = {
+		limit = {
+			NOT = { has_county_modifier = plague_immunity }
+		}
+		random_list = {
+			# chance of generating plague
+			0 = { # debug temporary
+				modifier = {
+					always = yes
+					add = outbreak_risk
+				}
+				# give plague
+				trigger_event = { id = demd_pop_disease.1001 days = { 1 360 } }
+			}
+			10000 = {
+				# do nothing
+			}
+		}
+	}
+	
+	# Spread
+    if = {
+		limit = { has_county_modifier = plague_present }
+		
+        every_in_list = {
+            variable = county_neighbors
+            limit = { NOT = { has_county_modifier = plague_immunity } }
+			
+			random_list = {
+				# give plague
+				50 = {
+					# if no quarantine imposed
+					modifier = {
+						NOT = { prev = { has_county_modifier = quarantine } }
+						add = no_quarantine_spread_chance_addition
+					}
+
+					# give plague
+					trigger_event = { id = demd_pop_disease.1001 days = { 1 360 } }
+				}
+				# do nothing
+				500 = {
+				}
+			}           
+        }
+    }
+}

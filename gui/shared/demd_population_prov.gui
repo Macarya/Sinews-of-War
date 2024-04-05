@@ -1,0 +1,65 @@
+types PopulationProvince
+{
+    type population_province_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_population!# [demd_population|E]: [Province.MakeScope.Var('population').GetValue|1]k#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_population|E] is necessary to fill the [demd_jobs|E] that drive your economy.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_job_nobles|E]:  [Province.MakeScope.Var('knight_capacity_producers_count').GetValue|2]k / [Province.MakeScope.Var('knight_capacity_producers_max').GetValue|2]k"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_job_farmers|E]: [Province.MakeScope.Var('food_producers_count').GetValue|2]k / [Province.MakeScope.Var('food_producers_max').GetValue|2]k"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Unemployed#!: [Province.MakeScope.Var('unemployed_count').GetValue|2]k"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }                 				
+            }
+        }
+    }
+}

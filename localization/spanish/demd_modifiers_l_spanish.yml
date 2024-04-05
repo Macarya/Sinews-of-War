@@ -1,0 +1,123 @@
+﻿l_spanish:
+
+demd_prov_city_rights_4:0 "Complete City Rights"
+demd_prov_city_rights_3:0 "High City Rights"
+demd_prov_city_rights_2:0 "Moderate City Rights"
+demd_prov_city_rights_1:0 "Low City Rights"
+demd_prov_city_rights_0:0 "No City Rights"
+
+demd_tax_setting_4:0 "Extortionate Taxes"
+demd_tax_setting_3:0 "High Taxes"
+demd_tax_setting_2:0 "Moderate Taxes"
+demd_tax_setting_1:0 "Low Taxes"
+demd_tax_setting_0:0 "Tax Exempt"
+
+demd_manpower_setting_4:0 "Extortionate Service Requirements"
+demd_manpower_setting_3:0 "High Service Requirements"
+demd_manpower_setting_2:0 "Moderate Service Requirements"
+demd_manpower_setting_1:0 "Low Service Requirements"
+demd_manpower_setting_0:0 "Exempt from Service"
+
+demd_prov_garrison_modifier_small:"Small Garrision Increase"
+demd_prov_garrison_modifier_medium:"Medium Garrision Increase"
+demd_prov_garrison_modifier_big:"Large Garrision Increase"
+demd_prov_garrison_modifier_huge:"Huge Garrision Increase"
+
+demd_prov_tax_modifier_huge:"Huge Tax Increase"
+demd_prov_tax_modifier_big:"Big Tax Increase"
+demd_prov_tax_modifier_medium:"Medium Tax Increase"
+demd_prov_tax_modifier_small:"Small Tax Increase"
+
+demd_prov_piety_modifier_big:"Big Piety Increase"
+demd_prov_piety_modifier_medium:"Medium Piety Increase"
+demd_prov_piety_modifier_small:"Small Piety Increase"
+
+demd_prov_prestige_modifier_big:"Big Prestige Increase"
+demd_prov_prestige_modifier_medium:"Medium Prestige Increase"
+demd_prov_prestige_modifier_small:"Small Prestige Increase"
+
+demd_prov_fort_level_modifier_huge:"Huge Fort level Increase"
+demd_prov_fort_level_modifier_big:"Big Fort level Increase"
+demd_prov_fort_level_modifier_medium:"Medium Fort level Increase"
+demd_prov_fort_level_modifier_small:"Small Fort level Increase"
+
+demd_prov_advantage_modifier_huge:"Huge Advantage Increase"
+demd_prov_advantage_modifier_big:"Big Advantage Increase"
+demd_prov_advantage_modifier_medium:"Medium Advantage Increase"
+demd_prov_advantage_modifier_small:"Small Advantage Increase"
+
+demd_prov_levy_modifier_huge:"Huge Levy Increase"
+demd_prov_levy_modifier_big:"Big Levy Increase"
+demd_prov_levy_modifier_medium:"Medium Levy Increase"
+demd_prov_levy_modifier_small:"Small Levy Increase"
+
+demd_char_knight_capacity_modifier_big:"Big Knight Cap Increase"
+demd_char_knight_capacity_modifier_medium:"Medium Knight Cap Increase"
+demd_char_knight_capacity_modifier_small:"Small Knight Cap Increase"
+
+demd_char_regiment_capacity_modifier_big:"Big Men at Arms Cap Increase"
+demd_char_regiment_capacity_modifier_medium:"Medium Men at Arms Cap Increase"
+demd_char_regiment_capacity_modifier_small:"Small Men at Arms Cap Increase"
+
+
+demd_prov_hospital_8:0 "Hospital @icon_building!# [building|E] Level"
+demd_prov_hospital_7:0 "Hospital @icon_building!# [building|E] Level"
+demd_prov_hospital_6:0 "Hospital @icon_building!# [building|E] Level"
+demd_prov_hospital_5:0 "Hospital @icon_building!# [building|E] Level"
+demd_prov_hospital_4:0 "Hospital @icon_building!# [building|E] Level"
+demd_prov_hospital_3:0 "Hospital @icon_building!# [building|E] Level"
+demd_prov_hospital_2:0 "Hospital @icon_building!# [building|E] Level"
+demd_prov_hospital_1:0 "Hospital @icon_building!# [building|E] Level"
+
+faith_conversion_in_progress:0 "Faith Conversion in Progress"
+faith_conversion_in_progress_desc:0 "This [county|E] is currently being converted to a different [faith|E]."
+
+culture_conversion_in_progress:0 "Culture Conversion in Progress"
+culture_conversion_in_progress_desc:0 "This [county|E] is currently being converted to a different [culture|E]."
+
+repressing_local_faith:0 "Repressing Local Faith"
+repressing_local_faith_desc:0 "The local [faith|E] in this [county|E] is being repressed by the authorities."
+
+repressing_local_culture:0 "Repressing Local Culture"
+repressing_local_culture_desc:0 "The local [culture|E] in this [county|E] is being repressed by the authorities."
+
+
+
+plague_present:0 "Plague"
+plague_present_desc:0 "This [county|E] is undergoing an outbreak of [demd_plague|E]."
+
+plague_immunity:0 "Immune to Plague"
+plague_immunity_desc:0 "Owing to a recent outbreak of [demd_plague|E], this [county|E] is immune to further spread."
+
+successful_relief:0 "Plague Relief"
+successful_relief_desc:0 "A relief effort has mitigated the ravages of [demd_plague|E] in this [county|E]."
+
+no_relief:0 "Abandoned the People"
+no_relief_desc:0 "The failure of the ruler to provide aid has angered the people of this county."
+
+quarantine:0 "Under Quarantine"
+quarantine_desc:0 "This [county|E] has imposed mandatory quarantine measures on travelers to attempt to avoid the spread of [demd_plague|E]."
+
+razed:0 "Razed"
+razed_desc:0 "This [county|E] was razed by a hostile power, resulting in severe depopulation"
+
+sacked:0 "Sacked"
+sacked_desc:0 "This [county|E] was sacked by a hostile power, resulting in moderate depopulation"
+
+captured:0 "Captured"
+captured_desc:0 "This [county|E] was occupied by a hostile power, resulting in mild depopulation"
+
+raided:0 "Raided"
+raided_desc:0 "This [county|E] was raided by a hostile power, resulting in mild depopulation"
+
+razed_my_holding:0 "Razed my holding"
+sacked_my_holding:0 "Sacked my holding"
+raided_my_holding:0 "Raided my holding"
+
+demd_flood_mild:0 "Mild Flooding"
+demd_flood_moderate:0 "Moderate Flooding"
+demd_flood_severe:0 "Severe Flooding"
+
+demd_avalanche_mild:0 "Mild Avalanches"
+demd_avalanche_moderate:0 "Moderate Avalanches"
+demd_avalanche_severe:0 "Severe Avalanches"

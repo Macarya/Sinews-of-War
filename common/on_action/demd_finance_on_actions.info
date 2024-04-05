@@ -1,0 +1,131 @@
+﻿
+#################################
+# First Daughter Marriage Aid
+#################################
+
+on_marriage = {
+	on_actions = { demd_marriage_aid }
+}
+
+demd_marriage_aid = {
+	trigger = {
+		scope:spouse = {
+			is_landed = no
+			any_parent = {
+				is_landed = yes
+				has_government = feudal_government
+				sex_opposite_of = prev				
+				has_dominant_ruling_gender = yes
+				NOT = { 
+					any_child = { 
+						age > scope:spouse.age 
+						sex_same_as = scope:spouse
+					}
+				}				
+			}
+		}
+	}
+	effect = {
+		every_parent = {
+			limit = { sex_opposite_of = prev }
+			# trigger_event = demd_feudal_aid.0001
+		}
+	}
+}
+
+#################################
+# First Son Knighthood Aid
+#################################
+
+on_16th_birthday = {
+	on_actions = { demd_16th_birthday }
+}
+
+demd_16th_birthday = {
+	trigger = {
+		has_dominant_ruling_gender = yes
+		culture = { has_innovation = innovation_knighthood }
+		any_parent = {
+			is_landed = yes
+			has_government = feudal_government
+			sex_same_as = prev
+			NOT = {
+				any_child = {
+					age > root.age 
+					sex_same_as = root
+				}
+			}
+		}
+	}
+	effect = {
+		every_parent = {
+			limit = { sex_same_as = prev }
+			# trigger_event = demd_feudal_aid.0002
+		}
+	}		
+}
+
+#################################
+# Crusade Aid
+#################################
+
+on_war_started = {
+	on_actions = { demd_on_war_started }	
+}
+
+demd_on_war_started = {
+	trigger = { using_cb = religious_war }
+	effect = { 
+		every_war_defender = { 
+			limit = {
+				has_government = feudal_government
+			}
+			trigger_event = { on_action = demd_on_join_holy_war } 
+		} 
+		every_war_attacker = { 
+			limit = {
+				has_government = feudal_government
+			}
+			trigger_event = { on_action = demd_on_join_holy_war } 
+		} 
+	}
+}
+
+on_join_war_as_secondary = {
+	trigger = { 
+		scope:war = { using_cb = religious_war } 
+		has_government = feudal_government
+	}
+	on_actions = { demd_on_join_holy_war }
+}	
+
+demd_on_join_holy_war = {
+
+}
+
+#################################
+# Ransom Aid
+#################################
+
+on_imprison = {
+	on_actions = { demd_on_imprison }	
+}
+
+demd_on_imprison = {
+	trigger = { 
+		has_government = feudal_government
+		is_landed = yes
+		is_at_war_with = scope:imprisoner
+		NOT = {
+			scope:imprisoner = {
+				any_character_war = {
+				
+				}
+			}
+		}
+	}
+}
+
+#################################
+# Exceptional Aid
+#################################

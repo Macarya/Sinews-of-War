@@ -1,0 +1,237 @@
+﻿demd_trade_value = {
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_tariffs = {
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_wealth = {
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_node_trade_power = {
+	parent = demd_trade_power
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_power.dds"
+}
+
+demd_trade_power = {
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_power.dds"
+}
+
+demd_trade_node = {
+	alias = { demd_trade_nodes }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_node_owner = {
+	parent = demd_trade_node
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_node_owner_dividend = {
+	parent = demd_node_owner
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_node_linkage = {
+	parent = demd_trade_node
+	alias = { demd_node_linkages }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_node_linkage_efficiency = {
+	parent = demd_node_linkage
+	alias = { demd_node_linkage_efficiency_gui }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_power.dds"
+}
+
+demd_node_strategic_location = {
+	parent = demd_trade_node
+	alias = { demd_node_strategic_locations }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_controlled_strategic_location = {
+	parent = demd_node_strategic_location 
+	alias = { demd_controlled_strategic_locations demd_controlled }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_uncontrolled_strategic_location = {
+	parent = demd_node_strategic_location 
+	alias = { demd_uncontrolled_strategic_locations demd_uncontrolled }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_blockaded_strategic_location = {
+	parent = demd_node_strategic_location 
+	alias = { demd_blockaded_strategic_location_gui }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_open_strategic_location = {
+	parent = demd_node_strategic_location 
+	alias = { demd_open_strategic_location_gui }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_blockaded_linkage = {
+	parent = demd_node_linkage
+	alias = { demd_blockaded_linkage_gui }
+	alias = { demd_uncontrolled_strategic_locations demd_uncontrolled }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_open_linkage = {
+	parent = demd_node_linkage
+	alias = { demd_open_linkage_gui }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_blockaded_node_linkage = {
+	parent = demd_node_linkage
+	alias = { demd_blockaded_node_linkage_gui }
+	alias = { demd_uncontrolled_strategic_locations demd_uncontrolled }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_open_node_linkage = {
+	parent = demd_node_linkage
+	alias = { demd_open_node_linkage_gui }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_node_efficiency = {
+	parent = demd_trade_node
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_power.dds"
+}
+
+demd_node_wealth = {
+	parent = demd_trade_node
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_power.dds"
+}
+
+demd_produced_trade_value = {
+	parent = demd_trade_value
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_collected_trade_value = {
+	parent = demd_trade_value
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_tariff_trade_value = {
+	parent = demd_trade_value
+	texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+}
+
+demd_trade_resources = {
+	alias = { demd_trade_resource }
+	texture = "gfx/interface/icons/demd/resources/trade_resources/luxuries.png"
+}
+
+demd_gold = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/gold.png"
+}
+
+demd_silver = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/silver.png"
+}
+
+demd_wine = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wine.png"
+}
+
+demd_silk = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/silk.png"
+}
+
+demd_spices = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/spices.dds"
+}
+
+demd_amber = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/amber.dds"
+}
+
+demd_gems = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/gems.dds"
+}
+
+demd_ivory = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/ivory.dds"
+}
+
+demd_salt = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/salt.dds"
+}
+
+demd_furs = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/furs.png"
+}
+
+demd_dyes = {
+	parent = demd_trade_resources
+	texture = "gfx/interface/icons/demd/resources/trade_resources/dyes.dds"
+}
+
+demd_standard_of_living = {
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_opulent = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_lavish = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_wealthy = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_affluent = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_prosperous = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_secure = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_middling = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_impoverished = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}
+
+demd_standard_of_living_struggling = {
+	parent = demd_standard_of_living
+	texture = "gfx/interface/icons/demd/resources/trade_resources/wealth.dds"
+}

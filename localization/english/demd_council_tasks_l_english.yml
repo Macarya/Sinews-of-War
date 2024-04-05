@@ -1,0 +1,58 @@
+﻿l_english:
+
+COUNCIL_TASK_FABRICATE_CLAIM:0 "Fabricate Claim"
+COUNCIL_TASK_FABRICATING_CLAIM:0 "Fabricating Claim: [ActiveCouncilTask.GetProgress|1/%]"
+#Court Chaplain
+ task_fabricate_claim:0 "Fabricate Claim on County"
+ task_fabricate_claim_effect_desc:1 "#S At #V 100%#!#!:\n$TAB$Opportunity to get an [unpressed_claim|E]"
+ task_fabricate_claim_duchy_claim:0 "\n$EFFECT_LIST_BULLET$#P Claim on Duchy#!"
+ task_fabricate_claim_vassal_opinion_loss:0 "\n$EFFECT_LIST_BULLET$#N Vassal Opinion Loss#!"
+ task_fabricate_claim_piety_loss:0 "\n$EFFECT_LIST_BULLET$#N Loss of Piety#!"
+ task_fabricate_claim_upset_target:0 "\n$EFFECT_LIST_BULLET$#N Upset Target#!"
+ task_fabricate_claim_loss_of_prestige:0 "\n$EFFECT_LIST_BULLET$#N Loss of Prestige#!"
+ task_fabricate_claim_notification_tooltip:0 "From $task_fabricate_claim$"
+ task_fabricate_claim_desc_not_adjacent:0 "\n$TAB$Claiming not adjacent county — multiplied by: #N $BREAKDOWN_MULTIPLICATION_PREFIX$#![SCOPE.ScriptValue('court_chaplain_fabricate_claim_not_adjacent_penalty')|-1]"
+ 
+COURT_CHAPLAIN_FABRICATE_CLAIM_FOREIGN_COUNTY:0 "[county.GetNameNoTier] is outside our [realm|E]"
+COURT_CHAPLAIN_FABRICATOR_PREVIOUS_CLAIMS:0 "Number of [claims|E] previously fabricated by you"
+COURT_CHAPLAIN_TARGET_PREVIOUS_CLAIMS:0 "Number of [claims|E] previously fabricated by title owner" 
+
+FABRICATE_CLAIM_FAITH_HOSTILITY:0 "[faith_hostility|E] between you and the [title|E] holder"
+FABRICATE_CLAIM_DYNASTY_PRESTIGE:0 "Relative [dynasty_prestige|E] between you and the [title|E] holder"
+FABRICATE_CLAIM_PRESTIGE:0 "Relative [prestige|E] between you and the [title|E] holder" 
+FABRICATE_CLAIM_RANK:0 "Relative [rank|E] between you and the [title|E] holder" 
+
+CLAIM_THRONE_ASTRAY:0 "We consider their faith to be [faith_astray|E]"
+CLAIM_THRONE_HOSTILE:0 "We consider their faith to be [faith_hostile|E]"
+CLAIM_THRONE_EVIL:0 "We consider their faith to be [faith_evil|E]"
+CLAIM_THRONE_TARGET_FABRICATOR:0 ""
+CLAIM_THRONE_EXCOMMUNICATED:0 "You are excommunicated|E]"
+CLAIM_THRONE_TARGET_EXCOMMUNICATED:0 "Target is excommunicated|E]"
+CLAIM_THRONE_FABRICATOR:0 "You have the [GetTrait('claim_fabricator').GetName( GetNullCharacter )] [trait|E]"
+CLAIM_THRONE_TARGET_FABRICATOR:0 "Target has the [GetTrait('claim_fabricator').GetName( GetNullCharacter )] [trait|E]"
+
+COURT_CHAPLAIN_CONVERSION_FERVOR_COUNTY:3 "[demd_population|E]-scaled [fervor|E] in [county.GetNameNoTier]"
+COURT_CHAPLAIN_CONVERSION_FERVOR_NEIGHBORS_POS:0 "[demd_population|E]-scaled [fervor|E] of neighboring [councillor_liege.GetFaith.GetAdjective] [counties|E]"
+COURT_CHAPLAIN_CONVERSION_FERVOR_NEIGHBORS_NEG:0 "[demd_population|E]-scaled [fervor|E] of neighboring [county.GetProvince.GetCounty.GetFaith.GetAdjective] [counties|E]"
+COURT_CHAPLAIN_CONVERSION_TERRAIN_MALUS:0 "[terrain|E] roughness in [county.GetNameNoTier]"
+COURT_CHAPLAIN_CONVERSION_HOLY_SITE_OF_CONVERTED:0 "[county.GetNameNoTier] is a [holy_site|E] of [county.GetProvince.GetCounty.GetFaith.GetName]"
+COURT_CHAPLAIN_CONVERSION_HOLY_SITE_OF_CONVERTER:0 "[county.GetNameNoTier] is a [holy_site|E] of [councillor_liege.GetFaith.GetName]"
+
+COURT_CHAPLAIN_CONVERSION_CAPITAL_BONUS:0 "[capital|E] of [councillor_liege.GetName]"
+
+STEWARD_CONVERSION_CULTURE_COUNTY:0 "[demd_population|E] in [county.GetNameNoTier]"
+STEWARD_CONVERSION_CULTURE_NEIGHBORS_POS:0 "[demd_population|E] of neighboring [councillor_liege.GetCulture.GetName] [counties|E]"
+STEWARD_CONVERSION_CULTURE_NEIGHBORS_NEG:0 "[demd_population|E] of neighboring [county.GetProvince.GetCounty.GetCulture.GetName] [counties|E]"
+STEWARD_PROMOTE_CULTURE_TERRAIN_MALUS:0 "[terrain|E] roughness in [county.GetNameNoTier]"
+STEWARD_PROMOTE_CULTURE_CAPITAL_BONUS:0 "[capital|E] of [councillor_liege.GetName]"
+
+STEWARD_PROMOTE_CULTURE_LANGUAGE_BONUS:0 "Same [language|E]"
+STEWARD_PROMOTE_CULTURE_LANGUAGE_GROUP_BONUS:0 "Same [language_group|E]"
+STEWARD_PROMOTE_CULTURE_LANGUAGE_FAMILY_BONUS:0 "Same [language_family|E]"
+STEWARD_PROMOTE_CULTURE_LANGUAGE_UNION_BONUS:0 "Same [language_union|E]"
+
+STEWARD_PROMOTE_CULTURE_HERITAGE_BONUS:0 "Same [heritage|E]"
+STEWARD_PROMOTE_CULTURE_HERITAGE_GROUP_BONUS:0 "Same [heritage_group|E]"
+STEWARD_PROMOTE_CULTURE_HERITAGE_FAMILY_BONUS:0 "Same [heritage_family|E]"
+
+DEVELOP_COUNTY_CONSTRUCTION_CAPACITY:0 "From unused [county|E] [demd_construction_cap|E]"

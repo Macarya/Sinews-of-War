@@ -1,0 +1,76 @@
+﻿l_english:
+
+demd_poor_weather:0 "Poor Weather"
+demd_poor_weather_desc:0 "The weather is substandard. Rain and sunlight have been supplied in inadequate amounts for the crops and part of the harvest will be lost."
+demd_poor_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_average_weather:0 "Average Weather"
+demd_average_weather_desc:0 "The weather is average. Nature has neither blessed nor scorned us. We can expect a typical yield from the harvest"
+demd_average_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_good_weather:0 "Good Weather"
+demd_good_weather_desc:0 "The weather is better than normal. With these conditions we can expect some overperforming yields."
+demd_good_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_great_weather:0 "Great Weather"
+demd_great_weather_desc:0 "The weather is perfect for farming. Nature has granted us its boon, the harvest will surely be amazing."
+demd_great_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_terrible_weather:0 "Terrible Weather"
+demd_terrible_weather_desc:0 "The weather is catastrophic. Our food security is seriously threatened with only a few meager bushels escaping the ordeal."
+demd_terrible_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_faith_conversion_good:0 "[county.GetName] Converted to [county.GetFaith.GetName]"
+demd_faith_conversion_good_desc:0 "(placeholder) [county.GetName] Converted to [county.GetFaith.GetName]."
+demd_faith_conversion_good_tooltip:0 "(placeholder) [county.GetName] Converted to [county.GetFaith.GetName]."
+
+demd_faith_conversion_bad:0 "[county.GetName] Converted to [county.GetFaith.GetName]"
+demd_faith_conversion_bad_desc:0 "(placeholder) [county.GetName] Converted to [county.GetFaith.GetName]."
+demd_faith_conversion_bad_tooltip:0 "(placeholder) [county.GetName] Converted to [county.GetFaith.GetName]."
+
+demd_heresy_emerges_bad:0 "A new heresy, [county.MakeScope.Var('converting_faith').Faith.GetName], has emerged in [county.GetName]"
+demd_heresy_emerges_bad_desc:0 "Owing to low fervor, the people of [county.GetName] have rejected [county.GetFaith.GetName] and begun to take [county.MakeScope.Var('converting_faith').Faith.GetName]."
+
+demd_culture_conversion_good:0 "[county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName]"
+demd_culture_conversion_good_desc:0 "(placeholder) [county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName] from [county.GetCulture.GetName]."
+demd_culture_conversion_good_tooltip:0 "(placeholder) [county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName] from [county.GetCulture.GetName]."
+
+demd_culture_conversion_bad:0 "[county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName]"
+demd_culture_conversion_bad_desc:0 "(placeholder) [county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName] from [county.GetCulture.GetName]."
+demd_culture_conversion_bad_tooltip:0 "(placeholder) [county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName] from [county.GetCulture.GetName]."
+
+
+
+
+###############################################
+
+demd_mild_flooding:0 "Minor Flooding in [county.GetName]"
+demd_mild_flooding_desc:0 "The flooding is minor. The river banks are awash with water but the losses are minimal."
+
+demd_moderate_flooding:0 "Moderate Flooding in [county.GetName]"
+demd_moderate_flooding_desc:0 "The flooding is moderate. The river overflowed and swept away significant amount of things."
+ 
+demd_severe_flooding:0 "Severe Flooding in [county.GetName]"
+demd_severe_flooding_desc:0 "The flooding is severe. This is a catastrophic flood! All the local settlements have been heavily affected."
+
+###############################################
+
+demd_minor_avalanche:0 "Minor Avalanches in [county.GetName]"
+demd_minor_avalanche_desc:0 "The avalanche is minor. Mountain rubble has made some victims but the community will quickly pick up the pieces."
+demd_minor_avalanche_tooltip:0 "..."
+
+demd_moderate_avalanche:0 "Moderate Avalanches in [county.GetName]"
+demd_moderate_avalanche_desc:0 "The avalanche is moderate. Many rock boulders have fallen, and even more lives were lost. The impact of the disaster is significant."
+demd_moderate_avalanche_tooltip:0 "..."
+
+demd_severe_avalanche:0 "Severe Avalanches in [county.GetName]"
+demd_severe_avalanche_desc:0 "The avalanche is severe. Enormous boulders have rolled down the mountainside and heavily crippled the local inhabitants for the foreseeable future."
+demd_severe_avalanche_tooltip:0 "..."
+
+##############
+
+demd_drought_message_start:0 "Drought in [county.GetName]"
+demd_drought_message_start_desc:0 "This county is experiencing drought. The soil is thirsty and the harvest suffers."
+demd_drought_message_end:0 "Drought Ended in [county.GetName]"
+demd_drought_message_end_desc:0 "The drought in county [county.GetName] has abated. The soil has been refreshed and future harvests are expected to improve."
+demd_drought_tooltip:0 "..."

@@ -1,0 +1,18 @@
+﻿l_english:
+
+#####################
+# Mysterious Visitor
+#####################
+
+ek_excavation_tips.0001.t:0 "Mysterious Visitor"
+ek_excavation_tips.0001.desc:0 "In the dead of night, I hear a knock on the door.\n\n"It has come to our attention", a woman's voice beckons, "that you have been searching for the great treasure in olden times hidden."\n\n"Who are you!?" I question, peeking down to realize there is no shadow flickering under the door.\n\n"On the opposite side of the Nile from the Al'uqsar temple, you will find the resting place of the old kings."\n\nThe woman's tone suddenly changes as if pleased by her own words. "And there too, you will find what a [root.Custom('highest_skill_adjective')] ruler like you truly deserves."\n\nI open the door and find naught but the swaying flame of the candle exactly where I thought I had left it. An investigation launched to identify the intruder produced no results."
+ek_excavation_tips.0001.a:0 "Well, at least now I have a lead..."
+ek_excavation_tips.0001.b:0 "To hell with the excavation! What are my pigskulled guards doing!?"
+
+ek_excavation_tips.0002.t:0 "Ancient Coin"
+ek_excavation_tips.0002.desc:0 "After announcing my search for an excavation site, a local nobleman answers my call with frightening speed. Before I can react he ushers himself unto my audience room with hurried step, carrying a single silver coin between his index and his thumb fingers.\n\n"Do you see, my liege, the craftmanship inscribed on this coin? Clearly this must be one of considerable antiquity!"!\n\n"This was found in some ruins near my domain, I am certain you might find something of your interest in that place!""
+ek_excavation_tips.0002.a:0 "Might as well pay it a visit"
+
+
+
+

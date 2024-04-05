@@ -1,0 +1,117 @@
+types Sanitation
+{
+    type sanitation_target_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_sanitation!#  Current [demd_sanitation|E]: [Province.GetCounty.GetTitle.MakeScope.Var('sanitation').GetValue|0%]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_sanitation|E] is a measure of how well protected your urban population is from disease. If #defender_color Sanitation#! is less than 100%, excess deaths will occur in proportion to the size of the deficit, [demd_plagues|E] are more likely to spawn in this [county|E], and [characters|E] in this [county|E] are more likely to catch diseases. [demd_migration_pull|E] to the urban center of the county will also be reduced. Rural [demd_sanitation|E] is always 100%#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				## Sanitation breakdown
+				# Explanation
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Target: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('sanitation_target')|0%]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Base: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_sanitation_base_target')|0%]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                # Number of Temples
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [development|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('sanitation_from_development')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				# Sins & Virtues
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_urbanization|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('sanitation_from_urbanization')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [terrain|E]: [Province.GetCounty.GetTitle.MakeScope.Var('terrain_sanitation_bonus').GetValue)|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				# Missing HoF
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_edicts|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('edicts_sanitation_bonus')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				# Ecclesiarchy
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E]: [Province.GetCounty.GetCulture.MakeScope.Var('sanitation_cultural_production_mult').GetValue|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				## Special
+				# Leader of the Council of the Eight
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.GetCounty.GetFaith.MakeScope.Var('sanitation_faith_production_mult').GetValue|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				# Yearly Change
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Yearly Change: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('sanitation_delta')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

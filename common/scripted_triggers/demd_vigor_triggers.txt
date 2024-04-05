@@ -1,0 +1,31 @@
+﻿demd_has_greater_than_low_vigor = {
+	custom_description = {
+		text = demd_has_greater_than_low_vigor
+		has_variable = vigor
+		var:vigor > low_vigor 
+	}
+}
+
+demd_has_greater_than_medium_vigor = {
+	custom_description = {
+		text = demd_has_greater_than_medium_vigor
+		has_variable = vigor
+		var:vigor > medium_vigor 
+	}
+}
+
+demd_has_greater_than_high_vigor = {
+	custom_description = {
+		text = demd_has_greater_than_high_vigor
+		has_variable = vigor
+		var:vigor > high_vigor 
+	}
+}
+
+demd_has_greater_than_very_high_vigor = {
+	custom_description = {
+		text = demd_has_greater_than_very_high_vigor
+		has_variable = vigor
+		var:vigor > very_high_vigor 
+	}
+}

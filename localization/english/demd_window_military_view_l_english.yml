@@ -1,0 +1,7 @@
+﻿l_english:
+
+
+DEMD_MANPOWER_BREAKDOWN_TOOLTIP:0 "[demd_manpower|E]: [Character.MakeScope.ScriptValue('total_manpower')|0]\nFrom [domain|E]: [Character.MakeScope.ScriptValue('ruler_manpower')|0]\nFrom [vassals|E]: [Character.MakeScope.ScriptValue('vassal_manpower')|0]"
+
+DEMD_REGIMENT_CAPACITY_BREAKDOWN_TOOLTIP:0 "[demd_regiment_limit|E]: [Character.MakeScope.ScriptValue('total_regiment_capacity_display')|0]\nFrom [domain|E]: [Character.MakeScope.ScriptValue('ruler_regiment_capacity')|1]\nFrom [vassals|E]: [Character.MakeScope.ScriptValue('vassal_regiment_capacity')|1]"
+

@@ -1,0 +1,19 @@
+calculateTerrainProperties = {
+
+	every_province = {		
+		set_variable = { name = food_districts_province value = food_districts_province }
+		set_variable = { name = soil_fertility_mult_target value = demd_prov_terrain_fertility_total }
+		set_variable = { name = terrain_sanitation_bonus value = demd_prov_sanitation_bonus }
+		
+	}
+	every_county = {
+		set_variable = { name = terrain_sanitation_bonus value = title_province.demd_prov_sanitation_bonus }
+	}
+	
+	demd_assign_special_resources = yes
+
+	every_county = {
+		set_variable = { name = terrain_conversion_defense_bonus value = demd_county_terrain_conversion_defense_mult }				
+		set_variable = { name = terrain_trade_power_bonus value = demd_county_trade_power_bonus }
+	}	
+}

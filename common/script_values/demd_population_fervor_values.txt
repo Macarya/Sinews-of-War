@@ -1,0 +1,180 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+fervor_delta = {
+	value = fervor_target
+	subtract = fervor
+	multiply = 0.1
+}
+
+base_fervor_target = 50
+
+fervor_target = {
+	value = {
+		value = base_fervor_target
+		desc = "Baseline Equilibrium Point"
+	}
+	add = {
+		value = fervor_head_of_faith_absent
+		desc = "Absent [head_of_faith|E]"
+	}
+	add = {
+		value = fervor_head_of_faith_traits
+		desc = "[head_of_faith|E]: [Scope.ScriptValue('num_virtuous_traits_display')|0] [virtues|E] and [Scope.ScriptValue('num_sinful_traits_display')|0] [sins|E]"
+	}
+	add = {
+		value = fervor_holy_sites
+		desc = "[Scope.ScriptValue('holy_sites_controlled_display')|0] [holy_sites|E] Controlled"
+	}
+	add = {
+		value = var:fervor_faith_production_mult
+		desc = "[doctrines|E] and [core_tenets|E]"
+	}
+}
+
+num_virtuous_traits_display = {
+	value = religious_head.num_virtuous_traits
+}
+num_sinful_traits_display = {
+	value = religious_head.num_sinful_traits
+}
+holy_sites_controlled_display = {
+	value = holy_sites_controlled
+}
+#########
+
+fervor_hof_absent_penalty = -12
+
+fervor_head_of_faith_absent = {
+	if = {
+		limit = { 
+			NOR = { 
+				has_doctrine_parameter = no_head_of_faith
+				exists = this.religious_head				
+			} 
+		}
+		value = fervor_hof_absent_penalty
+	}
+	else = {
+		value = 0 
+	}
+}
+
+fervor_per_hof_virtue = 4
+fervor_per_hof_sin = -4
+
+
+
+fervor_head_of_faith_traits = {
+	if = {
+		limit = { 
+			exists = this.religious_head				
+		}
+		value = this.religious_head.num_sinful_traits
+		multiply = fervor_per_hof_sin 
+		add = {
+			value = this.religious_head.num_virtuous_traits
+			multiply = fervor_per_hof_virtue
+		}
+	}
+	else = {
+		value = 0 
+	}
+}
+
+#########
+
+fervor_per_holy_site = 2
+
+fervor_holy_sites = {
+	value = holy_sites_controlled
+	multiply = fervor_per_holy_site
+}
+
+#########
+
+demd_sinful_theocrat_fervor_loss = {
+	value = -2000
+	divide = {
+		value = 200
+		add = num_county_followers
+	}
+	max = -2
+}
+
+#########
+
+demd_virtues_minus_sins = {
+	value = num_virtuous_traits
+	subtract = num_sinful_traits	
+}
+
+demd_theocrat_event_cooldown_years = 15
+
+demd_virtuous_theocrat_fervor_gain = {
+	value = 2000
+	divide = {
+		value = 200
+		add = num_county_followers
+	}
+	min = 2
+}
+
+#########
+
+demd_county_holy_war_loss = {
+	value = demd_county_holy_war_gain
+	multiply = -0.75
+}
+demd_county_holy_war_gain = {
+	value = 800
+	divide = {
+		value = 200
+		add = num_county_followers
+	}
+	min = 1
+}
+
+demd_duchy_holy_war_loss = {
+	value = demd_duchy_holy_war_gain
+	multiply = -0.75
+}
+demd_duchy_holy_war_gain = {
+	value = 4000
+	divide = {
+		value = 200
+		add = num_county_followers
+	}
+	min = 5
+}
+
+demd_kingdom_holy_war_loss = {
+	value = demd_kingdom_holy_war_gain
+	multiply = -0.75
+}
+demd_kingdom_holy_war_gain = {
+	value = 8000
+	divide = {
+		value = 200
+		add = num_county_followers
+	}
+	min = 10
+}
+
+demd_great_holy_war_loss = {
+	value = demd_great_holy_war_gain
+	multiply = -0.75
+}
+demd_great_holy_war_gain = {
+	value = 16000
+	divide = {
+		value = 200
+		add = num_county_followers
+	}
+	min = 20
+}
+
+

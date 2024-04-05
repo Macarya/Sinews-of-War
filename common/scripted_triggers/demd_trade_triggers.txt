@@ -1,0 +1,104 @@
+﻿demd_can_seize_control_by_decision = {
+	custom_description = {
+		text = demd_can_seize_control_by_decision_desc
+		percent_strategic_locations_held_character > capital_county.var:trade_node.percent_strategic_locations_held
+	}
+}
+
+
+demd_is_overall_linkage_open_to_trade = { # from linkage story scope
+	NOR = {
+		var:home_node.var:node_owner = { is_at_war_with = prev.var:linked_node.var:node_owner }
+		var:home_node.var:node_owner.faith = { faith_hostility_level = { target = prev.var:linked_node.var:node_owner.faith value > faith_astray_level } }
+		var:linked_node.var:node_owner.faith = { faith_hostility_level = { target = prev.var:home_node.var:node_owner.faith value > faith_astray_level } }
+	}
+}
+
+demd_is_county_linkage_open_to_trade = {
+	demd_is_county_linkage_raided = no
+	demd_is_linkage_blockaded = no
+}
+
+demd_is_county_linkage_raided = {
+	save_temporary_scope_as = linkage
+	holder = {
+		exists = prev.var:trade_node.var:node_owner
+		prev.var:trade_node.var:node_owner = { is_alive = yes }
+		NOT = { top_liege = prev.var:trade_node.var:node_owner.top_liege }
+		OR = {
+			AND = { # county holder is raiding trade node
+				has_variable = is_raiding_trade_node
+				prev.var:trade_node = capital_county.var:trade_node
+			}
+			any_liege_or_above = { 
+				has_variable = is_raiding_trade_node 
+				capital_county.var:trade_node = scope:linkage.var:trade_node
+			}
+		}
+	}
+}
+
+demd_is_linkage_blockaded = {
+	save_temporary_scope_as = linkage
+	holder = {
+		exists = prev.var:trade_node.var:node_owner
+		prev.var:trade_node.var:node_owner = { is_alive = yes }
+		NOT = { top_liege = prev.var:trade_node.var:node_owner.top_liege }
+		OR = {
+			is_at_war_with = prev.var:trade_node.var:node_owner
+			faith = { faith_hostility_level = { target = scope:linkage.var:trade_node.var:node_owner.faith value > faith_astray_level } }
+			scope:linkage.var:trade_node.var:node_owner.faith = { faith_hostility_level = { target = prev.faith value > faith_astray_level } }
+			any_liege_or_above = { 
+				is_at_war_with = scope:linkage.var:trade_node.var:node_owner
+			}
+		}
+	}
+}
+
+demd_is_strategic_location_open_to_trade = {
+	demd_is_strategic_location_raided = no 
+	demd_is_strategic_location_blockaded = no
+}
+
+demd_is_strategic_location_raided = {
+	save_temporary_scope_as = strategic_county
+	holder = {
+		OR = {
+			AND = { # county holder is raiding trade node
+				has_variable = is_raiding_trade_node
+				prev.var:trade_node = capital_county.var:trade_node
+			}
+			any_liege_or_above = { 
+				has_variable = is_raiding_trade_node 
+				capital_county.var:trade_node = scope:strategic_county.var:trade_node
+			}
+		}
+	}
+}
+
+demd_is_strategic_location_blockaded = {
+	save_temporary_scope_as = strategic_county
+	holder = {
+		NOT = { top_liege = prev.var:trade_node.var:node_owner.top_liege }
+		OR = {
+			is_at_war_with = prev.var:trade_node.var:node_owner
+			faith = { faith_hostility_level = { target = scope:strategic_county.var:trade_node.var:node_owner.faith value > faith_astray_level } }
+			scope:strategic_county.var:trade_node.var:node_owner.faith = { faith_hostility_level = { target = prev.faith value > faith_astray_level } }
+			any_liege_or_above = { 
+				is_at_war_with = scope:strategic_county.var:trade_node.var:node_owner
+			}
+		}
+	}
+}
+
+demd_is_strategic_location_controlled = {
+	save_temporary_scope_as = strategic_county
+	holder = {
+		OR = {
+			this = prev.var:trade_node.var:node_owner
+			any_liege_or_above = {
+				this = scope:strategic_county.var:trade_node.var:node_owner
+			}
+		}
+	}
+}

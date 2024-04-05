@@ -1,0 +1,120 @@
+﻿###################
+# Annual Catalysts
+###################
+yearly_struggle_playable_pulse = {
+	on_actions = { demd_trade_node_ruler_pulse }
+}
+
+demd_trade_node_ruler_pulse = {
+	trigger = {
+		scope:struggle ?= { has_variable = is_trade_node_struggle }
+	}
+	effect = {
+		if = {
+			limit = { has_royal_court = yes }
+			if = {
+				limit = { court_grandeur_current_level = 5 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_5
+						character = prev
+					}
+				}
+			}
+			else_if = {
+				limit = { court_grandeur_current_level = 6 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_6
+						character = prev
+					}
+				}
+			}
+			else_if = {
+				limit = { court_grandeur_current_level = 4 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_4
+						character = prev
+					}
+				}
+			}
+			else_if = {
+				limit = { court_grandeur_current_level = 7 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_7
+						character = prev
+					}
+				}
+			}
+			else_if = {
+				limit = { court_grandeur_current_level = 8 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_8
+						character = prev
+					}
+				}
+			}
+			else_if = {
+				limit = { court_grandeur_current_level = 3 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_3
+						character = prev
+					}
+				}
+			}
+			else_if = {
+				limit = { court_grandeur_current_level = 9 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_9
+						character = prev
+					}
+				}
+			}
+			else_if = {
+				limit = { court_grandeur_current_level = 2 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_2
+						character = prev
+					}
+				}
+			}
+			else_if = {
+				limit = { court_grandeur_current_level = 10 }
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_10
+						character = prev
+					}
+				}
+			}
+			else = {
+				scope:struggle = {
+					activate_struggle_catalyst = {
+						catalyst = catalyst_court_grandeur_1
+						character = prev
+					}
+				}
+			}
+		}
+	}
+}
+
+demd_trade_node_struggle_setup = {
+	effect = {
+		set_variable = { name = node_weather_fertility_mult value = 0 }
+	}
+}
+
+demd_trade_node_struggle_phase_change = {
+
+}
+
+demd_trade_node_struggle_join = {
+
+}

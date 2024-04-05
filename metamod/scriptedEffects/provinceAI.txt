@@ -1,0 +1,125 @@
+provinceAISetup = {  
+	# demd_set_culture_super_groups = yes # currently unused
+	
+	every_county = {		
+		demd_set_edict_setting = { TYPE = tax LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = manpower LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = public_order LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = sanitation LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = irrigation LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = infrastructure LEVEL = 2 }
+	}
+}
+
+county_ai = {
+    if = {
+        limit = {
+            holder = { is_ai = yes }
+        }
+		
+		setEdicts = yes
+	}	
+}
+
+######################
+# Set edicts for AI
+######################
+
+setEdicts = { # should write better logic later but this is fine for now probably
+	####################
+	# tax rate
+	if = {
+		limit = { 
+			county.county_opinion < -15	
+			var:manpower_setting < var:tax_setting
+			NOT = { has_variable = tax_setting_changed }
+		}
+		demd_decrement_edict_setting = { TYPE = tax }
+	}
+	else_if = {
+		limit = { 
+			county.county_opinion > 15	
+			var:manpower_setting >= var:tax_setting
+			NOT = { has_variable = tax_setting_changed }
+		}
+		demd_increment_edict_setting = { TYPE = tax }
+	}
+	
+	####################
+	# manpower rate
+	if = {
+		limit = {
+			county.county_opinion < -15	
+			var:manpower_setting >= var:tax_setting 
+			NOT = { has_variable = manpower_setting_changed }
+		}
+		demd_decrement_edict_setting = { TYPE = manpower }
+	}
+	else_if = {
+		limit = {
+			county.county_opinion > 15	
+			var:manpower_setting < var:tax_setting 
+			NOT = { has_variable = manpower_setting_changed }
+		}
+		demd_increment_edict_setting = { TYPE = manpower }
+	}
+	
+	
+	
+	####################
+	# 
+	set_variable = { name = temp value = demd_amenity_level_expected }
+	
+	if = {
+		limit = { NOT = { has_variable = public_order_setting_changed } }
+		if = {
+			limit = { var:public_order_setting < var:temp }
+			demd_increment_edict_setting = { TYPE = public_order }
+		}
+		else_if = {
+			limit = { var:public_order_setting > var:temp }
+			demd_decrement_edict_setting = { TYPE = public_order }
+		}
+	}
+
+	if = {
+		limit = { NOT = { has_variable = sanitation_setting_changed } }
+		if = {
+			limit = { var:sanitation_setting < var:temp }
+			demd_increment_edict_setting = { TYPE = sanitation }
+		}
+		else_if = {
+			limit = { var:sanitation_setting > var:temp }
+			demd_decrement_edict_setting = { TYPE = sanitation }
+		}	
+	}
+	
+	if = {
+		limit = { NOT = { has_variable = irrigation_setting_changed } }
+		if = {
+			limit = { var:irrigation_setting < var:temp }
+			demd_increment_edict_setting = { TYPE = irrigation }
+		}
+		else_if = {
+			limit = { var:irrigation_setting > var:temp }
+			demd_decrement_edict_setting = { TYPE = irrigation }
+		}
+	}
+	
+	if = {
+		limit = { NOT = { has_variable = infrastructure_setting_changed } }
+		if = {
+			limit = { var:infrastructure_setting < var:temp }
+			demd_increment_edict_setting = { TYPE = infrastructure }
+		}
+		else_if = {
+			limit = { var:infrastructure_setting > var:temp }
+			demd_decrement_edict_setting = { TYPE = infrastructure }
+		}
+	}
+}
+
+
+
+
+

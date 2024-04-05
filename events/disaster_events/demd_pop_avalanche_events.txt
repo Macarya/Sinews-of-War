@@ -1,0 +1,124 @@
+﻿namespace = demd_pop_avalanche
+
+# avalanche
+demd_pop_avalanche.1001 = {
+	hidden = yes
+	scope = landed_title
+	immediate = {
+		save_scope_as = county
+		holder = { save_scope_as = county_holder }
+		
+		# send event to county holder
+		if = {
+			limit = { holder = { is_at_location = scope:county.title_province } }
+			holder = {
+				trigger_event = demd_pop_avalanche.1002
+			}
+		}
+		else = {
+			random_list = {
+				10 = {
+					
+					holder = {
+						send_interface_message = {
+							type = event_steward_task_bad
+							title = demd_minor_avalanche
+							desc = demd_minor_avalanche_desc
+							right_icon = scope:county
+							tooltip = demd_minor_avalanche_tooltip
+						}
+					}
+					add_county_modifier = { modifier = demd_avalanche_mild months = 3 }
+					demd_alter_food_district_count = { amount = miniscule operation = subtract }	
+				}
+				40 = {	
+					
+					holder = {
+						send_interface_message = {
+							type = event_steward_task_bad
+							title = demd_moderate_avalanche
+							desc = demd_moderate_avalanche_desc
+							right_icon = scope:county
+							tooltip = demd_moderate_avalanche_tooltip
+						}
+					}
+					add_county_modifier = { modifier = demd_avalanche_moderate months = 3 }
+					demd_alter_food_district_count = { amount = small operation = subtract }					
+				}	
+				10 = {						
+					holder = {
+						send_interface_message = {
+							type = event_steward_task_bad
+							title = demd_severe_avalanche
+							desc = demd_severe_avalanche_desc
+							right_icon = scope:county
+							tooltip = demd_severe_avalanche_tooltip
+						}
+					}
+					add_county_modifier = { modifier = demd_avalanche_severe months = 3 }
+					demd_alter_county_population = { amount = miniscule operation = subtract }
+					demd_alter_food_district_count = { amount = medium operation = subtract }				
+				}				
+			}
+		}
+	}
+}
+
+# avalanche - holder
+demd_pop_avalanche.1002 = {
+	type = character_event
+	title = demd_pop_avalanche.1002.t
+	desc = demd_pop_avalanche.1002.desc
+	theme = stewardship
+	override_background = {
+		reference = burning_building
+	}
+
+	left_portrait = {
+		character = this
+		animation = stress
+	}
+	
+	immediate = {
+		random_list = {
+			10 = {				
+				scope:county = {
+					add_county_modifier = { modifier = demd_avalanche_mild months = 3 }
+
+					demd_alter_food_district_count = { amount = miniscule operation = subtract }
+				}
+			}
+			40 = {					
+				scope:county = {
+					add_county_modifier = { modifier = demd_avalanche_moderate months = 3 }
+					demd_alter_food_district_count = { amount = small operation = subtract }
+				}				
+			}	
+			10 = {					
+				scope:county = {
+					add_county_modifier = { modifier = demd_avalanche_severe months = 3 }
+					demd_alter_county_population = { amount = miniscule operation = subtract }
+					demd_alter_food_district_count = { amount = medium operation = subtract }	
+				}					
+			}				
+		}
+	}
+
+	# Oh no
+	option = {
+		name = demd_pop_avalanche.1002.a
+		
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# test event
+demd_pop_avalanche.9999 = {
+	hidden = yes
+	#type = empty
+	immediate = {
+		capital_county = { trigger_event = demd_pop_avalanche.1001 }
+	}
+}

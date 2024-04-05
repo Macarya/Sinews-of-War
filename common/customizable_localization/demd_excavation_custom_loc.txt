@@ -1,0 +1,128 @@
+﻿get_ruins_name = {
+	type = landed_title
+	
+	# Vanilla
+	text = {
+		localization_key = ruins_egyptian_generic
+		trigger = { var:ruins_type = flag:egyptian }
+	}
+	
+	# EK
+	#text = {
+	#	localization_key = ruins_fort_generic
+	#	trigger = { var:ruins_type = flag:fort }
+	#}	
+	#text = {
+	#	localization_key = ruins_cave_generic
+	#	trigger = { var:ruins_type = flag:cave }
+	#}	
+	#text = {
+	#	localization_key = ruins_nordic_generic
+	#	trigger = { var:ruins_type = flag:nordic }
+	#}
+	#text = {
+	#	localization_key = ruins_dwemer_generic
+	#	trigger = { var:ruins_type = flag:dwemer }
+	#}	
+	
+	# Fallback
+	text = {
+		localization_key = ruins_fallback_error_1
+		trigger = { has_variable = ruins_type }
+	}
+	text = { localization_key = ruins_fallback_error_2 }
+}
+
+get_trade_post_backdrop = {
+	type = landed_title
+	
+	# fallback
+	text = {
+		localization_key = icon_trade_post_generic
+	}
+}
+
+get_ruins_backdrop = {
+	type = landed_title
+	
+	# fallback
+	text = {
+		localization_key = background_ruins_egyptian_generic
+		trigger = { NOT = { has_variable = ruins_type } }
+	}
+	
+	# Vanilla
+	text = {
+		localization_key = background_ruins_egyptian_generic
+		trigger = { var:ruins_type = flag:egyptian }
+	}
+	
+	# EK
+	#text = {
+	#	localization_key = background_ruins_fort_generic
+	#	trigger = { var:ruins_type = flag:fort }
+	#}	
+	#text = {
+	#	localization_key = background_ruins_cave_generic
+	#	trigger = { var:ruins_type = flag:cave }
+	#}	
+	#text = {
+	#	localization_key = background_ruins_nordic_generic
+	#	trigger = { var:ruins_type = flag:nordic }
+	#}
+	#text = {
+	#	localization_key = background_ruins_dwemer_generic
+	#	trigger = { var:ruins_type = flag:dwemer }
+	#}	
+	
+	# Fallback
+	text = { localization_key = background_ruins_egyptian_generic }
+}
+
+can_afford_excavation = {
+	type = landed_title
+
+	text = {
+		localization_key = can_afford_excavation
+		trigger = { 
+			holder.gold > excavation_start_cost
+		}
+	}	
+	text = {
+		localization_key = cannot_afford_excavation
+	}
+}
+
+highest_skill_adjective = {
+	type = character
+
+	text = {
+		localization_key = adjective_charismatic
+		trigger = { highest_skill = diplomacy }
+	}
+
+	text = {
+		localization_key = adjective_strong
+		trigger = { highest_skill = martial }
+	}
+
+	text = {
+		localization_key = adjective_crafty
+		trigger = { highest_skill = intrigue }
+	}
+
+	text = {
+		localization_key = adjective_shrewd
+		trigger = { highest_skill = stewardship }
+	}
+
+	text = {
+		localization_key = adjective_clever
+		trigger = { highest_skill = learning }
+	}
+
+	text = {
+		# What makes a man turn neutral?
+		localization_key = adjective_neutral
+	}
+}

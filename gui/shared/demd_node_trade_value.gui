@@ -1,0 +1,75 @@
+types TradeValue
+{
+    type node_trade_value_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			min_width = 350
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_trade_value!#  Total [demd_collected_trade_value|E]: [Struggle.MakeScope.Var('total_collected_trade_value').GetValue|0]#!"
+                align = left
+				min_width = 350
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak Collected Trade Value in a [demd_trade_node|E] is calculated as the [demd_produced_trade_value|E] times the [demd_node_efficiency|E] plus any [demd_trade_value|E] arriving from [demd_node_linkages|E]. Collected Trade Value is redistributed to [counties|E] in the [demd_trade_node|E] based on their relative [demd_trade_power|E].#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Domestic [demd_trade_value|E]: [Struggle.MakeScope.ScriptValue('domestic_collected_trade_value')|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "    [demd_produced_trade_value|E]: [Struggle.MakeScope.ScriptValue('node_produced_trade_value')|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                } 
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "    x [Struggle.MakeScope.ScriptValue('node_trade_efficiency')|0%] [demd_node_efficiency|E]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Imported [demd_trade_value|E]: [Struggle.MakeScope.ScriptValue('imported_collected_trade_value')|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+         
+            }
+        }
+    }
+}

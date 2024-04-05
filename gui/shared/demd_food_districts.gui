@@ -1,0 +1,89 @@
+types FoodDistricts
+{
+    type food_districts_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_demd_food!#  Max [demd_food_districts|E]: [Province.MakeScope.Var('food_districts_max').GetValue|1]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_food|E] are produced by [demd_job_artisans|E], and the amount of food stockpiled per capita, or [demd_capital|E], represents a key component of a [barony|E]'s standard of living. [demd_capital|E] is a key factor in [demd_migration_pull|E] and gives a production bonus to all [demd_resources|E].#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Base: [Province.MakeScope.Var('food_districts_province').GetValue|1]"
+					datacontext = "[GuiScope.SetRoot(Province.MakeScope).GetScriptValueBreakdown('food_districts_province')]"
+					tooltipwidget = {
+						widget_value_breakdown_tooltip = {}
+					}                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.GetCounty.GetFaith.MakeScope.Var('food_districts_faith_production_mult').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E]: [Province.GetCounty.GetCulture.MakeScope.Var('food_districts_cultural_production_mult').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_edicts|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('edicts_food_districts_bonus')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [buildings|E]: [Province.MakeScope.ScriptValue('building_food_districts_bonus')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [development|E]: [Province.MakeScope.ScriptValue('food_districts_max_development_mult')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

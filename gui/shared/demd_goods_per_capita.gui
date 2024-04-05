@@ -1,0 +1,102 @@
+types GoodsPerCapita
+{
+    type goods_per_capita_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_demd_goods!#  [demd_goods|E] Produced per Capita:#! [Province.GetCounty.GetTitle.MakeScope.ScriptValue('goods_produced_per_capita')|2]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_goods|E] are produced by [demd_job_artisans|E], and the amount of goods stockpiled per capita, or [demd_capital|E], represents a key component of a [barony|E]'s standard of living. [demd_capital|E] is a key factor in [demd_migration_pull|E] and gives a production bonus to all [demd_resources|E].#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Base rate: [EmptyScope.ScriptValue('goods_base_output')|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.GetCounty.GetFaith.MakeScope.Var('goods_faith_production_mult').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E]: [Province.GetCounty.GetCulture.MakeScope.Var('goods_cultural_production_mult').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_capital|E]: [Province.GetCounty.GetTitle.MakeScope.Var('capital_production_multiplier').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [buildings|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('building_goods_bonus')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_goods_districts|E] Constructed: [Province.GetCounty.GetTitle.MakeScope.Var('goods_districts_count').GetValue|1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_job_artisans|E]#! Employed: [Province.GetCounty.GetTitle.MakeScope.Var('goods_producers_count').GetValue|1]k/[Province.GetCounty.GetTitle.MakeScope.Var('goods_producers_max').GetValue|1]k"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_construction_cap|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('county_construction_capacity')|1] (Used: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('county_districts_to_build')|1])"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

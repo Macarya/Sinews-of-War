@@ -1,0 +1,123 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+#############
+# Conversion Progress
+#############
+
+demd_conversion_change_small = 10
+demd_conversion_change_medium = 20
+demd_conversion_change_large = 30
+demd_conversion_change_huge = 50
+
+demd_strength_change_small = 0.10
+demd_strength_change_medium = 0.20
+demd_strength_change_large = 0.30
+demd_strength_change_huge = 0.50
+
+#############
+# Influence
+#############
+
+demd_influence_change_small = 0.05
+demd_influence_change_medium = 0.1
+demd_influence_change_large = 0.2
+demd_influence_change_huge = 0.4
+
+demd_land_ownership_change_small = 0.05
+demd_land_ownership_change_medium = 0.1
+demd_land_ownership_change_large = 0.2
+demd_land_ownership_change_huge = 0.4
+
+#############
+# District
+#############
+
+demd_district_change_miniscule = 0.05
+demd_district_change_small = 0.1
+demd_district_change_medium = 0.15
+demd_district_change_large = 0.25
+demd_district_change_huge = 0.5
+
+#############
+# PO/sani
+#############
+
+demd_public_order_change_small = 0.05
+demd_public_order_change_medium = 0.15
+demd_public_order_change_large = 0.25
+demd_public_order_change_huge = 0.5
+
+demd_sanitation_change_small = 0.05
+demd_sanitation_change_medium = 0.15
+demd_sanitation_change_large = 0.25
+demd_sanitation_change_huge = 0.5
+
+#############
+# PO/sani
+#############
+
+demd_fertility_change_small = 0.05
+demd_fertility_change_medium = 0.15
+demd_fertility_change_large = 0.25
+demd_fertility_change_huge = 0.5
+
+#############
+# Population
+#############
+
+demd_population_change_miniscule = 0.01
+demd_population_change_small = 0.05
+demd_population_change_medium = 0.15
+demd_population_change_large = 0.25
+demd_population_change_huge = 0.5
+
+demd_population_transfer_miniscule = 0.01
+demd_population_transfer_small = 0.02
+demd_population_transfer_medium = 0.03
+demd_population_transfer_large = 0.05
+demd_population_transfer_huge = 0.1
+
+#############
+# Resources
+#############
+
+demd_resource_stockpile_gain_miniscule = 0.05
+demd_resource_stockpile_gain_small = 0.1
+demd_resource_stockpile_gain_medium = 0.25
+demd_resource_stockpile_gain_large = 0.5
+demd_resource_stockpile_gain_huge = 0.75
+
+demd_resource_stockpile_gain_miniscule = 0.05
+demd_resource_stockpile_loss_small = -0.1
+demd_resource_stockpile_loss_medium = -0.25
+demd_resource_stockpile_loss_large = -0.5
+demd_resource_stockpile_loss_huge = -0.75
+
+#############
+# Vigor
+#############
+
+demd_vigor_change_infinitesimal = 0.5
+demd_vigor_change_miniscule = 1
+demd_vigor_change_small = 2.5
+demd_vigor_change_medium = 5
+demd_vigor_change_large = 10
+demd_vigor_change_huge = 15
+
+#############
+# Imperial Decay
+#############
+
+demd_imperial_decay_change_infinitesimal = 2
+demd_imperial_decay_change_miniscule = 4
+demd_imperial_decay_change_small = 6
+demd_imperial_decay_change_medium = 10
+demd_imperial_decay_change_large = 15
+demd_imperial_decay_change_huge = 25
+
+
+

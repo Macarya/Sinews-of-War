@@ -1,0 +1,85 @@
+﻿demd_fabricate_effect = {
+	add_unpressed_claim = $TITLE$
+	if = { limit = { has_game_rule = claim_fabrication_sow }
+		scope:councillor = {
+			duel = {
+				skill = learning
+				value = scope:councillor_liege.court_chaplain_fabrication_duel_value
+				desc = demd_fabricate_claim
+				
+				$WGT_1$ = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 0.5
+					}
+					desc = court_chaplain_task.0301.critical_success
+					scope:councillor_liege = {
+						send_interface_toast = {
+							title = court_chaplain_task.0301.critical_success
+							left_icon = scope:councillor_liege
+							right_icon = $TITLE$
+							if = { limit = { NOT = { has_variable = previous_claims_presented } } set_variable = { name = previous_claims_presented value = $AMT_1$ } }
+							else = { change_variable = { name = previous_claims_presented add = $AMT_1$ } }
+						}					
+					}
+				}
+				$WGT_2$ = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 0.5
+					}
+					desc = court_chaplain_task.0301.success
+					scope:councillor_liege = {
+						send_interface_toast = {
+							title = court_chaplain_task.0301.success
+							left_icon = scope:councillor_liege
+							right_icon = $TITLE$
+							add_prestige = medium_prestige_loss
+							if = { limit = { faith = scope:county.holder.faith } add_piety = medium_piety_loss }
+							if = { limit = { NOT = { has_variable = previous_claims_presented } } set_variable = { name = previous_claims_presented value = $AMT_2$ } }
+							else = { change_variable = { name = previous_claims_presented add = $AMT_2$ } }
+						}					
+					}
+				}
+				$WGT_3$ = { 			
+					desc = court_chaplain_task.0301.failure
+					scope:councillor_liege = {
+						send_interface_toast = {
+							title = court_chaplain_task.0301.failure
+							left_icon = scope:councillor_liege
+							right_icon = $TITLE$
+							
+							add_prestige = major_prestige_loss
+							if = { limit = { faith = scope:county.holder.faith } add_piety = major_piety_loss }
+						}
+						
+					}
+				}
+				$WGT_4$ = {
+					desc = court_chaplain_task.0301.critical_failure
+
+					add_trait = claim_fabricator				
+					scope:councillor_liege = {
+						send_interface_toast = {
+							title = court_chaplain_task.0301.critical_failure
+							left_icon = scope:councillor_liege
+							right_icon = $TITLE$
+							
+							add_trait = claim_fabricator
+							add_prestige_level = -1
+							if = { limit = { faith = scope:county.holder.faith } add_piety_level = -1 }
+							if = { limit = { NOT = { has_variable = previous_claims_presented } } set_variable = { name = previous_claims_presented value = $AMT_3$ } }
+							else = { change_variable = { name = previous_claims_presented add = $AMT_3$ } }
+						}					
+					}				
+				}
+			}
+		}
+	}	
+}
+
+demd_claim_throne_failure_effect = {
+	add_trait = claim_fabricator
+	add_prestige_level = -1
+	if = { limit = { faith = scope:target.faith } add_piety_level = -1 }
+}

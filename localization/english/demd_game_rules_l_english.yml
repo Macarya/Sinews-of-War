@@ -1,0 +1,24 @@
+﻿l_english:
+rule_debug_log:0 "Sinews of War: Debug Logging"
+setting_debug_yes:0 "Yes"
+setting_debug_yes_desc:0 "#N (Not Recommended)#! A yearly pulse will log data that can be analysed later. It may cause gameplay stutters on Jan 1st of each year"
+setting_debug_no:0 "No"
+setting_debug_no_desc:0 "#P (Recommended)#! Data will not be logged. This setting is recommended as the logging reduces performance."
+
+rule_archaeology:0 "Sinews of War: Excavations"
+setting_archaeology_on:0 "On"
+setting_archaeology_on_desc:0 "#N (Not Recommended)#! The Excavation System will be enabled. The system is currently under construction so this setting is not recommended."
+setting_archaeology_off:0 "Off"
+setting_archaeology_off_desc:0 "#P (Recommended)#! The Excavation System will be disabled."
+
+rule_claim_fabrication:0 "Sinews of War: Claim Fabrication"
+setting_claim_fabrication_sow:0 "Realistic"
+setting_claim_fabrication_sow_desc:0 "#P (Recommended)#! More realistic claim fabrication with chances of adverse consequences."
+setting_claim_fabrication_vanilla:0 "Vanilla"
+setting_claim_fabrication_vanilla_desc:0 "#N (Not Recommended)#! Vanilla claim fabrication behavior. This setting is not recommended as it will substantially lessen difficulty."
+
+rule_demd_struggle_variable_fix:0 "Sinews of War: Trade Node Struggle Fix"
+setting_demd_struggle_variable_fix_on:0 "On"
+setting_demd_struggle_variable_fix_on_desc:0 "Use this option if your trade node struggles disappear when you load a save."
+setting_demd_struggle_variable_fix_off:0 "Off"
+setting_demd_struggle_variable_fix_off_desc:0 "Default behavior. Use if you do not have the struggle variable bug."

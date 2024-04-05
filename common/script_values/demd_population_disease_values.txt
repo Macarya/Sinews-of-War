@@ -1,0 +1,31 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+plague_duration_years = 4
+plague_immunity_years = 40
+
+quarantine_trade_power_reduction = -0.8
+
+no_quarantine_spread_chance_addition = 50
+
+quarantine_spread_chance_reduction_display = {
+	value = 1
+	subtract = {
+		value = 50
+		divide = {
+			value = 50
+			add = no_quarantine_spread_chance_addition
+		}
+	}
+}
+
+###
+
+smallpox_contagion_min = 7 #If there is a physician, the character should be likely to meet them before first spread
+smallpox_contagion_max = 14
+
+bubonic_plague_contagion_min = 4 #If there is a physician, the character should be likely to meet them before first spread
+bubonic_plague_contagion_max = 9 #Shorter than smallpox because you die faster

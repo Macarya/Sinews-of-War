@@ -1,0 +1,426 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_vigor_new_artifact_effect = {
+	scope:newly_created_artifact = {
+		if = {
+			limit = { rarity = illustrious }
+			scope:inspiration_owner.culture = { demd_alter_vigor_artifact = { amount = small operation = add } }
+		}
+		else_if = {
+			limit = { rarity = famed }
+			scope:inspiration_owner.culture = { demd_alter_vigor_artifact = { amount = miniscule operation = add } }
+		}
+		else_if = {
+			limit = { rarity = masterwork }
+			scope:inspiration_owner.culture = { demd_alter_vigor_artifact = { amount = infinitesimal operation = add } }
+		}
+	}
+}
+
+demd_vigor_attacker_victory_effect_target = {
+	scope:attacker = { save_scope_as = winner }
+	scope:defender = { save_scope_as = loser }
+	if = {
+		limit = { NOT = { scope:winner.culture = scope:loser.culture } }		
+		if = {
+			limit = { any_in_list = { list = target_titles tier = tier_empire } }
+			demd_vigor_war_end_effect_by_tier = { amount = huge }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = huge }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = massive_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else_if = {
+			limit = { any_in_list = { list = target_titles tier = tier_kingdom } }
+			demd_vigor_war_end_effect_by_tier = { amount = large }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = large }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = major_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else_if = {
+			limit = { any_in_list = { list = target_titles tier = tier_duchy } }
+			demd_vigor_war_end_effect_by_tier = { amount = medium }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = medium }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = medium_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else = {
+			demd_vigor_war_end_effect_by_tier = { amount = small }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = small }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = minor_cultural_acceptance_loss desc = acceptance_change_war } }			
+		}
+	}
+	else = {
+		if = {
+			limit = { any_in_list = { list = target_titles tier = tier_empire } }
+			demd_vigor_same_culture_effect_by_tier = { amount = huge }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = huge }
+		}
+		else_if = {
+			limit = { any_in_list = { list = target_titles tier = tier_kingdom } }
+			demd_vigor_same_culture_effect_by_tier = { amount = large }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = large }
+		}
+		else_if = {
+			limit = { any_in_list = { list = target_titles tier = tier_duchy } }
+			demd_vigor_same_culture_effect_by_tier = { amount = medium }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = medium }
+		}
+		else = {
+			demd_vigor_same_culture_effect_by_tier = { amount = small }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = small }
+		}
+	}	
+}
+
+demd_vigor_defender_victory_effect_target = {
+	scope:attacker = { save_scope_as = loser }
+	scope:defender = { save_scope_as = winner }
+	if = {
+		limit = { NOT = { scope:winner.culture = scope:loser.culture } }		
+		if = {
+			limit = { any_in_list = { list = target_titles tier = tier_empire } }
+			demd_vigor_war_end_effect_by_tier = { amount = huge }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = huge }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = massive_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else_if = {
+			limit = { any_in_list = { list = target_titles tier = tier_kingdom } }
+			demd_vigor_war_end_effect_by_tier = { amount = large }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = large }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = major_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else_if = {
+			limit = { any_in_list = { list = target_titles tier = tier_duchy } }
+			demd_vigor_war_end_effect_by_tier = { amount = medium }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = medium }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = medium_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else = {
+			demd_vigor_war_end_effect_by_tier = { amount = small }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = small }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = minor_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+	}
+	else = {
+		if = {
+			limit = { any_in_list = { list = target_titles tier = tier_empire } }
+			demd_vigor_same_culture_effect_by_tier = { amount = huge }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = huge }
+		}
+		else_if = {
+			limit = { any_in_list = { list = target_titles tier = tier_kingdom } }
+			demd_vigor_same_culture_effect_by_tier = { amount = large }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = large }
+		}
+		else_if = {
+			limit = { any_in_list = { list = target_titles tier = tier_duchy } }
+			demd_vigor_same_culture_effect_by_tier = { amount = medium }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = medium }
+		}
+		else = {
+			demd_vigor_same_culture_effect_by_tier = { amount = small }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = small }
+		}
+	}
+}
+
+#####################################################################
+
+demd_vigor_attacker_victory_effect_no_target = {
+	scope:attacker = { save_scope_as = winner }
+	scope:defender = { save_scope_as = loser }
+	if = {
+		limit = { NOT = { scope:winner.culture = scope:loser.culture } }		
+		if = {
+			limit = { scope:defender.highest_held_title_tier = tier_empire }
+			demd_vigor_war_end_effect_by_tier = { amount = large }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = large }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = major_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else_if = {
+			limit = { scope:defender.highest_held_title_tier = tier_kingdom }
+			demd_vigor_war_end_effect_by_tier = { amount = medium }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = medium }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = medium_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else_if = {
+			limit = { scope:defender.highest_held_title_tier = tier_duchy }
+			demd_vigor_war_end_effect_by_tier = { amount = small }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = small }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = minor_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+	}
+	else = {
+		if = {
+			limit = { scope:defender.highest_held_title_tier = tier_empire }
+			demd_vigor_same_culture_effect_by_tier = { amount = large }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = large }
+		}
+		else_if = {
+			limit = { scope:defender.highest_held_title_tier = tier_kingdom }
+			demd_vigor_same_culture_effect_by_tier = { amount = medium }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = medium }
+		}
+		else_if = {
+			limit = { scope:defender.highest_held_title_tier = tier_duchy }
+			demd_vigor_same_culture_effect_by_tier = { amount = small }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = small }
+		}
+	}
+}
+
+demd_vigor_defender_victory_effect_no_target = {
+	scope:attacker = { save_scope_as = loser }
+	scope:defender = { save_scope_as = winner }
+	if = {
+		limit = { NOT = { scope:winner.culture = scope:loser.culture } }		
+		if = {
+			limit = { scope:defender.highest_held_title_tier = tier_empire }
+			demd_vigor_war_end_effect_by_tier = { amount = large }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = large }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = major_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else_if = {
+			limit = { scope:defender.highest_held_title_tier = tier_kingdom }
+			demd_vigor_war_end_effect_by_tier = { amount = medium }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = medium }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = medium_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+		else_if = {
+			limit = { scope:defender.highest_held_title_tier = tier_duchy }
+			demd_vigor_war_end_effect_by_tier = { amount = small }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = small }
+			scope:defender.culture = { change_cultural_acceptance = { target = scope:attacker.culture value = minor_cultural_acceptance_loss desc = acceptance_change_war } }
+		}
+	}
+	else = {
+		if = {
+			limit = { scope:defender.highest_held_title_tier = tier_empire }
+			demd_vigor_same_culture_effect_by_tier = { amount = large }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = large }
+		}
+		else_if = {
+			limit = { scope:defender.highest_held_title_tier = tier_kingdom }
+			demd_vigor_same_culture_effect_by_tier = { amount = medium }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = medium }
+		}
+		else_if = {
+			limit = { scope:defender.highest_held_title_tier = tier_duchy }
+			demd_vigor_same_culture_effect_by_tier = { amount = small }
+			demd_imperial_decay_war_end_effect_by_tier = { amount = small }
+		}
+	}
+}
+
+#####################################################################
+
+demd_vigor_same_culture_effect_by_tier = {
+	if = {
+		limit = { 			 
+			scope:attacker.culture = { 
+				NOR = {
+					has_cultural_parameter = prevent_intracultural_war_vigor_loss 
+					var:dominant_faith = { has_doctrine_parameter = prevent_intracultural_war_vigor_loss }
+				}
+			} 				
+		}
+		scope:attacker.culture = { demd_alter_vigor_CB = { operation = subtract amount = $amount$ } }
+		every_player = {
+			limit = { 
+				culture = scope:attacker.culture 
+				NOT = { this = scope:attacker }
+			}
+			send_interface_message = {
+				type = event_steward_task_bad	
+				title = demd_vigor_war_lost_$amount$	
+				desc = demd_vigor_war_lost_$amount$_desc
+				left_icon = scope:attacker
+				right_icon = scope:defender					
+			}
+		}
+	}
+}
+
+demd_vigor_war_end_effect_by_tier = {
+	scope:winner.culture = { demd_alter_vigor_CB = { operation = add amount = $amount$ } }
+	scope:loser.culture = { demd_alter_vigor_CB = { operation = subtract amount = $amount$ } }
+
+	every_player = {
+		limit = { 
+			culture = scope:winner.culture 
+			NOT = { this = scope:winner }
+		}
+		send_interface_message = {
+			type = event_steward_task_good	
+			title = demd_vigor_war_won_$amount$	
+			desc = demd_vigor_war_won_$amount$_desc
+			left_icon = scope:loser
+			right_icon = scope:winner					
+		}
+	}
+	every_player = {
+		limit = { 
+			culture = scope:loser.culture 
+			NOT = { this = scope:loser }
+		}
+		send_interface_message = {
+			type = event_steward_task_bad	
+			title = demd_vigor_war_lost_$amount$	
+			desc = demd_vigor_war_lost_$amount$_desc
+			left_icon = scope:loser
+			right_icon = scope:winner					
+		}
+	}
+}
+
+demd_imperial_decay_war_end_effect_by_tier = {
+	if = {
+		limit = { scope:winner.highest_held_title_tier = tier_empire }
+		scope:winner.primary_title = { 
+			save_scope_as = empire_title
+			demd_alter_imperial_decay_CB = { operation = subtract amount = $amount$ } 
+		}
+		
+		every_player = {
+			limit = { is_vassal_of = scope:winner }
+			send_interface_message = {
+				type = event_steward_task_good	
+				title = demd_imperial_decay_war_won_$amount$	
+				desc = demd_imperial_decay_war_won_$amount$_desc
+				left_icon = scope:loser
+				right_icon = scope:winner					
+			}
+		}
+		
+	}
+	if = {
+		limit = { scope:loser.highest_held_title_tier = tier_empire }
+		scope:loser.primary_title = { 
+			save_scope_as = empire_title
+			demd_alter_imperial_decay_CB = { operation = add amount = $amount$ } 
+		}
+		
+		every_player = {
+			limit = { is_vassal_of = scope:loser }
+			send_interface_message = {
+				type = event_steward_task_bad	
+				title = demd_imperial_decay_war_won_$amount$	
+				desc = demd_imperial_decay_war_won_$amount$_desc
+				left_icon = scope:loser
+				right_icon = scope:winner					
+			}
+		}		
+	}
+}
+
+#####################################################################
+
+demd_low_vigor_reset = {
+	custom_tooltip = demd_low_vigor_reset_$ethos$
+	set_culture_pillar = ethos_$ethos$
+	demd_change_martial_directional = yes
+	demd_swap_low_vigor_traditions = yes
+	demd_alter_vigor = { amount = huge operation = add }
+	every_player = {
+		limit = {
+			culture = prev
+			# NOT = { this = prev.culture_head }
+		}
+		trigger_event = demd_vigor.0002
+	}
+	set_variable = { name = reformation_blocked value = 0 years = 50 }
+}
+
+demd_change_martial_directional = { # move in the direction of higher vigor baseline
+	if = {
+		limit = { has_cultural_pillar = martial_custom_equal }
+		set_culture_pillar = martial_custom_male_only
+	}
+	else_if = {
+		limit = { has_cultural_pillar = martial_custom_female_only }
+		set_culture_pillar = martial_custom_equal
+	}
+}
+
+demd_low_fervor_reset = {
+	custom_tooltip = demd_low_fervor_reset
+	
+	if = {
+		limit = { has_doctrine = doctrine_pluralism_pluralistic }
+		add_doctrine = doctrine_pluralism_righteous
+	}
+	else_if = {
+		limit = { has_doctrine = doctrine_pluralism_righteous }
+		add_doctrine = doctrine_pluralism_fundamentalist
+	}
+	
+	if = {
+		limit = { has_doctrine = doctrine_polygamy }
+		add_doctrine = doctrine_concubines
+	}
+	else_if = {
+		limit = { has_doctrine = doctrine_concubines }
+		add_doctrine = doctrine_monogamy
+	}
+	
+	if = {
+		limit = { has_doctrine = doctrine_homosexuality_accepted }
+		add_doctrine = doctrine_homosexuality_shunned
+	}
+	#else_if = {
+	#	limit = { has_doctrine = doctrine_homosexuality_shunned }
+	#	add_doctrine = doctrine_homosexuality_crime
+	#}
+	
+	if = {
+		limit = { has_doctrine = doctrine_deviancy_accepted }
+		add_doctrine = doctrine_deviancy_shunned
+	}
+	#else_if = {
+	#	limit = { has_doctrine = doctrine_deviancy_shunned }
+	#	add_doctrine = doctrine_deviancy_crime
+	#}
+	
+	if = {
+		limit = { has_doctrine = doctrine_adultery_men_accepted }
+		add_doctrine = doctrine_adultery_men_shunned
+	}
+	
+	if = {
+		limit = { has_doctrine = doctrine_adultery_women_accepted }
+		add_doctrine = doctrine_adultery_women_shunned
+	}
+	
+	if = {
+		limit = { has_doctrine = doctrine_kinslaying_accepted }
+		add_doctrine = doctrine_kinslaying_shunned
+	}
+	
+	if = {
+		limit = { has_doctrine = doctrine_gender_female_dominated }
+		add_doctrine = doctrine_gender_equal
+	}
+	else_if = {
+		limit = { has_doctrine = doctrine_gender_equal }
+		add_doctrine = doctrine_gender_male_dominated
+	}
+	
+	if = {
+		limit = { has_doctrine = doctrine_consanguinity_unrestricted }
+		add_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece
+	}
+	else_if = {
+		limit = { has_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece }
+		add_doctrine = doctrine_consanguinity_cousins
+	}
+	
+	if = {
+		limit = { has_doctrine = doctrine_clerical_gender_female_only }
+		add_doctrine = doctrine_clerical_gender_either
+	}
+	else_if = {
+		limit = { has_doctrine = doctrine_clerical_gender_either }
+		add_doctrine = doctrine_clerical_gender_male_only
+	}	
+}

@@ -1,0 +1,280 @@
+﻿demd_trade_node_struggle_setup_effect = {
+	set_variable = is_trade_node_struggle
+	every_county_in_region = {
+		region = $REGION$
+		prev = { add_to_variable_list = { name = trade_node_counties target = prev } }
+		set_variable = { name = trade_node value = prev }
+		set_variable = { name = produced_trade_value value = 0 }
+		set_variable = { name = trade_power value = 0 }	
+	}
+	set_variable = {
+		name = trade_node_size
+		value = {
+			every_in_list = {
+				variable = trade_node_counties
+				add = 1
+			}
+		}
+	}
+	set_variable = { name = node_weather_fertility_mult value = 0 }
+	set_variable = { name = trade_node_wealth value = 100 }
+	set_variable = { name = num_strategic_locations value = 0 }
+	set_variable = { name = node_produced_trade_value value = 1 }
+	set_variable = { name = node_trade_power value = 1 }
+	set_variable = { name = domestic_collected_trade_value value = 1 }
+	set_variable = { name = imported_collected_trade_value value = 1 }
+	set_variable = { name = total_collected_trade_value value = 2 }
+	demd_set_initial_node_ownership = yes
+	
+}
+
+demd_set_initial_node_ownership = {	
+	set_variable = { name = temp value = 0 }
+	every_interloper_ruler = {
+		limit = { 
+			is_landed = yes
+		}
+		if = { 
+			limit = { prev.var:temp < sub_realm_size } 
+			prev = { 
+				set_variable = { name = new_node_owner value = prev } 
+				set_variable = { name = temp value = prev.sub_realm_size }
+			}
+		}
+	}
+	every_involved_ruler = {
+		limit = { 
+			is_landed = yes
+		}
+		if = { 
+			limit = { prev.var:temp < sub_realm_size } 
+			prev = { 
+				set_variable = { name = new_node_owner value = prev } 
+				set_variable = { name = temp value = prev.sub_realm_size }
+			}
+		}
+	}
+	set_variable = { name = node_owner value = var:new_node_owner }
+	
+	#set_variable = { name = dominant_faith value = var:node_owner.faith }
+	#set_variable = { name = dominant_culture value = var:node_owner.culture }
+	#set_culture_as_involved = var:dominant_culture
+	#set_faith_as_involved = var:dominant_faith
+}
+
+demd_trade_node_new_artifact_effect = {
+	scope:newly_created_artifact = {
+		if = {
+			limit = { rarity = illustrious }
+			scope:inspiration_sponsor = {
+				every_character_struggle = {
+					limit = { phase_has_catalyst = catalyst_commissioned_illustrious_artifact }
+					activate_struggle_catalyst = {
+						catalyst = catalyst_commissioned_illustrious_artifact
+						character = prev
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { rarity = famed }
+			scope:inspiration_sponsor = {
+				every_character_struggle = {
+					limit = { phase_has_catalyst = catalyst_commissioned_famed_artifact }
+					activate_struggle_catalyst = {
+						catalyst = catalyst_commissioned_famed_artifact
+						character = prev
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { rarity = masterwork }
+			scope:inspiration_sponsor = {
+				every_character_struggle = {
+					limit = { phase_has_catalyst = catalyst_commissioned_masterwork_artifact }
+					activate_struggle_catalyst = {
+						catalyst = catalyst_commissioned_masterwork_artifact
+						character = prev
+					}
+				}
+			}
+		}
+	}
+}
+
+#demd_initialize_all_trade_posts = {
+#	every_in_global_list = {
+#		variable = trade_nodes_global
+#		every_in_list = {
+#			variable = node_linkages
+#			every_in_list = {
+#				variable = linkage_counties
+#				demd_initialize_trade_post = yes
+#			}
+#		}
+#		every_in_list = {
+#			variable = strategic_locations
+#			demd_initialize_trade_post = yes
+#		}
+#	}
+#}
+
+#demd_initialize_trade_post = {
+#	if = {
+#		limit = { 
+#			OR = {
+#				has_county_modifier = demd_strategic_location
+#				has_county_modifier = demd_trade_linkage
+#			}
+#		}
+#		holder = {
+#			create_story = {
+#				type = story_cycle_trade_post
+#				save_scope_as = tp_story
+#			}
+#		}
+#		
+#		# Link story cycle to locale
+#		scope:tp_story = {
+#			set_variable = { name = trade_post_location value = prev }
+#		}
+#		set_variable = { name = trade_post_story value = scope:tp_story }
+#	}
+#}
+
+
+
+#demd_check_trade_post_owner_validity = {
+#	if = {
+#		limit = {
+#			story_owner = {
+#				OR = {
+#					is_landed = no
+#					NOT = { in_diplomatic_range = prev.var:trade_post_location.holder }
+#					# NOT = { capital_county.var:trade_node = prev.var:trade_post_location.var:trade_node }
+#				}
+#			}
+#		}
+#		make_story_owner = prev.var:trade_post_location.holder
+#	}
+#}
+
+
+demd_add_trade_node_strategic_location = {
+	save_scope_as = trade_node
+	if = {
+		limit = { 
+			NOT = { 
+				any_in_list = { 
+					variable = strategic_locations
+					this = $COUNTY$
+				} 
+			}
+			$COUNTY$ = { var:trade_node = scope:trade_node }
+		}
+		add_to_variable_list = { name = strategic_locations target = $COUNTY$ }
+		if = {
+			limit = { has_variable = num_strategic_locations }
+			change_variable = { name = num_strategic_locations add = 1 }
+		}
+		else = { set_variable = { name = num_strategic_locations value = 1 } }
+		$COUNTY$ = { 
+			add_county_modifier = demd_strategic_location 			
+		}
+	}	
+}
+
+demd_add_culture_to_trade_node = {
+	add_to_variable_list = { name = involved_cultures target = $CULTURE$ }
+	set_culture_as_involved = $CULTURE$
+}
+
+demd_add_faith_to_trade_node = {
+	add_to_variable_list = { name = involved_faiths target = $FAITH$ }
+	set_faith_as_involved = $FAITH$
+}
+
+demd_remove_culture_from_trade_node = {
+	remove_list_variable = { name = involved_cultures target = $CULTURE$ }
+	set_culture_as_uninvolved = $CULTURE$
+}
+
+demd_remove_faith_from_trade_node = {
+	remove_list_variable = { name = involved_faiths target = $FAITH$ }
+	set_faith_as_uninvolved = $FAITH$
+}
+
+demd_add_trade_node_linkage = {
+	dummy_male = {
+		create_story = {
+			type = story_cycle_trade_node_linkage
+			save_scope_as = linkage_story
+		}
+	}
+	
+	# Link story cycle to locale
+	save_scope_as = trade_node
+	scope:linkage_story = {
+		set_variable = { name = home_node value = prev }
+		set_variable = { name = linked_node value = struggle:demd_trade_node_struggle_$NODE$ }
+		set_variable = { name = num_linkages value = 0 }
+		every_in_global_list = {
+			variable = temp
+			if = {
+				limit = { var:trade_node = scope:trade_node }
+				add_county_modifier = demd_trade_linkage
+				add_to_variable_list = { name = county_trade_links target = scope:linkage_story }
+				prev = { 
+					add_to_variable_list = { name = linkage_counties target = prev } 
+					change_variable = { name = num_linkages add = 1 }
+				}
+			}	
+		}
+		clear_global_variable_list = temp
+		
+		prev = {
+			add_to_variable_list = { name = node_linkages target = scope:linkage_story }
+		}
+		
+		# Pulse the link
+		trade_node_linkage_story_standard_pulse = yes
+	}	
+}
+
+trade_node_linkage_story_standard_pulse = {
+	
+	set_variable = { name = linkage_trade_value value = linkage_trade_value }
+	
+	if = { 
+		limit = { has_variable_list = linkage_counties }
+		set_variable = { name = temp value = dummy_male }
+		every_in_list = { 
+			variable = linkage_counties
+			limit = {
+				demd_is_county_linkage_open_to_trade = yes
+			}
+			prev = { set_variable = { name = temp value = prev.holder } }
+		}
+		if = {
+			limit = { 
+				any_in_list = {
+					variable = linkage_counties
+					demd_is_county_linkage_open_to_trade = yes
+					percent = 1
+					holder = prev.var:temp
+				}
+			}
+			set_variable = has_monopoly
+		}
+		else = { remove_variable = has_monopoly }
+	}
+		
+	
+	set_variable = { name = linkage_trade_tariffs value = linkage_trade_tariffs }
+	
+	set_variable = { name = linkage_passed_trade_value value = linkage_passed_trade_value }
+	
+	set_variable = { name = linkage_trade_power value = linkage_trade_power }
+	
+}

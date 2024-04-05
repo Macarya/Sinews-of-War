@@ -1,0 +1,270 @@
+fertilitySetup = {
+
+	# set up node food district scale factors
+	# demd_node_food_districts_scale_factors = yes
+	
+    every_in_global_list = {
+        variable = trade_nodes_global
+		
+		set_variable = { name = node_weather_fertility_mult value = 0 }
+		
+		setNodeWeatherFertility = yes		
+	}
+    every_county = {
+		
+		set_variable = { name = county_weather_fertility_mult value = 0 }
+		
+		set_variable = { name = effective_tax_rate value = 0.05 } # set here bc fertility runs before economy during setup
+						
+		# set here bc fertility runs before economy
+		set_variable = { name = capital_production_multiplier value = 0 }
+		set_variable = { name = sanitation value = 0.5 } # set and change net food to avoid errors	
+		
+		every_county_province = {
+			set_variable = { name = capital_production_multiplier value = 0 }
+			set_variable = { name = food_districts_max value = food_districts_max }
+			set_variable = { name = food_producers_count value = 1 }
+			set_variable = { name = food_districts_count value = 1 }
+		}
+		
+		setCountyWeatherFertility = yes
+		
+	}	
+}
+
+fertilitySubRoutine = {
+    every_in_global_list = {
+        variable = trade_nodes_global
+		
+		setNodeWeatherFertility = yes
+	}	
+}
+
+county_fertility = {
+	setCountyWeatherFertility = yes
+	every_county_province = {
+		limit = { has_holding = yes }
+		manageJobs = yes
+		manageFoodProvince = yes
+		manageGoodsProvince = yes
+		removeExcessFoodDistricts = yes
+	}
+}
+
+setNodeWeatherFertility = {
+
+	change_variable = { name = node_weather_fertility_mult add = node_weather_fertility_mult_delta }
+		
+	# apply random fluctuation
+    random_list = { # roll for node weather change
+        100 = {
+        }
+        40 = {
+            change_variable = { name = node_weather_fertility_mult add = 0.01 }
+        }
+        40 = {
+            change_variable = { name = node_weather_fertility_mult add = -0.01 }
+        }
+        10 = {
+            change_variable = { name = node_weather_fertility_mult add = 0.02 }
+        }
+        10 = {
+            change_variable = { name = node_weather_fertility_mult add = -0.02 }
+        }
+		1 = {
+            change_variable = { name = node_weather_fertility_mult add = 0.04 }
+        }
+		1 = {
+            change_variable = { name = node_weather_fertility_mult add = -0.04 }
+        }
+    }
+}
+
+setCountyWeatherFertility = {
+
+	change_variable = { name = county_weather_fertility_mult add = county_weather_fertility_mult_delta }
+	
+	# apply random fluctuation
+    change_variable = { name = county_weather_fertility_mult add = { -0.04 0.04 } }
+	
+	# apply drought effects
+	if = {
+		limit = { has_county_modifier = demd_drought }
+		
+		change_variable = { name = county_weather_fertility_mult add = drought_yearly_weather_modifier }
+		
+		random_list = {
+			0 = { # end drought
+				modifier = {
+					add = drought_end_chance
+				}
+				demd_end_drought = yes
+			}
+			0 = { # don't end drought
+				modifier = {
+					add = drought_end_chance_neg
+				}
+			}
+		}
+	}	
+}
+
+manageJobs = {
+
+	# calculate the farming districts maximum
+    set_variable = { name = food_districts_max value = food_districts_max }
+
+
+	# how many food producers can work them maximally
+	set_variable = {
+		name = food_producers_max
+		value = {
+			value = var:food_districts_count
+			multiply = demd_jobs_per_district
+		}		
+	}
+	
+	# how many noble jobs are available
+	set_variable = {
+		name = knight_capacity_producers_max
+		value = {
+			value = var:population
+			multiply = demd_farmer_to_noble_ratio
+		}		
+	}
+
+	# unemploy everyone
+	set_variable = { name = food_producers_count value = 0 }
+	set_variable = { name = knight_capacity_producers_count value = 0 }
+	set_variable = { name = unemployed_count value = var:population }
+
+    # fill nobility
+    fillJob = { resource = knight_capacity amount = var:knight_capacity_producers_max }
+	
+	# fill farmers
+    fillJob = { resource = food amount = var:food_producers_max }
+	
+	# set production 	
+	set_variable = {
+        name = knight_capacity_produced
+        value = {
+            value = knight_capacity_produced_per_capita
+            multiply = var:knight_capacity_producers_count
+        }
+    }
+	
+	set_variable = { name = food_produced_per_capita value = food_produced_per_capita }
+	set_variable = {
+		name = food_produced
+		value = {
+			value = var:food_produced_per_capita
+			multiply = var:food_producers_count
+		}
+	}
+	
+	# build districts
+	set_variable = { name = prov_construction_capacity value = prov_construction_capacity }
+	set_variable = { name = prov_districts_to_build value = prov_districts_to_build }
+	set_variable = { name = prov_unused_construction_capacity value = prov_unused_construction_capacity }
+	
+    change_variable = { name = food_districts_count add = prov_districts_to_build }
+}
+
+manageFoodProvince = {
+
+    # remove depreciation from stockpile
+    set_variable = {
+        name = food_depreciation
+        value = {
+            value = var:food_stockpile
+            multiply = food_depreciation_rate
+        }
+    }
+    change_variable = { name = food_stockpile subtract = var:food_depreciation }
+	
+    # add food produced to stockpile
+    change_variable = { name = food_stockpile add = var:food_produced }
+	
+	# remove taxed food
+	set_variable = { name = food_taxed value = food_taxed }
+	change_variable = { name = food_stockpile subtract = var:food_taxed }
+	
+	############
+	# where does taxed food go?
+	
+	# to gold - default destination
+	set_variable = { name = food_taxed_to_gold value = var:food_taxed }
+	
+	# to demesne capital if this isn't the demesne capital
+	if = {
+		limit = { NOT = { county.holder.capital_county = county } }
+		
+		set_variable = { name = food_taxed_to_capital value = food_to_capital }		
+		change_variable = { name = food_taxed_to_gold subtract = var:food_taxed_to_capital }
+		
+		county.holder.capital_county = { 
+			change_variable = { name = food_imported_from_demesne add = prev.var:food_taxed_to_capital }
+		}
+	}
+	else = {
+		set_variable = { name = food_taxed_to_capital value = 0 }
+	}
+	
+	# to liege demesne capital if we are a vassal
+	if = {
+		limit = { county.holder = { is_independent_ruler = no } }
+		
+		set_variable = { name = food_taxed_to_liege value = food_to_liege }		
+		change_variable = { name = food_taxed subtract = var:food_taxed_to_liege }
+		county.holder.liege.capital_county = { 
+			change_variable = { name = food_imported_from_vassals add = prev.var:food_taxed_to_liege } 
+		}
+	}
+	else = {
+		set_variable = { name = food_taxed_to_liege value = 0 }
+	}
+	
+	#############
+
+	# export to county
+	set_variable = { name = food_exported value = food_exported }
+	change_variable = { name = food_stockpile subtract = var:food_exported }
+	county = { change_variable = { name = food_imported_from_baronies add = prev.var:food_exported } }
+	
+	# consume food
+	set_variable = { name = food_demanded value = food_demanded }
+	set_variable = { name = food_consumed value = food_stockpile_excess }
+    change_variable = { name = food_stockpile subtract = var:food_consumed }
+	
+	# for migr/growth
+	set_variable = {
+		name = food_ratio
+		value = {
+            value = {
+                value = var:food_consumed
+                divide = var:food_demanded
+            }
+		}
+	}
+}
+
+manageGoodsProvince = {
+    # remove depreciation from stockpile
+    set_variable = {
+        name = goods_depreciation
+        value = {
+            value = var:goods_stockpile
+            multiply = goods_depreciation_rate
+        }
+    }
+    change_variable = { name = goods_stockpile subtract = var:goods_depreciation }
+	
+    # add goods imported to stockpile
+    change_variable = { name = goods_stockpile add = var:goods_imported }
+
+	set_variable = { name = capital_production_multiplier value = capital_production_multiplier }
+}
+
+removeExcessFoodDistricts = {
+	change_variable = { name = food_districts_count subtract = food_districts_to_remove } 
+}

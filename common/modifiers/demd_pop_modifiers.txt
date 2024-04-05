@@ -1,0 +1,378 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+let_city_burn = {
+	icon = devastation
+	general_opinion = -10
+	county_opinion_add = -30
+}
+
+successful_relief = {
+	icon = treatment_positive
+	county_opinion_add = 10
+}
+
+no_relief = {
+	icon = treatment_negative
+	county_opinion_add = -10
+}
+
+######################
+
+plague_present = {
+	icon = death_disease
+}
+
+plague_immunity = {
+	icon = plague_immune
+}
+
+quarantine = {
+	icon = quarantine
+	county_opinion_add = -10
+}
+
+secluded_court = {
+	icon = quarantine
+	county_opinion_add = -25
+	monthly_prestige_gain_mult = -0.25
+}
+
+demd_drought = {
+	icon = county_modifier_drought
+}
+
+demd_flood_mild = {
+	icon = county_modifier_flood_1
+	hostile_raid_time = 0.25
+	defender_holding_advantage = 5
+}
+
+demd_flood_moderate = {
+	icon = county_modifier_flood_2
+	hostile_raid_time = 0.5
+	defender_holding_advantage = 10
+}
+
+demd_flood_severe = {
+	icon = county_modifier_flood_3
+	hostile_raid_time = 0.75
+	defender_holding_advantage = 15
+}
+
+demd_avalanche_mild = {
+	icon = county_modifier_avalanche_1
+	hostile_raid_time = 0.25
+}
+
+demd_avalanche_moderate = {
+	icon = county_modifier_avalanche_2
+	hostile_raid_time = 0.5
+}
+
+demd_avalanche_severe = {
+	icon = county_modifier_avalanche_3
+	hostile_raid_time = 0.75
+}
+
+######################
+
+demd_tax_setting_4 = {
+	icon = stewardship_negative
+	county_opinion_add = -40
+	development_growth_factor = -0.5
+}
+
+demd_tax_setting_3 = {
+	icon = stewardship_negative
+	county_opinion_add = -20
+	development_growth_factor = -0.2
+}
+
+demd_tax_setting_2 = {
+	icon = stewardship_positive
+}
+
+demd_tax_setting_1 = {
+	icon = stewardship_positive
+	county_opinion_add = 5
+}
+
+demd_tax_setting_0 = {
+	icon = stewardship_positive
+	county_opinion_add = 10
+}
+
+demd_manpower_setting_4 = {
+	icon = martial_negative
+	county_opinion_add = -40
+	development_growth_factor = -0.25
+}
+
+demd_manpower_setting_3 = {
+	icon = martial_negative
+	county_opinion_add = -20
+	development_growth_factor = -0.1
+}
+
+demd_manpower_setting_2 = {
+	icon = martial_positive
+}
+
+demd_manpower_setting_1 = {
+	icon = martial_positive
+	county_opinion_add = 5
+}
+
+demd_manpower_setting_0 = {
+	icon = martial_positive
+	county_opinion_add = 10
+}
+
+#############################################
+
+demd_public_order_setting_4 = {
+	icon = county_modifier_control_positive
+}
+
+demd_public_order_setting_3 = {
+	icon = county_modifier_control_positive
+}
+
+demd_public_order_setting_2 = {
+	icon = county_modifier_control_positive
+}
+
+demd_public_order_setting_1 = {
+	icon = county_modifier_control_negative
+}
+
+demd_public_order_setting_0 = {
+	icon = county_modifier_control_negative
+}
+
+demd_sanitation_setting_4 = {
+	icon = treatment_positive
+}
+
+demd_sanitation_setting_3 = {
+	icon = treatment_positive
+}
+
+demd_sanitation_setting_2 = {
+	icon = treatment_positive
+}
+
+demd_sanitation_setting_1 = {
+	icon = treatment_negative
+}
+
+demd_sanitation_setting_0 = {
+	icon = treatment_negative
+}
+
+demd_irrigation_setting_4 = {
+	icon = feast_positive
+	development_growth_factor = 0.2
+}
+
+demd_irrigation_setting_3 = {
+	icon = feast_positive
+	development_growth_factor = 0.15
+}
+
+demd_irrigation_setting_2 = {
+	icon = feast_positive
+	development_growth_factor = 0.1
+}
+
+demd_irrigation_setting_1 = {
+	icon = feast_negative
+	development_growth_factor = 0.05
+}
+
+demd_irrigation_setting_0 = {
+	icon = feast_negative
+}
+
+demd_infrastructure_setting_4 = {
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.2
+}
+
+demd_infrastructure_setting_3 = {
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.15
+}
+
+demd_infrastructure_setting_2 = {
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.1
+}
+
+demd_infrastructure_setting_1 = {
+	icon = county_modifier_development_negative
+	development_growth_factor = 0.05
+}
+
+demd_infrastructure_setting_0 = {
+	icon = county_modifier_development_negative
+}
+
+######################
+
+demd_prov_tax_modifier_huge = {
+	monthly_income = 100
+	stacking = yes
+	
+}
+
+demd_prov_tax_modifier_big = {
+	monthly_income = 10
+	stacking = yes
+	
+}
+
+demd_prov_tax_modifier_medium = {
+	monthly_income = 1
+	stacking = yes
+	
+}
+
+demd_prov_tax_modifier_small = {
+	monthly_income = 0.1
+	stacking = yes
+	
+}
+
+######################
+
+demd_prov_supply_limit_modifier_huge = {
+	supply_limit = 12500
+	stacking = yes
+	
+}
+
+demd_prov_supply_limit_modifier_big = {
+	supply_limit = 2500
+	stacking = yes
+	
+}
+
+demd_prov_supply_limit_modifier_medium = {
+	supply_limit = 500
+	stacking = yes
+	
+}
+
+demd_prov_supply_limit_modifier_small = {
+	supply_limit = 100
+	stacking = yes
+	
+}
+
+######################
+
+demd_prov_garrison_modifier_huge = { 
+	garrison_size = 5
+	stacking = yes
+	
+}
+
+demd_prov_garrison_modifier_big = {
+	garrison_size = 1.25
+	stacking = yes
+	
+}
+
+demd_prov_garrison_modifier_medium = { 
+	garrison_size = 0.25
+	stacking = yes
+	
+}
+
+demd_prov_garrison_modifier_small = { 
+	garrison_size = 0.05
+	stacking = yes
+	
+}
+
+######################
+
+demd_prov_levy_modifier_huge = {
+	levy_size = 5
+	stacking = yes
+	
+}
+
+demd_prov_levy_modifier_big = { 
+	levy_size = 1.25
+	stacking = yes
+	
+}
+
+demd_prov_levy_modifier_medium = { 
+	levy_size = 0.25
+	stacking = yes
+	
+}
+
+demd_prov_levy_modifier_small = { 
+	levy_size = 0.05
+	stacking = yes
+	
+}
+
+
+######################
+
+demd_char_knight_capacity_modifier_big = { # 25
+	knight_limit = 25
+	stacking = yes
+	
+}
+
+demd_char_knight_capacity_modifier_medium = { # 5
+	knight_limit = 5
+	stacking = yes
+	
+}
+
+demd_char_knight_capacity_modifier_small = { # 1
+	knight_limit = 1
+	stacking = yes
+	
+}
+
+######################
+
+demd_char_regiment_capacity_modifier_big = { # 25
+	men_at_arms_limit = 25
+	stacking = yes
+	
+}
+
+demd_char_regiment_capacity_modifier_medium = { # 5
+	men_at_arms_limit = 5
+	stacking = yes
+	
+}
+
+demd_char_regiment_capacity_modifier_small = { # 1
+	men_at_arms_limit = 1
+	stacking = yes
+	
+}
+
+######################
+
+demd_strategic_location = {
+	icon = tariffs
+}
+
+demd_trade_linkage = {
+	icon = tariffs
+}

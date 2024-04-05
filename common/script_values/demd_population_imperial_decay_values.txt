@@ -1,0 +1,231 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+imperial_decay_min = 0
+imperial_decay_max = 1000
+
+low_imperial_decay = 200
+medium_imperial_decay = 400
+high_imperial_decay = 600
+very_high_imperial_decay = 800
+
+imperial_decay_delta = {
+	value = {
+		value = imperial_decay_delta_base
+		desc = "Base"
+	}
+	add = {
+		value = imperial_decay_from_population
+		desc = "From [Scope.ScriptValue('demd_title_population')|0]k [demd_population|E]"
+	}
+	add = {
+		value = imperial_decay_from_holder_vigor
+		desc = "From [vigor|E] of [holder|E]'s [culture|E]"
+	}
+	add = {
+		value = imperial_decay_from_crown_authority
+		desc = "From [crown_authority|E]"
+	}
+	add = {
+		value = imperial_decay_from_minor_ruler
+		desc = "[holder|E] is a child"
+	}
+	add = {
+		value = imperial_decay_from_incapable_ruler
+		desc = "[holder|E] is [GetTrait('incapable').GetName( GetNullCharacter )]"
+	}
+	add = {
+		value = imperial_decay_from_court_grandeur
+		desc = "From [holder|E] [court_grandeur_level|E]"
+	}
+	add = {
+		value = imperial_decay_from_cultural_disunity
+		desc = "From [Scope.ScriptValue('title_cultural_disunity_percentage')|0%] [culture|E] disunity"
+	}
+	add = {
+		value = imperial_decay_from_religious_disunity
+		desc = "From [Scope.ScriptValue('title_religious_disunity_percentage')|0%] [faith|E] disunity"
+	}
+}
+
+imperial_decay_delta_base = 0.1
+
+imperial_decay_from_population = {
+	value = var:title_population
+	multiply = 0.001
+	multiply = 0.1
+}
+
+imperial_decay_from_holder_vigor = {
+	value = holder.culture.var:vigor
+	subtract = 50
+	multiply = -0.025
+}
+
+###
+
+imperial_decay_from_crown_authority = {
+	holder = {
+		if = {
+			limit = { has_realm_law = crown_authority_0 }
+			add = imperial_decay_crown_authority_0
+		}
+		else_if = {
+			limit = { has_realm_law = crown_authority_1 }
+			add = imperial_decay_crown_authority_1
+		}
+		else_if = {
+			limit = { has_realm_law = crown_authority_2 }
+			add = imperial_decay_crown_authority_2
+		}
+		else = { add = imperial_decay_crown_authority_3 }
+	}
+}
+
+imperial_decay_crown_authority_0 = 2
+imperial_decay_crown_authority_1 = 1.5
+imperial_decay_crown_authority_2 = 1
+imperial_decay_crown_authority_3 = 0.5
+
+###
+
+imperial_decay_from_minor_ruler = {
+	if = { 
+		limit = { holder = { age < 16 } }
+		value = 16
+		multiply = 0.25
+		subtract = holder.age
+	}
+}
+
+imperial_decay_from_incapable_ruler = {
+	if = { 
+		limit = { holder = { has_trait = incapable } }
+		value = 4
+	}
+}
+
+imperial_decay_wrong_gender = {
+	if = {
+		limit = {
+			holder = {
+				OR = {
+					AND = {
+						is_female = yes
+						faith = { has_doctrine = doctrine_gender_male_dominated }
+					}
+					AND = {
+						is_female = no
+						faith = { has_doctrine = doctrine_gender_female_dominated }
+					}
+				}
+			}
+		}
+		value = 4
+	}
+}
+
+imperial_decay_from_court_grandeur = {
+	if = { 
+		limit = { holder = { has_royal_court = yes } }
+		value = holder.court_grandeur_current_level
+		multiply = -0.2
+	}
+}
+
+character_population = {
+	every_realm_county = {
+		add = var:county_population
+	}
+}
+
+imperial_decay_from_religious_disunity = {
+	value = title_religious_disunity_percentage
+	multiply = 5
+}
+title_religious_disunity_percentage = {
+	value = 1
+	subtract = title_religious_unity_percentage
+}
+title_religious_unity_percentage = {
+	if = {
+		limit = { var:title_population > 0 }
+		every_in_de_jure_hierarchy = {
+			limit = { 
+				tier = tier_county 
+				faith = prev.holder.faith
+			}
+			add = var:county_population
+		}
+		divide = var:title_population
+	}
+	else = { value = 1 }
+}
+
+imperial_decay_from_cultural_disunity = {
+	value = title_cultural_disunity_percentage
+	multiply = 2.5
+}
+title_cultural_disunity_percentage = {
+	value = 1
+	subtract = title_cultural_unity_percentage
+}
+title_cultural_unity_percentage = {
+	if = {
+		limit = { var:title_population > 0 }
+		every_in_de_jure_hierarchy = {
+			limit = { 
+				tier = tier_county 
+				culture = prev.holder.culture
+			}
+			add = var:county_population
+		}
+		divide = var:title_population
+	}
+	else = { value = 1 }
+}
+
+#################
+
+demd_imperial_decay_independence_faction_join_modifier = {
+	value = var:imperial_decay
+	multiply = 0.125
+}
+
+demd_imperial_decay_claimant_faction_join_modifier = {
+	value = var:imperial_decay
+	multiply = 0.075
+}
+
+demd_imperial_decay_fracture_faction_join_modifier = {
+	value = var:imperial_decay
+	subtract = 500
+	multiply = 0.15
+}
+
+demd_imperial_decay_tax_rate_mult = {
+	value = 1
+	add = demd_imperial_decay_tax_rate_reduction
+}
+
+demd_imperial_decay_tax_rate_reduction = {
+	value = var:imperial_decay
+	divide = imperial_decay_max
+	multiply = -0.5
+}
+
+demd_imperial_decay_manpower_rate_mult = {
+	value = 1
+	add = demd_imperial_decay_manpower_rate_reduction
+}
+
+demd_imperial_decay_manpower_rate_reduction = {
+	value = var:imperial_decay
+	divide = imperial_decay_max
+	multiply = -0.5
+}
+
+

@@ -1,0 +1,63 @@
+﻿
+
+demd_preservation_legacy_1 = { # Tutelary Fortresses / Fabian Strategy / Cartographic Studies / Risk Averse
+	legacy = demd_preservation_legacy_track
+	
+	can_be_picked = { always = no }
+
+	character_modifier = {
+		additional_fort_level = 2
+		controlled_province_advantage = 5
+		enemy_hostile_scheme_success_chance_add = -15
+		ai_rationality = medium_positive_ai_value
+	}
+	
+	ai_chance = {
+		value = 11
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}	
+}
+
+demd_preservation_legacy_2 = { # Dynastic Obligations
+	legacy = demd_preservation_legacy_track
+
+	character_modifier = {
+		fertility = 0.1
+		owned_personal_scheme_success_chance_add = 10
+	}
+}
+
+demd_preservation_legacy_3 = { # Army-in-being / Positional Warfare / Risk Averse / metodizmus
+	legacy = demd_preservation_legacy_track
+
+	character_modifier = {		
+		hard_casualty_modifier = -0.2
+		enemy_hard_casualty_modifier = -0.1
+		min_combat_roll = 4
+		max_combat_roll = -2
+	}
+}
+
+demd_preservation_legacy_4 = { # Internal Lines / Avenues of Retreat
+	legacy = demd_preservation_legacy_track
+
+	character_modifier = {
+		movement_speed = 0.1
+		retreat_losses = -0.33
+	}
+}
+
+demd_preservation_legacy_5 = { # Order and Legitimacy / Jus ad bellum
+	legacy = demd_preservation_legacy_track
+
+	character_modifier = {
+		different_culture_opinion = 5
+		tolerance_advantage_mod = 5
+		monthly_county_control_growth_add = 0.3		
+	}
+}

@@ -1,0 +1,15 @@
+﻿
+on_death = {
+	on_actions = {
+		demd_banking_death
+	}
+}
+
+demd_banking_death = {
+	trigger = {
+		exists = var:debt
+	}
+	effect = {
+		primary_heir = { set_variable = { name = debt value = prev.var:debt } }
+	}
+}

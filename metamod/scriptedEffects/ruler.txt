@@ -1,0 +1,146 @@
+rulerSetup = {
+	every_count_or_above = {
+		
+	}
+}
+
+ruler_pulse = {
+	setKnightCapacity = yes
+	setRegimentCapacity = yes
+	seizeBaronies = yes
+}
+
+
+
+setKnightCapacity = {
+	set_variable = { name = temp value = ruler_knight_capacity }
+
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_big
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_medium
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_small
+
+	while = {
+		limit = { var:temp > 25 }
+		add_character_modifier = demd_char_knight_capacity_modifier_big
+		change_variable = { name = temp subtract = 25 }
+	}
+	while = {
+		limit = { var:temp > 5 }
+		add_character_modifier = demd_char_knight_capacity_modifier_medium
+		change_variable = { name = temp subtract = 5 }
+	}
+	while = {
+		limit = { var:temp > 1 }
+		add_character_modifier = demd_char_knight_capacity_modifier_small
+		change_variable = { name = temp subtract = 1 }
+	}
+}
+
+setRegimentCapacity = {
+	set_variable = {
+		name = ruler_manpower
+		value = ruler_manpower
+	}
+	set_variable = {
+		name = regiment_capacity
+		value = total_regiment_capacity
+	}
+	set_variable = { name = temp value = var:regiment_capacity }
+	
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_big
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_medium
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_small
+
+	while = {
+		limit = { var:temp > 25 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_big
+		change_variable = { name = temp subtract = 25 }
+	}
+	while = {
+		limit = { var:temp > 5 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_medium
+		change_variable = { name = temp subtract = 5 }
+	}
+	while = {
+		limit = { var:temp > 1 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_small
+		change_variable = { name = temp subtract = 1 }
+	}
+}
+
+seizeBaronies = {
+	save_scope_as = usurper
+	if = {
+		limit = { 
+			domain_limit_available > 0 
+			is_ai = yes 
+			has_realm_law_flag = title_revocation_allowed
+		}
+		every_held_title = {
+			limit = { tier = tier_county }
+			every_county_province = {
+				limit = { 
+					has_holding = yes
+					province_owner = { has_same_government = scope:usurper }
+					NOT = { province_owner = scope:usurper }					
+					barony = { is_leased_out = no }
+				}
+				scope:usurper = { add_to_variable_list = { name = temp target = prev } }
+			}
+		}
+		ordered_in_list = {
+			variable = temp
+			order_by = monthly_income
+			position = 0		
+			scope:usurper = { get_title = prev.barony }
+		}
+		clear_variable_list = temp
+	}	
+}
+
+evaluateDebt = {
+	if = {
+		limit = { has_variable = debt }
+		change_variable = { name = debt add = yearly_interest }
+	}
+	
+	if = {
+		limit = { 
+			is_at_war = yes 
+			OR = { 			
+				gold < 0
+				AND = {
+					gold < major_gold_value # < one year of income is stored
+					monthly_character_balance < 0 # negative balance
+				}
+			}
+		}
+		take_on_debt = { AMOUNT = borrowing_amount }
+	}
+	else_if = {	
+		limit = {
+			has_variable = debt
+			OR = {
+				AND = {
+					is_at_war = no
+					gold > 0
+				}
+				AND = {
+					is_at_war = yes
+					gold > major_gold_value
+					monthly_character_balance > 0
+				}
+			}
+		}
+		pay_off_debt = { AMOUNT = repayment_amount }
+	}		
+}
+
+
+
+
+
+
+
+
+

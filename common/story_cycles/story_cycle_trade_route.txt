@@ -1,0 +1,51 @@
+﻿story_cycle_trade_node_linkage = {
+
+	on_setup = {
+		set_variable = { name = linkage_trade_value value = 0 }
+	}
+	
+	effect_group = {
+		days = 30		
+		triggered_effect = {
+			trigger = { always = yes }
+			effect = { trade_node_linkage_story_standard_pulse = yes }
+		}
+	}
+	
+	
+	on_owner_death = {
+		make_story_owner = var:home_node.holder
+	}
+}
+
+#story_cycle_trade_post = {
+#	on_setup = {
+#		set_variable = { name = trade_post_trade_value value = 0 }
+#	}
+#	
+#	# Revert TP control if owner is invalid
+#	effect_group = {
+#		days = 365		
+#		triggered_effect = {
+#			trigger = { always = yes }
+#			effect = { 
+#				# check owner validity
+#				demd_check_trade_post_owner_validity = yes
+#				
+#				set_variable = { name = trade_post_trade_value value = trade_post_trade_value }
+#			}
+#		}
+#	}
+#	
+#	on_owner_death = {
+#		make_story_owner = story_owner.primary_heir
+#		demd_check_trade_post_owner_validity = yes
+#	}
+#}
+
+
+
+
+
+
+

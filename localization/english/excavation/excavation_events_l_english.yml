@@ -1,0 +1,6 @@
+﻿l_english:
+
+ek_excavation.0001.t:0 "Excavation Complete"
+ek_excavation.0001.desc:0 "(placeholder) Sell [minor_artifacts|E] or use for [capital|E] [county|E] [development|E]."
+ek_excavation.0001.a:0 "Sell them."
+ek_excavation.0001.b:0 "Research them."

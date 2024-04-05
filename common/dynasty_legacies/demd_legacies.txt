@@ -1,0 +1,21 @@
+﻿demd_preservation_legacy_track = {
+	is_shown = {
+		always = no
+		dynasty = {
+			OR = {
+				dynast = { 
+					culture = { has_cultural_pillar = heritage_central_germanic }
+					OR = {
+						title:d_osterreich.holder = this
+						title:d_steyermark.holder = this
+						title:d_carinthia.holder = this
+						title:d_salzburg.holder = this
+						title:k_austria.holder = this
+					}
+				}				
+				has_dynasty_perk = demd_preservation_legacy_1
+			}
+		}
+	}
+}
+

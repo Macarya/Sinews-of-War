@@ -1,0 +1,149 @@
+﻿l_spanish:
+
+#############
+# Tribal 800-900
+#############
+
+innovation_currency_02:0 "Standardized Coinage"
+innovation_currency_02_desc:0 "When the Roman Empire finally collapsed in the west in the 5th century, the standardized coinage system so long established was also fragmented. The organized commercial world of Rome was converted to what was essentially a local agricultural society. When the Frankish kings began their rise to power in the 8th century it was clear that a better internal coinage system was needed. In 752, Pepin the Short demonetized the gold in his realm and issued a new coinage based on the denarius novus struck in good silver. With this move, true medieval coinages were initiated in the west. For nearly 600 years, this coin, called the denier in France, the penny in England, the dinero in Spain, the dinheiro in Portugal, the denaro in Italy, and the pfennig in Germany, in its parts and multiples was the standard coinage unit."
+
+innovation_plenary_assemblies:0 "Law Codes"
+innovation_plenary_assemblies_desc:0 "The earliest law codes were community-based and implied collective responsibility. It was the duty of any person wronged or discovering a felony to raise the hue and cry, and his neighbours were bound to come and assist him in the pursuit and apprehension of the offender. All those joining in the pursuit were justified in arresting the person pursued, even if it turned out that he was innocent. If the criminal bore apparent evidence of guilt on his person and if he resisted capture, he could be killed on the spot; if he submitted to capture, his fate was decided by due process."
+
+innovation_gavelkind:0 "Gavelkind"
+
+innovation_crop_rotation:0 "Waterwheels"
+innovation_crop_rotation_desc:0 "The simple water wheel converts the energy of flowing or falling water into useful forms of power, most often to drive a millstone for grinding the corn from which flour is made. The watermill’s great advantage was that it harnessed water, an inanimate source of energy, to do the difficult and time-consuming work of grinding grain. Watermills were sited close to a stream or river, whose flow could be controlled by building a dam to hold back the water. The Greek or Norse mill most common in the Middle Ages was ruggedly built of stone with turf roofs and featured simple machinery. Water was channelled into the lower chamber of the building where it powered a horizontally-mounted wheel. The revolving spindle or drive shaft passed up through the floor and through the 'eye' of the lower grindstone — which remained stationary-to the rotating top stone above it. Meal, fed from the hopper, was ground between the stones and collected in the flour box beneath."
+
+#############
+# Early Medieval 900-1000
+#############
+
+innovation_city_planning:0 "Town Charters"
+innovation_city_planning_desc:0 "Towns often received town privileges granting them autonomy from local secular or religious rulers. Such privileges often included the right to self-governance, economic autonomy, criminal courts, and militia. Town laws were more or less entirely copied from neighboring towns, such as the Westphalian towns of Soest, Dortmund, Minden, and Münster. Other priviliges often included the right to erect defense walls, to hold markets, trade particular goods, charge tolls, and mint coins. Citizens of towns also had a relative degree of personal freedom - they were not subject to the liegelord and had freedom of mobility, hence the old saying Stadslucht maakt vrij (\"City air makes one free\")."
+
+innovation_royal_prerogative:0 "Constables"
+innovation_royal_prerogative_desc:0 "Constables were responsible for overseeing the night watch and for providing security for traveling justices. The primary purpose of the watch and ward was to guard the city gates at night. The duties of watchmen were later expanded to include lighting streetlamps, calling time, watching for fires, and reporting other conditions."
+
+innovation_hereditary_rule:0 "Hereditary Rule"
+innovation_hereditary_rule_desc:0 "Evenly dividing the realm amongst all eligible heirs fractures the unity of our people. Instead of tearing our realm asunder on every succession we can ensure we have a stable and prosperous heartland by establishing a system of hereditary rule."
+
+innovation_development_01:0 "Open Field System"
+innovation_development_01_desc:0 "Under the open-field system, each manor or village had two or three large fields, usually several hundred acres each, which were divided into many narrow strips of land. The strips or selions were cultivated by individuals or peasant families, often called tenants or serfs. The Lord of the Manor, his officials, and a Manorial court administered the manor and exercised jurisdiction over the peasantry.  Lords demanded rents and labour from the tenants, but the tenants had firm user rights to cropland and common land and those rights were passed down from generation to generation. A medieval lord could not evict a tenant nor hire labour to replace him without legal cause. Most tenants likewise were not free without penalty to depart the manor for other locations or occupations."
+
+# innovation_royal_prerogative not placed
+
+#############
+# High Medieval 1000-1100
+#############
+
+innovation_guilds:0 "Guilds"
+innovation_guilds_desc:0 "Until this time, European merchants had been merely itinerant peddlers. Such merchants tended to band together in order to protect themselves as they made their business rounds. Gradually, these merchants’ associations soon became more tightly organized and were legalized and recognized by town governments. These merchant associations, or guilds, became intimately involved in regulating and protecting their members’ commerce, both in long-distance trade and in those activities which catered to the needs of the town’s inhabitants. Guilds came to control the distribution and sale of food, cloth, and other staple goods and thereby achieved a monopoly over the local commerce."
+
+innovation_ledger:0 "Roman Law"
+innovation_ledger_desc:0 "The growing merchant classes of medieval cities required law with a concept of equity, and law that covered situations inherent in urban life better than the primitive Germanic oral traditions. The provenance of the Code appealed to scholars who saw in the Holy Roman Empire a revival of venerable precedents from the classical heritage. The new class of lawyers staffed the bureaucracies that were beginning to be required by the princes of Europe. The University of Bologna, where Justinian's Code was first taught, remained the dominant centre for the study of law through the High Middle Ages."
+
+innovation_heraldry:0 "Heraldry"
+innovation_heraldry_desc:0 "Establishing hereditary designs to identify our noble families will cause their members to see themselves as part of a greater whole, encouraging them to improve their dynasty's reputation instead of merely being obsessed with personal status."
+
+
+innovation_casus_belli:0 "Artesian Well"
+innovation_casus_belli_desc:0 "The Artesian well was invented in France by Carthusian monks at Artois. The main idea of an Artesian well is to use the natural water pressure of aquifers to avoid pumping the water out of the earth. Artesian well water was widely used in industry during the medieval period, in brewing for example, and in providing clean, reliable water not contaminated by the rising population which used rivers and lakes for waste discharge."
+
+#############
+# Late Medieval 1100-1200
+#############
+
+innovation_manorialism:0 "Trade Fairs"
+innovation_manorialism_desc:0 "During the 12th century, many towns acquired the right from the Crown to hold an annual fair, usually serving a regional or local customer base and lasting for two or three days. Local nobles and churchmen could draw a considerable profit from hosting these events, and in turn the crown benefited from the payments given for the original charter. These fairs could be huge events; St Ives' Great Fair drew merchants from Flanders, Brabant, Norway, Germany and France for a four-week event each year, turning the normally small town into a major commercial emporium. Dozens of stalls would be established and hundreds of pounds of goods bought and sold. Special courts, called courts of piepowders would be established to govern the events and settle disputes; this would include establishing local law and order, imposing systems of weights and measures; monitoring legal contracts and other features of medieval trade."
+
+innovation_currency_01:0 "Urban Freedom"
+innovation_currency_01_desc:0 "It was customary law that a city resident was free after one year and one day. After this he could no longer be reclaimed by his employer and thus became bound to the city. Serfs could flee the feudal lands and gain freedom in this way, making cities a territory outside the feudal system to a certain extent."
+
+
+innovation_primogeniture:0 "Primogeniture"
+innovation_primogeniture_desc:0 "One kingdom, one heir. While the younger children of our monarch may feel forsaken by being denied an inheritance, this is the best way to ensure we keep a stable realm which does not get torn apart by succession crises."
+
+innovation_windmills:0 "Windmills"
+innovation_windmills_desc:0 "The horizontal-axis or vertical windmill (so called due to the plane of the movement of its sails) is a development of the 12th century, first used in northwestern Europe, in the triangle of northern France, eastern England and Flanders. The earliest type of European windmill was the post mill, so named because of the large upright post on which the mill's main structure is balanced. By mounting the body this way, the mill is able to rotate to face the wind direction; an essential requirement for windmills to operate economically in north-western Europe, where wind directions are variable. The body contains all the milling machinery. The first post mills were of the sunken type, where the post was buried in an earth mound to support it. Later, a wooden support was developed called the trestle. This was often covered over or surrounded by a roundhouse to protect the trestle from the weather and to provide storage space."
+
+#############
+# Transitional 1200-1300
+#############
+
+innovation_development_02:0 "Bills of Exchange"
+innovation_development_02_desc:0 "In order to avoid the costs and risks of physically transporting large sums of money when possible, bills of exchange became common in the 13th century among travellers and merchants, most famously those offered by the Knights Templar to prospective pilgrims to the Holy Land."
+
+innovation_divine_right:0 "Charters of Rights"
+innovation_divine_right_desc:0 "Charters of Rights outline the basic rights of citizens and declare that no one is above the rule of law—not even the king. The most famous of these is the Magna Carta, agreed to by King John of England in 1215 to make peace between the unpopular king and a group of rebel barons. It promised the protection of church rights, protection for the barons from illegal imprisonment, access to swift justice, and limitations on feudal payments to the Crown, to be implemented through a council of 25 barons. The charter became part of English political life and was typically renewed by each monarch in turn."
+
+innovation_chronicle_writing:0 "Code of Chivalry"
+innovation_chronicle_writing_desc:0 "Chivalry, or the chivalric code, is an informal code developed between 1170 and 1220 in the North of France prescribing the moral, religious and social rules of knightly conduct. It is that chivalry made its way to the West through Arabic literature in Andalusia in particular. The ideals of chivalry were then popularized via European literature, particularly the literary cycles known as the Matter of France, relating to the legendary companions of Charlemagne and his men-at-arms, the paladins, and the Matter of Britain, which popularized the legend of King Arthur and his knights of the Round Table."
+
+innovation_cranes:0 "Treadwheel Cranes"
+innovation_cranes_desc:0 "During the High Middle Ages, the treadwheel crane was reintroduced on a large scale after the technology had fallen into disuse in western Europe with the demise of the Western Roman Empire. The earliest reference to a treadwheel reappears in archival literature in France about 1225, followed by an illuminated depiction in a manuscript of French origin dating to 1240. Generally, vertical transport could be done more safely and inexpensively by cranes than by customary methods."
+
+
+
+#############
+# Early Ren 1300-1400
+#############
+
+innovation_armilary_sphere:0 "Securities Trading"
+innovation_armilary_sphere_desc:0 "Bankers started to trade in government securities, bond or other type of debt obligations issued by the state, for the first time in the 13th century in Venice, and the practice quickly spread to the nearby city states of Pisa, Verona, Genoa and Florence also began trading in government securities. By the 14th century, the first corporations emerged, with ownership structured via shares of stock which could be freely traded. One of the oldest private medieval corporations, the Stora Kopparberg mining community in Falun, Sweden, obtained a charter from King Magnus Eriksson in 1347."
+
+innovation_baliffs:0 "Free Cities"
+innovation_baliffs_desc:0 "A free city was subordinate only to the monarch, as opposed to a territorial city or town which was subordinate to a territorial prince – be it an ecclesiastical lord or a secular prince. The constitutions of Free Cities were republican in form, but the government was oligarchic in nature, with a governing council composed of the most economically significant burgher families who had asserted themselves politically over time. Below them were the citizens or burghers, the smaller, privileged section of the city's permanent population whose number varied according to the rule of citizenship of each city. To the common town dweller, attaining burgher status could be the aim of a lifetime."
+
+innovation_scutage:0 "Scutage"
+
+innovation_currency_03:0 "Cover Crops"
+innovation_currency_03_desc:0 "In the 14th Low Countries agricultural practices were developed that brought about the near elimination of fallow land by planting cover crops such as vetch, beans, turnips, spurry, and broom and high-value crops such as rapeseed, madder and hops. As opposed to the extensive agriculture of medieval times, this new technique involved intensive cultivation of small plots of land. Techniques of intensive cultivation quickly spread to Norfolk in England, agriculturally-speaking the most advanced area of England."
+
+#############
+# High Ren 1400-1500
+#############
+
+innovation_ermine_cloaks:0 "State Banks"
+innovation_ermine_cloaks_desc:0 "By 1338, there were more than eighty banking houses in Florence with operations across Europe. The financial success of Florentine banking activities led others to break the monopoly. During the fifteenth century, municipal banks became established, including one at Barcelona in 1401 and one a few years later at Valencia. One of the longest and most stable banks was the Bank of Saint George in Genoa, established in 1407 by state creditors and run by a board of directors."
+
+innovation_land_grants:0 "Legal Profession"
+innovation_land_grants_desc:0 "As is often the case today, lawyers were wealthy and were resented by those who had to pay vast sums for their services. A good lawyer could earn upwards of £10 a year and, by the fifteenth century, entering the legal profession was a good way for men of lowly origins to rise in society."
+
+innovation_development_03:0 "Printing Press"
+innovation_development_03_desc:0 "The sharp rise of medieval learning and literacy amongst the middle class led to an increased demand for books which the time-consuming hand-copying method fell far short of accommodating. In 1440, goldsmith Johannes Gutenberg invented the printing press, which could produce up to 3,600 pages per workday, compared to forty by hand-printing. By 1500, printing presses in operation throughout Western Europe had already produced more than twenty million volumes, and permanently altered the structure of society."
+
+innovation_currency_04:0 "Wetland Reclamation"
+innovation_currency_04_desc:0 "The first wind-driven water pumps using a scoop wheel could raise water at most five feet, though by combining mills the pumping height could be increased. Later mills were equipped with an Archimedes' screw which could raise water much higher. The polders, now often below sea level, were kept dry with mills pumping water from the polder ditches and canals to the boezem, a system of canals and lakes connecting the different polders and acting as a storage basin until the water could be let out to river or sea, either by a sluice gate at low tide or using further pumps."
+
+#############
+# Late Ren 1500-1600
+#############
+
+innovation_noblesse_oblige:0 "Silver Standard"
+innovation_noblesse_oblige_desc:0 "The silver standard is a monetary system in which the standard economic unit of account is a fixed weight of silver. Beginning in 1515, silver coins were minted at the silver mines at Joachimsthal in Bohemia. Although formally called Guldengroschen, they became known as Joachimsthalers, then shortened to thaler. The coins were widely circulated, and became the model for silver thalers issued by other European countries. The word thaler became dollar in the English language. The silver specie standard was widespread from the fall of the Byzantine Empire until the 19th century. Following the discovery in the 16th century of large deposits of silver at the Cerro Rico in Potosí, Bolivia, an international silver standard came into existence in conjunction with the Spanish pieces of eight. These silver dollar coins played the role of an international trading currency for nearly four hundred years."
+
+innovation_development_04:0 "Stipendiary Police"
+innovation_development_04_desc:0 "From the early 16th to the early 19th century, some groups of merchants, traders, church members, insurers, and others employed private individuals to protect their property and their persons. When communities began paying private citizens for the capture and conviction of thieves, a standard set of fees was established, and a stipendiary police system evolved. The stipendiary system was supported by a legal system that decreed draconian punishments for crimes that would be considered petty by contemporary standards; capital punishment and serious mutilation were prescribed for almost every conceivable offense. Such harsh punishments were handed out for two reasons—to deter wrongdoers and, failing that, to provide criminals with the opportunity to repent through punishment and save their souls."
+
+innovation_rightful_ownership:0 "Colonialism"
+innovation_rightful_ownership_desc:0 "European colonization of both Eastern and Western Hemispheres has its roots in Portuguese exploration. By finding the source of the lucrative spice trade, the Portuguese hoped to reap its profits for themselves. They also hoped to find the fabled Christian kingdom of Prester John, with an eye to encircling the Islamic Ottoman Empire. Bartolomeu Dias demonstrated it was possible to sail around Africa in 1488, paving the way for Vasco da Gama to reach India in 1498. After Columbus' first trips, competing Spanish and Portuguese claims to new territories and sea routes were solved with the Treaty of Tordesillas in 1494, which divided the world between the kingdoms of Castile and Portugal along a north–south meridian west of Cape Verde. Both Spain and Portugal profited handsomely from their newfound overseas colonies: the Spanish from gold and silver from mines such as Potosí and Zacatecas in New Spain, the Portuguese from the huge markups they enjoyed as trade intermediaries. Of course, it was not long before the exclusivity of Iberian claims was challenged by other up and coming European powers."
+
+innovation_court_officials:0 "Enclosure"
+innovation_court_officials_desc:0 "Enclosure was the legal process of consolidating small landholdings into larger farms. Once enclosed, use of the land became restricted and available only to the owner, and it ceased to be common land for communal use. Under enclosure, such land is fenced (enclosed) and deeded or entitled to one or more owners. The process of enclosure began to be a widespread feature of the agricultural landscape during the 16th century. The practice of enclosure, particularly of depopulating enclosure, was denounced by the Church and the government and legislation was drawn up against it. But elite opinion began to turn towards support for enclosure, and rate of enclosure only increased in the seventeenth century."
+
+#  did not find a place which is weird...
+
+#############
+# Special
+#############
+
+innovation_demd_carruca:0 "Heavy Plow"
+innovation_demd_carruca_desc:0 "The earliest plough, commonly known as the ard or scratch-plough, was unsuitable for the heavy soils found in most of northern Europe. The first advantage of the heavy plow is that it turns the soil, which allows for both better weed control on heavy soil in damp climates and incorporation into the soil of crop residues, green manure, animal manure or other substances. The second advantage is that mouldboard ploughing produced high-backed ridges, which contributed to more efficient drainage and better harvests in both wet and dry seasons: in the wettest season there would still be crops on the crest, and in the driest seasons there would still grow crops in the furrow. The third advantage is that the heavy plough handles the soil with such violence that cross-ploughing is not needed, thus freeing up labor time. By allowing for better field drainage, access to the most fertile soils, and saving of peasant labor time, the heavy plough stimulated food production and, as a consequence, population growth, specialization of function, urbanization, and the growth of leisure."
+
+
+
+
+
+
+

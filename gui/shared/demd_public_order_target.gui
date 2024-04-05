@@ -1,0 +1,130 @@
+types PublicOrder
+{
+    type public_order_target_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_demd_public_order!#  Current [demd_public_order|E]: [Province.GetCounty.GetTitle.MakeScope.Var('public_order').GetValue|0%]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_public_order|E] is a measurement of the strength of the rule of law among a [county|E]'s urban population. Low #defender_color Public Order#! will result in faster urban [demd_capital|E] depreciation in proportion to the size of the deficit. [demd_migration_pull|E] will also be reduced. Rural [demd_public_order|E] is always 100%.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Target: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('public_order_target')|0%]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Base: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_public_order_base_target')|0%]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [development|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('public_order_from_development')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_urbanization|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('public_order_from_urbanization')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_deaths|E] : -[Province.GetCounty.GetTitle.MakeScope.Var('total_death_rate').GetValue|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_edicts|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('edicts_public_order_bonus')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [buildings|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('building_public_order_bonus')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E]: [Province.GetCounty.GetCulture.MakeScope.Var('public_order_cultural_production_mult').GetValue|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.GetCounty.GetFaith.MakeScope.Var('public_order_faith_production_mult').GetValue|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [county_opinion|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('opinion_public_order')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [vigor|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('public_order_from_vigor')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				# Yearly Change
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Yearly Change: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('public_order_delta')|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

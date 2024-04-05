@@ -1,0 +1,245 @@
+county_var_forwarding = {
+	every_in_list = { 
+		variable = county_provinces
+		limit = { has_holding = yes }
+		
+		set_variable = { name = manpower_total_percent value = manpower_total_percent }
+		
+		if = {
+			limit = { county.title_province = this }
+			set_capital_province_troops = yes
+		}
+		else = {
+			set_minor_province_troops = yes
+		}
+		apply_province_garrison = yes
+		apply_province_levy = yes
+		apply_province_supply_limit = yes
+		apply_province_tax = yes 
+	}
+}
+
+set_capital_province_troops = {
+
+	set_variable = {
+		name = manpower
+		value = {
+			value = var:population
+			add = county.var:population
+			multiply = var:manpower_total_percent
+			multiply = 1000	
+		}
+	}
+	set_variable = { 
+		name = garrison 
+		value = {
+			value = var:manpower
+			multiply = garrison_manpower_percent
+		}
+	} 
+	set_variable = { 
+		name = levy 
+		value = {
+			value = var:manpower
+			multiply = {
+				value = 1
+				subtract = garrison_manpower_percent
+			}
+			multiply = { # percent levy = percent of manpower coming from rural 
+				value = var:population
+				divide = {
+					value = var:population
+					add = county.var:population
+				}
+			}
+		}
+	} 
+	set_variable = { 
+		name = free_manpower 
+		value = {
+			value = var:manpower
+			subtract = var:garrison
+			subtract = var:levy
+		}
+	}
+}
+
+set_minor_province_troops = {
+	set_variable = {
+		name = manpower
+		value = {
+			value = var:population
+			multiply = var:manpower_total_percent
+			multiply = 1000	
+		}
+	}
+	set_variable = { 
+		name = garrison 
+		value = {
+			value = var:manpower
+			multiply = garrison_manpower_percent
+		}
+	} 
+	set_variable = { 
+		name = levy 
+		value = {
+			value = var:manpower
+			subtract = var:garrison
+		}
+	} 
+}
+
+
+######################
+# Apply Tax
+######################
+
+apply_province_tax = { # scope:province
+
+    set_variable = {
+        name = temp
+        value = {
+            value = population_tax
+        }
+    }
+
+    remove_all_province_modifier_instances = demd_prov_tax_modifier_huge
+    remove_all_province_modifier_instances = demd_prov_tax_modifier_big
+    remove_all_province_modifier_instances = demd_prov_tax_modifier_medium
+    remove_all_province_modifier_instances = demd_prov_tax_modifier_small
+
+    while = {
+        limit = { var:temp > 100 }
+        add_province_modifier = demd_prov_tax_modifier_huge
+        change_variable = { name = temp subtract = 100 }
+    }
+    while = {
+        limit = { var:temp > 10 }
+        add_province_modifier = demd_prov_tax_modifier_big
+        change_variable = { name = temp subtract = 10 }
+    }
+    while = {
+        limit = { var:temp > 1 }
+        add_province_modifier = demd_prov_tax_modifier_medium
+        change_variable = { name = temp subtract = 1 }
+    }
+    while = {
+        limit = { var:temp > 0 }
+        add_province_modifier = demd_prov_tax_modifier_small
+        change_variable = { name = temp subtract = 0.1 }
+    }
+}
+
+######################
+# Apply Garrison
+######################
+
+apply_province_garrison = {
+	set_variable = { 
+		name = temp 
+		value = var:garrison 
+	}
+
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_huge
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_big
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_medium
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_small
+	if = {
+		limit = { building_max_garrison > 45 }
+		while = {
+			limit = { var:temp > demd_prov_garrison_huge }
+			add_province_modifier = demd_prov_garrison_modifier_huge
+			change_variable = { name = temp subtract = demd_prov_garrison_huge }
+		}
+		while = {
+			limit = { var:temp > demd_prov_garrison_big } 
+			add_province_modifier = demd_prov_garrison_modifier_big
+			change_variable = { name = temp subtract = demd_prov_garrison_big }
+		}
+		while = {
+			limit = { var:temp > demd_prov_garrison_medium } 
+			add_province_modifier = demd_prov_garrison_modifier_medium
+			change_variable = { name = temp subtract = demd_prov_garrison_medium }
+		}
+		while = {
+			limit = { var:temp > demd_prov_garrison_small } 
+			add_province_modifier = demd_prov_garrison_modifier_small
+			change_variable = { name = temp subtract = demd_prov_garrison_small }
+		}
+	}
+}
+
+######################
+# Apply levy
+######################
+
+apply_province_levy = {
+	set_variable = { 
+		name = temp 
+		value = var:levy 
+	}
+
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_huge
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_big
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_medium
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_small
+	if = {
+		limit = { building_levies > 45 }
+		while = {
+			limit = { var:temp > demd_prov_levy_huge } 
+			add_province_modifier = demd_prov_levy_modifier_huge
+			change_variable = { name = temp subtract = demd_prov_levy_huge }
+		}
+		while = {
+			limit = { var:temp > prev.demd_prov_levy_big }
+			add_province_modifier = demd_prov_levy_modifier_big
+			change_variable = { name = temp subtract = demd_prov_levy_big }
+		}
+		while = {
+			limit = { var:temp > prev.demd_prov_levy_medium } 
+			add_province_modifier = demd_prov_levy_modifier_medium
+			change_variable = { name = temp subtract = demd_prov_levy_medium }
+		}
+		while = {
+			limit = { var:temp > prev.demd_prov_levy_small } 
+			add_province_modifier = demd_prov_levy_modifier_small
+			change_variable = { name = temp subtract = demd_prov_levy_small }
+		}
+	}
+}
+
+######################
+# Apply Supply Limit
+######################
+
+apply_province_supply_limit = {
+
+    set_variable = { name = temp value = supply_limit }
+
+    remove_all_province_modifier_instances = demd_prov_supply_limit_modifier_huge
+	remove_all_province_modifier_instances = demd_prov_supply_limit_modifier_big
+	remove_all_province_modifier_instances = demd_prov_supply_limit_modifier_medium
+	remove_all_province_modifier_instances = demd_prov_supply_limit_modifier_small
+
+
+    while = {
+        limit = { var:temp > 12500 }
+        add_province_modifier = demd_prov_supply_limit_modifier_huge
+        change_variable = { name = temp subtract = 12500 }
+    }
+    while = {
+        limit = { var:temp > 2500 }
+        add_province_modifier = demd_prov_supply_limit_modifier_big
+        change_variable = { name = temp subtract = 2500 }
+    }
+    while = {
+        limit = { var:temp > 500 }
+        add_province_modifier = demd_prov_supply_limit_modifier_medium
+        change_variable = { name = temp subtract = 500 }
+    }
+    while = {
+        limit = { var:temp > 100 }
+        add_province_modifier = demd_prov_supply_limit_modifier_small
+        change_variable = { name = temp subtract = 100 }
+    }
+}

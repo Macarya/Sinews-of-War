@@ -1,0 +1,137 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+ruler_manpower = {
+	value = 0
+	every_directly_owned_province = {
+		limit = { 
+			county.title_province = this
+			has_variable = free_manpower # suppress startup errors
+		}
+		add = var:free_manpower
+	}
+}
+
+vassal_manpower = {
+	value = 0
+	every_vassal = {
+		limit = { has_variable = ruler_manpower }
+		add = {
+			value = var:ruler_manpower
+			multiply = free_manpower_to_liege_rate
+		}
+	}
+	multiply = 0.5
+}
+
+total_manpower = {
+	value = ruler_manpower
+	add = vassal_manpower
+}
+
+###
+
+ruler_regiment_capacity = {
+	value = ruler_manpower
+	divide = demd_manpower_per_regiment
+}
+
+ruler_regiment_capacity_display = {
+	value = ruler_regiment_capacity
+	add = 1 # we round up effectively
+}
+
+vassal_regiment_capacity = {
+	value = vassal_manpower
+	divide = demd_manpower_per_regiment
+}
+
+vassal_regiment_capacity_display = {
+	value = vassal_regiment_capacity
+	add = 1 # we round up effectively
+}
+
+total_regiment_capacity = {
+	value = total_manpower
+	divide = demd_manpower_per_regiment
+}
+
+total_regiment_capacity_display = {
+	value = {
+		value = 1
+		desc = "Base"
+	}
+	add = {
+		value = vassal_regiment_capacity
+		desc = "From [Scope.ScriptValue('vassal_manpower')|0] [vassal|E] [demd_manpower|E]"
+	}
+	add = {
+		value = ruler_regiment_capacity
+		desc = "From [Scope.ScriptValue('ruler_manpower')|0] [domain|E] [demd_manpower|E]"
+	}
+}
+
+###
+
+
+ruler_knight_capacity = {
+	value = highest_held_title_tier
+	every_held_title = {
+		limit = { tier = tier_county }
+		every_county_province = {
+			limit = { has_variable = knight_capacity_produced }
+			add = var:knight_capacity_produced
+		}
+	}
+	min = 1
+}
+
+##########################################################
+# VERY Important below values are matched to the modifier sizes in demd_pop_modifiers.txt
+
+demd_prov_levy_huge = {
+	value = building_levies
+	multiply = 5
+}
+
+demd_prov_levy_big = {
+	value = building_levies
+	multiply = 1.25
+}
+
+demd_prov_levy_medium = {
+	value = building_levies
+	multiply = 0.25
+}
+
+demd_prov_levy_small = {
+	value = building_levies
+	multiply = 0.05
+}
+
+###
+
+demd_prov_garrison_huge = {
+	value = building_max_garrison
+	multiply = 5
+}
+
+demd_prov_garrison_big = {
+	value = building_max_garrison
+	multiply = 1.25
+}
+
+demd_prov_garrison_medium = {
+	value = building_max_garrison
+	multiply = 0.25
+}
+
+demd_prov_garrison_small = {
+	value = building_max_garrison
+	multiply = 0.05
+}
+
+

@@ -1,0 +1,319 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+startupPulse = {
+	demd_set_ancestral_faiths = yes
+	every_province = {	
+		reset_building_vars = yes
+		set_variable = { name = food_producers_max value = 1 }
+		set_variable = { name = food_districts_max value = 1 }
+		set_variable = { name = food_taxed_to_gold value = 0 }
+		set_variable = { name = goods_stockpile value = 0.1 }
+		set_variable = { name = goods_imported value = 0.1 }
+		set_variable = { name = population value = 0.1 }
+		set_variable = { name = manpower value = 0.1 }
+		set_variable = { name = food_demanded value = 1 }
+		set_variable = { name = food_produced value = 1 }
+		set_variable = { name = food_ratio value = 1 }
+		set_variable = { name = food_consumed value = 1 }
+		set_variable = { name = growth_rate value = 0} 
+		set_variable = { name = migration_growth_percent value = 0 }
+		set_variable = { name = migration_pull value = 1 }
+		set_variable = { name = internal_migration_growth_percent value = 0 }
+		set_variable = { name = free_manpower value = 0 }
+	}
+	every_county = {	
+		set_variable = { name = food_imported_from_baronies value = 1 }
+		set_variable = { name = goods_stockpile value = 0.1 }
+		set_variable = { name = population value = 0.1 }
+		set_variable = { name = county_population value = 0.1 }
+		set_variable = { name = food_demanded value = 0.1 }
+		set_variable = { name = food_consumed value = 0.1 }
+		set_variable = { name = growth_rate value = 0} 
+		set_variable = { name = migration_growth_percent value = 0 }
+		set_variable = { name = internal_migration_growth_percent value = 0 }
+		set_variable = { name = irrigation_setting value = 2 }
+		set_variable = { name = num_neighbors value = 0 }
+		every_neighboring_county = {
+			prev = { change_variable = { name = num_neighbors add = 1 } }
+			prev = { add_to_variable_list = { name = county_neighbors target = prev } }
+		}
+		every_county_province = {
+			prev = { add_to_variable_list = { name = county_provinces target = prev } }
+		}
+		set_variable = { name = num_provinces value = 0 }
+		every_county_province = {
+			prev = { change_variable = { name = num_provinces add = 1 } }
+		}
+	}
+	every_religion_global = {
+        every_faith = {
+            set_variable = { name = food_faith_production_mult value = 0 }
+            set_variable = { name = fervor_faith_production_mult value = 0 }
+            set_variable = { name = vigor_faith_production_mult value = 0 }
+            set_variable = { name = goods_faith_production_mult value = 0 }
+            set_variable = { name = knight_capacity_faith_production_mult value = 0 }
+            set_variable = { name = manpower_faith_production_mult value = 0 }
+            set_variable = { name = public_order_faith_production_mult value = 0 }
+            set_variable = { name = sanitation_faith_production_mult value = 0 }
+            set_variable = { name = trade_power_faith_production_mult value = 0 }
+            set_variable = { name = trade_value_faith_production_mult value = 0 }
+            set_variable = { name = birth_rate_faith_production_mult value = 0 }
+            set_variable = { name = food_districts_faith_production_mult value = 0 }
+        }
+    }
+    every_culture_global = {
+        set_variable = { name = food_cultural_production_mult value = 0 }
+        set_variable = { name = goods_cultural_production_mult value = 0 }
+        set_variable = { name = knight_capacity_cultural_production_mult value = 0 }
+        set_variable = { name = manpower_cultural_production_mult value = 0 }
+        set_variable = { name = public_order_cultural_production_mult value = 0 }
+        set_variable = { name = sanitation_cultural_production_mult value = 0 }
+        set_variable = { name = trade_power_cultural_production_mult value = 0 }
+        set_variable = { name = trade_value_cultural_production_mult value = 0 }
+        set_variable = { name = food_districts_cultural_production_mult value = 0 }
+        set_variable = { name = birth_rate_cultural_production_mult value = 0 }
+        set_variable = { name = vigor_cultural_production_mult value = 0 }
+		set_variable = { name = culture_advancement value = culture_advancement }
+		set_variable = { name = culture_population value = culture_population }
+		set_variable = { name = dominant_faith value = calc_culture_dominant_faith }
+		set_variable = { name = vigor value = 50 }		
+    }
+	every_province = {		
+		set_variable = { name = food_districts_province value = food_districts_province }
+		set_variable = { name = soil_fertility_mult_target value = demd_prov_terrain_fertility_total }
+		set_variable = { name = terrain_sanitation_bonus value = demd_prov_sanitation_bonus }
+	}
+	every_county = {
+		set_variable = { name = terrain_sanitation_bonus value = title_province.demd_prov_sanitation_bonus }
+	}
+	demd_assign_special_resources = yes
+	every_county = {
+		set_variable = { name = terrain_conversion_defense_bonus value = demd_county_terrain_conversion_defense_mult }				
+		set_variable = { name = terrain_trade_power_bonus value = demd_county_trade_power_bonus }
+	}	
+	every_count_or_above = {
+	}
+	every_county = {		
+		demd_set_edict_setting = { TYPE = tax LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = manpower LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = public_order LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = sanitation LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = irrigation LEVEL = 2 }
+		demd_set_edict_setting = { TYPE = infrastructure LEVEL = 2 }
+	}
+	every_county = {
+		if = {
+			limit = { any_county_province = { terrain = mountains } }
+			set_variable = { name = avalanche_eligible }
+		}
+	}
+	every_county = {
+		set_variable = { name = migration_growth_percent value = 0 }
+		set_variable = { name = migration_growth value = var:migration_growth_percent } 
+		set_variable = { name = food_ratio value = 1 }
+		set_variable = { name = public_order value = 1 }
+		set_variable = { name = total_death_rate value = 0 }
+		set_variable = { name = maxPairwise value = 0.1 }
+		if = {
+			limit = { var:num_neighbors > 0 }
+			set_variable = {
+				name = max_migration_percent
+				value = {
+					value = 1
+					divide = var:num_neighbors
+					subtract = {
+						value = 0.1
+						divide = var:num_neighbors
+					}
+				}
+			}
+		}
+		else = {
+			set_variable = { name = max_migration_percent value = 0.9 }
+		}
+		remove_variable = num_neighbors
+		set_variable = { name = migration_pull value = 1 }
+	}
+    every_in_global_list = {
+        variable = trade_nodes_global
+		set_variable = { name = node_weather_fertility_mult value = 0 }
+    	change_variable = { name = node_weather_fertility_mult add = node_weather_fertility_mult_delta }
+        random_list = { 
+            100 = {
+            }
+            40 = {
+                change_variable = { name = node_weather_fertility_mult add = 0.01 }
+            }
+            40 = {
+                change_variable = { name = node_weather_fertility_mult add = -0.01 }
+            }
+            10 = {
+                change_variable = { name = node_weather_fertility_mult add = 0.02 }
+            }
+            10 = {
+                change_variable = { name = node_weather_fertility_mult add = -0.02 }
+            }
+    		1 = {
+                change_variable = { name = node_weather_fertility_mult add = 0.04 }
+            }
+    		1 = {
+                change_variable = { name = node_weather_fertility_mult add = -0.04 }
+            }
+        }
+	}
+    every_county = {
+		set_variable = { name = county_weather_fertility_mult value = 0 }
+		set_variable = { name = effective_tax_rate value = 0.05 } 
+		set_variable = { name = capital_production_multiplier value = 0 }
+		set_variable = { name = sanitation value = 0.5 } 
+		every_county_province = {
+			set_variable = { name = capital_production_multiplier value = 0 }
+			set_variable = { name = food_districts_max value = food_districts_max }
+			set_variable = { name = food_producers_count value = 1 }
+			set_variable = { name = food_districts_count value = 1 }
+		}
+    	change_variable = { name = county_weather_fertility_mult add = county_weather_fertility_mult_delta }
+        change_variable = { name = county_weather_fertility_mult add = { -0.04 0.04 } }
+    	if = {
+    		limit = { has_county_modifier = demd_drought }
+    		change_variable = { name = county_weather_fertility_mult add = drought_yearly_weather_modifier }
+    		random_list = {
+    			0 = { 
+    				modifier = {
+    					add = drought_end_chance
+    				}
+    				demd_end_drought = yes
+    			}
+    			0 = { 
+    				modifier = {
+    					add = drought_end_chance_neg
+    				}
+    			}
+    		}
+    	}	
+	}	
+   every_province = {
+		set_variable = { name = capital_production_multiplier value = 0 }
+		set_variable = { name = food_stockpile value = 0 }
+		set_variable = { name = sanitation value = 1 }
+		set_variable = { name = total_death_rate value = 0 }
+		set_variable = { name = food_demanded value = 1 }
+		set_variable = { name = food_consumed value = 1 }
+	}
+	every_county = {
+		set_variable = {
+			name = max_internal_migration_percent
+			value = {
+				value = 1
+				divide = var:num_provinces
+				subtract = {
+					value = 0.1
+					divide = var:num_provinces
+				}
+			}
+		}
+	}
+	demd_manual_pop_placements = yes
+	every_county = {
+		set_variable = { name = collected_trade_value value = 1 }
+		set_variable = { name = food_to_liege_rate value = 0.05 }
+		set_variable = { name = food_imported_from_baronies value = 0 }
+		set_variable = { name = food_imported_from_baronies_display value = 0 }
+		set_variable = { name = food_imported_from_demesne value = 0 }
+		set_variable = { name = food_imported_from_demesne_display value = 0 }
+		set_variable = { name = food_imported_from_vassals value = 0 }
+		set_variable = { name = food_imported_from_vassals_display value = 0 }
+		every_county_province = {
+			limit = { has_holding = yes }
+			set_variable = {
+				name = food_districts_count
+				value = {
+					value = food_districts_max
+					multiply = demd_farm_percent_used_at_start
+				}
+			}
+			set_variable = {
+				name = population
+				value = {
+					value = var:food_districts_count
+					multiply = demd_jobs_per_district
+					multiply = 1.05
+				}
+			}
+			set_variable = {
+				name = food_producers_max
+				value = {
+					value = var:population
+				}
+			}
+			set_variable = {
+				name = food_producers_count
+				value = {
+					value = var:food_producers_max
+				}
+			}
+			set_variable = { name = food_stockpile value = food_stockpile_target }
+		}
+		set_variable = { name = population value = starting_urban_population }
+		set_variable = { name = goods_producers_max value = var:population }
+		set_variable = { name = goods_producers_count value = var:goods_producers_max }
+		set_variable = {
+			name = goods_districts_count
+			value = {
+				value = var:population
+				divide = demd_jobs_per_district
+			}
+		}
+		clamp_variable = { name = goods_districts_count max = 1000 min = 1 }
+		set_variable = { name = food_stockpile value = food_stockpile_target }
+		set_variable = { 
+			name = goods_stockpile 
+			value = {
+				value = var:population
+				multiply = 0.2
+			}
+		}
+		set_variable = { name = county_population value = county_population }
+		set_variable = { name = public_order value = 0.5 }
+	}
+	every_county = {		
+		every_county_province = {
+			limit = { NOT = { has_holding = yes } }
+			set_variable = { name = holding_construction_progress value = 0 }
+		}
+    	random_county_province = {
+    		limit = { 
+    			has_variable = holding_construction_progress 
+    			var:holding_construction_progress < holding_construction_progress_max
+    			has_holding = no
+    		}
+    		county = { set_variable = { name = expansion_target value = prev } }
+    	}
+	}
+	every_county = {
+		remove_variable = tax_setting_changed
+		remove_variable = manpower_setting_changed
+		remove_variable = public_order_setting_changed
+		remove_variable = sanitation_setting_changed
+		remove_variable = irrigation_setting_changed
+		remove_variable = infrastructure_setting_changed
+		set_variable = { name = sanitation value = sanitation_target }
+		set_variable = { name = public_order value = public_order_target }
+		set_variable = { name = migration_pull value = migration_pull_target }	
+		every_county_province = {
+			limit = { has_holding = yes }
+			set_variable = { name = migration_pull value = migration_pull_target }
+		}
+	}
+	every_empire = {
+		limit = { is_title_created = yes }
+		set_variable = { name = title_population value = demd_title_population }
+		set_variable = { name = imperial_decay value = 0 }
+	}
+}
+

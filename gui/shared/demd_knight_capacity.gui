@@ -1,0 +1,80 @@
+types KnightCapacity
+{
+    type knight_capacity_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_demd_knight_capacity!#  [demd_knight_capacity|E] Produced: [Province.MakeScope.Var('knight_capacity_produced').GetValue|2]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_knight_capacity|E] is produced by [demd_job_nobles|E]. It increases the number of [knights|E] the [county|E] owner can support.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Produced per Capita:#! [Province.MakeScope.ScriptValue('knight_capacity_produced_per_capita')|2]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Base rate: [EmptyScope.ScriptValue('knight_capacity_base_output')|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.GetCounty.GetFaith.MakeScope.Var('knight_capacity_faith_production_mult').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E]: [Province.GetCounty.GetCulture.MakeScope.Var('knight_capacity_cultural_production_mult').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold @icon_demd_noble!#  [demd_job_nobles|E] Employed: [Province.MakeScope.Var('knight_capacity_producers_count').GetValue|2]k#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }				
+            }
+        }
+    }
+}

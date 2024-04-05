@@ -1,0 +1,9 @@
+﻿l_english:
+ convert_from_clan_to_feudalism_decision:0 "Adopt Feudalism"
+ convert_from_clan_to_feudalism_decision_desc:0 "As my realm grows, so does the challenge to control it. If [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] is to keep expanding, we must leave the old ways behind and convert to feudalism."
+ convert_from_clan_to_feudalism_decision_confirm:0 "Adopt Feudal Ways"
+ convert_from_clan_to_feudalism_decision_tooltip:0 "Change [government|E] type by becoming [feudal|E]"
+ convert_from_feudalism_to_clan_decision:0 "Adopt Clan-based Societal Structure"
+ convert_from_feudalism_to_clan_decision_desc:0 "As my realm grows, so does the challenge to control it. If [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] is to keep expanding, we must leave the old ways behind and convert to a clan-based societal structure."
+ convert_from_feudalism_to_clan_decision_confirm:0 "Adopt Clan Ways"
+ convert_from_feudalism_to_clan_decision_tooltip:0 "Change [government|E] type by becoming [clan|E]"

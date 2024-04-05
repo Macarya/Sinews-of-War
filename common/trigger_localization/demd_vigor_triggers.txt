@@ -1,0 +1,16 @@
+﻿demd_has_greater_than_low_vigor = {
+	global = demd_has_greater_than_low_vigor
+	global_not = demd_has_less_than_low_vigor
+}
+demd_has_greater_than_medium_vigor = {
+	global = demd_has_greater_than_medium_vigor
+	global_not = demd_has_less_than_medium_vigor
+}
+demd_has_greater_than_high_vigor = {
+	global = demd_has_greater_than_high_vigor
+	global_not = demd_has_less_than_high_vigor
+}
+demd_has_greater_than_very_high_vigor = {
+	global = demd_has_greater_than_very_high_vigor
+	global_not = demd_has_less_than_very_high_vigor
+}

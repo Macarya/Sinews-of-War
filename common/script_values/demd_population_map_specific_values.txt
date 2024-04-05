@@ -1,0 +1,68 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+#########################
+# Forwarding
+#########################
+
+food_to_liege_rate = {
+	if = {
+		limit = { is_independent_ruler = yes }
+		value = 0
+	}
+	else = {
+		# Feudal
+		if = {
+			limit = { has_government = feudal_government }
+			value = demd_feudal_tax_rate				
+		}
+		else_if = {
+			limit = { has_government = clan_government }
+			value = clan_tax_rate
+		}
+		else_if = {
+			limit = { has_government = tribal_government }
+			value = tribal_tax_rate
+		}
+		else_if = {
+			limit = { has_government = republic_government }
+			value = republic_tax_rate
+		}
+		else_if = {
+			limit = { has_government = theocracy_government }
+			value = theocratic_tax_rate
+		}
+		else = {
+			value = normal_tax
+		}
+	}
+}
+
+free_manpower_to_liege_rate = {
+	if = {
+		limit = { has_government = feudal_government }
+		value = demd_feudal_manpower_rate
+	}
+	else_if = {
+		limit = { has_government = clan_government }
+		value = clan_manpower_rate
+	}
+	else_if = {
+		limit = { has_government = tribal_government }
+		value = tribal_manpower_rate
+	}
+	else_if = {
+		limit = { has_government = theocracy_government }
+		value = theocratic_manpower_rate
+	}
+	else_if = {
+		limit = { has_government = republic_government }
+		value = republic_manpower_rate
+	}
+	else = {
+		value = normal_manpower_rate
+	}
+}

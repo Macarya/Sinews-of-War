@@ -1,0 +1,981 @@
+texticon = {
+	icon = icon_demd_raid
+	iconsize = {
+		texture = "gfx/interface/icons/regimenttypes/jomsviking_pirates.dds"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_sinews_of_war
+	iconsize = {
+		texture = "gfx/interface/icons/demd/sinews_of_war.png"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_imperial_decay
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/tier_down.dds"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_excavation
+	iconsize = {
+		texture = "gfx/interface/icons/excavation/icon_excavation.png"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_trade_post_generic
+	iconsize = {
+		texture = "gfx/interface/icons/demd/features/trading_post.jpg"	
+		size = { 680 380 }
+		offset = { 0 0 }
+		fontsize = 100%
+	}
+}
+
+texticon = {
+	icon = icon_excavation_progress
+	iconsize = {
+		texture = "gfx/interface/icons/excavation/icon_excavation_progress.png"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_excavation_quality
+	iconsize = {
+		texture = "gfx/interface/icons/excavation/icon_excavation_quality.png"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+
+texticon = {
+	icon = icon_next_roll
+	iconsize = {
+		texture = "gfx/interface/icons/excavation/icon_next_roll.png"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+texticon = {
+	icon = icon_breakthrough_chance
+	iconsize = {
+		texture = "gfx/interface/icons/excavation/icon_breakthough_chance.dds"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_minor_artifacts
+	iconsize = {
+		texture = "gfx/interface/icons/excavation/icon_minor_artifacts.png"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+texticon = {
+	icon = icon_check
+	iconsize = {
+		texture = "gfx/interface/icons/symbols/icon_check.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_cross
+	iconsize = {
+		texture = "gfx/interface/icons/symbols/icon_cross.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_population
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/clerk.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_influence
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_manpower
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/guardsman.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_migration
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/guest.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_opinion
+	iconsize = {
+		texture = "gfx/interface/icons/modifiers/county_modifier_opinion_positive.dds" 
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_fervor
+	iconsize = {
+		texture = "gfx/interface/icons/icon_fervor.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_piety
+	iconsize = {
+		texture = "gfx/interface/icons/currencies/icon_piety_christian_04.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_prestige
+	iconsize = {
+		texture = "gfx/interface/icons/currencies/icon_prestige_04.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_sanitation
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/sanitation.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_taxes
+	iconsize = {
+		texture = "gfx/interface/icons/icon_gold.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+texticon = {
+	icon = icon_arrow
+	iconsize = {
+		texture = "gfx/interface/icons/demd/icon_arrow_right.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_fervor_attack
+	iconsize = {
+		texture = "gfx/interface/icons/demd/icon_fervor_attack.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_fervor_defense
+	iconsize = {
+		texture = "gfx/interface/icons/demd/icon_fervor_defense.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_growth
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/council.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_building
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/building.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_births
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/child.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_deaths
+	iconsize = {
+		texture = "gfx/interface/icons/death_reason/death_natural.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_construction
+	iconsize = {
+		texture = "gfx/interface/icons/demd/construction_capacity.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_garrison
+	iconsize = {
+		texture = "gfx/interface/icons/icon_garrison.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_maa
+	iconsize = {
+		texture = "gfx/interface/icons/icon_soldier_survivor.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+texticon = {
+	icon = icon_loot
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/loot.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_supply
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/supply_limit.dds"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+
+texticon = {
+	icon = icon_fort
+	iconsize = {
+		texture = "gfx/interface/icons/icon_holding_castle.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_levy
+	iconsize = {
+		texture = "gfx/interface/icons/icon_soldier.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_conversion
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/religious.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_converting_religion
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/religious_councillor_job.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_knight
+	iconsize = {
+		texture = "gfx/interface/icons/icon_knight_small.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_culture
+	iconsize = {
+		texture = "gfx/interface/icons/icon_culture.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_culture_attack
+	iconsize = {
+		texture = "gfx/interface/icons/demd/icon_culture_attack.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_culture_defense
+	iconsize = {
+		texture = "gfx/interface/icons/demd/icon_culture_defense.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_county_corruption
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/county_corruption.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_plague_immune
+	iconsize = {
+		texture = "gfx/interface/icons/demd/modifiers/plague_immune.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_death_disease
+	iconsize = {
+		texture = "gfx/interface/icons/demd/modifiers/death_disease.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_advantage
+	iconsize = {
+		texture = "gfx/interface/icons/icon_battle_advantage.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_death_war
+	iconsize = {
+		texture = "gfx/interface/icons/demd/modifiers/death_war.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_death_natural
+	iconsize = {
+		texture = "gfx/interface/icons/demd/modifiers/death_natural.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_death_unknown
+	iconsize = {
+		texture = "gfx/interface/icons/demd/modifiers/death_unknown.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+
+
+
+
+
+texticon = {
+	icon = icon_demd_artisan
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/artisan.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_clerk
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/clerk.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_farmer
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/farmer.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_guardsman
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/guardsman.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_merchant
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/merchant.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_urbanization
+	iconsize = {
+		texture = "gfx/interface/icons/icon_holding_cow_metropolis.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_land_ownership
+	iconsize = {
+		texture = "gfx/interface/icons/message_feed/titles.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_noble
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/noble.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_priest
+	iconsize = {
+		texture = "gfx/interface/icons/demd/jobs/priest.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_gold
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/gold.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_amenities
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/amenities.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_public_order
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/public_order.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_treasury
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/treasury.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_knight_capacity
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/knight_capacity.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_research
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/research.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_development
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/development.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_food
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/food.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_goods
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/goods.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_fertility
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/fertility.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_trade_value
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/trade_value.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_trade_power
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/trade_power.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_trade_resource
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/luxuries.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_gold
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/gold.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_silver
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/silver.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_wine
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/wine.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_silk
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/silk.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_spices
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/spices.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_amber
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/amber.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_gems
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/jewelry.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_ivory
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/ivory.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_salt
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/salt.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_furs
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/furs.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_dyes
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/dyes.png"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+##############################
+
+texticon = {
+	icon = icon_demd_gold_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/gold.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_silver_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/silver.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_wine_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/wine.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_silk_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/silk.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_spices_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/spices.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_amber_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/amber.dds"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_gems_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/jewelry.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_ivory_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/ivory.dds"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_salt_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/salt.dds"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_furs_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/furs.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+texticon = {
+	icon = icon_demd_dyes_small
+	iconsize = {
+		texture = "gfx/interface/icons/demd/resources/trade_resources/dyes.png"
+		size = { 20 20 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

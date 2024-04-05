@@ -1,0 +1,9 @@
+﻿
+#flood_flavor_events = {
+#	chance_to_happen = 5 # increase as more events are written
+	#random_events = { # temp disabled
+	#	10 = demd_pop_flood.1006
+	#	10 = demd_pop_flood.1007
+	#}
+#}
+

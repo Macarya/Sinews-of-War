@@ -1,0 +1,29 @@
+﻿l_english:
+
+button_start_excavation:0 "Start Excavation"
+
+button_replace_excavation_leader:0 "Replace"
+
+# EXCAVATION_REMOVE_LEADER_TOOLTIP:0 "Remove [excavation_leader|E]"
+EXCAVATION_REMOVE_LEADER_TOOLTIP:0 "..."
+
+
+DEMD_START_EXCAVATION:0 "#bold @icon_excavation!#  $ruins_display_name$#!\nStart Excavation: @icon_taxes!# [EmptyScope.ScriptValue('excavation_start_cost')|0]"
+
+appoint_new_excavation_leader:0 "Appoint Excavation Leader"
+
+ruins_display_name:0 "[Province.GetCounty.GetTitle.Custom('get_ruins_name')]"
+
+background_ruins_egyptian_generic:0 "@icon_egyptian!#"
+
+ruins_fort_generic:0 "Ruined Fort"
+ruins_cave_generic:0 "Ruined Cave"
+ruins_egyptian_generic:0 "Ancient Egyptian Ruins"
+ruins_nordic_generic:0 "Nordic Ruins"
+ruins_dwemer_generic:0 "Dwemer Ruins"
+ruins_fallback_error_1:0 "Unknown Ruins Type"
+ruins_fallback_error_2:0 "No Known Ruins"
+
+excavation_stage_intermediate_tt:0 "#T @icon_excavation!#  [excavation_stage|E] End\n\n#P [Province.GetCounty.GetTitle.MakeScope.Var('active_excavation').Story.MakeScope.ScriptValue('excavation_breakthrough_chance')|0]%#! chance of a [excavation_breakthrough|E]\n\n$TAB$#P Chance of increasing [excavation_quality|E]#!\n"
+
+icon_trade_post_generic:0 "@icon_trade_post_generic!#"

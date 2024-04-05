@@ -1,0 +1,4 @@
+######################
+# GRAND RITE STUFF
+######################
+standard_witch_ritual_cooldown_time = 3650

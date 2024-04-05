@@ -1,0 +1,4 @@
+﻿l_spanish:
+ game_concept_county_development:0 "Investigación"
+ game_concept_development:0 "Investigación"
+ game_concept_county_development_desc:0 "$game_concept_county_development$ es la medida del avance tecnológico en un [county|E]"

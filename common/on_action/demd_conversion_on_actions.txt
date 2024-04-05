@@ -1,0 +1,28 @@
+﻿
+# demd_conversion_faith_pulse = {
+	# random_events = {
+		# 10 = demd_pop_religious_conversion.1001
+		# 10 = demd_pop_religious_conversion.1002
+		# 10 = demd_pop_religious_conversion.1003
+		# 10 = demd_pop_religious_conversion.1004
+		# 10 = demd_pop_religious_conversion.1005
+		# 10 = demd_pop_religious_conversion.1006
+		# 10 = demd_pop_religious_conversion.1007
+		# 10 = demd_pop_religious_conversion.1008
+	# }
+# }
+
+# demd_conversion_culture_pulse = {
+	# random_events = {
+		# 10 = demd_pop_culture_conversion.1002
+		# 10 = demd_pop_culture_conversion.1003
+		# 10 = demd_pop_culture_conversion.1004
+		# 10 = demd_pop_culture_conversion.1005
+		# 10 = demd_pop_culture_conversion.1006
+		# 10 = demd_pop_culture_conversion.1007
+		# 10 = demd_pop_culture_conversion.1008
+		# 10 = demd_pop_culture_conversion.1009
+		# 10 = demd_pop_culture_conversion.1010
+		# 10 = demd_pop_culture_conversion.1011
+	# }
+# }

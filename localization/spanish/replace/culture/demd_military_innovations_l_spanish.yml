@@ -1,0 +1,150 @@
+﻿l_spanish:
+
+############
+# VA 800-900
+############
+
+innovation_bannus:0 "Bannus"
+innovation_bannus_desc:0 "In the Middle Ages, the ban was originally the power to command men in war and evolved into the general authority to order and to punish. As such, it was the basis for the raising of armies and the exercise of justice. Under the Merovingian dynasty, the ban was used mainly by the kings to summon free men to military service but by the Carolingian period, a series of capitularies defined the ban's three components: the right to defend the defenceless, jurisdiction over violent crimes, and the right to summon free men for military service."
+
+innovation_mustering_grounds:0 "Art of War"
+innovation_mustering_grounds_desc:0 "The treatise De Re Militari by Flavius Vegetius Renatus was the bible of warfare throughout the Middle Ages, the soldier's equivalent of the Rule of St. Benedict. In contrast to Byzantium, where a succession of authors since Urbicius (ca. 500) strove to keep military literature up to date, the Latin civilization of the West was content with a single book. Vegetius, who explicitly omitted cavalry from his exposition, became the philosopher-schoolmaster of Western chivalry."
+
+innovation_quilted_armor:0 "Wolf Furnace"
+innovation_quilted_armor_desc:0 "The Wolf Furnace or Stückofen, perfected in central Europe in the eighth century, was an upwards extension of the primitive low bloomery with a quadrangular shaft ten to sixteen feet high. An opening in the front two feet square called the breast was kept open until the furnace was heated. Then, coincidentally with the closing of the breast with brick, the ore and charcoal were thrown into the furnace and the last was applied from two or more bellows on each side. The salamander of mixed iron and steel, roughly 500 pounds, was then taken from the breast and cut up. Wolf Furnances yielded over 100 tons per year of good iron as well as steel, most of which skilled smiths were able to salvage."
+
+innovation_burhs:0 "Burhs"
+innovation_burhs_desc:0 "Fighting men, regardless of social status, age, arms, or training, were assigned to a unit centered on an urbs. In the vicinity of those walls they trained on a regular basis, and to these fortified localities they reported for service, be it for castle-work or for marching orders to join an armed expedition into foreign territory."
+
+
+############
+# EM 900-1000
+############
+
+innovation_barracks:0 "Levy"
+innovation_barracks_desc:0 "Under the feudal conditions for holding land in the medieval period, all peasants, freemen commoners and noblemen aged 15 to 60 could be summoned for military duty when required by either the king or the local lord, bringing with them weapons and armor according to their wealth. These levies fought as footmen, sergeants, and men at arms under local superiors appointed by the king or the local lord such as the arrière-ban in France. Although the exact laws varied greatly depending on the country and the period, generally these levies were only obliged to fight for one to three months. Many were subsistence farmers, and it was in everyone's interest to send the men home for harvest-time."
+
+innovation_house_soldiers:0 "Crossbows"
+
+innovation_motte:0 "Nailed Horseshoes"
+innovation_motte_desc:0 "The predecessor of horseshoes was the Roman hipposandal, leather boots reinforced by an iron plate rather than nailed horseshoes. The first nailed horseshoes appeared around 900 AD, and by the end of the century cast bronze horseshoes with nail holes became common in Europe. In the time of the Crusades (1096–1270), horseshoes were even accepted in lieu of coin to pay taxes due to the value of the iron used to forge them."
+
+innovation_battlements:0 "Fire Pots"
+innovation_battlements_desc:0 "Rudimentary incendiary grenades appeared in the Eastern Roman (Byzantine) Empire, not long after the reign of Leo III (717–741). Byzantine soldiers learned that Greek fire, a Byzantine invention of the previous century, could not only be thrown by flamethrowers at the enemy but also in stone and ceramic jars. Later, glass containers were employed. The use of incendiary grenades spread to Muslim armies in the Near East, then to western Europe during the Crusades." 
+
+
+############
+# HM 1000-1100
+############
+
+innovation_knighthood:0 "Noble Retinues"
+innovation_knighthood_desc:0 "The lance fournie was a medieval equivalent to the modern army squad that would have accompanied and supported a man-at-arms in battle. A lance was usually led and raised by a knight in the service of his liege, yet it is not uncommon in certain periods to have a less privileged man, such as a serjeants-at-arms, lead a lance. More powerful knights, also known as a knight bannerets, could field multiple lances."
+
+innovation_arched_saddle:0 "Frontal Cavalry Charges"
+innovation_arched_saddle_desc:0 "Two variants on the couched lance charge developed, the French method, en haie, with lancers in a double line and the German method, with lancers drawn up in a deeper formation which was often wedge-shaped. It is commonly believed that this became the dominant European cavalry tactic in the 11th century after the development of the cantled saddle and stirrups (the Great Stirrup Controversy), and of rowel spurs (which enabled better control of the mount). Cavalry thus outfitted and deployed had a tremendous collective force in their charge, and could shatter most contemporary infantry lines."
+
+innovation_men_at_arms:0 "Jazerant"
+innovation_men_at_arms_desc:0 "The Jazerant or Jazeraint was an adaptation of chain mail in which the chain mail would be sewn in between layers of linen or quilted armour."
+
+innovation_hoardings:0 "Hoardings"
+
+############
+# LM 1100-1200
+############
+
+innovation_castle_baileys:0 "Urban Militia"
+innovation_castle_baileys_desc:0 "Foreign wars were typically fought with professional soldiers such as knights and nobles and levies recruited from the countryside were used. Urban militias from the towns usually played no role in those wars, but could well appear in the event of a civil war or if the defense of their homes in case of invasion. Militia fought primarily as infantry organized by guild and were usually well-equipped with steel helmets, mail haubergeons, spears, pikes, bows, and crossbows, though it varied by era and the wealth of their home city."
+
+innovation_advanced_bowmaking:0 "Pikemen"
+innovation_advanced_bowmaking_desc:0 "The Lombard municipal infantry at Legnano in 1176 organized themselves into three defensive lines along a wide semicircle, each of which consisted of soldiers protected by shields. Between one shield and another the lances were then stretched, with the first row of foot soldiers fighting on their knees so as to form a jumble of spears aimed at the enemy. During the fight, which lasted eight to nine hours from morning to three in the afternoon and which was characterized by repeated charges punctuated by long pauses, the first two lines finally gave way, but the third resisted. This was among the first battles in which infantry proved capable of decisively defeating heavy cavalry on open ground."
+
+innovation_horseshoes:0 "Coat of Plates"
+innovation_horseshoes_desc:0 "A coat of plates is a form of segmented torso armour consisting of overlapping metal plates riveted inside a cloth or leather garment. The coat of plates is considered part of the era of transitional armour and was normally worn as part of a full knightly harness. It is thought the development of this type of harness is directly linked to the knightly needs for better protection against cavalry lances, since mail made the horseman vulnerable only to such penetrating strikes.  The coat saw its introduction in Europe among the elite at the end of the 12th century, and was well established by the 1250s. By the 1350s it was universal among infantry militias as well, and the plates covering the chest had been combined to form an early breastplate."
+
+innovation_trebuchet:0 "Trebuchet"
+innovation_trebuchet_desc:0 "Trebuchets were a genuine medieval invention and were first seen in Italy in the 12th century CE and used more widely from the 13th century CE, when they are recorded in England, Germany, and France. A trebuchet used a counterweight made from stone or metal plating to spring a single arm and propel a heavy boulder towards the enemy. The arm, attached to a metal axle and greased with animal fat, was wound tense by a winch. As they could launch heavier stones than the mangonels and fired them with a higher trajectory, all but the thickest fortification walls were now in danger of being crushed to rubble by the trebuchet." 
+
+############
+# T1 1200-1300
+############
+
+innovation_demd_free_comps:0 "Free Companies"
+innovation_demd_free_comps_desc:0 "A free company was an army of mercenaries recruited by private employers during wars. In periods of truce, when soldiers would be laid off en masse, many formed armed bands and made a living by pillaging the countryside until hostilities resumed."
+
+innovation_demd_halberds:0 "Pike Squares"
+innovation_demd_halberds_desc:0 "At the Battle of Morgarten the Swiss Eidgenossen learned that an unarmoured man with a 7-foot halberd could dispatch an armoured man-at-arms. Displaying striking adaptability, they replaced some of their halberds with the pike, an 18-foot spear with a small piercing head. No longer outreached by the knight’s lance, and displaying far greater cohesion than any knightly army, the Swiss soon showed that they could defeat armoured men-at-arms, mounted or dismounted, given anything like even numbers. With the creation of the pike square tactical formation, the Swiss provided the model for the modern infantry regiment."
+
+innovation_royal_armory:0 "Blast Furnace"
+innovation_royal_armory_desc:0 "Blast furnaces produce pig iron from iron ore by the reducing action of carbon (supplied as coke) at a high temperature in the presence of a fluxing agent such as limestone. The step from the wolf furnace to a true blast furnace was gradual. Eventually, the old wolf furnaces grew so tall that leather bellows worked by men could not produce a strong enough blast, so waterpower was used to compress air into a stronger blast.  Bellows driven by a waterwheel could produce a continuous powerful draught from a free energy source, so it was at last possible to further enlarge the size of the furnace and the bloom produced. Water-powered hammers were also heavy enough to fashion the larger blooms. The increased scale of the blooms produced from blast furnaces allowed smiths to produce metal plates of the required size to serve as plate armor."
+
+innovation_machicolations:0 "Machicolations"
+
+############
+# ER 1300-1400
+############
+
+innovation_demd_indenture:0 "Indenture System"
+innovation_demd_indenture_desc:0 "On 19 September 1356, an English army under the command of Edward of Woodstock, also known as the Black Prince, won a smashing victory over a French army led by Jean II, who was captured and later ransomed by Edward in accordance the 10 July 1355 indenture between the king and the prince, which specified the prince was free to have his will of any prisoners except the head of the war in exchange for suitable compensation. In addition to the ransoms of prisoners the indenture spelled out the prince's and Edward III's responsibilities and obligations. The indenture was, essentially, a contract for military service made between the recruiter, e.g., Edward III, and the captain, i.e., the Black Prince. The captain would then subcontract with the men in his retinue and he would pay their wages out of the moneys he had received from the king. The system of indentures, particularly for overseas service – given Edward III's foreign policy, overseas deployment was highly likely – had replaced the feudal levy before the 1350s."
+
+innovation_sappers:0 "Massed Missile Fire"
+innovation_sappers_desc:0 "The signal victory of an outnumbered English army of longbowmen and dismounted men-at-arms over mounted French chivalry supported by mercenary Genoese crossbowmen at Crécy on August 26, 1346 marked the end of massed cavalry charges by European knights for a century and a half."
+
+innovation_plate_armor:0 "Breastplates"
+innovation_plate_armor_desc:0 "Single plates of metal armour were again used from the late 13th century on, to protect joints and shins, and these were worn over a mail hauberk."
+
+innovation_bombard:0 "Bombards"
+innovation_bombard_desc:0 "The development of large artillery pieces began with Burgundy. Originally a minor power, it grew to become one of the most powerful states in 14th-century Europe, and a great innovator in siege warfare. The Duke of Burgundy, Philip the Bold, based his power on the effective use of big guns and promoted research and development in all aspects of gunpowder weaponry technology. Whereas most European guns before 1370 weighed about 20 to 40 lbs (9–14 kg), the French siege of Château de Saint-Sauveur-le-Vicomte in 1375 during the Hundred Years War saw the use of guns weighing over a ton (900 kg), firing stone balls weighing over 100 lbs. By the early 15th century both French and English armies were equipped with pieces weighing up to 5 tons and firing balls up to 300 lbs. These weapons were transformational for European warfare. A hundred years earlier the Frenchman Pierre Dubois wrote that a \"castle can hardly be taken within a year, and even if it does fall, it means more expenses for the king's purse and for his subjects than the conquest is worth,\" but by the 15th century European walls fell with the utmost regularity."
+
+############
+# HR 1400-1500
+############
+
+innovation_standing_armies:0 "Standing Armies"
+innovation_standing_armies_desc:0 "The first Christian standing army since the fall of the Western Roman Empire to be paid with regular wages, instead of feudal levies, was established under King Charles VII of France in the 1430s. As he realized that France needed reliable troops for ongoing and future conflicts, units were raised by issuing ordonnances to govern their length of service, composition and payment. They were stationed throughout France and summoned into larger armies when needed. The bulk of the infantry was still provided by urban or provincial militias, however, but gradually these units became more permanent, with their equipment and training funded at state expense."
+
+innovation_demd_matchlock:0 "Matchlock"
+innovation_demd_matchlock_desc:0 "The matchlock was the first mechanical firing device that facilitated a fully hand-held firearm. It consisted of an S-shaped arm, called a serpentine, that held a match, and a trigger device that lowered the serpentine so that the lighted match would fire the priming powder in the pan attached to the side of the barrel. The flash in the pan penetrated a small port in the breech of the gun and ignited the main charge. Slow and somewhat clumsy, the matchlock was difficult to use in wind or rain, and its glow presented a hazard at night or in ambush." 
+
+innovation_demd_articulated_plate:0 "Articulated Plate"
+innovation_demd_articulated_plate_desc:0 "Single plates of metal armour were again used from the late 13th century on, to protect joints and shins, and these were worn over a mail hauberk. Gradually the number of plate components of medieval armour increased as armourers developed skills in articulating the lames or individual plates for parts of the body that needed to be flexible, and in fitting armour to the individual wearer like a tailor. The cost of a full suit of high quality fitted armour, as opposed to the cheaper munition armour was enormous, and inevitably restricted to the wealthy."
+
+innovation_trace_italienne:0 "Bastion Forts"
+innovation_trace_italienne_desc:0 "The design of the fort is normally a polygon with bastions at the corners of the walls. These outcroppings eliminated protected blind spots, called dead zones, and allowed fire along the curtain from positions protected from direct fire. Many bastion forts also feature cavaliers, which are raised secondary structures based entirely inside the primary structure."
+
+############
+# LR 1500-1600
+############
+
+innovation_demd_logistics:0 "Private Contractors"
+innovation_demd_logistics_desc:0 "Starting in the sixteenth century armies in Europe greatly increased in size. However, very little state support was provided to these massive armies. Beyond being paid for their service by the state, these soldiers and their commanders were forced to provide everything for themselves. If permanently assigned to a town or city with a working marketplace, or traveling along a well-established military route, supplies could be easily bought locally with intendants overseeing the exchanges. In other cases an army traveling in friendly territory could expect to be followed by sutlers — although their supply stocks were small and subject to price gouging — or a commissioner could be sent ahead to a town to make arraignments, including quartering if necessary. When operating in enemy territory, however, an army was still forced to plunder the local countryside for supplies, a tradition meant to allow war to be conducted at the enemy's expense. However, with the increase in army sizes this reliance on plunder became a major problem. Sieges in particular were affected by this, both for any army attempting to lay siege to a location or coming to its relief."
+
+innovation_demd_pike_and_shot:0 "Pike and Shot"
+innovation_demd_pike_and_shot_desc:0 "In 1495 at the Battle of Seminara, the Spanish army was defeated while opposing the French invasion of Naples by an army of gendarme cavalry and Swiss pikemen. The Spanish reorganized their army under the captain Gonzalo Fernández de Córdoba. Realizing that he could not match the offensive power of the French, he decided to integrate firearms with pikes in a mutually-supporting formation. The arquebusiers could shoot down their foes, and could then run to the nearby pikemen for shelter if enemy cavalry or pikes drew near. This new tactic resulted in triumph for the Spanish at the Battle of Cerignola, in which the heavily outnumbered Spanish pike-and-shot forces, in a strong defensive position, crushed the attacking gendarmes and Swiss mercenaries of the French army."
+
+innovation_demd_munition_armor:0 "Munition Armor"
+innovation_demd_munition_armor_desc:0 "Munition Armor, or almain rivet, is a type of roughly articulated plate armour created in Germany in about 1500. It was designed to be manufactured easily whilst still affording considerable protection to the wearer, and consisted of a breastplate and backplate with laminated thigh-guards called tassets. Almain rivets were generally of modest quality relative to custom-fitted and fully-articulated knightly armor, but they were cheap: a royal proclamation issued by Henry VIII in 1542 designated them as worth one sixth of the cost of a suit of demi-lance armor. Almain rivets were frequently purchased en masse as munitions-grade armour to equip royal armies or personal retinues. The most important centers of armor mass production in Medieval and Renaissance Europe were northern Italy and southern Germany, with workshops from both regions exporting their products throughout Europe." 
+
+innovation_demd_cannons:0 "Field Cannons"
+innovation_demd_cannons_desc:0 "Gun development and design in Europe reached its classic form in the 1480s – longer, lighter, more efficient, and more accurate compared to its predecessors only three decades prior. The design persisted, and cannons of the 1480s show little difference and surprising similarity with cannons three centuries later in the 1750s. They are differentiated from older firearms by an assortment of improvements. Their longer length-to-bore ratio imparts more energy into the shot, enabling the projectile to shoot further. Not only longer, they were also lighter as the barrel walls were made thinner to allow for faster dissipation of heat. They also no longer needed the help of a wooden plug to load since they offered a tighter fit between projectile and barrel, further increasing the accuracy of gunpowder warfare – and were deadlier due to developments such as gunpowder corning and iron shot. The final addition of the wheeled carriage and limber made these new cannons mobile enough to be used on the field.#!"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

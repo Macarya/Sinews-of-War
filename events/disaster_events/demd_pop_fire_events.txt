@@ -1,0 +1,310 @@
+﻿namespace = demd_pop_fire
+
+# Fire
+demd_pop_fire.1001 = {
+	hidden = yes
+	scope = landed_title
+	immediate = {
+		save_scope_as = county
+		holder = { save_scope_as = county_holder }
+		
+		# send event to county holder
+		if = {
+			limit = { holder = { is_at_location = scope:county.title_province } }
+			holder = {
+				trigger_event = demd_pop_fire.1002
+			}
+		}
+		else = {
+			random_list = {
+				20 = { # Relief success	
+					modifier = {
+						add = 30
+						scope:county.title_province = {
+							OR = {
+								has_variable = isOnMinorRiver
+								is_riverside_province = yes
+								is_coastal = yes
+							}
+						}
+					}
+						
+					holder = { trigger_event = { id = demd_pop_fire.1003 } }
+				}
+				100 = { # Relief middling
+					modifier = {
+						add = 30
+						scope:county.title_province = {
+							OR = {
+								has_variable = isOnMinorRiver
+								is_riverside_province = yes
+								is_coastal = yes
+							}
+						}
+					}
+					holder = { trigger_event = { id = demd_pop_fire.1004 } }
+				}
+				20 = { # Relief failure
+					holder = { trigger_event = { id = demd_pop_fire.1005 } }
+				}
+			}
+		}
+	}
+}
+
+# Fire - holder
+demd_pop_fire.1002 = {
+	type = character_event
+	title = demd_pop_fire.1002.t
+	desc = demd_pop_fire.1002.desc
+	theme = disaster_fire
+
+	right_portrait = {
+		character = this
+		animation = fear
+	}
+
+	# Fire track
+	immediate = {
+		play_music_cue = "cue_fire_event_1"
+	}
+
+	# Get the water nigga!
+	option = {
+		name = demd_pop_fire.1002.a
+		trigger = {
+			scope:county.title_province = {
+				OR = {
+					has_variable = isOnMinorRiver
+					is_riverside_province = yes
+					is_coastal = yes
+				}				
+			}
+		}
+		duel = {
+			skill = stewardship
+			value = average_skill_rating
+			desc = demd_fire_relief_water
+			20 = { # Relief success	
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				show_as_tooltip = {
+					add_prestige = minor_prestige_gain
+					add_prestige = minor_piety_gain
+					scope:county = {
+						demd_alter_goods_district_count = { amount = miniscule operation = subtract } 	
+					}
+				}
+				modifier = {
+					add = 30					
+					scope:county.title_province = {
+						OR = {
+							has_variable = isOnMinorRiver
+							is_riverside_province = yes
+							is_coastal = yes
+						}
+					}
+				}
+				
+				desc = demd_pop_fire.1002.relief_success
+				trigger_event = { id = demd_pop_fire.1003 days = 1 }
+
+			}
+			100 = { # Relief middling
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				show_as_tooltip = {
+					scope:county = {
+						demd_alter_urban_population = { amount = miniscule operation = subtract }
+						demd_alter_goods_district_count = { amount = small operation = subtract } 
+					}
+				}
+				desc = demd_pop_fire.1002.relief_middling
+				trigger_event = { id = demd_pop_fire.1004 days = 1 }
+
+			}
+			20 = { # Relief failure
+				show_as_tooltip = {
+					scope:county = {
+						demd_alter_urban_population = { amount = small operation = subtract }
+						demd_alter_goods_district_count = { amount = medium operation = subtract } 
+					}
+				}
+				desc = demd_pop_fire.1002.relief_failure
+				trigger_event = { id = demd_pop_fire.1005 days = 1 }
+			}
+		}
+		ai_chance = {
+			base = 500
+			ai_value_modifier = {
+				ai_compassion = 0.5
+			}
+		}
+	}
+
+	# Do nothing
+	option = {
+		name = demd_pop_fire.1002.c
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+		}
+		add_character_modifier = { modifier = let_city_burn years = 5 }
+		add_prestige = major_prestige_loss
+		add_piety = major_piety_loss
+		trigger_event = { id = demd_pop_fire.1006 days = 1 }
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_compassion = -0.25
+			}
+			ai_value_modifier = {
+				ai_honor = -0.25
+			}
+		}
+	}
+	
+	# Squire, fetch me my fiddle
+	option = {
+		name = demd_pop_fire.1002.d
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+		}
+		trigger = {
+			OR = {
+				has_trait = lunatic_1
+				has_trait = lunatic_genetic
+			}
+		}
+		add_character_modifier = { modifier = let_city_burn years = 5 }
+		add_prestige = major_prestige_loss
+		add_piety = major_piety_loss
+		trigger_event = { id = demd_pop_fire.1006 days = 1 }
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_compassion = -0.25
+			}
+			ai_value_modifier = {
+				ai_honor = -0.25
+			}
+		}
+	}	
+}
+
+# Relief success
+demd_pop_fire.1003 = {
+	type = character_event
+	title = demd_pop_fire.1003.t
+	desc = demd_pop_fire.1003.desc
+	theme = healthcare
+
+	left_portrait = {
+		character = this
+		animation = happiness
+	}
+	immediate = {
+		add_prestige = minor_prestige_gain
+		add_prestige = minor_piety_gain
+		scope:county = {
+			demd_alter_goods_district_count = { amount = miniscule operation = subtract } 
+		}
+	}
+	# Excellent
+	option = {
+		name = demd_pop_fire.1003.a
+		stress_impact = {
+			compassionate = minor_stress_impact_loss
+		}
+	}	
+}
+
+# Relief middling
+demd_pop_fire.1004 = {
+	type = character_event
+	title = demd_pop_fire.1004.t
+	desc = demd_pop_fire.1004.desc
+	theme = healthcare
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	immediate = {
+		scope:county = {
+			demd_alter_urban_population = { amount = miniscule operation = subtract }
+			demd_alter_goods_district_count = { amount = small operation = subtract } 
+		}
+	}
+	# Oh no
+	option = {
+		name = demd_pop_fire.1004.a
+		stress_impact = {
+			compassionate = minor_stress_impact_gain
+		}
+	}
+}
+
+# Relief failure
+demd_pop_fire.1005 = {
+	type = character_event
+	title = demd_pop_fire.1005.t
+	desc = demd_pop_fire.1005.desc
+	theme = healthcare
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	immediate = {
+		scope:county = {
+			demd_alter_urban_population = { amount = small operation = subtract }
+			demd_alter_goods_district_count = { amount = medium operation = subtract } 	
+		}
+	}
+	# Oh no
+	option = {
+		name = demd_pop_fire.1005.a
+		stress_impact = {
+			compassionate = major_stress_impact_gain
+		}
+	}
+}
+
+# Relief not attempted
+demd_pop_fire.1006 = {
+	type = character_event
+	title = demd_pop_fire.1006.t
+	desc = demd_pop_fire.1006.desc
+	theme = healthcare
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	immediate = {
+		scope:county = {
+			demd_alter_urban_population = { amount = medium operation = subtract }
+			demd_alter_goods_district_count = { amount = medium operation = subtract } 	
+		}
+	}
+	# Welp.
+	option = {
+		name = demd_pop_fire.1006.a
+		stress_impact = {
+			compassionate = major_stress_impact_gain
+		}
+	}
+}
+
+# test event
+demd_pop_fire.9999 = {
+	hidden = yes
+	#type = empty
+	immediate = {
+		capital_county = { trigger_event = demd_pop_fire.1001 }
+	}
+}

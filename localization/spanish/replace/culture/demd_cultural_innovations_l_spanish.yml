@@ -1,0 +1,26 @@
+﻿l_spanish:
+
+ innovation_demd_defense_in_depth:0 "Defensa profunda"
+ innovation_demd_defense_in_depth_desc:0 "En lugar de tratar de repeler a los asaltantes en nuestras fronteras, puede ser más ventajoso permitirles adentrarse en nuestro territorio, mientras protegemos a nuestras fuerzas y les denegamos comida y forraje utilizando una red de burhs fortificados. Una vez cansados, podemos concentrar nuestras fuerzas en emboscarlos en el momento idóneo cuando estén cargados de botín."
+
+ building_demd_ennsburg_01:0 "Ennsburg"
+ building_demd_ennsburg_01_desc:0 "La fortaleza de Ennsburg, situada en una encrucijada del río Enns cerca de la antigua ciudad de Lorch, fue designada para impedir la entrada y salida de asaltantes húngaros."
+ building_type_demd_ennsburg_01:0 "Ennsburg"
+ building_type_demd_ennsburg_01_desc:0 "La fortaleza de Ennsburg, situada en una encrucijada del río Enns cerca de la antigua ciudad de Lorch, fue designada para impedir la entrada y salida de asaltantes húngaros."
+
+
+ building_type_demd_schlossberg_01:0 "Schlossberg"
+ building_type_demd_schlossberg_01_desc:0 "El Schlossberg, o Castro, es un cono rocoso a unos 473 metros de altura que domina el centro de la ciudad. A parte del castillo de Reigesburg, el Schlossberg fue la única fortificación en la región que nunca cayó bajo influencia otomana."
+ building_type_demd_schlossberg_02:0 "Schlossberg"
+ building_type_demd_schlossberg_02_desc:0 "El Schlossberg, o Castro, es un cono rocoso a unos 473 metros de altura que domina el centro de la ciudad. A parte del castillo de Reigesburg, el Schlossberg fue la única fortificación en la región que nunca cayó bajo influencia otomana."
+ building_demd_schlossberg_01:0 "Schlossberg"
+ building_demd_schlossberg_01_desc:0 "Con un emplazamiento estratégico en lo alto del fértil valle de Mur, Graz fue históricamente un objetivo para los asaltantes. Por el siglo IX fuera probablemente una fortaleza en el Schlossberg, "
+ building_demd_schlossberg_02:0 "Schlossberg"
+ building_demd_schlossberg_02_desc:0 "Localizado estratégicamente en lo alto del fértil valle de Mur, Graz fue históricamente objetivo de los asaltantes. En el siglo IX fuera posiblemente una fortaleza en el Schlossberg, o Castro, un cono rocoso a 473 metros de altura que dominaba el centro de la ciudad. A parte del castillo de Reigersburg, el Schlossberg fue la única fortificación en la región que no cayó en manos otomanas."
+
+ building_type_demd_hohensalzburg_01:0 "Festungsberg"
+ building_type_demd_hohensalzburg_01_desc:0 "El Festungsberg es un afloramiento de 550 metros que se eleva sobre el casco antiguo de Salzburg."
+ building_demd_hohensalzburg_01:0 "Fortaleza de Hohensalzburg"
+ building_demd_hohensalzburg_01_desc:0 "El Festungsberg es un afloramiento de 550 metros que se eleva sobre el casco antiguo de Salzburg."
+ building_demd_hohensalzburg_02:0 "Fortaleza de Hohensalzburg"
+ building_demd_hohensalzburg_02_desc:0 "El arzobisbo Gebhard mandó construir la fortaleza en lo alto de Festungsberg durante el Conflicto de las Investiduras por el 1077. La fortaleza tiene 244 metros de largo y 153 de ancho, lo que la convierte en uno de los castillos más grandes de Europa. La única vez que estuvo bajo asalto fue durante la Guerra de los Campesinos Alemanes en 1525, cuando un grupo de mineros, granjeros y aldeanos intentaron derrocar al príncipe-arzobispo Matthäus Lang, pero no lograron tomar la fortaleza."

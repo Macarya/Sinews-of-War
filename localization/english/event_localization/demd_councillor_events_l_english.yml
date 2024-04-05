@@ -1,0 +1,11 @@
+﻿l_english:
+
+######################
+# Events
+######################
+
+demd_fabricate_claim:0 "The success of your claim fabrication is dependent on your reputation and that of your target."
+court_chaplain_task.0301.critical_success:0 "The veracity of the claim is almost universally believed."
+court_chaplain_task.0301.success:0 "The veracity of the claim is believed by most."
+court_chaplain_task.0301.failure:0 "The veracity of the claim is disbelieved by most."
+court_chaplain_task.0301.critical_failure:0 "The veracity of the claim is almost universally disbelieved."

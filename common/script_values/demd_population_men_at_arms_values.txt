@@ -1,0 +1,5 @@
+﻿######################
+# Men-at-Arms Values #
+######################
+
+demd_manpower_per_regiment = 900

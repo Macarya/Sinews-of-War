@@ -1,0 +1,21 @@
+﻿l_english:
+
+##########################
+# Egyptian
+##########################
+ek_excavation_beginning.0001.t:0 "[excavation_county.GetNameNoTier]: Breaking Ground"
+ek_excavation_beginning.0001.desc:0 "Within my realm stands what might be the mightiest structures ever made by man. Some say that these are ancient observatories built by wise men, others claim that they are the tombs of old and rotten kings.\n\nWhatever the case, it is clear that these pyramids have cause to hold great treasure.\n\nToday I have arrived with [excavation_leader.GetTitledFirstName], my excavation leader, to the site of what will be our base camp for the investigation of the ruins, near the base of the leading edifice.\n\nThe chief mason glances at me for a sign of approval to commence the excavation, as a legion of workers busy themselves with preparations all around us."
+ek_excavation_beginning.0001.a:0 "Who knows what sort of relics might be hidden within this stone mountain!"
+
+ek_excavation_beginning.0002.t:0 "[excavation_county.GetNameNoTier]: Breaking Ground"
+ek_excavation_beginning.0002.desc:0 "The city of Bahnasa, as far as records go, has always been a center for administrative and regional power both due to its central position within the lower Nile and strategic location to the west of the Bahr Yussef canal.\n\n[chaplain.GetTitledFirstName] recently came to me with an excited proposal; apparently, within the unused ruins of the old city, a group of stone scrappers has dug up a hidden trove of ancient manuscripts, and many more may lie below."
+ek_excavation_beginning.0002.a:0 "An untapped repository of knowledge like this could hold immense value!"
+
+ek_excavation_beginning.0003.t:0 "[excavation_county.GetNameNoTier]: Breaking Ground"
+ek_excavation_beginning.0003.desc:0 "Today I am in the county of [excavation_county.GetNameNoTier]. While in the middle of the desert, the oasis projects life all the way unto the horizon, a sea of green within an ocean of sand. My excavation leader, [excavation_leader.GetTitledFirstName], explains to me here used to be an old pagan oracle, which the famed conqueror Alexander the Macedon visited before his conquest of Egypt.\n\nWithin the ruins of this oracle we have set up our base camp; along the side of a large pond brimming with life."
+ek_excavation_beginning.0003.a:0 "What sort of treasure might the oracle be hiding?"
+
+ek_excavation_beginning.0004.t:0 "[excavation_county.GetNameNoTier]: Breaking Ground"
+ek_excavation_beginning.0004.desc:0 "Cloistered within the dry mountainous regions of [excavation_county.GetNameNoTier], the monastery here attracts pilgrims seeking enlightenment from all corners of the known world.\n\nIt has come to my attention that a secret opening unto a previously undiscovered underground crypt has been found of unknown depth.\n\nThe accounts of the monastery make no mention of it, so the crypt has likely not been set foot in for hundreds of years. I have ordered the creation of a base camp to investigate the ruins, and hopefully line my pockets as well."
+ek_excavation_beginning.0004.a:0 "Start the excavation!"
+

@@ -1,0 +1,328 @@
+types VigorBaseline
+{
+	type vigor_baseline_breakdown_widget = widget {
+		name = "vigor_breakdown_grid"
+		size = { 50 50 }
+		alwaystransparent = no
+		using = GeneralTooltipSetup
+
+		background = {
+			using = Background_Area_Border_Solid
+		}
+
+		vbox = {
+			alwaystransparent = no
+			set_parent_size_to_minimum = yes
+			margin = { 17 10 }
+			spacing = 2
+
+			block "header" {}
+
+				hbox = {
+					name = "baseline"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_baseline_target_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_baseline_target_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_dominant_faith_fervor').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "dominant_faith_fervor"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_dominant_faith_fervor_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_dominant_faith_fervor_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_culture_expanse').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "culture_expanse"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_culture_expanse_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_culture_expanse_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_cultural_production_mult').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "cultural_production_mult"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_cultural_production_mult_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_cultural_production_mult_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_faith_production_mult').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "faith_production_mult"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_faith_production_mult_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_faith_production_mult_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_court_grandeur').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "court_grandeur"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_court_grandeur_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_court_grandeur_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_prestige_level').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "prestige_level"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_prestige_level_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_prestige_level_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_piety_level').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "piety_level"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_piety_level_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_piety_level_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_culture_head_tyranny').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "culture_head_tyranny"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_culture_head_tyranny_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_culture_head_tyranny_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					name = "urbanization"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_urbanization_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_urbanization_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_culture_head_virtues_sins').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "culture_head_virtues_sins"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_culture_head_virtues_sins_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_culture_head_virtues_sins_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_different_culture_head_faith').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "different_culture_head_faith"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_different_culture_head_faith_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_different_culture_head_faith_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_religious_disunity').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "religious_disunity"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_religious_disunity_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_religious_disunity_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+				
+				hbox = {
+					visible = "[GetScriptedGui('demd_show_vigor_from_political_disunity').IsShown( GuiScope.SetRoot( Culture.MakeScope ).End)]"
+					name = "political_disunity"
+					layoutpolicy_horizontal = expanding
+
+					text_single = {
+						layoutpolicy_horizontal = expanding
+						text = vigor_from_political_disunity_string
+						align = left
+						min_width = 180
+						max_width = 350
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+						margin_right = 10
+					}
+
+					text_single = {
+						text = vigor_from_political_disunity_value
+						align = right
+						fonttintcolor = "[TooltipInfo.GetTintColor]"
+					}
+				}
+		}
+	}
+}

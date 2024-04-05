@@ -1,0 +1,585 @@
+﻿namespace = demd_pop_culture_conversion
+
+scripted_trigger demd_is_conversion_desirable = {
+	NOR = {
+		# county culture is my culture
+		culture = holder.culture 
+		
+		# county culture is my culture group and converting culture is not
+		AND = { 
+			culture_group = holder.culture_group
+			NOT = { var:converting_culture.culture_group = holder.culture_group }
+		}
+	}
+}
+
+scripted_trigger demd_is_conversion_undesirable = {
+	OR = {
+		# county culture is my culture
+		culture = holder.culture 
+		
+		# county culture is my culture group and converting culture is not
+		AND = { 
+			culture_group = holder.culture_group
+			NOT = { var:converting_culture.culture_group = holder.culture_group }
+		}
+	}
+}
+
+# amount = small, medium, large, huge
+scripted_effect demd_culture_conversion_progress_gain_lose = {	
+	if = { 
+		limit = { 
+			demd_is_conversion_desirable = yes 
+		} 
+		demd_alter_conversion_progress = { operation = add type = culture amount = $amount$ }
+	}
+	else = {
+		demd_alter_conversion_progress = { operation = subtract type = culture amount = $amount$ }
+	}				
+}
+
+# amount = small, medium, large, huge
+scripted_effect demd_culture_conversion_progress_lose_gain = {	
+	if = { 
+		limit = { 
+			demd_is_conversion_desirable = yes 
+		} 
+		demd_alter_conversion_progress = { operation = subtract type = culture amount = $amount$ }
+	}
+	else = {
+		demd_alter_conversion_progress = { operation = add type = culture amount = $amount$ }
+	}
+}
+
+demd_pop_culture_conversion.0001 = {
+	hidden = yes
+	type = empty
+	immediate = { # determine whether the conversion process is desirable or undesirable
+		save_scope_as = county
+		if = {
+			limit = { 
+				demd_is_conversion_undesirable = yes
+			}
+			
+			culture = { save_scope_as = desirable_culture }
+			var:converting_culture = { save_scope_as = undesirable_culture }
+			
+			holder = {
+				trigger_event = {
+					on_action = demd_conversion_culture_pulse
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				demd_is_conversion_desirable = yes
+			}
+			
+			var:converting_culture = { save_scope_as = desirable_culture }
+			culture = { save_scope_as = undesirable_culture }
+			
+			holder = {
+				trigger_event = {
+					on_action = demd_conversion_culture_pulse
+				}
+			}
+		}
+	}
+}
+
+demd_pop_culture_conversion.1002 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1002.t
+	desc = demd_pop_culture_conversion.1002.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	option = {
+		name = demd_pop_culture_conversion.1002.a
+		trigger = { gold > activity_minor_gold_value }
+		show_as_unavailable = { always = yes }
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					gold > activity_medium_gold_value
+					is_at_war = no
+				}
+				add = 50
+			}			
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1002.b
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = medium }
+		}
+		ai_chance = {
+			base = 50				
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1002.c
+		
+		scope:county = { 
+			add_county_modifier = { modifier = invalidated_local_laws years = 5 } 
+			change_county_control = -20 
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+		}
+		ai_chance = {
+			base = 50				
+		}	
+	}
+}	
+
+demd_pop_culture_conversion.1003 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1003.t
+	desc = demd_pop_culture_conversion.1003.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	option = {
+		name = demd_pop_culture_conversion.1003.a
+		
+		scope:county = { 
+			add_county_modifier = { modifier = invalidated_local_laws years = 5 } 
+			change_county_control = -20 
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+		}
+		ai_chance = {
+			base = 50				
+		}	
+	}	
+	option = {
+		name = demd_pop_culture_conversion.1003.b
+		
+		scope:county = { 
+			add_county_modifier = { modifier = affirmed_local_laws years = 5 } 
+			change_county_control = 20 
+			demd_culture_conversion_progress_lose_gain = { amount = medium }
+		}		
+		ai_chance = {
+			base = 50				
+		}		
+	}	
+	option = {
+		name = demd_pop_culture_conversion.1003.c
+
+		ai_chance = {
+			base = 50				
+		}		
+	}
+}
+
+demd_pop_culture_conversion.1004 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1004.t
+	desc = demd_pop_culture_conversion.1004.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	trigger = {
+		scope:county = {
+			title_province = { has_building_with_flag = university }
+		}
+	}
+	
+	option = {
+		name = demd_pop_culture_conversion.1004.a
+		trigger = { gold > activity_minor_gold_value }
+		show_as_unavailable = { always = yes }
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+		}
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					gold > activity_medium_gold_value
+					is_at_war = no
+				}
+				add = 50
+			}			
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1004.b
+		duel = {
+			skill = diplomacy
+			value = average_skill_rating
+			10 = {
+				desc = demd_pop_culture_conversion.1004.b.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}	
+				scope:county = {
+					demd_culture_conversion_progress_gain_lose = { amount = medium }
+				}
+			}
+			10 = {
+				desc = demd_pop_culture_conversion.1004.b.failure
+			}
+		}		
+		ai_chance = {
+			base = 50				
+		}		
+	}
+}
+
+demd_pop_culture_conversion.1005 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1005.t
+	desc = demd_pop_culture_conversion.1005.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	option = {
+		name = demd_pop_culture_conversion.1005.a
+		trigger = { gold > activity_minor_gold_value }
+		show_as_unavailable = { always = yes }
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					gold > activity_medium_gold_value
+					is_at_war = no
+				}
+				add = 50
+			}			
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1005.b
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = medium }
+		}
+		ai_chance = {
+			base = 50				
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1005.c
+		
+		scope:county = { 
+			change_county_control = -40 
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+		}
+		ai_chance = {
+			base = 50				
+		}	
+	}
+}	
+
+demd_pop_culture_conversion.1006 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1006.t
+	desc = demd_pop_culture_conversion.1006.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	option = {
+		name = demd_pop_culture_conversion.1006.a
+		
+		scope:county = { 
+			change_county_control = -50 
+			demd_culture_conversion_progress_gain_lose = { amount = huge }
+		}
+		ai_chance = {
+			base = 60				
+		}	
+	}
+	option = {
+		name = demd_pop_culture_conversion.1006.b
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = small }
+		}
+		ai_chance = {
+			base = 60				
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1006.c
+		ai_chance = {
+			base = 60				
+		}		
+	}
+}	
+
+demd_pop_culture_conversion.1007 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1007.t
+	desc = demd_pop_culture_conversion.1007.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	option = {
+		name = demd_pop_culture_conversion.1007.a
+		show_as_unavailable = { always = yes }
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+		}
+		
+		ai_chance = {
+			base = 0 
+			modifier = { # do this if we can afford it 
+				add = 50
+				OR = {
+					is_at_war = no
+					gold > massive_gold_value
+				}
+			}
+		}
+	}
+	option = {
+		name = demd_pop_culture_conversion.1007.b
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = small }
+		}
+		ai_chance = {
+			base = 70				
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1007.c
+		ai_chance = {
+			base = 0				
+		}		
+	}
+}
+
+demd_pop_culture_conversion.1008 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1008.t
+	desc = demd_pop_culture_conversion.1008.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	# Get free theater level
+	option = {
+		name = demd_pop_culture_conversion.1008.a
+		show_as_unavailable = { always = yes }
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = medium }
+		}
+		
+		ai_chance = {
+			base = 50
+		}
+	}	
+	option = {
+		name = demd_pop_culture_conversion.1008.b
+		add_gold = activity_minor_gold_value
+		ai_chance = {
+			base = 80				
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1008.c
+		scope:county = {
+			demd_culture_conversion_progress_gain_lose = { amount = medium }
+		}
+		ai_chance = {
+			base = 80				
+		}		
+	}
+}
+
+demd_pop_culture_conversion.1009 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1009.t
+	desc = demd_pop_culture_conversion.1009.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	option = {
+		name = demd_pop_culture_conversion.1009.a
+		
+		ai_chance = {
+			base = 50
+		}
+	}	
+	option = {
+		name = demd_pop_culture_conversion.1009.b
+		
+		scope:county = { 
+			add_county_modifier = { modifier = overextended_bureaucracy years = 3 } 
+			demd_culture_conversion_progress_gain_lose = { amount = medium }
+		}
+		ai_chance = {
+			base = 90				
+		}		
+	}
+}
+
+demd_pop_culture_conversion.1010 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1010.t
+	desc = demd_pop_culture_conversion.1010.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	option = {
+		trigger = { 
+			gold > activity_minor_gold_value
+		}
+		name = demd_pop_culture_conversion.1010.a
+		
+		
+		scope:county = { 
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+			change_county_control = -30 
+		}
+		
+		ai_chance = {
+			base = 0 
+			modifier = { # do this if we can afford it 
+				add = 50
+				OR = {
+					is_at_war = no
+					gold > activity_medium_gold_value
+				}
+			}
+		}
+	}
+	option = {
+		name = demd_pop_culture_conversion.1010.b
+		
+		scope:county = { 
+			demd_culture_conversion_progress_gain_lose = { amount = large }
+			change_county_control = -30 
+		}
+		ai_chance = {
+			base = 50				
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1010.c
+		ai_chance = {
+			base = 0				
+		}		
+	}
+}
+
+demd_pop_culture_conversion.1011 = {
+	type = character_event
+	title = demd_pop_culture_conversion.1011.t
+	desc = demd_pop_culture_conversion.1011.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	trigger = {
+		scope:county = {
+			county_control < 40
+		}
+	}
+	
+	option = {
+		name = demd_pop_culture_conversion.1011.a
+		custom_tooltip = demd_pop_culture_conversion.suppressed		
+		scope:county = { 
+			demd_culture_conversion_progress_gain_lose = { amount = medium }
+			change_county_control = 25 
+			demd_alter_urban_population = { amount = small operation = subtract }
+		}
+		random_list = { # chance fires spreads out of control
+			1 = { scope:county = { trigger_event = demd_pop_fire.1001 } }
+			100 = { }
+		}		
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = demd_pop_culture_conversion.1011.b
+		custom_tooltip = demd_pop_culture_conversion.tolerated
+		scope:county = {
+			demd_alter_prov_population = { amount = small operation = subtract }
+			title_province = { demd_alter_goods_district_count = { amount = small operation = subtract } }
+		}
+		random_list = { # chance fires spreads out of control
+			1 = { scope:county = { trigger_event = demd_pop_fire.1001 } }
+			10 = { }
+		}
+		ai_chance = {
+			base = 0				
+		}		
+	}
+	option = {
+		name = demd_pop_culture_conversion.1011.c
+		custom_tooltip = demd_pop_culture_conversion.allowed
+		demd_culture_conversion_progress_lose_gain = { amount = huge }
+		scope:county = {
+			demd_alter_prov_population = { amount = medium operation = subtract }
+			title_province = { demd_alter_goods_district_count = { amount = medium operation = subtract } }
+		}
+		random_list = { # chance fires spreads out of control
+			1 = { scope:county = { trigger_event = demd_pop_fire.1001 } }
+			1 = { }
+		}		
+		scope:county = { trigger_event = demd_pop_fire.1001 }
+		ai_chance = {
+			base = 0				
+		}		
+	}
+}
+demd_pop_culture_conversion.9999 = {
+    hidden = yes
+    type = empty
+    immediate = {
+        random_directly_owned_province = {
+            limit = { county = { has_county_modifier = culture_conversion_in_progress } }
+            county = {
+                trigger_event = { id = demd_pop_culture_conversion.0001 }
+            }
+        }
+    }
+}

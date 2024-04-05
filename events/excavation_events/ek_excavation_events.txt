@@ -1,0 +1,45 @@
+﻿# Generic story end event: sell minor artifacts for gold or use them to fuel development. Then end story.
+
+namespace = ek_excavation
+
+ek_excavation.0001 = {
+	type = character_event
+	title = ek_excavation.0001.t
+	desc = ek_excavation.0001.desc
+	theme = excavation_exterior
+	
+	left_portrait = {
+		character = scope:story_owner
+		animation = personality_bold
+	}
+	
+	# gold
+	option = { 
+		name = ek_excavation.0001.a
+		add_gold = scope:story.minor_artifacts_gold_value
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	# development
+	option = { 
+		name = ek_excavation.0001.b
+		
+		capital_county = {
+			change_development_progress_with_overflow = scope:story.minor_artifacts_development_progress_value			
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	after = {
+		scope:story = { end_story = yes }
+	}
+}
+
+
+
+

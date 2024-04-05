@@ -1,0 +1,15 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_empire_population = {
+	value = 0
+	every_in_de_jure_hierarchy = {
+		limit = { tier = tier_county }
+		title_province = {
+			 add = var:population
+		}
+	}
+}

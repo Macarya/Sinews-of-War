@@ -1,0 +1,60 @@
+cultureEconomySetup = {
+    every_culture_global = {
+		resetCultureRateMults = yes
+
+		set_variable = { name = culture_advancement value = culture_advancement }
+		set_variable = { name = culture_population value = culture_population }
+		set_variable = { name = dominant_faith value = calc_culture_dominant_faith }
+		
+		set_variable = { name = vigor value = 50 }		
+    }
+}
+
+cultureEconomy = {
+    resetCultureRateMults = yes
+    
+	demd_add_innovation_bonuses = yes
+	demd_add_tradition_bonuses = yes
+	demd_add_pillar_bonuses = yes
+
+	set_variable = { name = culture_advancement value = culture_advancement }	
+	set_variable = { name = culture_population value = culture_population }
+	set_variable = { name = dominant_faith value = calc_culture_dominant_faith }
+	
+	# TEMPORARY EXISTING SAVE COMPATIBILITY LINE: REMOVE IN NEXT PATCH !!! (installed 4/6/22, remove on or after 4/20/22)
+	if = { limit = { NOT = { has_variable = vigor } } set_variable = { name = vigor value = vigor_target } } 
+	
+	change_variable = { name = vigor add = vigor_delta }
+	clamp_variable = { name = vigor min = 0 max = 100 }
+		
+	if = { 
+		limit = { 
+			var:vigor < 10 
+			NOT = { has_variable = reformation_blocked }
+		}
+		random_list = {
+			80 = { }
+			20 = { culture_head = { trigger_event = demd_vigor.0001 } }
+		}
+	}
+}
+
+######################
+
+resetCultureRateMults = {
+    resetCultureRateMult = { resource = food }
+	resetCultureRateMult = { resource = goods }
+	resetCultureRateMult = { resource = knight_capacity }
+    resetCultureRateMult = { resource = manpower }
+    resetCultureRateMult = { resource = public_order }
+    resetCultureRateMult = { resource = sanitation }
+    resetCultureRateMult = { resource = trade_power }
+    resetCultureRateMult = { resource = trade_value }
+	resetCultureRateMult = { resource = food_districts }
+	resetCultureRateMult = { resource = birth_rate }
+	resetCultureRateMult = { resource = vigor }
+}
+
+resetCultureRateMult = {
+    set_variable = { name = $resource$_cultural_production_mult value = 0 }
+}

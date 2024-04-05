@@ -1,0 +1,375 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+############################################
+
+public_order_percent_per_edict_level = 0.05
+edicts_public_order_bonus = {
+	value = var:public_order_setting
+	multiply = public_order_percent_per_edict_level
+}
+sanitation_percent_per_edict_level = 0.05
+edicts_sanitation_bonus = {
+	value = var:sanitation_setting
+	multiply = sanitation_percent_per_edict_level
+}
+irrigation_percent_per_edict_level = 0.05
+edicts_food_districts_bonus = {
+	value = var:irrigation_setting
+	multiply = irrigation_percent_per_edict_level
+}
+infrastructure_percent_per_edict_level = 0.05
+edicts_trade_power_bonus = {
+	value = var:infrastructure_setting
+	multiply = infrastructure_percent_per_edict_level
+}
+
+demd_public_order_setting_level_0 = {
+	value = public_order_percent_per_edict_level
+	multiply = 0
+}
+
+demd_public_order_setting_level_1 = {
+	value = public_order_percent_per_edict_level
+	multiply = 1
+}
+
+demd_public_order_setting_level_2 = {
+	value = public_order_percent_per_edict_level
+	multiply = 2
+}
+
+demd_public_order_setting_level_3 = {
+	value = public_order_percent_per_edict_level
+	multiply = 3
+}
+
+demd_public_order_setting_level_4 = {
+	value = public_order_percent_per_edict_level
+	multiply = 4 
+}
+
+demd_sanitation_setting_level_0 = {
+	value = sanitation_percent_per_edict_level
+	multiply = 0
+}
+
+demd_sanitation_setting_level_1 = {
+	value = sanitation_percent_per_edict_level
+	multiply = 1
+}
+
+demd_sanitation_setting_level_2 = {
+	value = sanitation_percent_per_edict_level
+	multiply = 2
+}
+
+demd_sanitation_setting_level_3 = {
+	value = sanitation_percent_per_edict_level
+	multiply = 3
+}
+
+demd_sanitation_setting_level_4 = {
+	value = sanitation_percent_per_edict_level
+	multiply = 4 
+}
+
+demd_irrigation_setting_level_0 = {
+	value = irrigation_percent_per_edict_level
+	multiply = 0
+}
+
+demd_irrigation_setting_level_1 = {
+	value = irrigation_percent_per_edict_level
+	multiply = 1
+}
+
+demd_irrigation_setting_level_2 = {
+	value = irrigation_percent_per_edict_level
+	multiply = 2
+}
+
+demd_irrigation_setting_level_3 = {
+	value = irrigation_percent_per_edict_level
+	multiply = 3
+}
+
+demd_irrigation_setting_level_4 = {
+	value = irrigation_percent_per_edict_level
+	multiply = 4 
+}
+
+demd_infrastructure_setting_level_0 = {
+	value = infrastructure_percent_per_edict_level
+	multiply = 0
+}
+
+demd_infrastructure_setting_level_1 = {
+	value = infrastructure_percent_per_edict_level
+	multiply = 1
+}
+
+demd_infrastructure_setting_level_2 = {
+	value = infrastructure_percent_per_edict_level
+	multiply = 2
+}
+
+demd_infrastructure_setting_level_3 = {
+	value = infrastructure_percent_per_edict_level
+	multiply = 3
+}
+
+demd_infrastructure_setting_level_4 = {
+	value = infrastructure_percent_per_edict_level
+	multiply = 4 
+}
+
+demd_edict_level_1_cost = {
+	value = demd_unit_edict_expense
+}
+
+demd_edict_level_2_cost = {
+	value = demd_unit_edict_expense
+	multiply = 2
+}
+
+demd_edict_level_3_cost = {
+	value = demd_unit_edict_expense
+	multiply = 3
+}
+
+
+demd_edict_level_4_cost = {
+	value = demd_unit_edict_expense
+	multiply = 4
+}
+
+
+#############################################
+regiment_limit_gui = {
+	value = var:free_manpower
+	divide = demd_manpower_per_regiment
+}
+total_manpower_gui = {
+	value = var:manpower
+	add = building_max_garrison
+	add = building_levies
+}
+
+building_garrison_levies_gui = {
+	value = building_max_garrison
+	add = building_levies
+}
+
+building_garrison_gui = {
+	value = building_max_garrison
+}
+
+building_levies_gui = {
+	value = building_levies
+}
+
+demd_base_tax_rate_level_0 = {
+	value = tax_percent_base
+	add = {
+		value = tax_percent_per_edict_level
+		multiply = 0 
+	}
+}
+
+demd_base_tax_rate_level_1 = {
+	value = tax_percent_base
+	add = {
+		value = tax_percent_per_edict_level
+		multiply = 1
+	}
+}
+
+demd_base_tax_rate_level_2 = {
+	value = tax_percent_base
+	add = {
+		value = tax_percent_per_edict_level
+		multiply = 2 
+	}
+}
+
+demd_base_tax_rate_level_3 = {
+	value = tax_percent_base
+	add = {
+		value = tax_percent_per_edict_level
+		multiply = 3 
+	}
+}
+
+demd_base_tax_rate_level_4 = {
+	value = tax_percent_base
+	add = {
+		value = tax_percent_per_edict_level
+		multiply = 4 
+	}
+}
+
+###
+
+demd_effective_tax_rate_level_0 = {
+	value = demd_base_tax_rate_level_0
+	multiply = tax_rate_mult
+}
+
+demd_effective_tax_rate_level_1 = {
+	value = demd_base_tax_rate_level_1
+	multiply = tax_rate_mult
+}
+
+demd_effective_tax_rate_level_2 = {
+	value = demd_base_tax_rate_level_2
+	multiply = tax_rate_mult
+}
+
+demd_effective_tax_rate_level_3 = {
+	value = demd_base_tax_rate_level_3
+	multiply = tax_rate_mult
+}
+
+demd_effective_tax_rate_level_4 = {
+	value = demd_base_tax_rate_level_4
+	multiply = tax_rate_mult
+}
+
+###
+
+demd_projected_gross_tax_tax_rate_level_0 = {
+	value = var:goods_produced
+	multiply = demd_effective_tax_rate_level_0
+	multiply = goods_base_price
+	add = {
+		value = var:trade_value
+		multiply = demd_effective_tax_rate_level_0
+	}
+}
+
+demd_projected_gross_tax_tax_rate_level_1 = {
+	value = var:goods_produced
+	multiply = demd_effective_tax_rate_level_1
+	multiply = goods_base_price
+	add = {
+		value = var:trade_value
+		multiply = demd_effective_tax_rate_level_1
+	}
+}
+
+demd_projected_gross_tax_tax_rate_level_2 = {
+	value = var:goods_produced
+	multiply = demd_effective_tax_rate_level_2
+	multiply = goods_base_price
+	add = {
+		value = var:trade_value
+		multiply = demd_effective_tax_rate_level_2
+	}
+}
+
+demd_projected_gross_tax_tax_rate_level_3 = {
+	value = var:goods_produced
+	multiply = demd_effective_tax_rate_level_3
+	multiply = goods_base_price
+	add = {
+		value = var:trade_value
+		multiply = demd_effective_tax_rate_level_3
+	}
+}
+
+demd_projected_gross_tax_tax_rate_level_4 = {
+	value = var:goods_produced
+	multiply = demd_effective_tax_rate_level_4
+	multiply = goods_base_price
+	add = {
+		value = var:trade_value
+		multiply = demd_effective_tax_rate_level_4
+	}
+}
+
+###############################################
+
+demd_base_manpower_rate_level_0 = {
+	value = manpower_percent_base
+	add = {
+		value = manpower_percent_per_edict_level
+		multiply = 0
+	}
+}
+
+demd_base_manpower_rate_level_1 = {
+	value = manpower_percent_base
+	add = {
+		value = manpower_percent_per_edict_level
+		multiply = 1
+	}
+}
+
+demd_base_manpower_rate_level_2 = {
+	value = manpower_percent_base
+	add = {
+		value = manpower_percent_per_edict_level
+		multiply = 2
+	}
+}
+
+demd_base_manpower_rate_level_3 = {
+	value = manpower_percent_base
+	add = {
+		value = manpower_percent_per_edict_level
+		multiply = 3
+	}
+}
+
+demd_base_manpower_rate_level_4 = {
+	value = manpower_percent_base
+	add = {
+		value = manpower_percent_per_edict_level
+		multiply = 4
+	}
+}
+
+###############################################
+
+demd_garrison_percent_level_0 = {
+	value = garrison_manpower_percent_base
+	add = {
+		value = garrison_manpower_percent_per_edict_level
+		multiply = 0
+	}
+}
+
+demd_garrison_percent_level_1 = {
+	value = garrison_manpower_percent_base
+	add = {
+		value = garrison_manpower_percent_per_edict_level
+		multiply = 1
+	}
+}
+
+demd_garrison_percent_level_2 = {
+	value = garrison_manpower_percent_base
+	add = {
+		value = garrison_manpower_percent_per_edict_level
+		multiply = 2
+	}
+}
+
+demd_garrison_percent_level_3 = {
+	value = garrison_manpower_percent_base
+	add = {
+		value = garrison_manpower_percent_per_edict_level
+		multiply = 3
+	}
+}
+
+demd_garrison_percent_level_4 = {
+	value = garrison_manpower_percent_base
+	add = {
+		value = garrison_manpower_percent_per_edict_level
+		multiply = 4
+	}
+}
+

@@ -1,0 +1,32 @@
+﻿
+excavation_beginning = {
+	random_events = {
+		10 = ek_excavation_beginning.0001
+		10 = ek_excavation_beginning.0002
+		10 = ek_excavation_beginning.0003
+		10 = ek_excavation_beginning.0004
+	}
+}
+
+# Events for the end of a stage of the excavation that is not the final stage
+excavation_intermediate = {
+	random_events = {
+		10 = ek_excavation_intermediate.0001
+		10 = ek_excavation_intermediate.0002
+		10 = ek_excavation_intermediate.0003
+	}
+}
+
+excavation_final = {
+	random_events = {
+		10 = ek_excavation_final.0001
+		10 = ek_excavation_final.0003
+	}
+}
+
+excavation_minor = {
+	random_events = {
+		chance_to_happen = 4 # minor events should be rarer
+		10 = ek_excavation_minor.0001
+	}
+}

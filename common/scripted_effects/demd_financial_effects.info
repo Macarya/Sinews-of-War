@@ -1,0 +1,13 @@
+﻿take_on_debt = {
+	if = { 
+		limit = { has_variable = debt }
+		change_variable = { name = debt add = $AMOUNT$ }
+	}
+	else = { set_variable = { name = debt value = $AMOUNT$ } }
+	add_gold = $AMOUNT$
+}
+
+pay_off_debt = {
+	change_variable = { name = debt subtract = $AMOUNT$ }
+	remove_short_term_gold = $AMOUNT$
+}

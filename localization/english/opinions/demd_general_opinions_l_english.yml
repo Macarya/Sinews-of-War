@@ -1,0 +1,28 @@
+﻿l_english:
+ 
+ razed_me_opinion:0 "Razed My Holding"
+ sacked_me_opinion:0 "Sacked My Holding"
+ demd_left_me_opinion:0 "Left Me To Die"
+ demd_saved_my_life_opinion:0 "Saved My Life"
+ demd_interceded_on_my_behalf_opinion:0 "Interceded On My Behalf"
+ demd_abandoned_my_family_member_opinion:0 "Abandoned My Family Member"
+ demd_rejected_my_help_opinion:0 "Rejected My Help"
+ demd_accepted_my_help_opinion:0 "Accepted My Help"
+ demd_appropriated_my_financial_assistance_opinion:0 "Appropriated My Financial Assistance"
+ 
+ demd_raze_acceptance_change:0 "Razed [county|E]"
+ demd_sack_acceptance_change:0 "Sacked [county|E]"
+ demd_raid_acceptance_change:0 "Raided [county|E]"
+ 
+ raided_my_trade_opinion:0 "Raided my [demd_trade_node|E]"
+ raided_me_opinion:0 "Raided my [county|E]"
+ razed_me_opinion:0 "Razed my [county|E]"
+ sacked_me_opinion:0 "Sacked my [county|E]"
+ 
+ raided_vassal_opinion:0 "Raided [vassal|E] [county|E]"
+ razed_vassal_opinion:0 "Razed [vassal|E] [county|E]"
+ sacked_vassal_opinion:0 "Sacked [vassal|E] [county|E]"
+ 
+ razed_coreligionist_opinion:0 "Razed Coreligionist [county|E]"
+ sacked_coreligionist_opinion:0 "Sacked Coreligionist [county|E]"
+ raided_coreligionist_opinion:0 "Razed Coreligionist [county|E]"

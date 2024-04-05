@@ -1,0 +1,113 @@
+﻿l_spanish:
+
+demd_pop_culture_conversion_gain_lose_small:0 "[this.Custom,('demd_pop_culture_conversion_gain_lose_small')]"
+demd_pop_culture_conversion_gain_lose_medium:0 "[this.Custom,('demd_pop_culture_conversion_gain_lose_medium')]"
+demd_pop_culture_conversion_gain_lose_large:0 "[this.Custom,('demd_pop_culture_conversion_gain_lose_large')]"
+demd_pop_culture_conversion_gain_lose_huge:0 "[this.Custom,('demd_pop_culture_conversion_gain_lose_huge')]"
+
+demd_pop_culture_conversion_gain_lose_reverse_small:0 "[this.Custom,('demd_pop_culture_conversion_gain_lose_reverse_small')]"
+demd_pop_culture_conversion_gain_lose_reverse_medium:0 "[this.Custom,('demd_pop_culture_conversion_gain_lose_reverse_medium')]"
+demd_pop_culture_conversion_gain_lose_reverse_large:0 "[this.Custom,('demd_pop_culture_conversion_gain_lose_reverse_large')]"
+demd_pop_culture_conversion_gain_lose_reverse_huge:0 "[this.Custom,('demd_pop_culture_conversion_gain_lose_reverse_huge')]"
+
+demd_pop_culture_conversion_gain_small:0 "[county.GetName]: +10 [game_concept_demd_culture_conversion_progress|E]"
+demd_pop_culture_conversion_gain_medium:0 "[county.GetName]: +20 [game_concept_demd_culture_conversion_progress|E]"
+demd_pop_culture_conversion_gain_large:0 "[county.GetName]: +30 [game_concept_demd_culture_conversion_progress|E]"
+demd_pop_culture_conversion_gain_huge:0 "[county.GetName]: +50 [game_concept_demd_culture_conversion_progress|E]"
+
+demd_pop_culture_conversion_lose_small:0 "[county.GetName]: -10 [game_concept_demd_culture_conversion_progress|E]"
+demd_pop_culture_conversion_lose_medium:0 "[county.GetName]: -20 [game_concept_demd_culture_conversion_progress|E]"
+demd_pop_culture_conversion_lose_large:0 "[county.GetName]: -30 [game_concept_demd_culture_conversion_progress|E]"
+demd_pop_culture_conversion_lose_huge:0 "[county.GetName]: -50 [game_concept_demd_culture_conversion_progress|E]"
+
+# 1001: Tying the Knot
+demd_pop_culture_conversion.1001.t:0 "[county.GetName]: Tying the Knot"
+demd_pop_culture_conversion.1001.desc:0 "As I ride through a village in [county.GetNameNoTierNoTooltip] I hear the jovial sounds of a marriage. I gesture my retinue to halt as we look benevolently upon the union.\n\nIt looks like a typical [desirable_culture.GetName] marriage at first, but then we see and hear unusual things. It seems many elements of [undesirable_culture.GetName] have made their way into the event. We are confused at first, but one of the notables leads a delegation to greet us.\n\nThey explain that it is in fact a mixed marriage, the groom being of [desirable_culture.GetName] culture whilst the bride is of [undesirable_culture.GetName] stock. They humbly ask us to bestow our blessing upon the marriage."
+
+demd_pop_culture_conversion.1001.a:0 "I bless this union and the peace between [desirable_culture.GetCollectiveNoun] and [undesirable_culture.GetCollectiveNoun]!"
+demd_pop_culture_conversion.1001.b:0 "I'll make an exception for them, but this shouldn't happen going forward."
+demd_pop_culture_conversion.1001.c:0 "Stop this at once! [desirable_culture.GetCollectiveNoun] and [undesirable_culture.GetCollectiveNoun] are not meant to mingle!"
+
+# 1002: Law in Translation
+demd_pop_culture_conversion.1002.t:0 "[county.GetName]: Law in Translation"
+demd_pop_culture_conversion.1002.desc:0 "My chancellor has summoned his clerks for the monthly report. They all come bearing various letters, requests and legal acts. One of them though is reticent to give up his yield.\n\n"Sorry my lord, but large part of the acts in [county.GetName] have been drafted in the [undesirable_culture.GetName] language. I tried to encourage them to make an effort but they insisted on using their own tongue."\n\nWe cannot administrate effectively with a communication barrier. My chancellor and clerks want me to have an effective and clear policy on this."
+
+demd_pop_culture_conversion.1002.a:0 "Hire interpreters to teach the [desirable_culture.GetName] language to the local magistrates."
+demd_pop_culture_conversion.1002.b:0 "Give priority to acts in a language we can understand. They'll have proper motivation then."
+demd_pop_culture_conversion.1002.c:0 "Acts written in a language other than [desirable_culture.GetName] are henceforth invalid."
+invalidated_local_laws:0 "Invalidated Local Laws"
+invalidated_local_laws_desc:0 "Invalidated Local Laws"
+
+# 1003: Customary Law
+demd_pop_culture_conversion.1003.t:0 "[county.GetName]: Customary Law"
+demd_pop_culture_conversion.1003.desc:0 "With two cultures in [county.GetNameNoTierNoTooltip], legal actions involving both [desirable_culture.GetCollectiveNoun] and [undesirable_culture.GetCollectiveNoun] are nothing short of nightmarish. While it would surely be advantageous to the legally savvy to keep the situation as is, the massive confusion brought on by this is too much trouble."
+
+demd_pop_culture_conversion.1003.a:0 "[desirable_culture.GetName] customary law is superior and shall be the only valid law henceforth!"
+demd_pop_culture_conversion.1003.b:0 "[undesirable_culture.GetCollectiveNoun] can judge their own affairs according to their law but not any matters affecting [desirable_culture.GetCollectiveNoun]."
+demd_pop_culture_conversion.1003.c:0 "We shall nudge towards resolution of cases according to [desirable_culture.GetName] custom."
+
+# 1004: Language Barrier
+demd_pop_culture_conversion.1004.t:0 "[county.GetName]: Language Barrier"
+demd_pop_culture_conversion.1004.desc:0 "Some [undesirable_culture.GetCollectiveNoun] are seeking education in [desirable_culture.GetName] culture and language to gain employment with wealthy patrons. Their efforts are commendable and will benefit our influence in the area. As the elite learn our language we will have made a great step towards their integration.\n\nHowever, the Dean of the universities stubbornly refuses to accommodate [undesirable_culture.GetName]-speaking students. Speaking [desirable_culture.GetName] is a prerequisite of the teaching he insists, but that defeats the very objective of the classes to promote our language and customs."
+
+demd_pop_culture_conversion.1004.b:0 "Talk him out of his stubborn attitude"
+demd_pop_culture_conversion.1004.b.success:0 "You convince the dean"
+demd_pop_culture_conversion.1004.b.failure:0 "You fail to convince the dean"
+demd_pop_culture_conversion.1004.a:0 "Pay the Dean to hire extra interpreters, and a little extra for himself"
+
+# 1005: A Worthy Name
+demd_pop_culture_conversion.1005.t:0 "[county.GetName]: A Worthy Name"
+demd_pop_culture_conversion.1005.desc:0 "While holding a council on minor matters of the realm, a junior clerk brings me a request: "[this.GetTitleAsNameNoTooltip], would it not be preferable if you proclaimed an edict that everyone in [county.GetNameNoTierNoTooltip] is to adopt a [desirable_culture.GetName] name for administrative purposes. They take pride in their native [undesirable_culture.GetName] names but they are hard to transcribe accurately in our language. Moreover it would help them see the grandeur of our culture to name newborns according to our ways.""
+
+demd_pop_culture_conversion.1005.a:0 "Give [desirable_culture.GetName] names as honors for favored nobles!"
+demd_pop_culture_conversion.1005.b:0 "Decree that all legal documents must use [desirable_culture.GetName] names"
+demd_pop_culture_conversion.1005.c:0 "I have more pressing matters to attend to."
+
+# 1006: Cadaster Disaster
+demd_pop_culture_conversion.1006.t:0 "[county.GetName]: Cadaster Disaster"
+demd_pop_culture_conversion.1006.desc:0 "My steward has come to me inquiring about the cadaster of [county.GetNameNoTierNoTooltip]. Indeed, the property register is old and could use a rework. We could bias the survey towards [desirable_culture.GetName] landowners. Such a drastic move might have significant repercussions on my reputation, and will not go without resistance. I might even have a rebellion on my hands!\n\nOn the other hand, it would be a golden opportunity to push the hegemony of the [desirable_culture.GetName] people in [county.GetNameNoTierNoTooltip], and an opportunity that may not come again."
+
+demd_pop_culture_conversion.1006.a:0 "Proceed with the land redistribution!"
+demd_pop_culture_conversion.1006.b:0 "It's too risky. I will write a fair cadaster."
+demd_pop_culture_conversion.1006.c:0 "We have no need for such controversy right now."
+
+# 1007: War Service
+demd_pop_culture_conversion.1007.t:0 "[county.GetName]: War Service"
+demd_pop_culture_conversion.1007.desc:0 "My marshall was updating the levy registers last week and encountered a peculiar situation. When checking the entries for [county.GetNameNoTierNoTooltip], he realized most all of the drafted men were of [desirable_culture.GetName] stock, a severe underuse of our military potential there.\n\nIf we could induct more [undesirable_culture.GetCollectiveNoun] in the levies we could boost our military potential whilst slowly accustoming them to our way of life. They will grow to admire and eventually, emulate us in their quest for better understanding."
+
+demd_pop_culture_conversion.1007.a:0 "We will forge mutual understanding in the fires of war! Register all able bodied [undesirable_culture.GetCollectiveNoun]!"
+demd_pop_culture_conversion.1007.b:0 "Send an order for [undesirable_culture.GetName] volunteers and reward those that show up."
+demd_pop_culture_conversion.1007.c:0 "They won't make good warriors anyway."
+
+# 1008: Upward Mobility
+demd_pop_culture_conversion.1008.t:0 "[county.GetName]: Upward Mobility"
+demd_pop_culture_conversion.1008.desc:0 "There is a growing [undesirable_culture.GetName] gentry in [county.GetNameNoTierNoTooltip], and as all self-made men do they want to flaunt their newfound fame and status. Some ways to do that are sponsoring artists or construction projects. Through architecture and art we could softly influence them to accept our culture.\n\nPainters, writers, singers and others are at you beck and call, funding buildings bring great prestige and these upstarts will surely heed your counsel should you suggest directives on how to spend their wealth."
+demd_pop_culture_conversion.1008.a:0 "I know a few artists they will love!"
+demd_pop_culture_conversion.1008.b:0 "Best way to mark their new status is to raise their taxes."
+demd_pop_culture_conversion.1008.c:0 "Impose new sumptuary laws to curtail their behavior"
+
+# 1009: Civil Service
+demd_pop_culture_conversion.1009.t:0 "[county.GetName]: Civil Service"
+demd_pop_culture_conversion.1009.desc:0 "As our administration grows and the workload with it, we are lacking clerks and petty officials to handle the extra work in [county.GetNameNoTierNoTooltip]. However, the place has no shortage of literate [undesirable_culture.GetCollectiveNoun] who could fill up this role. They would also interface between their people and the wider [desirable_culture.GetName] bureaucracy.\n\nWe need to set up a standard for recruitment and to what extent [desirable_culture.GetName] language will be a used by them. We could end up fostering a local elite hostile to our aims instead of furthering our control if we don't proceed carefully."
+demd_pop_culture_conversion.1009.a:0 "Empower our officials to recuit new clerks among the abler [undesirable_culture.GetCollectiveNoun]."
+demd_pop_culture_conversion.1009.b:0 "No, we can only trust [desirable_culture.GetCollectiveNoun] with matters of governance!"
+overextended_bureaucracy:0 "Overextended Bureaucracy"
+overextended_bureaucracy_desc:0 "Overextended Bureaucracy"
+
+# 1010: Housing Surplus
+demd_pop_culture_conversion.1010.t:0 "[county.GetName]: Housing Surplus"
+demd_pop_culture_conversion.1010.desc:0 "There has been a large outflow of migrants in [county.GetNameNoTierNoTooltip] recently, in large part [undesirable_culture.GetCollectiveNoun]. They have gifted or sold some of their immovable assets to other [undesirable_culture.GetCollectiveNoun], who in many cases have left them uninhabited. We have an opportunity to install more [desirable_culture.GetName] settlers by exploiting this crisis."
+demd_pop_culture_conversion.1010.a:0 "Force the sale of the real estate at slightly above market price and loan it out to [desirable_culture.GetName] settlers."
+demd_pop_culture_conversion.1010.b:0 "Requisition the properties for [desirable_culture.GetName] settlers by force,"
+demd_pop_culture_conversion.1010.c:0 "This isn't worth our while."
+
+# 1011: Rioting (low control event)
+demd_pop_culture_conversion.1011.t:0 "[county.GetName]: [undesirable_culture.GetName] Riots"
+demd_pop_culture_conversion.1011.desc:0 "There has been a large amount of urban unrest in [county.GetNameNoTierNoTooltip] recently, in large part among the [undesirable_culture.GetCollectiveNoun], who feel mistreated by the local [desirable_culture.GetName] administration. We have largely ignored the tension in the past, but today it has erupted into violence. Several government buildings are burning, and we no longer control some of the poorer areas of [county.title_province.GetName]."
+demd_pop_culture_conversion.1011.a:0 "Regain control of [county.title_province.GetName] by any means necessary!"
+demd_pop_culture_conversion.1011.b:0 "We don't want to inflame the situation. Try to contain the riots, but minimize force."
+demd_pop_culture_conversion.1011.c:0 "Let them vent their anger."
+demd_pop_culture_conversion.allowed:0 "Many people will be killed and property destroyed, and there is a large chance the fires will rage out of control."
+demd_pop_culture_conversion.tolerated:0 "Some people will be killed and property destroyed, and there is a small chance the fires will rage out of control."
+demd_pop_culture_conversion.suppressed:0 "Some will be killed, but we stand an excellent chance of limiting property damage and controlling the fires."
+demd_pop_culture_conversion.tolerated:0 "There is a small chance the fires rage out of control."

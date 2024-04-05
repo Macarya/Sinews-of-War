@@ -1,0 +1,13 @@
+﻿l_english:
+
+punitive_expedition_cb:0 "Punitive Expedition"
+PUNITIVE_EXPEDITION_CB_NAME:1 "$punitive_expedition_cb$"
+PUNITIVE_EXPEDITION_WAR_NAME:2 "[ATTACKER.GetPrimaryTitle.GetAdjective] Punitive Expedition against the [raiders|E] of [TITLE.GetBaseNameNoTier]"
+PUNITIVE_EXPEDITION_WAR_NAME_BASE:0 "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+PUNITIVE_EXPEDITION_WAR_NAME_FALLBACK:0 "[ATTACKER.GetPrimaryTitle.GetAdjective] Punitive Expedition"
+
+punitive_expedition_war_victory_desc:0 "You extract financial compensation from [defender.GetShortUIName|U]."
+punitive_expedition_war_victory_desc_defender:0 "[attacker.GetShortUIName|U] extracts financial compensation from [defender.GetShortUIName|U] for his recent [raids|E]."
+punitive_expedition_war_white_peace_desc:0 "No [gold|E] changes hands."
+punitive_expedition_war_defeat_desc:0 "$punitive_expedition_war_white_peace_desc$"
+punitive_expedition_war_invalidated_desc:0 "$PUNITIVE_EXPEDITION_WAR_NAME$ invalidated!"

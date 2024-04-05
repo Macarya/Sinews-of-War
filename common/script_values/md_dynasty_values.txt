@@ -1,0 +1,6 @@
+﻿# Dynasty Glory Marriage Acceptance Perk
+glory_legacy_1_marriage_acceptance = 15
+
+# Dynasty Blood 4 extra Genetic Trait chance
+blood_legacy_4_chance = 3
+blood_legacy_4_extra_player_chance = 3

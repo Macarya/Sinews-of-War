@@ -1,0 +1,38 @@
+monthlyPulse = {
+	every_in_global_list = {
+		variable = $list$
+		
+		
+	}
+}
+
+annualPulse = {
+	every_in_global_list = {
+		variable = $list$
+		annualPulseCounty = yes
+	}
+}
+
+annualPulseCounty = {	
+    county_fertility = yes
+	county_expansion = yes
+    county_disaster = yes
+
+	county_migration = yes
+    county_growth = yes  	
+    county_economy = yes
+	
+	county_disease = yes
+	
+	county_ai = yes
+	
+	county_var_forwarding = yes
+}
+
+monthlyPulseTradeNode = {
+	every_in_global_list = {
+		variable = $list$
+		
+		trade_node_pulse = yes
+	}
+}

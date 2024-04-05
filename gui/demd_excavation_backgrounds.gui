@@ -1,0 +1,12 @@
+
+
+texticon = {
+	icon = icon_egyptian
+	iconsize = {
+		texture = "gfx/interface/icons/excavation/egyptian_generic.png"	
+		size = { 680 380 }
+		offset = { 0 0 }
+		fontsize = 100%
+	}
+}
+

@@ -1,0 +1,211 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_population_min_growth_rate = -0.8
+
+plague_years = 4
+plague_immune_years = 40
+
+##############################
+# Province Growth
+##############################
+
+growth_rate_display = {
+	value = natural_birth_rate
+	subtract = total_death_rate
+}
+
+natural_birth_rate = {
+	value = base_birth_rate
+	multiply = {
+		value = 1
+		add = culture.var:birth_rate_cultural_production_mult
+		add = faith.var:birth_rate_faith_production_mult
+		add = birth_rate_wealth_mult
+		add = birth_rate_from_empty_land_mult
+		add = birth_rate_vigor_mult
+	}
+}
+
+base_birth_rate = {
+	value = 0.025
+	multiply = var:food_consumed
+	divide = var:food_demanded
+	min = 0.0125
+	max = 0.05
+}
+
+birth_rate_vigor_mult = {
+	value = culture.culture_birth_rate_vigor_mult
+}
+
+culture_birth_rate_vigor_mult = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.0001
+}
+
+birth_rate_vigor_mult_display = {
+	value = birth_rate_vigor_mult
+	multiply = 100
+	multiply = base_birth_rate
+}
+
+birth_rate_wealth_mult = {
+	value = var:capital_production_multiplier
+	max = 0.2
+}
+
+birth_rate_wealth_mult_display = {
+	value = birth_rate_wealth_mult
+	multiply = 100
+	multiply = base_birth_rate
+}
+
+birth_rate_cultural_production_mult_display = {
+	value = culture.var:birth_rate_cultural_production_mult
+	multiply = 100
+	multiply = base_birth_rate	
+}
+
+birth_rate_faith_production_mult_display = {
+	value = faith.var:birth_rate_faith_production_mult
+	multiply = 100
+	multiply = base_birth_rate
+}
+
+birth_rate_from_empty_land_mult = {
+	if = {
+		limit = { has_variable = food_districts_max }
+		value = var:food_districts_max 
+		multiply = demd_jobs_per_district
+		subtract = var:food_producers_count
+		divide = {
+			value = var:food_districts_max
+			multiply = demd_jobs_per_district
+		}
+		multiply = 0.15
+	}
+	else = {
+		value = 0
+	}
+}
+
+birth_rate_from_empty_land_mult_display = {
+	value = birth_rate_from_empty_land_mult
+	multiply = 100
+	multiply = base_birth_rate
+}
+
+###################
+
+total_death_rate = {
+	value = base_death_rate
+	add = squalor_death_rate
+	add = disease_death_rate
+	add = persecution_death_rate
+}
+
+base_death_rate = {
+	value = 0.025
+	if = { # r*(Fd/Fc-1) || 0
+        limit = {
+            var:food_demanded > var:food_consumed 
+        }
+        add = {
+			value = 1
+			subtract = var:food_ratio
+			multiply = 0.15
+		}
+	}
+	else = {
+		divide = {
+			value = var:food_consumed
+			divide = var:food_demanded
+			min = 0.2
+			max = 1.5
+		}
+	}
+}
+
+squalor_death_rate = {
+	if = {
+		limit = { has_variable = sanitation }
+		value = 1
+		subtract = var:sanitation
+		multiply = 0.05
+	}
+	else = {
+		value = 0 
+	}
+}
+
+disease_death_rate = {
+	value = 0
+	if = {
+        limit = { county = { has_county_modifier = plague_present } }
+        add = 0.12
+		multiply = {
+			value = 1
+			subtract = sanitation_death_reduction
+		}
+    }
+}
+
+sanitation_death_reduction = {
+	if = {
+		limit = { has_variable = sanitation }
+		value = var:sanitation
+		multiply = sanitation_death_reduction_max
+	}
+	else = {
+		value = sanitation_death_reduction_max
+	}
+}
+sanitation_death_reduction_max = 0.67
+
+persecution_death_rate = {
+    value = 0
+    if = {
+        limit = { county = { has_variable = faith_conversion_in_progress } }
+        add = 0.002
+    }
+    if = {
+        limit = { county = { has_variable = culture_conversion_in_progress } }
+        add = 0.005
+    }
+}
+
+#####################
+
+county_internal_migration_growth_sum = {
+	value = 0
+	every_in_list = { variable = county_provinces
+		limit = { has_holding = yes }
+		subtract = var:internal_migration_growth
+	}
+}
+
+internal_migration_pairwise = {
+
+	value = var:migration_pull
+	subtract = county.var:migration_pull
+
+	if = { 
+		limit = { var:migration_pull > county.var:migration_pull }
+		multiply = county.var:population
+	}
+	else = {
+		multiply = var:population
+	}
+	
+	multiply = 0.0035
+	
+	max = county.var:maxInternalPairwise
+	
+}
+
+

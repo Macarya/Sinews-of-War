@@ -1,0 +1,23 @@
+﻿l_spanish:
+
+ demd_pop_war.1003.t:0 "Caída de [barony.GetNameNoTierNoTooltip]"
+ demd_pop_war.1003.desc:0 "El asentamiento de [barony.GetNameNoTierNoTooltip] ha caído. Tenemos amplios terrenos de cultivo, muchos aldeanos temerosos y brillantes tesoros de [previous_controller.GetTitledFirstName] para elegir.\n\nLas tropas están listas, y esperan mi orden para marchar."
+ demd_pop_war.1003.a:0 "Ocupar la ciudad"
+ demd_pop_war.1003.b:0 "Saquear Ciudad"
+ demd_pop_war.1003.c:0 "Arrasar la Ciudad"
+
+ demd_pop_war.1004.t:0 "¡[barony.GetNameNoTierNoTooltip] ocupada!"
+ demd_pop_war.1004.desc:0 "Tras derribar las puertas de [barony.GetNameNoTierNoTooltip], [occupier.GetTitledFirstName] mantuvo sus tropas atadas en corto.\n\nLa mayoría del campo se ha salvado de los saqueos, pero los hambrientos [occupier.GetPrimaryTitle.GetAdjectiveNoTooltip] piden más..."
+ demd_pop_war.1004.a:0 "Lamentable"
+
+ demd_pop_war.1005.t:0 "¡[barony.GetNameNoTierNoTooltip] saqueada!"
+ demd_pop_war.1005.desc:0 "Tras un tenso asalto, [occupier.GetTitledFirstName] ha logrado penetrar en el fortificado asentamiento de [barony.GetNameNoTierNoTooltip], y mandó a sus soldados a saquear cualquier cosa de valor. ¡En poco tiempo habrán despojado de su riqueza la mayor parte de [county.GetNameNoTierNoTooltip]!"
+ demd_pop_war.1005.a:0 "#EMP Vengaré#! esta afrenta."
+
+ demd_pop_war.1006.t:0 "¡[barony.GetNameNoTierNoTooltip] arrasada!"
+ demd_pop_war.1006.desc:0 "Tras derribar las puertas del asentamiento de [barony.GetNameNoTierNoTooltip], [occupier.GetTitledFirstName] solo ha dejado ruinas a su paso. Los aldeanos se rasgan las vestiduras y lloran la pérdida de sus familiares."
+ demd_pop_war.1006.a:0 "¡[this.GetFaith.HighGodName] nos salve!"
+
+ demd_pop_war.2001.t:0 "¡[county.GetNameNoTierNoTooltip] saqueada!"
+ demd_pop_war.2001.desc:0 "[raider.GetTitledFirstName] ha saqueado los campos de [county.GetNameNoTierNoTooltip], quemando los cultivos y robando los tesoros que los campesinos no han podido esconder ni llevarse."
+ demd_pop_war.2001.a:0 "¡[this.GetFaith.HighGodName] nos salve!"

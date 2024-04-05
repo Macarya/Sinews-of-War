@@ -1,0 +1,44 @@
+﻿l_english:
+
+#####################
+# Boulder Trap
+#####################
+
+ek_excavation_final.0001.t:0 "[excavation_county.GetNameNoTier]: Golden Idol"
+ek_excavation_final.0001.desc:0 "As you enter the recently excavated central chamber of the ruins, you see something that takes your breath away, filling you with a pleasure you can barely define.\n\nSet on some kind of altar, looking both fierce and lovely, its gold shape glittering in the flames of the torch, is an intricately crafted idol of some forgotten Egyptian god."
+ek_excavation_final.0001.a:0 "Replace the Idol with a rock of equal weight"
+ek_excavation_final.0001.a.success:0 "You discovered a valuable [artifact|E]!"
+ek_excavation_final.0001.b:0 "Take the idol"
+ek_excavation_final.0001.c:0 "Leave the idol, it might be booby trapped. There's plenty of other treasures in the room."
+
+ek_excavation_final.0002.t:0 "[excavation_county.GetNameNoTier]: Golden Idol"
+ek_excavation_final.0002.desc:0 "Nothing. For a long moment, nothing. You stare at the idol in your hand, and then become aware of a strange, distant noise, a sound of things waking from a long sleep, roaring and tearing through the ruins. The noise rises to a deafening pitch, and everything begins to shake as if the very foundations of the place were coming apart. You turn, astounded to see a vast boulder roll down the passageway towards you, gathering speed as it courses forward."
+ek_excavation_final.0002.a:0 "Run!"
+ek_excavation_intermediate.0002.b.critical_success: "You evade the boulder and manage to keep hold of the artifact"
+ek_excavation_intermediate.0002.b.success: "You evade the boulder"
+ek_excavation_intermediate.0002.b.failure: "You are wounded by a glancing blow from the boulder"
+ek_excavation_intermediate.0002.b.critical_failure: "You are crushed by the boulder"
+
+
+#####################
+# Pit Trap
+#####################
+
+ek_excavation_final.0003.t:0 "[excavation_county.GetNameNoTier]: Secluded Passageway"
+ek_excavation_final.0003.desc:0 "You venture into the most recently unearthed wing of the ruins with [excavation_leader.GetTitledFirstName]. The smell is of centuries, the trapped odors of years of silence and darkness, of dust and festering. Water drips from the ceiling, slithering through the mosses that had grown there. The passageway whispers with the scampering of rodent claws. And the air is unexpectedly cold, untouched by sunlight, forever shaded.\n\nThe echoes of your footsteps sound alien here - a disturbance of the dead. A glint of gold in the next chamber catches your eye, but for a moment you are touched by the feeling of being in the wrong place at the wrong time, someone intent on damaging things that have lain too long in peace."
+ek_excavation_final.0003.a:0 "What's that shadow on the floor?"
+ek_excavation_final.0003.a.desc:0 "You stop to investigate."
+ek_excavation_final.0003.b:0 "I'll make better use of the treasure here than these dusty corpses."
+ek_excavation_final.0003.b.desc:0 "You proceed."
+ek_excavation_final.0003.c:0 "We shouldn't be here."
+ek_excavation_final.0003.c.desc:0 "You turn back."
+
+ek_excavation_final.0004.t:0 "[excavation_county.GetNameNoTier]: Secluded Passageway"
+ek_excavation_final.0004.desc.a:0 ""You look down at the floor more closely. An elaborate expanse of ancient cobwebs, over which lay a film of dust, creating the illusion of a floor. You bend down, picked up a stone and drop it through the surface of webs. Nothing, no sound, no echo comes back. Edging forward carefully along the edge of the corridor, you make it to the treasure chamber."
+ek_excavation_final.0004.a:0 "This was worth the risk!"
+
+ek_excavation_final.0004.desc.b:0 ""It's safe,"" [excavation_leader.GetTitledFirstName] says. He stops as his right foot slipped through the surface of the floor, and flies forward, screaming. You grab him by his belt and hauled him up to safety. He falls to the ground exhausted.\n\nYou look down at the floor through which he had stepped. An elaborate expanse of ancient cobwebs, over which lay a film of dust, creating the illusion of a floor. You bend down, picked up a stone and drop it through the surface of webs. Nothing, no sound, no echo comes back."
+ek_excavation_final.0004.b:0 "A near miss."
+
+ek_excavation_final.0004.desc.c:0 "[excavation_leader.GetTitledFirstName], drawn by the promise of treasure, rushes ahead of you. About halfway down the corridor, his right foot slips through the surface of the floor, and he disappears from view with a sudden scream followed by a sickening crunch.\n\nYou look down at the floor through which he had nearly stepped. An elaborate expanse of ancient cobwebs, over which lay a film of dust, created the illusion of a floor. You bend down, picked up a stone and drop it through the surface of webs. Nothing, no sound, no echo comes back."
+ek_excavation_final.0004.c:0 "[root.GetFaith.GetHighGodName] preserve me!"

@@ -1,0 +1,20 @@
+﻿l_spanish:
+ 
+ task_develop_county:0 "Aumentar la productividad del condado"
+ task_develop_county_VALUE_NAME:0 "[development_growth|E]"
+
+ task_develop_county_effect_desc:1 "El ratio de producción de [demd_food|E] y [demd_goods|E] en nuestro [domain|E] [counties|E] aumentará.\n\nRatio de proudicción de [demd_food|E]: #P +[SCOPE.ScriptValue('demd_steward_develop_county_total')|1%]#!\nRatio de producción de [demd_goods|E]: #P +[SCOPE.ScriptValue('demd_steward_develop_county_total')|1%]#!"
+
+ steward_develop_county_modifier:0 "Desarrollar condado"
+ steward_develop_county_modifier_skill_desc:0 "$steward_develop_county_modifier$ — Habilidad de Administrador"
+ steward_develop_county_modifier_desc:0 "La economía de este [county|E] está siendo supervisada por un Administrador"
+
+ task_promote_culture:0 "Promover cultura"
+ task_promote_culture_effect_desc:1 "La [demd_culture_conversion_defense|E] y [demd_culture_conversion_attack|E] de los [counties|E] del [domain|E] de nuestro [councillor.GetCulture.GetName] aumentarán.\n\n[demd_culture_conversion_defense|E] +[SCOPE.ScriptValue('demd_steward_promote_culture_total')|1%]\n[demd_culture_conversion_attack|E]: +[SCOPE.ScriptValue('demd_steward_promote_culture_total')|1%]"
+
+ task_conversion:0 "Promover nuestra fe"
+ task_conversion_effect_desc:1 "La [demd_faith_conversion_defense|E] y [demd_faith_conversion_attack|E] de los [counties|E] del [domain|E] de nuestro [councillor.GetFaith.GetAdjective] aumentarán.\n\n[demd_faith_conversion_defense|E]: +[SCOPE.ScriptValue('demd_court_chaplain_conversion_total')|1%] \n[demd_faith_conversion_attack|E]: +[SCOPE.ScriptValue('demd_court_chaplain_conversion_total')|1%]"
+
+#steward
+ task_collect_taxes:0 "Cobrar impuestos"
+ task_collect_taxes_effect_desc:1 "La tasa de impuestos en los [counties|E] de nuestro [domain|E] aumentarán:\n\nRatio de [tax|E]: #P +[SCOPE.ScriptValue('demd_steward_collect_taxes_total')|1%]#!"

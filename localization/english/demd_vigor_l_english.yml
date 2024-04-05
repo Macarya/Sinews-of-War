@@ -1,0 +1,84 @@
+﻿l_english:
+
+innovation_very_low_vigor:0 "Very Low Vigor"
+
+innovation_low_vigor:0 "Low Vigor"
+
+innovation_high_vigor:0 "High Vigor"
+
+innovation_very_high_vigor:0 "Very High Vigor"
+
+demd_vigor_war_won_huge:0 "[war.GetName] Won: #P +[EmptyScope.ScriptValue('demd_vigor_change_huge')|0]#! [vigor|E]"
+demd_vigor_war_won_huge_desc:0 "[winner.GetTitledFirstName] won the [war.GetName]: +[EmptyScope.ScriptValue('')|0], increasing the [vigor|E] of the [winner.GetCulture.GetName] [culture|E] by #P +[EmptyScope.ScriptValue('demd_vigor_change_huge')|0]#!."
+
+demd_vigor_war_won_large:0 "[war.GetName] Won: #P +[EmptyScope.ScriptValue('demd_vigor_change_large')|0]#! [vigor|E]"
+demd_vigor_war_won_large_desc:0 "[winner.GetTitledFirstName] won the [war.GetName]: +[EmptyScope.ScriptValue('')|0], increasing the [vigor|E] of the [winner.GetCulture.GetName] [culture|E] by #P +[EmptyScope.ScriptValue('demd_vigor_change_large')|0]#!."
+
+demd_vigor_war_won_medium:0 "[war.GetName] Won: #P +[EmptyScope.ScriptValue('demd_vigor_change_medium')|0]#! [vigor|E]"
+demd_vigor_war_won_medium_desc:0 "[winner.GetTitledFirstName] won the [war.GetName]: +[EmptyScope.ScriptValue('')|0], increasing the [vigor|E] of the [winner.GetCulture.GetName] [culture|E] by #P +[EmptyScope.ScriptValue('demd_vigor_change_medium')|0]#!."
+
+demd_vigor_war_won_small:0 "[war.GetName] Won: #P +[EmptyScope.ScriptValue('demd_vigor_change_small')|0]#! [vigor|E]"
+demd_vigor_war_won_small_desc:0 "[winner.GetTitledFirstName] won the [war.GetName]: +[EmptyScope.ScriptValue('')|0], increasing the [vigor|E] of the [winner.GetCulture.GetName] [culture|E] by #P +[EmptyScope.ScriptValue('demd_vigor_change_small')|0]#!."
+
+demd_vigor_war_lost_huge:0 "[war.GetName] lost: #N [EmptyScope.ScriptValue('demd_vigor_change_huge')|0]#! [vigor|E]"
+demd_vigor_war_lost_huge_desc:0 "[winner.GetTitledFirstName] lost the [war.GetName]: +[EmptyScope.ScriptValue('')|0], decreasing the [vigor|E] of the [winner.GetCulture.GetName] [culture|E] by #N [EmptyScope.ScriptValue('demd_vigor_change_huge')|0]#!."
+
+demd_vigor_war_lost_large:0 "[war.GetName] lost: #N [EmptyScope.ScriptValue('demd_vigor_change_large')|0]#! [vigor|E]"
+demd_vigor_war_lost_large_desc:0 "[winner.GetTitledFirstName] lost the [war.GetName]: +[EmptyScope.ScriptValue('')|0], decreasing the [vigor|E] of the [winner.GetCulture.GetName] [culture|E] by #N [EmptyScope.ScriptValue('demd_vigor_change_large')|0]#!."
+
+demd_vigor_war_lost_medium:0 "[war.GetName] lost: #N [EmptyScope.ScriptValue('demd_vigor_change_medium')|0]#! [vigor|E]"
+demd_vigor_war_lost_medium_desc:0 "[winner.GetTitledFirstName] lost the [war.GetName]: +[EmptyScope.ScriptValue('')|0], decreasing the [vigor|E] of the [winner.GetCulture.GetName] [culture|E] by #N [EmptyScope.ScriptValue('demd_vigor_change_medium')|0]#!."
+
+demd_vigor_war_lost_small:0 "[war.GetName] lost: #N [EmptyScope.ScriptValue('demd_vigor_change_small')|0]#! [vigor|E]"
+demd_vigor_war_lost_small_desc:0 "[winner.GetTitledFirstName] lost the [war.GetName]: +[EmptyScope.ScriptValue('')|0], decreasing the [vigor|E] of the [winner.GetCulture.GetName] [culture|E] by #N [EmptyScope.ScriptValue('demd_vigor_change_small')|0]#!."
+
+
+demd_vigor_special_building:0 "Special [building|E] constructed in [province.GetName]: #P +[EmptyScope.ScriptValue('demd_vigor_change_huge')|0]#! [vigor|E]"
+demd_vigor_special_building_desc:0 "A Special [building|E] has been constructed in [province.GetName], increasing the [vigor|E] of the [province.GetCulture.GetName] [culture|E] by #P +[EmptyScope.ScriptValue('demd_vigor_change_small')|0]#!."
+
+###
+
+vigor_desc_string:0 "#weak Vigor of [Culture.GetNameNoTooltip] culture. $game_concept_vigor_desc$"
+
+vigor_reformation_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('reform_cost_from_vigor_mult')|=$-1%] [prestige|E] cost to reform [Culture.GetName] [culture|E]."
+
+vigor_cb_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('demd_vigor_CB_cost_modifier_display')|=$-1%] [prestige|E] cost to declare wars."
+
+vigor_faction_join_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('demd_vigor_same_culture_faction_join_modifier')|=$-1] weight to [vassals|E] of this [culture|E] joining [factions|E] against a [liege|E] of the same [culture|E]. [Culture.MakeScope.ScriptValue('demd_vigor_different_culture_faction_join_modifier')|=$-1] weight to [vassals|E] of this [culture|E] joining [factions|E] against a [liege|E] of a different [culture|E]. [Culture.MakeScope.ScriptValue('demd_vigor_different_culture_vassal_faction_join_modifier')|=$-1] weight to [vassals|E] of a different [culture|E] joining [factions|E] against a [liege|E] of this [culture|E]."
+
+vigor_divergence_first_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('divergence_cost_from_vigor_mult')|=$-1%] [prestige|E] cost to make a [divergent_culture|E] from [Culture.GetName] [culture|E]."
+
+vigor_divergence_second_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('vigor_divergence_percent_chance_change')|=$-1%] frequency of [divergent_cultures|E] emergence."
+
+vigor_hybridization_first_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('hybridize_cost_from_vigor_of_instigating_culture')|=$-1%] [prestige|E] cost for [Culture.GetCollectiveNoun] to make a [hybrid_culture|E]."
+
+vigor_hybridization_second_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('hybridize_cost_from_vigor_of_target_culture')|=$-1%] [prestige|E] cost for other [cultures|E] to make a [hybrid_culture|E] with [Culture.GetName] [culture|E]"
+
+vigor_migration_pull_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('culture_migration_pull_from_vigor')|=$+1%] @icon_migration!# [demd_migration_pull|E] in [Culture.GetName] [counties|E]"
+
+vigor_construction_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('culture_construction_progress_from_vigor')|=$+1%] [holding|E] expansion progress in [Culture.GetName] [counties|E]"
+
+vigor_birth_rate_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('culture_birth_rate_vigor_mult')|=$+1%] @icon_births!# [demd_births|E] in [Culture.GetName] [counties|E]"
+
+vigor_manpower_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('culture_vigor_manpower_mult')|=$+1%] @icon_manpower!# [demd_manpower|E] in [Culture.GetName] [counties|E]"
+
+vigor_public_order_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('culture_public_order_from_vigor')|=$+1%] @icon_demd_public_order!# [demd_public_order|E] in [Culture.GetName] [counties|E]"
+
+vigor_artifact_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('demd_vigor_local_artisan_artifact_quality_max')|=$+] [artifact|E] quality maximum from local [Culture.GetName] artisans. [Culture.MakeScope.ScriptValue('demd_vigor_artisan_quality_bonus')|=$+] [artifact|E] quality from [inspired|E] [Culture.GetCollectiveNoun]. [Culture.MakeScope.ScriptValue('demd_vigor_inspiration_character_selection_weight')|=$+] to chance of becoming [inspired|E] for [Culture.GetName] [courtiers|E]."
+
+vigor_conversion_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('conversion_defense_attack_dummy_from_vigor')|=$+1%] [culture|E] conversion resistance and power in [Culture.GetName] [counties|E]"
+
+vigor_positive_traits_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('culture_positive_trait_vigor_bonus')|=$+1%] Frequency of the [GetTrait('brave').GetName( GetNullCharacter )], [GetTrait('ambitious').GetName( GetNullCharacter )], [GetTrait('generous').GetName( GetNullCharacter )], [GetTrait('honest').GetName( GetNullCharacter )], [GetTrait('just').GetName( GetNullCharacter )], [GetTrait('temperate').GetName( GetNullCharacter )], and [GetTrait('zealous').GetName( GetNullCharacter )] [traits|E]"
+
+vigor_negative_traits_string:0 "$EFFECT_LIST_BULLET$ [Culture.MakeScope.ScriptValue('culture_negative_trait_vigor_bonus')|=$-1%] Frequency of the [GetTrait('craven').GetName( GetNullCharacter )], [GetTrait('content').GetName( GetNullCharacter )], [GetTrait('greedy').GetName( GetNullCharacter )], [GetTrait('deceitful').GetName( GetNullCharacter )], [GetTrait('arbitrary').GetName( GetNullCharacter )], [GetTrait('gluttonous').GetName( GetNullCharacter )], and [GetTrait('cynical').GetName( GetNullCharacter )] [traits|E]"
+
+demd_has_greater_than_low_vigor:0 "[vigor|E] is greater than [EmptyScope.ScriptValue('low_vigor')]"
+demd_has_greater_than_medium_vigor:0 "[vigor|E] is greater than [EmptyScope.ScriptValue('medium_vigor')]"
+demd_has_greater_than_high_vigor:0 "[vigor|E] is greater than [EmptyScope.ScriptValue('high_vigor')]"
+demd_has_greater_than_very_high_vigor:0 "[vigor|E] is greater than [EmptyScope.ScriptValue('very_high_vigor')]"
+
+demd_has_less_than_low_vigor:0 "[vigor|E] is less than [EmptyScope.ScriptValue('low_vigor')]"
+demd_has_less_than_medium_vigor:0 "[vigor|E] is less than [EmptyScope.ScriptValue('medium_vigor')]"
+demd_has_less_than_high_vigor:0 "[vigor|E] is less than [EmptyScope.ScriptValue('high_vigor')]"
+demd_has_less_than_very_high_vigor:0 "[vigor|E] is less than [EmptyScope.ScriptValue('very_high_vigor')]"
+

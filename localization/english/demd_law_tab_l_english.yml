@@ -1,0 +1,278 @@
+﻿l_english:
+
+demd_tax_setting_0:0 "Minimal Taxes"
+demd_tax_setting_0_desc:0 "Base [tax|E] Rate: @icon_taxes!# [EmptyScope.ScriptValue('demd_base_tax_rate_level_0')|1%]"
+DEMD_TAX_0_TOOLTIP:0 "#bold [GetModifier('demd_tax_setting_0').GetNameWithTooltip|L]#!\n\n@icon_taxes!# Base [tax|E] Rate: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_tax_rate_level_0')|1%]\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_tax_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_tax_rate_none')]"
+
+demd_tax_setting_1:0 "Low Taxes"
+demd_tax_setting_1_desc:0 "Base [tax|E] Rate: @icon_taxes!# [EmptyScope.ScriptValue('demd_base_tax_rate_level_1')|1%]"
+DEMD_TAX_1_TOOLTIP:0 "#bold [GetModifier('demd_tax_setting_1').GetNameWithTooltip|L]#!\n\n@icon_taxes!# Base [tax|E] Rate: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_tax_rate_level_1')|1%]\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_tax_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_tax_rate_low')]"
+
+demd_tax_setting_2:0 "Moderate Taxes"
+demd_tax_setting_2_desc:0 "Base [tax|E] Rate: @icon_taxes!# [EmptyScope.ScriptValue('demd_base_tax_rate_level_2')|1%]"
+DEMD_TAX_2_TOOLTIP:0 "#bold [GetModifier('demd_tax_setting_2').GetNameWithTooltip|L]#!\n\n@icon_taxes!# Base [tax|E] Rate: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_tax_rate_level_2')|1%]\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_tax_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_tax_rate_moderate')]"
+
+demd_tax_setting_3:0 "High Taxes"
+demd_tax_setting_3_desc:0 "Base [tax|E] Rate: @icon_taxes!# [EmptyScope.ScriptValue('demd_base_tax_rate_level_3')|1%]"
+DEMD_TAX_3_TOOLTIP:0 "#bold [GetModifier('demd_tax_setting_3').GetNameWithTooltip|L]#!\n\n@icon_taxes!# Base [tax|E] Rate: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_tax_rate_level_3')|1%]\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_tax_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_tax_rate_high')]"
+
+demd_tax_setting_4:0 "Extortionate Taxes"
+demd_tax_setting_4_desc:0 "Base [tax|E] Rate: @icon_taxes!# [EmptyScope.ScriptValue('demd_base_tax_rate_level_4')|1%]"
+DEMD_TAX_4_TOOLTIP:0 "#bold [GetModifier('demd_tax_setting_4').GetNameWithTooltip|L]#!\n\n@icon_taxes!# Base [tax|E] Rate: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_tax_rate_level_4')|1%]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_tax_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_tax_rate_extortionate')]"
+
+################################################
+
+demd_manpower_setting_0:0 "Minimal Service Requirements"
+demd_manpower_setting_0_desc:0 "Base Recruitable [demd_manpower|E]: @icon_manpower!# [EmptyScope.ScriptValue('demd_base_manpower_rate_level_0')|1%]"
+DEMD_MANPOWER_0_TOOLTIP:0 "#bold [GetModifier('demd_manpower_setting_0').GetNameWithTooltip|L]#!\n\n@icon_manpower!# Base Recruitable [demd_manpower|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_manpower_rate_level_0')|1%]\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_manpower_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_manpower_rate_none')]"
+
+demd_manpower_setting_1:0 "Low Service Requirements"
+demd_manpower_setting_1_desc:0 "Base Recruitable [demd_manpower|E]: @icon_manpower!# [EmptyScope.ScriptValue('demd_base_manpower_rate_level_1')|1%]"
+DEMD_MANPOWER_1_TOOLTIP:0 "#bold [GetModifier('demd_manpower_setting_1').GetNameWithTooltip|L]#!\n\n@icon_manpower!# Base Recruitable [demd_manpower|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_manpower_rate_level_1')|1%]\n[county_opinion|E]: #P +5#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_manpower_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_manpower_rate_low')]"
+
+demd_manpower_setting_2:0 "Moderate Service Requirements"
+demd_manpower_setting_2_desc:0 "Base Recruitable [demd_manpower|E]: @icon_manpower!# [EmptyScope.ScriptValue('demd_base_manpower_rate_level_2')|1%]"
+DEMD_MANPOWER_2_TOOLTIP:0 "#bold [GetModifier('demd_manpower_setting_2').GetNameWithTooltip|L]#!\n\n@icon_manpower!# Base Recruitable [demd_manpower|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_manpower_rate_level_2')|1%]\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_manpower_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_manpower_rate_moderate')]"
+
+demd_manpower_setting_3:0 "High Service Requirements"
+demd_manpower_setting_3_desc:0 "Base Recruitable [demd_manpower|E]: @icon_manpower!# [EmptyScope.ScriptValue('demd_base_manpower_rate_level_3')|1%]"
+DEMD_MANPOWER_3_TOOLTIP:0 "#bold [GetModifier('demd_manpower_setting_3').GetNameWithTooltip|L]#!\n\n@icon_manpower!# Base Recruitable [demd_manpower|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_manpower_rate_level_3')|1%]\n[county_opinion|E]: #N -20#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_manpower_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_manpower_rate_high')]"
+
+demd_manpower_setting_4:0 "Extortionate Service Requirements"
+demd_manpower_setting_4_desc:0 "Base Recruitable [demd_manpower|E]: @icon_manpower!# [EmptyScope.ScriptValue('demd_base_manpower_rate_level_4')|1%]"
+DEMD_MANPOWER_4_TOOLTIP:0 "#bold [GetModifier('demd_manpower_setting_4').GetNameWithTooltip|L]#!\n\n@icon_manpower!# Base Recruitable [demd_manpower|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_base_manpower_rate_level_4')|1%]\n[county_opinion|E]: #N -40#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_manpower_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_manpower_rate_extortionate')]"
+
+################################################
+
+demd_public_order_setting_0:0 "Minimal Guards"
+demd_public_order_setting_0_desc:0 "[demd_public_order|E]: @icon_demd_public_order!# #P +[EmptyScope.ScriptValue('demd_public_order_setting_level_0')|0%]#!\n @icon_manpower!# [demd_manpower|E] towards @icon_garrison!# [garrison|E]: [EmptyScope.ScriptValue('demd_garrison_percent_level_0')|0%]"
+DEMD_PUBLIC_ORDER_0_TOOLTIP:0 "#bold [GetModifier('demd_public_order_setting_0').GetNameWithTooltip|L]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_public_order_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_public_order_none')]"
+
+demd_public_order_setting_1:0 "Few Guards"
+demd_public_order_setting_1_desc:0 "[demd_public_order|E]: @icon_demd_public_order!# #P +[EmptyScope.ScriptValue('demd_public_order_setting_level_1')|0%]#!\n @icon_manpower!# [demd_manpower|E] towards @icon_garrison!# [garrison|E]: [EmptyScope.ScriptValue('demd_garrison_percent_level_1')|0%]"
+DEMD_PUBLIC_ORDER_1_TOOLTIP:0 "#bold [GetModifier('demd_public_order_setting_1').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_1_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_public_order_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_public_order_low')]"
+
+demd_public_order_setting_2:0 "Some Guards"
+demd_public_order_setting_2_desc:0 "[demd_public_order|E]: @icon_demd_public_order!# #P +[EmptyScope.ScriptValue('demd_public_order_setting_level_2')|0%]#!\n @icon_manpower!# [demd_manpower|E] towards @icon_garrison!# [garrison|E]: [EmptyScope.ScriptValue('demd_garrison_percent_level_2')|0%]"
+DEMD_PUBLIC_ORDER_2_TOOLTIP:0 "#bold [GetModifier('demd_public_order_setting_2').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_2_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_public_order_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_public_order_moderate')]"
+
+demd_public_order_setting_3:0 "Many Guards"
+demd_public_order_setting_3_desc:0 "[demd_public_order|E]: @icon_demd_public_order!# #P +[EmptyScope.ScriptValue('demd_public_order_setting_level_3')|0%]#!\n @icon_manpower!# [demd_manpower|E] towards @icon_garrison!# [garrison|E]: [EmptyScope.ScriptValue('demd_garrison_percent_level_3')|0%]"
+DEMD_PUBLIC_ORDER_3_TOOLTIP:0 "#bold [GetModifier('demd_public_order_setting_3').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_3_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_public_order_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_public_order_high')]"
+
+demd_public_order_setting_4:0 "Omnipresent Guards"
+demd_public_order_setting_4_desc:0 "[demd_public_order|E]: @icon_demd_public_order!# #P +[EmptyScope.ScriptValue('demd_public_order_setting_level_4')|0%]#!\n @icon_manpower!# [demd_manpower|E] towards @icon_garrison!# [garrison|E]: [EmptyScope.ScriptValue('demd_garrison_percent_level_4')|0%]"
+DEMD_PUBLIC_ORDER_4_TOOLTIP:0 "#bold [GetModifier('demd_public_order_setting_4').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_4_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_public_order_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_public_order_extravagant')]"
+
+################################################
+
+demd_sanitation_setting_0:0 "Ditches"
+demd_sanitation_setting_0_desc:0 "[demd_sanitation|E]: @icon_sanitation!# #P +[EmptyScope.ScriptValue('demd_sanitation_setting_level_0')|0%]#!"
+DEMD_SANITATION_0_TOOLTIP:0 "#bold [GetModifier('demd_sanitation_setting_0').GetNameWithTooltip|L]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_sanitation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_sanitation_none')]"
+
+demd_sanitation_setting_1:0 "Gutters"
+demd_sanitation_setting_1_desc:0 "[demd_sanitation|E]: @icon_sanitation!# #P +[EmptyScope.ScriptValue('demd_sanitation_setting_level_1')|0%]#!"
+DEMD_SANITATION_1_TOOLTIP:0 "#bold [GetModifier('demd_sanitation_setting_1').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_1_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_sanitation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_sanitation_low')]"
+
+demd_sanitation_setting_2:0 "Canals"
+demd_sanitation_setting_2_desc:0 "[demd_sanitation|E]: @icon_sanitation!# #P +[EmptyScope.ScriptValue('demd_sanitation_setting_level_2')|0%]#!"
+DEMD_SANITATION_2_TOOLTIP:0 "#bold [GetModifier('demd_sanitation_setting_2').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_2_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_sanitation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_sanitation_moderate')]"
+
+demd_sanitation_setting_3:0 "Basic Sewers"
+demd_sanitation_setting_3_desc:0 "[demd_sanitation|E]: @icon_sanitation!# #P +[EmptyScope.ScriptValue('demd_sanitation_setting_level_3')|0%]#!"
+DEMD_SANITATION_3_TOOLTIP:0 "#bold [GetModifier('demd_sanitation_setting_3').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_3_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_sanitation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_sanitation_high')]"
+
+demd_sanitation_setting_4:0 "Extensive Sewers"
+demd_sanitation_setting_4_desc:0 "[demd_sanitation|E]: @icon_sanitation!# #P +[EmptyScope.ScriptValue('demd_sanitation_setting_level_4')|0%]#!"
+DEMD_SANITATION_4_TOOLTIP:0 "#bold [GetModifier('demd_sanitation_setting_4').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_4_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_sanitation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_sanitation_extravagant')]"
+
+################################################
+
+demd_infrastructure_setting_0:0 "Dirt Roads"
+demd_infrastructure_setting_0_desc:0 "[demd_trade_power|E]: @icon_trade_power!# #P +[EmptyScope.ScriptValue('demd_infrastructure_setting_level_0')|0%]#!"
+DEMD_INFRASTRUCTURE_0_TOOLTIP:0 "#bold [GetModifier('demd_infrastructure_setting_0').GetNameWithTooltip|L]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_infrastructure_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_infrastructure_none')]"
+
+demd_infrastructure_setting_1:0 "Gravel Roads"
+demd_infrastructure_setting_1_desc:0 "[demd_trade_power|E]: @icon_trade_power!# #P +[EmptyScope.ScriptValue('demd_infrastructure_setting_level_1')|0%]#!"
+DEMD_INFRASTRUCTURE_1_TOOLTIP:0 "#bold [GetModifier('demd_infrastructure_setting_1').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_1_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_infrastructure_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_infrastructure_low')]"
+
+demd_infrastructure_setting_2:0 "Cobblestone Roads"
+demd_infrastructure_setting_2_desc:0 "[demd_trade_power|E]: @icon_trade_power!# #P +[EmptyScope.ScriptValue('demd_infrastructure_setting_level_2')|0%]#!"
+DEMD_INFRASTRUCTURE_2_TOOLTIP:0 "#bold [GetModifier('demd_infrastructure_setting_2').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_2_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_infrastructure_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_infrastructure_moderate')]"
+
+demd_infrastructure_setting_3:0 "Tar Roads"
+demd_infrastructure_setting_3_desc:0 "[demd_trade_power|E]: @icon_trade_power!# #P +[EmptyScope.ScriptValue('demd_infrastructure_setting_level_3')|0%]#!"
+DEMD_INFRASTRUCTURE_3_TOOLTIP:0 "#bold [GetModifier('demd_infrastructure_setting_3').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_3_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_infrastructure_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_infrastructure_high')]"
+
+demd_infrastructure_setting_4:0 "Roman Roads"
+demd_infrastructure_setting_4_desc:0 "[demd_trade_power|E]: @icon_trade_power!# #P +[EmptyScope.ScriptValue('demd_infrastructure_setting_level_4')|0%]#!"
+DEMD_INFRASTRUCTURE_4_TOOLTIP:0 "#bold [GetModifier('demd_infrastructure_setting_4').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_4_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_infrastructure_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_infrastructure_extravagant')]"
+
+################################################
+
+# https://link.springer.com/chapter/10.1007/978-3-030-00268-8_6
+
+demd_irrigation_setting_0:0 "Canals"
+demd_irrigation_setting_0_desc:0 "Max [demd_food_districts|E]: @icon_demd_food!# #P +[EmptyScope.ScriptValue('demd_irrigation_setting_level_0')|0%]#!"
+DEMD_IRRIGATION_0_TOOLTIP:0 "#bold [GetModifier('demd_irrigation_setting_0').GetNameWithTooltip|L]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_irrigation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_irrigation_none')]"
+
+demd_irrigation_setting_1:0 "Dams"
+demd_irrigation_setting_1_desc:0 "Max [demd_food_districts|E]: @icon_demd_food!# #P +[EmptyScope.ScriptValue('demd_irrigation_setting_level_1')|0%]#!"
+DEMD_IRRIGATION_1_TOOLTIP:0 "#bold [GetModifier('demd_irrigation_setting_1').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_1_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_irrigation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_irrigation_low')]"
+
+demd_irrigation_setting_2:0 "Catchworks"
+demd_irrigation_setting_2_desc:0 "Max [demd_food_districts|E]: @icon_demd_food!# #P +[EmptyScope.ScriptValue('demd_irrigation_setting_level_2')|0%]#!"
+DEMD_IRRIGATION_2_TOOLTIP:0 "#bold [GetModifier('demd_irrigation_setting_2').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_2_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_irrigation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_irrigation_moderate')]"
+
+demd_irrigation_setting_3:0 "Bedworks"
+demd_irrigation_setting_3_desc:0 "Max [demd_food_districts|E]: @icon_demd_food!# #P +[EmptyScope.ScriptValue('demd_irrigation_setting_level_3')|0%]#!"
+DEMD_IRRIGATION_3_TOOLTIP:0 "#bold [GetModifier('demd_irrigation_setting_3').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_3_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_irrigation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_irrigation_high')]"
+
+demd_irrigation_setting_4:0 "Aqueducts"
+demd_irrigation_setting_4_desc:0 "Max [demd_food_districts|E]: @icon_demd_food!# #P +[EmptyScope.ScriptValue('demd_irrigation_setting_level_4')|0%]#!"
+DEMD_IRRIGATION_4_TOOLTIP:0 "#bold [GetModifier('demd_irrigation_setting_4').GetNameWithTooltip|L]#!\n[tax|E]: @icon_taxes!# #N -[Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_edict_level_4_cost')|2]#!\n\n#bold Requirements:#!\n[Province.GetCounty.GetTitle.Custom('demd_irrigation_edict_cooldown')] \n[Province.GetCounty.GetTitle.Custom('demd_edict_req_irrigation_extravagant')]"
+
+################################################
+
+demd_tax_modifier_0:0 "[GetModifier('demd_tax_setting_0').GetNameWithTooltip|L]"
+demd_tax_modifier_1:0 "[GetModifier('demd_tax_setting_1').GetNameWithTooltip|L]"
+demd_tax_modifier_2:0 "[GetModifier('demd_tax_setting_2').GetNameWithTooltip|L]"
+demd_tax_modifier_3:0 "[GetModifier('demd_tax_setting_3').GetNameWithTooltip|L]"
+demd_tax_modifier_4:0 "[GetModifier('demd_tax_setting_4').GetNameWithTooltip|L]"
+
+demd_manpower_modifier_0:0 "[GetModifier('demd_manpower_setting_0').GetNameWithTooltip|L]"
+demd_manpower_modifier_1:0 "[GetModifier('demd_manpower_setting_1').GetNameWithTooltip|L]"
+demd_manpower_modifier_2:0 "[GetModifier('demd_manpower_setting_2').GetNameWithTooltip|L]"
+demd_manpower_modifier_3:0 "[GetModifier('demd_manpower_setting_3').GetNameWithTooltip|L]"
+demd_manpower_modifier_4:0 "[GetModifier('demd_manpower_setting_4').GetNameWithTooltip|L]"
+
+demd_public_order_modifier_0:0 "[GetModifier('demd_public_order_setting_0').GetNameWithTooltip|L]"
+demd_public_order_modifier_1:0 "[GetModifier('demd_public_order_setting_1').GetNameWithTooltip|L]"
+demd_public_order_modifier_2:0 "[GetModifier('demd_public_order_setting_2').GetNameWithTooltip|L]"
+demd_public_order_modifier_3:0 "[GetModifier('demd_public_order_setting_3').GetNameWithTooltip|L]"
+demd_public_order_modifier_4:0 "[GetModifier('demd_public_order_setting_4').GetNameWithTooltip|L]"
+
+demd_sanitation_modifier_0:0 "[GetModifier('demd_sanitation_setting_0').GetNameWithTooltip|L]"
+demd_sanitation_modifier_1:0 "[GetModifier('demd_sanitation_setting_1').GetNameWithTooltip|L]"
+demd_sanitation_modifier_2:0 "[GetModifier('demd_sanitation_setting_2').GetNameWithTooltip|L]"
+demd_sanitation_modifier_3:0 "[GetModifier('demd_sanitation_setting_3').GetNameWithTooltip|L]"
+demd_sanitation_modifier_4:0 "[GetModifier('demd_sanitation_setting_4').GetNameWithTooltip|L]"
+
+demd_irrigation_modifier_0:0 "[GetModifier('demd_irrigation_setting_0').GetNameWithTooltip|L]"
+demd_irrigation_modifier_1:0 "[GetModifier('demd_irrigation_setting_1').GetNameWithTooltip|L]"
+demd_irrigation_modifier_2:0 "[GetModifier('demd_irrigation_setting_2').GetNameWithTooltip|L]"
+demd_irrigation_modifier_3:0 "[GetModifier('demd_irrigation_setting_3').GetNameWithTooltip|L]"
+demd_irrigation_modifier_4:0 "[GetModifier('demd_irrigation_setting_4').GetNameWithTooltip|L]"
+
+demd_infrastructure_modifier_0:0 "[GetModifier('demd_infrastructure_setting_0').GetNameWithTooltip|L]"
+demd_infrastructure_modifier_1:0 "[GetModifier('demd_infrastructure_setting_1').GetNameWithTooltip|L]"
+demd_infrastructure_modifier_2:0 "[GetModifier('demd_infrastructure_setting_2').GetNameWithTooltip|L]"
+demd_infrastructure_modifier_3:0 "[GetModifier('demd_infrastructure_setting_3').GetNameWithTooltip|L]"
+demd_infrastructure_modifier_4:0 "[GetModifier('demd_infrastructure_setting_4').GetNameWithTooltip|L]"
+
+################################################
+
+demd_edict_on_cooldown:0 "Did not recently change this [demd_edict|E]: @icon_cross!#"
+demd_edict_not_on_cooldown:0 "Did not recently change this [demd_edict|E]: @icon_check!#"
+
+###
+
+demd_edict_req_manpower_rate_none_pass:0 "[demd_manpower_rate|E] is set to Low: @icon_check!#"
+demd_edict_req_manpower_rate_none_fail:0 "[demd_manpower_rate|E] is set to Low: @icon_cross!#"
+
+demd_edict_req_manpower_rate_low_pass:0 "[demd_manpower_rate|E] is set to Minimal or Moderate: @icon_check!#"
+demd_edict_req_manpower_rate_low_fail:0 "[demd_manpower_rate|E] is set to Minimal or Moderate: @icon_cross!#"
+
+demd_edict_req_manpower_rate_moderate_pass:0 "[demd_manpower_rate|E] is set to High or Low: @icon_check!#"
+demd_edict_req_manpower_rate_moderate_fail:0 "[demd_manpower_rate|E] is set to High or Low: @icon_cross!#"
+
+demd_edict_req_manpower_rate_high_pass:0 "[demd_manpower_rate|E] is set to Moderate or Extortionate: @icon_check!#"
+demd_edict_req_manpower_rate_high_fail:0 "[demd_manpower_rate|E] is set to Moderate or Extortionate: @icon_cross!#"
+
+demd_edict_req_manpower_rate_extortionate_pass:0 "[demd_manpower_rate|E] is set to High: @icon_check!#"
+demd_edict_req_manpower_rate_extortionate_fail:0 "[demd_manpower_rate|E] is set to High: @icon_cross!#"
+
+###
+
+demd_edict_req_tax_rate_none_pass:0 "[demd_tax_rate|E] is set to Low: @icon_check!#"
+demd_edict_req_tax_rate_none_fail:0 "[demd_tax_rate|E] is set to Low: @icon_cross!#"
+
+demd_edict_req_tax_rate_low_pass:0 "[demd_tax_rate|E] is set to Moderate or Minimal: @icon_check!#"
+demd_edict_req_tax_rate_low_fail:0 "[demd_tax_rate|E] is set to Moderate or Minimal: @icon_cross!#"
+
+demd_edict_req_tax_rate_moderate_pass:0 "[demd_tax_rate|E] is set to High or Low: @icon_check!#"
+demd_edict_req_tax_rate_moderate_fail:0 "[demd_tax_rate|E] is set to High or Low: @icon_cross!#"
+
+demd_edict_req_tax_rate_high_pass:0 "[demd_tax_rate|E] is set to Moderate or Extortionate: @icon_check!#"
+demd_edict_req_tax_rate_high_fail:0 "[demd_tax_rate|E] is set to Moderate or Extortionate: @icon_cross!#"
+
+demd_edict_req_tax_rate_extortionate_pass:0 "[demd_tax_rate|E] is set to High: @icon_check!#"
+demd_edict_req_tax_rate_extortionate_fail:0 "[demd_tax_rate|E] is set to High: @icon_cross!#"
+
+###
+
+demd_edict_req_public_order_none_pass:0 "[demd_public_order|E] is set to Low: @icon_check!#"
+demd_edict_req_public_order_none_fail:0 "[demd_public_order|E] is set to Low: @icon_cross!#"
+
+demd_edict_req_public_order_low_pass:0 "[demd_public_order|E] is set to Moderate or Minimal: @icon_check!#"
+demd_edict_req_public_order_low_fail:0 "[demd_public_order|E] is set to Moderate or Minimal: @icon_cross!#"
+
+demd_edict_req_public_order_moderate_pass:0 "[demd_public_order|E] is set to High or Low: @icon_check!#"
+demd_edict_req_public_order_moderate_fail:0 "[demd_public_order|E] is set to High or Low: @icon_cross!#"
+
+demd_edict_req_public_order_high_pass:0 "[demd_public_order|E] is set to Moderate or Extravagant: @icon_check!#"
+demd_edict_req_public_order_high_fail:0 "[demd_public_order|E] is set to Moderate or Extravagant: @icon_cross!#"
+
+demd_edict_req_public_order_extravagant_pass:0 "[demd_public_order|E] is set to High: @icon_check!#"
+demd_edict_req_public_order_extravagant_fail:0 "[demd_public_order|E] is set to High: @icon_cross!#"
+
+###
+
+demd_edict_req_sanitation_none_pass:0 "[demd_sanitation|E] is set to Low: @icon_check!#"
+demd_edict_req_sanitation_none_fail:0 "[demd_sanitation|E] is set to Low: @icon_cross!#"
+
+demd_edict_req_sanitation_low_pass:0 "[demd_sanitation|E] is set to Moderate or Minimal: @icon_check!#"
+demd_edict_req_sanitation_low_fail:0 "[demd_sanitation|E] is set to Moderate or Minimal: @icon_cross!#"
+
+demd_edict_req_sanitation_moderate_pass:0 "[demd_sanitation|E] is set to High or Low: @icon_check!#"
+demd_edict_req_sanitation_moderate_fail:0 "[demd_sanitation|E] is set to High or Low: @icon_cross!#"
+
+demd_edict_req_sanitation_high_pass:0 "[demd_sanitation|E] is set to Moderate or Extravagant: @icon_check!#"
+demd_edict_req_sanitation_high_fail:0 "[demd_sanitation|E] is set to Moderate or Extravagant: @icon_cross!#"
+
+demd_edict_req_sanitation_extravagant_pass:0 "[demd_sanitation|E] is set to High: @icon_check!#"
+demd_edict_req_sanitation_extravagant_fail:0 "[demd_sanitation|E] is set to High: @icon_cross!#"
+
+###
+
+demd_edict_req_infrastructure_none_pass:0 "Infrastructure is set to Low: @icon_check!#"
+demd_edict_req_infrastructure_none_fail:0 "Infrastructure is set to Low: @icon_cross!#"
+
+demd_edict_req_infrastructure_low_pass:0 "Infrastructure is set to Moderate or Minimal: @icon_check!#"
+demd_edict_req_infrastructure_low_fail:0 "Infrastructure is set to Moderate or Minimal: @icon_cross!#"
+
+demd_edict_req_infrastructure_moderate_pass:0 "Infrastructure is set to High or Low: @icon_check!#"
+demd_edict_req_infrastructure_moderate_fail:0 "Infrastructure is set to High or Low: @icon_cross!#"
+
+demd_edict_req_infrastructure_high_pass:0 "Infrastructure is set to Moderate or Extravagant: @icon_check!#"
+demd_edict_req_infrastructure_high_fail:0 "Infrastructure is set to Moderate or Extravagant: @icon_cross!#"
+
+demd_edict_req_infrastructure_extravagant_pass:0 "Infrastructure is set to High: @icon_check!#"
+demd_edict_req_infrastructure_extravagant_fail:0 "Infrastructure is set to High: @icon_cross!#"
+
+###
+
+demd_edict_req_irrigation_none_pass:0 "Irrigation is set to Low: @icon_check!#"
+demd_edict_req_irrigation_none_fail:0 "Irrigation is set to Low: @icon_cross!#"
+
+demd_edict_req_irrigation_low_pass:0 "Irrigation is set to Moderate or Minimal: @icon_check!#"
+demd_edict_req_irrigation_low_fail:0 "Irrigation is set to Moderate or Minimal: @icon_cross!#"
+
+demd_edict_req_irrigation_moderate_pass:0 "Irrigation is set to High or Low: @icon_check!#"
+demd_edict_req_irrigation_moderate_fail:0 "Irrigation is set to High or Low: @icon_cross!#"
+
+demd_edict_req_irrigation_high_pass:0 "Irrigation is set to Moderate or Extravagant: @icon_check!#"
+demd_edict_req_irrigation_high_fail:0 "Irrigation is set to Moderate or Extravagant: @icon_cross!#"
+
+demd_edict_req_irrigation_extravagant_pass:0 "Irrigation is set to High: @icon_check!#"
+demd_edict_req_irrigation_extravagant_fail:0 "Irrigation is set to High: @icon_cross!#"

@@ -1,0 +1,29 @@
+﻿in_same_realm_as_trade_node_owner = {
+	global = in_same_realm_as_trade_node_owner
+	first = in_same_realm_as_trade_node_owner
+	third = in_same_realm_as_trade_node_owner
+}
+
+insufficient_military_to_raid_trade_node = {
+	global = insufficient_military_to_raid_trade_node
+	first = insufficient_military_to_raid_trade_node
+	third = insufficient_military_to_raid_trade_node
+}
+
+insufficient_wealth_to_raid_trade_node = {
+	global = insufficient_wealth_to_raid_trade_node
+	first = insufficient_wealth_to_raid_trade_node
+	third = insufficient_wealth_to_raid_trade_node
+}
+
+must_own_strategic_location = {
+	global = must_own_strategic_location
+	first = must_own_strategic_location
+	third = must_own_strategic_location
+}
+
+demd_can_seize_control_by_decision_desc = {
+	global = demd_can_seize_control_by_decision
+	first = demd_can_seize_control_by_decision
+	third = demd_can_seize_control_by_decision
+}

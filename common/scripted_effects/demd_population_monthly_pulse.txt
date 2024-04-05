@@ -1,0 +1,13 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+monthlyPulse = {
+	every_in_global_list = {
+		variable = $list$
+	}
+}
+

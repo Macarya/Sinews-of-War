@@ -1,0 +1,19 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+# Error suppression sgui
+demd_dummy = {
+	scope = province
+	is_shown = { 
+		has_global_variable = SoW_is_loaded
+	}
+	effect = { 		
+		set_variable = { name = excavation_story value = 0 }
+		save_scope_as = new_excavation_leader
+		set_variable = { name = ruins_type value = flag:egyptian }
+		set_variable = { name = ruins_type value = flag:dwemer }	
+	}
+}

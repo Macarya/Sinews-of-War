@@ -1,0 +1,184 @@
+﻿#Scripted Modifiers used for war
+
+ai_occupy_modifier = {
+	modifier = {	
+		add = 20
+		has_trait = compassionate
+	}
+	modifier = {	
+		add = 20
+		has_trait = forgiving
+	}
+	modifier = {	
+		add = 20
+		culture = { cultural_acceptance = { target = scope:county.culture value > 20 } }
+	}
+	modifier = {	
+		add = 20
+		culture = { cultural_acceptance = { target = scope:county.culture value > 40 } }
+	}
+	modifier = {	
+		add = 20
+		culture = { cultural_acceptance = { target = scope:county.culture value > 60 } }
+	}
+	modifier = {	
+		add = 20
+		culture = { cultural_acceptance = { target = scope:county.culture value > 80 } }
+	}
+	modifier = {	
+		add = 20
+		faith = { faith_hostility_level = { target = scope:county.faith value = 0 } }
+	}
+	modifier = {	
+		add = -20
+		faith = { faith_hostility_level = { target = scope:county.faith value = 2 } }
+	}
+	modifier = {	
+		add = -40
+		faith = { faith_hostility_level = { target = scope:county.faith value = 3 } } 
+	}
+}
+
+ai_sack_modifier = {
+	modifier = {	
+		add = -20
+		has_trait = compassionate
+	}
+	modifier = {	
+		add = -20
+		has_trait = forgiving
+	}
+	modifier = {	
+		add = -20
+		culture = { cultural_acceptance = { target = scope:county.culture value > 20 } }
+	}
+	modifier = {	
+		add = -20
+		culture = { cultural_acceptance = { target = scope:county.culture value > 40 } }
+	}
+	modifier = {	
+		add = -20
+		culture = { cultural_acceptance = { target = scope:county.culture value > 60 } }
+	}
+	modifier = {	
+		add = -20
+		culture = { cultural_acceptance = { target = scope:county.culture value > 80 } }
+	}
+	modifier = {	
+		add = -20
+		faith = { faith_hostility_level = { target = scope:county.faith value = 0 } }
+	}
+	modifier = {	
+		add = 20
+		faith = { faith_hostility_level = { target = scope:county.faith value = 2 } } 
+	}
+	modifier = {	
+		add = 40
+		faith = { faith_hostility_level = { target = scope:county.faith value = 3 } } 
+	}
+}
+
+ai_raze_modifier = {
+	modifier = {	#Weight down for stress.
+		add = -20
+		has_trait = compassionate
+	}
+	modifier = {	#Weight down for stress.
+		add = -20
+		has_trait = forgiving
+	}
+	modifier = {	
+		add = -40
+		culture = { cultural_acceptance = { target = scope:county.culture value > 20 } }
+	}
+	modifier = {	
+		add = -40
+		culture = { cultural_acceptance = { target = scope:county.culture value > 40 } }
+	}
+	modifier = {	
+		add = -40
+		culture = { cultural_acceptance = { target = scope:county.culture value > 60 } }
+	}
+	modifier = {	
+		add = -40
+		culture = { cultural_acceptance = { target = scope:county.culture value > 80 } }
+	}
+	modifier = {	#Weight down for stress.
+		add = -20
+		faith = { faith_hostility_level = { target = scope:county.faith value = 0 } }
+	}
+	modifier = {	#Weight down for stress.
+		add = 20
+		faith = { faith_hostility_level = { target = scope:county.faith value = 2 } } 
+	}
+	modifier = {	#Weight down for stress.
+		add = 100
+		faith = { faith_hostility_level = { target = scope:county.faith value = 3 } } 
+	}
+}
+
+ai_sack_acceptance_modifier = {
+	ai_value_modifier = {
+		ai_energy = -0.25	#I am too lazy to do much more than lament.
+		ai_vengefulness = -0.25	#I will not stand for this.
+	}
+}
+
+
+ai_sack_vengeance_modifier = {
+	ai_value_modifier = {	#Vengeful characters may do this, though.
+		ai_vengefulness = 0.2
+	}
+	modifier = {	#Angry characters can also struggle to get over these things.
+		add = 10
+		has_trait = wrathful
+	}
+	modifier = {	#Vengeful characters are, by definition, not going to let things go.
+		add = 10
+		has_trait = vengeful
+	}
+	modifier = {	#Dead peasants happen, y'know?
+		add = -20
+		has_trait = forgiving
+	}
+}
+
+ai_sack_rebuilding_modifier = {
+	ai_value_modifier = {
+		ai_compassion = 0.5
+		ai_greed = -0.5
+	}
+	modifier = {	#Weight down for stress.
+		add = -20
+		has_trait = lazy
+	}
+}
+
+ai_liege_sack_acceptance_modifier = {
+	ai_value_modifier = {
+		ai_energy = -0.25	#I am too lazy to do much more than lament.
+		ai_vengefulness = -0.25	#I will not stand for this.
+	}
+}
+
+ai_liege_sack_compensation_modifier = {
+	ai_value_modifier = {
+		ai_compassion = 0.25
+		ai_greed = -0.25
+	}
+	modifier = {	#Weight down for stress.
+		add = -20
+		has_trait = greedy
+	}
+}
+
+ai_liege_sack_rebuilding_modifier = {
+	ai_value_modifier = {
+		ai_compassion = 0.5
+		ai_greed = -0.5
+	}
+	modifier = {	#Weight down for stress.
+		add = -20
+		has_trait = greedy
+	}
+}

@@ -1,0 +1,15 @@
+﻿l_english:
+
+ # Excavation Module
+ death_pit_trap:0 "fell into a pit trap while exploring ancient ruins"
+ death_giant_boulder:0 "was crushed by a giant boulder while exploring ancient ruins"
+ death_brigand_attack:0 "was killed in a brigand attack" 
+ 
+ 
+ # SoW base
+ death_mudflow_army_saving:0 "was carried away by the current and drowned while trying to save somebody trapped by a mudflow"
+ death_mudflow_army_escaping:0 "was carried away by the current and drowned while trying to escape a mudflow"
+ death_mudflow_army_trapped:0 "was carried away by the current and drowned after being trapped by a mudflow"
+
+  
+ 

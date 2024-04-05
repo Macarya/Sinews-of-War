@@ -1,0 +1,23 @@
+﻿debug_log = {
+	default = debug_no
+	debug_yes = { }
+	debug_no = { }
+}
+
+archaeology = {
+	default = archaeology_off
+	archaeology_on = { }
+	archaeology_off = { }
+}
+
+claim_fabrication = {
+	default = claim_fabrication_sow
+	claim_fabrication_sow = { }
+	claim_fabrication_vanilla = { }
+}
+
+demd_struggle_variable_fix = {
+	default = demd_struggle_variable_fix_off
+	demd_struggle_variable_fix_off = { }
+	demd_struggle_variable_fix_on = { }
+}

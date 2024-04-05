@@ -1,0 +1,24 @@
+empireTitleSetup = {
+	every_empire = {
+		limit = { is_title_created = yes }
+		set_variable = { name = title_population value = demd_title_population }
+		set_variable = { name = imperial_decay value = 0 }
+	}
+}
+
+empire_title_pulse = {
+	if = {
+		limit = { is_title_created = yes }
+			
+		set_variable = { name = title_population value = demd_title_population }
+		if = { 
+			limit = { NOT = { has_variable = imperial_decay } } 
+			set_variable = { name = imperial_decay value = 0 } 
+		}
+		else = { 
+			change_variable = { name = imperial_decay add = imperial_decay_delta } 
+			clamp_variable = { name = imperial_decay min = 0 max = imperial_decay_max }
+		}
+	}	
+	else = { set_variable = { name = imperial_decay value = 0 } }
+}

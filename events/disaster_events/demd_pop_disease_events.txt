@@ -1,0 +1,202 @@
+﻿namespace = demd_pop_disease
+
+# main pop pulse has decided this county now has plague
+demd_pop_disease.1001 = {
+	hidden = yes
+	scope = landed_title
+	immediate = {
+		save_scope_as = county
+		
+		# give plague
+		add_county_modifier = { modifier = plague_present years = plague_duration_years } 
+        add_county_modifier = { modifier = plague_immunity years = plague_immunity_years } 
+		
+		# notify holder
+		holder = {
+			save_scope_as = county_holder
+			trigger_event = demd_pop_disease.1002
+		}
+	}
+}
+
+# Notify county owner about disease
+demd_pop_disease.1002 = {
+	type = character_event
+	title = demd_pop_disease.1002.t
+	desc = demd_pop_disease.1002.desc
+	theme = dread
+	override_icon = {
+		reference = "gfx/interface/icons/modifiers/disease.dds"
+	}
+
+	left_portrait = {
+		character = this
+		animation = stress
+	}
+
+	# Disease track
+	# immediate = {
+	# 	play_music_cue = "cue_disease_event_1"
+	# }
+
+	# Organize relief
+	option = {
+		name = demd_pop_disease.1002.a
+		trigger = {
+			short_term_gold >= medium_gold_value
+		}
+		show_as_unavailable = {
+			short_term_gold < medium_gold_value
+		}
+		remove_short_term_gold = medium_gold_value
+		duel = {
+			skill = stewardship
+			value = average_skill_rating
+			desc = demd_plague_relief
+			10 = { # Relief success	
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				desc = demd_pop_disease.1002.relief_success
+				trigger_event = { id = demd_pop_disease.1003 days = 30 }
+
+			}
+			10 = { # Relief failure				
+				desc = demd_pop_disease.1002.relief_failure
+				trigger_event = { id = demd_pop_disease.1004 days = 30 }
+			}
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_compassion = 0.5
+			}
+		}
+	}
+	
+	# Quarantine County
+	option = {
+		name = demd_pop_disease.1002.c
+		stress_impact = {
+			compassionate = minor_stress_impact_gain
+		}
+		scope:county = { add_county_modifier = { modifier = quarantine years = plague_duration_years } }
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	# Do both
+	option = {
+		name = demd_pop_disease.1002.d
+		trigger = {
+			short_term_gold >= medium_gold_value
+		}
+		show_as_unavailable = {
+			short_term_gold < medium_gold_value
+		}
+		remove_short_term_gold = medium_gold_value
+		duel = {
+			skill = stewardship
+			value = average_skill_rating
+			desc = demd_plague_relief
+			10 = { # Relief success	
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				desc = demd_pop_disease.1002.relief_success
+				trigger_event = { id = demd_pop_disease.1003 days = 30 }
+				show_as_tooltip = {
+					add_prestige = minor_prestige_gain
+					add_prestige = minor_piety_gain
+					scope:county = { 
+						demd_alter_sanitation = { amount = large operation = add } 
+						add_county_modifier = { modifier = successful_relief years = 20 } 
+					}
+				}
+
+			}
+			10 = { # Relief failure				
+				desc = demd_pop_disease.1002.relief_failure
+				trigger_event = { id = demd_pop_disease.1004 days = 30 }
+				show_as_tooltip = {
+					scope:county = { demd_alter_sanitation = { amount = small operation = add } }
+				}
+			}
+		}
+		scope:county = { add_county_modifier = { modifier = quarantine years = plague_duration_years } }
+		ai_chance = {
+			base = 50
+		}
+	}	
+	
+	# Oh no...anyway...	
+	option = {
+		name = demd_pop_disease.1002.b
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+		}
+		scope:county = { add_county_modifier = { modifier = no_relief years = 20 } }
+		add_prestige = minor_prestige_loss
+		add_piety = minor_piety_loss
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_compassion = -0.5
+			}
+		}
+	}		
+}
+
+# Relief success
+demd_pop_disease.1003 = {
+	type = character_event
+	title = demd_pop_disease.1003.t
+	desc = demd_pop_disease.1003.desc
+	theme = healthcare
+
+	left_portrait = {
+		character = this
+		animation = happiness
+	}
+	immediate = {
+		add_prestige = minor_prestige_gain
+		add_prestige = minor_piety_gain
+		scope:county = { 
+			demd_alter_sanitation = { amount = large operation = add } 
+			add_county_modifier = { modifier = successful_relief years = 20 } 
+		}
+	}
+	# Excellent
+	option = {
+		name = demd_pop_disease.1003.a
+		stress_impact = {
+			compassionate = minor_stress_impact_loss
+		}
+	}	
+}
+
+# Relief failure
+demd_pop_disease.1004 = {
+	type = character_event
+	title = demd_pop_disease.1004.t
+	desc = demd_pop_disease.1004.desc
+	theme = healthcare
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	immediate = {
+		scope:county = { demd_alter_sanitation = { amount = small operation = add } }
+	}
+	# Oh no
+	option = {
+		name = demd_pop_disease.1004.a
+		stress_impact = {
+			compassionate = minor_stress_impact_gain
+		}
+	}
+}

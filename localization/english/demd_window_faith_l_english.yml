@@ -1,0 +1,3 @@
+﻿l_english:
+
+window_faith_fervor_target:0 "#help ([Faith.MakeScope.ScriptValue('fervor_target')|0]%)#!"

@@ -1,0 +1,138 @@
+﻿#task_protect_trade_routes = {
+#	position = councillor_marshal
+#	
+#	
+#}
+
+task_raid_trade_routes = {
+	position = councillor_marshal
+	
+	task_type = task_type_general
+	task_progress = task_progress_percentage
+	restart_on_finish = yes
+	
+	effect_desc = {
+		desc = task_raid_trade_routes_effect_desc
+	}
+	
+	is_valid_showing_failures_only = {
+		scope:councillor_liege = {
+			is_landed = yes
+			highest_held_title_tier > tier_barony
+			exists = capital_county 
+		}
+		custom_description = {
+			text = in_same_realm_as_trade_node_owner
+			NOT = { scope:councillor_liege.capital_county.var:trade_node.var:node_owner.top_liege = scope:councillor_liege.top_liege }
+		}
+		custom_description = {
+			text = insufficient_military_to_raid_trade_node
+			scope:councillor_liege.current_military_strength > raid_trade_routes_min_military_strength
+		}
+		custom_description = {
+			text = insufficient_wealth_to_raid_trade_node
+			scope:councillor_liege.capital_county.var:trade_node.var:trade_node_wealth > 0
+		}
+		custom_description = {
+			text = must_own_strategic_location
+			scope:councillor_liege = {
+				any_sub_realm_county = {
+					OR = {
+						has_county_modifier = demd_strategic_location
+						has_county_modifier = demd_trade_linkage
+					}
+					var:trade_node = scope:councillor_liege.capital_county.var:trade_node
+				}
+			}
+		}
+	}
+
+	ai_will_do = {
+		value = 10000 # Always do if conditions are met
+
+		if = { # Don't do it if node owner will vaporize you
+			limit = { raid_trade_routes_mil_strength_ratio < 0.5 }
+			multiply = 0
+		}
+		else_if = { # Don't do unless you are hostile to node owner either personally or by faith, unless you are a tribal and raiding is lyfe
+			limit = {
+				scope:councillor_liege = {
+					exists = capital_county
+					NOR = {
+						faith = { 
+							faith_hostility_level = { 
+								target = prev.capital_county.var:trade_node.var:node_owner.faith 
+								value > faith_astray_level 
+							} 
+						}
+						opinion = {
+							target = capital_county.var:trade_node.var:node_owner
+							value < low_negative_opinion
+						}
+						can_raid_trigger = yes
+					}
+				}
+			}
+			multiply = 0
+		}	
+	}
+	
+	on_start_task = { 
+		scope:councillor_liege = { 
+			set_variable = is_raiding_trade_node 
+		} 
+	}
+	
+	on_cancel_task = { scope:councillor_liege = { remove_variable = is_raiding_trade_node } }
+	
+	on_finish_task = { 
+		scope:councillor_liege = {
+			remove_variable = is_raiding_trade_node
+			add_short_term_gold = demd_trade_route_raid_value_char
+			capital_county.var:trade_node = {
+				var:node_owner = {
+					send_interface_message = {
+						type = event_stewardship_bad
+						title = event_trade_node_raided
+						desc = event_trade_node_raided_desc
+						left_icon = scope:councillor_liege
+					}
+				}
+				change_variable = { name = trade_node_wealth subtract = demd_trade_route_raid_value }
+				if = {
+					limit = { phase_has_catalyst = catalyst_raided_trade_routes }
+					activate_struggle_catalyst = {
+						catalyst = catalyst_raided_trade_routes
+						character = prev
+					}
+				}
+			}
+			capital_county.var:trade_node.var:node_owner = {
+				add_opinion = {
+					target = scope:councillor_liege
+					modifier = raided_my_trade_opinion
+				}
+			}
+		}
+	} 
+	
+	progress = {
+		value = 0
+		add = {
+			value = marshal_raid_trade_base
+			desc = MARSHAL_PROGRESS_BASE
+		}
+		add = {
+			value = scope:councillor.marshal_raid_trade_monthly_increase
+			desc = SCALED_COUNCILLOR_MARTIAL_VALUE
+		}
+
+		add = marshal_raid_trade_contextual_bonuses
+		
+		#add = {
+		#	value = marshal_raid_trade_raiding_soldiers
+		#	desc = "Relative military strength to [demd_node_owner|E]"
+		#}
+		min = 0.25
+	}
+}

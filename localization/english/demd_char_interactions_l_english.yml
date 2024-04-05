@@ -1,0 +1,70 @@
+﻿l_english:
+
+expand_trade_network_interaction:0 "Expand Trade Network"
+expand_trade_network_interaction_desc:0 "Purchase access to trade posts that the recipient holds in their own counties"
+
+demd_transfer_trade_post_ownership_interaction:0 "[actor.GetName] gains control of the [target.GetNameNoTier] trade post"
+demd_transfer_trade_post_ownership_war:0 "[attacker.GetName] gains control of the [target.GetNameNoTier] trade post"
+
+
+
+
+
+BUY_CLAIM_NO_EXCOMMUNICATION:0 "You cannot be [excommunicated|E]"
+BUY_CLAIM_NO_EXCOMMUNICATION_OR_DIFF_FAITH:0 "Target must be [excommunicated|E] or have the [GetTrait('claim_fabricator').GetName( GetNullCharacter )] [trait|E] or be of a [faith|E] we consider less than [faith_righteous|E] or have a [piety_level|E] of zero."
+BUY_CLAIM_PIETY_LEVEL:0 "Your [piety_level|E] must be greater than or equal to the title tier"
+BUY_CLAIM_NO_FABRICATOR:0 "You cannot have the [GetTrait('claim_fabricator').GetName( GetNullCharacter )] [trait|E]"
+
+demd_type_is_target_desc:0 "The current [holding|E] type is the same as the target type"
+demd_holding_isnt_valid_type_desc:0 "The current [holding|E] type isn't valid for conversion"
+
+demd_castle_holding_isnt_duplicate_desc:0 "There isn't another [castle_holding|E] in this [county|E]"
+demd_church_holding_isnt_duplicate_desc:0 "There isn't another [temple_holding|E] in this [county|E]"
+demd_city_holding_isnt_duplicate_desc:0 "There isn't another [city_holding|E] in this [county|E]"
+
+demd_castle_holding_isnt_duplicate_desc:0 "There isn't another [castle_holding|E] in this [county|E]"
+demd_church_holding_isnt_duplicate_desc:0 "There isn't another [temple_holding|E] in this [county|E]"
+demd_city_holding_isnt_duplicate_desc:0 "There isn't another [city_holding|E] in this [county|E]"
+
+refused_to_send_mission_opinion:0 "Refused to Send Mission"
+demd_request_mission_interaction_tooltip:0 "The recipient's [capital|E] [county|E] will launch a [faith|E] conversion attempt against every directly owned [county|E] of the recipient"
+
+demd_mission_subject_can_attack:0 "The recipient's [capital|E] [county|E] has a greater [demd_faith_conversion_attack|E] than the [demd_faith_conversion_defense|E] of your [capital|E] [county|E]"
+
+DEMD_REQUEST_MISSIONARIES_NOTIFICATION:0 "Missionaries Requested"
+
+demd_request_mission_interaction:0 "Request Missionaries"
+
+demd_request_mission_interaction_desc:0 "Send a request for missionaries to a neighboring ruler. The recipient's [capital|E] [county|E] will launch a [faith|E] conversion attempt against your [capital|E] [county|E]."
+
+demd_mission_no_faith_conv:0 "Your [capital|E] [county|E] is not already converting to a different [faith|E]"
+
+################
+
+refused_to_accept_mission_opinion:0 "Refused to Accept Mission"
+demd_offer_mission_interaction_tooltip:0 "Your [capital|E] [county|E] will launch a [faith|E] conversion attempt against every directly owned [county|E] of the recipient."
+
+demd_mission_subject_can_attack:0 "The recipient's [capital|E] [county|E] has a greater [demd_faith_conversion_attack|E] than the [demd_faith_conversion_defense|E] of your [capital|E] [county|E]"
+
+DEMD_OFFER_MISSIONARIES_NOTIFICATION:0 "Missionaries Offered"
+
+demd_offer_mission_interaction:0 "Offer Missionaries"
+
+demd_offer_mission_interaction_desc:0 "Offer to send missionaries to a neighboring ruler. Your [capital|E] [county|E] will launch a [faith|E] conversion attempt against the recipient's [capital|E] [county|E]."
+
+demd_offer_mission_no_faith_conv:0 "The recipient's [capital|E] [county|E] is not already converting to a different [faith|E]"
+
+################
+
+faith_convert_with_learning_decision:0 "Spread my Faith"
+faith_convert_with_learning_decision_desc:0 "Your [faith|E] has not yet taken root in any [counties|E]. You will launch a [demd_faith_conversion_attack|E] against your [capital|E] [county|E] using the sum of your [faith|E]'s [fervor|E] and the average of your and your [realm_priest|E]'s [learning|E] skill."
+
+faith_convert_with_learning_can_attack:0 "Your [learning|E] plus your [faith|E]'s [fervor|E] is higher than the [demd_faith_conversion_defense|E] of your [capital|E] [county|E]"
+
+faith_convert_with_learning_effect_desc:0 "[scope:recipient.GetFullName] will launch a [demd_faith_conversion_attack|E] against every directly owned [county|E] of the recipient"
+
+faith_convert_with_learning_effect_actor_desc:0 "[scope:actor.GetFullName] will launch a [demd_faith_conversion_attack|E] against [scope:actor.GetHerHis] [capital|E] [county|E]"
+
+faith_convert_with_learning_decision_tooltip:0 "The average of your and your [realm_priest|E]'s [learning|E] skill plus your [faith|E]'s [fervor|E] is higher than the [demd_faith_conversion_defense|E] of your [capital|E] [county|E]"
+
+faith_convert_with_learning_decision_confirm:0 "Start Conversion"

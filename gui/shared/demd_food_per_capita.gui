@@ -1,0 +1,98 @@
+types FoodPerCapita
+{
+    type food_per_capita_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_demd_food!#  [demd_food|E] Produced per Capita:#! [Province.MakeScope.ScriptValue('food_produced_per_capita')|2]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_food|E] are produced by [demd_job_artisans|E], and the amount of food stockpiled per capita, or [demd_capital|E], represents a key component of a [barony|E]'s standard of living. [demd_capital|E] is a key factor in [demd_migration_pull|E] and gives a production bonus to all [demd_resources|E].#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Base Rate: [Province.MakeScope.ScriptValue('food_base_output')|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+					tooltipwidget = { 
+						soil_fertility_breakdown_widget = { 
+						
+						} 
+					}
+                    raw_text = "Soil [demd_fertility|E]: [Province.MakeScope.Var('soil_fertility_mult_target').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E]: [Province.GetCounty.GetCulture.MakeScope.Var('food_cultural_production_mult').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.GetCounty.GetFaith.MakeScope.Var('food_faith_production_mult').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_capital|E]: [Province.MakeScope.Var('capital_production_multiplier').GetValue|%1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From Local [demd_weather|E]: [Province.GetCounty.GetTitle.MakeScope.Var('county_weather_fertility_mult').GetValue|%0] ([Province.GetCounty.GetTitle.MakeScope.ScriptValue('county_weather_fertility_mult_delta')|%1] Monthly)"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From Regional [demd_weather|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.MakeScope.Var('node_weather_fertility_mult').GetValue|%0] ([Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.MakeScope.ScriptValue('node_weather_fertility_mult_delta')|%1] Monthly)"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }				
+            }
+        }
+    }
+}

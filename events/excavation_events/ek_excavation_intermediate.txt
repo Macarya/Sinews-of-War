@@ -1,0 +1,253 @@
+﻿
+namespace = ek_excavation_intermediate
+
+#####################
+# Strike
+#####################
+
+ek_excavation_intermediate.0001 = {
+	type = character_event
+	title = ek_excavation_intermediate.0001.t
+	desc = ek_excavation_intermediate.0001.desc
+	theme = excavation_interior
+	
+	trigger = { 
+		scope:story = { NOT = { has_variable = 0001 } } 
+		excavation_story_event_standard_trigger = yes 
+	}
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:excavation_leader
+		animation = martial
+	}
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+	}
+	
+	option = { 
+		name = ek_excavation_intermediate.0001.a
+		stress_impact = {
+			wrathful = minor_stress_impact_gain
+		}
+		duel = {
+			skill = diplomacy
+			value = average_skill_rating
+			# desc = demd_fire_relief_water
+			20 = { # success	
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				send_interface_toast = {
+					left_icon = root
+					title = ek_excavation_intermediate.0001.success
+					alter_excavation_quality = { operation = add amount = small }
+				}				
+				desc = ek_excavation_intermediate.0001.success
+
+			}
+			20 = {
+				send_interface_toast = {
+					left_icon = root
+					title = ek_excavation_intermediate.0001.failure
+					alter_excavation_quality = { operation = subtract amount = small }
+				}				
+				desc = ek_excavation_intermediate.0001.failure
+			}
+		}		
+	}
+	option = { 
+		name = ek_excavation_intermediate.0001.b
+		remove_short_term_gold = activity_medium_gold_value
+		stress_impact = {
+			greedy = minor_stress_impact_gain
+		}
+		alter_excavation_quality = { operation = add amount = small }
+	}
+	option = { 
+		name = ek_excavation_intermediate.0001.c
+		stress_impact = {
+			greedy = minor_stress_impact_loss
+			wrathful = minor_stress_impact_loss
+			compassionate = minor_stress_impact_gain
+		}		
+		add_dread = minor_dread_gain
+	}
+	after = { scope:story = { set_variable = 0001 } }
+}
+
+#####################
+# Demon Statue
+#####################
+
+scripted_effect create_demon_statue = {
+	create_artifact = {	
+		name = demd_demon_statue_name
+		description = demd_demon_statue_description
+		type = miscellaneous
+		visuals = small_box
+		modifier = cursed_artifact_modifier
+		save_scope_as = newly_discovered_artifact
+		quality = scope:story.var:excavation_quality
+		wealth = scope:story.var:excavation_quality
+		decaying = yes
+		history = {
+			type = discovered
+			actor = scope:story.var:excavation_leader
+			recipient = scope:story.story_owner
+			location = scope:excavation_county.title_province
+		}
+	}
+}
+
+ek_excavation_intermediate.0002 = {
+	type = character_event
+	title = ek_excavation_intermediate.0002.t
+	desc = ek_excavation_intermediate.0002.desc
+	theme = excavation_interior
+	
+	trigger = { 
+		scope:story = { NOT = { has_variable = 0002 } } 
+		excavation_story_event_standard_trigger = yes 
+	}
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = worry
+	}
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+		random_relation = {
+			type = rival
+			save_scope_as = rival
+		}
+		create_demon_statue = yes
+	}
+	
+	option = { 
+		name = ek_excavation_intermediate.0002.a		
+	}
+	option = { 
+		name = ek_excavation_intermediate.0002.b
+		alter_excavation_quality = { operation = add amount = small }
+		destroy_artifact = scope:newly_discovered_artifact
+		stress_impact = {
+			paranoid = minor_stress_impact_loss
+			greedy = minor_stress_impact_gain
+		}
+	}
+	option = { 
+		name = ek_excavation_intermediate.0002.c
+		add_piety = medium_piety_gain
+		stress_impact = {
+			zealous = minor_stress_impact_loss
+			cynical = minor_stress_impact_gain
+			greedy = minor_stress_impact_gain
+		}
+		alter_excavation_quality = { operation = subtract amount = small }
+		destroy_artifact = scope:newly_discovered_artifact
+	}
+	option = { 
+		name = ek_excavation_intermediate.0002.d
+		trigger = { exists = scope:rival }
+		stress_impact = {
+			vengeful = minor_stress_impact_loss
+			compassionate = minor_stress_impact_gain
+			forgiving = minor_stress_impact_gain
+		}
+		scope:newly_discovered_artifact = {
+			set_owner = {
+				target = scope:rival
+				history = {
+					location = ROOT.capital_province
+					actor = root
+					recipient = scope:rival
+					type = given
+				}
+			}
+		}
+	}
+	after = { scope:story = { set_variable = 0002 } }
+}
+
+#####################
+# Lost in the Maze
+#####################
+
+ek_excavation_intermediate.0003 = {
+	type = character_event
+	title = ek_excavation_intermediate.0003.t
+	desc = ek_excavation_intermediate.0003.desc
+	theme = excavation_interior
+	
+	trigger = { 
+		scope:story = { NOT = { has_variable = 0003 } } 
+		excavation_story_event_standard_trigger = yes 
+	}
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = worry
+	}
+
+	right_portrait = {
+		character = scope:excavation_leader
+		animation = shock
+	}
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+	}
+	
+	option = { 
+		trigger = { learning > average_skill_rating }
+		name = ek_excavation_intermediate.0003.a
+		alter_excavation_quality = { operation = add amount = small }		
+	}
+	option = { 
+		name = ek_excavation_intermediate.0003.b
+		stress_impact = {
+			craven = minor_stress_impact_gain
+		}
+		duel = {
+			skill = learning
+			value = average_skill_rating
+			20 = { # success	
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				send_interface_toast = {
+					left_icon = root
+					title = ek_excavation_intermediate.0003.b.success
+					alter_excavation_minor_artifacts  = { operation = add amount = large }
+				}
+				
+				desc = ek_excavation_intermediate.0003.b.success
+
+			}
+			20 = {
+				send_interface_toast = {
+					left_icon = root
+					title = ek_excavation_intermediate.0003.b.failure
+					alter_excavation_quality = { operation = subtract amount = medium }
+				}				
+				desc = ek_excavation_intermediate.0003.b.failure
+			}
+		}
+	}
+	option = { 
+		name = ek_excavation_intermediate.0003.c
+		stress_impact = {
+			brave = minor_stress_impact_gain
+		}
+		alter_excavation_quality = { operation = subtract amount = small }
+	}
+	after = { scope:story = { set_variable = 0003 } }
+}

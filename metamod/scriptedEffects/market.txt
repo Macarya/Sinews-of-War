@@ -1,0 +1,172 @@
+tradeSetup = { 
+}
+
+trade_node_pulse = {
+	save_scope_as = trade_node
+	demd_check_node_owner_validity = yes
+	demd_set_involved_culture_faith = yes
+	demd_set_basic_trade_node_vars = yes
+	demd_process_trade_value = yes
+	demd_redistribute_collected_trade = yes
+	if = {
+		limit = { has_game_rule = demd_struggle_variable_fix_on }
+		demd_backup_trade_node_variables = yes
+	}	
+}
+
+demd_set_involved_culture_faith = {
+	save_scope_as = trade_node
+	
+	every_in_list = {
+		variable = strategic_locations
+		limit = { holder.culture = { scope:trade_node = { NOT = { is_culture_involved_in_struggle = prev } } } }
+		scope:trade_node = {
+			demd_add_culture_to_trade_node = { CULTURE = prev.holder.culture }
+		}
+	}
+	every_in_list = {
+		variable = strategic_locations
+		limit = { holder.faith = { scope:trade_node = { NOT = { is_faith_involved_in_struggle = prev } } } }
+		scope:trade_node = {
+			demd_add_faith_to_trade_node = { FAITH = prev.holder.faith }
+		}
+	}
+	
+	every_in_list = {
+		variable = involved_faiths
+		limit = { 
+			NOT = { 
+				any_in_list = { 
+					variable = strategic_locations
+					holder.faith = prev
+				}
+			}
+		}
+		prev = { demd_remove_faith_from_trade_node = { FAITH = prev } }
+	}
+	
+	every_in_list = {
+		variable = involved_cultures
+		limit = { 
+			NOT = { 
+				any_in_list = { 
+					variable = strategic_locations
+					holder.faith = prev
+				}
+			}
+		}
+		prev = { demd_remove_culture_from_trade_node = { CULTURE = prev } }
+	}
+}
+
+demd_set_basic_trade_node_vars = {
+	set_variable = { name = node_produced_trade_value value = node_produced_trade_value }		
+	set_variable = { name = node_trade_power value = node_trade_power }
+}
+
+demd_process_trade_value = {
+	set_variable = { name = domestic_collected_trade_value value = domestic_collected_trade_value }
+	set_variable = { name = imported_collected_trade_value value = imported_collected_trade_value }
+	set_variable = { name = total_collected_trade_value value = total_collected_trade_value }
+	
+	change_variable = { name = trade_node_wealth add = trade_node_wealth_monthly_gain }
+}
+
+demd_redistribute_collected_trade = {
+	every_in_list = {
+		variable = trade_node_counties
+		set_variable = {
+			name = collected_trade_value
+			value = {
+				value = var:trade_power
+				divide = prev.var:node_trade_power
+				multiply = prev.var:total_collected_trade_value
+			}
+		}
+	}
+}
+
+#demd_grant_node_owner_tariffs = {
+#	var:node_owner = {
+#		if = {
+#			limit = { is_alive = yes } # error suppr.
+#			send_interface_toast = {
+#				type = event_stewardship_good
+#				title = demd_node_owner_dividend
+#				desc = demd_node_owner_dividend_desc
+#				add_short_term_gold = prev.node_owner_dividend
+#			}
+#		}
+#	}
+#}
+
+demd_check_node_owner_validity = {
+	var:node_owner = {
+		if = {
+			limit = { 
+				OR = {
+					NOT = { exists = capital_county }
+					NOT = { prev = capital_county.var:trade_node }
+				}
+			}
+			prev = { demd_transfer_trade_node_ownership_invalid = yes }
+		}
+	}
+}
+
+demd_backup_trade_node_variables = {
+
+	save_scope_as = trade_node
+	
+	if = {
+		limit = { NOT = { has_variable = backup_county } }
+			
+		random_in_list = {
+			variable = trade_node_counties			
+			add_to_global_variable_list = { name = trade_node_backups_global target = this }
+			scope:trade_node = { set_variable = { name = backup_county value = prev } }
+		}
+	}
+	var:backup_county = {
+		save_scope_as = backup_county
+		
+		set_variable = { name = trade_node_size value = scope:trade_node.var:trade_node_size }
+		set_variable = { name = num_strategic_locations value = scope:trade_node.var:num_strategic_locations }
+		set_variable = { name = node_weather_fertility_mult value = scope:trade_node.var:node_weather_fertility_mult }
+		set_variable = { name = trade_node_wealth value = scope:trade_node.var:trade_node_wealth }
+		set_variable = { name = num_strategic_locations value = scope:trade_node.var:num_strategic_locations  }
+		set_variable = { name = node_produced_trade_value value = scope:trade_node.var:node_produced_trade_value }
+		set_variable = { name = node_trade_power value = scope:trade_node.var:node_trade_power }
+		set_variable = { name = domestic_collected_trade_value value = scope:trade_node.var:domestic_collected_trade_value }
+		set_variable = { name = imported_collected_trade_value value = scope:trade_node.var:imported_collected_trade_value }
+		set_variable = { name = total_collected_trade_value value = scope:trade_node.var:total_collected_trade_value }
+		set_variable = { name = node_owner value = scope:trade_node.var:node_owner }
+			
+			
+		# reload node counties
+		scope:trade_node = {
+			every_in_list = {
+				variable = trade_node_counties
+				scope:backup_county = {
+					add_to_variable_list = { name = trade_node_counties target = prev }
+				}
+			}
+
+			# reload strategic locations
+			every_in_list = {
+				variable = strategic_locations
+				scope:backup_county = { 
+					add_to_variable_list = { name = strategic_locations target = prev } 
+				}				
+			}
+			
+			# reload node linkages
+			every_in_list = {
+				variable = node_linkages
+				scope:backup_county = { 
+					add_to_variable_list = { name = node_linkages target = prev }
+				}
+			}
+		}		
+	}
+}

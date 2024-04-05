@@ -1,0 +1,280 @@
+﻿
+namespace = ek_excavation_final
+
+#####################
+# Boulder Trap
+#####################
+
+scripted_effect create_golden_idol = {
+	create_artifact = {	
+		name = demd_golden_idol_name
+		description = demd_golden_idol_description
+		type = miscellaneous
+		visuals = small_box
+		modifier = artifact_monthly_piety_gain_mult_2_modifier
+		save_scope_as = golden_idol
+		quality = scope:story.var:excavation_quality
+		wealth = scope:story.var:excavation_quality
+		decaying = yes
+		history = {
+			type = discovered
+			actor = scope:story.story_owner
+			recipient = scope:story.var:excavation_leader
+			location = scope:excavation_county.title_province
+		}
+	}
+}
+
+ek_excavation_final.0001 = {
+	type = character_event
+	title = ek_excavation_final.0001.t
+	desc = ek_excavation_final.0001.desc
+	theme = excavation_interior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:excavation_leader
+		animation = martial
+	}
+	trigger = { excavation_story_event_standard_trigger = yes }	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+	}
+	option = { 
+		name = ek_excavation_final.0001.a
+
+		trigger = { learning >= medium_skill_rating }
+		send_interface_toast = {
+			left_icon = root
+			title = ek_excavation_final.0001.a.success
+			create_golden_idol = yes
+		}
+		
+		
+		ai_chance = { base = 1000 }
+	}
+	option = { 
+		name = ek_excavation_final.0001.b
+		stress_impact = {
+			craven = minor_stress_impact_gain
+		}
+		show_as_tooltip = { 
+			send_interface_toast = {
+				left_icon = root
+				title = ek_excavation_final.0001.a.success
+				create_golden_idol = yes
+			} 
+		}
+		hidden_effect = {
+			random_list = {
+				10 = { # It was booby trapped
+					trigger_event = ek_excavation_final.0002
+				}
+				10 = { # It was not booby trapped
+					send_interface_toast = {
+						left_icon = root
+						title = ek_excavation_final.0001.a.success
+						create_golden_idol = yes
+					}
+				}
+			}
+		}
+				
+		ai_chance = { 
+			base = 10 
+			ai_value_modifier = {
+				ai_boldness = 0.5
+			}
+		}
+	}	
+	option = { 
+		name = ek_excavation_final.0001.c
+		stress_impact = {
+			craven = minor_stress_impact_loss
+		}
+        alter_excavation_minor_artifacts = { operation = add amount = large }		
+		ai_chance = { 
+			base = 10 
+			ai_value_modifier = {
+				ai_boldness = -0.5
+			}
+		}
+	}		
+}
+
+ek_excavation_final.0002 = {
+	type = character_event
+	title = ek_excavation_final.0002.t
+	desc = ek_excavation_final.0002.desc
+	theme = excavation_interior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = personality_bold
+	}
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+	}
+	option = { 
+		name = ek_excavation_final.0002.a
+
+		duel = {
+			skill = prowess
+			value = average_skill_rating
+			10 = { # critical success	
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				send_interface_toast = {
+					left_icon = root
+					title = ek_excavation_intermediate.0002.b.critical_success
+					create_golden_idol = yes
+				}
+				desc = ek_excavation_intermediate.0002.b.critical_success
+				
+			}
+			20 = { # success	
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				send_interface_toast = {
+					left_icon = root
+					title = ek_excavation_intermediate.0002.b.success
+					alter_excavation_minor_artifacts = { operation = add amount = medium }
+				}
+				
+				desc = ek_excavation_intermediate.0002.b.success
+			}
+			10 = { # failure
+				desc = ek_excavation_intermediate.0002.b.failure
+				send_interface_toast = {
+					left_icon = root
+					title = ek_excavation_intermediate.0002.b.failure
+					increase_wounds_effect = {
+						REASON = giant_boulder
+					}
+				}
+				
+			}
+			5 = { # critical failure
+				desc = ek_excavation_intermediate.0002.b.critical_failure
+				send_interface_toast = {
+					left_icon = root
+					title = ek_excavation_intermediate.0002.b.critical_failure
+					death = {
+						death_reason = death_giant_boulder
+					}
+				}				
+			}
+		}
+		
+		ai_chance = { base = 10 }
+	}
+		
+}
+
+#####################
+# Pit Trap
+#####################
+
+ek_excavation_final.0003 = {
+	type = character_event
+	title = ek_excavation_final.0003.t
+	desc = ek_excavation_final.0003.desc
+	theme = excavation_interior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = martial
+	}
+
+	right_portrait = {
+		character = scope:excavation_leader
+		animation = personality_bold
+	}
+	
+	trigger = { excavation_story_event_standard_trigger = yes }
+	
+	immediate = {
+		excavation_story_event_standard_setup = yes
+	}
+	
+	option = { 
+		trigger = { prowess > average_skill_rating }
+		name = ek_excavation_final.0003.a
+		custom_tooltip = ek_excavation_final.0003.a.desc
+		save_scope_value_as = { name = trap_status value = flag:noticed }
+		
+	}
+	option = { 
+		name = ek_excavation_final.0003.b
+		custom_tooltip = ek_excavation_final.0003.b.desc
+		
+		hidden_effect = {
+			scope:excavation_leader = {
+				duel = {
+					skill = prowess
+					value = average_skill_rating
+					20 = { # success	
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.5
+						}
+						save_scope_value_as = { name = trap_status value = flag:tripped }
+					}
+					10 = {
+						save_scope_value_as = { name = trap_status value = flag:tripped_fatal }
+					}
+				}
+			}
+		}
+	}
+	after = { trigger_event = ek_excavation_final.0004 } 
+}
+
+ek_excavation_final.0004 = {
+	type = character_event
+	title = ek_excavation_final.0004.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:trap_status = flag:tripped }
+				desc = ek_excavation_final.0004.desc.b
+			}
+			triggered_desc = {
+				trigger = { scope:trap_status = flag:tripped_fatal }
+				desc = ek_excavation_final.0004.desc.c
+			}
+			desc = ek_excavation_final.0004.desc.a
+		}
+	}
+	theme = excavation_interior
+	
+	left_portrait = {
+		character = scope:story.story_owner
+		animation = shock
+	}
+	option = { 
+		trigger = { scope:trap_status = flag:noticed }
+		name = ek_excavation_final.0004.a
+        alter_excavation_minor_artifacts = { operation = add amount = large }
+	}
+	option = { 
+		trigger = { scope:trap_status = flag:tripped }
+		name = ek_excavation_final.0004.b
+        alter_excavation_minor_artifacts = { operation = add amount = medium }
+	}
+	option = { 
+		trigger = { scope:trap_status = flag:tripped_fatal }
+		name = ek_excavation_final.0004.c
+        alter_excavation_minor_artifacts = { operation = add amount = small }
+		scope:excavation_leader = { death = { death_reason = death_pit_trap } }
+	}
+}
+

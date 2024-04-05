@@ -1,0 +1,44 @@
+﻿ ### Use @generic_event_theme_sound for new themes.
+ ### Please notify audio dept. if new themes occur.
+
+ @generic_event_theme_sound = "event:/SFX/Events/Themes/sfx_event_theme_type_generic"
+ 
+excavation_exterior = {
+	icon = {
+		reference = "gfx/interface/icons/event_types/type_prison.dds"
+	}
+	sound = {
+		reference = "event:/SFX/Events/Themes/sfx_event_theme_type_activity"
+	}
+	background = {
+		trigger = { scope:story = { var:ruins_type = flag:egyptian } }
+		reference = excavation_exterior_egyptian_01
+	}
+	background = {
+		trigger = { scope:story = { var:ruins_type = flag:dwemer } }
+		reference = excavation_exterior_dwemer_01
+	}
+	background = {
+		reference = terrain_excavation
+	}
+}
+
+excavation_interior = {
+	icon = {
+		reference = "gfx/interface/icons/event_types/type_prison.dds"
+	}
+	sound = {
+		reference = "event:/SFX/Events/Themes/sfx_event_theme_type_prison"
+	}
+	background = {
+		trigger = { scope:story = { var:ruins_type = flag:egyptian } }
+		reference = excavation_interior_egyptian_01
+	}
+	background = {
+		trigger = { scope:story = { var:ruins_type = flag:dwemer } }
+		reference = excavation_interior_dwemer_01
+	}	
+	background = {
+		reference = dungeon
+	}
+}

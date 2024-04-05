@@ -1,0 +1,86 @@
+types MigrationPullCounty
+{
+    type migration_pull_county_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_migration!# Current [demd_migration_pull|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('migration_pull_target')|%0]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_migration_pull|E] is a measure of how desirable a place is to live in. If a [county|E] has a higher #defender_color Migration Pull#! than neighboring [counties|E], [demd_population|E] will migrate towards it.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_food|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('migration_pull_from_food')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_sanitation|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('migration_pull_from_sanitation')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_public_order|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('migration_pull_from_public_order')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }                
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_capital|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('migration_pull_from_capital')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [vigor|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('migration_pull_from_vigor')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [county_opinion|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('opinion_migration_pull')|%0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

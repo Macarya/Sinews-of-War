@@ -1,0 +1,100 @@
+startupPulse = {
+	
+	demd_set_ancestral_faiths = yes
+	
+	every_province = {	
+		reset_building_vars = yes
+		
+		set_variable = { name = food_producers_max value = 1 }
+		set_variable = { name = food_districts_max value = 1 }
+		set_variable = { name = food_taxed_to_gold value = 0 }
+		set_variable = { name = goods_stockpile value = 0.1 }
+		set_variable = { name = goods_imported value = 0.1 }
+		set_variable = { name = population value = 0.1 }
+		set_variable = { name = manpower value = 0.1 }
+		set_variable = { name = food_demanded value = 1 }
+		set_variable = { name = food_produced value = 1 }
+		set_variable = { name = food_ratio value = 1 }
+		set_variable = { name = food_consumed value = 1 }
+		set_variable = { name = growth_rate value = 0} 
+		set_variable = { name = migration_growth_percent value = 0 }
+		set_variable = { name = migration_pull value = 1 }
+		set_variable = { name = internal_migration_growth_percent value = 0 }
+		set_variable = { name = free_manpower value = 0 }
+
+	}
+	every_county = {	
+		set_variable = { name = food_imported_from_baronies value = 1 }
+		set_variable = { name = goods_stockpile value = 0.1 }
+
+		set_variable = { name = population value = 0.1 }
+		set_variable = { name = county_population value = 0.1 }
+		set_variable = { name = food_demanded value = 0.1 }
+		set_variable = { name = food_consumed value = 0.1 }
+		set_variable = { name = growth_rate value = 0} 
+		set_variable = { name = migration_growth_percent value = 0 }
+		set_variable = { name = internal_migration_growth_percent value = 0 }
+		set_variable = { name = irrigation_setting value = 2 }
+		
+		set_variable = { name = num_neighbors value = 0 }
+		every_neighboring_county = {
+			prev = { change_variable = { name = num_neighbors add = 1 } }
+			prev = { add_to_variable_list = { name = county_neighbors target = prev } }
+		}
+		every_county_province = {
+			prev = { add_to_variable_list = { name = county_provinces target = prev } }
+		}
+		
+		
+		set_variable = { name = num_provinces value = 0 }
+		every_county_province = {
+			prev = { change_variable = { name = num_provinces add = 1 } }
+		}
+	}
+	faithEconomySetup = yes
+	cultureEconomySetup = yes
+
+	
+	tradeSetup = yes
+	
+	calculateTerrainProperties = yes
+	
+	rulerSetup = yes
+
+	provinceAISetup = yes
+	
+	disasterSetup = yes	
+		
+	provinceMigrationSetup = yes
+		
+	fertilitySetup = yes
+	
+	provinceGrowthSetup = yes
+	
+	provinceEconomySetup = yes
+	provinceExpansionSetup = yes
+	# provinceCultureConversionSetup = yes	
+	# provinceFaithConversionSetup = yes
+	
+	every_county = {
+			
+		remove_variable = tax_setting_changed
+		remove_variable = manpower_setting_changed
+		remove_variable = public_order_setting_changed
+		remove_variable = sanitation_setting_changed
+		remove_variable = irrigation_setting_changed
+		remove_variable = infrastructure_setting_changed
+		
+		set_variable = { name = sanitation value = sanitation_target }
+		set_variable = { name = public_order value = public_order_target }
+		set_variable = { name = migration_pull value = migration_pull_target }	
+		every_county_province = {
+			limit = { has_holding = yes }
+			set_variable = { name = migration_pull value = migration_pull_target }
+		}
+		
+	}
+	empireTitleSetup = yes
+
+}
+

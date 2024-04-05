@@ -1,0 +1,16 @@
+﻿demd_has_greater_than_low_imperial_decay = {
+	global = demd_has_greater_than_low_imperial_decay
+	global_not = demd_has_less_than_low_imperial_decay
+}
+demd_has_greater_than_medium_imperial_decay = {
+	global = demd_has_greater_than_medium_imperial_decay
+	global_not = demd_has_less_than_medium_imperial_decay
+}
+demd_has_greater_than_high_imperial_decay = {
+	global = demd_has_greater_than_high_imperial_decay
+	global_not = demd_has_less_than_high_imperial_decay
+}
+demd_has_greater_than_very_high_imperial_decay = {
+	global = demd_has_greater_than_very_high_imperial_decay
+	global_not = demd_has_less_than_very_high_imperial_decay
+}

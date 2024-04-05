@@ -1,0 +1,53 @@
+﻿
+NDomain = {
+	TAX_AT_MAX_COUNTY_DEVELOPMENT = 0				# Was 0.5. How much % tax bonus do you get at 100 county development? Interpolated between this value and 0% when between 0 and 100
+	LEVIES_AT_MAX_COUNTY_DEVELOPMENT = 0		# How many % levies bonus do you get at 100 county development? Interpolated between this value and 0% when between 0 and 100
+	STEWARDSHIP_SKILL_FOR_DOMAIN_LIMIT_INCREASE = 12	# domain limit += floor( <stewardship skill> / STEWARDSHIP_SKILL_FOR_DOMAIN_LIMIT_INCREASE )
+	
+}
+
+NProvince = {
+	SUPPLY_PER_DEVELOPMENT = 0 # Was 150
+}
+
+NCombat = {
+	KNIGHT_DAMAGE_PER_PROWESS = 40			
+	KNIGHT_TOUGHNESS_PER_PROWESS = 10		
+	LEVY_TOUGHNESS = 15
+	LEVY_ATTACK = 15
+	MEN_AT_ARMS_COUNTER_MODIFICATION = 0			# Was 6
+}
+
+NArmy = {
+	REGIMENT_MONTHLY_REINFORCE_SPEED = 0.02			# Monthly reinforcement percentage of unraised chunks [0-1]
+	REGIMENT_MONTHLY_MAA_REINFORCE_SPEED = 0.02
+	REGIMENT_MAA_CAP_BY_TIER = { 9 9 9 9 9 9 }
+	REGIMENT_DEFAULT_MAX_SIZE = 1
+	REGIMENT_MAA_STARTING_COUNT = 5    			# How many soldiers a newly recruited regiment starts with
+	GOLD_COST_PER_SOLDIER = 0.003	
+}
+
+NCounty = {
+	COUNTY_OPINION_ZERO_ACCEPTANCE = -30
+}
+
+NCharacter = {
+	TYRANNY_MONTHLY_CHANGE = -0.15	# (Was -0.25) tyranny is changing by this value each month
+	SKILL_MODIFIER_OFFSET = -10
+}
+
+NCharacterOpinion = {
+
+	# What penalty to give when at zero culture acceptance. Scales down to 0 at 100% acceptance. So -10 would be -10 at 0%, -5 at 50%, 0 at 100%
+	ZERO_CULTURE_ACCEPTANCE_SAME_REALM = -40
+	ZERO_CULTURE_ACCEPTANCE = -40
+	CULTURE_ACCEPTANCE_MULT_KNOWS_LANGUAGE = 0.5 # The penalty is multiplied by this amount if the target knows the lanauge of the opinion haver's culture
+
+	PIOUS = { -10 0 4 8 12 16 }
+	PRESTIGIOUS = { -10 0 4 8 12 16 }
+}
+
+NCulture = { 
+	INNOVATION_PROGRESS_CHANCE_FROM_FASCINATION_BASE = 25 						#20
+	INNOVATION_PROGRESS_CHANCE_FROM_FASCINATION_PER_LEARNING_LEVEL = 0.5 		#1
+}

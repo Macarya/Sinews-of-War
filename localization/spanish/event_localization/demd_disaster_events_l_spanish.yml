@@ -1,0 +1,39 @@
+﻿l_spanish:
+
+demd_pop_fire.1002.t:0 "Fire in [county.GetNameNoTierNoTooltip]!"
+demd_pop_fire.1002.desc:0 "The city is on fire! Raging flames are engulfing homes and shops all over the settlement!"
+demd_pop_fire.1002.a:0 "Bring water, quickly!"
+demd_pop_fire.1002.b:0 "Get the firehooks"
+demd_pop_fire.1002.c:0 "It was getting too crowded anyway"
+demd_pop_fire.1002.d:0 "Squire! Bring me my fiddle!" # lunatic trait option
+demd_fire_relief_water:0 "The nearby body of water affords us a better chance of putting the fire out"
+demd_fire_relief_no_water:0 "Without large nearby sources of water, the city is in serious trouble."
+demd_pop_fire.1002.relief_success:0 "The fire is put out before much damage is done"
+demd_pop_fire.1002.relief_middling:0 "The fire burns some districts of the city, but is contained in the end"
+demd_pop_fire.1002.relief_failure:0 "The fire could not be contained, and ravages nearly the entire city"
+
+demd_pop_fire.1003.t:0 "Fire in [county.GetNameNoTierNoTooltip]!"
+demd_pop_fire.1003.desc:0 "The fire fighting efforts were a success. Very little was destroyed and the minor damages will be quickly dealt with."
+demd_pop_fire.1003.a:0 "Praise [character.GetHighGodName]!"
+
+demd_pop_fire.1004.t:0 "Fire in [county.GetNameNoTierNoTooltip]!"
+demd_pop_fire.1004.desc:0 "The fire fighting efforts were a somewhat successful, but parts of the city have been destroyed and the damages will take some time and effort to heal"
+demd_pop_fire.1004.a:0 "Regretful, but it could have been worse..."
+
+demd_pop_fire.1005.t:0 "Fire in [county.GetNameNoTierNoTooltip]!"
+demd_pop_fire.1005.desc:0 "The fire fighting efforts were a failure. Most of the city has been destroyed and the populace is in shambles. Healing from this catastrophe will be a long and arduous task"
+demd_pop_fire.1005.a:0 "Curses! Why did this have to befall [county.GetNameNoTierNoTooltip]?"
+
+demd_pop_fire.1006.t:0 "Fire in [county.GetNameNoTierNoTooltip]!"
+demd_pop_fire.1006.desc:0 "The fire fighting efforts were a failure...the city is no more and we might as well consider rebuilding a new one from scratch"
+demd_pop_fire.1006.a:0 "Oh [GetHighGodName], what did we do to deserve such a calamity?"
+
+demd_pop_flood.1002.t:0 "Flooding in [county.GetNameNoTierNoTooltip]!"
+demd_pop_flood.1002.desc:0 "The city is flooding. Water is washing away goods and people alike, putting in jeopardy the whole community"
+demd_pop_flood.1002.a:0 "Oh no! Quickly move to rescue the people and protect the essential assets!"
+demd_pop_flood.1002.b:0 "I think I will go for a swim." # lunatic trait option
+
+demd_pop_avalanche.1002.t:0 "Avalanches in [county.GetNameNoTierNoTooltip]!"
+demd_pop_avalanche.1002.desc:0 "Avalanches have struck the settlements in [county.GetNameNoTierNoTooltip]! Large boulders have crushed the homes and people, and are being a nuisance to relief..."
+demd_pop_avalanche.1002.a:0 "Damnation! Quickly move to deal with these pesky rocks!"
+

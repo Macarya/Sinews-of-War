@@ -1,0 +1,50 @@
+disasterSetup = {
+	every_county = {
+		if = {
+			limit = { any_county_province = { terrain = mountains } }
+			set_variable = { name = avalanche_eligible }
+		}
+	}
+}
+
+county_disaster = {
+    # fires 
+	random_list = {
+		1 = {
+			trigger_event = { id = demd_pop_fire.1001 days = { 0 365 } }
+		}
+		99 = {
+			# no fire
+		}
+	}
+	# floods
+	if = {
+		limit = {
+			OR = {
+				has_variable = isOnMinorRiver
+				is_riverside_county = yes
+			}
+		}
+		random_list = {
+			2 = {
+				trigger_event = { id = demd_pop_flood.1001 days = { flood_months_lower flood_months_upper } }
+			}
+			98 = {
+				# no flood
+			}
+		}
+	}
+	if = { 
+		limit = {
+			has_variable = avalanche_eligible
+		}
+		random_list = {
+			2 = {
+				trigger_event = { id = demd_pop_avalanche.1001 months = { avalanche_months_lower avalanche_months_upper } }
+			}
+			98 = {
+				# no avalanche
+			}
+		}
+	}	
+}

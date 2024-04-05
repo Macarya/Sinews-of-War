@@ -1,0 +1,84 @@
+﻿heritage_siberian = {
+	type = heritage
+	
+	parameters = { 
+		heritage_group_siberian = yes
+		heritage_family_eurasian = yes 
+	}
+}
+
+heritage_east_bantu = {
+	type = heritage
+	
+	parameters = {
+		heritage_group_central_african = yes
+		heritage_family_african = yes 
+	}
+}
+
+heritage_guanche = {
+	type = heritage
+	
+	parameters = { 
+		heritage_group_berber = yes
+		heritage_family_middle_eastern = yes 
+	}
+}
+
+heritage_elamite = {
+	type = heritage
+}
+
+
+heritage_vietic = {
+	type = heritage
+}
+
+heritage_korean = {
+	type = heritage
+}
+
+heritage_malayic = {
+	type = heritage
+}
+
+heritage_south_bantu = {
+	type = heritage
+	
+	parameters = {
+		heritage_group_central_african = yes
+		heritage_family_african = yes 
+	}
+}
+
+heritage_chamic = {
+	type = heritage
+}
+
+heritage_filipino = {
+	type = heritage
+}
+
+heritage_yamato = {
+	type = heritage
+}
+
+heritage_loloish = {
+	type = heritage
+}
+
+heritage_khmer = {
+	type = heritage
+}
+
+heritage_sulawesi = {
+	type = heritage
+}
+
+heritage_tai = {
+	type = heritage
+}
+
+heritage_yamato = {
+	type = heritage
+}

@@ -1,0 +1,98 @@
+﻿l_english:
+
+#####################
+# Strike
+#####################
+
+ek_excavation_siwa.0010.t:0 "[excavation_county.GetNameNoTier]: Dead End"
+ek_excavation_siwa.0010.desc:0 "My men have been toiling at work for days now and their efforts in finding way, deeper inside the sanctuary have born no fruit. Even despite my personal assistance.\n\nI lean against one of the thin alabaster pillars that dot the sanctuary. My mind goes back to the offertory. Could there be a clue there I missed?"
+ek_excavation_siwa.0010.a:0 "Present an offering"
+ek_excavation_siwa.0010.b:0 "Present a great offering"
+ek_excavation_siwa.0010.c:0 "The key is in plain sight? Destroy the column!"
+ek_excavation_siwa.0010.d:0 "Perhaps we should just wait?"
+
+ek_excavation_siwa.0011.t:0 "[excavation_county.GetNameNoTier]: Dead End"
+ek_excavation_siwa.0011.desc:0 "I decide to present an offering. As I have no knowledge of what kind of offering could this sort of altar require, I fetch the services of a local spinster, who is known to deal in matters of evil eyes and jinxes.\n\nThe spinster herself carries the sacrificial rites, slaughtering the chickens with a curved blade, swaying and waving around as she recites some sort of pagan incantation.\n\nEven though we were left none the wiser, the very next morning I am informed that one of my workers has found a secret passage behind one of the marbled pillars."
+ek_excavation_siwa.0011.a:0 "What a coincidence..."
+
+ek_excavation_siwa.0012.t:0 "[excavation_county.GetNameNoTier]: Dead End"
+ek_excavation_siwa.0012.desc:0 "I decide to present a large offering. As I have no knowledge of what kind of offering could this sort of altar require, I fetch the services of a local spinster, who is known to deal in matters of evil eyes and jinxes. The spinster herself slaughters the pig with a curved blade, swaying and waving around as she recites some sort of pagan incantation. Fumes flowing out of some sort of concoction on the floor.\n\nEven though we were left none the wiser, the very next morning I am informed that one of my workers has found a secret passage behind one of the marbled pillars."
+ek_excavation_siwa.0012.a:0 "What a coincidence..."
+
+ek_excavation_siwa.0013.t:0 "[excavation_county.GetNameNoTier]: Dead End"
+ek_excavation_siwa.0013.desc:0 "I walk back, directly to the spot where I first founder the offertory. Discouraged workers pace by me with curious looks and tools in hands.\n\nI snatch the work hammer out of a worker's hands and I start pounding and smashing into both the offertory and the bas relief.\n\nIt takes little effort before the bas relief itself almost leaps out of its frame and some sort of mechanism is revealed behind it.\n\nI yell for my men to start tearing up the place to find what this mechanism is connected to, surely that must be our way in."
+ek_excavation_siwa.0013.a:0 "It will take time, but at least we're making progress."
+
+######################################
+
+ek_excavation_siwa.0020.t:0 "[excavation_county.GetNameNoTier]: Strange Compartments"
+ek_excavation_siwa.0020.desc:0 "I am taking a leisurely stroll with [excavation_leader.GetTitledFirstName], examining the reliefs and peculiar ornaments of plaster and granite.\n\nWhile distracted by some particularly unusual baubles, I fail to notice I have gotten ahead of my companions. A deafening impact breaks my reverie, and I realize that the entrance has been sealed shut by a rolling boulder. In complete darkness I hear muffled yelling coming from the other side.\n\nOut of the corner of my eye I discern a faint shimmer, just scantily breaking the dark. There are a set of eight symbols before me."
+ek_excavation_siwa.0020.a:0 "Could there be a way out of this situation?"
+
+ek_excavation_siwa.0021.t:0 "[excavation_county.GetNameNoTier]: Strange Compartments"
+ek_excavation_siwa.0021.desc:0 "You see eight sets hollow symbols and letters, each carved into a compartment and exuding light and smoke, each of a different color.\n\nShould I touch one of them?"
+ek_excavation_siwa.0021.a:0 "Purple"
+ek_excavation_siwa.0021.b:0 "Grey"
+ek_excavation_siwa.0021.c:0 "Red"
+ek_excavation_siwa.0021.d:0 "Blue"
+ek_excavation_siwa.0021.e:0 "Green"
+
+ek_excavation_siwa.0022.t:0 "[excavation_county.GetNameNoTier]: Strange Compartments"
+ek_excavation_siwa.0022.desc:0 "Just as I press down on the compartment, a huge puff of (color) mist fills the room, choking me out of breath.\n\nI come to to find [excavation_leader.GetTitledFirstName] leaning over me, and an unfamiliar item in my hands, but I feel... changed, somehow... When did (excavation leader) grow a second head?..."
+ek_excavation_siwa.0022.a:0 "Strange, where did I get this?"
+
+######################################
+
+ek_excavation_siwa.0030.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0030.desc:0 "I wolf down the perch my chef made for lunch. Truly delicious! I will have to give him my commendations.\n\n"Meow"\n\nA cat, very similar in appearance to the one from last time, is staring at me across the room expectantly. I wonder how it got here? The balcony?\n\nI offer the cat some of my meal, but she rejects it, and instead gracefully trots toward the door, pawing it incessantly while eyeing me up."
+ek_excavation_siwa.0030.a:0 "Good grief."
+
+ek_excavation_siwa.0031.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0031.desc:0 "Even after opening the door for her, the cat does not seem to want to budge. We have been in a stalemate for several minutes now and I am nearing my wit's end.\n\n"Meowwwww."\n\nShe finally appears to decide it is time to go home, but abruptly stops a few steps before the spot where the hallway connects with the stairs leading outside.\n\nDoes it perhaps?.. It cannot be, but-. Does it want me to follow?"
+ek_excavation_siwa.0031.a:0 "Let's go"
+ek_excavation_siwa.0031.b:0 "I think not"
+
+ek_excavation_siwa.0032.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0032.desc:0 "After trudging halfway across town and experiencing scents both delicious and fetid I am led into a small alley, far away from the bustling flea markets.\n\nThere, a single small building stands, separated from all others by a diminutive lake that surrounds every side of it except for the fore.\n\nThe viscous brightness of the oil lamps creeps across my skin, and I find the cat in the room furthest from the entrance, sitting by a tiny object.\n\nOn the other hand, in a corner, there appear to be some expensive looking item of more substantial size."
+ek_excavation_siwa.0032.a:0 "What do you have there?"
+ek_excavation_siwa.0032.b:0 "I wonder what is that in the corner...?"
+ek_excavation_siwa.0032.c:0 "Let's just go home together"
+
+ek_excavation_siwa.0033.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0033.desc:0 ""Where did you get this?" I feel uncertain. I fiddle with the small cat amulet. It has a hole for carrying around the neck, I suppose, and It feels warm to the touch, as if somebody had just taken it off. The stink of wet fur makes me cringe when I try bringing it closer to peruse.\n\n"Kitty-" The cat is nowhere to be found. On the way out, I notice a bowl of sliced perch sitting outside the building, and a startled old man salutes me as our eyes meet."
+ek_excavation_siwa.0033.a:0 "I think I'll stay quiet about the cat headed statue in the back..."
+ek_excavation_siwa.0033.b:0 "That place looked rather suspicious..."
+
+ek_excavation_siwa.0034.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0034.desc:0 ""What is this?..." What in the dim light appeared to be some valuable item now looks like some sort of soft statuette? After getting it closer to my nose a very faint rancid smell makes my nose flinch.\n\n"Kitty-" The cat is nowhere to be found. On the way out, I trip on some sort of plate and smash onto the cobblestones knee first, and after rolling around in pain I fall into the bloody lake.\n\nA startled old man has to help me out and I am forced to make the trip home soaked to the bones."
+ek_excavation_siwa.0034.a:0 "My knee..."
+
+ek_excavation_siwa.0035.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0035.desc:0 "After trudging halfway across town and experiencing scents both fetid and delicious I am led through a small alley, far away from the bustling flea markets.\n\nThe cat's pure white fur suddenly becomes scruffy and alert and she darts across the back streets like a blur, my eyes barely being able to follow."
+ek_excavation_siwa.0035.a:0 "Wait!"
+
+ek_excavation_siwa.0036.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0036.desc:0 "I arrive to catch the cat hissing at a snake dark as the night and twice her size.\n\nThe snake slithers between us and a little boy whose escape is blocked by both a mudbrick wall and the scaled fiend.\n\nThe dark creature hisses over the cat, agitated. There is little time to act; the snake is slowly creeping toward the boy and getting bit means certain death."
+ek_excavation_siwa.0036.a:0 "Fight the snake"
+ek_excavation_siwa.0036.b:0 "Capture the snake"
+ek_excavation_siwa.0036.c:0 "Run away"
+
+ek_excavation_siwa.0037.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0037.desc:0 "My eyes darting, I find a wooden stick leaning against the right of the wall and snatch it in a blur.\n\nI try shooing the snake away with the stick, but it does little to deter it. The cat jumps between the boy and the snake, distracting it for long enough for me to smack it over the head. The sound of whooshing air as the stick lands denotes a glancing blow.\n\nBefore I can react, the snake furiously lunges at me, but the cat pounces on its tail, giving me time to land a finishing blow.\n\nThe snake dead and bloody in the ground, I am soon overcome by the family of the boy that arrived in time to see the outcome. They invite me for dinner, overjoyed.\n\nThe cat is gone before I realize, only a strange green figurine in its place."
+ek_excavation_siwa.0037.a:0 "I wonder if we will see each other again."
+
+ek_excavation_siwa.0038.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0038.desc:0 "I wolf down the catfish my chef made for dinner. Truly remarkable! I will have to give him my compliments. Or I would, if there wasn't a massive snake slithering right behind my plate.\n\n"Hisss..." The snake towers over the table a good half a meter long, staring me down with a cold and calculative eyes. It's fangs are dripping full with venom.\n\nI don't dare move. How did it even get here? The balcony?\n\nBefore I can react, the monster is upon me."
+ek_excavation_siwa.0038.a:0 "Help me!"
+
+ek_excavation_siwa.0039.t:0 "[excavation_county.GetNameNoTier]: White Cat"
+ek_excavation_siwa.0039.desc:0 "My eyes darting, I find a wooden stick leaning against the right of the wall and snatch it in a blur.\n\nI attempt to stealthily approach the snake but quickly realize it will reach the boy before I do. Desperate, I try to focus the snake's attention on me with my stick before it reaches the boy, but my clumsy attempt at crouching makes me trip, which alerts the snake to my presence.\n\nBefore I can duck, I have been bitten more times than I can count. I instinctively jump back, but become paralyzed with fear as the venom takes hold of my body.\n\nThe last thing I see before I close my eyes for the final time are the cat and the snake entangled in a brutal melee."
+ek_excavation_siwa.0039.a:0 "Good luck, kitty"
+
+
+
+
+
+
+
+

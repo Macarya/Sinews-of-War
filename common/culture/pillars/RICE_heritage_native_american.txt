@@ -1,0 +1,35 @@
+﻿heritage_algonquian = {
+	type = heritage
+	parameters = { 
+		heritage_group_algonquian = yes
+		heritage_family_native_american = yes 
+	}
+}
+
+heritage_iroquoian = {
+	type = heritage
+	parameters = { 
+		heritage_group_iroquoian = yes
+		heritage_family_native_american = yes 
+	}
+}
+
+# heritage_beothuk = {
+# 	type = heritage
+# }
+
+heritage_paleo_inuit = {
+	type = heritage
+	parameters = { 
+		heritage_group_thule = yes
+		heritage_family_eurasian = yes 
+	}
+}
+
+heritage_inuit = {
+	type = heritage
+	parameters = { 
+		heritage_group_thule = yes
+		heritage_family_eurasian = yes 
+	}
+}

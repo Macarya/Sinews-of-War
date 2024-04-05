@@ -1,0 +1,178 @@
+﻿ek_start_excavation = {
+    scope = county
+	is_shown = {
+		has_variable = ruins_type
+	}
+	is_valid = {
+	
+	}
+    effect = {
+		save_scope_as = excavation_locale
+		holder = {
+			create_story = {
+				type = story_cycle_excavation
+				save_scope_as = story
+			}
+			scope:story = {
+				set_variable = {
+					name = excavation_locale
+					value = scope:excavation_locale
+				}
+			}
+			scope:excavation_locale = {
+				set_variable = {
+					name = active_excavation
+					value = scope:story
+				}
+			}
+		}
+    }
+}
+
+get_excavation_leader_candidates = {
+	scope = county
+	is_valid = {
+	
+	}
+	effect = {
+		if = {
+			limit = { has_variable = active_excavation }
+			var:active_excavation = {
+				story_owner = {
+					if = {
+						limit = { exists = cp:councillor_marshal }
+						add_to_variable_list = { name = excavation_leader_candidates target = cp:councillor_marshal }
+					}
+
+					every_knight = {
+						prev = { add_to_variable_list = { name = excavation_leader_candidates target = prev } }
+					}
+					
+					set_variable = { name = active_excavation value = prev }
+					set_variable = { name = excavation_locale value = prev.var:excavation_locale.county }
+				}
+			}
+		}
+	}
+}
+
+show_excavation_leader_head = {
+	is_shown = {
+		has_variable = active_excavation
+		var:active_excavation = {
+			has_variable = excavation_leader 
+			var:excavation_leader = { is_alive = yes }			
+		}
+	}
+}
+
+show_excavation_unknown_head = {
+	is_shown = {
+		has_variable = active_excavation
+		var:active_excavation = {
+			OR = {
+				NOT = { has_variable = excavation_leader }
+				var:excavation_leader = { is_alive = no }
+			}
+		}
+	}
+}
+
+remove_excavation_leader = {
+	effect = {
+		if = {
+			limit = { has_variable = active_excavation }
+			var:active_excavation = {
+				if = {
+					limit = { has_variable = excavation_leader }
+					
+					var:excavation_leader = {
+						remove_variable = is_leading_excavation
+					}
+					remove_variable = excavation_leader
+				}
+			}
+		}
+	}
+}
+
+appoint_new_excavation_leader = {
+	is_shown = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = { has_variable = active_excavation }
+			var:active_excavation = {
+				if = {
+					limit = { has_variable = excavation_leader }
+					
+					var:excavation_leader = {
+						remove_variable = is_leading_excavation
+					}
+				}
+				set_variable = { name = excavation_leader value = scope:new_excavation_leader }
+				scope:new_excavation_leader = { set_variable = { name = is_leading_excavation } }				
+			}
+			
+			clear_variable_list = excavation_leader_candidates
+		}
+	}
+}
+
+show_excavation_tab = {
+	scope = county
+ 	is_shown = { 
+		has_variable = ruins_type
+	}
+	is_valid = { 
+		always = yes
+	} 
+}
+
+show_trade_post_tab = {
+	scope = county
+ 	is_shown = { 
+		OR = {
+			has_county_modifier = demd_strategic_location
+			has_county_modifier = demd_trade_linkage
+		}
+	}
+	is_valid = { 
+		always = yes
+	} 
+}
+
+show_excavation_start_button = {
+	scope = county
+ 	is_shown = {
+		has_variable = ruins_type
+		NOT = { has_variable = active_excavation } 
+	}
+	is_valid = { 
+		always = yes
+	} 
+}
+
+show_excavation_progress_bar = {
+	scope = county
+ 	is_shown = { 
+		has_variable = active_excavation
+	}
+	is_valid = { 
+		always = yes
+	} 
+}
+
+start_excavation = {
+	scope = county
+ 	is_shown = { 
+		always = yes
+	}
+	is_valid = { 
+		start_excavation_trigger = yes
+	} 
+	effect = {
+		start_excavation_effect = yes
+	}
+}

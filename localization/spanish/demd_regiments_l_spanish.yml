@@ -1,0 +1,10 @@
+﻿l_spanish:
+ pikemen_screen_mult:0 "[screen|E] de [spearmen|E]"
+ heavy_infantry_screen_mult:0 "[screen|E] de [heavy_infantry|E]"
+ heavy_cavalry_screen_mult:0 "[screen|E] de [heavy_cavalry|E]"
+ archers_screen_mult:0 "[screen|E] de [archers|E]"
+
+ archers_pursuit_mult:0 "[pursuit|E] de [archers|E] "
+ pikemen_pursuit_mult:0 "[pursuit|E] de [spearmen|E]"
+ heavy_infantry_pursuit_mult:0 "[pursuit|E] de [heavy_infantry|E]"
+ heavy_cavalry_pursuit_mult:0 "[pursuit|E] de [heavy_cavalry|E]"

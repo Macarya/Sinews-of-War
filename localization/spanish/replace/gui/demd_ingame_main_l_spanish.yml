@@ -1,0 +1,3 @@
+﻿l_spanish:
+ MAPMODE_COUNTY_DEVELOPMENT_NAME:0 "Investigación"
+ MAPMODE_COUNTY_DEVELOPMENT:3 "#T $MAPMODE_COUNTY_DEVELOPMENT_NAME$\n#!Muestra el nivel de [demd_research|E] de cada [county|E] en el mapa."

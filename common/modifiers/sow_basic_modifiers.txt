@@ -1,0 +1,93 @@
+﻿base_modifier = {
+}
+
+# Skill modifiers, applied to each character
+# *_with_offset versions first subtract the NCharacter.SKILL_MODIFIER_OFFSET value from the skill
+
+diplomacy_modifier = {
+	ai_amenity_target_baseline = 0.01
+}
+diplomacy_modifier_with_offset = {
+	monthly_prestige_gain_mult = 0.01
+	monthly_diplomacy_lifestyle_xp_gain_mult = 0.01
+}
+
+intrigue_modifier = {
+	scheme_discovery_chance_mult = 0.01
+}
+intrigue_modifier_with_offset = {
+	owned_hostile_scheme_success_chance_add = 1
+	monthly_intrigue_lifestyle_xp_gain_mult = 0.01
+}
+
+stewardship_modifier = {
+	character_travel_speed = 1
+}
+stewardship_modifier_with_offset = {
+	domain_tax_mult = 0.02
+	#build_gold_cost = -0.02
+	#holding_build_gold_cost = -0.02
+	monthly_stewardship_lifestyle_xp_gain_mult = 0.01
+}
+
+martial_modifier = {
+	character_travel_safety = 1
+}
+martial_modifier_with_offset = {
+	levy_size = 0.02
+	levy_reinforcement_rate = 0.02
+	army_toughness_mult = 0.01
+	monthly_martial_lifestyle_xp_gain_mult = 0.01
+}
+
+learning_modifier = {
+	monthly_piety = 0.1
+}
+learning_modifier_with_offset = {
+	monthly_learning_lifestyle_xp_gain_mult = 0.01
+}
+
+prowess_modifier = {
+}
+
+# These modifiers are applied to characters of that tier
+unlanded_modifier = {
+}
+
+baron_modifier = {
+	domain_limit = 1
+	# Barons don't get to have knights
+}
+
+count_modifier = {
+	domain_limit = 3
+	tax_slot_add = 1
+	ai_war_chance = -0.9
+}
+
+duke_modifier = {
+	domain_limit = 4
+	vassal_limit = 10
+	tax_slot_add = 1
+
+	mercenary_hire_cost_mult = 0.1
+}
+
+king_modifier = {
+	domain_limit = 5
+	vassal_limit = 20
+	active_accolades = 1
+	tax_slot_add = 2
+
+	mercenary_hire_cost_mult = 0.3
+}
+
+emperor_modifier = {
+	domain_limit = 6
+	vassal_limit = 30
+	ai_amenity_target_baseline = 0.3	
+	active_accolades = 2
+	tax_slot_add = 2
+
+	mercenary_hire_cost_mult = 0.6
+}

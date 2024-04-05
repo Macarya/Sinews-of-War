@@ -1,0 +1,25 @@
+﻿punitive_expedition = {
+	allowed_for_character = {
+		can_raid_trigger = no
+	}
+}
+
+trade = {
+	allowed_for_character = {
+		can_raid_trigger = no
+		OR = {
+			any_character_struggle = {
+				has_variable = is_trade_node_struggle
+				var:node_owner = prev
+			}
+			any_sub_realm_county = {
+				holder = prev
+				OR = {
+					has_county_modifier = demd_strategic_location
+					has_county_modifier = demd_trade_linkage
+				}
+			}
+		}
+	}
+}
+

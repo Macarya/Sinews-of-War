@@ -1,0 +1,64 @@
+﻿l_spanish:
+
+game_concept_demd_trade_resource:0 "Luxury Resource"
+game_concept_demd_trade_resources:0 "Luxury Resources"
+game_concept_demd_trade_resources_desc:0 "The presence of a #defender_color Luxury Resource!# in a [county|E] increases its production of [demd_trade_value|E] by a large factor."
+
+demd_gold:0 "@icon_demd_gold!# [demd_gold|E]: #P +[EmptyScope.ScriptValue('demd_gold_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_gold_icon:0 "@icon_demd_gold_small!#"
+game_concept_demd_gold:0 "Gold"
+game_concept_demd_gold_desc:0 "Gold has been regarded as a measure of relative value since before the minting of coins. The history of gold as a commodity is deeply intertwined with its use in religious and mythological imagery."
+
+demd_silver:0 "@icon_demd_silver!# [demd_silver|E]: #P +[EmptyScope.ScriptValue('demd_silver_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_silver_icon:0 "@icon_demd_silver_small!#"
+game_concept_demd_silver:0 "Silver"
+game_concept_demd_silver_desc:0 "silver has been regarded as a measure of relative value since before the minting of coins. The history of silver as a commodity is deeply intertwined with its use in religious and mythological imagery."
+
+demd_wine:0 "@icon_demd_wine!# [demd_wine|E]: #P +[EmptyScope.ScriptValue('demd_wine_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_wine_icon:0 "@icon_demd_wine_small!#"
+game_concept_demd_wine:0 "Wine"
+game_concept_demd_wine_desc:0 "Wine is produced from grapes, raisins and many other fruits, and has myriad uses in recreational, religious, and cultural pursuits."
+
+demd_silk:0 "@icon_demd_silk!# [demd_silk|E]: #P +[EmptyScope.ScriptValue('demd_silk_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_silk_icon:0 "@icon_demd_silk_small!#"
+game_concept_demd_silk:0 "Silk"
+game_concept_demd_silk_desc:0 "Shrouded in mystery, the origins of silk cultivation lie in the far east. This exotic fabric is rare enough to command great interest, and an even greater price."
+
+demd_spices:0 "@icon_demd_spices!# [demd_spices|E]: #P +[EmptyScope.ScriptValue('demd_spices_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_spices_icon:0 "@icon_demd_spices_small!#"
+game_concept_demd_spices:0 "Spices"
+game_concept_demd_spices_desc:0 "Primarily used as food additives, the many herbs which comprise the spice trade command a variable price depending on their provenance."
+
+demd_amber:0 "@icon_demd_amber!# [demd_amber|E]: #P +[EmptyScope.ScriptValue('demd_amber_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_amber_icon:0 "@icon_demd_amber_small!#"
+game_concept_demd_amber:0 "Amber"
+game_concept_demd_amber_desc:0 "Formed from the resin of pine trees, the appeal of amber as a decorative material, combined with its scarcity, results in a particularly valuable commodity."
+
+demd_gems:0 "@icon_demd_gems!# [demd_gems|E]: #P +[EmptyScope.ScriptValue('demd_gems_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_gems_icon:0 "@icon_demd_gems_small!#"
+demd_gems:0 "@icon_demd_gems!# [demd_gems|E]"
+game_concept_demd_gems:0 "Gems"
+game_concept_demd_gems_desc:0 "Highly prized as ornamental items, the incredible rarity of gemstones ensures that only the most wealthy will ever possess them."
+
+demd_ivory:0 "@icon_demd_ivory!# [demd_ivory|E]: #P +[EmptyScope.ScriptValue('demd_ivory_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_ivory_icon:0 "@icon_demd_ivory_small!#"
+game_concept_demd_ivory:0 "Ivory"
+game_concept_demd_ivory_desc:0 "Walrus ivory was traded south from as far away as Norse Greenland to Scandinavia, southern England and northern France and Germany. Ivory became increasingly available as the Middle Ages went on, and the most important centre of carving became Paris, which had a virtually industrial production and exported all over Europe."
+
+demd_salt:0 "@icon_demd_salt!# [demd_salt|E]: #P +[EmptyScope.ScriptValue('demd_salt_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_salt_icon:0 "@icon_demd_salt_small!#"
+game_concept_demd_salt:0 "Salt"
+game_concept_demd_salt_desc:0 "Greatly valued as a food additive and preservation agent, salt is in such high demand that it often serves as a parallel currency."
+
+demd_furs:0 "@icon_demd_furs!# [demd_furs|E]: #P +[EmptyScope.ScriptValue('demd_furs_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_furs_icon:0 "@icon_demd_furs_small!#"
+game_concept_demd_furs:0 "Furs"
+game_concept_demd_furs_desc:0 "Furs have been used since time immemorial to shield humans from the biting cold. Ranging from stitched rabbit skins to great bear hides, a good fur can be put to any number of uses."
+
+demd_dyes:0 "@icon_demd_dyes!# [demd_dyes|E]: #P +[EmptyScope.ScriptValue('demd_dyes_trade_value_bonus')|0%] @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_dyes_icon:0 "@icon_demd_dyes_small!#"
+game_concept_demd_dyes:0 "Dyes"
+game_concept_demd_dyes_desc:0 "Expensive dyes such as Tyrian purple and kermes are harvested from rare invertebrates in very localized habitats. These colors are particularly sought after by the ruling elite of many cultures, and are bound to command a high price."
+
+demd_no_trade_resource:0 "None: +0% @icon_trade_value!#  [demd_trade_value|E] #!"
+demd_no_trade_resource_icon:0 " "

@@ -1,0 +1,16 @@
+﻿l_spanish:
+
+demd_pop_disease.1002.t:0 "Plague Outbreak in [county.GetNameNoTierNoTooltip]"
+demd_pop_disease.1002.desc:0 "Reports have emerged of an outbreak of plague in [county.GetNameNoTierNoTooltip]. Organizing a relief effort could ease the suffering of my subjects, but will be costly."
+demd_pop_disease.1002.a:0 "Fund a relief effort"
+demd_pop_disease.1002.b:0 "This isn't my problem"
+demd_pop_disease.1002.relief_success:0 "The relief is a success."
+demd_pop_disease.1002.relief_failure:0 "The relief is a failure."
+
+demd_pop_disease.1003.t:0 "Relief of [county.GetNameNoTierNoTooltip]"
+demd_pop_disease.1003.desc:0 "The relief effort was a success."
+demd_pop_disease.1003.a:0 "Lit"
+
+demd_pop_disease.1004.t:0 "Relief of [county.GetNameNoTierNoTooltip]"
+demd_pop_disease.1004.desc:0 "The relief effort was a failure."
+demd_pop_disease.1004.a:0 "We did all we could"

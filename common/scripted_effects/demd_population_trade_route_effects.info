@@ -1,0 +1,87 @@
+﻿trade_route_setup = {
+
+	# copy trade route nodes from global list
+	every_in_global_list = {
+		variable = trade_route_setup_list
+		prev = { add_to_variable_list = { name = trade_route_nodes target = prev } }
+	}
+	
+	# clear list so next setup will have a clean slate
+	clear_global_variable_list = trade_route_setup_list
+	
+	# save trade nodes in reverse order. better to use a bit more storage than to have to sort them again every year I think
+	reverse_list = { INPUT = trade_route_nodes OUTPUT = reversed_trade_route_nodes }
+	
+	# add this trade route to global trade route list
+	add_to_global_variable_list = { name = trade_routes target = this }
+}
+
+trade_route_yearly_pulse = {
+
+	# calculate trade route stats
+	every_in_list = {
+		variable = trade_route_nodes
+		recalculate_trade_node_stats = yes
+	}
+
+}
+
+recalculate_trade_node_stats = {
+
+	# set node values
+	set_variable = { name = produced_trade_value value = node_produced_trade_value }
+	set_variable = { name = trade_power value = node_trade_power }
+	
+	
+	# save trade power of highest TP county 	
+	save_temporary_scope_value_as = { name = highest_trade_power value = var:trade_node_capital.var:trade_power }
+	
+	# look for higher trade power county
+	every_in_list = {
+		variable = node_counties
+		
+		# if higher...
+		if = {
+			limit = { var:trade_power = { compare_value > scope:highest_trade_power } }
+			
+			# save TP as new highest
+			save_temporary_scope_value_as = { name = highest_trade_power value = var:trade_power }
+			
+			# save this county as new trade node capital
+			prev = { set_variable = { name = trade_node_capital value = prev } }
+		}
+	}
+	
+	# set trade node owner
+	set_variable = { name = trade_node_owner value = var:trade_node_capital.holder }
+	
+	# calculate node efficiency
+	set_variable = { name = node_attack_strength value = node_attack_strength }
+	set_variable = { name = node_defense_strength value = node_defense_strength }
+	set_variable = { name = node_trade_efficiency value = node_trade_efficiency }
+	
+	
+}
+
+calculate_trade_route_efficiency = {
+
+}
+
+# Generic function to reverse a list. Do not output to the input list!
+reverse_list = {
+	set_variable = { name = index value = 0 }
+	every_in_list = {
+		variable = $INPUT$
+		set_variable = { name = index value = prev.var:index }
+		prev = { change_variable = { name = index add = 1 } }
+	}
+	remove_variable = index
+
+	ordered_in_list = {
+		variable = $INPUT$
+		order_by = var:index
+		prev = { add_to_variable_list = { name = $OUTPUT$ target = prev } }
+		remove_variable = index
+	}
+}
+

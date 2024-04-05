@@ -1,0 +1,706 @@
+﻿namespace = demd_pop_religious_conversion
+
+# amount = small, medium, large, huge
+scripted_effect demd_faith_conversion_progress_gain_lose = {	
+
+	if = { limit = { scope:is_conversion_desirable = yes } 
+		demd_alter_conversion_progress = { operation = add type = faith amount = $amount$ }
+	}
+	else = {
+		demd_alter_conversion_progress = { operation = subtract type = faith amount = $amount$ }
+	}				
+}
+
+# amount = small, medium, large, huge
+scripted_effect demd_faith_conversion_progress_lose_gain = {	
+
+	if = { limit = { scope:is_conversion_desirable = yes } 
+		demd_alter_conversion_progress = { operation = subtract type = faith amount = $amount$ }
+	}
+	else = {
+		demd_alter_conversion_progress = { operation = add type = faith amount = $amount$ }
+	}
+}
+
+demd_pop_religious_conversion.0001 = {
+	hidden = yes
+	type = empty
+	immediate = {
+		save_scope_as = county
+		if = {
+			limit = { 
+				OR = {
+					faith = holder.faith # county faith is my faith
+                    holder.faith = { faith_hostility_level_comparison = { prev.faith < prev.var:converting_faith }}
+				}
+			}
+			faith = { save_scope_as = desirable_faith }
+			var:converting_faith = { save_scope_as = undesirable_faith }
+			save_scope_value_as = { name = is_conversion_desirable value = no }
+			
+			holder = {
+				trigger_event = {
+					on_action = demd_conversion_faith_pulse
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+                    var:converting_faith = holder.faith # converting faith is my faith
+                    holder.faith = { faith_hostility_level_comparison = { prev.faith > prev.var:converting_faith }}
+				}			
+			}
+			var:converting_faith = { save_scope_as = desirable_faith }
+			faith = { save_scope_as = undesirable_faith }
+			save_scope_value_as = { name = is_conversion_desirable value = yes }
+			
+			holder = {
+				trigger_event = {
+					on_action = demd_conversion_faith_pulse
+				}
+			}
+		}
+	}
+}
+
+demd_pop_religious_conversion.1001 = {
+	type = character_event
+	title = demd_pop_religious_conversion.1001.t
+	desc = demd_pop_religious_conversion.1001.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	# Get temple level + piety for gold
+	option = {
+		name = demd_pop_religious_conversion.1001.a
+		show_as_unavailable = { always = yes }
+		scope:county = {
+			demd_faith_conversion_progress_gain_lose = { amount = large }
+		}
+		add_piety = minor_piety_gain
+		
+		ai_chance = {
+			base = 0 
+			modifier = { # do this if we can afford it 
+				add = 50
+				OR = {
+					is_at_war = no
+					gold > massive_gold_value
+				}
+			}
+		}
+	}
+	
+	# Get free temple level
+	option = {
+		name = demd_pop_religious_conversion.1001.b
+		show_as_unavailable = { always = yes }
+		
+		scope:county = {
+			demd_faith_conversion_progress_gain_lose = { amount = small }
+		}
+		
+		ai_chance = {
+			base = 50
+		}
+	}	
+	
+	# Get piety and conv progress
+	option = {
+		name = demd_pop_religious_conversion.1001.c
+		add_piety = medium_piety_gain
+		scope:county = {
+			demd_faith_conversion_progress_gain_lose = { amount = medium }
+		}
+		ai_chance = {
+			base = 50
+		}
+	}	
+	# Get conv progress but huge unrest
+	option = {
+		name = demd_pop_religious_conversion.1001.d
+		trigger = { 
+			faith = { faith_hostility_level = { target = scope:undesirable_faith value > 1 } }
+		}
+		scope:county = {
+			demd_faith_conversion_progress_gain_lose = { amount = huge }
+		}
+		if = { 
+			limit = { scope:is_conversion_desirable = yes }
+			scope:county = { add_county_modifier = { modifier = burned_local_temples years = 5 } }
+		}
+		random_list = { # some chance fires spread out of control
+			5 = { scope:county = { trigger_event = demd_pop_fire.1001 } }
+			100 = { }
+		}		
+		if = {
+			limit = { has_any_nickname = no }
+			random_list = {				
+				25 = { }
+				1 = { give_nickname = nick_witch_burner }
+			}
+		}
+		ai_chance = {
+			base = 0
+			ai_value_modifier = {
+				ai_zeal = 1
+				max = 50
+			}		
+		}
+	}	
+}
+
+demd_pop_religious_conversion.1002 = {
+	type = character_event
+	title = demd_pop_religious_conversion.1002.t
+	desc = demd_pop_religious_conversion.1002.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	right_portrait = {
+		character = scope:thug_leader
+		animation = rage
+	}
+	
+	immediate = {
+		create_character = {
+			template = religious_leader_character
+			culture = scope:county.culture
+			faith = scope:undesirable_faith
+			trait = education_intrigue_4
+			trait = zealous
+			location = scope:county.title_province
+			save_scope_as = thug_leader
+			dynasty = none
+		}
+	}
+	
+	# Kill them all
+	option = {
+		name = demd_pop_religious_conversion.1002.a
+		duel = {
+			skill = prowess
+			value = average_skill_rating
+			10 = {
+				desc = demd_pop_religious_conversion.1002.a.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				add_piety = major_piety_gain
+				scope:county = { demd_faith_conversion_progress_gain_lose = {amount = large }}
+				scope:thug_leader = { death = { death_reason = death_battle killer = scope:county.holder } }
+			}
+			10 = {
+				desc = demd_pop_religious_conversion.1002.a.failure
+				increase_wounds_effect = { REASON = fight }
+				# scope:county.holder = { remove_courtier_or_guest = { character = scope:thug_leader } }
+			}
+		}				
+		ai_chance = {
+			base = 0 
+			ai_value_modifier = {
+				ai_zeal = {
+					if = {
+						limit = { prowess > average_skill_rating }
+						value = 1
+						max = 50
+					}
+				}
+			}	
+		}
+	}
+	
+	# Make an offer
+	option = {
+		name = demd_pop_religious_conversion.1002.b
+		duel = {
+			skill = intrigue
+			target = scope:thug_leader
+			10 = {
+				desc = demd_pop_religious_conversion.1002.b.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}	
+				scope:thug_leader = { set_employer = scope:county.holder }
+				scope:county = { demd_faith_conversion_progress_gain_lose = {amount = medium } }
+			}
+			10 = {
+				desc = demd_pop_religious_conversion.1002.b.failure
+				add_piety = major_piety_loss
+				scope:thug_leader = {
+					if = {
+						limit = { is_courtier_of = scope:county.holder }
+						scope:county.holder = { remove_courtier_or_guest = { character = scope:thug_leader } }
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 0 
+			ai_value_modifier = {
+				ai_zeal = -1
+				ai_honor = -1
+				max = 100
+			}			
+		}
+	}
+
+	# Kill leaders
+	option = {
+		name = demd_pop_religious_conversion.1002.c
+		
+		add_piety = medium_piety_gain
+		scope:county = { demd_faith_conversion_progress_gain_lose = {amount = medium}}
+		scope:thug_leader = { death = { death_reason = death_execution killer = scope:county.holder } }
+		ai_chance = {
+			base = 50
+		}
+	}
+	
+	# Ransom for gold
+	option = {
+		name = demd_pop_religious_conversion.1002.d
+		
+		add_piety = minor_piety_loss
+		add_gold = medium_gold_value
+		scope:county = { demd_faith_conversion_progress_lose_gain = {amount = small} }
+		# scope:county.holder = { remove_courtier_or_guest = { character = scope:thug_leader } }
+		
+		ai_chance = {
+			base = 50 
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}			
+		}		
+	}	
+	
+	# Burn the building
+	option = {
+		name = demd_pop_religious_conversion.1002.e
+		trigger = { 
+			faith = { faith_hostility_level = { target = scope:undesirable_faith value > 1 } }
+		}		
+		add_piety = minor_piety_gain
+		scope:county = { demd_faith_conversion_progress_gain_lose = {amount = medium}}
+		scope:thug_leader = { death = { death_reason = death_burned killer = scope:county.holder } }
+		random_list = { # small chance fire spreads out of control
+			1 = { scope:county = { trigger_event = demd_pop_fire.1001 } }
+			100 = { }
+		}
+		ai_chance = {
+			base = 0
+			ai_value_modifier = {
+				ai_zeal = 1
+				max = 50
+			}			
+		}		
+	}	
+}	
+
+demd_pop_religious_conversion.1003 = {
+	type = character_event
+	title = demd_pop_religious_conversion.1003.t
+	desc = demd_pop_religious_conversion.1003.desc
+	theme = faith
+
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+	
+	# Lash yourself
+	option = {
+		name = demd_pop_religious_conversion.1003.a
+		trigger = { 
+			OR = {
+				has_trait = sadistic 
+				has_trait = torturer
+			}
+		}
+		
+		stress_impact = {
+			compassionate = minor_stress_gain
+			sadistic = minor_stress_loss
+		}
+
+		scope:county = { demd_faith_conversion_progress_gain_lose = { amount = small } }
+		
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 0.25
+			}	
+			ai_value_modifier = {
+				ai_compassion = -1
+			}			
+		}		
+	}
+	
+	# Lashes
+	option = {
+		name = demd_pop_religious_conversion.1003.b
+
+		scope:county = { demd_faith_conversion_progress_gain_lose = { amount = small } }
+		
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 0.25
+			}	
+			ai_value_modifier = {
+				ai_compassion = -1
+			}			
+		}		
+	}	
+	
+	# Sermons
+	option = {
+		name = demd_pop_religious_conversion.1003.c
+		trigger = { gold > activity_minor_gold_value }
+		show_as_unavailable = { always = yes }
+
+		scope:county = { demd_faith_conversion_progress_gain_lose = { amount = medium } }
+		remove_short_term_gold = activity_minor_gold_value
+		
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					gold > activity_medium_gold_value
+					is_at_war = no
+				}
+				add = 50
+			}
+			ai_value_modifier = {
+				ai_compassion = 0.5
+			}			
+		}		
+	}	
+	
+	# No harm
+	option = {
+		name = demd_pop_religious_conversion.1003.d
+
+		scope:county = { demd_faith_conversion_progress_gain_lose = {amount = small} }
+		
+		ai_chance = {
+			base = 5	
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}		
+			ai_value_modifier = {
+				ai_energy = -0.5
+			}			
+		}		
+	}	
+}
+#Beyond Death
+demd_pop_religious_conversion.1004 = {
+	type = character_event
+	title = demd_pop_religious_conversion.1004.t
+	desc = demd_pop_religious_conversion.1004.desc
+	theme = faith
+
+    left_portrait = {
+        character = this
+        animation = worry
+    }
+    #Scare them into proselytism
+    option = {
+		name = demd_pop_religious_conversion.1004.a
+        add_dread = low_dread
+        add_piety = minor_piety_gain
+		scope:county = { demd_faith_conversion_progress_gain_lose = {amount = medium} }
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 0.5
+			}
+			ai_value_modifier = {
+				ai_compassion = -0.5
+			}
+		}
+    }
+    #Gently nudge proselytism
+    option = {
+        name = demd_pop_religious_conversion.1004.b
+        scope:county = { demd_faith_conversion_progress_gain_lose = {amount = small } }
+		ai_chance = {
+			base = 50
+		}
+    }
+    #Do nothing 
+    option = {
+        name = demd_pop_religious_conversion.1004.c  
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}
+			ai_value_modifier = {
+				ai_energy = -0.5
+			}
+		}
+    } 
+}
+#Quartering Troops
+demd_pop_religious_conversion.1005 = {
+	type = character_event
+	title = demd_pop_religious_conversion.1005.t
+	desc = demd_pop_religious_conversion.1005.desc
+	theme = faith
+    
+    left_portrait = {
+        character = this
+        animation = worry
+    }
+    #Quarter at infidels
+    option = {
+		name = demd_pop_religious_conversion.1005.a
+		add_dread = low_dread
+		scope:county = { add_county_modifier = { modifier = quartering_at_infidels years = 5 } }# Insert modifier duration
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 0.5
+			}
+		}
+    }
+    #Quarter troops
+    option = {
+		name = demd_pop_religious_conversion.1005.b
+		scope:county = { add_county_modifier = { modifier = quartering_at_locals years = 5 } }  # Insert modifier duration
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}
+			ai_value_modifier = {
+				ai_compassion = -0.5
+			}
+		}
+    }
+    #Do nothing
+    option = {
+		name = demd_pop_religious_conversion.1005.c
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_energy = -0.5
+			}
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}
+		}		
+    }
+}
+#Book Burning
+demd_pop_religious_conversion.1006 = {
+	type = character_event
+	title = demd_pop_religious_conversion.1006.t
+	desc = demd_pop_religious_conversion.1006.desc
+	theme = faith
+
+    left_portrait = {
+		character = this
+		animation = worry
+    }
+
+    right_portrait = {
+        character = cp:councillor_court_chaplain
+        animation = rage
+    }
+    #Burn books
+    option = {
+        name = demd_pop_religious_conversion.1006.a
+        add_piety = minor_piety_gain
+		scope:county = { add_county_modifier = { modifier = book_burning years = 5 } } #Include Duration
+		scope:county = { demd_faith_conversion_progress_gain_lose = {amount = medium }}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 0.5
+			}
+		}
+    }
+    #Debate theologian
+    option = {
+        name = demd_pop_religious_conversion.1006.b
+        duel = {
+			skill = learning
+			target = cp:councillor_court_chaplain
+			#value = extremely_high_skill_rating --- Only one of target or value can be set -Necro
+			10 = {
+				desc = demd_pop_religious_conversion.1006.b.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}	
+				scope:county = { demd_faith_conversion_progress_gain_lose = {amount = huge } }
+			}
+			10 = {
+				desc = demd_pop_religious_conversion.1006.b.failure
+				scope:county = {demd_faith_conversion_progress_lose_gain = {amount = small }}
+			}
+		}
+		ai_chance = {
+			base = 50
+		}		
+    }
+    #Scold chaplain
+    option = {
+        name = demd_pop_religious_conversion.1006.c
+		cp:councillor_court_chaplain = { add_character_modifier = { modifier = book_burning years = 3 } }
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}
+		}		
+    }
+}
+#State Rites
+demd_pop_religious_conversion.1007 = {
+	type = character_event
+	title = demd_pop_religious_conversion.1007.t
+	desc = demd_pop_religious_conversion.1007.desc
+	theme = faith
+
+    left_portrait = {
+        character = this
+        animation = worry
+    }
+    #Force attendance
+    option = {
+        name = demd_pop_religious_conversion.1007.a
+		add_dread = low_dread
+		add_prestige = -400
+		scope:county = { demd_faith_conversion_progress_gain_lose = {amount = small } }
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 0.5
+			}
+		}		
+    }
+    #Allow volunteers
+    option = {
+		name = demd_pop_religious_conversion.1007.b
+		scope:county = { demd_faith_conversion_progress_lose_gain = { amount = small } }
+		ai_chance = {
+			base = 50
+		}		
+    }
+    #Exclude from rites
+    option = {
+		name = demd_pop_religious_conversion.1007.c
+		scope:county = { demd_faith_conversion_progress_lose_gain = { amount = medium } }
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}
+		}		
+    }
+}
+#Renouncing the Faith
+demd_pop_religious_conversion.1008 = {
+	type = character_event
+	title = demd_pop_religious_conversion.1008.t
+	desc = demd_pop_religious_conversion.1008.desc
+	theme = faith
+
+    left_portrait = {
+        character = this
+        animation = worry
+    }
+	right_portrait = {
+        character = cp:councillor_court_chaplain
+        animation = scadenfreude
+    }
+	trigger = {
+		exists = cp:councillor_court_chaplain
+		cp:councillor_court_chaplain = {
+			OR = { 
+				has_trait = callous
+				has_trait = sadistic
+			}
+		}
+	}
+    #Defile icons
+    option = {
+		name = demd_pop_religious_conversion.1008.a
+		scope:county = { demd_faith_conversion_progress_gain_lose = { amount = medium } }
+		scope:county = { add_county_modifier = { modifier = defiled_icons years = 5 } }
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 0.5
+			}
+		}			
+    }
+    #Do nothing
+    option = {
+		name = demd_pop_religious_conversion.1008.b
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = -0.5
+			}
+			ai_value_modifier = {
+				ai_energy = -0.5
+			}
+		}			
+    }
+	#Disavow Chaplain
+	option = {
+		name = demd_pop_religious_conversion.1008.c
+		
+		trigger = {
+			OR = {
+				has_trait = compassionate
+				faith = { has_doctrine = doctrine_pluralism_pluralistic }
+			}
+		}
+		
+		cp:councillor_court_chaplain = { fire_councillor = yes }
+
+		stress_impact = {
+			compassionate = medium_stress_loss
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = -1
+			}
+			ai_value_modifier = {
+				ai_compassion = 0.5
+			}
+		}
+	}
+}
+
+demd_pop_religious_conversion.9999 = {
+    hidden = yes
+    type = empty
+    immediate = {
+        random_directly_owned_province = {
+            limit = { county = { has_county_modifier = faith_conversion_in_progress } }
+            county = {
+                trigger_event = { id = demd_pop_religious_conversion.0001 }
+            }
+        }
+    }
+}
+

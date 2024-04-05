@@ -1,0 +1,13 @@
+﻿l_english:
+
+holding_construction_progress_is_at_max:0 "The [demd_population|E] of this [county|E] has expanded to this [holding|E]"
+
+debt_tooltip:0 "Debt: [Character.MakeScope.Var('debt').GetValue|0]\nDebt Ceiling: [Character.MakeScope.ScriptValue('debt_ceiling')|0]\nInterest Rate: [Character.MakeScope.ScriptValue('interest_rate')|%2]\nexpenses: [Character.MakeScope.ScriptValue('monthly_character_expenses_sv')|2]\nincome: [Character.MakeScope.ScriptValue('monthly_character_income_sv')|2]\nborr_amt: [Character.MakeScope.ScriptValue('borrowing_amount')|2]"
+
+convert_holding_interaction:0 "Convert Holding"
+convert_holding_castle_interaction_desc:0 "Convert to [castle_holding|E]"
+convert_holding_city_interaction_desc:0 "Convert to [city_holding|E]"
+convert_holding_church_interaction_desc:0 "Convert to [temple_holding|E]"
+
+convert_holding_interaction_desc:0 "Convert this [holding|E] to a different type."
+fervor_loss_converted_temple_holding:0 "Secularized a [temple_holding|E] in [temple_location.GetName]"

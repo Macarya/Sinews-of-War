@@ -1,0 +1,76 @@
+﻿
+
+demd_increment_edict_setting = {
+	if = {
+		limit = { var:$TYPE$_setting < 4 }
+		custom_tooltip = demd_increment_$TYPE$_edict_setting
+		change_variable = { name = $TYPE$_setting add = 1 }
+		
+		# Can't previously have been 4 if we incremented
+		remove_county_modifier = demd_$TYPE$_setting_0
+		remove_county_modifier = demd_$TYPE$_setting_1
+		remove_county_modifier = demd_$TYPE$_setting_2	
+		remove_county_modifier = demd_$TYPE$_setting_3
+		
+		if = { # can't be 0 if we incremented
+			limit = { var:$TYPE$_setting = 2 }
+			add_county_modifier = demd_$TYPE$_setting_2 
+		}
+		else_if = { 
+			limit = { var:$TYPE$_setting = 3 }
+			add_county_modifier = demd_$TYPE$_setting_3 
+		}
+		else_if = { 
+			limit = { var:$TYPE$_setting = 1 }
+			add_county_modifier = demd_$TYPE$_setting_1 
+		}
+		else = {
+			add_county_modifier = demd_$TYPE$_setting_4
+		}		
+		set_variable = { name = $TYPE$_setting_changed value = 1 years = demd_edict_change_years }
+	}	
+}
+
+demd_decrement_edict_setting = {
+	if = {
+		limit = { var:$TYPE$_setting > 0 }
+		custom_tooltip = demd_decrement_$TYPE$_edict_setting
+		change_variable = { name = $TYPE$_setting add = -1 }
+		
+		# Can't previously have been 0 if we decremented
+		remove_county_modifier = demd_$TYPE$_setting_1
+		remove_county_modifier = demd_$TYPE$_setting_2	
+		remove_county_modifier = demd_$TYPE$_setting_3
+		remove_county_modifier = demd_$TYPE$_setting_4
+		
+		if = { # can't be 4 if we decremented
+			limit = { var:$TYPE$_setting = 2 }
+			add_county_modifier = demd_$TYPE$_setting_2 
+		}
+		else_if = { 
+			limit = { var:$TYPE$_setting = 3 }
+			add_county_modifier = demd_$TYPE$_setting_3 
+		}
+		else_if = { 
+			limit = { var:$TYPE$_setting = 1 }
+			add_county_modifier = demd_$TYPE$_setting_1
+		}
+		else = {
+			add_county_modifier = demd_$TYPE$_setting_0 
+		}	
+		set_variable = { name = $TYPE$_setting_changed value = 1 years = demd_edict_change_years }
+	}	
+}
+
+demd_set_edict_setting = {
+	set_variable = { name = $TYPE$_setting value = $LEVEL$ }
+	remove_county_modifier = demd_$TYPE$_setting_0
+	remove_county_modifier = demd_$TYPE$_setting_1
+	remove_county_modifier = demd_$TYPE$_setting_2	
+	remove_county_modifier = demd_$TYPE$_setting_3
+	remove_county_modifier = demd_$TYPE$_setting_4
+	
+	add_county_modifier = demd_$TYPE$_setting_$LEVEL$
+	set_variable = { name = $TYPE$_setting_changed value = 1 years = demd_edict_change_years }
+}
+

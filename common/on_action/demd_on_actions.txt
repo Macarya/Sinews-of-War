@@ -1,0 +1,200 @@
+﻿on_death = {
+	on_actions = { demd_on_death }
+}
+
+demd_on_death = {
+	effect = {
+		every_character_struggle = {
+			involvement = involved
+			limit = { 				
+				has_variable = is_trade_node_struggle 
+				var:node_owner = prev 
+			}
+			demd_transfer_trade_node_ownership_death = yes
+		}
+		every_character_struggle = {
+			involvement = interloper
+			limit = { 				
+				has_variable = is_trade_node_struggle 
+				var:node_owner = prev 
+			}
+			demd_transfer_trade_node_ownership_death = yes
+		}
+	}
+}
+############
+
+# Raiding handled through vanilla events
+
+on_county_occupied = {
+	on_actions = { demd_on_county_occupied }
+}
+
+demd_on_county_occupied = {
+	events = {
+		demd_pop_war.1003
+	}
+}
+
+############
+
+on_faith_created = {
+	on_actions = { demd_faith_created }
+}
+
+demd_faith_created = {
+	effect = {
+		faith = {
+			faithEconomy = yes
+		}
+	}
+}
+
+############
+
+on_culture_created = {
+	on_actions = { demd_culture_created }
+}
+
+demd_culture_created = {
+	effect = {
+		# set advancement based on parent cultures
+		set_variable = { name = culture_advancement value = 1 }
+		every_parent_culture = {
+			limit = { prev.var:culture_advancement < var:culture_advancement }
+			prev = { set_variable = { name = culture_advancement value = prev.var:culture_advancement } }
+		}
+		set_variable = { name = vigor value = 100 }
+		# set culture data
+		cultureEconomy = yes
+	}
+}
+
+############
+
+on_title_gain = {
+	on_actions = { 
+		demd_county_title_gain 
+		demd_county_title_gain_ai
+		demd_ruler_pulse
+	}
+}
+
+on_title_lost = {
+	on_actions = { 
+		demd_ruler_pulse
+	}
+}
+
+demd_county_title_gain = {
+	trigger = { 
+		exists = scope:previous_holder
+		scope:title = {
+			tier = tier_county 
+		}
+	}
+	effect = {
+		remove_variable = tax_setting_changed
+		remove_variable = manpower_setting_changed
+		remove_variable = public_order_setting_changed
+		remove_variable = sanitation_setting_changed
+		remove_variable = irrigation_setting_changed
+		remove_variable = infrastructure_setting_changed
+	}
+}
+
+demd_county_title_gain_ai = {
+	trigger = { 
+		exists = scope:previous_holder
+		scope:previous_holder = { is_ai = no } 
+		scope:title = {
+			tier = tier_county 
+			holder = { is_ai = yes }
+		}
+	}
+	effect = {
+		scope:title = {
+			# if player has fucked up edicts, unfuck them
+			remove_variable = tax_setting_changed
+			remove_variable = manpower_setting_changed
+			remove_variable = public_order_setting_changed
+			remove_variable = sanitation_setting_changed
+			remove_variable = irrigation_setting_changed
+			remove_variable = infrastructure_setting_changed
+			
+			# reset to factory
+			demd_set_edict_setting = { TYPE = tax LEVEL = 2 }
+			demd_set_edict_setting = { TYPE = manpower LEVEL = 2 }
+			demd_set_edict_setting = { TYPE = public_order LEVEL = 2 }
+			demd_set_edict_setting = { TYPE = sanitation LEVEL = 2 }
+			demd_set_edict_setting = { TYPE = irrigation LEVEL = 2 }
+			demd_set_edict_setting = { TYPE = infrastructure LEVEL = 2 }
+		
+			# let AI make changes twice
+			
+			remove_variable = tax_setting_changed
+			remove_variable = manpower_setting_changed
+			remove_variable = public_order_setting_changed
+			remove_variable = sanitation_setting_changed
+			remove_variable = irrigation_setting_changed
+			remove_variable = infrastructure_setting_changed
+			
+			setEdicts = yes
+			
+			remove_variable = tax_setting_changed
+			remove_variable = manpower_setting_changed
+			remove_variable = public_order_setting_changed
+			remove_variable = sanitation_setting_changed
+			remove_variable = irrigation_setting_changed
+			remove_variable = infrastructure_setting_changed
+			
+			setEdicts = yes
+		}	
+	}
+}
+
+demd_empire_title_gain = {
+	trigger = { scope:title = { tier = tier_empire } }
+	effect = {
+		scope:title = {
+			holder = { save_scope_as = new_holder }
+			every_player = {
+				limit = { is_vassal_of = prev.holder }
+				send_interface_message = {
+					type = event_steward_task_bad	
+					title = demd_imperial_decay_succession	
+					desc = demd_imperial_decay_succession_desc
+					left_icon = scope:new_holder				
+				}
+			}
+		}
+	}
+}
+
+on_marriage = {
+	on_actions = { demd_on_marriage }
+}
+
+demd_on_marriage = {
+	effect = {
+		if = { 
+			limit = { NOT = { root.culture = scope:spouse.culture } }
+			root = { save_scope_as = primary_spouse }
+			root.culture = { change_cultural_acceptance = { target = scope:spouse.culture value = cultural_acceptance_change_marriage desc = acceptance_change_marriage } }
+		}	
+	}
+}
+
+on_divorce = {
+	on_actions = { demd_on_divorce }
+}
+
+demd_on_divorce = {
+	effect = {
+		if = { 
+			limit = { NOT = { root.culture = scope:spouse.culture } }
+			root = { save_scope_as = primary_spouse }
+			root.culture = { change_cultural_acceptance = { target = scope:spouse.culture value = cultural_acceptance_change_divorce desc = acceptance_change_divorce } }
+		}	
+	}
+}

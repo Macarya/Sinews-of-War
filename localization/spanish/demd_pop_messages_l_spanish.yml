@@ -1,0 +1,129 @@
+﻿l_spanish:
+
+demd_notification_court_dismantled:0 "Court dismantled!"
+demd_notification_court_dismantled_desc:0 "Due to lack of tax funds for its upkeep, a court in [prev.GetName] has been dissolved."
+demd_notification_court_dismantled_tooltip:0 "Court level reduced"
+
+demd_notification_sewer_dismantled:0 "Sewer dismantled!"
+demd_notification_sewer_dismantled_desc:0 "Due to lack of tax funds for its upkeep, the sewer in [prev.GetName] has fallen into disrepair."
+demd_notification_sewer_dismantled_tooltip:0 "Sewer level decreased"
+
+demd_notification_hospital_dismantled:0 "Hospital dismantled!"
+demd_notification_hospital_dismantled_desc:0 "Due to lack of tax funds for its upkeep, a hospital in [prev.GetName] has fallen into disrepair."
+demd_notification_hospital_dismantled_tooltip:0 "Hospital level decreased"
+
+demd_notification_barracks_dismantled:0 "Barracks dismantled!"
+demd_notification_barracks_dismantled_desc:0 "Due to lack of tax funds for its upkeep, a barracks in [prev.GetName] has fallen into disrepair."
+demd_notification_barracks_dismantled_tooltip:0 "Barracks level decreased"
+
+demd_notification_university_dismantled:0 "University dismantled!"
+demd_notification_university_dismantled_desc:0 "Due to lack of tax funds for its upkeep, the university in [prev.GetName] has fallen into disrepair."
+demd_notification_university_dismantled_tooltip:0 "University level decreased"
+
+demd_notification_temple_dismantled:0 "Temple dismantled!"
+demd_notification_temple_dismantled_desc:0 "Due to lack of tax funds for its upkeep, a temple in [prev.GetName] has fallen into disrepair."
+demd_notification_temple_dismantled_tooltip:0 "Temple level decreased"
+
+demd_notification_walls_dismantled:0 "Walls dismantled!"
+demd_notification_walls_dismantled_desc:0 "Due to lack of tax funds for its upkeep, parts of the city walls in [prev.GetName] has fallen into disrepair."
+demd_notification_walls_dismantled_tooltip:0 "City Walls level has decreased"
+
+demd_notification_theater_dismantled:0 "Theater dismantled!"
+demd_notification_theater_dismantled_desc:0 "Due to lack of tax funds for its upkeep, the theater in [prev.GetName] has fallen into disrepair."
+demd_notification_theater_dismantled_tooltip:0 "Trade Post level has decreased"
+
+suggestion_construct_sewer_label:0 "Build a Sewer"
+suggestion_construct_sewer:0 "Suggestion: Build a Sewer"
+suggestion_construct_sewer_desc:0 "You have fewer Sewer buildings than necessary for adequate sanitation in [landed_title.GetName]."
+suggestion_construct_sewer_click:0 "#I Click to view your County#!"
+ 
+suggestion_construct_court_label:0 "Build a Court"
+suggestion_construct_court:0 "Suggestion: Build a Court"
+suggestion_construct_court_desc:0 "You have fewer Court buildings than necessary for adequate public order in [landed_title.GetName]."
+suggestion_construct_court_click:0 "#I Click to view your County#!"
+
+suggestion_construct_theater_label:0 "Build a Theater"
+suggestion_construct_theater:0 "Suggestion: Build a Theater"
+suggestion_construct_theater_desc:0 "You have fewer Theater buildings than necessary to provide adequate amenities in [landed_title.GetName]."
+suggestion_construct_theater_click:0 "#I Click to view your County#!"
+
+demd_poor_weather:0 "Poor Weather"
+demd_poor_weather_desc:0 "The weather is substandard. Rain and sunlight have been supplied in unadequate amounts for the crops and part of the harvest will be lost."
+demd_poor_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_average_weather:0 "Average Weather"
+demd_average_weather_desc:0 "The weather is average. Nature has neither blessed nor scorned us. We can expect a typical yield from the harvest"
+demd_average_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_good_weather:0 "Good Weather"
+demd_good_weather_desc:0 "The weather is better than normal. With these conditions we can expect some overperforming yields."
+demd_good_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_great_weather:0 "Great Weather"
+demd_great_weather_desc:0 "The weather is perfect for farming. Nature has granted us its boon, the harvest will surely be amazing."
+demd_great_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+ 
+demd_terrible_weather:0 "Terrible Weather"
+demd_terrible_weather_desc:0 "The weather is catastrophic. Our food security is seriously threatened with only a few meager bushels escaping the ordeal."
+demd_terrible_weather_tooltip:0 "If I have to write weather tooltips I might kill myself."
+
+demd_faith_conversion_good:0 "[county.GetName] Converted to [county.GetFaith.GetName]"
+demd_faith_conversion_good_desc:0 "(placeholder) [county.GetName] Converted to [county.GetFaith.GetName]."
+demd_faith_conversion_good_tooltip:0 "(placeholder) [county.GetName] Converted to [county.GetFaith.GetName]."
+
+demd_faith_conversion_bad:0 "[county.GetName] Converted to [county.GetFaith.GetName]"
+demd_faith_conversion_bad_desc:0 "(placeholder) [county.GetName] Converted to [county.GetFaith.GetName]."
+demd_faith_conversion_bad_tooltip:0 "(placeholder) [county.GetName] Converted to [county.GetFaith.GetName]."
+
+demd_heresy_emerges_bad:0 "A new heresy, [county.MakeScope.Var('converting_faith').Faith.GetName], has emerged in [county.GetName]"
+demd_heresy_emerges_bad_desc:0 "Owing to low fervor, the people of [county.GetName] have rejected [county.GetFaith.GetName] and begun to take [county.MakeScope.Var('converting_faith').Faith.GetName]."
+
+demd_culture_conversion_good:0 "[county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName]"
+demd_culture_conversion_good_desc:0 "(placeholder) [county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName] from [county.GetCulture.GetName]."
+demd_culture_conversion_good_tooltip:0 "(placeholder) [county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName] from [county.GetCulture.GetName]."
+
+demd_culture_conversion_bad:0 "[county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName]"
+demd_culture_conversion_bad_desc:0 "(placeholder) [county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName] from [county.GetCulture.GetName]."
+demd_culture_conversion_bad_tooltip:0 "(placeholder) [county.GetName] Converted to [county.MakeScope.Var('converting_culture').Culture.GetName] from [county.GetCulture.GetName]."
+
+
+###############################################
+
+demd_minor_flooding:0 "Minor Flooding in [county.GetName]"
+demd_minor_flooding_desc:0 "The flooding is minor. The river banks are awash with water but the losses are minimal."
+demd_minor_flooding_tooltip:0 "..."
+
+demd_moderate_flooding:0 "Moderate Flooding in [county.GetName]"
+demd_moderate_flooding_desc:0 "The flooding is moderate. The river overflowed and swept away significant amount of things."
+demd_moderate_flooding_tooltip:0 "..."
+ 
+demd_severe_flooding:0 "Severe Flooding in [county.GetName]"
+demd_severe_flooding_desc:0 "The flooding is severe. This is a catastrophic flood! All the local settlements have been heavily affected."
+demd_severe_flooding_tooltip:0 "..."
+
+demd_minor_avalanche:0 "Minor Avalanches in [county.GetName]"
+demd_minor_avalanche_desc:0 "The avalanche is minor. Mountain rubble has made some victims but the community will quickly pick up the pieces "
+demd_minor_avalanche_tooltip:0 "..."
+
+demd_moderate_avalanche:0 "Moderate Avalanches in [county.GetName]"
+demd_moderate_avalanche_desc:0 "The avalanche is moderate. Many rock boulders have fallen, and even more lives were lost. The impact of the disaster is significant"
+demd_moderate_avalanche_tooltip:0 "..."
+ 
+demd_severe_avalanche:0 "Severe Avalanches in [county.GetName]"
+demd_severe_avalanche_desc:0 "The avalanche is severe. Enormous boulders have rolled down the moutainside and heavily crippled the local inhabitants for the foreseeable future."
+demd_severe_avalanche_tooltip:0 "..."
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

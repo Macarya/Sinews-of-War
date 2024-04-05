@@ -1,0 +1,30 @@
+﻿catalyst_occupy_county = {}
+catalyst_raid_county = {}
+catalyst_raid_plunder_county = {}
+catalyst_sack_county = {}
+catalyst_raze_county = {}
+
+catalyst_occupy_strategic_county = {}
+catalyst_raid_strategic_county = {}
+catalyst_raid_plunder_strategic_county = {}
+catalyst_sack_strategic_county = {}
+catalyst_raze_strategic_county = {}
+
+catalyst_commissioned_illustrious_artifact = {}
+catalyst_commissioned_famed_artifact = {}
+catalyst_commissioned_masterwork_artifact = {}
+
+catalyst_raided_trade_routes = {}
+catalyst_seize_trade_node_war = {}
+catalyst_seize_trade_node_decision = {}
+
+catalyst_court_grandeur_1 = {}
+catalyst_court_grandeur_2 = {}
+catalyst_court_grandeur_3 = {}
+catalyst_court_grandeur_4 = {}
+catalyst_court_grandeur_5 = {}
+catalyst_court_grandeur_6 = {}
+catalyst_court_grandeur_7 = {}
+catalyst_court_grandeur_8 = {}
+catalyst_court_grandeur_9 = {}
+catalyst_court_grandeur_10 = {}

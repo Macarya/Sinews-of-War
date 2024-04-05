@@ -1,0 +1,6 @@
+﻿l_english:
+
+demd_pop_avalanche.1002.t:0 "Avalanches in [county.GetNameNoTierNoTooltip]!"
+demd_pop_avalanche.1002.desc:0 "Avalanches have struck the settlements in [county.GetNameNoTierNoTooltip]! Large boulders have crushed the homes and people, and are being a nuisance to relief..."
+demd_pop_avalanche.1002.a:0 "Damnation! Quickly move to deal with these pesky rocks!"
+

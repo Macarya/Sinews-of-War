@@ -1,0 +1,173 @@
+# disabled until I can figure out why it CTDs
+# types VigorEquilibrium
+# {
+    # type vigor_equilibrium_breakdown_widget = widget
+    # {
+        # alwaystransparent = no
+        # using = GeneralTooltipSetup
+        # widget = {
+            # name = "background"
+            # using = DefaultTooltipBackground
+            # size = { 100% 100% }
+            # alwaystransparent = no
+            # autoresize = yes
+			# max_width = 600
+        # }
+        # vbox = {
+            # set_parent_size_to_minimum = yes
+            # margin = { 20 10 }
+            # margin_bottom = 20
+            # spacing = 3
+
+            # text_multi = {
+                # layoutpolicy_horizontal = expanding
+                # raw_text = "#T Vigor: [Culture.MakeScope.Var('vigor').GetValue|2]%#!"
+                # align = left
+				# max_width = 550
+            # }
+
+            # vbox = {
+                # layoutpolicy_horizontal = expanding
+                # layoutpolicy_vertical = expanding
+                # #margin = { 0 4 }
+                # spacing = -1
+
+                # text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_desc_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# spacer = { size = { 0 14 } }
+                # text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # raw_text = "Yearly Gain: [Culture.MakeScope.ScriptValue('vigor_delta')|=+]"
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# spacer = { size = { 0 14 } }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # raw_text = "#bold Effects:#!"
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_public_order_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_manpower_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_birth_rate_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_migration_pull_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_construction_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_conversion_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_reformation_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_hybridization_first_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_hybridization_second_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_divergence_first_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_divergence_second_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_cb_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_faction_join_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # text = vigor_artifact_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # raw_text = vigor_positive_traits_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+				# text_multi = {
+                    # layoutpolicy_horizontal = expanding
+                    # raw_text = vigor_negative_traits_string
+                    # align = left
+					# autoresize = yes
+					# max_width = 550
+                # }
+            # }
+        # }
+    # }
+# }

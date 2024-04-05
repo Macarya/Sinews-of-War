@@ -1,0 +1,474 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_raid_effect_slaves = {
+	add_dread = minor_dread_gain
+	if = {
+		limit = { faith = scope:county.faith }
+		add_piety = medium_piety_loss
+		if = {
+			limit = { exists = religious_head }
+			religious_head = {
+				add_opinion = {
+					target = scope:occupier
+					modifier = raided_coreligionist_opinion
+				}
+			}
+		}
+	}
+	scope:raid_army = { add_loot = scope:sacked_barony.county.demd_raid_spared_gold_value }
+	scope:barony.holder = {
+		add_opinion = {
+			target = scope:raider
+			modifier = raided_me_opinion
+		}
+		every_liege_or_above = {
+			add_opinion = {
+				target = scope:raider
+				modifier = raided_me_opinion
+			}
+		}
+	}
+	capital_county = {
+		change_development_progress_with_overflow = minor_development_progress_gain
+	}
+	stress_impact = {
+		compassionate = minor_stress_impact_gain
+		forgiving = minor_stress_impact_gain
+	}
+	
+	save_scope_as = conqueror
+	scope:sacked_county = {
+		save_scope_value_as = {
+			name = sack_status
+			value = flag:admin_plundered
+		}
+		every_county_struggle = {
+			limit = { phase_has_catalyst = catalyst_raid_plunder_county }
+			if = {
+				limit = { scope:sacked_county = { has_county_modifier = demd_strategic_location } }
+				activate_struggle_catalyst = {
+					catalyst = catalyst_raid_plunder_strategic_county
+					character = scope:conqueror
+				}
+			}
+			else = {
+				activate_struggle_catalyst = {
+					catalyst = catalyst_raid_plunder_county
+					character = scope:conqueror
+				}
+			}
+		}
+		demd_raid_effect_slaves_county = yes
+		holder = {
+			add_opinion = {
+				target = scope:raider
+				modifier = sacked_me_opinion
+			}
+			every_liege_or_above = {
+				add_opinion = {
+					target = scope:raider
+					modifier = sacked_vassal_opinion
+				}
+			}
+		}
+		
+		add_county_modifier = {	#Prevent the county from being sacked again for quite a while.
+			modifier = recently_sacked_modifier
+			years = 20
+		}
+	}
+}
+
+demd_raid_effect_slaves_county = {
+	demd_raid_population = { amount = miniscule }
+	demd_alter_county_population = { amount = small operation = subtract }	
+	
+	demd_alter_food_district_count = { amount = miniscule operation = subtract }
+	demd_alter_food_stockpile = { amount = miniscule operation = subtract }	
+	demd_alter_goods_district_count = { amount = miniscule operation = subtract }
+	demd_alter_goods_stockpile = { amount = miniscule operation = subtract }
+	
+	if = {
+		limit = { holder = { NOT = { has_perk = enduring_hardships_perk } } }
+		change_county_control = raid_county_control_loss_value
+		change_development_progress_with_overflow = medium_development_progress_loss
+	}
+	if = {
+		limit = { NOT = { culture = scope:raider.culture } }
+		culture = { change_cultural_acceptance = { target = scope:raider.culture value = demd_raid_acceptance_change desc = demd_raid_acceptance_change } }
+	}
+	else = {
+		culture = { demd_alter_vigor = { operation = subtract amount = small } }
+	}
+}
+
+demd_raid_effect_plunder = {
+	add_dread = minor_dread_gain
+	if = {
+		limit = { faith = scope:county.faith }
+		add_piety = medium_piety_loss
+		if = {
+			limit = { exists = religious_head }
+			religious_head = {
+				add_opinion = {
+					target = scope:occupier
+					modifier = raided_coreligionist_opinion
+				}
+			}
+		}
+	}
+	scope:raid_army = { add_loot = scope:sacked_barony.county.demd_raid_plunder_gold_value }
+	add_prestige = minor_prestige_value
+	stress_impact = {
+		compassionate = minor_stress_impact_gain
+		forgiving = minor_stress_impact_gain
+	}
+	save_scope_as = conqueror
+	scope:sacked_county = {
+		every_county_struggle = {
+			limit = { phase_has_catalyst = catalyst_raid_plunder_county }
+			if = {
+				limit = { scope:sacked_county = { has_county_modifier = demd_strategic_location } }
+				activate_struggle_catalyst = {
+					catalyst = catalyst_raid_plunder_strategic_county
+					character = scope:conqueror
+				}
+			}
+			else = {
+				activate_struggle_catalyst = {
+					catalyst = catalyst_raid_plunder_county
+					character = scope:conqueror
+				}
+			}
+		}
+		save_scope_value_as = {
+			name = sack_status
+			value = flag:gold_plundered
+		}
+			
+		demd_raid_effect_plunder_county = yes
+		holder = {
+			add_opinion = {
+				target = scope:raider
+				modifier = sacked_me_opinion
+			}
+			every_liege_or_above = {
+				add_opinion = {
+					target = scope:raider
+					modifier = sacked_vassal_opinion
+				}
+			}
+		}	
+			
+		add_county_modifier = {	#Prevent the county from being sacked again for quite a while.
+			modifier = recently_sacked_modifier
+			years = 20
+		}
+	}
+}
+
+demd_raid_effect_plunder_county = {
+	demd_alter_county_population = { amount = small operation = subtract }
+	
+	demd_alter_food_district_count = { amount = small operation = subtract }
+	demd_alter_food_stockpile = { amount = small operation = subtract }	
+	demd_alter_goods_district_count = { amount = small operation = subtract }
+	demd_alter_goods_stockpile = { amount = small operation = subtract }
+	if = {
+		limit = { holder = { NOT = { has_perk = enduring_hardships_perk } } }
+		change_county_control = raid_county_control_loss_value
+		change_development_progress_with_overflow = medium_development_progress_loss
+	}
+	if = {
+		limit = { NOT = { culture = scope:raider.culture } }
+		culture = { change_cultural_acceptance = { target = scope:raider.culture value = demd_raid_acceptance_change desc = demd_raid_acceptance_change } }
+	}
+	else = {
+		culture = { demd_alter_vigor = { operation = subtract amount = small } }
+	}
+}
+
+demd_raid_effect_spared = {
+	stress_impact = {
+		sadistic = minor_stress_impact_gain
+		vengeful = minor_stress_impact_gain
+		wrathful = minor_stress_impact_gain
+		greedy = minor_stress_impact_gain
+	}	
+	scope:raid_army = { add_loot = scope:sacked_barony.county.demd_raid_spared_gold_value }
+	save_scope_as = conqueror
+	scope:sacked_county = {
+		every_county_struggle = {
+			limit = { phase_has_catalyst = catalyst_raid_county }
+			if = {
+				limit = { scope:sacked_county = { has_county_modifier = demd_strategic_location } }
+				activate_struggle_catalyst = {
+					catalyst = catalyst_raid_strategic_county
+					character = scope:conqueror
+				}
+			}
+			else = {
+				activate_struggle_catalyst = {
+					catalyst = catalyst_raid_county
+					character = scope:conqueror
+				}
+			}
+		}
+		#Opinion gain if not primary defender.
+		save_scope_value_as = {
+			name = sack_status
+			value = flag:spared_plundered
+		}
+		
+		demd_raid_effect_spared_county = yes
+		
+		add_county_modifier = {	#Prevent the county from being sacked again for quite a while.
+			modifier = recently_sacked_modifier
+			years = 20
+		}
+	}
+}
+
+demd_raid_effect_spared_county = {
+	demd_alter_food_district_count = { amount = miniscule operation = subtract }
+	demd_alter_food_stockpile = { amount = miniscule operation = subtract }	
+	demd_alter_goods_district_count = { amount = miniscule operation = subtract }
+	demd_alter_goods_stockpile = { amount = miniscule operation = subtract }
+	if = {
+		limit = { holder = { NOT = { has_perk = enduring_hardships_perk } } }
+		change_county_control = raid_county_control_loss_value
+		change_development_progress_with_overflow = minor_development_progress_loss
+	}	
+}
+
+#####################################################################################################
+
+demd_occupy_effect = {
+	save_scope_as = conqueror
+	scope:county = {
+		every_county_struggle = {
+			limit = { phase_has_catalyst = catalyst_occupy_county }
+			if = {
+				limit = { scope:county = { has_county_modifier = demd_strategic_location } }
+				activate_struggle_catalyst = {
+					catalyst = catalyst_occupy_strategic_county
+					character = scope:conqueror
+				}
+			}
+			else = {
+				activate_struggle_catalyst = {
+					catalyst = catalyst_occupy_county
+					character = scope:conqueror
+				}
+			}
+		}
+		save_scope_value_as = {
+			name = sack_status
+			value = flag:occupied
+		}
+		
+		demd_occupy_effect_county = yes
+	}
+}
+
+demd_occupy_effect_county = {
+	demd_alter_county_population = { amount = small operation = subtract }				
+	demd_alter_food_stockpile = { amount = small operation = subtract }
+	demd_alter_food_district_count = { amount = small operation = subtract }
+	demd_alter_goods_stockpile = { amount = small operation = subtract }	
+	demd_alter_goods_district_count = { amount = small operation = subtract }	
+	if = {
+		limit = { holder = { NOT = { has_perk = enduring_hardships_perk } } }
+		change_county_control = -25
+		change_development_level = -1
+	}	
+	add_county_modifier = {	#Prevent the county from being sacked again for quite a while.
+		modifier = recently_sacked_modifier
+		years = 20
+	}
+}
+
+demd_sack_effect = {
+	add_dread = minor_dread_gain
+	add_gold = scope:county.demd_sack_gold_value	
+	stress_impact = {
+		compassionate = medium_stress_impact_gain
+		forgiving = medium_stress_impact_gain
+		sadistic = medium_stress_impact_loss
+		vengeful = medium_stress_impact_loss
+		wrathful = medium_stress_impact_loss
+	}
+	if = {
+		limit = { faith = scope:county.faith }
+		add_piety = medium_piety_loss
+		if = {
+			limit = { exists = religious_head }
+			religious_head = {
+				add_opinion = {
+					target = scope:occupier
+					modifier = sacked_coreligionist_opinion
+				}
+			}
+		}
+	}
+	save_scope_as = conqueror
+	scope:county = {
+		every_county_struggle = {
+			limit = { phase_has_catalyst = catalyst_sack_county }
+			if = {
+				limit = { scope:county = { has_county_modifier = demd_strategic_location } }
+				activate_struggle_catalyst = {
+					catalyst = catalyst_sack_strategic_county
+					character = scope:conqueror
+				}
+			}
+			else = {
+				activate_struggle_catalyst = {
+					catalyst = catalyst_sack_county
+					character = scope:conqueror
+				}
+			}
+		}
+		save_scope_value_as = {
+			name = sack_status
+			value = flag:sacked
+		}
+		
+		demd_sack_effect_county = yes
+		holder = {
+			add_opinion = {
+				target = scope:occupier
+				modifier = sacked_me_opinion
+			}
+			every_liege_or_above = {
+				limit = { NOT = { this = scope:occupier } }
+				add_opinion = {
+					target = scope:occupier
+					modifier = sacked_vassal_opinion
+				}
+			}
+		}
+	}	
+}
+
+demd_sack_effect_county = {
+	demd_alter_county_population = { amount = medium operation = subtract }				
+	demd_alter_food_stockpile = { amount = large operation = subtract }
+	demd_alter_food_district_count = { amount = medium operation = subtract }
+	demd_alter_goods_stockpile = { amount = large operation = subtract }	
+	demd_alter_goods_district_count = { amount = medium operation = subtract }
+	if = {
+		limit = { NOT = { culture = scope:occupier.culture } }
+		culture = { change_cultural_acceptance = { target = scope:occupier.culture value = demd_sack_acceptance_change desc = demd_sack_acceptance_change } }
+	}
+	else = {
+		culture = { demd_alter_vigor = { operation = subtract amount = medium } }
+	}
+	if = {
+		limit = { holder = { NOT = { has_perk = enduring_hardships_perk } } }
+		change_county_control = -50
+		change_development_level = -3
+	}
+	if = {
+		limit = { scope:occupier = { can_take_slaves = yes } }
+		demd_raid_population = { amount = small }
+	}
+	add_county_modifier = {	#Prevent the county from being sacked again for quite a while.
+		modifier = recently_sacked_modifier
+		years = 20
+	}
+}
+
+demd_raze_effect = {
+	add_dread = medium_dread_gain
+	add_gold = scope:county.demd_raze_gold_value
+	stress_impact = {
+		compassionate = major_stress_impact_gain
+		sadistic = minor_stress_impact_loss
+		vengeful = minor_stress_impact_loss
+		wrathful = minor_stress_impact_loss
+	}
+	if = {
+		limit = { faith = scope:county.faith }
+		add_piety = major_piety_loss
+		if = {
+			limit = { exists = religious_head }
+			religious_head = {
+				add_opinion = {
+					target = scope:occupier
+					modifier = razed_coreligionist_opinion
+				}
+			}
+		}
+	}
+	save_scope_as = conqueror
+	scope:county = {
+		every_county_struggle = {
+			limit = { phase_has_catalyst = catalyst_raze_county }
+			if = {
+				limit = { scope:county = { has_county_modifier = demd_strategic_location } }
+				activate_struggle_catalyst = {
+					catalyst = catalyst_raze_strategic_county
+					character = scope:conqueror
+				}
+			}
+			else = {
+				activate_struggle_catalyst = {
+					catalyst = catalyst_raze_county
+					character = scope:conqueror
+				}
+			}
+		}
+		save_scope_value_as = {
+			name = sack_status
+			value = flag:razed
+		}
+		
+		demd_raze_effect_county = yes		
+		holder = {
+			add_opinion = {
+				target = scope:occupier
+				modifier = razed_me_opinion
+			}
+			every_liege_or_above = {
+				limit = { NOT = { this = scope:occupier } }
+				add_opinion = {
+					target = scope:occupier
+					modifier = razed_vassal_opinion
+				}
+			}
+		}
+	}
+}
+
+demd_raze_effect_county = {
+	demd_alter_county_population = { amount = large operation = subtract }				
+	demd_alter_food_stockpile = { amount = huge operation = subtract }
+	demd_alter_food_district_count = { amount = large operation = subtract }
+	demd_alter_goods_stockpile = { amount = huge operation = subtract }	
+	demd_alter_goods_district_count = { amount = large operation = subtract }
+	if = {
+		limit = { NOT = { culture = scope:occupier.culture } }
+		culture = { change_cultural_acceptance = { target = scope:occupier.culture value = demd_raze_acceptance_change desc = demd_raze_acceptance_change } }
+	}
+	else = {
+		culture = { demd_alter_vigor = { operation = subtract amount = large } }
+	}
+	if = {
+		limit = { holder = { NOT = { has_perk = enduring_hardships_perk } } }
+		change_county_control = -75
+		change_development_level = -6
+	}
+	if = {
+		limit = { scope:occupier = { can_take_slaves = yes } }
+		demd_raid_population = { amount = medium }
+	}
+	add_county_modifier = {	#Prevent the county from being sacked again for quite a while.
+		modifier = recently_sacked_modifier
+		years = 20
+	}	
+}

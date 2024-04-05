@@ -1,0 +1,304 @@
+#Cultural MaA Types
+texticon = {
+    icon = huscarl_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/huscarl.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = landsknecht_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/landsknecht.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = longbowmen_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/longbowmen.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = goedendag_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/goedendag.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = gendarme_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/goedendag.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = chasseur_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/chasseur.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = picchieri_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/picchieri.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = caballero_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/caballero.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = cataphract_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/cataphract.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = hobelar_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/hobelar.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = schiltron_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/schiltron.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = metsanvartija_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/metsanvartija.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = ayyar_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/ayyar.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = druzhina_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/druzhina.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = hussar_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/hussar.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = horn_warrior_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/horn_warrior.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = khandayat_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/khandayat.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = mountaineer_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/mountaineer.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = sahel_horsemen_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/sahel_horsemen.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = sarawit_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/sarawit.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = abudrar_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/abudrar.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = zbrojnosh_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/zbrojnosh.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = palace_guards_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/palace_guards.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+#Holy Order MaA Types
+texticon = {
+    icon = teutonic_knights_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/teutonic_knights.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+#00 MaA Types
+texticon = {
+    icon = house_guard_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/house_guard.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+#01 fp1 MaA Types
+texticon = {
+    icon = varangian_veterans_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/varangian_veterans.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+#demd MaA Types
+texticon = {
+    icon = armati_milites_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/armati_milites.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = agrarii_milites_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/agrarii_milites.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = skoutatoi_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/skoutatoi.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}
+
+texticon = {
+    icon = psiloi_icon
+    iconsize = {
+        texture = "gfx/interface/icons/regimenttypes/psiloi.dds"
+        size = { 25 25 }
+        offset = { 0 6 }
+        fontsize = 16
+    }
+}

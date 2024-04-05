@@ -1,0 +1,60 @@
+types TradeValue
+{
+    type node_efficiency_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			min_width = 350
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_trade_power!#  [demd_node_efficiency|E]: [Struggle.MakeScope.ScriptValue('node_trade_efficiency')|0%]#!"
+                align = left
+				min_width = 350
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak Node Trade Efficiency is the efficiency with which trade can pass along a [demd_trade_node|E]'s internal trade network. It depends chiefly on the phase of the struggle and what percentage of the [demd_trade_node|E]'s [demd_node_strategic_locations|E] are [demd_open_strategic_location_gui|E]. Node Trade Efficiency is used as a multiplier when converting the [demd_trade_value|E] produced in a [demd_trade_node|E] to the [demd_trade_value|E] collected for redistribution.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "Base from [struggle_phase|E]: [Struggle.MakeScope.ScriptValue('base_trade_efficiency_from_phase')|0%]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "x [Struggle.MakeScope.ScriptValue('trade_efficiency_from_strategic_locations_open_to_trade')|0%] from Percent of [demd_node_strategic_locations|E] [demd_open_strategic_location_gui|E]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                } 
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+demd_add_innovation_bonuses = {
+
+	if = {
+		limit = { has_innovation = innovation_currency_02 }
+		change_variable = { name = trade_power_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_baliffs }
+		change_variable = { name = public_order_cultural_production_mult add = 0.03 }
+		change_variable = { name = goods_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_house_soldiers }
+		change_variable = { name = manpower_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_manorialism }
+		change_variable = { name = food_districts_cultural_production_mult add = 0.03 }
+		change_variable = { name = food_cultural_production_mult add = 0.02 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_currency_03 }
+		change_variable = { name = trade_power_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_men_at_arms }
+		change_variable = { name = manpower_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_windmills }
+		change_variable = { name = food_cultural_production_mult add = 0.02 }
+		change_variable = { name = food_districts_cultural_production_mult add = 0.03 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_guilds }
+		change_variable = { name = public_order_cultural_production_mult add = 0.03 }
+		change_variable = { name = goods_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_standing_armies }
+		change_variable = { name = manpower_cultural_production_mult add = 0.10 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_cranes }
+		change_variable = { name = food_cultural_production_mult add = 0.02 }
+		change_variable = { name = food_districts_cultural_production_mult add = 0.03 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_court_officials }
+		change_variable = { name = public_order_cultural_production_mult add = 0.03 }
+		change_variable = { name = goods_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_currency_04 }
+		change_variable = { name = trade_power_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_ledger }
+		change_variable = { name = public_order_cultural_production_mult add = 0.03 }
+		change_variable = { name = goods_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_mustering_grounds }
+		change_variable = { name = manpower_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_currency_01 }
+		change_variable = { name = trade_power_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_crop_rotation }
+		change_variable = { name = food_cultural_production_mult add = 0.02 }
+		change_variable = { name = food_districts_cultural_production_mult add = 0.03 }
+	}
+
+}

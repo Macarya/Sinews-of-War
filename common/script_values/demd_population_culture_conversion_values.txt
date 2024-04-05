@@ -1,0 +1,163 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+culture_conversion_acceptance_impact = {
+	value = scope:county.var:population
+	multiply = {
+		value = -500
+		divide = {
+			value = 500
+			add = scope:county.culture.var:culture_population
+		}
+	}
+	scope:county.culture = {
+		if = {
+			limit = { has_same_culture_heritage = scope:councillor_liege.culture }
+			multiply = 0.67
+		}			
+	}
+	max = 25
+}
+
+#############################
+# Progress Modifiers
+#############################
+
+steward_promote_culture_ai_weight = {
+	value = steward_promote_culture_base
+	add = scope:county.progress_from_county_culture_population
+	add = scope:county.progress_from_neighboring_county_culture_population
+	add = scope:county.progress_from_neighboring_councillor_culture_population
+	add = steward_promote_culture_terrain_malus
+	add = 100
+	min = 0.001
+}
+
+progress_from_county_culture_population = {
+	value = var:county_population
+	multiply = culture.var:vigor
+	multiply = 0.001
+	multiply = -0.04	
+}
+
+progress_from_neighboring_county_culture_population = {
+	value = 0
+	every_in_list = {
+		variable = county_neighbors
+		limit = { culture = prev.culture }
+		add = var:county_population
+	}
+	multiply = culture.var:vigor
+	multiply = 0.001
+	multiply = -0.02
+}
+
+progress_from_neighboring_councillor_culture_population = {
+	value = 0
+	every_in_list = {
+		variable = county_neighbors
+		limit = { culture = scope:councillor_liege.culture }
+		add = var:county_population
+	}
+	multiply = scope:councillor_liege.culture.var:vigor
+	multiply = 0.001
+	multiply = 0.02
+}
+
+steward_promote_culture_terrain_malus = {
+	value = scope:county.var:terrain_conversion_defense_bonus
+	multiply = steward_promote_culture_base
+}
+
+steward_promote_culture_capital_bonus = {
+	value = 0.25
+	multiply = steward_promote_culture_base
+}
+
+steward_promote_culture_recent_rebellion_bonus = {
+	value = steward_promote_culture_base
+}
+
+steward_promote_culture_language_bonus = {
+	value = steward_promote_culture_base
+	multiply = 0.5
+}
+
+promote_culture_same_language_acceptance = 1.4
+promote_culture_same_language_group_acceptance = 1.2
+promote_culture_same_language_family_acceptance = 1.1
+promote_culture_same_language_union_acceptance = 1.1
+
+promote_culture_same_heritage_acceptance = 1.8
+promote_culture_same_heritage_group_acceptance = 1.4
+promote_culture_same_heritage_family_acceptance = 1.2
+
+######################################################################################
+
+
+#################
+# Pop Factors
+steward_promote_culture_pop_bonuses = {			
+	# County Population
+	add = {
+		value = scope:county.progress_from_county_culture_population
+		desc = STEWARD_CONVERSION_CULTURE_COUNTY
+	}
+	
+	# Neighboring Councillor Faith Population
+	add = {
+		value = scope:county.progress_from_neighboring_councillor_culture_population
+		desc = STEWARD_CONVERSION_CULTURE_NEIGHBORS_POS
+	}
+	
+	# Neighboring County Faith Population
+	add = {
+		value = scope:county.progress_from_neighboring_county_culture_population
+		desc = STEWARD_CONVERSION_CULTURE_NEIGHBORS_NEG
+	}
+	
+	# From Terrain
+	if = {
+		limit = { scope:councillor.steward_promote_culture_terrain_malus > 0 }
+		add = {
+			value = scope:councillor.steward_promote_culture_terrain_malus
+			desc = STEWARD_PROMOTE_CULTURE_TERRAIN_MALUS
+		}
+	}
+	
+	# liege capital
+	if = {
+		limit = { scope:councillor_liege.capital_county = scope:county }
+		add = {
+			value = steward_promote_culture_capital_bonus
+			desc = STEWARD_PROMOTE_CULTURE_CAPITAL_BONUS
+		}
+	}
+	
+	# Recent Rebellion
+	if = {
+		limit = { scope:county = { has_county_modifier = county_increased_opinion_modifier } }
+		add = {
+			value = scope:councillor.steward_promote_culture_recent_rebellion_bonus
+			desc = county_increased_opinion_modifier
+		}
+	}
+	
+	# Same Faith Bonus
+	if = {
+		limit = {
+			exists = scope:county
+			scope:councillor_liege.faith = {
+				has_doctrine_parameter = same_faith_promote_culture_bonus_active
+			}
+			scope:county.faith = scope:councillor_liege.faith
+		}
+		add = {
+			value = scope:councillor.promote_culture_communal_identity_bonus
+			desc = STEWARD_PROMOTE_CULTURE_COMMUNAL_IDENTITY_BONUS_MODIFIER
+		}
+	}	
+}

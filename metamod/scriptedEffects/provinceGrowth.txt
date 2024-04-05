@@ -1,0 +1,160 @@
+provinceGrowthSetup = {
+   every_province = {
+		
+		# to avoid errors
+		set_variable = { name = capital_production_multiplier value = 0 }
+		set_variable = { name = food_stockpile value = 0 }
+		set_variable = { name = sanitation value = 1 }
+		set_variable = { name = total_death_rate value = 0 }
+		
+		set_variable = { name = food_demanded value = 1 }
+		set_variable = { name = food_consumed value = 1 }
+	}
+	every_county = {
+		set_variable = {
+			name = max_internal_migration_percent
+			value = {
+				value = 1
+				divide = var:num_provinces
+				subtract = {
+					value = 0.1
+					divide = var:num_provinces
+				}
+			}
+		}
+	}
+	
+}
+
+county_growth = {
+    calculateGrowthRate = yes
+	applyGrowth = yes 
+	every_county_province = {
+		limit = { has_holding = yes }
+		calculateGrowthRate = yes
+		applyGrowth = yes 
+	}
+	county_internal_migration = yes
+	
+	# Record data for use elsewhere
+	set_variable = { name = county_population value = county_population }
+}
+
+calculateGrowthRate = {
+	set_variable = { name = natural_birth_rate value = natural_birth_rate }
+    set_variable = { name = total_death_rate value = total_death_rate }
+	set_variable = {
+		name = growth_rate
+		value = {
+			value = var:natural_birth_rate
+			subtract = var:total_death_rate
+		}
+	}
+	clamp_variable = { name = growth_rate min = demd_population_min_growth_rate max = 1 }
+
+    set_variable = { 
+		name = internal_growth 
+		value = {
+			value = var:growth_rate 
+			multiply = var:population 
+		}
+	}
+}
+
+applyGrowth = {
+    change_variable = { 
+		name = population 
+		add = var:internal_growth 
+	}
+	clamp_variable = { name = population min = 0.1 max = 1000000 }
+}
+
+county_internal_migration = {
+	
+	# iterate prov migration pulls
+	every_county_province = {
+		limit = { has_holding = yes }
+		
+		set_variable = { name = migration_pull value = migration_pull_target }
+	}
+	
+	# calculate max pairwise migration
+	set_variable = {
+		name = maxInternalPairwise
+		value = {
+			value = var:population
+			multiply = var:max_internal_migration_percent
+		}
+	}
+	
+	# calculate migration amounts
+	
+	every_county_province = {
+		limit = { has_holding = yes }
+		
+		set_variable = { name = internal_migration_growth value = internal_migration_pairwise }
+		set_variable = {
+			name = internal_migration_growth_percent
+			value = {
+				value = var:internal_migration_growth
+				divide = var:population
+			}
+		}
+	}
+	set_variable = { name = internal_migration_growth value = county_internal_migration_growth_sum }
+	set_variable = {
+		name = internal_migration_growth_percent
+		value = {
+			value = var:internal_migration_growth
+			divide = var:population
+		}
+	}
+	
+	# apply migration amounts
+	every_county_province = {
+		limit = { has_holding = yes }		
+
+        # add migration growth
+        change_variable = { name = population add = var:internal_migration_growth }	
+	}
+	change_variable = { name = population add = var:internal_migration_growth }
+	
+	
+	#########################################
+	# Rural-to-Rural Population mediatisation
+	# full rural province migration is more expensive than the gameplay benefit is worth (especially with no every_neighboring_province effect), so we'll try this instead
+	
+	set_variable = { name = highest_mp_province value = title_province } 
+	set_variable = { name = lowest_mp_province value = title_province } 
+	set_variable = { name = temp value = title_province.var:migration_pull } # highest MP
+	set_variable = { name = temp2 value = title_province.var:migration_pull } # lowest MP
+	
+	every_county_province = {
+		limit = { has_holding = yes }
+		if = {
+			limit = { var:migration_pull > county.var:temp }
+			county = { 
+				set_variable = { name = highest_mp_province value = prev } 
+				set_variable = { name = temp value = prev.var:migration_pull } 
+			}
+		}
+		else_if = {
+			limit = { var:migration_pull < county.var:temp2 }
+			county = { 
+				set_variable = { name = lowest_mp_province value = prev } 
+				set_variable = { name = temp2 value = prev.var:migration_pull } 
+			}
+		}
+	}
+	
+	if = {
+		limit = { NOT = { var:highest_mp_province = var:lowest_mp_province } }
+		set_variable = { name = RtoR_migration value = RtoR_migration_pairwise }
+		var:highest_mp_province = {
+			change_variable = { name = population add = county.var:RtoR_migration }
+		}
+		var:lowest_mp_province = {
+			change_variable = { name = population subtract = county.var:RtoR_migration }
+		}
+	}
+}

@@ -1,0 +1,16 @@
+﻿l_spanish:
+
+ feudal_government_food:0 "Pago en especie"
+ feudal_food_exempt:0 "Exento"
+ feudal_food_low:0 "Bajo"
+ feudal_food_normal:0 "Normal"
+ feudal_food_high:0 "Alto"
+ feudal_food_extortionate:0 "Extorsión"
+ 
+ feudal_food_exempt_short:0 "Exento\n0%"
+ feudal_food_low_short:0 "Bajo\n[EmptyScope.ScriptValue('low_feudal_food_rate')|0%]"
+ feudal_food_normal_short:0 "Normal\n[EmptyScope.ScriptValue('normal_feudal_food_rate')|0%]"
+ feudal_food_high_short:0 "Alto\n[EmptyScope.ScriptValue('high_feudal_food_rate')|0%]"
+ feudal_food_extortionate_short:0 "Extorsión\n[EmptyScope.ScriptValue('extortionate_feudal_food_rate')|0%]"
+ 
+ exempt_feudal_food:0 "Exento"

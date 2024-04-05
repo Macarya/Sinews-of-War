@@ -1,0 +1,259 @@
+﻿l_spanish:
+
+##############
+# Tribal
+##############
+
+# innovation_currency_02 
+
+# innovation_royal_prerogative 
+
+# innovation_guilds
+
+# innovation_gavelkind
+
+innovation_demd_waterwheel:0 "Waterwheels"
+innovation_demd_waterwheel_desc:0 "The simple water wheel converts the energy of flowing or falling water into useful forms of power, most often to drive a millstone for grinding the corn from which flour is made. The watermill’s great advantage was that it harnessed water, an inanimate source of energy, to do the difficult and time-consuming work of grinding grain. Watermills were sited close to a stream or river, whose flow could be controlled by building a dam to hold back the water. The Greek or Norse mill most common in the Middle Ages was ruggedly built of stone with turf roofs and featured simple machinery. Water was channelled into the lower chamber of the building where it powered a horizontally-mounted wheel. The revolving spindle or drive shaft passed up through the floor and through the 'eye' of the lower grindstone — which remained stationary-to the rotating top stone above it. Meal, fed from the hopper, was ground between the stones and collected in the flour box beneath."
+
+# innovation_chronicle_writing
+
+# innovation_bannus
+
+innovation_demd_wolf_furnace:0 "Wolf Furnace"
+innovation_demd_wolf_furnace_desc:0 "The Wolf Furnace or Stückofen, perfected in central Europe in the eighth century, was an upwards extension of the primitive low bloomery with a quadrangular shaft ten to sixteen feet high. An opening in the front two feet square called the breast was kept open until the furnace was heated. Then, coincidentally with the closing of the breast with brick, the ore and charcoal were thrown into the furnace and the last was applied from two or more bellows on each side. The salamander of mixed iron and steel, roughly 500 pounds, was then taken from the breast and cut up. Wolf Furnances yielded over 100 tons per year of good iron as well as steel, most of which skilled smiths were able to salvage."
+
+# innovation_mangonel
+
+# quilted armor
+
+innovation_shock_cavalry:0 "Shock Cavalry"
+innovation_shock_cavalry_desc:0 "Placeholder text"
+unlock_military_academy:0 "Unlocks $building_type_military_academy_01$ for the [duchy_buildings|E] slot."
+
+# innovation_casus_belli
+
+##############
+# Early Medieval
+##############
+
+#innovation_currency_03
+#innovation_baliffs
+#innovation_manorialism
+#innovation_hereditary_rule
+#innovation_development_01
+#innovation_royal_prerogative
+
+#innovation_men_at_arms 
+#innovation_horseshoes
+#innovation_sappers
+#innovation_house_soldiers
+#innovation_burhs
+#innovation_battlements
+
+##############
+# High Medieval
+##############
+
+innovation_demd_merchant_guilds:0 "Merchant Guilds"
+innovation_demd_merchant_guilds_desc:0 "Until this time, European merchants had been merely itinerant peddlers. Such merchants tended to band together in order to protect themselves as they made their business rounds. Gradually, these merchants’ associations soon became more tightly organized and were legalized and recognized by town governments. These merchant associations, or guilds, became intimately involved in regulating and protecting their members’ commerce, both in long-distance trade and in those activities which catered to the needs of the town’s inhabitants. Guilds came to control the distribution and sale of food, cloth, and other staple goods and thereby achieved a monopoly over the local commerce."
+
+innovation_demd_roman_law:0 "Roman Law"
+innovation_demd_roman_law_desc:0 "Historians disagree on the precise way the Corpus Juris Civilis of Justinian was recovered in Northern Italy about 1070: legal studies were undertaken on behalf of papal authority central to the Gregorian Reform of Pope Gregory VII, which may have led to its accidental rediscovery. The growing merchant classes of medieval cities required law with a concept of equity, and law that covered situations inherent in urban life better than the primitive Germanic oral traditions. The provenance of the Code appealed to scholars who saw in the Holy Roman Empire a revival of venerable precedents from the classical heritage. The new class of lawyers staffed the bureaucracies that were beginning to be required by the princes of Europe. The University of Bologna, where Justinian's Code was first taught, remained the dominant centre for the study of law through the High Middle Ages."
+
+#innovation_development_02
+
+#innovation_heraldry
+
+innovation_demd_artesian_well:0 "Artesian Well"
+innovation_demd_artesian_well_desc:0 "The Artesian well was invented in France by Carthusian monks at Artois. The main idea of an Artesian well is to use the natural water pressure of aquifers to avoid pumping the water out of the earth. Certain geographies have large amounts of water trapped in the earth, reasonably close to the surface in the form of an aquifer, or a layer of soft rock which accumulates water from either natural water recharge, rain, or from nearby lake and river systems. The soft rock does not block the passage of this water into natural holding areas, located between impervious rock layers. If you sink a shaft into this aquifer basin and pressure drill, you can force the water back to the surface. A thin iron rod was inserted into a shaft which was drilled in the ground and repeatedly hit with a hammer until it made contact with the underground spring or water table and force the water back up the hole without the aid of a pump. Artesian well water was widely used in industry during the medieval period, in brewing for example, and in providing clean, reliable water not contaminated by the rising population which used rivers and lakes for waste discharge."
+
+innovation_demd_university:0 "Universities"
+innovation_demd_university_desc:0 "The origins of modern universities can be traced to the 11th century, when the formal teaching of Roman law began at Bologna, Italy. The city became the center of a great revival of legal scholarship rooted in the study of the newly recovered Corpus iuris civilis, a sixth-century compilation of Roman law. Within a few decades, the Decretum, a monumental compilation and synthesis of church law, also appeared in Bologna and launched the study of canon law as a legal science. These texts and the work they inspired were a catalyst for the emergent medieval legal tradition in both civil and canon law that soon extended across Europe and provided the foundation for centuries of Western legal development. The new legal studies quickly traveled from Bologna to the schools emerging at Paris, Oxford, and elsewhere throughout the continent, trans-forming European legal culture and practice."
+
+innovation_demd_pikemen:0 "Pikemen"
+innovation_demd_pikemen_desc:0 "The Crusades offer an illustration of the growing recognition of the need for infantry. Against the mounted Islamic foes of European armies, pikemen were important in screening the flanks of the Christian forces, always vulnerable to assault by the Turkish horsemen. Against Saladin's light cavalry at Jaffa, Richard of England drew up a line of spearmen, kneeling on the ground with spear planted in front, forming an hedge of steel against the charging horsemen."
+
+# innovation_advanced_bowmaking
+#innovation_castle_baileys
+#innovation_knighthood 
+#innovation_arched_saddle
+#innovation_hoardings
+
+##############
+# Late Medieval
+##############
+
+innovation_demd_toll_roads:0 "Toll Gates"
+innovation_demd_toll_roads_desc:0 "Tolls were often charged to medieval travellers and merchants at strategic locations such as bridges and gates in return for permission to use the roads and waterways of the country or state concerned. This practice was legally reinforced in the Holy Roman Empire by the law of Straßenzwang, which dictated that traders in certain goods had to use specified roads in exchange for guaranteed safe passage under Geleitrecht, the right of escort. Besides covering the cost of protection, road tolls were also used to fund the initial cobbling of a road and its subsequent upkeep. In order to avoid the costs and risks of transport when possible, bills of exchange became common among travellers and merchants, most famously those offered by the Knights Templar to prospective pilgrims to the Holy Land."
+
+#innovation_land_grants
+
+innovation_demd_charter_fairs:0 "Fairs"
+innovation_demd_charter_fairs_desc:0 "During the 12th century, many towns acquired the right from the Crown to hold an annual fair, usually serving a regional or local customer base and lasting for two or three days. Local nobles and churchmen could draw a considerable profit from hosting these events, and in turn the crown benefited from the payments given for the original charter. These fairs could be huge events; St Ives' Great Fair drew merchants from Flanders, Brabant, Norway, Germany and France for a four-week event each year, turning the normally small town into a major commercial emporium. Dozens of stalls would be established and hundreds of pounds of goods bought and sold. Special courts, called courts of piepowders would be established to govern the events and settle disputes; this would include establishing local law and order, imposing systems of weights and measures; monitoring legal contracts and other features of medieval trade."
+
+#innovation_divine_right
+#innovation_windmills
+#innovation_primogeniture
+
+innovation_demd_urban_militia:0 "Urban Militia"
+innovation_demd_urban_militia_desc:0 "Foreign wars were typically fought with professional soldiers such as knights and nobles and levies recruited from the countryside were used. Urban militias from the towns usually played no role in those wars, but could well appear in the event of a civil war or if the defense of their homes in case of invasion. Militia fought primarily as infantry organized by guild and were usually well-equipped with steel helmets, mail haubergeons, spears, pikes, bows, and crossbows, though it varied by era and the wealth of their home city."
+
+innovation_demd_coat_of_plates:0 "Coat of Plates"
+innovation_demd_coat_of_plates_desc:0 "A coat of plates is a form of segmented torso armour consisting of overlapping metal plates riveted inside a cloth or leather garment. The coat of plates is considered part of the era of transitional armour and was normally worn as part of a full knightly harness. It is thought the development of this type of harness is directly linked to the knightly needs for better protection against cavalry lances, since mail made the horseman vulnerable only to such penetrating strikes.  The coat saw its introduction in Europe among the elite at the end of the 12th century, and was well established by the 1250s. By the 1350s it was universal among infantry militias as well, and the plates covering the chest had been combined to form an early breastplate."
+
+# innovation_trebuchet
+
+innovation_demd_ransom:0 "Ransoms"
+innovation_demd_ransom_desc:0 "In Europe during the Middle Ages, ransom became an important custom of chivalric warfare. An important knight, especially nobility or royalty, was worth a significant sum of money if captured, but nothing if he was killed. For this reason, the practice of ransom contributed to the development of heraldry, which allowed knights to advertise their identities, and by implication their ransom value, and made them less likely to be killed out of hand."
+
+innovation_demd_defense_in_depth:0 "Defense in Depth"
+innovation_demd_defense_in_depth_desc:0 "The Lombard municipal infantry at Legnano in 1176 organized themselves into three defensive lines along a wide semicircle, each of which consisted of soldiers protected by shields. Between one shield and another the lances were then stretched, with the first row of foot soldiers fighting on their knees so as to form a jumble of spears aimed at the enemy. During the fight, which lasted eight to nine hours from morning to three in the afternoon and which was characterized by repeated charges punctuated by long pauses, the first two lines finally gave way, but the third resisted. This was among the first battles in which infantry proved capable of decisively defeating heavy cavalry on open ground."
+
+# innovation_scutage 
+
+##############
+# Transitional
+##############
+
+# innovation_currency_04
+# innovation_court_officials
+
+innovation_demd_covered_sewers:0 "Covered Sewers"
+innovation_demd_covered_sewers_desc:0 "The sewers implemented in Europe during the medieval times were simply open ditches that followed existing drainage pathways and often were directed along the center of roadways. These small natural waterways used for carrying off wastewater were eventually covered over and functioned as sewers. In Dubrovnik, then known as Ragusa, the Statute of 1272 set out the parameters for the construction of septic tanks and channels for the removal of dirty water."
+
+# innovation_noblesse_oblige
+# innovation_cranes
+# innovation_rightful_ownership 
+
+innovation_demd_free_companies:0 "Free Companies"
+innovation_demd_free_companies_desc:0 "A free company was an army of mercenaries recruited by private employers during wars. In periods of truce, when soldiers would be laid off en masse, many formed armed bands and made a living by pillaging the countryside until hostilities resumed."
+
+innovation_demd_gunpowder:0 "Gunpowder"
+innovation_demd_gunpowder_desc:0 "Gunpowder is the earliest known chemical explosive. It consists of a mixture of sulfur, charcoal, and potassium nitrate, or saltpeter. The sulfur and charcoal act as fuels while the saltpeter is an oxidizer. The first confirmed reference to what can be considered gunpowder in China occurred in the 9th century AD, where it was first used for fire arrows. The earliest Western accounts of a recipe for gunpowder appear in texts written by English philosopher Roger Bacon in the 13th century."
+
+# innovation_machicolations
+
+innovation_demd_military_hospitals:0 "Hospitals"
+innovation_demd_military_hospitals_desc:0 "The Order of the Knights of Saint John of Jerusalem (The Hospitallers) was established to care for sick and poor Christian pilgrims in the Holy Land and later to protect the Crusader Kingdoms. The greatest achievement of the Order was the foundation of the hospital in Jerusalem. The concept of a hospital was unknown in Europe at that time and it is assumed that the hospital in Jerusalem reflected direct Byzantine influence. The hospital served the population as a general hospital, but it also maintained its military obligations. After the battle of Tel Gezer in 1175, where Saladin was defeated by the Crusaders, 750 Christian battle casualties were evacuated from the battlefield and admitted to the hospital in Jerusalem, demonstrating the ability of early hospitals to cope with a huge number of casualties without being overwhelmed."
+
+innovation_demd_battles:0 "Battailes"
+innovation_demd_battles_desc:0 "A battle or battaile was a division of a medieval army. The word may be rendered as "battalion", but Abels and Bachrach et al. say this is not accurate because the bataille was a completely ad hoc formation. In late medieval warfare, field armies were often drawn up into three main battles, also called guards: the vanguard (avant-garde), the middle guard, and the rearguard (arrière-garde), often abbreviated to simply the van, middle, and rear. These terms imply, correctly, that the van preceded the middle, which in turn preceded the rear, into battle if the battles were arranged sequentially as a column. If arranged abreast, the van was on the right and the rear the left."
+
+innovation_demd_M6_TA:0 "Arbalest"
+innovation_demd_M6_TA_desc:0 "The arbalest was a specialized variant of the crossbow with a much heavier draw weight for the purposes of piercing plate armor. Arbalests required special systems for pulling the sinew via windlasses, a type of crank operated winch, due to draw weights approaching 5000 lbs."
+
+##############
+# Early Renaissance
+##############
+
+innovation_demd_double_entry:0 "Double Entry Accounting"
+innovation_demd_double_entry_desc:0 "When medieval Europe moved towards a monetary economy, merchants depended on bookkeeping to oversee multiple simultaneous transactions financed by bank loans. One important breakthrough took place around that time: the introduction of double-entry bookkeeping, in which there was a debit and credit entry for each transaction. The advantage of double-entry book-keeping, for those with the training to interpret the ledger, is clarity. The two columns show at a glance the nature and effect of transactions which have occurred, together with the resulting profit or loss. Accounts of this kind can provide the basis for rational business decisions. They also offer a simple check on inaccuracy, for if the entries are correct the two columns will balance. With suitable refinements, the system in use in 14th-century Genoa remained the basis of modern accounting techniques."
+
+innovation_demd_justices:0 "Justices of the Peace"
+innovation_demd_justices_desc:0 "The establishment of Justice of the Peace began the process of centralizing the administration of justice. It established the office of justice of the peace, the responsibilities of which encompassed police, judicial, and administrative duties. Justices of the peace were appointed by, and derived their authority from, the monarch. This period marked the end of the law enforcement system based upon obligatory service to the community by all individuals."
+
+innovation_demd_free_cities:0 "Free Cities"
+innovation_demd_free_cities_desc:0 "A free city was subordinate only to the monarch, as opposed to a territorial city or town which was subordinate to a territorial prince – be it an ecclesiastical lord or a secular prince. The constitutions of Free Cities were republican in form, but the government was oligarchic in nature, with a governing council composed of the most economically significant burgher families who had asserted themselves politically over time. Below them were the citizens or burghers, the smaller, privileged section of the city's permanent population whose number varied according to the rule of citizenship of each city. To the common town dweller, attaining burgher status could be the aim of a lifetime."
+
+innovation_demd_quarantine:0 "Quarantine"
+innovation_demd_quarantine_desc:0 "Between 1348 and 1359, the Black Death wiped out an estimated 30% of Europe's population. Such a disaster led governments to establish measures of containment to handle recurrent epidemics. A document from 1377 states that before entering the city-state of Ragusa in Dalmatia, newcomers had to spend 30 days (a trentine) in a restricted place to see whether the symptoms of Black Death would develop. In 1448 the Venetian Senate prolonged the waiting period to 40 days, giving birth to the term quarantine. The forty-day quarantine proved to be an effective formula for handling outbreaks of the plague. According to current estimates, the bubonic plague had a 37-day period from infection to death; therefore, the European quarantines would have been highly successful in determining the health of crews from potential trading and supply ships."
+
+innovation_demd_three_field:0 "Three Field System"
+innovation_demd_three_field_desc:0 "The three-field system let farmers plant more crops and therefore increase production. Under this system, the arable land of an estate or village was divided into three large fields: one was planted in the autumn with winter wheat or rye; the second field was planted with other crops such as peas, lentils, or beans; and the third was left fallow. Cereal crops deplete the ground of nitrogen, but legumes can fix nitrogen and so fertilize the soil. The fallow fields were soon overgrown with weeds and used for grazing farm animals. Their excrement fertilized that field's soil to regain its nutrients. Crop assignments were rotated every year, so each field segment would be planted for two out of every three years. Previously a two-field system had been in place, with half the land being left fallow. With more crops available to sell and agriculture dominating the economy at the time, the three-field system created a significant surplus and increased economic prosperity."
+
+innovation_demd_reclamation:0 "Wetland Reclamation"
+innovation_demd_reclamation_desc:0 "The first wind-driven water pumps using a scoop wheel could raise water at most five feet, though by combining mills the pumping height could be increased. Later mills were equipped with an Archimedes' screw which could raise water much higher. The polders, now often below sea level, were kept dry with mills pumping water from the polder ditches and canals to the boezem, a system of canals and lakes connecting the different polders and acting as a storage basin until the water could be let out to river or sea, either by a sluice gate at low tide or using further pumps."
+
+innovation_demd_indenture:0 "Indenture System"
+innovation_demd_indenture_desc:0 "On 19 September 1356, an English army under the command of Edward of Woodstock, also known as the Black Prince, won a smashing victory over a French army led by Jean II, who was captured and later ransomed by Edward in accordance the 10 July 1355 indenture between the king and the prince, which specified the prince was free to have his will of any prisoners except the head of the war in exchange for suitable compensation. In addition to the ransoms of prisoners the indenture spelled out the prince's and Edward III's responsibilities and obligations. The indenture was, essentially, a contract for military service made between the recruiter, e.g., Edward III, and the captain, i.e., the Black Prince. The captain would then subcontract with the men in his retinue and he would pay their wages out of the moneys he had received from the king. The system of indentures, particularly for overseas service – given Edward III's foreign policy, overseas deployment was highly likely – had replaced the feudal levy before the 1350s."
+
+innovation_demd_blast_furnace:0 "Blast Furnace"
+innovation_demd_blast_furnace_desc:0 "Blast furnaces produce pig iron from iron ore by the reducing action of carbon (supplied as coke) at a high temperature in the presence of a fluxing agent such as limestone. The step from the wolf furnace to a true blast furnace was gradual. Eventually, the old wolf furnaces grew so tall that leather bellows worked by men could not produce a strong enough blast, so waterpower was used to compress air into a stronger blast.  Bellows driven by a waterwheel could produce a continuous powerful draught from a free energy source, so it was at last possible to further enlarge the size of the furnace and the bloom produced. Water-powered hammers were also heavy enough to fashion the larger blooms. The increased scale of the blooms produced from blast furnaces allowed smiths to produce metal plates of the required size to serve as plate armor." 
+
+innovation_demd_ribauldequin:0 "Ribauldequins"
+innovation_demd_ribauldequin_desc:0 "A ribauldequin was a late medieval volley gun with many small-caliber iron barrels set up parallel on a platform, in use during the 14th and 15th centuries. When the gun was fired in a volley, it created a shower of iron shot. Edward III of England is typically credited for being the first in Europe to deploy cannons on the battlefield. He reportedly deployed between five and 22 of them on the field at Crécy, though the actual damage caused by these primitive cannons was negligible. Within a few decades, most major countries had powder-and-shot cannons in their arsenals. The French fired 100-pound stone balls during a siege in 1375, Balkan gunners fired on Venetian ships in 1378, and the Ottoman Turks reportedly used cannon at the First Battle of Kosovo in 1389."
+
+innovation_demd_M4_ER:0 "Old Soldiers"
+innovation_demd_M4_ER_desc:0 "Taking care to maintain a high percentage of experienced soldiers in our units via salary bonuses pays great dividends in unit cohesion and morale. As has been noted since Roman times, veterans are especially useful in steading the army in retreat, hence the expression rem ad Triarios redisse, \"it has come to the triarii\", which meant carrying on to the bitter end."
+
+innovation_demd_fortifications:0 "Field Fortifications"
+innovation_demd_fortifications_desc:0 "Medieval armies often dug trenches, erected stakes, and otherwise prepared the field near strategically important positions to receive an assault. In response to the introduction of artillery, this practice increased, and even castle walls began to be replaced by earthen banks better able to withstand the impact of shot."
+
+# innovation_royal_armory
+
+##############
+# High Renaissance
+##############
+
+innovation_demd_state_banks:0 "State Banks"
+innovation_demd_state_banks_desc:0 "By 1338, there were more than eighty banking houses in Florence with operations across Europe. The financial success of Florentine banking activities led others to break the monopoly. During the fifteenth century, municipal banks became established, including one at Barcelona in 1401 and one a few years later at Valencia. One of the longest and most stable banks was the Bank of Saint George in Genoa, established in 1407 by state creditors and run by a board of directors."
+
+innovation_demd_legal_profession:0 "Legal Profession"
+innovation_demd_legal_profession_desc:0 "As is often the case today, lawyers were wealthy and were resented by those who had to pay vast sums for their services. A good lawyer could earn upwards of £10 a year and, by the fifteenth century, entering the legal profession was a good way for men of lowly origins to rise in society."
+
+innovation_demd_social_mobility:0 "Social Mobility"
+innovation_demd_social_mobility_desc:0 "Under feudalism, however, the class structure was considerably more rigid than it was in later times, and wealth was much less important in gaining access to the qualities which would bring social preferment. However, even though mercantile roles were not themselves prestigious, they were a plateau from which more prestigous social positions could be reached. Men of town and trade did not as a social class supersede the gentry and nobility in the social hierarchy; but they did begin to purchase land and estates and marry into the nobility in unprecedented numbers as the Middle Ages drew to a close."
+
+# innovation_development_04
+
+innovation_demd_printing_press:0 "Printing Press"
+innovation_demd_printing_press_desc:0 "The sharp rise of medieval learning and literacy amongst the middle class led to an increased demand for books which the time-consuming hand-copying method fell far short of accommodating. In 1440, goldsmith Johannes Gutenberg invented the printing press, which could produce up to 3,600 pages per workday, compared to forty by hand-printing and a few by hand-copying. By 1500, printing presses in operation throughout Western Europe had already produced more than twenty million volumes, and permanently altered the structure of society. The relatively unrestricted circulation of information transcended borders, captured the masses in the Reformation and threatened the power of political and religious authorities. The sharp increase in literacy broke the monopoly of the literate elite on education and learning and bolstered the emerging middle class."
+
+innovation_demd_patronage:0 "Patronage"
+innovation_demd_patronage_desc:0 "It has long been a matter of debate why the Renaissance began in Florence, and not elsewhere in Italy. Scholars have noted several features unique to Florentine cultural life that may have caused such a cultural movement. Many have emphasized the role played by the Medici, a banking family and later ducal ruling house, in patronizing and stimulating the arts. Lorenzo de’ Medici was the catalyst for an enormous amount of arts patronage, encouraging his countrymen to commission works from the leading artists of Florence, including Leonardo da Vinci, Sandro Botticelli, and Michelangelo Buonarroti. Their money was significant because during this period, artists generally only made their works when they received commissions in advance."
+
+# innovation_standing_armies
+
+innovation_demd_matchlock:0 "Matchlock"
+innovation_demd_matchlock_desc:0 "The matchlock was the first mechanical firing device that facilitated a fully hand-held firearm. It consisted of an S-shaped arm, called a serpentine, that held a match, and a trigger device that lowered the serpentine so that the lighted match would fire the priming powder in the pan attached to the side of the barrel. The flash in the pan penetrated a small port in the breech of the gun and ignited the main charge. Slow and somewhat clumsy, the matchlock was difficult to use in wind or rain, and its glow presented a hazard at night or in ambush." 
+
+# innovation_bombard
+
+innovation_demd_garrisons:0 "Permanent Garrisons"
+innovation_demd_garrisons_desc:0 "While long-service garrisons were commonplace before the fifteenth century, they were pitifully small: the garrison of Rhodes at the time of the 1480 siege included no more than a few hundred Hospitallers. In the fifteenth century, the indenture system of England had to be adapted to meet the military demands of conquest and occupation in Lancastrian Normandy. This can be seen, for example, in the parliamentary legislation of 1439, which made desertion the breach, not merely of a private contract with a captain, but of a more solemn public undertaking."
+
+innovation_demd_infantry_revolution:0 "Infantry Revolution"
+innovation_demd_infantry_revolution_desc:0 "An important and enduring discovery was made by the Swiss at the Battle of Morgarten in 1315: an unarmoured man with a seven-foot halberd could dispatch an armoured man-at-arms. Displaying striking adaptability, they replaced some of their halberds with the pike, an 18 foot spear with a small piercing head. No longer outreached by the knight's lance, and displaying far greater cohesion than any knightly army, the Swiss soon showed that they could defeat armoured men-at-arms, mounted or dismounted, given anything like even numbers. With the creation of the pike square tactical formation, the Swiss provided the model for the modern infantry regiment."
+
+# innovation_plate_armor
+
+##############
+# Late Renaissance
+##############
+
+innovation_demd_silver_standard:0 "Silver Standard"
+innovation_demd_silver_standard_desc:0 "The silver standard is a monetary system in which the standard economic unit of account is a fixed weight of silver. Beginning in 1515, silver coins were minted at the silver mines at Joachimsthal in Bohemia. Although formally called Guldengroschen, they became known as Joachimsthalers, then shortened to thaler. The coins were widely circulated, and became the model for silver thalers issued by other European countries. The word thaler became dollar in the English language. The silver specie standard was widespread from the fall of the Byzantine Empire until the 19th century. Following the discovery in the 16th century of large deposits of silver at the Cerro Rico in Potosí, Bolivia, an international silver standard came into existence in conjunction with the Spanish pieces of eight. These silver dollar coins played the role of an international trading currency for nearly four hundred years."
+
+innovation_demd_stipendiary_police:0 "Stipendiary Police"
+innovation_demd_stipendiary_police_desc:0 "From the early 16th to the early 19th century, some groups of merchants, traders, church members, insurers, and others employed private individuals to protect their property and their persons. When communities began paying private citizens for the capture and conviction of thieves, a standard set of fees was established, and a stipendiary police system evolved. The stipendiary system was supported by a legal system that decreed draconian punishments for crimes that would be considered petty by contemporary standards; capital punishment and serious mutilation were prescribed for almost every conceivable offense. Such harsh punishments were handed out for two reasons—to deter wrongdoers and, failing that, to provide criminals with the opportunity to repent through punishment and save their souls."
+
+innovation_demd_cesspits:0 "Cesspits"
+innovation_demd_cesspits_desc:0 "Cesspits were introduced to Europe in the 16th century, at a time when urban populations were growing at a faster rate than in the past. The added burden of waste volume began overloading urban street gutters, where chamber pots were emptied each day. Cesspits were cleaned out by tradesmen using shovels and horse-drawn wagons at night, to reduce the smell and annoyance to the public. The typical cesspit was cleaned out once every 8 to 10 years. Fermentation of the solid waste collecting in cesspits, however, resulted in dangerous infections and gases that sometimes asphyxiated cesspit cleaners. Cesspits began to be cleaned out more regularly, but strict regulations for cesspit construction and ventilation were not introduced until the 1800s."
+
+innovation_demd_centralized_bureaucracy:0 "Centralized Bureaucracy"
+innovation_demd_centralized_bureaucracy_desc:0 "Over the course of the 15th and 16th centuries, government increased in size, paralleling the growing burdens and responsibilities it was assigned. The need for money to finance wars was the most important force in promoting administrative growth, but other pressures contributed to this trend, notably, the growing determination of the ruling elite to exercise state authority more effectively, consistently, and visibly. The power of the feudal aristocracy was limited, more efficient and centralized systems of taxation were established, and religious and cultural unity was encouraged or enforced."
+
+innovation_demd_enclosure:0 "Enclosure"
+innovation_demd_enclosure_desc:0 "Enclosure was the legal process of consolidating small landholdings into larger farms. Once enclosed, use of the land became restricted and available only to the owner, and it ceased to be common land for communal use. Under enclosure, such land is fenced (enclosed) and deeded or entitled to one or more owners. The process of enclosure began to be a widespread feature of the agricultural landscape during the 16th century. The practice of enclosure, particularly of depopulating enclosure, was denounced by the Church and the government and legislation was drawn up against it. But elite opinion began to turn towards support for enclosure, and rate of enclosure only increased in the seventeenth century."
+
+innovation_demd_colonialism:0 "Colonialism"
+innovation_demd_colonialism_desc:0 "European colonization of both Eastern and Western Hemispheres has its roots in Portuguese exploration. By finding the source of the lucrative spice trade, the Portuguese hoped to reap its profits for themselves. They also hoped to find the fabled Christian kingdom of Prester John, with an eye to encircling the Islamic Ottoman Empire. Bartolomeu Dias demonstrated it was possible to sail around Africa in 1488, paving the way for Vasco da Gama to reach India in 1498. After Columbus' first trips, competing Spanish and Portuguese claims to new territories and sea routes were solved with the Treaty of Tordesillas in 1494, which divided the world between the kingdoms of Castile and Portugal along a north–south meridian west of Cape Verde. Both Spain and Portugal profited handsomely from their newfound overseas colonies: the Spanish from gold and silver from mines such as Potosí and Zacatecas in New Spain, the Portuguese from the huge markups they enjoyed as trade intermediaries. Of course, it was not long before the exclusivity of Iberian claims was challenged by other up and coming European powers."
+
+innovation_demd_logistics:0 "Private Contractors"
+innovation_demd_logistics_desc:0 "Starting in the sixteenth century armies in Europe greatly increased in size. However, very little state support was provided to these massive armies. Beyond being paid for their service by the state, these soldiers and their commanders were forced to provide everything for themselves. If permanently assigned to a town or city with a working marketplace, or traveling along a well-established military route, supplies could be easily bought locally with intendants overseeing the exchanges. In other cases an army traveling in friendly territory could expect to be followed by sutlers — although their supply stocks were small and subject to price gouging — or a commissioner could be sent ahead to a town to make arraignments, including quartering if necessary. When operating in enemy territory, however, an army was still forced to plunder the local countryside for supplies, a tradition meant to allow war to be conducted at the enemy's expense. However, with the increase in army sizes this reliance on plunder became a major problem. Sieges in particular were affected by this, both for any army attempting to lay siege to a location or coming to its relief."
+
+innovation_demd_munition_armor:0 "Munition Armor"
+innovation_demd_munition_armor_desc:0 "Munition Armor, or almain rivet, is a type of roughly articulated plate armour created in Germany in about 1500. It was designed to be manufactured easily whilst still affording considerable protection to the wearer, and consisted of a breastplate and backplate with laminated thigh-guards called tassets. Almain rivets were generally of modest quality relative to custom-fitted and fully-articulated knightly armor, but they were cheap: a royal proclamation issued by Henry VIII in 1542 designated them as worth one sixth of the cost of a suit of demi-lance armor. Almain rivets were frequently purchased en masse as munitions-grade armour to equip royal armies or personal retinues. The most important centers of armor mass production in Medieval and Renaissance Europe were northern Italy and southern Germany, with workshops from both regions exporting their products throughout Europe." 
+
+innovation_demd_cannons:0 "Field Cannons"
+innovation_demd_cannons_desc:0 "Gun development and design in Europe reached its classic form in the 1480s – longer, lighter, more efficient, and more accurate compared to its predecessors only three decades prior. The design persisted, and cannons of the 1480s show little difference and surprising similarity with cannons three centuries later in the 1750s. They are differentiated from older firearms by an assortment of improvements. Their longer length-to-bore ratio imparts more energy into the shot, enabling the projectile to shoot further. Not only longer, they were also lighter as the barrel walls were made thinner to allow for faster dissipation of heat. They also no longer needed the help of a wooden plug to load since they offered a tighter fit between projectile and barrel, further increasing the accuracy of gunpowder warfare – and were deadlier due to developments such as gunpowder corning and iron shot. The final addition of the wheeled carriage and limber made these new cannons mobile enough to be used on the field.#!"
+
+innovation_demd_regimental_banners:0 "Regimental Colors"
+innovation_demd_regimental_banners_desc:0 "Uniform dress became the norm with the adoption of regimental systems, initially by the French army in the mid-17th century. Before 1600 a few German and Dutch regiments had worn red or yellow coats and from about some Swedish infantry were issued with standard coloured dress under Gustavus Adolphus. However, in the main, the levies of the 15th and 16th centuries wore civilian dress and regiments were dressed at the expense of their colonels in whatever style and colours the colonel preferred. Even Royal guards would sometimes only be issued with distinctive coloured or embroidered surcoats to wear over ordinary clothing. To help armies distinguish friend from foe scarves, pieces of foliage or other makeshift identification known as field signs would be worn."
+
+innovation_demd_pike_and_shot:0 "Pike and Shot"
+innovation_demd_pike_and_shot_desc:0 "In 1495 at the Battle of Seminara, the Spanish army was defeated while opposing the French invasion of Naples by an army of gendarme cavalry and Swiss pikemen. The Spanish reorganized their army under the captain Gonzalo Fernández de Córdoba. Realizing that he could not match the offensive power of the French, he decided to integrate firearms with pikes in a mutually-supporting formation. The arquebusiers could shoot down their foes, and could then run to the nearby pikemen for shelter if enemy cavalry or pikes drew near. This new tactic resulted in triumph for the Spanish at the Battle of Cerignola, in which the heavily outnumbered Spanish pike-and-shot forces, in a strong defensive position, crushed the attacking gendarmes and Swiss mercenaries of the French army."
+
+innovation_demd_imperialism:0 "Imperialism"
+innovation_demd_imperialism_desc:0 "European imperialism did not begin in the 19th century, but the 16th. In their efforts to find a direct trade route to Asia during the age of Old Imperialism, European nations established colonies in the Americas, India, South Africa, and the East Indies, and gained territory along the coasts of Africa and China. Meanwhile, Europe’s Commercial Revolution created new needs and desires for wealth and raw materials. Mercantilists maintained that colonies could serve as a source of wealth, while personal motives by rulers, statesmen, explorers, and missionaries supported the imperial belief in Glory, God, and Gold."
+

@@ -1,0 +1,96 @@
+ai_general_building_modifier = {
+	modifier = {
+		add = 15
+		scope:holder.capital_province = this
+	}
+	modifier = {
+		add = 10
+		county.holder.capital_county = county
+	}
+	modifier = {
+		add = 5
+		county.title_province = this
+	}
+}
+
+#################
+# Below is DEMD
+
+ai_main_chain_building_modifier = {
+	modifier = {
+		add = 5
+		scope:holder.capital_province = this
+	}
+}
+
+
+
+ai_military_building_modifier = {
+	modifier = {
+		add = -5
+		NOT = { county.title_province = this }
+	}
+}
+
+ai_heavy_light_cavalry_building_modifier = {
+	modifier = {
+		factor = 0
+		culture = { 
+			NOR = {
+				culture_has_heavy_cavalry_maa = yes
+				culture_has_light_cavalry_maa = yes
+			}
+		}
+		culture = { build_light_cav_buildings = no }
+	}
+}
+
+ai_pike_heavy_inf_building_modifier = {
+	modifier = {
+		factor = 0
+		culture = { 
+			NOR = {
+				culture_has_heavy_infantry_maa = yes
+				culture_has_pikemen_maa = yes
+			}
+		}
+	}
+}
+
+ai_skirmisher_archer_building_modifier = {
+	modifier = {
+		factor = 0
+		culture = { 
+			NOR = {
+				culture_has_skirmisher_maa = yes
+				culture_has_archer_maa = yes
+				culture_has_archer_cavalry_maa = yes			
+			}
+		}
+	}
+}
+
+ai_archer_cavalry_building_modifier = {
+	modifier = {
+		factor = 0
+		culture = { 
+			NOT = {
+				culture_has_archer_cavalry_maa = yes			
+			}
+		}
+	}
+}
+
+ai_camel_cavalry_building_modifier = {
+	modifier = {
+		factor = 0
+		culture = { NOT = { culture_has_camel_cavalry_maa = yes } }
+	}
+}
+
+ai_elephant_cavalry_building_modifier = {
+	modifier = {
+		factor = 0
+		culture = { NOT = { culture_has_elephant_cavalry_maa = yes } }
+	}
+}

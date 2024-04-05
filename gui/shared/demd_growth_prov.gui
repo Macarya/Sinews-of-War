@@ -1,0 +1,122 @@
+types GrowthProvince
+{
+    type growth_province_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_growth!#  [demd_growth|E]:#! [Province.MakeScope.ScriptValue('growth_rate_display')|%2]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_population|E] will grow or shrink every year depending on local conditions.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold @icon_births!# [demd_births|E]: [Province.MakeScope.ScriptValue('natural_birth_rate')|%2]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_food|E]: [Province.MakeScope.ScriptValue('base_birth_rate')|%2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [faith|E]: [Province.MakeScope.ScriptValue('birth_rate_faith_production_mult_display')|2]%"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [culture|E] : [Province.MakeScope.ScriptValue('birth_rate_cultural_production_mult_display')|2]%"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }                
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_capital|E]: [Province.MakeScope.ScriptValue('birth_rate_wealth_mult_display')|2]%"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [vigor|E]: [Province.MakeScope.ScriptValue('birth_rate_vigor_mult_display')|2]%"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_untilled_farmland|E]: [Province.MakeScope.ScriptValue('birth_rate_from_empty_land_mult_display')|2]%"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold @icon_deaths!# [demd_deaths|E]: [Province.MakeScope.ScriptValue('total_death_rate')|%2]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_food|E]: [Province.MakeScope.ScriptValue('base_death_rate')|%2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }				
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_persecution|E]: [Province.MakeScope.ScriptValue('persecution_death_rate')|%2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "From [demd_plagues|E]: [Province.MakeScope.ScriptValue('disease_death_rate')|%2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

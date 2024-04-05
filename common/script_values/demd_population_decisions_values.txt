@@ -1,0 +1,17 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_send_missionaries_price = {
+	value = 100
+}
+
+demd_send_settlers_price = {
+	value = 100
+}
+
+demd_resettle_price = {
+	value = 100
+}

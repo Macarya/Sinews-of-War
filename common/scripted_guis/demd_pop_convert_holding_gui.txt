@@ -1,0 +1,83 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+demd_convert_to_castle = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		province_owner = { gold > expensive_building_tier_1_cost }
+		building_requirement_tribal = no
+		has_holding = yes
+		NOR = { 
+			has_holding_type = castle_holding 
+			has_holding_type = tribal_holding
+		} 
+		save_temporary_scope_as = prov
+		county = {
+			any_county_province = {
+				NOT = { this =  scope:prov }
+				has_holding_type = castle_holding 
+			}
+		}
+	} 
+	effect = { 
+		set_holding_type = castle_holding 
+		province_owner = { remove_short_term_gold = expensive_building_tier_1_cost }
+		reset_building_vars = yes
+	}
+}
+
+demd_convert_to_church = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		province_owner = { gold > expensive_building_tier_1_cost }
+		building_requirement_tribal = no
+		has_holding = yes
+		NOR = { 
+			has_holding_type = church_holding 
+			has_holding_type = tribal_holding
+		} 
+		save_temporary_scope_as = prov
+		county = {
+			any_county_province = {
+				NOT = { this =  scope:prov }
+				has_holding_type = church_holding 
+			}
+		}
+	} 
+	effect = { 
+		set_holding_type = church_holding 
+		province_owner = { remove_short_term_gold = expensive_building_tier_1_cost }
+		reset_building_vars = yes
+	}
+}
+
+demd_convert_to_city = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = {
+		province_owner = { gold > expensive_building_tier_1_cost }
+		building_requirement_tribal = no
+		has_holding = yes
+		NOR = { 
+			has_holding_type = city_holding 
+			has_holding_type = tribal_holding
+		}
+		save_temporary_scope_as = prov
+		county = {
+			any_county_province = {
+				NOT = { this =  scope:prov }
+				has_holding_type = city_holding 
+			}
+		}
+	} 
+	effect = { 
+		set_holding_type = city_holding 
+		province_owner = { remove_short_term_gold = expensive_building_tier_1_cost }
+		reset_building_vars = yes
+	}
+}

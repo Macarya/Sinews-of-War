@@ -1,0 +1,237 @@
+﻿#On actions about titles
+
+on_game_start = {
+	on_actions = { 
+		demd_misc_startup 
+		
+	}
+}
+
+on_game_start_after_lobby = {
+	on_actions = { 
+		demd_trade_startup_1
+		demd_pop_system_startup
+		demd_trade_startup_2
+		demd_debug_startup 				
+	}
+}
+
+demd_trade_startup_1 = {	
+	effect = {
+		demd_initialize_all_trade_node_struggles = yes
+		demd_set_trade_node_strategic_locations = yes
+		demd_set_trade_node_linkages = yes
+		# demd_initialize_all_trade_posts = yes
+	}
+}
+
+demd_trade_startup_2 = {	
+	effect = {
+		every_in_global_list = {
+			variable = trade_nodes_global
+			trade_node_pulse = yes
+			every_in_list = {
+				variable = node_linkages
+				trade_node_linkage_story_standard_pulse = yes
+			}
+		}
+		every_in_global_list = {
+			variable = trade_nodes_global
+			trade_node_pulse = yes
+			every_in_list = {
+				variable = node_linkages
+				trade_node_linkage_story_standard_pulse = yes
+			}
+			set_variable = { name = trade_node_wealth value = startup_trade_node_wealth } 
+		}
+	}
+}
+
+demd_misc_startup = {	
+	effect = {
+		demd_excavation_site_setup = yes
+		demd_add_special_buildings = yes
+		set_global_variable = { name = SoW_is_loaded value = yes }
+	}
+}
+
+demd_debug_startup = {
+	effect = { 
+		every_county = {
+			if = {
+				limit = { any_county_province = { NOT = { has_variable = sqrt_pixels } } }
+				county = { save_scope_as = problem_county }
+				every_player = {
+					send_interface_message = {
+						type = event_court_chaplain_task_bad
+						title = demd_debug_county_pixels
+						desc = demd_debug_county_pixels_desc
+						right_icon = scope:problem_county
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { is_target_in_global_variable_list = { name = eligible_counties_all target = this } } }
+				county = { save_scope_as = problem_county }
+				every_player = {
+					send_interface_message = {
+						type = event_court_chaplain_task_bad
+						title = demd_debug_county_list
+						desc = demd_debug_county_list_desc
+						right_icon = scope:problem_county
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { has_variable = trade_node } }
+				county = { save_scope_as = problem_county }
+				every_player = {
+					send_interface_message = {
+						type = event_court_chaplain_task_bad
+						title = demd_debug_county_node
+						desc = demd_debug_county_node_desc
+						right_icon = scope:problem_county
+					}
+				}
+			}
+		}
+	}
+}
+
+###
+
+demd_pop_system_startup = {
+	effect = {
+		every_county = {
+			set_variable = { name = irrigation_setting value = 2 }
+			set_variable = { name = county_population value = 1 }
+			set_variable = { name = county_districts_to_build value = 0 }
+			set_variable = { name = county_construction_capacity value = 0 }
+			set_variable = { name = population value = 0.1 }
+			every_county_province = {
+				set_variable = { name = population value = 0.1 }
+			}
+		}
+		every_religion_global = {
+			every_faith = { 
+				set_variable = { name = vigor_faith_production_mult value = 0 }
+			}
+		}
+		random_religion_global = {
+			random_faith = {
+				save_scope_as = dummy_faith 
+			}
+		}
+		every_culture_global = {
+			set_variable = { name = culture_population value = culture_population }
+			set_variable = { name = vigor value = 50 }
+			set_variable = { name = dominant_faith value = scope:dummy_faith }
+		}
+		
+		every_province = { set_variable = { name = food_districts_max value = 1 } }
+		
+		# Initialize provinces
+		initialize_province_variables = yes		
+		demd_preprocess_map = yes
+		every_religion_global = { every_faith = { faithEconomy = yes } } # debug
+		every_culture_global = { cultureEconomy = yes } # debug
+		startupPulse = yes
+				
+		# run cycle
+		annualPulse = { list = eligible_counties_all }
+		every_religion_global = { every_faith = { faithEconomy = yes } }
+		every_culture_global = { cultureEconomy = yes }
+		fertilitySubRoutine = yes
+		every_count_or_above = {
+			ruler_pulse = yes
+		}
+		
+		reset_migration_pulls
+		top_up_urban_pop
+		
+		# set goods stockpile to equilibrium level
+		top_up_goods_stockpiles = yes
+		top_up_urban_pop = yes
+		reset_migration_pulls = yes
+				
+		# run cycle
+		annualPulse = { list = eligible_counties_all }
+		every_religion_global = { every_faith = { faithEconomy = yes } }
+		every_culture_global = { cultureEconomy = yes }
+		fertilitySubRoutine = yes
+		every_count_or_above = {
+			ruler_pulse = yes
+		}
+
+		# set goods stockpile to equilibrium level
+		top_up_goods_stockpiles = yes
+		top_up_urban_pop = yes
+		reset_migration_pulls = yes
+		top_up_goods_districts = yes
+		
+		# add startup gold
+		every_ruler = { 
+			add_gold = startup_gold
+		}
+		
+		# run cycle
+		annualPulse = { list = eligible_counties_all }
+		every_religion_global = { every_faith = { faithEconomy = yes } }
+		every_culture_global = { cultureEconomy = yes }
+		fertilitySubRoutine = yes
+		every_count_or_above = {
+			ruler_pulse = yes
+		}
+		
+		# set goods stockpile to equilibrium level
+		top_up_goods_stockpiles = yes
+		top_up_urban_pop = yes
+		reset_migration_pulls = yes
+		
+		# smooth over anything weird
+		annualPulse = { list = eligible_counties_all }
+		every_religion_global = { every_faith = { faithEconomy = yes } }
+		every_culture_global = { cultureEconomy = yes }
+		fertilitySubRoutine = yes
+		every_count_or_above = {
+			ruler_pulse = yes
+		}
+		
+		# final adjustments
+		# set goods stockpile to equilibrium level
+		top_up_goods_stockpiles = yes
+		top_up_urban_pop = yes
+		reset_migration_pulls = yes		
+		top_up_goods_districts = yes
+		
+		# smooth over anything weird
+		annualPulse = { list = eligible_counties_all }
+		every_religion_global = { every_faith = { faithEconomy = yes } }
+		every_culture_global = { cultureEconomy = yes }
+		fertilitySubRoutine = yes
+		every_count_or_above = {
+			ruler_pulse = yes
+		}
+		
+		# final adjustments
+		# set goods stockpile to equilibrium level
+		top_up_goods_stockpiles = yes
+		top_up_urban_pop = yes
+		reset_migration_pulls = yes		
+		top_up_goods_districts = yes
+		
+		every_county = {		
+			remove_variable = tax_setting_changed
+			remove_variable = manpower_setting_changed
+			remove_variable = public_order_setting_changed
+			remove_variable = sanitation_setting_changed
+			remove_variable = irrigation_setting_changed
+			remove_variable = infrastructure_setting_changed
+		}
+		
+		# final effects
+		demd_postprocess_map = yes
+	}
+}
+
+

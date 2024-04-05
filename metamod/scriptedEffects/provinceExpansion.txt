@@ -1,0 +1,61 @@
+provinceExpansionSetup = {  
+	every_county = {		
+		# set up expansion targets
+		every_county_province = {
+			limit = { NOT = { has_holding = yes } }
+			set_variable = { name = holding_construction_progress value = 0 }
+		}
+		
+		# select expansion target at random
+		reassign_expansion_target = yes
+	}
+}
+
+######################
+
+county_expansion = {
+	if = { 
+		limit = { 
+			has_variable = expansion_target 
+			NOT = { title_province = { has_holding_type = tribal_holding } }
+		}
+		
+		var:expansion_target = {		
+			# add progress
+			change_variable = { name = holding_construction_progress add = yearly_holding_construction_progress }
+			clamp_variable = { name = holding_construction_progress min = 0 max = holding_construction_progress_max }
+			
+			# if at max, switch target
+			if = { 
+				limit = { 
+					OR = {
+						var:holding_construction_progress >= holding_construction_progress_max 
+						has_holding = yes
+					}
+				}
+				county = { 
+					reassign_expansion_target = yes 
+					
+					# if expansion target switch failed, remove target variable altogether
+					if = { 
+						limit = { var:expansion_target = prev }
+						remove_variable = expansion_target
+					}
+				}			
+			}
+				
+		}
+	}
+}
+
+reassign_expansion_target = {
+	# select a valid expansion target at random
+	random_county_province = {
+		limit = { 
+			has_variable = holding_construction_progress 
+			var:holding_construction_progress < holding_construction_progress_max
+			has_holding = no
+		}
+		county = { set_variable = { name = expansion_target value = prev } }
+	}
+}

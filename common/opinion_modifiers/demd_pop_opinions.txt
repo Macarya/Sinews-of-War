@@ -1,0 +1,98 @@
+﻿
+demd_saved_me_opinion = {
+	opinion = 20
+	years = 20
+	decaying = yes
+}
+
+demd_seized_trade_node_opinion = {
+	opinion = -40
+	years = 20
+	decaying = yes
+}
+
+###EXECUTION###
+
+# Raid
+raided_me_barony_opinion = {
+	opinion = -10
+	years = 10
+	decaying = yes
+	stacking = yes
+}
+
+########################
+
+raided_my_trade_opinion = {
+	opinion = -10
+	years = 10
+	decaying = yes
+	stacking = yes
+}
+
+raided_me_opinion = {
+	opinion = -20
+	years = 10
+	decaying = yes
+	stacking = yes
+}
+
+sacked_me_opinion = {
+	opinion = -40
+	years = 20
+	decaying = yes
+	stacking = yes
+}
+
+razed_me_opinion = {
+	opinion = -60
+	years = 30
+	decaying = yes
+	stacking = yes
+}
+
+########################
+
+raided_vassal_opinion = {
+	opinion = -10
+	years = 10
+	decaying = yes
+	stacking = yes
+}
+
+sacked_vassal_opinion = {
+	opinion = -20
+	years = 20
+	decaying = yes
+	stacking = yes
+}
+
+razed_vassal_opinion = {
+	opinion = -30
+	years = 30
+	decaying = yes
+	stacking = yes
+}
+
+########################
+
+raided_coreligionist_opinion = {
+	opinion = -10
+	years = 10
+	decaying = yes
+	stacking = yes
+}
+
+sacked_coreligionist_opinion = {
+	opinion = -20
+	years = 20
+	decaying = yes
+	stacking = yes
+}
+
+razed_coreligionist_opinion = {
+	opinion = -30
+	years = 30
+	decaying = yes
+	stacking = yes
+}

@@ -1,0 +1,176 @@
+﻿l_english:
+
+#####################
+# Strike
+#####################
+
+ek_excavation_intermediate.0001.t:0 "[excavation_county.GetNameNoTier]: Strike"
+ek_excavation_intermediate.0001.desc:0 "Your excavation leader, [excavation_leader.GetTitledFirstName], informs you there has been some unrest recently among the local workers.\n\n"It is well-known among the locals that these ruins are cursed, and the more superstitious workers have begun to convince the others that this expedition is a terrible sacrilege""
+ek_excavation_intermediate.0001.a:0 "Tell them no harm will come to them. [story_owner.GetFaith.HighGodName] protects us."
+ek_excavation_intermediate.0001.b:0 "Offer to double their pay."
+ek_excavation_intermediate.0001.c:0 "Force the ringleaders into the ruins."
+ek_excavation_intermediate.0001.success:0 "You convince them"
+ek_excavation_intermediate.0001.failure:0 "You fail to convince them"
+
+#####################
+# Demon Statue
+#####################
+
+ek_excavation_intermediate.0002.t:0 "[excavation_county.GetNameNoTier]: Ominous Statue"
+ek_excavation_intermediate.0002.desc:0 "From the corner of your eye you notice one of the workers hauling back a thick branch, before a scream makes you swing abruptly around. Sword drawn, you push aside the branch to see what had scared the fleeing worker.\n\nSitting behind swirling mist, carved out of stone, timeless, its face the figment of some bleak nightmare, is a sculpture of a demon. The malevolence in its unchanging face is palpable. You surmise it must have been placed here to guard the tomb, and wonder about its creators, and what might have inspired them to make something so dreadful."
+ek_excavation_intermediate.0002.a:0 "It will be a fine addition to my throne room."
+ek_excavation_intermediate.0002.b:0 "Leave it where it stands."
+ek_excavation_intermediate.0002.c:0 "Destroy it! This is the work of the [story_owner.GetFaith.DevilName]!"
+ek_excavation_intermediate.0002.d:0 "Prepare it as a gift for [rival.GetTitledFirstName]. May it bring sorrow upon [rival.GetHerHim]!"
+demd_demon_statue_name:0 "Demonic Idol"
+demd_demon_statue_description:0 "A sculpture of a demon, its visage the figment of some bleak nightmare. The malevolence in its unchanging face is palpable."
+
+#####################
+# Lost in the Maze
+#####################
+
+ek_excavation_intermediate.0003.t:0 "[excavation_county.GetNameNoTier]: Lost in the Maze"
+ek_excavation_intermediate.0003.desc:0 "[excavation_leader.GetTitledFirstName] beckons you deeper into the ruins. The passageway twists and turns as it bores deeper into the interior of the tomb. Every now and then he stops and look at the map, by the light of the torch, trying to remember the details of the layout. A gust of wind from deeper in the ruins blows his torch out."
+ek_excavation_intermediate.0003.a:0 "If we follow the right hand wall, we can make it out."
+ek_excavation_intermediate.0003.a.success:0 "You exit the maze the way you came"
+ek_excavation_intermediate.0003.b:0 "Let's press on."
+ek_excavation_intermediate.0003.b.success:0 "You exit the maze through a hidden treasure room"
+ek_excavation_intermediate.0003.b.failure:0 "After getting lost for most of the day, you exit the maze the way you came"
+ek_excavation_intermediate.0003.c:0 "We should try to retrace our steps."
+
+#############################################################################################################
+# Events below not implemented
+
+#####################
+# Bandit attack
+#####################
+
+ek_excavation_unused.0004.t:0 "[excavation_county.GetNameNoTier]: Camp Attack"
+ek_excavation_unused.0004.desc.a:0 "As you are taking breakfast in your tent one morning, you are disturbed by a thundering of hooves in the distance. You hastily put on your armor and emerge into the still weak light to see a group of mounted brigands encircling the camp and dismounting to close in on foot.\n\nTheir leader, a [county.GetCulture.GetName] wielding an uncommonly large axe, stares at you, likely drawn by the faint gleam of your ornate armor in the dawn. In a sudden deviation from his disquieting stillness, he rushes towards you, axe overhead and shouting foul insults."
+ek_excavation_unused.0004.desc.b:0 "As you are taking breakfast in your tent one morning, you are disturbed by a thundering of hooves in the distance. You hastily put on your armor and emerge into the still weak light to see a group of mounted brigands encircling the camp and dismounting to close in on foot.\n\nTheir leader, a savage looking [county.GetCulture.GetName] wielding an uncommonly large axe, stares at you, likely drawn by the faint gleam of your ornate armor in the dawn. In a sudden deviation from his disquieting stillness, he rushes towards you, axe overhead and wildly ululating in his gutteral tongue."
+ek_excavation_unused.0004.a:0 "Rally to me, men!" # martial duel
+ek_excavation_unused.0004.b:0 "Advance to meet him." # prowess duel
+ek_excavation_unused.0004.c:0 "[excavation_leader.GetTitledFirstName]! Dispatch this fool!" # BG prowess duel
+ek_excavation_unused.0004.d:0 "I'd better run!" # - prestige, BG martial duel
+
+#####################
+# Spike Trap
+#####################
+
+ek_excavation_unused.0005.t:0 "[excavation_county.GetNameNoTier]: Central Chamber"
+ek_excavation_unused.0005.desc:0 "[excavation_leader.GetTitledFirstName] points down a long hallway at a small chamber ahead lit by a single shaft of sunlight from a hole in the ceiling.\n\nYou gaze toward the chamber, imagining your way inside the minds of the people who had built this place so long ago. Surely, they would want to protect the treasure of the Temple to make sure no stranger ever reached its heart?"
+ek_excavation_unused.0005.a:0 "We should proceed carefully."
+ek_excavation_unused.0005.b:0 "Go ahead, [excavation_leader.GetTitledFirstName], the honor should be yours."
+ek_excavation_unused.0005.c:0 "Send for one of the laborers."
+ek_excavation_unused.0005.d:0 "It's probably best we turn around."
+
+ek_excavation_unused.1005.t:0 "[excavation_county.GetNameNoTier]: Central Chamber"
+ek_excavation_unused.1005.desc:0 "You move closer to the entrance now with the instinctive caution of the hunter who smells danger on the downwind, who feels peril before he can see signs of it. You bend down and find a thick rock, and toss it into the chamber.\n\nFor a split second nothing happens. And then there is a faint whirring noise, a creaking sound, and the walls of the chamber break open as giant metal spikes, like the jaws of some impossible shark, slam together in the center of the chamber."
+ek_excavation_unused.1005.a:0 "That was close."
+
+ek_excavation_unused.2005.t:0 "[excavation_county.GetNameNoTier]: Central Chamber"
+ek_excavation_unused.2005.desc:0 "The laborer walks blithely into the chamber. For a split second nothing happens. And then there is a faint whirring noise, a creaking sound, and the walls of the chamber break open as giant metal spikes, like the jaws of some impossible shark, slam together in the center of the chamber."
+ek_excavation_unused.2005.a:0 "Better him than us."
+
+ek_excavation_unused.3005.t:0 "[excavation_county.GetNameNoTier]: Central Chamber"
+ek_excavation_unused.3005.desc:0 "[excavation_leader.GetTitledFirstName] walks cautiously into the chamber. For a split second nothing happens. And then there is a faint whirring noise, a creaking sound, and the walls of the chamber break open as giant metal spikes, like the jaws of some impossible shark, slam together in the center of the chamber."
+ek_excavation_unused.3005.a:0 "Look out!"
+
+#####################
+# The Pit
+#####################
+
+ek_excavation_unused.0006.t:0 "[excavation_county.GetNameNoTier]: The Pit"
+ek_excavation_unused.0006.desc:0 "[excavation_leader.GetTitledFirstName] is leading you deeper into the ruins when with a thunderous crash the tunnel behind you collapses. The next hallway terminates in a vast pit, on the other side of which is a door through which a faint light shines. Above the pit several wooden beams are set into the roof. They might be rotted through, but they might be strong enough to hold a man's weight. "
+ek_excavation_unused.0006.a:0 "Try to swing across"
+ek_excavation_unused.0006.b:0 "Stop and build a bridge"
+ek_excavation_unused.0006.c:0 "Wait to be dug out"
+
+ek_excavation_unused.1006.t:0 "[excavation_county.GetNameNoTier]: The Pit"
+ek_excavation_unused.1006.desc:0 "You curl both hands around the rope, pull on it again to test it, then swing yourself slowly through the air, very conscious of the darkness of the pit that lay deep below the layers of cobwebs. When you are sure you are beyond the margins of the pit you release the rope."
+ek_excavation_unused.0006.a:0 "Thank [root.GetFaith.HighGodName]!"
+
+ek_excavation_unused.2006.t:0 "[excavation_county.GetNameNoTier]: The Pit"
+ek_excavation_unused.2006.desc:0 "You curl both hands around the rope, pull on it again to test it, then swing yourself slowly through the air, very conscious of the darkness of the pit that lay deep below the layers of cobwebs. Just as you approach the margins of the pit the rope snaps."
+ek_excavation_unused.0006.a:0 "[root.GetFaith.HighGodName] abandons me!"
+
+#####################
+# Tiled Floor
+#####################
+
+ek_excavation_unused.0007.t:0 "[excavation_county.GetNameNoTier]: Tiled Floor"
+ek_excavation_unused.0007.desc:0 "While surveying a recently uncovered side passage, you come upon a large domed room, the ceiling of which has skylights that send bands of sunlight down on the black-and-white tiled floor. The walls are honeycombed with shadowy recesses. Across on the other side is an ornately carved ivory chest."
+ek_excavation_unused.0007.a:0 "Step only on the white tiles"
+ek_excavation_unused.0007.b:0 "Step only on the black tiles"
+ek_excavation_unused.0007.c:0 "Bring me my armor"
+ek_excavation_unused.0007.d:0 "Sprint across"
+ek_excavation_unused.0007.e:0 "This room is clearly best avoided."
+
+ek_excavation_unused.1007.t:0 "[excavation_county.GetNameNoTier]: Tiled Floor"
+ek_excavation_unused.1007.desc:0 "You edge forward over the squares, waiting for the pressure of your weight to trigger a trap. Sweat falls from your forehead. A few more feet."
+ek_excavation_unused.1007.a:0 "A few more tiles"
+
+ek_excavation_unused.2007.t:0 "[excavation_county.GetNameNoTier]: Tiled Floor"
+ek_excavation_unused.2007.desc:0 "You sprint across the squares. Your heart runs wildly, your pulse thuds, the blood burns in your veins. Dozens of poisoned darts shoot from the walls, passing just behind your head."
+ek_excavation_unused.2007.a:0 "A few more tiles"
+
+ek_excavation_unused.3007.t:0 "[excavation_county.GetNameNoTier]: Tiled Floor"
+ek_excavation_unused.3007.desc:0 "You edge forward over the squares, poison darts pinging uselessly against your armor. Sweat falls from your forehead. A few more feet."
+ek_excavation_unused.3007.a:0 "A few more tiles"
+
+#####################
+# Deadly Gas
+#####################
+
+ek_excavation_unused.0008.t:0 "[excavation_county.GetNameNoTier]: Deadly Gas"
+ek_excavation_unused.0008.desc:0 "You have been called to the excavation site by [excavation_leader.GetTitledFirstName]. Crossing what looks like a cave opening, you descend into a dark, dimly lit cavern, but [excavation_leader.GetTitledFirstName] stops you before you go any further.\n\n"That section over there" He points with his index finger. "Since we started work on that particular section, we have had several workers simply collapsing dead, fulminated!"\n\n"Rumors are spreading between the workers that it is the work of an [story_owner.GetFaith.DevilName], or that [story_owner.GetFaith.HighGodName] is angry at us going any further than this."\n\n"I am afraid to say if this keeps up we will soon lose control of them!""
+ek_excavation_unused.0008.a:0 "[story_owner.GetFaith.HighGodName] is on our side! Do not fear the dark!" # req zeal
+ek_excavation_unused.0008.b:0 "Just give them some coins, for the love of [story_owner.GetFaith.HighGodName]!"
+ek_excavation_unused.0008.c:0 "A generous offer will make them reconsider their folly."
+ek_excavation_unused.0008.d:0 "The air is poisoned! We must dig from a different angle." # req learning
+
+#####################
+# Beautiful Bracelet
+#####################
+
+ek_excavation_unused.0009.t:0 "[excavation_county.GetNameNoTier]: Beautiful Bracelet"
+ek_excavation_unused.0009.desc:0 "While reviewing progress on one of the tunnels, I am stopped in my tracks by a luxurious if worn coffer inside a blue tinted chamber to my side. I stare, as I clearly recall ordering that any such finds be brought immediately to me.\n\nNot even a single workman seems to be around at the moment, and as I enter the room and take a closer look, I recognize familiar scribbling inscribed again and again on the delicate silver frame:\n\n"Care, ye, for fortune favors the bold, but ye might unleash evils untold."\n\nThis seems peculiar, as all other inscriptions within this chamber are gibberish to me."
+ek_excavation_unused.0009.a:0 "I'll just take it all!" # req zeal
+ek_excavation_unused.0009.b:0 "Fortune does favors the bold"
+ek_excavation_unused.0009.c:0 "Opening it would be folly."
+ek_excavation_unused.0009.d:0 "Never waste a good opportunity for profit!" 
+
+#####################
+# Deadly Trap
+#####################
+
+ek_excavation_unused.0010.t:0 "[excavation_county.GetNameNoTier]: Deadly Trap"
+ek_excavation_unused.0010.desc:0 "As I admire an old mausoleum my people excavated, I notice a strange marking on the wall before me. I could swear I've seen this someplace else...\n\nI approach the wall to investigate while suddenly, my confident step sinks into one of the flagstones which gives ground in an almost mechanical manner.\n\n"Sire, look out, above!" [bodyguard.GetTitledFirstName] calls out to me."
+ek_excavation_unused.0010.a:0 "Help me!" # prowess check BG
+ek_excavation_unused.0010.b:0 "Nice try!" # prowess check 
+ek_excavation_unused.0010.c:0 "Come on, don't fail me now!" # destroys weapon
+
+#####################
+# Deadly Trap
+#####################
+
+ek_excavation_unused.0011.t:0 "[excavation_county.GetNameNoTier]: Deadly Trap"
+ek_excavation_unused.0011.desc:0 "I've received a missive from my [excavation_leader.GetTitledFirstName] stating that a potentially valuable trinket has been found, but as I enter his tent, he receives me with a face like a flustered maiden.\n\n"Well, you see my liege, the thing was here, and then it wasn't, I mean, It was here at one point, but then, up to a point--- What I mean to say is..."\n\n"You don't have it anymore." I formulate his answer for him, which renders him impotent and silent."
+ek_excavation_unused.0011.a:0 "Scour every speck of dust and recount every single coin in the entire camp!" # req stewardship
+ek_excavation_unused.0011.b:0 "We could set a trap..." # req intrigue
+ek_excavation_unused.0011.c:0 "Oh I've got just the thing" # req diplomacy
+ek_excavation_unused.0011.d:0 "You've grown too soft. Time to get tough." # req martial
+
+
+
+#####################
+# Scorpion Pit
+#####################
+
+ek_excavation_intermediate.0013.t:0 "[excavation_county.GetNameNoTier]: Scorpion Pit"
+ek_excavation_intermediate.0013.desc:0 "A loud familiar yelp breaks me out of my daydreaming and I rush toward the source of the noise as fast as my legs can take me.\n\n"O-oh, oh [excavation_leader.GetFaith.HighGodName]!" [excavation_leader.GetTitledFirstName] screams out. He is stuck in a large hole in the ground, covered neck to toe in scorpions the size of fists!"
+ek_excavation_intermediate.0013.a:0 "I just remembered I've got stuff to do..."
+ek_excavation_intermediate.0013.b:0 "Hold on, I'm coming!"
+ek_excavation_intermediate.0013.c:0 "Don't worry, large scorpions are not poisonous! Let me go get help..."
+
+

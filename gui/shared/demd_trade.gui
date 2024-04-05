@@ -1,0 +1,75 @@
+types Trade
+{
+    type trade_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_trade_value!#  Trade:#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+					tooltipwidget = { 
+						trade_value_breakdown_widget = { 
+						
+						} 
+					}
+                    raw_text = "[demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_value').GetValue|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+					tooltipwidget = { 
+						trade_power_breakdown_widget = { 
+						
+						} 
+					}
+                    raw_text = "[demd_trade_power|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_power').GetValue|2]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                } 
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+					tooltipwidget = { 
+						trade_node_breakdown_widget = { 
+						
+						} 
+					}
+                    raw_text = "[demd_trade_node|E]:#! [Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.GetName]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+            }
+        }
+    }
+}

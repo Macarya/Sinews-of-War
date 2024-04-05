@@ -1,0 +1,6 @@
+﻿l_english:
+
+SKILL_POINT_FROM_ME_TORTURING_GAIN_CHANCE:3 "When you [torture|E] someone:\n$TAB$#V [EmptyScope.ScriptValue('dark_insights_stat_increase_chance')|0]%#! chance to gain either [intrigue_i]#P 1#! [intrigue|E] or [prowess_i]#P 1#! [prowess|E] (Max [EmptyScope.ScriptValue('dark_insights_prowess_increase_maximum')|0] each)"
+
+CONVERT_COUNTY_NO_NEGATIVE_FERVOR_MODIFIERS:3 "[convert_county|E]: The conversion power from neighboring [counties|E] of your [faith|E] is 50% greater"
+

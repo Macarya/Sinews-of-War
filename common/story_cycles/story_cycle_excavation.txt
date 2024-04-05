@@ -1,0 +1,23 @@
+﻿story_cycle_excavation = {
+
+	on_setup = {
+		excavation_story_standard_setup = yes
+	}
+
+	on_end = {
+		excavation_story_standard_cleanup = yes
+	}
+
+	on_owner_death = {
+		excavation_story_standard_inheritance = yes
+	}
+	
+	# The excavation progresses...
+	effect_group = {
+		days = 30		
+		triggered_effect = {
+			trigger = { always = yes }
+			effect = { excavation_story_standard_pulse = yes }
+		}
+	}
+}

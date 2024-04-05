@@ -1,0 +1,45 @@
+# Sinews of War Config File
+# Copy to your mod's directory and execute as `go run . sample_config.txt`
+
+# Set this to the landed titles folder of your mod (or to SoW's folder if you don't change titles)
+landed_titles_folder;C:\Users\yanni\Documents\Paradox Interactive\Crusader Kings III\mod\SoW_Maka\common\landed_titles
+
+# Set this to the province terrain folder of your mod (or to vanilla if you don't change winter severity)
+province_terrain_folder;C:\Program Files (x86)\Steam\steamapps\common\Crusader Kings III\game\common\province_terrain
+
+# Set these to the relevant folders of your mod (or to the SoW folders if you want to use SoW innos/doctrines/traditions/pillars). Unused when operating in patch mode.
+innovations_folder;C:\Users\yanni\Documents\Paradox Interactive\Crusader Kings III\mod\SoW_Maka\common\culture\innovations
+doctrines_folder;C:\Users\yanni\Documents\Paradox Interactive\Crusader Kings III\mod\SoW_Maka\common\religion\doctrines
+traditions_folder;C:\Users\yanni\Documents\Paradox Interactive\Crusader Kings III\mod\SoW_Maka\common\culture\traditions
+pillars_folder;C:\Users\yanni\Documents\Paradox Interactive\Crusader Kings III\mod\SoW_Maka\common\culture\pillars
+
+# Set this to the mod folder where you'd like SoW scripted effects / localization / etc to be outputted. If you are a SoW dev this is the SoW mod folder. Else it is the SoW-XXX patch mod folder.
+output_mod_folder;C:\Users\yanni\Documents\Paradox Interactive\Crusader Kings III\mod\SoW_Maka\
+
+# Set this to the location of your mod's map_data folder (or to the vanilla folder if you don't change the map)
+map_data_folder;C:\Program Files (x86)\Steam\steamapps\common\Crusader Kings III\game\map_data
+
+# Set this to the vanilla game's map data folder. If the patcher can't find a map file in map_data_folder it will search here. Useful if your mod only changes some map_data files.
+map_data_backup_folder;C:\Program Files (x86)\Steam\steamapps\common\Crusader Kings III\game\map_data
+
+# Set this to the location of SoW's metamod folder
+metamod_folder;C:\Users\yanni\Documents\Paradox Interactive\Crusader Kings III\mod\SoW_Maka\metamod
+
+# The pixel exponent determines the conversion between province food district capacity and province pixel size. Capacity scales with 1 / (pixel count) ^ (pixel exponent)
+# 2.25 works well for vanilla to avoid balance issues when provinces are absurdly huge (e.g. in the eastern steppes), but if your map has more regularly sized provinces you can reduce this towards 1 (linear scaling)
+pixel_exponent;2.25
+
+# Set to true if you use a different map / landed titles setup than SoW
+process_map;true
+
+# Set to true if you just want to patch for a map mod that doesn't change innos/doctrines/pillars/traditions.
+patch_mode;false
+
+########################################################################################################
+
+# Set to false. This setting controls the printing of the 360 yearly + 30 monthly on-actions and events, which you don't need to do.
+print_events;false
+
+# Set these to where in your mod you'd like SoW events and on-actions to be outputted. When print_events is false these are unused and can be ignored
+events_folder;path\to\mod\sinews_of_war\common\events
+on_actions_folder;path\to\mod\sinews_of_war\common\on_action\yearly_on_actionspps\workshop\content\11583

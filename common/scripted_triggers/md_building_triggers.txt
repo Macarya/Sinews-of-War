@@ -1,0 +1,4 @@
+valid_expansion_target = {
+	has_variable = holding_construction_progress
+	var:holding_construction_progress >= holding_construction_progress_max
+}

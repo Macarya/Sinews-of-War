@@ -1,0 +1,117 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+demd_add_tradition_bonuses = {
+
+	if = {
+		limit = { has_cultural_tradition = tradition_strength_in_numbers }
+		change_variable = { name = manpower_cultural_production_mult add = 0.15 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_malleable_invaders }
+		change_variable = { name = vigor_cultural_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_only_the_strong }
+		change_variable = { name = manpower_cultural_production_mult add = -0.20 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_hird }
+		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_culture_blending }
+		change_variable = { name = vigor_cultural_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_isolationist }
+		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_agrarian }
+		change_variable = { name = food_cultural_production_mult add = 0.10 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_maritime_mercantilism }
+		change_variable = { name = trade_power_cultural_production_mult add = 0.10 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_legalistic }
+		change_variable = { name = public_order_cultural_production_mult add = 0.05 }
+		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_hereditary_hierarchy }
+		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
+		change_variable = { name = public_order_cultural_production_mult add = 0.03 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_esteemed_hospitality }
+		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_wedding_ceremonies }
+		change_variable = { name = vigor_cultural_production_mult add = 3.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_byzantine_succession }
+		change_variable = { name = vigor_cultural_production_mult add = -4.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_xenophilic }
+		change_variable = { name = vigor_cultural_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_zealous_people }
+		change_variable = { name = vigor_cultural_production_mult add = 4.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_modest }
+		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_practiced_pirates }
+		change_variable = { name = trade_power_cultural_production_mult add = -0.15 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_artisans }
+		change_variable = { name = trade_value_cultural_production_mult add = 0.10 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_fp2_malleable_subjects }
+		change_variable = { name = vigor_cultural_production_mult add = -3.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_warrior_bishops }
+		change_variable = { name = vigor_cultural_production_mult add = 3.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_ottonian_reforms }
+		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
+	}
+
+}

@@ -1,0 +1,109 @@
+﻿l_english:
+
+demd_strategic_location:0 "Strategic Location"
+demd_strategic_location_desc:0 "#P +[EmptyScope.ScriptValue('strategic_location_modifier_bonus')|0%]#! @icon_trade_power!# [demd_trade_power|E]\n\nThis [county|E] is a strategic location within its [demd_trade_node|E]. It receives a large [demd_trade_power|E] multiple and is a key location in gaining and maintaining control of the [demd_trade_node|E]. It also enables the holder and his lieges to use the $task_raid_trade_routes$ marshal task."
+
+demd_trade_linkage:0 "Trade Linkage"
+demd_strategic_location_desc:0 "This [county|E] links this [demd_trade_node|E] to another. It receives a portion of the [demd_trade_value|E] that passes between the two [demd_trade_nodes|E]."
+
+demd_prov_development_modifier_big:0 "[development|E] from Unused [demd_construction_cap|E]"
+demd_prov_development_modifier_medium:0 "[development|E] from Unused [demd_construction_cap|E]"
+demd_prov_development_modifier_small:0 "[development|E] from Unused [demd_construction_cap|E]"
+
+
+
+demd_prov_garrison_modifier_small:"Small Garrison Increase"
+demd_prov_garrison_modifier_medium:"Medium Garrison Increase"
+demd_prov_garrison_modifier_big:"Large Garrison Increase"
+demd_prov_garrison_modifier_huge:"Huge Garrison Increase"
+
+demd_prov_tax_modifier_huge:0 "[demd_population|E] Taxes"
+demd_prov_tax_modifier_big:0 "[demd_population|E] Taxes"
+demd_prov_tax_modifier_medium:0 "[demd_population|E] Taxes"
+demd_prov_tax_modifier_small:0 "[demd_population|E] Taxes"
+
+demd_prov_levy_modifier_huge:"Huge Levy Increase"
+demd_prov_levy_modifier_big:"Big Levy Increase"
+demd_prov_levy_modifier_medium:"Medium Levy Increase"
+demd_prov_levy_modifier_small:"Small Levy Increase"
+
+demd_char_knight_capacity_modifier_big:"Big Knight Cap Increase"
+demd_char_knight_capacity_modifier_medium:"Medium Knight Cap Increase"
+demd_char_knight_capacity_modifier_small:"Small Knight Cap Increase"
+
+demd_char_regiment_capacity_modifier_big:"Big Men at Arms Cap Increase"
+demd_char_regiment_capacity_modifier_medium:"Medium Men at Arms Cap Increase"
+demd_char_regiment_capacity_modifier_small:"Small Men at Arms Cap Increase"
+
+faith_conversion_in_progress:0 "Faith Conversion in Progress"
+faith_conversion_in_progress_desc:0 "This [county|E] is currently being converted to a different [faith|E]."
+
+culture_conversion_in_progress:0 "Culture Conversion in Progress"
+culture_conversion_in_progress_desc:0 "This [county|E] is currently being converted to a different [culture|E]."
+
+repressing_faith_conversion:0 "Repressing Missionaries"
+repressing_faith_conversion_desc:0 "A [faith|E] attempting to convert this [county|E] is being repressed by the authorities.\n#P +[EmptyScope.ScriptValue('demd_faith_repression_strength_modifier_pos')|0%]#! @icon_fervor_defense!#  [demd_faith_conversion_defense|E]"
+
+repressing_culture_conversion:0 "Repressing Migrants"
+repressing_culture_conversion_desc:0 "A [culture|E] attempting to convert this [county|E] is being repressed by the authorities.\n#P +[EmptyScope.ScriptValue('demd_culture_repression_strength_modifier_pos')|0%]#! @icon_culture_defense!#  [demd_culture_conversion_defense|E]"
+
+county_increased_opinion_modifier:0 "Locals Pacified"
+county_increased_opinion_modifier_desc:0 "#P [EmptyScope.ScriptValue('demd_pacified_revolt_levies_mult')|0%] [levies|E] towards [faction_military_power|E]."
+
+
+plague_present:0 "Plague"
+plague_present_desc:0 "This [county|E] is undergoing an outbreak of [demd_plague|E]."
+
+plague_immunity:0 "Immune to Plague"
+plague_immunity_desc:0 "Owing to a recent outbreak of [demd_plague|E], this [county|E] is immune to further spread."
+
+successful_relief:0 "Plague Relief"
+successful_relief_desc:0 "A relief effort has mitigated the ravages of [demd_plague|E] in this [county|E]."
+
+no_relief:0 "Abandoned the People"
+no_relief_desc:0 "The failure of the ruler to provide aid has angered the people of this county."
+
+quarantine:0 "Under Quarantine"
+quarantine_desc:0 "Mandatory quarantine measures have been imposed on this [county|E] to avoid further spread of [demd_plague|E].\n\n@icon_trade_power!#  [demd_trade_power|E]: #N [EmptyScope.ScriptValue('quarantine_trade_power_reduction')|0%]#!\n#P [EmptyScope.ScriptValue('quarantine_spread_chance_reduction_display')|0%]#! Chance of Spreading [demd_plague|E] to neighboring [counties|E]"
+
+secluded_court: "Secluded Court"
+secluded_court_desc: "This character has secluded their court from a [demd_plague|E], lowering the risk of their [courtiers|E] catching it."
+
+razed:0 "Razed"
+razed_desc:0 "This [county|E] was razed by a hostile power, resulting in severe depopulation."
+
+sacked:0 "Sacked"
+sacked_desc:0 "This [county|E] was sacked by a hostile power, resulting in moderate depopulation."
+
+captured:0 "Captured"
+captured_desc:0 "This [county|E] was occupied by a hostile power, resulting in mild depopulation."
+
+raided:0 "Raided"
+raided_desc:0 "This [county|E] was raided by a hostile power, resulting in mild depopulation."
+
+razed_my_holding:0 "Razed my holding"
+sacked_my_holding:0 "Sacked my holding"
+raided_my_holding:0 "Raided my holding"
+
+demd_flood_mild:0 "Mild Flooding"
+demd_flood_mild_desc:0 "In this county water floods the land in some places, clogging sewage systems and drowning crops. Transport of supplies is made difficult."
+demd_flood_moderate:0 "Moderate Flooding"
+demd_flood_moderate_desc:0 "The flooding is widespread and water pools and rushes everywhere, dragging away some and killing others. Transport of supplies is really difficult."
+demd_flood_severe:0 "Severe Flooding"
+demd_flood_severe_desc:0 "Rivers of water ferociously tear apart anything in their way, making transport of supplies extremely difficult."
+
+demd_avalanche_mild:0 "Mild Avalanches"
+demd_avalanche_moderate:0 "Moderate Avalanches"
+demd_avalanche_severe:0 "Severe Avalanches"
+
+demd_drought:0 "Drought"
+demd_drought_desc:0 "The county is experiencing [demd_drought|E]. The soil is thirsty and the harvest suffers. While active local [demd_weather|E] worsens by [EmptyScope.ScriptValue('drought_yearly_weather_modifier')|1%] each year. There is a [EmptyScope.ScriptValue('drought_end_chance')|0]% chance the drought ends each year. A [demd_flood|E] will immediately end a [demd_drought|E]."
+
+let_city_burn:0 "Let City Burn"
+let_city_burn_desc:0 "The peasantry is angry at you for your transgressions."
+
+
+
+
+
+

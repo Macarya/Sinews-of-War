@@ -1,0 +1,174 @@
+﻿l_english:
+
+###################
+# 5%
+###################
+
+culture_parameter_demd_meta_food_mult_2:0 "#P +2%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_food_districts_mult_3:0 "#P +3%#! @icon_demd_food!# [demd_food_districts|E]"
+
+culture_parameter_demd_meta_public_order_mult_5:0 "#P +5%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_mult_5:0 "#P +5%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_mult_5:0 "#P +5%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_mult_5:0 "#P +5%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_mult_5:0 "#P +5%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_mult_5:0 "#P +5%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_mult_5:0 "#P +5%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_mult_5:0 "#P +5%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_research_mult_5:0 "#P +5%#! @icon_demd_research!# [demd_research|E]"
+culture_parameter_demd_meta_birth_rate_mult_5:0 "#P +5%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_mult_5:0 "#P +5%#! @icon_demd_food!# [demd_food_districts|E]"
+
+culture_parameter_demd_meta_public_order_multneg_5:0 "#N -5%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_multneg_5:0 "#N -5%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_multneg_5:0 "#N -5%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_multneg_5:0 "#N -5%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_multneg_5:0 "#N -5%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_multneg_5:0 "#N -5%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_multneg_5:0 "#N -5%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_multneg_5:0 "#N -5%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_research_multneg_5:0 "#N -5%#! @icon_demd_research!# [demd_research|E]"
+culture_parameter_demd_meta_birth_rate_multneg_5:0 "#N -5%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_multneg_5:0 "#N -5%#! @icon_demd_food!# [demd_food_districts|E]"
+
+###################
+# 10%
+###################
+culture_parameter_demd_meta_public_order_mult_10:0 "#P +10%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_mult_10:0 "#P +10%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_mult_10:0 "#P +10%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_mult_10:0 "#P +10%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_mult_10:0 "#P +10%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_mult_10:0 "#P +10%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_mult_10:0 "#P +10%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_mult_10:0 "#P +10%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_birth_rate_mult_10:0 "#P +10%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_mult_10:0 "#P +10%#! @icon_demd_food!# [demd_food_districts|E]"
+
+culture_parameter_demd_meta_public_order_multneg_10:0 "#N -10%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_multneg_10:0 "#N -10%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_multneg_10:0 "#N -10%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_multneg_10:0 "#N -10%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_multneg_10:0 "#N -10%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_multneg_10:0 "#N -10%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_multneg_10:0 "#N -10%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_multneg_10:0 "#N -10%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_birth_rate_multneg_10:0 "#N -10%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_multneg_10:0 "#N -10%#! @icon_demd_food!# [demd_food_districts|E]"
+
+###################
+# 15%
+###################
+culture_parameter_demd_meta_public_order_mult_15:0 "#P +15%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_mult_15:0 "#P +15%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_mult_15:0 "#P +15%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_mult_15:0 "#P +15%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_mult_15:0 "#P +15%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_mult_15:0 "#P +15%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_mult_15:0 "#P +15%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_mult_15:0 "#P +15%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_birth_rate_mult_15:0 "#P +15%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_mult_15:0 "#P +15%#! @icon_demd_food!# [demd_food_districts|E]"
+
+culture_parameter_demd_meta_public_order_multneg_15:0 "#N -15%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_multneg_15:0 "#N -15%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_multneg_15:0 "#N -15%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_multneg_15:0 "#N -15%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_multneg_15:0 "#N -15%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_multneg_15:0 "#N -15%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_multneg_15:0 "#N -15%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_multneg_15:0 "#N -15%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_birth_rate_multneg_15:0 "#N -15%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_multneg_15:0 "#N -15%#! @icon_demd_food!# [demd_food_districts|E]"
+
+###################
+# 20%
+###################
+culture_parameter_demd_meta_public_order_mult_20:0 "#P +20%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_mult_20:0 "#P +20%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_mult_20:0 "#P +20%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_mult_20:0 "#P +20%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_mult_20:0 "#P +20%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_mult_20:0 "#P +20%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_mult_20:0 "#P +20%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_mult_20:0 "#P +20%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_birth_rate_mult_20:0 "#P +20%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_mult_20:0 "#P +20%#! @icon_demd_food!# [demd_food_districts|E]"
+
+culture_parameter_demd_meta_public_order_multneg_20:0 "#N -20%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_multneg_20:0 "#N -20%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_multneg_20:0 "#N -20%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_multneg_20:0 "#N -20%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_multneg_20:0 "#N -20%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_multneg_20:0 "#N -20%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_multneg_20:0 "#N -20%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_multneg_20:0 "#N -20%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_birth_rate_multneg_20:0 "#N -20%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_multneg_20:0 "#N -20%#! @icon_demd_food!# [demd_food_districts|E]"
+
+###################
+# 25%
+###################
+culture_parameter_demd_meta_public_order_mult_25:0 "#P +25%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_mult_25:0 "#P +25%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_mult_25:0 "#P +25%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_mult_25:0 "#P +25%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_mult_25:0 "#P +25%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_mult_25:0 "#P +25%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_mult_25:0 "#P +25%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_mult_25:0 "#P +25%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_birth_rate_mult_25:0 "#P +25%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_mult_25:0 "#P +25%#! @icon_demd_food!# [demd_food_districts|E]"
+
+culture_parameter_demd_meta_public_order_multneg_25:0 "#N -25%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_sanitation_multneg_25:0 "#N -25%#! @icon_sanitation!# [demd_sanitation|E]"
+culture_parameter_demd_meta_food_multneg_25:0 "#N -25%#! @icon_demd_food!# [demd_food|E]"
+culture_parameter_demd_meta_goods_multneg_25:0 "#N -25%#! @icon_demd_goods!# [demd_goods|E]"
+culture_parameter_demd_meta_trade_value_multneg_25:0 "#N -25%#! @icon_trade_value!# [demd_trade_value|E]"
+culture_parameter_demd_meta_trade_power_multneg_25:0 "#N -25%#! @icon_trade_power!# [demd_trade_power|E]"
+culture_parameter_demd_meta_knight_capacity_multneg_25:0 "#N -25%#! @icon_knight!# [demd_knight_capacity|E]"
+culture_parameter_demd_meta_manpower_multneg_25:0 "#N -25%#! @icon_manpower!# [demd_manpower|E]"
+culture_parameter_demd_meta_birth_rate_multneg_25:0 "#N -25%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_food_districts_multneg_25:0 "#N -25%#! @icon_demd_food!# [demd_food_districts|E]"
+
+###################
+# Higher for specific needs
+###################
+culture_parameter_demd_meta_public_order_mult_3:0 "#P +3%#! @icon_demd_public_order!# [demd_public_order|E]"
+culture_parameter_demd_meta_birth_rate_mult_3:0 "#P +3%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_birth_rate_multneg_30:0 "#N -30%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_birth_rate_mult_30:0 "#P +30%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_birth_rate_multneg_60:0 "#N -30%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_birth_rate_mult_60:0 "#P +30%#! @icon_births!# [demd_births|E]"
+culture_parameter_demd_meta_manpower_mult_30:0 "#P +30%#! @icon_manpower!# [demd_manpower|E]"
+
+culture_parameter_demd_meta_fervor_multneg_1000:0 "#N -10%#! @icon_fervor!# [fervor|E] Baseline" # Fervor is denominated in raw numbers so +1000% is really 10%
+culture_parameter_demd_meta_fervor_mult_1000:0 "#P +10%#! @icon_fervor!# [fervor|E] Baseline"
+culture_parameter_demd_meta_fervor_multneg_500:0 "#N -5%#! @icon_fervor!# [fervor|E] Baseline" 
+culture_parameter_demd_meta_fervor_mult_500:0 "#P +5%#! @icon_fervor!# [fervor|E] Baseline"
+
+culture_parameter_demd_meta_vigor_multneg_1000:0 "#N -10%#! @icon_culture!# [vigor|E] Baseline" # vigor is denominated in raw numbers so +1000% is really 10%
+culture_parameter_demd_meta_vigor_mult_1000:0 "#P +10%#! @icon_culture!# [vigor|E] Baseline"
+culture_parameter_demd_meta_vigor_multneg_800:0 "#N -8%#! @icon_culture!# [vigor|E] Baseline" 
+culture_parameter_demd_meta_vigor_mult_800:0 "#P +8%#! @icon_culture!# [vigor|E] Baseline"
+culture_parameter_demd_meta_vigor_multneg_500:0 "#N -5%#! @icon_culture!# [vigor|E] Baseline" 
+culture_parameter_demd_meta_vigor_mult_500:0 "#P +5%#! @icon_culture!# [vigor|E] Baseline"
+culture_parameter_demd_meta_vigor_multneg_400:0 "#N -4%#! @icon_culture!# [vigor|E] Baseline" 
+culture_parameter_demd_meta_vigor_mult_400:0 "#P +4%#! @icon_culture!# [vigor|E] Baseline"
+culture_parameter_demd_meta_vigor_multneg_300:0 "#N -3%#! @icon_culture!# [vigor|E] Baseline" 
+culture_parameter_demd_meta_vigor_mult_300:0 "#P +3%#! @icon_culture!# [vigor|E] Baseline"
+culture_parameter_demd_meta_vigor_multneg_200:0 "#N -2%#! @icon_culture!# [vigor|E] Baseline" 
+culture_parameter_demd_meta_vigor_mult_200:0 "#P +2%#! @icon_culture!# [vigor|E] Baseline"
+
+doctrine_parameter_demd_meta_vigor_multneg_1000:0 "#N -10%#! @icon_culture!# [vigor|E] Baseline" # vigor is denominated in raw numbers so +1000% is really 10%
+doctrine_parameter_demd_meta_vigor_mult_1000:0 "#P +10%#! @icon_culture!# [vigor|E] Baseline"
+doctrine_parameter_demd_meta_vigor_multneg_800:0 "#N -8%#! @icon_culture!# [vigor|E] Baseline" 
+doctrine_parameter_demd_meta_vigor_mult_800:0 "#P +8%#! @icon_culture!# [vigor|E] Baseline"
+doctrine_parameter_demd_meta_vigor_multneg_500:0 "#N -5%#! @icon_culture!# [vigor|E] Baseline" 
+doctrine_parameter_demd_meta_vigor_mult_500:0 "#P +5%#! @icon_culture!# [vigor|E] Baseline"
+doctrine_parameter_demd_meta_vigor_multneg_400:0 "#N -4%#! @icon_culture!# [vigor|E] Baseline" 
+doctrine_parameter_demd_meta_vigor_mult_400:0 "#P +4%#! @icon_culture!# [vigor|E] Baseline"
+doctrine_parameter_demd_meta_vigor_multneg_300:0 "#N -3%#! @icon_culture!# [vigor|E] Baseline" 
+doctrine_parameter_demd_meta_vigor_mult_300:0 "#P +3%#! @icon_culture!# [vigor|E] Baseline"
+doctrine_parameter_demd_meta_vigor_multneg_200:0 "#N -2%#! @icon_culture!# [vigor|E] Baseline" 
+doctrine_parameter_demd_meta_vigor_mult_200:0 "#P +2%#! @icon_culture!# [vigor|E] Baseline"

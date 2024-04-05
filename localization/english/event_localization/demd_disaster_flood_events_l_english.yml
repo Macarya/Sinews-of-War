@@ -1,0 +1,6 @@
+﻿l_english:
+
+demd_pop_flood.1002.t:0 "A rainy day in [county.GetNameNoTierNoTooltip]..."
+demd_pop_flood.1002.desc:0 "I shift in my seat. It has been raining the entire morning and evening.\n\nOf course, this wouldn't usually be a matter for concern, but the last few days have been anything but dissimilar. If this keeps up, it might be reason to worry.\n\n I glance at my interior courtyard, now inundated. A few servant girls are hurriedly carrying away bucketloads of water."
+demd_pop_flood.1002.a:0 "Unfortunate"
+demd_pop_flood.1002.b:0 "I think I will go for a swim." # lunatic trait option

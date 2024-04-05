@@ -1,0 +1,155 @@
+#######
+# Tax #
+#######
+
+# Base
+@poor_tax_base = 0.15 # 0.25
+@normal_tax_base = 0.25 # 0.35
+@good_tax_base = 0.35 # 0.5
+@excellent_tax_base = 0.45 # 0.7
+
+@copper_mine_tax_base = 1 # 2
+@silver_mine_tax_base = 2 # 3
+@special_mine_tax_base = 4 # 5
+
+# We have four 'tax classes', each one has a better scale than the others.
+@poor_tax_scale_addition_per_tier = 0.1 # 0.15
+@normal_tax_scale_addition_per_tier = 0.15 # 0.2
+@good_tax_scale_addition_per_tier = 0.25 # 0.3
+@excellent_tax_scale_addition_per_tier = 0.35 # 0.45
+
+@copper_mine_tax_scale_addition_per_tier = 1 # 1.5
+@silver_mine_tax_scale_addition_per_tier = 1.5 # 2
+@special_mine_tax_scale_addition_per_tier = 2 # 3
+
+########
+# Levy #
+########
+
+# Base
+@poor_levy_base = 25 # 50
+@small_levy_base = 35 # 75
+@normal_levy_base = 50 # 100
+@good_levy_base = 60 # 125
+@excellent_levy_base = 75 # 150
+
+# Scaling Increase
+@poor_levy_scale_addition_per_tier = 15 # 25
+@small_levy_scale_addition_per_tier = 25 # 50
+@normal_levy_scale_addition_per_tier = 35 # 75
+@good_levy_scale_addition_per_tier = 50 # 100
+@excellent_levy_scale_addition_per_tier = 60 # 125
+
+
+############
+# Garrison #
+############
+
+# Base
+@normal_max_garrison_base = 75 # 150
+@good_max_garrison_base = 125 # 250
+
+# Scaling Increase
+@normal_max_garrison_scale_addition_per_tier = 75 # 150
+@good_max_garrison_scale_addition_per_tier = 125 # 250
+
+#############################
+# Construction Speed Values #
+#############################
+
+
+# Chance of filling one more building slot. Used when starting from a bookmark
+# root = province
+# scope:county = county
+# scope:holder = holder
+fill_building_slot_chance = {
+	value = 140
+	if = {
+		limit = {
+			current_date < 1066.1.1
+		}
+		subtract = 70
+	}
+	if = {
+		limit = {
+			has_building_or_higher = tribe_01
+		}
+		subtract = 15
+	}
+	if = {
+		limit = {
+			has_special_building = yes
+			NOR = {
+				has_building_or_higher = hadrians_wall_01
+				has_building_or_higher = offas_dyke_01
+				has_building_or_higher = stonehenge_01
+				has_building_or_higher = the_pyramids_01
+				has_building_or_higher = the_colosseum_01
+				has_building_or_higher = alhambra_01
+			}
+			num_buildings <= 1
+		}
+		add = 35
+	}
+	add = {
+		value = county.development_level
+		multiply = 1.5
+		max = 35
+	}
+	multiply = {
+		value = county.development_rate_modifier
+		max = 1.5
+		min = 0.85
+	}
+	if = {
+		limit = {
+			num_buildings >= 3
+		}
+		subtract = {
+			value = 50
+			multiply = num_buildings # Note that the holding itself is a building
+		}
+	}
+	if = {
+		limit = {
+			num_buildings >= 3
+		}
+		subtract = 1000
+	}
+}
+
+# Chance of upgrading one more building. Used when starting from a bookmark. Done after filling out building slots
+upgrade_building_chance = {
+	value = 65
+	if = { # Very few upgraded buildings in 867
+		limit = {
+			current_date < 1066.1.1
+		}
+		subtract = 70
+	}
+	if = {
+		limit = {
+			has_building_or_higher = tribe_01
+		}
+		subtract = 15
+	}
+	add = {
+		value = county.development_level
+		multiply = 1.5
+		max = 35
+	}
+	multiply = {
+		value = county.development_rate_modifier
+		max = 1.5
+		min = 0.85
+	}
+	if = {
+		limit = {
+			combined_building_level >= 3
+		}
+		subtract = {
+			value = 50
+			multiply = combined_building_level
+		}
+	}
+}

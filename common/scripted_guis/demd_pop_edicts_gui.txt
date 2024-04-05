@@ -1,0 +1,384 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+#############################################
+# tax_rate
+#############################################
+
+demd_set_tax_4 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		var:tax_setting = 3
+		NOT = { has_variable = tax_setting_changed } 
+	} 
+	effect = { demd_set_edict_setting = { TYPE = tax LEVEL = 4 } }
+}
+
+demd_set_tax_3 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		OR = { 
+			var:tax_setting = 2
+			var:tax_setting = 4
+		}
+		NOT = { has_variable = tax_setting_changed } 
+	} 
+	effect = { demd_set_edict_setting = { TYPE = tax LEVEL = 3 } }
+}
+
+demd_set_tax_2 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		OR = { 
+			var:tax_setting = 3
+			var:tax_setting = 1
+		}
+		NOT = { has_variable = tax_setting_changed } 
+	} 
+	effect = { demd_set_edict_setting = { TYPE = tax LEVEL = 2 } }
+}
+
+demd_set_tax_1 = {
+	scope = province
+	is_shown = { always = yes }
+	is_valid = { 
+		OR = { 
+			var:tax_setting = 2
+			var:tax_setting = 0
+		}
+		NOT = { has_variable = tax_setting_changed } 
+	} 
+	effect = { demd_set_edict_setting = { TYPE = tax LEVEL = 1 } }
+}
+
+demd_set_tax_0 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = tax_setting_changed } 
+		var:tax_setting = 1
+	} 
+	effect = { demd_set_edict_setting = { TYPE = tax LEVEL = 0 } }
+}
+
+#############################################
+# manpower
+#############################################
+
+demd_set_manpower_4 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = manpower_setting_changed } 
+		var:manpower_setting = 3
+	} 
+	effect = { demd_set_edict_setting = { TYPE = manpower LEVEL = 4 } }
+}
+
+demd_set_manpower_3 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = manpower_setting_changed } 
+		OR = { 
+			var:manpower_setting = 2
+			var:manpower_setting = 4
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = manpower LEVEL = 3 } }
+}
+
+demd_set_manpower_2 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = manpower_setting_changed } 
+		OR = { 
+			var:manpower_setting = 1
+			var:manpower_setting = 3
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = manpower LEVEL = 2 } }
+}
+
+demd_set_manpower_1 = {
+	scope = province
+	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = manpower_setting_changed } 
+		OR = { 
+			var:manpower_setting = 0
+			var:manpower_setting = 2
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = manpower LEVEL = 1 } }
+}
+
+demd_set_manpower_0 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = manpower_setting_changed } 
+		var:manpower_setting = 1
+	} 
+	effect = { demd_set_edict_setting = { TYPE = manpower LEVEL = 0 } }
+}
+
+#############################################
+# Public Order
+#############################################
+
+demd_set_public_order_4 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = public_order_setting_changed } 
+		var:public_order_setting = 3
+	} 
+	effect = { demd_set_edict_setting = { TYPE = public_order LEVEL = 4 } }
+}
+
+demd_set_public_order_3 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = public_order_setting_changed } 
+		OR = { 
+			var:public_order_setting = 2
+			var:public_order_setting = 4
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = public_order LEVEL = 3 } }
+}
+
+demd_set_public_order_2 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = public_order_setting_changed } 
+		OR = { 
+			var:public_order_setting = 1
+			var:public_order_setting = 3
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = public_order LEVEL = 2 } }
+}
+
+demd_set_public_order_1 = {
+	scope = province
+	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = public_order_setting_changed } 
+		OR = { 
+			var:public_order_setting = 0
+			var:public_order_setting = 2
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = public_order LEVEL = 1 } }
+}
+
+demd_set_public_order_0 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = public_order_setting_changed } 
+		var:public_order_setting = 1
+	} 
+	effect = { demd_set_edict_setting = { TYPE = public_order LEVEL = 0 } }
+}
+
+#############################################
+# Sanitation
+#############################################
+
+demd_set_sanitation_4 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = sanitation_setting_changed } 
+		var:sanitation_setting = 3
+	} 
+	effect = { demd_set_edict_setting = { TYPE = sanitation LEVEL = 4 } }
+}
+
+demd_set_sanitation_3 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = sanitation_setting_changed } 
+		OR = { 
+			var:sanitation_setting = 2
+			var:sanitation_setting = 4
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = sanitation LEVEL = 3 } }
+}
+
+demd_set_sanitation_2 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = sanitation_setting_changed } 
+		OR = { 
+			var:sanitation_setting = 1
+			var:sanitation_setting = 3
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = sanitation LEVEL = 2 } }
+}
+
+demd_set_sanitation_1 = {
+	scope = province
+	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = sanitation_setting_changed } 
+		OR = { 
+			var:sanitation_setting = 0
+			var:sanitation_setting = 2
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = sanitation LEVEL = 1 } }
+}
+
+demd_set_sanitation_0 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = sanitation_setting_changed } 
+		var:sanitation_setting = 1
+	} 
+	effect = { demd_set_edict_setting = { TYPE = sanitation LEVEL = 0 } }
+}
+
+#############################################
+# Irrigation
+#############################################
+
+demd_set_irrigation_4 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = irrigation_setting_changed } 
+		var:irrigation_setting = 3
+	} 
+	effect = { demd_set_edict_setting = { TYPE = irrigation LEVEL = 4 } }
+}
+
+demd_set_irrigation_3 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = irrigation_setting_changed } 
+		OR = { 
+			var:irrigation_setting = 2
+			var:irrigation_setting = 4
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = irrigation LEVEL = 3 } }
+}
+
+demd_set_irrigation_2 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = irrigation_setting_changed } 
+		OR = { 
+			var:irrigation_setting = 1
+			var:irrigation_setting = 3
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = irrigation LEVEL = 2 } }
+}
+
+demd_set_irrigation_1 = {
+	scope = province
+	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = irrigation_setting_changed } 
+		OR = { 
+			var:irrigation_setting = 0
+			var:irrigation_setting = 2
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = irrigation LEVEL = 1 } }
+}
+
+demd_set_irrigation_0 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = irrigation_setting_changed } 
+		var:irrigation_setting = 1
+	} 
+	effect = { demd_set_edict_setting = { TYPE = irrigation LEVEL = 0 } }
+}
+
+#############################################
+# Infrastructure
+#############################################
+
+demd_set_infrastructure_4 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = infrastructure_setting_changed } 
+		var:infrastructure_setting = 3
+	} 
+	effect = { demd_set_edict_setting = { TYPE = infrastructure LEVEL = 4 } }
+}
+
+demd_set_infrastructure_3 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = infrastructure_setting_changed } 
+		OR = { 
+			var:infrastructure_setting = 2
+			var:infrastructure_setting = 4
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = infrastructure LEVEL = 3 } }
+}
+
+demd_set_infrastructure_2 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = infrastructure_setting_changed } 
+		OR = { 
+			var:infrastructure_setting = 1
+			var:infrastructure_setting = 3
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = infrastructure LEVEL = 2 } }
+}
+
+demd_set_infrastructure_1 = {
+	scope = province
+	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = infrastructure_setting_changed } 
+		OR = { 
+			var:infrastructure_setting = 0
+			var:infrastructure_setting = 2
+		}
+	} 
+	effect = { demd_set_edict_setting = { TYPE = infrastructure LEVEL = 1 } }
+}
+
+demd_set_infrastructure_0 = {
+	scope = province
+ 	is_shown = { always = yes }
+	is_valid = { 
+		NOT = { has_variable = infrastructure_setting_changed } 
+		var:infrastructure_setting = 1
+	} 
+	effect = { demd_set_edict_setting = { TYPE = infrastructure LEVEL = 0 } }
+}
+

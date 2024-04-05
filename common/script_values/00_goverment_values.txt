@@ -1,0 +1,680 @@
+﻿###################
+# GOVERNMENT VALUES  #
+###################
+
+clan_government_levies_default = 0.04
+clan_government_levies_player = 0.25
+
+clan_government_tax_default = 0.02
+clan_government_tax_player = 0.25
+
+clan_government_tax_collector_aptitude_multiplier = {
+	value =	{
+		if = {
+			limit = {
+				check_tax_collector_aptitude = {
+					CHARACTER = scope:tax_collector
+					VALUE = 5
+				}
+			}
+			add = 12
+		}
+		else_if = {
+			limit = {
+				check_tax_collector_aptitude = {
+					CHARACTER = scope:tax_collector
+					VALUE = 4
+				}
+			}
+			add = 10
+		}
+		else_if = {
+			limit = {
+				check_tax_collector_aptitude = {
+					CHARACTER = scope:tax_collector
+					VALUE = 3
+				}
+			}
+			add = 8
+		}
+		else_if = {
+			limit = {
+				check_tax_collector_aptitude = {
+					CHARACTER = scope:tax_collector
+					VALUE = 2
+				}
+			}
+			add = 4
+		}
+		else_if = {
+			limit = {
+				check_tax_collector_aptitude = {
+					CHARACTER = scope:tax_collector
+					VALUE = 1
+				}
+			}
+			add = 2
+		}
+		else = {
+			add = 0
+		}
+	}
+}
+
+clan_government_levies_max_possible = {
+	value = clan_government_levies_default
+}
+
+clan_government_tax_max_possible = {
+	value = clan_government_tax_default
+}
+
+default_tax_obligation_ai_will_do = {
+	value = 1
+	if = {
+		limit = {
+			scope:is_current_obligation = yes
+		}
+		add = 1
+	}
+}
+
+tax_obligation_base_ai_will_do = {
+	value = default_tax_obligation_ai_will_do
+	subtract = scope:num_slots_with_obligation # Give the AI some variety
+}
+
+tax_obligation_half_of_slot = {
+	value = scope:num_vassal_slots
+	divide = 2
+}
+
+#Feudal government values
+exempt_feudal_tax_contract = 0
+exempt_feudal_tax = 0
+
+normal_tax = 0.15
+normal_tax_rate = 0.15
+normal_manpower_rate = 0.15
+
+low_feudal_tax_contract = {
+	value = 0.05
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+low_feudal_tax = {
+	value = 0.05
+}
+
+normal_feudal_tax_contract = {
+	value = 0.1
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+normal_feudal_tax = {
+	value = 0.1
+}
+high_feudal_tax_contract = {
+	value = 0.15
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+high_feudal_tax = {
+	value = 0.15
+}
+extortionate_feudal_tax_contract = {
+	value = 0.25
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+extortionate_feudal_tax = {
+	value = 0.25
+}
+
+# DEMD
+low_feudal_manpower_rate_contract = {
+	value = 0.1
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+low_feudal_manpower_rate = {
+	value = 0.1
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+normal_feudal_manpower_rate_contract = {
+	value = 0.25
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+normal_feudal_manpower_rate = {
+	value = 0.25
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+high_feudal_manpower_rate_contract = {
+	value = 0.35
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+high_feudal_manpower_rate = {
+	value = 0.35
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+extortionate_feudal_manpower_rate_contract = {
+	value = 0.5
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+extortionate_feudal_manpower_rate = {
+	value = 0.5
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+exempt_feudal_manpower_rate = 0
+exempt_feudal_manpower_rate_contract = 0
+
+feudal_tax_exempt_level = 0
+feudal_tax_low_level = 1
+feudal_tax_normal_level = 2
+feudal_tax_high_level = 3
+feudal_tax_extortionate_level = 4
+
+feudal_levies_exempt_level = 0
+feudal_levies_low_level = 1
+feudal_levies_normal_level = 2
+feudal_levies_high_level = 3
+feudal_levies_extortionate_level = 4
+
+scutage_contract_tax = 0.5
+scutage_contract_tax_tooltip = {
+	value = scutage_contract_tax
+	multiply = 100
+}
+scutage_contract_levies = -0.75
+scutage_contract_levies_tooltip = {
+	value = scutage_contract_levies
+	multiply = 100
+	multiply = -1
+}
+march_contract_taxes = -0.5
+march_contract_taxes_tooltip = {
+	value = march_contract_taxes
+	multiply = 100
+	multiply = -1
+}
+palatinate_contract_taxes = -0.2
+palatinate_contract_levies = -0.2
+palatinate_contract_taxes_tooltip = {
+	value = palatinate_contract_taxes
+	multiply = 100
+	multiply = -1
+}
+fortification_rights_contract_taxes = -0.10
+fortification_rights_contract_taxes_tooltip = {
+	value = fortification_rights_contract_taxes
+	multiply = 100
+	multiply = -1
+}
+succession_rights_contract_law_cost = 0.25
+succession_rights_contract_law_cost_tooltip = {
+	value = succession_rights_contract_law_cost
+	multiply = 100
+}
+war_declaration_rights_allowed_cost_reduction = 0.5
+war_declaration_rights_allowed_cost_reduction_tooltip = {
+	value = war_declaration_rights_allowed_cost_reduction
+	multiply = 100
+}
+max_contract_changes = 3
+
+family_entrepreneurship_tax = 1
+family_entrepreneurship_tax_tooltip = {
+	value = family_entrepreneurship_tax
+	multiply = 100
+}
+centralized_power_levies = 0.5
+centralized_power_levies_tooltip = {
+	value = centralized_power_levies
+	multiply = 100
+}
+centralized_power_tax = -1
+
+
+ghazi_religious_war_cost_reduction = 0.5
+ghazi_religious_war_cost_reduction_tooltip = {
+	value = ghazi_religious_war_cost_reduction
+	multiply = 100
+}
+
+ghazi_prestige_cost_increments = 0.25
+ghazi_prestige_cost_increments_tooltip = {
+	value = ghazi_prestige_cost_increments
+	multiply = 100
+}
+
+### Below is DEMD
+
+#########################
+# Tribal - Update common/vassal_contracts in concert!
+#########################
+
+tribal_manpower_rate = {
+	value = 0	
+	liege = {
+		add = {
+			value = 0.15
+			multiply = prestige_level
+		}
+	}
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+	#max = 1
+}
+
+tribal_manpower_rate_contract = {
+	value = 0	
+	scope:liege = {
+		add = {
+			value = 0.15
+			multiply = prestige_level
+		}
+	}
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+	#max = 1
+}
+
+tribal_tax_rate = {
+	value = 0	
+	liege = {
+		add = {
+			value = 0.08
+			multiply = prestige_level
+		}
+	}
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+	#max = 0.5
+}
+
+tribal_tax_rate_contract = {
+	value = 0	
+	scope:liege = {
+		add = {
+			value = 0.08
+			multiply = prestige_level
+		}
+	}
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+	#max = 0.5
+}
+
+#########################
+# Republic - Update common/vassal_contracts in concert!
+#########################
+
+republic_manpower_rate = {
+	if = {
+		limit = {
+			primary_title.tier >= tier_county
+			liege.culture = {
+				has_cultural_parameter = republican_vassals_pay_more
+			}
+		}
+		value = 0.15
+	}
+	else = {
+		value = 0.1
+	}
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+republic_manpower_rate_contract = {
+	if = {
+		limit = {
+			primary_title.tier >= tier_county
+			scope:liege.culture = {
+				has_cultural_parameter = republican_vassals_pay_more
+			}
+		}
+		value = 0.15
+	}
+	else = {
+		value = 0.1
+	}
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+
+republic_tax_rate = {
+	if = {
+		limit = { liege = { government_has_flag = government_is_tribal } }
+		value = 0.05
+	}
+	else_if = {
+		limit = {
+			primary_title.tier >= tier_county
+			liege.culture = {
+				has_cultural_parameter = republican_vassals_pay_more
+			}
+		}
+		value = 0.3
+	}
+	else = {
+		value = 0.2
+	}
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+republic_tax_rate_contract = {
+	if = {
+		limit = { scope:liege = { government_has_flag = government_is_tribal } }
+		value = 0.05
+	}
+	else_if = {
+		limit = {
+			scope:vassal = {
+				primary_title.tier >= tier_county
+			}
+			scope:liege.culture = {
+				has_cultural_parameter = republican_vassals_pay_more
+			}
+		}
+		value = 0.3
+	}
+	else = {
+		value = 0.2
+	}
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+
+#########################
+# Theocratic - Update common/vassal_contracts in concert!
+#########################
+
+theocratic_manpower_rate = {
+	if = {
+		limit = { NOT = { liege.faith = faith } }
+		value = 0.05
+	}
+	else = {
+		value = 0.05
+		multiply = liege.piety_level
+	}
+	if = {
+		limit = { 
+			culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
+			primary_title.tier >= tier_county
+		}
+		add = 0.1
+	}
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+theocratic_manpower_rate_contract = {
+	if = {
+		limit = { NOT = { scope:liege.faith = scope:vassal.faith } }
+		value = 0.05
+	}
+	else = {
+		value = 0.05
+		multiply = scope:liege.piety_level
+	}
+	if = {
+		limit = { 
+			scope:vassal = { 
+				culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
+				primary_title.tier >= tier_county
+			}
+		}
+		add = 0.1
+	}
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+
+theocratic_tax_rate = {
+	if = {
+		limit = { NOT = { liege.faith = faith } }
+		value = 0.05
+	}
+	else = {
+		value = 0.05
+		multiply = liege.piety_level
+	}
+	if = {
+		limit = { 
+			culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
+			primary_title.tier >= tier_county
+		}
+		add = 0.1
+	}
+	liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+theocratic_tax_rate_contract = {
+	if = {
+		limit = { NOT = { scope:liege.faith = scope:vassal.faith } }
+		value = 0.05
+	}
+	else = {
+		value = 0.05
+		multiply = scope:liege.piety_level
+	}
+	if = {
+		limit = { 
+			scope:vassal = { 
+				culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
+				primary_title.tier >= tier_county
+			}
+		}
+		add = 0.1
+	}
+	scope:liege.primary_title = {
+		if = {
+			limit = { has_variable = imperial_decay }
+			multiply = demd_imperial_decay_tax_rate_mult
+		}
+	}
+}
+
+#########################
+# Clan - Update common/vassal_contracts in concert!
+#########################
+
+clan_manpower_rate = {
+	value = 0.2
+	if = {
+		limit = { exists = scope:tax_collector }
+		add = clan_government_levies_default
+		multiply = clan_government_tax_collector_aptitude_multiplier
+	}
+}
+
+clan_tax_rate = {
+	value = 0.1
+	if = {
+		limit = { exists = scope:tax_collector }
+		add = clan_government_tax_default
+		multiply = clan_government_tax_collector_aptitude_multiplier
+	}
+}
+
+#########################
+# Feudal
+#########################
+
+demd_feudal_tax_rate = {
+	# Base Obligations
+	if = {
+		limit = { vassal_contract_has_flag = exempt_feudal_food } 
+		value = exempt_feudal_tax
+	}
+	else_if = {
+		limit = { vassal_contract_has_flag = low_feudal_food } 
+		value = low_feudal_tax
+	}
+	else_if = {
+		limit = { vassal_contract_has_flag = high_feudal_food } 
+		value = high_feudal_tax
+	}
+	else_if = {
+		limit = { vassal_contract_has_flag = extortionate_feudal_food } 
+		value = extortionate_feudal_tax
+	}
+	else = {
+		value = normal_feudal_tax
+	}
+	multiply = {
+		value = 1
+		# Special Contract
+		if = {
+			limit = { vassal_contract_has_flag = has_scutage_contract }  
+			add = scutage_contract_tax
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = has_march_contract }  
+			add = march_contract_taxes
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = has_palatinate_contract }  
+			add = palatinate_contract_taxes
+		}
+		if = {
+			limit = { vassal_contract_has_flag = fortification_rights_granted } 
+			add = fortification_rights_contract_taxes
+		}
+	}
+}
+
+demd_feudal_manpower_rate = {
+	if = {
+		limit = { vassal_contract_has_flag = exempt_feudal_levies } 
+		value = exempt_feudal_manpower_rate
+	}
+	else_if = {
+		limit = { vassal_contract_has_flag = low_feudal_levies } 
+		value = low_feudal_manpower_rate
+	}
+	else_if = {
+		limit = { vassal_contract_has_flag = high_feudal_levies } 
+		value = high_feudal_manpower_rate
+	}
+	else_if = {
+		limit = { vassal_contract_has_flag = extortionate_feudal_levies } 
+		value = extortionate_feudal_manpower_rate
+	}
+	else = {
+		value = normal_feudal_manpower_rate
+	}
+	multiply = {
+		value = 1
+		if = {
+			limit = { vassal_contract_has_flag = has_scutage_contract }  
+			add = scutage_contract_levies
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = has_palatinate_contract }  
+			add = palatinate_contract_levies
+		}
+	}
+}
+
+
+

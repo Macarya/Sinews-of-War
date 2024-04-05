@@ -1,0 +1,412 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+vigor_delta = {
+	value = vigor_target
+	subtract = var:vigor
+	multiply = 0.1
+}
+
+vigor_target_base = 50
+
+vigor_min = 0
+vigor_max = 100
+
+low_vigor = 20
+medium_vigor = 40
+high_vigor = 60
+very_high_vigor = 80
+
+vigor_target = {
+	value = vigor_target_base
+	add = { # positive
+		value = vigor_from_dominant_faith_fervor
+		desc = "[Scope.Var('dominant_faith').Faith.GetName] [fervor|E]"
+	}
+	add = { # either
+		value = var:vigor_cultural_production_mult
+		desc = "Pillars and Traditions"
+	}
+	add = {
+		value = vigor_from_doctrines
+		desc = "[Scope.Var('dominant_faith').Faith.GetName] [core_tenets|E] and [doctrines|E]"
+	}
+	add = { # either
+		value = vigor_from_culture_head_virtues_sins
+		desc = "[culture_head|E] [Scope.Var('dominant_faith').Faith.GetAdjective] [virtues|E] and [sins|E]"
+	}
+	add = { # either
+		value = vigor_from_culture_head_piety_level
+		desc = "[culture_head|E] [piety_level|E]"
+	}
+	add = { # either
+		value = vigor_from_culture_head_tyranny
+		desc = "[culture_head|E] [tyranny|E]"
+	}
+	add = { # either
+		value = vigor_from_culture_head_prestige_level
+		desc = "[culture_head|E] [prestige_level|E]"
+	}
+	add = { # either
+		value = vigor_from_culture_head_court_grandeur
+		desc = "[culture_head|E] [court_grandeur_level|E]"
+	}
+	add = { # negative
+		value = vigor_from_different_culture_head_faith
+		desc = "[culture_head|E] is not [Scope.Var('dominant_faith').Faith.GetAdherentName]"
+	}
+	add = { # negative
+		value = vigor_from_religious_disunity
+		desc = "Non-[Scope.Var('dominant_faith').Faith.GetAdherentName] [Scope.Culture.GetName] population"
+	}
+	add = { # negative
+		value = vigor_from_political_disunity
+		desc = "[Scope.Culture.GetName] Population outside the [top_realm|E] of the [culture_head|E]"
+	}
+	add = { # negative
+		value = vigor_from_urbanization
+		desc = "[demd_urbanization|E]"
+	}
+	add = { # negative
+		value = vigor_from_culture_expanse
+		desc = "From [Scope.ScriptValue('culture_number_of_counties')|0] [counties|E]"
+	}
+	min = vigor_min
+	max = vigor_max
+}
+
+###
+
+culture_number_of_counties_display = { value = culture_number_of_counties }
+
+vigor_from_culture_expanse = {
+	value = culture_number_of_counties
+	subtract = 20
+	multiply = -0.1
+	max = 0
+}
+
+###
+
+vigor_from_culture_head_court_grandeur = {
+	if = {
+		limit = {
+			exists = culture_head
+			culture_head = { has_royal_court = yes }
+		}
+		culture_head = { add = court_grandeur_current_level }
+		divide = 2
+	}
+}
+
+vigor_from_culture_head_tyranny = {
+	if = {
+		limit = { exists = culture_head }
+		value = culture_head.tyranny
+		multiply = -0.1
+	}
+}
+
+vigor_from_culture_head_prestige_level = {
+	if = {
+		limit = { exists = culture_head }
+		value = culture_head.prestige_level
+	}
+}
+
+vigor_from_culture_head_piety_level = {
+	if = {
+		limit = { 
+			exists = culture_head
+			var:dominant_faith = culture_head.faith 
+		}
+		value = culture_head.piety_level
+	}
+}
+
+###
+
+vigor_from_dominant_faith_fervor = { # scales from 25 to 75
+	value = var:dominant_faith.fervor
+	subtract = 50
+	multiply = 0.5
+}
+
+###
+
+vigor_from_culture_head_virtues_sins = {
+	if = {
+		limit = { exists = culture_head }
+		culture_head = {
+			add = num_virtuous_traits
+			subtract = num_sinful_traits
+		}
+		multiply = vigor_per_culture_head_virtue_sin
+	}
+}
+vigor_per_culture_head_virtue_sin = 3
+
+###
+
+vigor_from_different_culture_head_faith = {
+	if = {
+		limit = { 
+			exists = culture_head
+			NOT = { var:dominant_faith = culture_head.faith } 
+		}
+		value = different_culture_head_faith_vigor_penalty
+		var:dominant_faith = {
+			if = {
+				limit = { faith_hostility_level = { target = prev.culture_head.faith value = 3 } }
+				multiply = 3
+			}
+			else_if = {
+				limit = { faith_hostility_level = { target = prev.culture_head.faith value = 2 } }
+				multiply = 2
+			}
+			else_if = {
+				limit = { faith_hostility_level = { target = prev.culture_head.faith value = 0 } }
+				multiply = 0
+			}
+		}
+	}
+}
+different_culture_head_faith_vigor_penalty = -5
+
+###
+
+vigor_from_urbanization = {
+	value = culture_urbanization
+	multiply = -10
+}
+
+culture_urbanization = {
+	if = {
+		limit = { culture_number_of_counties > 0 }
+		value = 0
+		every_culture_county = {
+			add = var:population
+		}
+		divide = var:culture_population
+	}
+}
+
+vigor_from_political_disunity = {
+	value = political_unity_percentage
+	subtract = 1
+	multiply = { # attenuate the effect strength for small cultures
+		value = 0.25
+		add = {
+			value = culture_number_of_counties
+			divide = 120
+		}
+		max = 1
+	}
+	multiply = 20
+}
+political_disunity_percentage = {
+	value = 1
+	subtract = political_unity_percentage
+}
+political_unity_percentage = {
+	if = {
+		limit = { culture_number_of_counties > 0 }
+		every_culture_county = {
+			limit = { holder.top_liege = culture.culture_head.top_liege }
+			add = var:county_population
+		}
+		divide = var:culture_population
+	}
+	else = { value = 1 }
+}
+
+vigor_from_religious_disunity = {
+	if = {
+		limit = { culture_number_of_counties > 0 }
+		value = religious_unity_percentage
+		subtract = 1
+		multiply = 20
+		var:dominant_faith = {
+			if = {
+				limit = { has_doctrine_parameter = reduced_vigor_loss_from_religious_disunity }
+				multiply = {
+					value = 1
+					add = pluralist_religious_unity_vigor_loss
+				}
+			}
+			else_if = {
+				limit = { has_doctrine_parameter = increased_vigor_loss_from_religious_disunity }
+				multiply = {
+					value = 1
+					add = fundamentalist_religious_unity_vigor_loss
+				}
+			}
+		}
+	}
+	else = { value = 0 }
+}
+religious_disunity_percentage = {
+	value = 1
+	subtract = religious_unity_percentage
+}
+religious_unity_percentage = {
+	if = {
+		limit = { culture_number_of_counties > 0 }
+		every_culture_county = {
+			limit = { faith = prev.var:dominant_faith }
+			add = var:county_population
+		}
+		divide = var:culture_population
+	}
+	else = { value = 1 }
+}
+fundamentalist_religious_unity_vigor_loss = 0.25
+pluralist_religious_unity_vigor_loss = -0.25
+
+culture_advancement = {
+	value = 1
+	if = { limit = { has_cultural_era_or_later = culture_era_late_medieval } add = 0.75 }
+	else_if = { limit = { has_cultural_era_or_later = culture_era_high_medieval } add = 0.5 }
+	else_if = { limit = { has_cultural_era_or_later = culture_era_early_medieval } add = 0.25 }	
+}
+
+vigor_divergence_percent_chance_change = {
+	value = var:vigor
+	subtract = 50
+	multiply = -0.02
+}
+
+hybridize_cost_from_vigor_of_instigating_culture = {
+	value = var:vigor
+	subtract = 50
+	multiply = -0.02
+}
+
+hybridize_cost_from_vigor_of_target_culture = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.02
+}
+
+divergence_cost_from_vigor_mult = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.02
+}
+
+reform_cost_from_vigor_mult = {
+	value = var:vigor
+	subtract = 50
+	multiply = -0.01
+}
+
+conversion_defense_attack_dummy_from_vigor = {
+	value = var:vigor
+	subtract = 50
+	divide = 50
+}
+
+demd_vigor_chance_of_no_divergence_event = {
+	if = {
+		limit = { 
+			OR = { 
+				culture_number_of_counties < 15
+				var:vigor > 50 
+			}
+		}
+		value = 100
+	}
+	else = {
+		value = var:vigor
+		multiply = 2
+	}
+}
+
+demd_vigor_chance_of_divergence_if_criteria_met = {
+	value = 100
+	subtract = var:vigor
+	divide = 2
+}
+
+demd_vigor_CB_cost_modifier_display = {
+	if = {
+		limit = { has_variable = vigor }		
+		value = var:vigor
+		subtract = 50
+		multiply = -0.01
+	}
+}
+
+demd_vigor_CB_cost_modifier = {
+	value = 1
+	add = demd_vigor_CB_cost_modifier_display
+}
+
+demd_vigor_local_artisan_artifact_quality_max = {
+	if = { limit = { has_variable = vigor }
+		value = var:vigor
+		subtract = 50
+		multiply = 0.2
+	}
+}
+
+demd_vigor_artisan_quality_bonus = {
+	if = { limit = { has_variable = vigor } # startup error protection
+		value = var:vigor
+		subtract = 50
+		multiply = 0.2
+	}
+}
+
+demd_vigor_inspiration_character_selection_weight = {
+	if = { limit = { has_variable = vigor }
+		value = var:vigor
+		divide = 2
+	}
+}
+
+# Vigor (same culture): -25 to +25 join chance depending on shared culture vigor
+demd_vigor_same_culture_faction_join_modifier = {
+	value = var:vigor
+	subtract = 50
+	multiply = -0.5
+}
+
+# Vigor (different culture): -12.5 to +12.5 join chance depending on liege vigor
+demd_vigor_different_culture_faction_join_modifier = {
+	value = var:vigor
+	subtract = 50
+	multiply = 0.25
+}
+
+# Vigor (different culture): -25 to +25 join chance depending on vassal vigor
+demd_vigor_different_culture_vassal_faction_join_modifier = {
+	value = var:vigor
+	subtract = 50
+	multiply = -0.5
+}
+
+demd_vigor_ask_for_conversion_acceptance_sender = {
+	value = scope:actor.culture.var:vigor
+	subtract = scope:recipient.culture.var:vigor
+}
+
+demd_vigor_same_culture_hostile_scheme_join_weight = {
+	if = {
+		limit = { has_variable = vigor } # fix startup errors
+		value = var:vigor
+		subtract = 50
+		multiply = -0.25
+	}
+}
+
+vigor_from_doctrines = {
+	if = {
+		limit = { exists = var:dominant_faith }
+		var:dominant_faith = { add = var:vigor_faith_production_mult }
+	}
+}
+

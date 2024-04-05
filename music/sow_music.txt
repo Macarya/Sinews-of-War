@@ -1,0 +1,23 @@
+﻿#### Disaster event tracks
+# Short tracks that play when a disaster event triggers
+
+cue_fire_event_1 = {
+    music = "file:/music/sow_sound_tracks/fire_event_1.mp3"
+	pause_factor = 25
+}
+cue_flood_event_1 = {
+    music = "file:/music/sow_sound_tracks/flood_event_1.mp3"
+	pause_factor = 25
+}
+cue_flood_event_2 = {
+    music = "file:/music/sow_sound_tracks/flood_event_2.mp3"
+	pause_factor = 25
+}
+cue_drought_event_1 = {
+    music = "file:/music/sow_sound_tracks/drought_event_1.mp3"
+	pause_factor = 25
+}
+cue_disease_event_1 = {
+    music = "file:/music/sow_sound_tracks/disease_event_1.mp3"
+	pause_factor = 25
+}

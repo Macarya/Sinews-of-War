@@ -1,0 +1,2 @@
+﻿l_english:
+ CREATE_NEW_HOLDING:0 "Construct new [holding|E]\n #P +[Province.MakeScope.Var('food_districts_province').GetValue|1]#! Max @icon_demd_food!# [demd_food_districts|E]"

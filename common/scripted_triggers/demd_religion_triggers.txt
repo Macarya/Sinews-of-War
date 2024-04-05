@@ -1,0 +1,16 @@
+﻿can_take_slaves = {
+	exists = capital_county
+	OR = {
+		faith = { has_doctrine_parameter = slavery_accepted }
+		AND = {
+			faith = { has_doctrine_parameter = slavery_heritage }
+			NOT = { culture = { has_same_culture_heritage = scope:county.culture } }
+		}
+		AND = {
+			faith = { 
+				has_doctrine_parameter = slavery_faith 
+				faith_hostility_level = { target = scope:county.faith value > 1 }
+			}			
+		}		
+	}
+}

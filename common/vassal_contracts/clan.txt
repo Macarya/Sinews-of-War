@@ -1,0 +1,35 @@
+﻿clan_tax_collector_obligations = {
+	obligation_levels = {
+		default = {
+			levies = {
+				value = 0
+				if = {
+					limit = { exists = scope:tax_collector }
+					add = clan_government_levies_default
+					multiply = clan_government_tax_collector_aptitude_multiplier
+				}
+				scope:liege.primary_title = {
+					if = {
+						limit = { has_variable = imperial_decay }
+						multiply = demd_imperial_decay_tax_rate_mult
+					}
+				}
+			}
+			
+			tax = {
+				value = 0
+				if = {
+					limit = { exists = scope:tax_collector }
+					add = clan_government_tax_default
+					multiply = clan_government_tax_collector_aptitude_multiplier
+				}
+				scope:liege.primary_title = {
+					if = {
+						limit = { has_variable = imperial_decay }
+						multiply = demd_imperial_decay_tax_rate_mult
+					}
+				}
+			}
+		}
+	}
+}

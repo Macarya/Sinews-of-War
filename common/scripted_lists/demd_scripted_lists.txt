@@ -1,0 +1,18 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+province_with_plague = {
+	base = province
+	conditions = { county = { has_county_modifier = plague_present } }
+}
+count_or_above = {
+	base = ruler
+	conditions = { highest_held_title_tier > tier_barony }
+}
+duke_or_above = {
+	base = ruler
+	conditions = { highest_held_title_tier > tier_county }
+}

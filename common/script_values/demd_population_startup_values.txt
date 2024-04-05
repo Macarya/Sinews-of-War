@@ -1,0 +1,28 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
+#############################################
+
+startup_gold = {
+	if = {
+		limit = { highest_held_title_tier = tier_county }
+		value = 100
+	}
+	else_if = {
+		limit = { highest_held_title_tier = tier_duchy }
+		value = 200
+	}
+	else_if = {
+		limit = { highest_held_title_tier = tier_kingdom }
+		value = 300
+	}
+	else_if = {
+		limit = { highest_held_title_tier = tier_empire }
+		value = 400
+	}
+	else = {
+		value = 10
+	}
+	
+}

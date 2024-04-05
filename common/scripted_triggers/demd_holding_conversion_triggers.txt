@@ -1,0 +1,59 @@
+﻿demd_eligible_for_holding_conversion = {
+	trigger_if = {
+		limit = { has_holding_type = $TARGET_TYPE$ }
+		custom_description = { 
+			text = demd_type_is_target_desc
+			always = no
+		}
+	}
+	trigger_else_if = {
+		limit = { has_holding_type = castle_holding }
+		trigger_if = {
+			limit = { demd_holding_isnt_duplicate = { TYPE = castle } }
+			custom_description = { 
+				text = demd_castle_holding_isnt_duplicate_desc
+				always = no
+			}
+		}
+		
+	}
+	trigger_else_if = {
+		limit = { has_holding_type = city_holding }
+		trigger_if = {
+			limit = { demd_holding_isnt_duplicate = { TYPE = city } }
+			custom_description = { 
+				text = demd_city_holding_isnt_duplicate_desc
+				always = no
+			}
+		}		
+	}
+	trigger_else_if = {
+		limit = { has_holding_type = church_holding }
+		trigger_if = {
+			limit = { demd_holding_isnt_duplicate = { TYPE = church } }
+			custom_description = { 
+				text = demd_church_holding_isnt_duplicate_desc
+				always = no
+			}
+		}		
+	}
+	trigger_else = { 
+		custom_description = { 
+			text = demd_holding_isnt_valid_type_desc
+			always = no
+		}
+	}
+}
+
+demd_holding_isnt_duplicate = {
+	county = {
+		any_county_province = {
+			count < 2
+			has_holding_type = $TYPE$_holding
+		}
+	}
+}
+
+demd_county_too_small = {
+	county.var:num_provinces < 3
+}

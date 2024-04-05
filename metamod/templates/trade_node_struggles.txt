@@ -1,0 +1,288 @@
+>>> DEMD_META_REGION
+>> common\struggle\struggles
+> world_europe_west_britannia
+> world_europe_west_germania
+> world_europe_west_francia
+> world_europe_west_iberia
+> world_europe_north
+> world_europe_south_east
+> world_europe_south_italy
+> world_europe_east
+> world_asia_minor
+> world_middle_east_jerusalem
+> world_middle_east_arabia
+> world_middle_east_persia
+> world_india_deccan
+> world_india_bengal
+> world_india_rajastan
+> world_africa_north_west
+> world_africa_north_east
+> world_africa_sahara
+> world_africa_west
+> world_africa_east
+> world_steppe_tarim
+> world_steppe_west
+> world_steppe_east
+> world_tibet
+> world_burma
+
+demd_trade_node_struggle_DEMD_META_REGION = {
+	cultures = { }
+	faiths = { }
+	regions = { DEMD_META_REGION }
+	on_start = {
+		set_variable = { name = num_strategic_locations value = 0 }
+		demd_trade_node_struggle_setup_effect = { REGION = DEMD_META_REGION }
+		
+		trigger_event = { on_action = demd_trade_node_struggle_setup } 
+	}
+	on_change_phase = { trigger_event = { on_action = demd_trade_node_struggle_phase_change } }
+	on_join = { trigger_event = { on_action = demd_trade_node_struggle_join } }
+	
+	start_phase = demd_trade_node_struggle_phase_opportunity
+	
+	phase_list = {
+		demd_trade_node_struggle_phase_opportunity = {
+			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
+			
+			future_phases = {
+				demd_trade_node_struggle_phase_disorder = {
+					catalysts = {
+						catalyst_passing_of_time = minimal_struggle_catalyst_gain
+						catalyst_raided_trade_routes = major_struggle_catalyst_gain
+						catalyst_seize_trade_node_decision = giga_massive_struggle_catalyst_gain
+						catalyst_seize_trade_node_war = hyper_massive_struggle_catalyst_gain
+						
+						catalyst_occupy_strategic_county = major_struggle_catalyst_gain
+						catalyst_raid_strategic_county = massive_struggle_catalyst_gain
+						catalyst_raid_plunder_strategic_county = kilo_massive_struggle_catalyst_gain
+						catalyst_sack_strategic_county = mega_massive_struggle_catalyst_gain
+						catalyst_raze_strategic_county = giga_massive_struggle_catalyst_gain
+						
+						catalyst_occupy_county = medium_struggle_catalyst_gain
+						catalyst_raid_county = major_struggle_catalyst_gain
+						catalyst_raid_plunder_county = massive_struggle_catalyst_gain
+						catalyst_sack_county = massive_struggle_catalyst_gain
+						catalyst_raze_county = kilo_massive_struggle_catalyst_gain						
+					}
+				}
+				demd_trade_node_struggle_phase_stability = {
+					catalysts = {
+						catalyst_passing_of_time = minimal_struggle_catalyst_gain
+						
+						catalyst_new_building_in_temple = minimal_struggle_catalyst_gain
+						catalyst_new_building_in_city = minimal_struggle_catalyst_gain 
+						catalyst_new_building_in_castle = minimal_struggle_catalyst_gain 
+						
+						catalyst_commissioned_illustrious_artifact = medium_struggle_catalyst_gain
+						catalyst_commissioned_famed_artifact = minor_struggle_catalyst_gain 
+						catalyst_commissioned_masterwork_artifact = minimal_struggle_catalyst_gain 
+						
+						catalyst_court_grandeur_1 = 1
+						catalyst_court_grandeur_2 = 2
+						catalyst_court_grandeur_3 = 3
+						catalyst_court_grandeur_4 = 4
+						catalyst_court_grandeur_5 = 5
+						catalyst_court_grandeur_6 = 6
+						catalyst_court_grandeur_7 = 7 
+						catalyst_court_grandeur_8 = 8
+						catalyst_court_grandeur_9 = 9
+						catalyst_court_grandeur_10 = 10							
+					}
+				}			
+			}
+			other_effects = {
+				involved_parameters = {
+					demd_trade_node_normal_collected_trade_value = yes
+					demd_trade_node_struggle_can_seize_control_decision = yes
+				}
+				interloper_parameters = {
+					demd_trade_node_normal_collected_trade_value = yes
+					demd_trade_node_struggle_can_seize_control_decision = yes
+				}
+			}
+			ending_decisions = { demd_trade_node_struggle_end_decision }
+		}
+		
+		demd_trade_node_struggle_phase_disorder = {
+			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
+			
+			future_phases = {
+				demd_trade_node_struggle_phase_opportunity = {
+					catalysts = {
+						catalyst_passing_of_time = minimal_struggle_catalyst_gain
+						
+						catalyst_new_building_in_temple = minimal_struggle_catalyst_gain
+						catalyst_new_building_in_city = minimal_struggle_catalyst_gain 
+						catalyst_new_building_in_castle = minimal_struggle_catalyst_gain 
+						
+						catalyst_commissioned_illustrious_artifact = medium_struggle_catalyst_gain
+						catalyst_commissioned_famed_artifact = minor_struggle_catalyst_gain 
+						catalyst_commissioned_masterwork_artifact = minimal_struggle_catalyst_gain 
+						
+						catalyst_court_grandeur_1 = 1
+						catalyst_court_grandeur_2 = 2
+						catalyst_court_grandeur_3 = 3
+						catalyst_court_grandeur_4 = 4
+						catalyst_court_grandeur_5 = 5
+						catalyst_court_grandeur_6 = 6
+						catalyst_court_grandeur_7 = 7 
+						catalyst_court_grandeur_8 = 8
+						catalyst_court_grandeur_9 = 9
+						catalyst_court_grandeur_10 = 10						
+					}
+				}
+
+				demd_trade_node_struggle_phase_disorder = {
+					catalysts = {
+						catalyst_passing_of_time = minimal_struggle_catalyst_gain
+						catalyst_raided_trade_routes = major_struggle_catalyst_gain
+						catalyst_seize_trade_node_decision = giga_massive_struggle_catalyst_gain
+						catalyst_seize_trade_node_war = hyper_massive_struggle_catalyst_gain
+						
+						catalyst_occupy_strategic_county = major_struggle_catalyst_gain
+						catalyst_raid_strategic_county = massive_struggle_catalyst_gain
+						catalyst_raid_plunder_strategic_county = kilo_massive_struggle_catalyst_gain
+						catalyst_sack_strategic_county = mega_massive_struggle_catalyst_gain
+						catalyst_raze_strategic_county = giga_massive_struggle_catalyst_gain
+						
+						catalyst_occupy_county = medium_struggle_catalyst_gain
+						catalyst_raid_county = major_struggle_catalyst_gain
+						catalyst_raid_plunder_county = massive_struggle_catalyst_gain
+						catalyst_sack_county = massive_struggle_catalyst_gain
+						catalyst_raze_county = kilo_massive_struggle_catalyst_gain	
+						
+					}
+				}
+			}
+			
+			war_effects = {			
+				involved_parameters = {
+					demd_can_force_vassalize_strategic_county_holders = yes
+					demd_trade_node_struggle_can_seize_control_decision = yes
+				}
+				interloper_parameters = {
+					demd_can_force_vassalize_strategic_county_holders = yes
+					demd_trade_node_struggle_can_seize_control_decision = yes
+				}
+				
+				involved_character_modifier = {
+					mercenary_hire_cost_mult = -0.2
+					ai_war_chance = 0.25
+					ai_war_cooldown = -0.25
+				}
+			}
+			
+			culture_effects = {
+				involved_character_modifier = {
+					cultural_head_fascination_mult = -0.25
+				}
+				interloper_character_modifier = {
+					cultural_head_fascination_mult = -0.25
+				}
+			}
+
+			other_effects = {
+				involved_parameters = {
+					demd_trade_node_reduced_collected_trade_value = yes
+				}
+				interloper_parameters = {
+					demd_trade_node_reduced_collected_trade_value = yes
+				}
+				all_county_modifier = {
+					development_growth_factor = -0.25
+				}
+			}
+			
+			ending_decisions = { demd_trade_node_struggle_end_decision }
+		}
+
+		demd_trade_node_struggle_phase_stability = {
+			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
+			
+			future_phases = {
+				demd_trade_node_struggle_phase_opportunity = {
+					catalysts = {
+						catalyst_passing_of_time = minimal_struggle_catalyst_gain
+						catalyst_raided_trade_routes = major_struggle_catalyst_gain
+						catalyst_seize_trade_node_decision = giga_massive_struggle_catalyst_gain
+						catalyst_seize_trade_node_war = hyper_massive_struggle_catalyst_gain
+						
+						catalyst_occupy_strategic_county = major_struggle_catalyst_gain
+						catalyst_raid_strategic_county = massive_struggle_catalyst_gain
+						catalyst_raid_plunder_strategic_county = kilo_massive_struggle_catalyst_gain
+						catalyst_sack_strategic_county = mega_massive_struggle_catalyst_gain
+						catalyst_raze_strategic_county = giga_massive_struggle_catalyst_gain
+						
+						catalyst_occupy_county = medium_struggle_catalyst_gain
+						catalyst_raid_county = major_struggle_catalyst_gain
+						catalyst_raid_plunder_county = massive_struggle_catalyst_gain
+						catalyst_sack_county = massive_struggle_catalyst_gain
+						catalyst_raze_county = kilo_massive_struggle_catalyst_gain	
+					}
+				}
+
+				demd_trade_node_struggle_phase_stability = {
+					catalysts = {
+						catalyst_passing_of_time = minimal_struggle_catalyst_gain
+						
+						catalyst_new_building_in_temple = minimal_struggle_catalyst_gain
+						catalyst_new_building_in_city = minimal_struggle_catalyst_gain 
+						catalyst_new_building_in_castle = minimal_struggle_catalyst_gain 
+						
+						catalyst_commissioned_illustrious_artifact = medium_struggle_catalyst_gain
+						catalyst_commissioned_famed_artifact = minor_struggle_catalyst_gain 
+						catalyst_commissioned_masterwork_artifact = minimal_struggle_catalyst_gain 
+						
+						catalyst_court_grandeur_1 = 1
+						catalyst_court_grandeur_2 = 2
+						catalyst_court_grandeur_3 = 3
+						catalyst_court_grandeur_4 = 4
+						catalyst_court_grandeur_5 = 5
+						catalyst_court_grandeur_6 = 6
+						catalyst_court_grandeur_7 = 7 
+						catalyst_court_grandeur_8 = 8
+						catalyst_court_grandeur_9 = 9
+						catalyst_court_grandeur_10 = 10							
+					}
+				}
+			}
+			
+			war_effects = {	
+				involved_parameters = {
+					demd_can_claim_strategic_trade_county = yes
+				}
+				interloper_parameters = {
+					demd_can_claim_strategic_trade_county = yes
+				}
+				involved_character_modifier = {
+					mercenary_hire_cost_mult = 0.2
+					ai_war_chance = -0.25
+					ai_war_cooldown = 0.25
+				}
+			}
+
+			culture_effects = {
+				involved_character_modifier = {
+					cultural_head_fascination_mult = 0.25
+				}
+			}
+			
+			other_effects = {
+				involved_parameters = {
+					demd_trade_node_increased_collected_trade_value = yes
+					
+				}
+				interloper_parameters = {
+					demd_trade_node_reduced_collected_trade_value = yes
+				}
+				all_county_modifier = {
+					development_growth_factor = 0.25
+				}
+			}
+			
+			ending_decisions = { demd_trade_node_struggle_end_decision }
+		}		
+	}
+}
+	

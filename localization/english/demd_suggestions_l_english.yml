@@ -1,0 +1,11 @@
+﻿l_english:
+
+suggestion_assign_excavation_leader_label:0 "Assign Excavation Leader"
+suggestion_assign_excavation_leader:0 "Suggestion: Assign an Excavation Leader in [landed_title.GetNameNoTierNoTooltip]"
+suggestion_assign_excavation_leader_desc:1 "The excavation in [landed_title.GetNameNoTooltip] can't progress without a leader."
+suggestion_assign_excavation_leader_click:1 "#I Click to view the Holding#!"
+
+suggestion_start_excavation_label:0 "Start Excavation"
+suggestion_start_excavation:0 "Suggestion: Start an Excavation in [landed_title.GetNameNoTierNoTooltip]"
+suggestion_start_excavation_desc:1 "An excavation in [landed_title.GetNameNoTooltip] could be a lucrative opportunity to acquire artifacts or gold."
+suggestion_start_excavation_click:1 "#I Click to view the Holding#!"

@@ -1,0 +1,92 @@
+﻿years_of_debt_by_income = {	
+	if = {
+		limit = { NOT = { monthly_character_income = 0 } }
+		value = var:debt
+		divide = monthly_character_income
+	}
+	else = { value = 1000 }
+}
+
+yearly_character_income_safe_divide = {
+	value = monthly_character_income_safe_divide
+	multiply = 12
+}
+
+monthly_character_income_safe_divide = {
+	if = {
+		limit = { NOT = { monthly_character_income = 0 } }
+		value = monthly_character_income
+	}
+	else = { value = 0.1 }
+}
+
+ai_interest_rate = {
+	value = interest_rate
+	max = 0.2
+}
+
+yearly_interest = {
+	value = interest_rate
+	multiply = var:debt
+}
+
+interest_rate = {
+	value = base_interest_rate
+	add = interest_rate_from_written_off_debt
+	min = 0.02
+	max = 0.5
+}
+
+base_interest_rate = 0.1
+
+interest_rate_from_written_off_debt = {
+	if = {
+		limit = { exists = var:written_off_debt }
+		value = var:written_off_debt
+		divide = yearly_character_income_safe_divide
+		multiply = 0.15
+	}
+	else = { value = 0 }
+}
+
+repayment_amount = {
+	value = var:debt
+	min = 0
+	max = gold
+}
+
+borrowing_amount = {
+	value = monthly_character_expenses 
+	multiply = 18
+	min = 0
+	max = debt_headroom
+}
+
+debt_headroom = {
+	value = debt_ceiling
+	if = { 
+		limit = { has_variable = debt }	
+		subtract = var:debt
+	}
+	min = 0
+}
+
+monthly_character_expenses_sv = { value = monthly_character_expenses }
+monthly_character_income_sv = { value = monthly_character_income }
+
+debt_ceiling = {
+	value = debt_equilibrium_point
+	divide = 4
+}
+
+debt_write_off_point = {
+	value = debt_equilibrium_point
+	divide = 2
+}
+
+debt_equilibrium_point = {
+	value = monthly_character_income
+	multiply = 12
+	divide = interest_rate # equilibrium point where debt growth = income
+	min = 0
+}

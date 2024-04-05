@@ -1,0 +1,101 @@
+﻿
+
+demd_show_vigor = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_delta = 0 } }
+}
+
+demd_show_vigor_from_dominant_faith_fervor = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_dominant_faith_fervor = 0 } }
+}
+
+demd_show_vigor_cultural_production_mult = {
+	scope = culture
+ 	is_shown = { NOT = { var:vigor_cultural_production_mult = 0 } }
+}
+
+demd_show_vigor_faith_production_mult = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_doctrines = 0 } }
+}
+
+demd_show_vigor_from_culture_head_virtues_sins = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_culture_head_virtues_sins = 0 } }
+}
+
+demd_show_vigor_from_culture_head_tyranny = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_culture_head_tyranny = 0 } }
+}
+
+demd_show_vigor_from_culture_head_court_grandeur = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_culture_head_court_grandeur = 0 } }
+}
+
+demd_show_vigor_from_culture_head_prestige_level = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_culture_head_prestige_level = 0 } }
+}
+
+demd_show_vigor_from_culture_head_piety_level = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_culture_head_piety_level = 0 } }
+}
+
+demd_show_vigor_from_different_culture_head_faith = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_different_culture_head_faith = 0 } }
+}
+
+demd_show_vigor_from_religious_disunity = {
+	scope = culture
+ 	is_shown = { vigor_from_religious_disunity < -0.25 }
+}
+
+demd_show_vigor_from_political_disunity = {
+	scope = culture
+ 	is_shown = { vigor_from_political_disunity < -0.25 }
+}
+
+demd_show_vigor_from_culture_expanse = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_culture_expanse = 0 } }
+}
+
+demd_show_vigor_from_court_grandeur = {
+	scope = culture
+ 	is_shown = { NOT = { vigor_from_culture_head_court_grandeur = 0 } }
+}
+
+demd_very_low_vigor = {
+	scope = culture
+ 	is_shown = { 
+		var:vigor < 20
+	}
+}
+
+demd_low_vigor = {
+	scope = culture
+ 	is_shown = { 
+		NOT = { var:vigor < 20 }
+		var:vigor < 40
+	}
+}
+
+demd_high_vigor = {
+	scope = culture
+ 	is_shown = { 
+		NOT = { var:vigor > 80 }
+		var:vigor > 60
+	}
+}
+
+demd_very_high_vigor = {
+	scope = culture
+ 	is_shown = { 
+		var:vigor > 80
+	}
+}

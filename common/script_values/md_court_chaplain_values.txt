@@ -1,0 +1,27 @@
+#####################
+# Fabricate Claim
+#####################
+
+# Base value
+court_chaplain_fabricate_claim_base = {
+	add = 0.5
+}
+
+court_chaplain_fabricate_claim_monthly_increase_base = {
+	add = learning
+	divide = 15
+}
+
+#######################
+# Conversion
+#######################
+
+# Base progress value
+court_chaplain_conversion_base = {
+	add = 0.2
+}
+
+court_chaplain_conversion_monthly_increase = {
+	add = learning
+	divide = 20
+}

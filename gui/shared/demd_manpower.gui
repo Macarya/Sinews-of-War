@@ -1,0 +1,160 @@
+types Manpower
+{
+    type manpower_breakdown_widget = widget
+    {
+        alwaystransparent = no
+        using = GeneralTooltipSetup
+        widget = {
+            name = "background"
+            using = DefaultTooltipBackground
+            size = { 100% 100% }
+            alwaystransparent = no
+			max_width = 450
+        }
+        vbox = {
+            set_parent_size_to_minimum = yes
+            margin = { 20 10 }
+            margin_bottom = 20
+            spacing = 3
+
+            text_multi = {
+                layoutpolicy_horizontal = expanding
+                raw_text = "#T @icon_manpower!# [demd_manpower|E]: [Province.MakeScope.ScriptValue('total_manpower_gui')|0]#!"
+                align = left
+				max_width = 450
+            }
+
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                #margin = { 0 4 }
+                spacing = -1
+
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#weak [demd_manpower|E] is produced by [demd_population|E] at varying rates depending on their [demd_job|E]. #defender_color Manpower#! is used to populate the [county|E]'s [garrison|E] and [levies|E] and to provide [men_at_arms|E] capacity to the [county|E] owner.#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+			
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Total [demd_manpower|E]:#! [Province.MakeScope.ScriptValue('total_manpower_gui')|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_population|E] [demd_manpower|E]: [Province.MakeScope.Var('manpower').GetValue|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[building|E] [demd_manpower|E]: [Province.MakeScope.ScriptValue('building_garrison_levies_gui')|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Total [garrison|E]:#! [Holding.GetCurrentGarrisonSize|0]/[Holding.GetMaxGarrisonSize|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_population|E] [garrison|E]: [Province.MakeScope.Var('garrison').GetValue|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[building|E] [garrison|E]: [Province.MakeScope.ScriptValue('building_garrison_gui')|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Total [levies|E]:#! [Holding.GetMaxLevySize|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[demd_population|E] [levies|E]: [Province.MakeScope.Var('levy').GetValue|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[building|E] [levies|E]: [Province.MakeScope.ScriptValue('building_levies_gui')|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold Total [men_at_arms|E]:#! [Province.MakeScope.Var('free_manpower').GetValue|0]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "[holder|E] [regiment|E] Limit: +[Province.MakeScope.ScriptValue('regiment_limit_gui')|1]"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+                text_multi = {
+                    layoutpolicy_horizontal = expanding
+					tooltipwidget = { 
+						manpower_rate_breakdown_widget = { 
+						
+						} 
+					}
+                    raw_text = "#bold Rate: [Province.MakeScope.ScriptValue('manpower_total_percent')|%1]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+				spacer = { size = { 0 14 } }
+				text_multi = {
+                    layoutpolicy_horizontal = expanding
+                    raw_text = "#bold [supply_limit|E]: [HoldingView.GetSupplyLimit|V]#!"
+                    align = left
+					autoresize = yes
+					max_width = 400
+                }
+					text_multi = {
+						layoutpolicy_horizontal = expanding
+						raw_text = "    Base [supply_limit|E]: [Province.MakeScope.ScriptValue('base_supply_limit')|0]"
+						align = left
+						autoresize = yes
+						max_width = 400
+					}
+					text_multi = {
+						layoutpolicy_horizontal = expanding
+						raw_text = "    From [demd_food|E]: [Province.MakeScope.ScriptValue('supply_limit_from_food')|0]"
+						align = left
+						autoresize = yes
+						max_width = 400
+					}				
+            }
+        }
+    }
+}
