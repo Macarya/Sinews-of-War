@@ -74,9 +74,9 @@ varangian_veterans = {
 	type = heavy_infantry
 	
 	damage = 40
-	toughness = 26
-	pursuit = 0
-	screen = 24
+	toughness = 30
+	pursuit = 10
+	screen = 0
 	
 	can_recruit = {
 		culture = { has_cultural_parameter = unlock_maa_varangian_veterans }
@@ -84,11 +84,13 @@ varangian_veterans = {
 	
 	counters = {
 		pikemen = 1
+		heavy_cavalry = 1
 	}
 
 	terrain_bonus = {
-		taiga = { damage = 8 }
-		forest = { damage = 8 }
+		farmlands = { damage = 6 toughness = 4 }
+		plains = { damage = 6 toughness = 4 }
+		hills = { damage = 6 toughness = 4 }
 	}
 	
 	winter_bonus = {
