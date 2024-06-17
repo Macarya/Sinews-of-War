@@ -19,8 +19,8 @@ yearly_health_pulse = { #Fired from the birthday pulse
 		## Present but not constant on default values.
 		## Rare but not never-seen on reduced values.
 		## Increased without being ludicrous on high values.
-		1000 = 0
-		2000 = harm.9501	# Nothingness event.
+		5000 = 0
+		10000 = harm.9501	# Nothingness event.
 		
 		#Infirm 
 		1000 = health.7000	# Become infirm
@@ -141,20 +141,19 @@ demd_contagious_pulse = {
 		chance_to_happen = 10
 
 		chance_of_no_event = {
-			value = 0
 			# Perk reduces chance of sickness for yourself and for Courtiers/Guests
 			if = {
 				limit = {
 					has_perk = wash_your_hands_perk
 				}
-				add = 50
+				value = 50
 			}
 			else_if = {
 				limit = {
 					exists = host
 					host = { has_perk = wash_your_hands_perk }
 				}
-				add = 25
+				value = 25
 			}
 			if = { #Wet Nurse reduces chance of sickness for children
 				limit = {

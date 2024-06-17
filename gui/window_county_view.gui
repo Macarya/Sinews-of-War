@@ -4,7 +4,7 @@
 
 window = {
 	name = "holding_view"
-	widgetid = "holding_view"
+	widgetid = "holding_view_id"
 	parentanchor = bottom|left
 	allow_outside = yes
 	movable = no
@@ -274,7 +274,7 @@ window = {
 							onclick = "[DefaultOnRealmFlagClick(Character.GetID)]"
 							onrightclick = "[DefaultOnCharacterRightClick(Character.GetID)]"
 							button_ignore = none
-							tooltip_visible = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
+							tooltip_enabled = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
 						}
 					}
 				}
@@ -2959,7 +2959,7 @@ window = {
 									name = "tracks_grid"
 									datamodel = "[HoldingView.GetPotentialBuildings]"
 									datacontext = "[HoldingView.GetProvince]"
-
+									datacontext = "[HoldingView.GetProvince.GetCounty.GetCulture]"
 									visible = "[HoldingView.IsSelectingNewBuilding]"
 									spacing = 10
 									set_parent_size_to_minimum = yes
@@ -3648,6 +3648,7 @@ window = {
 											}
 
 											text_multi = {
+												datacontext = "[HoldingView.GetProvince.GetCounty.GetCulture]"
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = expanding
 												autoresize = yes
