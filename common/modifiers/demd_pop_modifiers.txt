@@ -156,14 +156,17 @@ demd_public_order_setting_0 = {
 
 demd_sanitation_setting_4 = {
 	icon = treatment_positive
+	epidemic_resistance = 10
 }
 
 demd_sanitation_setting_3 = {
 	icon = treatment_positive
+	epidemic_resistance = 5
 }
 
 demd_sanitation_setting_2 = {
 	icon = treatment_positive
+	epidemic_resistance = 3
 }
 
 demd_sanitation_setting_1 = {

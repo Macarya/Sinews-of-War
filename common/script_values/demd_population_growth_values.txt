@@ -147,66 +147,73 @@ disease_death_rate = {
 	value = 0
 	if = {
         limit = {							
-		#county scope
-		trigger_if = {
-			limit = { exists = title_province }
-			title_province = { 
-				any_province_epidemic = { count >= 1 } 
+			#county scope
+			trigger_if = {
+				limit = { exists = title_province }
+				title_province = { 
+					any_province_epidemic = { count >= 1 } 
+					save_temporary_scope_as = pop_prov
+				}
+			}
+			#province scope
+			trigger_else = {
+				any_province_epidemic = { count >= 1 }
 				save_temporary_scope_as = pop_prov
 			}
-		}
-		#province scope
-		trigger_else = {
-			any_province_epidemic = { count >= 1 }
-			save_temporary_scope_as = pop_prov
-		}
         }		
-	scope:pop_prov = {
-		every_province_epidemic = {
-			save_temporary_scope_as = pop_epidemic			
-			if = {
-				limit = { outbreak_intensity = minor }
-				add = 0.08		
-			}
-			else_if = {
-				limit = { outbreak_intensity = major }
-				add = 0.16
-			}
-			else_if = {
-				limit = { outbreak_intensity = apocalyptic }
-				add = 0.20
-			}
-			if = { 
-				limit = { epidemic_type.epidemic_trait = trait:bubonic_plague }
-				multiply = 2.25
-			}
-			if = {
-				limit = {
-					scope:pop_prov.province_infection_rate = {
-						epidemic = scope:pop_epidemic
-						value <= 10
-					}
-				}
-				multiply = 0.25
-			}
-			else_if = {
-				limit = {
-					scope:pop_prov.province_infection_rate = {
-						epidemic = scope:pop_epidemic
-						value <= 50
-					}
-				}
-				multiply = 0.5
+		scope:pop_prov = {
+			every_province_epidemic = {
+				save_temporary_scope_as = pop_epidemic			
+				add = single_epidemic_death_rate
 			}
 		}
-	}
-	multiply = {
-		value = 1
-		subtract = sanitation_death_reduction
-	}
+		multiply = {
+			value = 1
+			subtract = sanitation_death_reduction
+		}
     }
 }
 
+single_epidemic_death_rate = {
+	if = {
+		limit = { outbreak_intensity = minor }
+		add = 0.08		
+	}
+	else_if = {
+		limit = { outbreak_intensity = major }
+		add = 0.16
+	}
+	else_if = {
+		limit = { outbreak_intensity = apocalyptic }
+		add = 0.20
+	}
+	if = { 
+		limit = { epidemic_type.epidemic_trait = trait:bubonic_plague }
+		multiply = 2.25
+	}
+	if = {
+		limit = {
+			scope:pop_prov = {
+				province_infection_rate = {
+					epidemic = scope:pop_epidemic
+					value <= 10
+				}
+			}
+		}
+		multiply = 0.25
+	}
+	else_if = {
+		limit = {
+			scope:pop_prov = {
+				province_infection_rate = {
+					epidemic = scope:pop_epidemic
+					value <= 50
+				}
+			}
+		}
+		multiply = 0.5
+	}
+}
 
 sanitation_death_reduction = {
 	if = {
