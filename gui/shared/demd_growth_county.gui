@@ -111,7 +111,7 @@ types GrowthCounty
                 }
 				text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "From [demd_plagues|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('disease_death_rate')|%2]"
+                    raw_text = "From [epidemics|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('disease_death_rate')|%2]"
                     align = left
 					autoresize = yes
 					max_width = 400

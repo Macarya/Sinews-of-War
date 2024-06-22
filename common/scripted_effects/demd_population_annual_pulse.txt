@@ -490,40 +490,7 @@ annualPulse = {
     	set_variable = { name = county_unused_construction_capacity value = county_unused_construction_capacity }
         change_variable = { name = goods_districts_count add = county_districts_to_build }
     	change_variable = { name = goods_districts_count subtract = goods_districts_to_remove } 
-        if = {
-    		limit = {
-    			NOT = { has_county_modifier = plague_immunity }
-    		}
-    		random_list = {
-    			0 = { 
-    				modifier = {
-    					always = yes
-    					add = outbreak_risk
-    				}
-    				trigger_event = { id = demd_pop_disease.1001 days = { 1 360 } }
-    			}
-    			10000 = {
-    			}
-    		}
-    	}
-        if = {
-    		limit = { has_county_modifier = plague_present }
-            every_in_list = {
-                variable = county_neighbors
-                limit = { NOT = { has_county_modifier = plague_immunity } }
-    			random_list = {
-    				50 = {
-    					modifier = {
-    						NOT = { prev = { has_county_modifier = quarantine } }
-    						add = no_quarantine_spread_chance_addition
-    					}
-    					trigger_event = { id = demd_pop_disease.1001 days = { 1 360 } }
-    				}
-    				500 = {
-    				}
-    			}           
-            }
-        }
+		#removed DEMD plagues, will tie vanilla plagues into pop system
         if = {
             limit = {
                 holder = { is_ai = yes }
