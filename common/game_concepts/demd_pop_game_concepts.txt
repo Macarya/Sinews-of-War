@@ -61,11 +61,6 @@ demd_untilled_farmland = {
 	texture = "gfx/interface/icons/demd/resources/food.png"
 }
 
-demd_plagues = {
-	alias = { demd_plague demd_quarantine }
-	texture = "gfx/interface/icons/modifiers/death_disease.dds"
-}
-
 demd_persecution = {
 	alias = { demd_tolerance demd_persecuted }
 	texture = "gfx/interface/icons/modifiers/death_war.dds"

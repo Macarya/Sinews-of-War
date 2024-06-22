@@ -1,0 +1,2 @@
+﻿l_english:
+ EPIDEMIC_TOTAL_DEATH_TOLL: "[Concept( 'fatalities', '$game_concept_fatalities$' )|E]: @death_icon! [Epidemic.MakeScope.Var('pop_deaths').GetValue|1]k #bold @icon_population!# [demd_population|E] & [Epidemic.GetTotalCharacterDeaths|V] [Concept( 'characters', '$game_concept_characters$' )|E]"

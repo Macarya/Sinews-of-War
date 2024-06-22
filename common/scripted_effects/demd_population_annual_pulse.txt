@@ -268,6 +268,47 @@ annualPulse = {
     			multiply = var:population 
     		}
     	}
+    	#epidemic death tracking - not really necessary but kinda cool?
+		title_province = {
+			if = {
+				limit = {				
+					any_province_epidemic = { count >= 1 } 					
+					save_temporary_scope_as = pop_prov
+				}				
+				every_province_epidemic = {
+					save_temporary_scope_as = pop_epidemic
+					if = {
+						limit = { has_variable = pop_deaths }
+						change_variable = {
+							name = pop_deaths
+							add = {
+								value = single_epidemic_death_rate
+								multiply = {
+									value = 1
+									subtract = scope:pop_prov.county.sanitation_death_reduction
+								}
+								multiply = scope:pop_prov.county.var:population
+							}
+						}
+					}
+					else = {
+						set_variable = {
+							name = pop_deaths
+							value = {
+								#determine rate
+								value = single_epidemic_death_rate
+								multiply = {
+									value = 1
+									subtract = scope:pop_prov.county.sanitation_death_reduction
+								}
+								multiply = scope:pop_prov.county.var:population
+							}
+						}
+					}
+				}
+			}
+		}
+        
         change_variable = { 
     		name = population 
     		add = var:internal_growth 
@@ -292,6 +333,42 @@ annualPulse = {
         			multiply = var:population 
         		}
         	}
+			if = {
+				limit = {				
+					any_province_epidemic = { count >= 1 } 					
+					save_temporary_scope_as = pop_prov
+				}				
+				every_province_epidemic = {
+					save_temporary_scope_as = pop_epidemic
+					if = {
+						limit = { has_variable = pop_deaths }
+						change_variable = {
+							name = pop_deaths
+							add = {
+								value = single_epidemic_death_rate
+								multiply = {
+									value = 1
+									subtract = scope:pop_prov.sanitation_death_reduction
+								}
+								multiply = scope:pop_prov.var:population
+							}
+						}
+					}
+					else = {
+						set_variable = {
+							name = pop_deaths
+							value = {
+								value = single_epidemic_death_rate
+								multiply = {
+									value = 1
+									subtract = scope:pop_prov.county.sanitation_death_reduction
+								}
+								multiply = scope:pop_prov.county.var:population
+							}
+						}
+					}
+				}
+			}
             change_variable = { 
         		name = population 
         		add = var:internal_growth 
@@ -490,40 +567,7 @@ annualPulse = {
     	set_variable = { name = county_unused_construction_capacity value = county_unused_construction_capacity }
         change_variable = { name = goods_districts_count add = county_districts_to_build }
     	change_variable = { name = goods_districts_count subtract = goods_districts_to_remove } 
-        if = {
-    		limit = {
-    			NOT = { has_county_modifier = plague_immunity }
-    		}
-    		random_list = {
-    			0 = { 
-    				modifier = {
-    					always = yes
-    					add = outbreak_risk
-    				}
-    				trigger_event = { id = demd_pop_disease.1001 days = { 1 360 } }
-    			}
-    			10000 = {
-    			}
-    		}
-    	}
-        if = {
-    		limit = { has_county_modifier = plague_present }
-            every_in_list = {
-                variable = county_neighbors
-                limit = { NOT = { has_county_modifier = plague_immunity } }
-    			random_list = {
-    				50 = {
-    					modifier = {
-    						NOT = { prev = { has_county_modifier = quarantine } }
-    						add = no_quarantine_spread_chance_addition
-    					}
-    					trigger_event = { id = demd_pop_disease.1001 days = { 1 360 } }
-    				}
-    				500 = {
-    				}
-    			}           
-            }
-        }
+		#removed DEMD plagues, will tie vanilla plagues into pop system
         if = {
             limit = {
                 holder = { is_ai = yes }

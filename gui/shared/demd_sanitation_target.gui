@@ -32,7 +32,7 @@ types Sanitation
 
                 text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "#weak [demd_sanitation|E] is a measure of how well protected your urban population is from disease. If #defender_color Sanitation#! is less than 100%, excess deaths will occur in proportion to the size of the deficit, [demd_plagues|E] are more likely to spawn in this [county|E], and [characters|E] in this [county|E] are more likely to catch diseases. [demd_migration_pull|E] to the urban center of the county will also be reduced. Rural [demd_sanitation|E] is always 100%#!"
+                    raw_text = "#weak [demd_sanitation|E] is a measure of how well protected your urban population is from disease. If #defender_color Sanitation#! is less than 100%, excess deaths will occur in proportion to the size of the deficit, [epidemics|E] are more likely to spawn in this [county|E], and [characters|E] in this [county|E] are more likely to catch diseases. [demd_migration_pull|E] to the urban center of the county will also be reduced. Rural [demd_sanitation|E] is always 100%#!"
                     align = left
 					autoresize = yes
 					max_width = 400
@@ -72,7 +72,7 @@ types Sanitation
                 }
                 text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "From [terrain|E]: [Province.GetCounty.GetTitle.MakeScope.Var('terrain_sanitation_bonus').GetValue)|%0]"
+                    raw_text = "From [terrain|E]: [Province.GetCounty.GetTitle.MakeScope.Var('terrain_sanitation_bonus').GetValue|%0]"
                     align = left
 					autoresize = yes
 					max_width = 400
