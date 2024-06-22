@@ -28,10 +28,14 @@ provinceGrowthSetup = {
 
 county_growth = {
     calculateGrowthRate = yes
+	title_province = {
+		updateEpidemicTollUrban = yes
+	}
 	applyGrowth = yes 
 	every_county_province = {
 		limit = { has_holding = yes }
 		calculateGrowthRate = yes
+		updateEpidemicToll = yes
 		applyGrowth = yes 
 	}
 	county_internal_migration = yes
@@ -60,6 +64,85 @@ calculateGrowthRate = {
 		}
 	}
 }
+
+updateEpidemicToll = {
+	if = {
+		limit = {				
+			any_province_epidemic = { count >= 1 } 					
+			save_temporary_scope_as = pop_prov
+		}				
+		every_province_epidemic = {
+			save_temporary_scope_as = pop_epidemic
+			if = {
+				limit = { has_variable = pop_deaths }
+				change_variable = {
+					name = pop_deaths
+					add = {
+						value = single_epidemic_death_rate
+						multiply = {
+							value = 1
+							subtract = scope:pop_prov.sanitation_death_reduction
+						}
+						multiply = scope:pop_prov.var:population
+					}
+				}
+			}
+			else = {
+				set_variable = {
+					name = pop_deaths
+					value = {
+						value = single_epidemic_death_rate
+						multiply = {
+							value = 1
+							subtract = scope:pop_prov.sanitation_death_reduction
+						}
+						multiply = scope:pop_prov.var:population
+					}
+				}
+			}
+		}
+	}
+}
+
+updateEpidemicTollUrban = {
+	if = {
+		limit = {				
+			any_province_epidemic = { count >= 1 } 					
+			save_temporary_scope_as = pop_prov
+		}				
+		every_province_epidemic = {
+			save_temporary_scope_as = pop_epidemic
+			if = {
+				limit = { has_variable = pop_deaths }
+				change_variable = {
+					name = pop_deaths
+					add = {
+						value = single_epidemic_death_rate
+						multiply = {
+							value = 1
+							subtract = scope:pop_prov.county.sanitation_death_reduction
+						}
+						multiply = scope:pop_prov.county.var:population
+					}
+				}
+			}
+			else = {
+				set_variable = {
+					name = pop_deaths
+					value = {
+						value = single_epidemic_death_rate
+						multiply = {
+							value = 1
+							subtract = scope:pop_prov.county.sanitation_death_reduction
+						}
+						multiply = scope:pop_prov.county.var:population
+					}
+				}
+			}
+		}
+	}
+}
+
 
 applyGrowth = {
     change_variable = { 
