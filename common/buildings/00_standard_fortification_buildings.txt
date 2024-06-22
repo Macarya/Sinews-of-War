@@ -1144,6 +1144,7 @@ watchtowers_05 = {
 		stationed_light_cavalry_damage_mult = low_maa_damage_tier_5
 		stationed_light_cavalry_toughness_mult = low_maa_toughness_tier_5
 		travel_danger = -5
+		epidemic_resistance = 5
 	}
 	
 	county_modifier = {
@@ -1201,6 +1202,7 @@ watchtowers_06 = {
 		stationed_light_cavalry_damage_mult = low_maa_damage_tier_6
 		stationed_light_cavalry_toughness_mult = low_maa_toughness_tier_6
 		travel_danger = -6
+		epidemic_resistance = 8
 	}
 	
 	county_modifier = {
@@ -1259,6 +1261,7 @@ watchtowers_07 = {
 		stationed_light_cavalry_damage_mult = low_maa_damage_tier_7
 		stationed_light_cavalry_toughness_mult = low_maa_toughness_tier_7
 		travel_danger = -7
+		epidemic_resistance = 10
 	}
 	
 	county_modifier = {
@@ -1317,6 +1320,7 @@ watchtowers_08 = {
 		stationed_light_cavalry_damage_mult = low_maa_damage_tier_8
 		stationed_light_cavalry_toughness_mult = low_maa_toughness_tier_8
 		travel_danger = -8
+		epidemic_resistance = 12
 	}
 	
 	county_modifier = {
@@ -1426,6 +1430,7 @@ hill_forts_02 = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.1
+		monthly_county_control_decline_factor = -0.1
 	}
 	
 	next_building = hill_forts_03
@@ -1476,6 +1481,7 @@ hill_forts_03 = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.1
+		monthly_county_control_decline_factor = -0.1
 	}
 	
 	next_building = hill_forts_04
@@ -1522,6 +1528,7 @@ hill_forts_04 = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.1
+		monthly_county_control_decline_factor = -0.1
 		levy_size = 0.02
 	}
 	
@@ -1569,6 +1576,7 @@ hill_forts_05 = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.15
+		monthly_county_control_decline_factor = -0.15
 		levy_size = 0.02
 	}
 	
@@ -1616,6 +1624,7 @@ hill_forts_06 = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.15
+		monthly_county_control_decline_factor = -0.15
 		levy_size = 0.02
 	}
 	
@@ -1663,6 +1672,7 @@ hill_forts_07 = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.15
+		monthly_county_control_decline_factor = -0.15
 		levy_size = 0.02
 	}
 	
@@ -1710,6 +1720,7 @@ hill_forts_08 = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.2
+		monthly_county_control_decline_factor = -0.2
 		levy_size = 0.02
 	}
 	
