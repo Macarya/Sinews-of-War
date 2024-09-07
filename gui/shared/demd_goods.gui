@@ -41,7 +41,7 @@ types Goods
 				
 				text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "#bold Net: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('urban_goods_net')|1]#!"
+                    raw_text = "#bold Net: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('urban_goods_net')|E1]#!"
                     align = left
 					autoresize = yes
 					max_width = 400
@@ -53,7 +53,7 @@ types Goods
 				
 				text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "Produced per Capita: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('goods_produced_per_capita')|1]#!"
+                    raw_text = "Produced per Capita: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('goods_produced_per_capita')|E1]#!"
                     align = left
 					autoresize = yes
 					max_width = 400

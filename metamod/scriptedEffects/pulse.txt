@@ -20,9 +20,7 @@ annualPulseCounty = {
 
 	county_migration = yes
     county_growth = yes  	
-    county_economy = yes
-	
-	county_disease = yes
+    county_economy = yes	
 	
 	county_ai = yes
 	

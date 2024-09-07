@@ -53,7 +53,7 @@ types MigrationProvince
 						
 						} 
 					}
-                    raw_text = "#bold [demd_migration_pull|E]:#! [Province.MakeScope.Var('migration_pull').GetValue|%0]#!"
+                    raw_text = "#bold [demd_migration_pull|E]:#! [Province.MakeScope.Var('migration_pull').GetValue|E%0]#!"
                     align = left
 					autoresize = yes
 					max_width = 400

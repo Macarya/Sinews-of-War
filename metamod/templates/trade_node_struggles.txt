@@ -42,9 +42,7 @@ demd_trade_node_struggle_DEMD_META_REGION = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -105,8 +103,6 @@ demd_trade_node_struggle_DEMD_META_REGION = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -198,8 +194,6 @@ demd_trade_node_struggle_DEMD_META_REGION = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {

@@ -1,4 +1,4 @@
-﻿
+
 NDomain = {
 	TAX_AT_MAX_COUNTY_DEVELOPMENT = 0				# Was 0.5. How much % tax bonus do you get at 100 county development? Interpolated between this value and 0% when between 0 and 100
 	LEVIES_AT_MAX_COUNTY_DEVELOPMENT = 0		# How many % levies bonus do you get at 100 county development? Interpolated between this value and 0% when between 0 and 100
@@ -28,7 +28,7 @@ NArmy = {
 }
 
 NCounty = {
-	COUNTY_OPINION_ZERO_ACCEPTANCE = -30
+	COUNTY_OPINION_ZERO_ACCEPTANCE = -20
 }
 
 NCharacter = {
