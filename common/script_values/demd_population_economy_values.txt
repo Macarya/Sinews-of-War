@@ -638,8 +638,8 @@ trade_power_ruler_bonus = {
 }
 
 ##############################################################################################
-manpower_percent_base = 0.03
-manpower_percent_per_edict_level = 0.015
+manpower_percent_base = 0.02
+manpower_percent_per_edict_level = 0.01
 
 garrison_manpower_percent_base = 0.3
 garrison_manpower_percent_per_edict_level = 0.05

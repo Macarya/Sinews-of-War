@@ -40,14 +40,14 @@ types TradeNode
 				spacer = { size = { 0 14 } }
 				text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "Collected [demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.MakeScope.Var('collected_trade_value').GetValue|2]"
+                    raw_text = "Collected [demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.MakeScope.Var('collected_trade_value').GetValue|E2]"
                     align = left
 					autoresize = yes
 					max_width = 400
                 }
                 text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "[demd_trade_power|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.MakeScope.Var('trade_power').GetValue|2]"
+                    raw_text = "[demd_trade_power|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.MakeScope.Var('trade_power').GetValue|E2]"
                     align = left
 					autoresize = yes
 					max_width = 400

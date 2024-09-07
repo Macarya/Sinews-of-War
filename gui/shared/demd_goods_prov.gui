@@ -42,7 +42,7 @@ types GoodsProvince
 
 				text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "#bold Net: [Province.MakeScope.ScriptValue('rural_goods_net')|1]#!"
+                    raw_text = "#bold Net: [Province.MakeScope.ScriptValue('rural_goods_net')|E1]#!"
                     align = left
 					autoresize = yes
 					max_width = 400

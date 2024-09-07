@@ -52,14 +52,14 @@ types Food
 						
 						} 
 					}
-                    raw_text = "Produced: [Province.MakeScope.Var('food_produced').GetValue|2]"
+                    raw_text = "Produced: [Province.MakeScope.Var('food_produced').GetValue|E2]"
                     align = left
 					autoresize = yes
 					max_width = 400
                 }
 				text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "#bold Net: [Province.MakeScope.ScriptValue('rural_food_net')|1]#!"
+                    raw_text = "#bold Net: [Province.MakeScope.ScriptValue('rural_food_net')|E1]#!"
                     align = left
 					autoresize = yes
 					max_width = 400
@@ -84,7 +84,7 @@ types Food
 						
 						} 
 					}
-                    raw_text = "[demd_food_districts|E] Constructed: [Province.MakeScope.Var('food_districts_count').GetValue|1]/[Province.MakeScope.Var('food_districts_max').GetValue|1]"
+                    raw_text = "[demd_food_districts|E] Constructed: [Province.MakeScope.Var('food_districts_count').GetValue|E1]/[Province.MakeScope.Var('food_districts_max').GetValue|E1]"
                     align = left
 					autoresize = yes
 					max_width = 400

@@ -1774,7 +1774,7 @@ window = {
                                         using = Status_Bad
                                     }
 									text_single = {
-										raw_text = "[Province.GetHolding.GetIncome|2]"
+										raw_text = "[Province.GetHolding.GetIncome|E2]"
 										default_format = "#V"
 										tooltipwidget = { 
                                             tax_breakdown_widget = { 
@@ -1800,7 +1800,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = "[Province.MakeScope.ScriptValue('total_manpower_gui')|k]"
+										raw_text = "[Province.MakeScope.ScriptValue('total_manpower_gui')|Ek]"
 										default_format = "#high"
 									}
 								}								
@@ -1840,7 +1840,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.MakeScope.Var('population').GetValue|1]k"
+										raw_text = "#E [Province.MakeScope.Var('population').GetValue|1]K#!"
 										default_format = "#high"
 									}
 								}
@@ -1857,7 +1857,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.MakeScope.ScriptValue('growth_rate_display')|%1]"
+										raw_text = " [Province.MakeScope.ScriptValue('growth_rate_display')|E%1]"
 										default_format = "#high"
 									}
 								}
@@ -1874,7 +1874,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.MakeScope.Var('internal_migration_growth_percent').GetValue|%1]"
+										raw_text = " [Province.MakeScope.Var('internal_migration_growth_percent').GetValue|E%1]"
 										default_format = "#high"
 									}	
 								}
@@ -1899,7 +1899,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.MakeScope.Var('food_ratio').GetValue|%0]"
+										raw_text = " [Province.MakeScope.Var('food_ratio').GetValue|E%0]"
 										default_format = "#high"
 									}
 								}
@@ -1916,7 +1916,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = "+[Province.MakeScope.Var('capital_production_multiplier').GetValue|%0]"
+										raw_text = "#E +[Province.MakeScope.Var('capital_production_multiplier').GetValue|%0]#!"
 										default_format = "#high"
 									}
 								}	
@@ -1933,7 +1933,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = "[Province.MakeScope.Var('knight_capacity_produced').GetValue|2]"
+										raw_text = "[Province.MakeScope.Var('knight_capacity_produced').GetValue|E2]"
 										default_format = "#high"
 									}
 								}								
@@ -1975,7 +1975,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('population').GetValue|1]k"
+										raw_text = "#E [Province.GetCounty.GetTitle.MakeScope.Var('population').GetValue|1]K#!"
 										default_format = "#high"
 									}
 								}
@@ -1992,7 +1992,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.GetCounty.GetTitle.MakeScope.ScriptValue('growth_rate_display')|%1]"
+										raw_text = " [Province.GetCounty.GetTitle.MakeScope.ScriptValue('growth_rate_display')|E%1]"
 										default_format = "#high"
 									}
 								}
@@ -2011,7 +2011,7 @@ window = {
 									}
 									text_single = {
 										#tooltip = "[demd_migration_pull|E]"
-										raw_text = " [Province.GetCounty.GetTitle.MakeScope.ScriptValue('total_migration_growth_percent')|%1]"
+										raw_text = " [Province.GetCounty.GetTitle.MakeScope.ScriptValue('total_migration_growth_percent')|E%1]"
 										default_format = "#high"
 									}	
 								}
@@ -2036,7 +2036,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('food_ratio').GetValue|%0]"
+										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('food_ratio').GetValue|E%0]"
 										default_format = "#high"
 									}
 								}
@@ -2053,7 +2053,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " +[Province.GetCounty.GetTitle.MakeScope.Var('capital_production_multiplier').GetValue|0%]"
+										raw_text = "#E +[Province.GetCounty.GetTitle.MakeScope.Var('capital_production_multiplier').GetValue|0%]#!"
 										default_format = "#high"
 									}
 								}
@@ -2070,7 +2070,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('trade_value').GetValue|1]"
+										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('trade_value').GetValue|E1]"
 										default_format = "#high"
 									}
 								}
@@ -2096,7 +2096,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('sanitation').GetValue|%0]"
+										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('sanitation').GetValue|E%0]"
 										default_format = "#high"
 									}
 								}
@@ -2113,7 +2113,7 @@ window = {
 										size = { 25 25 }
 									}
 									text_single = {
-										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('public_order').GetValue|%0]"
+										raw_text = " [Province.GetCounty.GetTitle.MakeScope.Var('public_order').GetValue|E%0]"
 										default_format = "#high"
 									}
 								}								

@@ -1,4 +1,4 @@
-﻿#############################################
+#############################################
 # DEMD Population System
 # by Vertimnus
 # Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
@@ -395,26 +395,27 @@ demd_unit_edict_expense = {
 	value = var:county_population
 	multiply = food_base_price
 	multiply = tax_percent_base
-	divide = 24 # 6 edicts * level 4 (max)
+	divide = 16 # 4 edicts * level 4 (max)
+	multiply = 3
 }
 
 demd_combined_edict_level = {
 	value = var:public_order_setting
-	add = var:sanitation_setting
 	add = var:irrigation_setting
 	add = var:infrastructure_setting
+	add = var:sanitation_setting
 }
 
 
 demd_amenity_level_expected = { 
-	value = 0 
+	value = 1
 	if = {
 		limit = { NOT = { holder = { has_government = tribal_government } } }
-		add = 1
+		add = 0
 	}
 	if = {
 		limit = { holder.culture = { has_same_culture_heritage = prev.culture } }
-		add = 1
+		add = 0
 	}
 	if = {
 		limit = { holder.capital_county = this }
@@ -424,18 +425,22 @@ demd_amenity_level_expected = {
 		limit = { holder.ai_greed < 0 }
 		add = 0.5
 	}
+	if = { 
+		limit = { holder.ai_greed > 20 }
+		add = -0.5
+	}
 	if = { # lower amenities while at war
 		limit = { holder = { is_at_war = yes } }
-		subtract = 1
+		subtract = 0
 	}
 	if = {
 		limit = { holder.monthly_character_income > 0 }
 		add = { # adjust amenities based on treasury
 			value = holder.gold
 			divide = holder.monthly_character_income
-			multiply = 0.5
-			min = -3
-			max = 1
+			multiply = 0.1
+			min = -2
+			max = 2
 		}
 	}
 	else = {

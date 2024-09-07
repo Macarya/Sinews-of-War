@@ -30,7 +30,7 @@ setEdicts = { # should write better logic later but this is fine for now probabl
 	# tax rate
 	if = {
 		limit = { 
-			county.county_opinion < -15	
+			county.county_opinion < -40	
 			var:manpower_setting < var:tax_setting
 			NOT = { has_variable = tax_setting_changed }
 		}
@@ -38,7 +38,7 @@ setEdicts = { # should write better logic later but this is fine for now probabl
 	}
 	else_if = {
 		limit = { 
-			county.county_opinion > 15	
+			county.county_opinion > 25
 			var:manpower_setting >= var:tax_setting
 			NOT = { has_variable = tax_setting_changed }
 		}
@@ -49,7 +49,7 @@ setEdicts = { # should write better logic later but this is fine for now probabl
 	# manpower rate
 	if = {
 		limit = {
-			county.county_opinion < -15	
+			county.county_opinion < -40	
 			var:manpower_setting >= var:tax_setting 
 			NOT = { has_variable = manpower_setting_changed }
 		}
@@ -57,7 +57,7 @@ setEdicts = { # should write better logic later but this is fine for now probabl
 	}
 	else_if = {
 		limit = {
-			county.county_opinion > 15	
+			county.county_opinion > 25	
 			var:manpower_setting < var:tax_setting 
 			NOT = { has_variable = manpower_setting_changed }
 		}

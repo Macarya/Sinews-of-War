@@ -127,7 +127,7 @@ types Manpower
 						
 						} 
 					}
-                    raw_text = "#bold Rate: [Province.MakeScope.ScriptValue('manpower_total_percent')|%1]#!"
+                    raw_text = "#bold Rate: [Province.MakeScope.ScriptValue('manpower_total_percent')|E%1]#!"
                     align = left
 					autoresize = yes
 					max_width = 400

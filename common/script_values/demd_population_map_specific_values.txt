@@ -39,6 +39,7 @@ food_to_liege_rate = {
 			value = normal_tax
 		}
 	}
+	multiply = 0.5
 }
 
 free_manpower_to_liege_rate = {

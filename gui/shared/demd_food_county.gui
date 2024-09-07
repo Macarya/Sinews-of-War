@@ -47,7 +47,7 @@ types FoodCounty
                 }
 				text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "#bold Net: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('urban_food_net')|1]#!"
+                    raw_text = "#bold Net: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('urban_food_net')|E1]#!"
                     align = left
 					autoresize = yes
 					max_width = 400

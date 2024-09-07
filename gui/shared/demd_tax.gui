@@ -134,7 +134,7 @@ types Tax
 				spacer = { size = { 0 14 } }
 				text_multi = {
 					layoutpolicy_horizontal = expanding
-					raw_text = "[county|E] Raid [gold|E] (spared): [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_raid_spared_gold_value')|1]"
+					raw_text = "[county|E] Raid [gold|E] (spared): [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_raid_spared_gold_value')|E1]"
 					align = left
 					autoresize = yes
 					max_width = 400
@@ -145,7 +145,7 @@ types Tax
 				}
 				text_multi = {
 					layoutpolicy_horizontal = expanding
-					raw_text = "[county|E] Raid [gold|E] (plundered): [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_raid_plunder_gold_value')|1]"
+					raw_text = "[county|E] Raid [gold|E] (plundered): [Province.GetCounty.GetTitle.MakeScope.ScriptValue('demd_raid_plunder_gold_value')|E1]"
 					align = left
 					autoresize = yes
 					max_width = 400
