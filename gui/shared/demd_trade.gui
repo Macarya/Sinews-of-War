@@ -38,7 +38,7 @@ types Trade
 						
 						} 
 					}
-                    raw_text = "[demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_value').GetValue|2]"
+                    raw_text = "[demd_trade_value|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_value').GetValue|E2]"
                     align = left
 					autoresize = yes
 					max_width = 400
@@ -51,7 +51,7 @@ types Trade
 						
 						} 
 					}
-                    raw_text = "[demd_trade_power|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_power').GetValue|2]"
+                    raw_text = "[demd_trade_power|E]: [Province.GetCounty.GetTitle.MakeScope.Var('trade_power').GetValue|E2]"
                     align = left
 					autoresize = yes
 					max_width = 400
@@ -64,7 +64,7 @@ types Trade
 						
 						} 
 					}
-                    raw_text = "[demd_trade_node|E]:#! [Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.GetName]"
+                    raw_text = "[demd_trade_node|E]:#! [Province.GetCounty.GetTitle.MakeScope.Var('trade_node').Struggle.GetName|E]"
                     align = left
 					autoresize = yes
 					max_width = 400

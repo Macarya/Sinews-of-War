@@ -17,7 +17,7 @@ clan_government_tax_collector_aptitude_multiplier = {
 					VALUE = 5
 				}
 			}
-			add = 12
+			add = 10
 		}
 		else_if = {
 			limit = {
@@ -26,7 +26,7 @@ clan_government_tax_collector_aptitude_multiplier = {
 					VALUE = 4
 				}
 			}
-			add = 10
+			add = 8
 		}
 		else_if = {
 			limit = {
@@ -35,7 +35,7 @@ clan_government_tax_collector_aptitude_multiplier = {
 					VALUE = 3
 				}
 			}
-			add = 8
+			add = 6
 		}
 		else_if = {
 			limit = {
@@ -93,9 +93,9 @@ tax_obligation_half_of_slot = {
 exempt_feudal_tax_contract = 0
 exempt_feudal_tax = 0
 
-normal_tax = 0.15
-normal_tax_rate = 0.15
-normal_manpower_rate = 0.15
+normal_tax = 0.1
+normal_tax_rate = 0.1
+normal_manpower_rate = 0.2
 
 low_feudal_tax_contract = {
 	value = 0.05
@@ -135,7 +135,7 @@ high_feudal_tax = {
 	value = 0.15
 }
 extortionate_feudal_tax_contract = {
-	value = 0.25
+	value = 0.2
 	scope:liege.primary_title = {
 		if = {
 			limit = { has_variable = imperial_decay }
@@ -144,7 +144,7 @@ extortionate_feudal_tax_contract = {
 	}
 }
 extortionate_feudal_tax = {
-	value = 0.25
+	value = 0.2
 }
 
 # DEMD
@@ -167,7 +167,7 @@ low_feudal_manpower_rate = {
 	}
 }
 normal_feudal_manpower_rate_contract = {
-	value = 0.25
+	value = 0.2
 	scope:liege.primary_title = {
 		if = {
 			limit = { has_variable = imperial_decay }
@@ -176,7 +176,7 @@ normal_feudal_manpower_rate_contract = {
 	}
 }
 normal_feudal_manpower_rate = {
-	value = 0.25
+	value = 0.2
 	liege.primary_title = {
 		if = {
 			limit = { has_variable = imperial_decay }
@@ -185,7 +185,7 @@ normal_feudal_manpower_rate = {
 	}
 }
 high_feudal_manpower_rate_contract = {
-	value = 0.35
+	value = 0.3
 	scope:liege.primary_title = {
 		if = {
 			limit = { has_variable = imperial_decay }
@@ -194,7 +194,7 @@ high_feudal_manpower_rate_contract = {
 	}
 }
 high_feudal_manpower_rate = {
-	value = 0.35
+	value = 0.3
 	liege.primary_title = {
 		if = {
 			limit = { has_variable = imperial_decay }
@@ -203,7 +203,7 @@ high_feudal_manpower_rate = {
 	}
 }
 extortionate_feudal_manpower_rate_contract = {
-	value = 0.5
+	value = 0.4
 	scope:liege.primary_title = {
 		if = {
 			limit = { has_variable = imperial_decay }
@@ -212,7 +212,7 @@ extortionate_feudal_manpower_rate_contract = {
 	}
 }
 extortionate_feudal_manpower_rate = {
-	value = 0.5
+	value = 0.4
 	liege.primary_title = {
 		if = {
 			limit = { has_variable = imperial_decay }
@@ -309,10 +309,10 @@ ghazi_prestige_cost_increments_tooltip = {
 #########################
 
 tribal_manpower_rate = {
-	value = 0	
+	value = 0.1
 	liege = {
 		add = {
-			value = 0.15
+			value = 0.05
 			multiply = prestige_level
 		}
 	}
@@ -326,10 +326,10 @@ tribal_manpower_rate = {
 }
 
 tribal_manpower_rate_contract = {
-	value = 0	
+	value = 0.1
 	scope:liege = {
 		add = {
-			value = 0.15
+			value = 0.05
 			multiply = prestige_level
 		}
 	}
@@ -343,10 +343,10 @@ tribal_manpower_rate_contract = {
 }
 
 tribal_tax_rate = {
-	value = 0	
+	value = 0.05
 	liege = {
 		add = {
-			value = 0.08
+			value = 0.03
 			multiply = prestige_level
 		}
 	}
@@ -360,10 +360,10 @@ tribal_tax_rate = {
 }
 
 tribal_tax_rate_contract = {
-	value = 0	
+	value = 0.05
 	scope:liege = {
 		add = {
-			value = 0.08
+			value = 0.03
 			multiply = prestige_level
 		}
 	}
@@ -477,20 +477,20 @@ republic_tax_rate_contract = {
 #########################
 
 theocratic_manpower_rate = {
-	if = {
-		limit = { NOT = { liege.faith = faith } }
-		value = 0.05
-	}
-	else = {
-		value = 0.05
-		multiply = liege.piety_level
-	}
+	value = 0.05
 	if = {
 		limit = { 
 			culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
 			primary_title.tier >= tier_county
 		}
-		add = 0.1
+		add = 0.05
+	}
+	if = {
+		limit = { liege.faith = faith }
+		add = {
+			value = 0.025
+			multiply = liege.piety_level
+		}
 	}
 	liege.primary_title = {
 		if = {
@@ -500,22 +500,20 @@ theocratic_manpower_rate = {
 	}
 }
 theocratic_manpower_rate_contract = {
-	if = {
-		limit = { NOT = { scope:liege.faith = scope:vassal.faith } }
-		value = 0.05
-	}
-	else = {
-		value = 0.05
-		multiply = scope:liege.piety_level
-	}
+	value = 0.05
 	if = {
 		limit = { 
-			scope:vassal = { 
-				culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
-				primary_title.tier >= tier_county
-			}
+			culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
+			primary_title.tier >= tier_county
 		}
-		add = 0.1
+		add = 0.05
+	}
+	if = {
+		limit = { liege.faith = faith }
+		add = {
+			value = 0.025
+			multiply = liege.piety_level
+		}
 	}
 	scope:liege.primary_title = {
 		if = {
@@ -526,20 +524,20 @@ theocratic_manpower_rate_contract = {
 }
 
 theocratic_tax_rate = {
-	if = {
-		limit = { NOT = { liege.faith = faith } }
-		value = 0.05
-	}
-	else = {
-		value = 0.05
-		multiply = liege.piety_level
-	}
+	value = 0.05
 	if = {
 		limit = { 
 			culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
 			primary_title.tier >= tier_county
 		}
-		add = 0.1
+		add = 0.05
+	}
+	if = {
+		limit = { liege.faith = faith }
+		add = {
+			value = 0.025
+			multiply = liege.piety_level
+		}
 	}
 	liege.primary_title = {
 		if = {
@@ -549,22 +547,20 @@ theocratic_tax_rate = {
 	}
 }
 theocratic_tax_rate_contract = {
-	if = {
-		limit = { NOT = { scope:liege.faith = scope:vassal.faith } }
-		value = 0.05
-	}
-	else = {
-		value = 0.05
-		multiply = scope:liege.piety_level
-	}
+	value = 0.05
 	if = {
 		limit = { 
-			scope:vassal = { 
-				culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
-				primary_title.tier >= tier_county
-			}
+			culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
+			primary_title.tier >= tier_county
 		}
-		add = 0.1
+		add = 0.05
+	}
+	if = {
+		limit = { liege.faith = faith }
+		add = {
+			value = 0.025
+			multiply = liege.piety_level
+		}
 	}
 	scope:liege.primary_title = {
 		if = {
@@ -580,6 +576,10 @@ theocratic_tax_rate_contract = {
 
 clan_manpower_rate = {
 	value = 0.2
+	if = {
+		limit = { exists = scope:liege:tax_collector }
+		add = 1
+	}
 	if = {
 		limit = { exists = scope:tax_collector }
 		add = clan_government_levies_default
