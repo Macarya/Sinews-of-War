@@ -407,11 +407,81 @@ sanitation_delta = {
 }
 
 outbreak_risk = {
+	#used in an x/10000 chance in the old DEMD epidemic system
+	#no longer used but formula is kept for reference
 	value = var:sanitation
 	multiply = -0.9
 	add = 1
 	multiply = 10
 }
+
+# Outbreak - modify vanilla values to account for sanitation
+#picking this value because every disease uses it so avoids touching too many items
+# for now we'll go with a straight percentage
+
+recent_epidemics_outbreak_mult_value = {
+	value = 1
+	min = 0.001
+	#Recently recovered from this epidemic
+	if = {
+		limit = {
+			is_target_in_variable_list = {
+				name = epidemic_cooldown #Average lifespan
+				target = scope:epidemic_type
+			}
+		}
+		if = {
+			limit = {
+				has_game_rule = epidemic_frequency_very_often
+			}
+			value = outbreak_decrease_mult_high
+		}
+		else_if = {
+			limit = {
+				has_game_rule = epidemic_frequency_doomsday
+			}
+			value = outbreak_decrease_mult_medium
+		}
+		else = {
+			value = outbreak_decrease_mult_unlikely
+		}
+		
+	}
+
+	#People still remember how to social distance in general
+	else_if = {
+		limit = {
+			has_variable = epidemic_cooldown_general #Average social memory
+		}
+		if = {
+			limit = {
+				has_game_rule = epidemic_frequency_very_often
+			}
+			value = outbreak_decrease_mult_medium
+		}
+		else_if = {
+			limit = {
+				has_game_rule = epidemic_frequency_doomsday
+			}
+			value = outbreak_decrease_mult_low
+		}
+		else = {
+			value = outbreak_decrease_mult_high
+		}
+	}
+	#ADDED: sanitation multiplier (value ranges from 0 to 1)
+	divide = {
+		if = { #urban province - low sanitation increases outbreak risk
+			limit = { this = county.title_province }
+			value = county.var:sanitation
+		}
+		else = {
+			#rural, always 100%
+			value = 1
+		}
+	}
+}
+
 
 
 
