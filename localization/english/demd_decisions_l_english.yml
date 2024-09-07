@@ -2,7 +2,7 @@
 
 plague_seclude_court:0 "Seclude Court"
 plague_seclude_court_decision:0 "Seclude Court"
-plague_seclude_court_decision_desc:0 "Secluding our court will reduce the risk of [courtiers|E] catching [demd_plague|E], but may not be popular among the people."
+plague_seclude_court_decision_desc:0 "Secluding our court will reduce the risk of [courtiers|E] catching [epidemics|E], but may not be popular among the people."
 plague_seclude_court_decision_tooltip:0 "$plague_seclude_court_decision_desc$"
 plague_seclude_court_confirm:0 "Shut the Gates"
 

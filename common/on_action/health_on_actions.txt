@@ -119,20 +119,7 @@ disease_outbreak_pulse = {
 			}
 		}
 		
-		# Chance of getting plague if current location county has a plague
-		if = {
-			limit = {
-				exists = location
-				location = {
-					exists = county # in case we are at sea
-					county = { has_county_modifier = plague_present }
-				}
-				NOT = { has_character_flag = contraction_cooldown_general }
-			}
-			trigger_event = {
-				on_action = demd_plague_outbreak_pulse
-			}
-		}			
+		#removed DEMD plagues, will tie vanilla plagues into pop system}			
 	}
 }
 
@@ -247,58 +234,7 @@ demd_noncontagious_pulse = {
 	}
 }
 
-demd_plague_outbreak_pulse = {	
-	random_events = {
-		chance_to_happen = 50
-		chance_of_no_event = {
-			# Perk reduces chance of sickness for yourself and for Courtiers/Guests
-			if = {
-				limit = {
-					has_perk = wash_your_hands_perk
-				}
-				value = 50
-			}
-			else_if = {
-				limit = {
-					exists = host
-					host = { has_perk = wash_your_hands_perk }
-				}
-				value = 25
-			}
-			
-			# If we are secluded, we get a bonus, if not we have to rely on high county sanitation
-			if = {
-				limit = {
-					has_character_modifier = secluded_court
-				}
-				add = 40
-			}
-			else_if = {
-				limit = {
-					exists = host
-					host = { has_character_modifier = secluded_court }
-				}
-				add = 40
-			}
-			else = {
-				add = {
-					value = location.county.var:sanitation
-					multiply = 40
-				}
-			}
-			if = { # Game Rule
-				limit = {
-					has_game_rule = fewer_minor_disease_frequency
-				}
-				value = 30
-			}
-		}
-		250 = health.1001 	#Ill
-		# 2500 = health.1009 	#Great pox - anachronistic - did not exist until colombian exchange
-		2500 = health.1010	#Smallpox
-		200 = health.1011	#Bubonic plague (after 1346)
-	}
-}
+#removed DEMD plagues, will tie vanilla plagues into pop system
 
 wounded_recovery_pulse = {
 	trigger = {
