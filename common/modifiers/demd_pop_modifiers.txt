@@ -166,15 +166,16 @@ demd_sanitation_setting_3 = {
 
 demd_sanitation_setting_2 = {
 	icon = treatment_positive
-	epidemic_resistance = 3
 }
 
 demd_sanitation_setting_1 = {
 	icon = treatment_negative
+	epidemic_resistance = -5
 }
 
 demd_sanitation_setting_0 = {
 	icon = treatment_negative
+	epidemic_resistance = -10
 }
 
 demd_irrigation_setting_4 = {
