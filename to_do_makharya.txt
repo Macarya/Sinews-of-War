@@ -1,0 +1,13 @@
+Check tax/service edict having effect (and look into reduced delay)
+	done good
+	Delay?
+	
+In county UI add blue to word with tooltip
+	Done
+	Done Do it for imbricated tooltip 
+	Add info to popular opinion and vigor (maybe also fervor)
+		Pop opinion: manpower rate, migration pull, public order
+		Vigor: migration pull, public order
+
+Idea: link persecution to cultural acceptance and fervor if different faith
+

@@ -601,7 +601,7 @@ heritage_hunnic = {
 		}
 	}
 	parameters = {
-		heritage_group_latin = yes
+		heritage_group_turkic = yes
 		heritage_family_european = yes 
 	}
 	audio_parameter = european

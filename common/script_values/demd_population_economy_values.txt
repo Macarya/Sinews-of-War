@@ -275,7 +275,7 @@ goods_produced_per_capita = {
 	}
 }
 
-goods_base_price = 0.45
+goods_base_price = 0.6
 
 capital_production_multiplier = {
 	value = var:goods_stockpile
