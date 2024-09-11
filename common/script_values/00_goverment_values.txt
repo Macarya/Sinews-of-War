@@ -503,16 +503,18 @@ theocratic_manpower_rate_contract = {
 	value = 0.05
 	if = {
 		limit = { 
-			culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
-			primary_title.tier >= tier_county
+			scope:vassal = { 
+				culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
+				primary_title.tier >= tier_county
+			}
 		}
 		add = 0.05
 	}
 	if = {
-		limit = { liege.faith = faith }
+		limit = { scope:liege.faith = scope:vassal.faith }
 		add = {
 			value = 0.025
-			multiply = liege.piety_level
+			multiply = scope:liege.piety_level
 		}
 	}
 	scope:liege.primary_title = {
@@ -550,16 +552,18 @@ theocratic_tax_rate_contract = {
 	value = 0.05
 	if = {
 		limit = { 
-			culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
-			primary_title.tier >= tier_county
+			scope:vassal = { 
+				culture = { has_cultural_parameter = theocratic_vassals_pay_more } 
+				primary_title.tier >= tier_county
+			}
 		}
 		add = 0.05
 	}
 	if = {
-		limit = { liege.faith = faith }
+		limit = { scope:liege.faith = scope:vassal.faith }
 		add = {
 			value = 0.025
-			multiply = liege.piety_level
+			multiply = scope:liege.piety_level
 		}
 	}
 	scope:liege.primary_title = {
