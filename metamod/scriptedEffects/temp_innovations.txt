@@ -8,6 +8,12 @@
 demd_add_innovation_bonuses = {
 
 	if = {
+		limit = { has_innovation = innovation_manorialism }
+		change_variable = { name = food_cultural_production_mult add = 0.02 }
+		change_variable = { name = food_districts_cultural_production_mult add = 0.03 }
+	}
+
+	if = {
 		limit = { has_innovation = innovation_currency_02 }
 		change_variable = { name = trade_power_cultural_production_mult add = 0.05 }
 	}
@@ -21,17 +27,6 @@ demd_add_innovation_bonuses = {
 	if = {
 		limit = { has_innovation = innovation_house_soldiers }
 		change_variable = { name = manpower_cultural_production_mult add = 0.05 }
-	}
-
-	if = {
-		limit = { has_innovation = innovation_manorialism }
-		change_variable = { name = food_districts_cultural_production_mult add = 0.03 }
-		change_variable = { name = food_cultural_production_mult add = 0.02 }
-	}
-
-	if = {
-		limit = { has_innovation = innovation_currency_03 }
-		change_variable = { name = trade_power_cultural_production_mult add = 0.05 }
 	}
 
 	if = {
@@ -49,6 +44,11 @@ demd_add_innovation_bonuses = {
 		limit = { has_innovation = innovation_guilds }
 		change_variable = { name = public_order_cultural_production_mult add = 0.03 }
 		change_variable = { name = goods_cultural_production_mult add = 0.05 }
+	}
+
+	if = {
+		limit = { has_innovation = innovation_currency_03 }
+		change_variable = { name = trade_power_cultural_production_mult add = 0.05 }
 	}
 
 	if = {

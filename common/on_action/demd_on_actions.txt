@@ -161,7 +161,7 @@ demd_empire_title_gain = {
 			every_player = {
 				limit = { is_vassal_of = prev.holder }
 				send_interface_message = {
-					type = event_steward_task_bad	
+					type = msg_steward_task_bad	
 					title = demd_imperial_decay_succession	
 					desc = demd_imperial_decay_succession_desc
 					left_icon = scope:new_holder				

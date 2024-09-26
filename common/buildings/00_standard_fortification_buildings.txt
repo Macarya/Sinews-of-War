@@ -39,6 +39,7 @@ ramparts_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		modifier = {
 			factor = 5
 			free_building_slots <= 3 years_from_game_start > 0.01
@@ -68,8 +69,22 @@ ramparts_02 = {
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder.culture = {
-			has_innovation = innovation_motte
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
 		}
 	}
 
@@ -101,6 +116,7 @@ ramparts_02 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -121,9 +137,27 @@ ramparts_03 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_battlements
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
 		}
 	}
 
@@ -156,6 +190,7 @@ ramparts_03 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_03
@@ -172,9 +207,27 @@ ramparts_04 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_battlements
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
 		}
 	}
 
@@ -210,6 +263,7 @@ ramparts_04 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_04
@@ -226,9 +280,27 @@ ramparts_05 = {
 	}
 
 	can_construct = {
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
 		building_requirement_castle_city_church = { LEVEL = 03 }
 		scope:holder.culture = {
 			has_innovation = innovation_hoardings
+		}
+	}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
 		}
 	}
 
@@ -264,6 +336,7 @@ ramparts_05 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_05
@@ -280,9 +353,27 @@ ramparts_06 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_hoardings
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
 		}
 	}
 
@@ -318,6 +409,7 @@ ramparts_06 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_06
@@ -334,9 +426,27 @@ ramparts_07 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_machicolations
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			scope:holder.culture = {
+				has_innovation = innovation_machicolations
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
 		}
 	}
 
@@ -372,6 +482,7 @@ ramparts_07 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_07
@@ -388,9 +499,27 @@ ramparts_08 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_machicolations
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			scope:holder.culture = {
+				has_innovation = innovation_machicolations
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
 		}
 	}
 
@@ -425,6 +554,7 @@ ramparts_08 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_08
@@ -474,6 +604,7 @@ curtain_walls_01 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		modifier = {
 			factor = 5
 			free_building_slots <= 3 years_from_game_start > 0.01
@@ -502,8 +633,22 @@ curtain_walls_02 = {
 	can_construct_potential = {
 		building_curtain_walls_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder.culture = {
-			has_innovation = innovation_motte
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
 		}
 	}
 
@@ -538,6 +683,7 @@ curtain_walls_02 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		ai_economical_building_preference_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
@@ -559,9 +705,27 @@ curtain_walls_03 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_battlements
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
 		}
 	}
 
@@ -596,6 +760,7 @@ curtain_walls_03 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		ai_economical_building_preference_modifier = yes
 	}
 	flag = demd_public_order_building
@@ -613,9 +778,27 @@ curtain_walls_04 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_battlements
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
 		}
 	}
 
@@ -650,6 +833,7 @@ curtain_walls_04 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		ai_economical_building_preference_modifier = yes
 	}
 	flag = demd_public_order_building
@@ -667,9 +851,27 @@ curtain_walls_05 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_hoardings
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
 		}
 	}
 
@@ -705,6 +907,7 @@ curtain_walls_05 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		ai_economical_building_preference_modifier = yes
 	}
 	flag = demd_public_order_building
@@ -722,9 +925,27 @@ curtain_walls_06 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_hoardings
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
 		}
 	}
 
@@ -761,6 +982,7 @@ curtain_walls_06 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		ai_economical_building_preference_modifier = yes
 	}
 	flag = demd_public_order_building
@@ -778,9 +1000,27 @@ curtain_walls_07 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_machicolations
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			scope:holder.culture = {
+				has_innovation = innovation_machicolations
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
 		}
 	}
 
@@ -817,6 +1057,7 @@ curtain_walls_07 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		ai_economical_building_preference_modifier = yes
 	}
 	flag = demd_public_order_building
@@ -834,9 +1075,27 @@ curtain_walls_08 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_machicolations
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			scope:holder.culture = {
+				has_innovation = innovation_machicolations
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
 		}
 	}
 
@@ -871,6 +1130,7 @@ curtain_walls_08 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		ai_economical_building_preference_modifier = yes
 	}
 	flag = demd_public_order_building
@@ -923,6 +1183,7 @@ watchtowers_01 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		modifier = {
 			factor = 5
 			free_building_slots <= 3 years_from_game_start > 0.01
@@ -951,8 +1212,22 @@ watchtowers_02 = {
 	can_construct_potential = {
 		building_watchtowers_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder.culture = {
-			has_innovation = innovation_motte
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
 		}
 	}
 
@@ -989,6 +1264,7 @@ watchtowers_02 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -1010,9 +1286,27 @@ watchtowers_03 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_battlements
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
 		}
 	}
 	
@@ -1049,6 +1343,7 @@ watchtowers_03 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_03
@@ -1066,9 +1361,27 @@ watchtowers_04 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_battlements
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
 		}
 	}
 	
@@ -1106,6 +1419,7 @@ watchtowers_04 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_04
@@ -1123,9 +1437,27 @@ watchtowers_05 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_hoardings
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
 		}
 	}
 	
@@ -1164,6 +1496,7 @@ watchtowers_05 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_05
@@ -1181,9 +1514,27 @@ watchtowers_06 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_hoardings
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+				}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
 		}
 	}
 	
@@ -1223,6 +1574,7 @@ watchtowers_06 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_06
@@ -1240,9 +1592,27 @@ watchtowers_07 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_machicolations
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			scope:holder.culture = {
+				has_innovation = innovation_machicolations
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
 		}
 	}
 	
@@ -1282,6 +1652,7 @@ watchtowers_07 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_07
@@ -1299,9 +1670,27 @@ watchtowers_08 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_machicolations
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			scope:holder.culture = {
+				has_innovation = innovation_machicolations
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
 		}
 	}
 	
@@ -1339,6 +1728,7 @@ watchtowers_08 = {
 			}
 		}
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_08
@@ -1381,6 +1771,7 @@ hill_forts_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		modifier = {
 			factor = 5
 			free_building_slots <= 3 years_from_game_start > 0.01
@@ -1408,8 +1799,22 @@ hill_forts_02 = {
 	can_construct_potential = {
 		building_hill_forts_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder.culture = {
-			has_innovation = innovation_motte
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
 		}
 	}
 
@@ -1438,6 +1843,7 @@ hill_forts_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -1458,9 +1864,27 @@ hill_forts_03 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_battlements
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
 		}
 	}
 
@@ -1489,6 +1913,7 @@ hill_forts_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_03
@@ -1505,9 +1930,27 @@ hill_forts_04 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_battlements
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_motte
+			}
 		}
 	}
 	
@@ -1537,6 +1980,7 @@ hill_forts_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_04
@@ -1553,9 +1997,27 @@ hill_forts_05 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_hoardings
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
 		}
 	}
 	
@@ -1585,6 +2047,7 @@ hill_forts_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_05
@@ -1601,9 +2064,27 @@ hill_forts_06 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_hoardings
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_battlements
+			}
 		}
 	}
 	
@@ -1649,9 +2130,27 @@ hill_forts_07 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_machicolations
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			scope:holder.culture = {
+				has_innovation = innovation_machicolations
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
 		}
 	}
 	
@@ -1681,6 +2180,7 @@ hill_forts_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_07
@@ -1697,9 +2197,27 @@ hill_forts_08 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_machicolations
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_fortification
+					}
+				}
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			scope:holder.culture = {
+				has_innovation = innovation_machicolations
+			}
+		}
+		trigger_else = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_cultural_parameter = next_level_fortification
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_hoardings
+			}
 		}
 	}
 	
@@ -1727,6 +2245,7 @@ hill_forts_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_fortify_modifier = yes
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_08

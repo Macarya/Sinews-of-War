@@ -1,0 +1,23 @@
+tradition_dummy_for_error_log = {
+	category = combat
+
+	layers = {
+		0 = learning
+		1 = western
+		4 = fight.dds
+	}
+	
+	can_pick = {
+		always = no
+	}
+
+	parameters = {
+		theocratic_vassals_pay_more = yes
+	}
+	cost = {
+		prestige = 1
+	}
+	ai_will_do = {
+		value = 0
+	}
+}

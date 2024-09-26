@@ -89,13 +89,6 @@ types TradePower
                 }
 				text_multi = {
                     layoutpolicy_horizontal = expanding
-                    raw_text = "    From [demd_quarantine|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('trade_power_quarantine_malus')|%1]"
-                    align = left
-					autoresize = yes
-					max_width = 400
-                }
-				text_multi = {
-                    layoutpolicy_horizontal = expanding
 					visible = "[GetScriptedGui('demd_is_county_strategic_location_gui').IsShown( GuiScope.SetRoot( Province.GetCounty.GetTitle.MakeScope ).End)]"
                     raw_text = "    From [demd_node_strategic_location|E] in [demd_trade_node|E]: [Province.GetCounty.GetTitle.MakeScope.ScriptValue('strategic_location_trade_power_bonus')|%1]"
                     align = left

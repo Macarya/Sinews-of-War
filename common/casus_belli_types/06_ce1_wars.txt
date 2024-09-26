@@ -17,7 +17,11 @@ mythical_ancestor_war = {
 	}
 
 	allowed_for_character = {
-		scope:attacker.dynasty ?= { ce1_heroic_track_perks >= 2 }
+		has_variable_list = legendary_claims
+		dynasty ?= { ce1_heroic_track_perks >= 2 }
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
+		}
 	}
 	
 	allowed_against_character = {
@@ -216,7 +220,7 @@ mythical_ancestor_war = {
 	
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
+		
 		demd_vigor_defender_victory_effect_target = yes
 		
 		# Legitimacy
@@ -284,6 +288,21 @@ mythical_ancestor_war = {
 	
 	max_defender_score_from_occupation = 150
 	max_attacker_score_from_occupation = 150
+
+	ai_score_mult = {
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 }
 
 legendary_adventure = {
@@ -301,6 +320,9 @@ legendary_adventure = {
 			var:legendary_adventure_cb >= 1
 		}
 		highest_held_title_tier >= tier_duchy
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
+		}
 	}
 
 	allowed_for_character_display_regardless = {
@@ -338,7 +360,21 @@ legendary_adventure = {
 	ignore_effect = change_title_holder
 
 	ai_can_target_all_titles = { always = yes }
-	ai_score_mult = { value = varangian_adventure_ai_targeting_value }
+	ai_score_mult = {
+		value = varangian_adventure_ai_targeting_value
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 
 	valid_to_start = {
 	}
@@ -389,6 +425,7 @@ legendary_adventure = {
 			capital_barony = { save_scope_as = capital_barony }
 			# Send the actual troops.
 			send_interface_toast = {
+				type = msg_troops_gained
 				title = legendary_adventure.troops_raised.tt
 				left_icon = scope:attacker
 				#Raise the adventuring host!
@@ -1320,11 +1357,21 @@ legendary_adventure = {
 			scope:attacker = { add_gold = varangian_adventures_bounty_amount_value }
 			# Finally, general cleanup.
 			## Move any remaining newly-landless family to scope:attacker's court.
+			scope:attacker = {
+			#gather all your cool dudes
+				every_courtier = {
+					limit = {
+						is_ai = yes
+					}
+					add_to_list = vassal_family_not_processed_list
+				}
+			}
 			every_in_list = {
 				list = vassal_family_not_processed_list
 				limit = { is_ruler = no }
 				save_temporary_scope_as = landless_family
 				scope:attacker = { add_courtier = scope:landless_family }
+				set_location = scope:attacker.capital_province
 			}
 			## If scope:attacker wasn't the house head, they found a new house. We ignore their probable-tribalism.
 			if = {
@@ -1575,6 +1622,9 @@ leg_demand_fealty_cb = {
 		scope:attacker = {
 			has_character_modifier = fealty_demanded
 		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
+		}
 	}
 	
 	allowed_against_character = {
@@ -1761,4 +1811,19 @@ leg_demand_fealty_cb = {
 	max_ai_diplo_distance_to_title = 500
 	
 	on_invalidated_desc = msg_invalidate_war_title
+
+	ai_score_mult = {
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 }

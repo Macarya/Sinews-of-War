@@ -1,5 +1,7 @@
 ﻿plague_seclude_court = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 
 	desc = plague_seclude_court_decision_desc
 	selection_tooltip = plague_seclude_court_decision_tooltip
@@ -30,7 +32,9 @@
 }
 
 plague_unseclude_court = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 
 	desc = plague_seclude_court_decision_desc
 	selection_tooltip = plague_seclude_court_decision_tooltip

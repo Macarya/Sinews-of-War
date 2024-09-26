@@ -4,16 +4,12 @@
 
 window = {
 	name = "holding_view"
-	widgetid = "holding_view_id"
+	widgetid = "holding_view"
 	parentanchor = bottom|left
 	allow_outside = yes
 	movable = no
 	layer = windows_layer
 	size = { 800 781 }
-	datacontext = "[HoldingView.GetHolding]"
-	datacontext = "[HoldingView.GetProvince]"
-	datacontext = "[HoldingView.GetHolder]"
-	datacontext = "[Province.GetCounty]"
 	window_assign_excavation_leader = {}
 
 	background = {
@@ -64,6 +60,11 @@ window = {
 		name = "window_content"
 		margin_right = 40
 		margin_top = 35
+
+		datacontext = "[HoldingView.GetHolding]"
+		datacontext = "[HoldingView.GetProvince]"
+		datacontext = "[HoldingView.GetHolder]"
+		datacontext = "[Province.GetCounty]"
 
 		hbox = {
 			name = "county_header"
@@ -237,44 +238,79 @@ window = {
 
 			expand = {}
 
-			hbox = {
-				name = "county_modifiers_grid"
-				datamodel = "[HoldingView.GetCountyModifiers]"
+			widget = {
+				size = { 300 50 }
+				scissor = yes
 
-				item = {
-					modifier_item_icon = {
-						size = { 30 30 }
+				hbox = {
+					name = "county_modifiers_grid"
+					datamodel = "[HoldingView.GetCountyModifiers]"
 
-						blockoverride "icon_data" {
-						using = tooltip_ne
+						button_round = {
+							name = "move_domcicle_button"
+							datacontext = "[GetPlayer.GetDomicile]"
+							datacontext = "[HoldingView.GetProvince]"
+							visible = "[IsLandlessAdventurer( GetPlayer )]"
+							widgetid = "move_domcicle_button"
+							size = { 50 50 }
+
+							enabled = "[Domicile.CanMoveTo( Province.Self )]"
+							onclick = "[OpenGameViewData( 'move_domicile_planner', Province.Self )]"
+
+							tooltip = "[Domicile.GetType.GetMoveTooltip( Character.Self )]"
+							tooltip_when_disabled = "[Domicile.GetMoveToTooltip( Province.Self )]"
+							using = tooltip_ne
+
+							button_icon = {
+								alwaystransparent = yes
+								parentanchor = center
+								size = { 30 30 }
+								texture = "gfx/interface/icons/flat_icons/move_camp.dds"
+							}
+						}
+
+						expand = {}
+
+						spacer = {
+							visible = "[Or( IsLandlessAdventurer( GetPlayer ), County.IsFullyOccupied )]"
+							size = { 8 0 }
+						}
+
+					item = {
+						modifier_item_icon = {
+							size = { 30 30 }
+
+							blockoverride "icon_data" {
+								using = tooltip_ne
+							}
 						}
 					}
 				}
-			}
 
-			hbox = {
-				layoutpolicy_vertical = expanding
-				visible = [County.IsFullyOccupied]
-				datacontext = [County.GetCountyOccupant]
+				hbox = {
+					layoutpolicy_vertical = expanding
+					visible = [County.IsFullyOccupied]
+					datacontext = [County.GetCountyOccupant]
 
-				widget = {
-					size = { 52 52 }
+					widget = {
+						size = { 52 52 }
 
-					icon = {
-						size = { 70 70 }
-						name = "war_icon"
-						texture = "gfx/interface/icons/war_status/war_icon.dds"
-						parentanchor = center
-					}
+						icon = {
+							size = { 70 70 }
+							name = "war_icon"
+							texture = "gfx/interface/icons/war_status/war_icon.dds"
+							parentanchor = center
+						}
 
-					coa_realm_small = {
-						position = { 1 0 }
-						blockoverride "coa_button" {
-							tooltip = "COUNTY_OCCUPIER_TOOLTIP"
-							onclick = "[DefaultOnRealmFlagClick(Character.GetID)]"
-							onrightclick = "[DefaultOnCharacterRightClick(Character.GetID)]"
-							button_ignore = none
-							tooltip_enabled = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
+						coa_realm_small = {
+							position = { 1 0 }
+							blockoverride "coa_button" {
+								tooltip = "COUNTY_OCCUPIER_TOOLTIP"
+								onclick = "[DefaultOnRealmFlagClick(Character.GetID)]"
+								onrightclick = "[DefaultOnCharacterRightClick(Character.GetID)]"
+								button_ignore = none
+								tooltip_visible = "[Not(IsInteractionMenuOpenForCharacter(Character.GetID))]"
+							}
 						}
 					}
 				}
@@ -1205,7 +1241,7 @@ window = {
 
 						button_standard = {
 							name = "toggle_find_vassal"
-							visible = "[And( ObjectsEqual( HoldingView.GetTitle.GetHolder, GetPlayer ), Not(HoldingView.GetTitle.IsLeasedOut) )]"
+							visible = "[And(And( ObjectsEqual( HoldingView.GetTitle.GetHolder, GetPlayer ), Not(HoldingView.GetTitle.IsLeasedOut) ), Not(HoldingView.GetProvince.IsRealmCapital))]"
 							enabled = "[HoldingView.CanGrantTitle]"
 							text = "FIND_VASSAL_HEADER"
 							onclick = "[HoldingView.ToggleFindVassalListWindow]"
@@ -1577,11 +1613,13 @@ window = {
 							container = {
 								icon = {
 									name = "terrain"
+									datacontext = "[HoldingView.GetProvince]"
+									tooltip = "HOLDING_TERRAIN_TOTAL_TOOLTIP"
+
 									visible = "[HoldingStatus.IsTerrainType]"
 									datacontext = "[HoldingStatus.GetTerrainType]"
 									texture = "[Terrain.GetIcon]"
 									size = { 35 35 }
-									tooltip = "HOLDING_TERRAIN_TOOLTIP"
 								}
 
 								button_round = {

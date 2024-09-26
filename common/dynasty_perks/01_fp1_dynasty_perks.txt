@@ -144,6 +144,7 @@ fp1_pillage_legacy_2 = { # Always Space in the Hold
 
 	character_modifier = {
 		max_loot_mult = 0.5
+		defender_advantage = 5
 	}
 }
 

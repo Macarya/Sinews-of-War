@@ -19,6 +19,7 @@ tradition_winter_warriors = {
 		winter_soldier_trait_more_common = yes
 		winter_trait_bonuses = yes
 		can_recruit_winter_specialist = yes
+		resistant_to_winter_privation = yes
 	}
 	character_modifier = {
 		taiga_travel_danger = taiga_low_danger_reduction
@@ -70,7 +71,7 @@ tradition_winter_warriors = {
 		}
 	}
 	ai_will_do = {
-		value = 100
+		value = 400
 		if = {
 			limit = {
 				NOT = {
@@ -178,7 +179,7 @@ tradition_forest_fighters = {
 		}
 	}
 	ai_will_do = {
-		value = 100
+		value = 200
 		if = {
 			limit = {
 				NOT = {
@@ -197,6 +198,20 @@ tradition_forest_fighters = {
 				}
 			}
 			multiply = 0
+		}
+		else_if = {
+			limit = {
+				any_culture_county = {
+					percent >= 0.6
+					any_county_province = {
+						OR = {
+							terrain = forest
+							terrain = taiga
+						}
+					}
+				}
+			}
+			multiply = 2
 		}
 	}
 }
@@ -242,6 +257,7 @@ tradition_mountaineers = {
 		rough_terrain_expert_trait_more_common = yes
 		mountain_trait_bonuses = yes
 		can_recruit_mountain_specialist = yes
+		resistant_to_mountain_privation = yes
 	}
 	character_modifier = {
 		mountains_travel_danger = mountains_low_danger_reduction
@@ -297,7 +313,7 @@ tradition_mountaineers = {
 		}
 	}
 	ai_will_do = {
-		value = 100
+		value = 200
 		if = {
 			limit = {
 				NOT = {
@@ -316,6 +332,38 @@ tradition_mountaineers = {
 				}
 			}
 			multiply = 0
+		}
+		else_if = {
+			limit = {
+				scope:character.culture ?= {
+					any_culture_county = {
+						percent > 0.6
+						any_county_province = {
+							OR = {
+								terrain = mountains
+								terrain = desert_mountains
+							}
+						}
+					}
+				}
+			}
+			multiply = 6
+		}
+		else_if = {
+			limit = {
+				scope:character.culture ?= {
+					any_culture_county = {
+						percent > 0.4
+						any_county_province = {
+							OR = {
+								terrain = mountains
+								terrain = desert_mountains
+							}
+						}
+					}
+				}
+			}
+			multiply = 2
 		}
 	}
 }
@@ -408,7 +456,7 @@ tradition_warriors_of_the_dry = {
 		}
 	}
 	ai_will_do = {
-		value = 100
+		value = 200
 		if = {
 			limit = {
 				NOT = {
@@ -427,6 +475,38 @@ tradition_warriors_of_the_dry = {
 				}
 			}
 			multiply = 0
+		}
+		else_if = {
+			limit = {
+				scope:character.culture ?= {
+					any_culture_county = {
+						percent > 0.6
+						any_county_province = {
+							OR = {
+								terrain = drylands
+								terrain = desert
+							}
+						}
+					}
+				}
+			}
+			multiply = 6
+		}
+		else_if = {
+			limit = {
+				scope:character.culture ?= {
+					any_culture_county = {
+						percent > 0.4
+						any_county_province = {
+							OR = {
+								terrain = drylands
+								terrain = desert
+							}
+						}
+					}
+				}
+			}
+			multiply = 2
 		}
 	}
 }
@@ -530,6 +610,32 @@ tradition_highland_warriors = {
 			}
 			multiply = 0
 		}
+		else_if = {
+			limit = {
+				scope:character.culture ?= {
+					any_culture_county = {
+						percent > 0.6
+						any_county_province = {
+							terrain = hills
+						}
+					}
+				}
+			}
+			multiply = 6
+		}
+		else_if = {
+			limit = {
+				scope:character.culture ?= {
+					any_culture_county = {
+						percent > 0.4
+						any_county_province = {
+							terrain = hills
+						}
+					}
+				}
+			}
+			multiply = 2
+		}
 	}
 }
 
@@ -631,6 +737,32 @@ tradition_jungle_warriors = {
 			}
 			multiply = 0
 		}
+		else_if = {
+			limit = {
+				scope:character.culture ?= {
+					any_culture_county = {
+						percent > 0.6
+						any_county_province = {
+							terrain = jungle
+						}
+					}
+				}
+			}
+			multiply = 6
+		}
+		else_if = {
+			limit = {
+				scope:character.culture ?= {
+					any_culture_county = {
+						percent > 0.4
+						any_county_province = {
+							terrain = jungle
+						}
+					}
+				}
+			}
+			multiply = 2
+		}
 	}
 }
 
@@ -658,9 +790,13 @@ tradition_only_the_strong = {
 		prowess_from_martial_education = yes
 		demd_meta_manpower_multneg_20 = yes
 	}
+	province_modifier = {
+		levy_size = -0.25
+	}
 	character_modifier = {
 		men_at_arms_recruitment_cost = 0.25
 		knight_effectiveness_mult = 0.5
+		knight_limit = 2
 		maa_damage_mult = 0.1
 		maa_toughness_mult = 0.1
 		accolade_glory_gain_mult = 0.2
@@ -707,7 +843,7 @@ tradition_only_the_strong = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 200
 		if = {
 			limit = {
 				scope:character = {
@@ -719,6 +855,18 @@ tradition_only_the_strong = {
 				}
 			}
 			multiply = 0.25
+		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+					any_courtier = {
+						count >= 10
+						prowess >= 12
+					}
+				}
+			}
+			multiply = 4
 		}
 	}
 }
@@ -741,7 +889,7 @@ tradition_warriors_by_merit = {
 		blademaster_traits_more_common = yes
 	}
 	character_modifier = {
-		prowess_per_prestige_level = 1
+		prowess_per_prestige_level = 2
 		accolade_glory_gain_mult = 0.1
 	}
 	
@@ -791,7 +939,7 @@ tradition_warriors_by_merit = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 150
 		if = {
 			limit = {
 				NOR = {
@@ -805,6 +953,14 @@ tradition_warriors_by_merit = {
 			}
 			multiply = 0.25
 		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+				}
+			}
+			multiply = 4
+		}
 	}
 }
 
@@ -817,13 +973,6 @@ tradition_warrior_monks = {
 		4 = temple.dds
 	}
 	
-	is_shown = {
-		NOR = {
-			has_cultural_pillar = heritage_central_germanic
-			has_cultural_tradition = tradition_warrior_bishops
-		}
-	}
-	
 	can_pick = {
 		
 	}
@@ -831,6 +980,7 @@ tradition_warrior_monks = {
 	parameters = {
 		prowess_from_religious_traits = yes
 		culture_clergy_can_fight = yes
+		monastery_prowess_martial_bonus = yes
 	}
 	character_modifier = {
 		prowess_per_piety_level = 1
@@ -895,7 +1045,7 @@ tradition_warrior_monks = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 200
 		if = {
 			limit = {
 				NOR = {
@@ -984,7 +1134,7 @@ tradition_talent_acquisition = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 200
 		if = {
 			limit = {
 				NOR = {
@@ -1006,16 +1156,18 @@ tradition_strength_in_numbers = {
 		1 = mena
 		4 = soldiers3.dds
 	}
+
 	parameters = {
-		demd_meta_manpower_mult_15 = yes
+		demd_meta_manpower_mult_20 = yes
+		strength_in_numbers_heavy_maa_ban = yes
+		strength_in_numbers_maa_limit_bonus = yes
 	}
 
+	province_modifier = {
+		levy_size = 0.25
+	}
 	character_modifier = {
-		skirmishers_recruitment_cost_mult = -0.15
-		light_cavalry_recruitment_cost_mult = -0.15
-		archers_recruitment_cost_mult = -0.15
-		knight_limit = -2
-		army_maintenance_mult = -0.1
+		supply_limit_mult = 0.5
 	}
 	
 	cost = {
@@ -1092,14 +1244,19 @@ tradition_frugal_armorsmiths = {
 		4 = shield.dds
 	}
 	
+	parameters = {
+		frugal_blacksmith_maa_size = yes
+	}
+	
 	character_modifier = {
 		army_maintenance_mult = -0.15
-		men_at_arms_recruitment_cost = -0.15
-		heavy_infantry_toughness_mult = -0.2
-		pikemen_toughness_mult = -0.2
-		heavy_cavalry_toughness_mult = -0.2
-		elephant_cavalry_toughness_mult = -0.2
-		knight_effectiveness_mult = -0.2
+		men_at_arms_recruitment_cost = -0.25
+knight_effectiveness_mult = -0.6
+		maa_toughness_mult = -0.2
+		levy_toughness = -3
+		heavy_cavalry_toughness_add = -14
+		pikemen_toughness_add = -4
+		heavy_infantry_toughness_add = -4
 	}
 	
 	cost = {
@@ -1344,7 +1501,7 @@ tradition_quarrelsome = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 50
 		if = {
 			limit = {
 				NOT = {
@@ -1376,6 +1533,10 @@ tradition_swords_for_hire = {
 		1 = indian
 		4 = swords.dds
 	}
+
+	is_shown = {
+		NOT = { has_cultural_tradition = tradition_ep3_audacious_cadets }
+	}
 	
 	can_pick = {
 		
@@ -1385,6 +1546,8 @@ tradition_swords_for_hire = {
 		wanderers_gain_extra_combat_skills = yes
 		mercenary_courtiers_gain_extra_skills = yes
 		more_likely_to_leave_court = yes
+		unlock_voluntary_laampdom = yes
+		more_likely_to_be_laamps = yes
 	}
 	culture_modifier = {
 		mercenary_count_mult = 1
@@ -1447,12 +1610,12 @@ tradition_swords_for_hire = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 50
 		if = {
 			limit = {
 				has_cultural_pillar = heritage_central_germanic
 			}
-			multiply = 1.25
+			multiply = 2
 		}
 	}
 }
@@ -1469,6 +1632,7 @@ tradition_reverence_for_veterans = {
 	parameters = {
 		wounds_and_scars_give_bonuses = yes
 		guardians_can_transfer_commander_traits = yes
+		warrior_lodges_lift_restrictions = yes
 	}
 	
 	cost = {
@@ -1529,7 +1693,7 @@ tradition_reverence_for_veterans = {
 	}
 	
 	ai_will_do = { # Generally good & flavorful
-		value = 100
+		value = 200
 	}
 }
 
@@ -1546,9 +1710,11 @@ tradition_stalwart_defenders = {
 		can_end_defensive_wars_earlier = yes
 		more_fame_for_successful_defensive_wars = yes
 		more_gold_for_successful_defensive_wars = yes
+		next_level_fortification = yes
 	}
 	character_modifier = {
 		defender_advantage = 5
+		controlled_province_advantage = 5
 	}
 	province_modifier = {
 		garrison_size = 0.25
@@ -1617,6 +1783,14 @@ tradition_stalwart_defenders = {
 			}
 			multiply = 0.25
 		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+				}
+			}
+			multiply = 2
+		}
 	}
 }
 
@@ -1634,7 +1808,7 @@ tradition_battlefield_looters = {
 		less_prestige_from_battles = yes
 	}
 	character_modifier = {
-		max_loot_mult = 0.5
+		max_loot_mult = 0.75
 	}
 	
 	cost = {
@@ -1693,7 +1867,7 @@ tradition_battlefield_looters = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 75
 		if = {
 			limit = {
 				NOR = {
@@ -1739,18 +1913,12 @@ tradition_hit_and_run = {
 
 	# Iberian: Concurso Tactics
 	character_modifier = {
-		skirmishers_damage_mult = 0.05
-		skirmishers_screen_mult = 0.1
-		light_cavalry_damage_mult = 0.05
-		light_cavalry_screen_mult = 0.1
-		camel_cavalry_damage_mult = 0.05
-		camel_cavalry_screen_mult = 0.1
-		archer_cavalry_damage_mult = 0.05
-		archer_cavalry_screen_mult = 0.1
-		siege_weapon_siege_value_mult = -0.2
+		skirmishers_damage_add = 2
+		skirmishers_screen_add = 4
+		light_cavalry_damage_add = 4
+		light_cavalry_screen_add = 4
 		retreat_losses = -0.1
 		hard_casualty_modifier = -0.1
-		advantage = -2
 	}
 	
 	cost = {
@@ -1821,6 +1989,14 @@ tradition_hit_and_run = {
 			}
 			multiply = 0.25
 		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+				}
+			}
+			multiply = 4
+		}
 	}
 }
 
@@ -1831,10 +2007,6 @@ tradition_stand_and_fight = {
 		NOR = { #Replaced by Mobile Guards
 			has_cultural_pillar = heritage_israelite
 			has_cultural_tradition = tradition_mobile_guards
-			has_cultural_pillar = heritage_central_germanic
-			has_cultural_tradition = tradition_ottonian_reforms
-			has_cultural_pillar = heritage_west_germanic
-			has_cultural_tradition = tradition_hird
 		}			
 	}
 
@@ -1845,15 +2017,13 @@ tradition_stand_and_fight = {
 	}
 	
 	character_modifier = {
-		heavy_infantry_toughness_mult = 0.1
-		heavy_infantry_maintenance_mult = 0.2
-		heavy_cavalry_toughness_mult = 0.1
-		heavy_cavalry_maintenance_mult = 0.2
-		pikemen_toughness_mult = 0.1
-		pikemen_maintenance_mult = 0.2
-		enemy_hard_casualty_modifier = 0.1
-		hard_casualty_modifier = 0.1
-		defender_advantage = 2
+		levy_toughness = 2
+		maa_toughness_mult = 0.2
+		heavy_infantry_toughness_add = 4
+		heavy_cavalry_toughness_add = 10
+		pikemen_toughness_add = 4
+		hard_casualty_modifier = 0.4
+		defender_advantage = 8
 	}
 	
 	cost = {
@@ -1904,7 +2074,7 @@ tradition_stand_and_fight = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 400
 		if = {
 			limit = {
 				NOR = {
@@ -1914,6 +2084,14 @@ tradition_stand_and_fight = {
 				}
 			}
 			multiply = 0.25
+		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+				}
+			}
+			multiply = 2
 		}
 	}
 }
@@ -1927,18 +2105,16 @@ tradition_adaptive_skirmishing = {
 		4 = soldiers4.dds
 	}
 	
+	parameters = {
+		next_level_military_camps = yes
+	}
+	
 	character_modifier = {
-		skirmishers_damage_mult = 0.05
-		skirmishers_toughness_mult = 0.1
-		skirmishers_maintenance_mult = -0.05
-		archers_damage_mult = 0.1
-		archers_toughness_mult = 0.05
-		archers_maintenance_mult = -0.05
 		enemy_terrain_advantage = -0.25
-		heavy_cavalry_damage_mult = -0.1
-		heavy_cavalry_toughness_mult = -0.05
-		heavy_infantry_damage_mult = -0.1
-		heavy_infantry_toughness_mult = -0.05
+		archers_toughness_add = 4
+		archers_maintenance_mult = -0.05
+		skirmishers_toughness_add = 4
+		skirmishers_maintenance_mult = -0.05	
 	}
 	
 	cost = {
@@ -1989,7 +2165,7 @@ tradition_adaptive_skirmishing = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 400
 		if = {
 			limit = {
 				scope:character = {
@@ -2016,7 +2192,7 @@ tradition_adaptive_skirmishing = {
 			}
 			multiply = 0
 		}
-		if = {
+		else_if = {
 			limit = {
 				NOR = {
 					culture_has_archer_maa = yes
@@ -2024,6 +2200,14 @@ tradition_adaptive_skirmishing = {
 				}
 			}
 			multiply = 0.25
+		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+				}
+			}
+			multiply = 2
 		}
 	}
 }
@@ -2041,23 +2225,16 @@ tradition_formation_fighting = {
 		0 = martial
 	}
 
+	parameters = {
+		next_level_barracks = yes
+		formation_fighting_strategist = yes
+	}
+
 	character_modifier = {
-		heavy_infantry_damage_mult = 0.05
-		heavy_infantry_toughness_mult = 0.1
-		pikemen_damage_mult = 0.05
-		pikemen_toughness_mult = 0.1
-		archers_damage_mult = 0.1
-		archers_toughness_mult = 0.05
 		counter_efficiency = 0.15
 		pursue_efficiency = -0.15
-		skirmishers_damage_mult = -0.15
-		skirmishers_toughness_mult = -0.05
-		light_cavalry_damage_mult = -0.15
-		light_cavalry_toughness_mult = -0.05
-		camel_cavalry_damage_mult = -0.15
-		camel_cavalry_toughness_mult = -0.05
-		archer_cavalry_damage_mult = -0.15
-		archer_cavalry_toughness_mult = -0.05
+		archers_damage_add = 4
+		pikemen_toughness_add = 4
 	}
 	
 	cost = {
@@ -2108,7 +2285,7 @@ tradition_formation_fighting = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 200
 		if = {
 			limit = {
 				scope:character = {
@@ -2145,7 +2322,7 @@ tradition_formation_fighting = {
 			}
 			multiply = 0
 		}
-		if = {
+		else_if = {
 			limit = {
 				NOR = {
 					culture_has_archer_maa = yes
@@ -2153,6 +2330,14 @@ tradition_formation_fighting = {
 				}
 			}
 			multiply = 0.25
+		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+				}
+			}
+			multiply = 4
 		}
 	}
 }
@@ -2174,13 +2359,14 @@ tradition_horse_breeder = {
 		}
 	}
 	
+	parameters = {
+		next_level_stables = yes
+	}
+	
 	character_modifier = {
-		light_cavalry_maintenance_mult = -0.15
-		light_cavalry_recruitment_cost_mult = -0.25
-		heavy_cavalry_maintenance_mult = -0.15
-		heavy_cavalry_recruitment_cost_mult = -0.25
-		archer_cavalry_maintenance_mult = -0.15
-		archer_cavalry_recruitment_cost_mult = -0.25
+		light_cavalry_maintenance_mult = -0.1
+		heavy_cavalry_maintenance_mult = -0.1
+		archer_cavalry_maintenance_mult = -0.1
 	}
 
 	cost = {
@@ -2233,7 +2419,7 @@ tradition_horse_breeder = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 200
 		if = {
 			limit = { # Reduce chance slightly if the culture has access to other "cavalry" types
 				OR = {
@@ -2241,7 +2427,15 @@ tradition_horse_breeder = {
 					has_innovation = innovation_elephantry
 				}
 			}
-			multiply = 0.8
+			multiply = 0.2
+		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_warlike_personality = yes
+				}
+			}
+			multiply = 2
 		}
 	}
 }
@@ -2316,7 +2510,7 @@ tradition_longbow_competitions = {
 	}
 	
 	ai_will_do = {
-		value = 100
+		value = 800
 		if = {
 			limit = {
 				OR = {

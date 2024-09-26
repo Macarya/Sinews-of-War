@@ -13,6 +13,12 @@
 		}
 	}
 
+	allowed_for_character = {
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
+		}
+	}
+	
 	attacker_score_from_occupation_scale = 150
 	attacker_score_from_battles_scale = 150
 	defender_score_from_battles_scale = 150
@@ -34,7 +40,7 @@
 			scope:attacker = {
 				any_character_struggle = {
 					involvement = involved
-					is_struggle_type = iberian_struggle # otherwise enabled for all struggles incl. SoW trade node struggles!
+					is_struggle_type = iberian_struggle # FP3 Update: restricting to FP2 for now
 					is_secondary_character_involvement_either_trigger = { CHAR = scope:defender }
 				}
 			}
@@ -54,7 +60,22 @@
 
 	ai_only_against_neighbors = yes
 	#ai_can_target_all_titles = { always = yes }
-	ai_score_mult = { value = struggle_conquest_ai_score_value }
+	ai_score_mult = {
+		value = struggle_conquest_ai_score_value
+
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 
 	valid_to_start = {
 		scope:target = {
@@ -143,8 +164,8 @@
 	on_victory = {
 		demd_vigor_attacker_victory_effect_target = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 accolade glory gain for winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy

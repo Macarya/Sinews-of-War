@@ -9,7 +9,7 @@ tags={
 	"Fixes"
 	"Religion"
 }
-name="Sinews of War - 1.12 Update Dev Branch"
+name="Sinews of War - Dev Branch"
 picture="thumbnail.png"
-supported_version="1.12.*"
+supported_version="1.13.*"
 remote_file_id="3113107852"

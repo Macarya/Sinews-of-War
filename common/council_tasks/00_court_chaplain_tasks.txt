@@ -360,7 +360,9 @@ task_conversion = {
 				scope:councillor.liege = { has_character_modifier = fp2_council_conversion_modifier }
 				scope:county.faith = {
 					religion = scope:councillor.liege.religion
-					fp2_struggle_faith_is_mozarabic_trigger = no
+					NOT = {
+						portrait_religious_faith_or_foundational_trigger = { FAITH = faith:mozarabic_church }
+					}
 					NOT = { exists = religious_head }
 				}
 			}
@@ -424,7 +426,7 @@ task_conversion = {
 						scope:councillor.liege.faith = { has_doctrine = muhammad_succession_sunni_doctrine }
 					}
 					flag:shia = {
-						scope:councillor.liege.faith = { has_doctrine = muhammad_succession_sunni_doctrine }
+						scope:councillor.liege.faith = { has_doctrine = muhammad_succession_shia_doctrine }
 					}
 					flag:muhakkima = {
 						scope:councillor.liege.faith = { has_doctrine = muhammad_succession_muhakkima_doctrine }
@@ -437,6 +439,42 @@ task_conversion = {
 			multiply = {
 				value = fp3_struggle_ending_conversion_modifier_value
 				desc = fp3_struggle_ending_conversion_modifier_desc
+			}
+		}
+		# Court events
+		if = {	#court.6010
+			limit = {
+				scope:councillor.liege = {
+					var:6010_harsh_conversion ?= scope:county.faith
+				}
+			}
+			multiply = {
+				value = 1.2
+				desc = court_6010_harsh_conversions
+			}
+		}
+		if = {	#court.6010
+			limit = {
+				scope:councillor.liege = {
+					var:6010_tolerant_conversion ?= scope:county.faith
+				}
+			}
+			multiply = {
+				value = 0.8
+				desc = court_6010_tolerant_conversions
+			}
+		}
+		# State Faith Boost
+		if = {
+			limit = {
+				scope:councillor.top_liege.primary_title.state_faith ?= {
+					NOT = { this = scope:county.faith }
+					this = scope:councillor.top_liege.faith
+				}
+			}
+			multiply = {
+				value = ep3_state_faith_conversion_mult_value
+				desc = ep3_convert_county_to_state_faith
 			}
 		}
 
@@ -499,14 +537,12 @@ task_conversion = {
 					}
 				}
 			}
-			min = {
-				value = 0.1
-				desc = minimum_conversion
-			}
 		}
-		min = 0.1
-	}	
-	ai_target_score = { value = court_chaplain_conversion_ai_weight }
+		min = {
+			value = 0.1
+			desc = minimum_conversion
+		}
+		}
 	
 	potential_county = {
 		scope:county = {
@@ -573,6 +609,10 @@ task_conversion = {
 					}
 				}
 				OR = {
+					scope:councillor_liege = {
+						has_character_flag = vassal_directive_convert_faith
+						vassal_is_valid_and_follows_directive_trigger = { VASSAL = this LIEGE = liege }
+					}
 					scope:councillor_liege = { ai_zeal >= 50 }
 					scope:county.faith = { has_doctrine_parameter = unreformed }
 					scope:county = { # Always convert holy sites
@@ -598,6 +638,10 @@ task_conversion = {
 					}
 				}
 				OR = {
+					scope:councillor_liege = {
+						has_character_flag = vassal_directive_convert_faith
+						vassal_is_valid_and_follows_directive_trigger = { VASSAL = this LIEGE = liege }
+					}
 					scope:councillor_liege = { ai_zeal >= 100 }
 					scope:county = { # Always convert holy sites
 						any_county_province = {
@@ -628,6 +672,10 @@ task_conversion = {
 						}
 					}
 					OR = {
+						scope:councillor_liege = {
+							has_character_flag = vassal_directive_convert_faith
+							vassal_is_valid_and_follows_directive_trigger = { VASSAL = this LIEGE = liege }
+						}
 						scope:councillor_liege = { ai_zeal >= 50 }
 						scope:county = { county_opinion <= -20 }
 						scope:county = { # Always convert holy sites
@@ -646,6 +694,10 @@ task_conversion = {
 						}
 					}
 					OR = {
+						scope:councillor_liege = {
+							has_character_flag = vassal_directive_convert_faith
+							vassal_is_valid_and_follows_directive_trigger = { VASSAL = this LIEGE = liege }
+						}
 						scope:councillor_liege = { ai_zeal >= 0 }
 						scope:county = { county_opinion <= -10 }
 						scope:county = { # Always convert holy sites
@@ -659,6 +711,10 @@ task_conversion = {
 				}
 				trigger_else = {
 					OR = {
+						scope:councillor_liege = {
+							has_character_flag = vassal_directive_convert_faith
+							vassal_is_valid_and_follows_directive_trigger = { VASSAL = this LIEGE = liege }
+						}
 						scope:councillor_liege = { ai_zeal >= 10 }
 						scope:county = { county_opinion <= -15 }
 						scope:county = { # Always convert holy sites
@@ -685,6 +741,10 @@ task_conversion = {
 					}
 				}
 				OR = {
+					scope:councillor_liege = {
+						has_character_flag = vassal_directive_convert_faith
+						vassal_is_valid_and_follows_directive_trigger = { VASSAL = this LIEGE = liege }
+					}
 					scope:councillor_liege = { ai_zeal >= 50 }
 					scope:county = { county_opinion <= -20 }
 					scope:county = { # Always convert holy sites
@@ -721,6 +781,10 @@ task_conversion = {
 					}
 				}
 				OR = {
+					scope:councillor_liege = {
+						has_character_flag = vassal_directive_convert_faith
+						vassal_is_valid_and_follows_directive_trigger = { VASSAL = this LIEGE = liege }
+					}
 					scope:councillor_liege = { ai_zeal >= 50 }
 					scope:county.faith = { has_doctrine_parameter = unreformed }
 					scope:councillor_liege.faith = {
@@ -772,6 +836,42 @@ task_conversion = {
 		trigger_event = {
 			id = court_chaplain_task.8000
 			days = 2 # To ensure it fires after the halted message
+		}
+		#spawn a task contract to counter the missionary, if a nearby adventurer has the same faith as the county
+		if = {
+			limit = {
+				any_pool_character = {
+					province = scope:county.title_province
+					faith = scope:county.faith
+					is_adult = yes
+					save_temporary_scope_as = employer
+				}
+				any_ruler = {
+					is_landless_adventurer = yes
+					is_within_diplo_range = { CHARACTER = scope:councillor }
+					any_character_task_contract = {
+						has_task_contract_type = laamp_fight_faith_conversion_contract
+						count <= council_task_contracts_limit_value
+					}
+					NOT = {
+						any_task_contract = {
+							has_task_contract_type = laamp_fight_faith_conversion_contract
+							task_contract_location = scope:employer.location
+						}
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_fight_faith_conversion_contract
+					task_contract_tier = scope:employer.task_contract_tier_value
+					location = scope:county.title_province
+					task_contract_employer = scope:employer
+					target = scope:councillor
+					destination = scope:county.title_province
+				}
+			}
 		}
 	}
 
@@ -850,6 +950,17 @@ task_conversion = {
 				}
 			}
 			multiply = 0
+		}
+
+		# AI directive
+		if = {
+			limit = {
+				scope:councillor_liege = {
+					has_character_flag = vassal_directive_convert_faith
+					vassal_is_valid_and_follows_directive_trigger = { VASSAL = this LIEGE = liege }
+				}
+			}
+			add = 10000
 		}
 	}
 }
@@ -1074,8 +1185,18 @@ task_fabricate_claim = {
 				desc = FABRICATE_CLAIM_ANY_STRUGGLE_BONUS
 			}
 		}
-
-		min = 0.1
+		if = {
+			limit = {
+				scope:councillor_liege = {
+					has_title = title:c_byzantion
+					title:c_byzantion = { has_county_modifier = pandidakterion_university_modifier }
+				}
+			}
+			multiply = {
+				value = 1.3
+				desc = pandidakterion_university_modifier
+			}
+		}
 	}
 
 	potential_county = {
@@ -1087,6 +1208,47 @@ task_fabricate_claim = {
 				holder = scope:councillor_liege
 				scope:councillor_liege = {
 					has_claim_on = scope:county
+				}
+			}
+		}
+	}
+
+	on_start_task_county = {
+		# Message for vassals
+		scope:county = { save_scope_as = set_county }
+		trigger_event = {
+			id = court_chaplain_task.8000
+			days = 2 # To ensure it fires after the halted message
+		}
+		#spawn a task contract to counter the missionary, if a nearby adventurer has the same faith as the county
+		if = {
+			limit = {
+				any_task_contract = {
+					has_task_contract_type = laamp_help_fabricate_claim_contract
+					NOT = {	task_contract_location = scope:county.title_province }
+				}
+				any_player = {
+					is_landless_adventurer = yes
+					is_within_diplo_range = { CHARACTER = scope:councillor }
+					any_character_task_contract = {
+						has_task_contract_type = laamp_help_fabricate_claim_contract
+						count <= council_task_contracts_limit_value
+					}
+					can_create_task_contract = {
+						type_name = laamp_help_fabricate_claim_contract
+						employer = scope:councillor
+					}
+					save_temporary_scope_as = player_laamp
+				}
+			}
+			scope:player_laamp = {
+				create_task_contract = {
+					task_contract_type = laamp_help_fabricate_claim_contract
+					task_contract_tier = scope:councillor.task_contract_tier_value
+					location = scope:county.title_province
+					task_contract_employer = scope:councillor
+					target = scope:county.holder
+					destination = scope:county.title_province
 				}
 			}
 		}
@@ -1129,10 +1291,7 @@ task_fabricate_claim = {
 							this = scope:county.holder.liege
 						}
 					}
-					scope:county.holder.max_military_strength > {
-						value = scope:councillor_liege.council_task_fabricate_claim_relative_strength
-						multiply = 1.2
-					}
+					scope:county.holder.max_military_strength > scope:councillor_liege.council_task_fabricate_claim_relative_strength
 				}
 				subtract = 10000
 			}
@@ -1159,10 +1318,7 @@ task_fabricate_claim = {
 							this = scope:county.holder.liege.liege
 						}
 					}
-					scope:county.holder.liege.max_military_strength > {
-						value = scope:councillor_liege.council_task_fabricate_claim_relative_strength
-						multiply = 1.2
-					}
+					scope:county.holder.liege.max_military_strength > scope:councillor_liege.council_task_fabricate_claim_relative_strength
 				}
 				subtract = 10000
 			}
@@ -1189,10 +1345,7 @@ task_fabricate_claim = {
 							this = scope:county.holder.liege.liege.liege
 						}
 					}
-					scope:county.holder.liege.liege.max_military_strength > {
-						value = scope:councillor_liege.council_task_fabricate_claim_relative_strength
-						multiply = 1.2
-					}
+					scope:county.holder.liege.liege.max_military_strength > scope:councillor_liege.council_task_fabricate_claim_relative_strength
 				}
 				subtract = 10000
 			}
@@ -1219,10 +1372,7 @@ task_fabricate_claim = {
 							this = scope:county.holder.liege.liege.liege.liege
 						}
 					}
-					scope:county.holder.liege.liege.liege.max_military_strength > {
-						value = scope:councillor_liege.council_task_fabricate_claim_relative_strength
-						multiply = 1.2
-					}
+					scope:county.holder.liege.liege.liege.max_military_strength > scope:councillor_liege.council_task_fabricate_claim_relative_strength
 				}
 				subtract = 10000
 			}
@@ -1243,10 +1393,7 @@ task_fabricate_claim = {
 		}
 		else_if = {
 			limit = {
-				scope:county.holder.top_liege.max_military_strength > {
-					value = scope:councillor_liege.council_task_fabricate_claim_relative_strength
-					multiply = 1.2
-				}
+				scope:county.holder.top_liege.max_military_strength > scope:councillor_liege.council_task_fabricate_claim_relative_strength
 			}
 			subtract = 10000
 		}
@@ -1294,6 +1441,7 @@ task_fabricate_claim = {
 							is_allied_to = prev
 							has_truce = prev
 						}
+						current_military_strength > prev.current_military_strength
 						has_any_cb_on = prev
 					}			
 				}

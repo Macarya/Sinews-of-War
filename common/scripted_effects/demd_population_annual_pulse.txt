@@ -268,47 +268,44 @@ annualPulse = {
     			multiply = var:population 
     		}
     	}
-    	#epidemic death tracking - not really necessary but kinda cool?
-		title_province = {
-			if = {
-				limit = {				
-					any_province_epidemic = { count >= 1 } 					
-					save_temporary_scope_as = pop_prov
-				}				
-				every_province_epidemic = {
-					save_temporary_scope_as = pop_epidemic
-					if = {
-						limit = { has_variable = pop_deaths }
-						change_variable = {
-							name = pop_deaths
-							add = {
-								value = single_epidemic_death_rate
-								multiply = {
-									value = 1
-									subtract = scope:pop_prov.county.sanitation_death_reduction
-								}
-								multiply = scope:pop_prov.county.var:population
-							}
-						}
-					}
-					else = {
-						set_variable = {
-							name = pop_deaths
-							value = {
-								#determine rate
-								value = single_epidemic_death_rate
-								multiply = {
-									value = 1
-									subtract = scope:pop_prov.county.sanitation_death_reduction
-								}
-								multiply = scope:pop_prov.county.var:population
-							}
-						}
-					}
-				}
-			}
-		}
-        
+    	title_province = {
+        	if = {
+        		limit = {				
+        			any_province_epidemic = { count >= 1 } 					
+        			save_temporary_scope_as = pop_prov
+        		}				
+        		every_province_epidemic = {
+        			save_temporary_scope_as = pop_epidemic
+        			if = {
+        				limit = { has_variable = pop_deaths }
+        				change_variable = {
+        					name = pop_deaths
+        					add = {
+        						value = single_epidemic_death_rate
+        						multiply = {
+        							value = 1
+        							subtract = scope:pop_prov.county.sanitation_death_reduction
+        						}
+        						multiply = scope:pop_prov.county.var:population
+        					}
+        				}
+        			}
+        			else = {
+        				set_variable = {
+        					name = pop_deaths
+        					value = {
+        						value = single_epidemic_death_rate
+        						multiply = {
+        							value = 1
+        							subtract = scope:pop_prov.county.sanitation_death_reduction
+        						}
+        						multiply = scope:pop_prov.county.var:population
+        					}
+        				}
+        			}
+        		}
+        	}
+    	}
         change_variable = { 
     		name = population 
     		add = var:internal_growth 
@@ -333,42 +330,42 @@ annualPulse = {
         			multiply = var:population 
         		}
         	}
-			if = {
-				limit = {				
-					any_province_epidemic = { count >= 1 } 					
-					save_temporary_scope_as = pop_prov
-				}				
-				every_province_epidemic = {
-					save_temporary_scope_as = pop_epidemic
-					if = {
-						limit = { has_variable = pop_deaths }
-						change_variable = {
-							name = pop_deaths
-							add = {
-								value = single_epidemic_death_rate
-								multiply = {
-									value = 1
-									subtract = scope:pop_prov.sanitation_death_reduction
-								}
-								multiply = scope:pop_prov.var:population
-							}
-						}
-					}
-					else = {
-						set_variable = {
-							name = pop_deaths
-							value = {
-								value = single_epidemic_death_rate
-								multiply = {
-									value = 1
-									subtract = scope:pop_prov.county.sanitation_death_reduction
-								}
-								multiply = scope:pop_prov.county.var:population
-							}
-						}
-					}
-				}
-			}
+        	if = {
+        		limit = {				
+        			any_province_epidemic = { count >= 1 } 					
+        			save_temporary_scope_as = pop_prov
+        		}				
+        		every_province_epidemic = {
+        			save_temporary_scope_as = pop_epidemic
+        			if = {
+        				limit = { has_variable = pop_deaths }
+        				change_variable = {
+        					name = pop_deaths
+        					add = {
+        						value = single_epidemic_death_rate
+        						multiply = {
+        							value = 1
+        							subtract = scope:pop_prov.sanitation_death_reduction
+        						}
+        						multiply = scope:pop_prov.var:population
+        					}
+        				}
+        			}
+        			else = {
+        				set_variable = {
+        					name = pop_deaths
+        					value = {
+        						value = single_epidemic_death_rate
+        						multiply = {
+        							value = 1
+        							subtract = scope:pop_prov.sanitation_death_reduction
+        						}
+        						multiply = scope:pop_prov.var:population
+        					}
+        				}
+        			}
+        		}
+        	}
             change_variable = { 
         		name = population 
         		add = var:internal_growth 
@@ -567,14 +564,13 @@ annualPulse = {
     	set_variable = { name = county_unused_construction_capacity value = county_unused_construction_capacity }
         change_variable = { name = goods_districts_count add = county_districts_to_build }
     	change_variable = { name = goods_districts_count subtract = goods_districts_to_remove } 
-		#removed DEMD plagues, will tie vanilla plagues into pop system
         if = {
             limit = {
                 holder = { is_ai = yes }
             }
         	if = {
         		limit = { 
-        			county.county_opinion < -15	
+        			county.county_opinion < -40	
         			var:manpower_setting < var:tax_setting
         			NOT = { has_variable = tax_setting_changed }
         		}
@@ -582,7 +578,7 @@ annualPulse = {
         	}
         	else_if = {
         		limit = { 
-        			county.county_opinion > 15	
+        			county.county_opinion > 25
         			var:manpower_setting >= var:tax_setting
         			NOT = { has_variable = tax_setting_changed }
         		}
@@ -590,7 +586,7 @@ annualPulse = {
         	}
         	if = {
         		limit = {
-        			county.county_opinion < -15	
+        			county.county_opinion < -40	
         			var:manpower_setting >= var:tax_setting 
         			NOT = { has_variable = manpower_setting_changed }
         		}
@@ -598,7 +594,7 @@ annualPulse = {
         	}
         	else_if = {
         		limit = {
-        			county.county_opinion > 15	
+        			county.county_opinion > 25	
         			var:manpower_setting < var:tax_setting 
         			NOT = { has_variable = manpower_setting_changed }
         		}

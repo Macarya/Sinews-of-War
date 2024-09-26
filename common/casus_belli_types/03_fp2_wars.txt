@@ -9,7 +9,7 @@ fp2_border_raid = {
 	allow_hostages = no
 	mutually_exclusive_titles = { always = yes }
 	interface_priority = 110
-
+	
 	attacker_score_from_occupation_scale = 150
 	attacker_score_from_battles_scale = 150
 	defender_score_from_battles_scale = 150
@@ -19,6 +19,9 @@ fp2_border_raid = {
 		any_character_struggle = {
 			involvement = involved
 			has_struggle_phase_parameter = unlocks_border_raid_casus_belli
+		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
 		}
 	}
 
@@ -43,7 +46,21 @@ fp2_border_raid = {
 	target_de_jure_regions_above = no
 	ignore_effect = change_title_holder
 
-	ai_score_mult = { value = fp2_border_raid_ai_targeting_value }
+	ai_score_mult = {
+		value = fp2_border_raid_ai_targeting_value
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 
 	valid_to_start = {
 		exists = scope:target
@@ -119,7 +136,7 @@ fp2_border_raid = {
 
 		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
-
+		
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_low_effect = yes }
 		
@@ -155,7 +172,7 @@ fp2_border_raid = {
 		hidden_effect = {
 			scope:attacker = {
 				send_interface_message = {
-					type = msg_border_raid_good
+					type = event_raid_good
 					title = border_raid_message_title
 					show_as_tooltip = {
 						every_in_list = {
@@ -167,7 +184,7 @@ fp2_border_raid = {
 			}
 			scope:defender = {
 				send_interface_message = {
-					type = msg_border_raid_bad
+					type = event_raid_bad
 					title = border_raid_message_title
 					every_in_list = {
 						list = target_titles
@@ -313,7 +330,7 @@ fp2_border_raid = {
 
 		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
-
+		
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_low_effect = yes }
 
@@ -398,7 +415,7 @@ fp2_expel_interloper = {
 	allow_hostages = no
 	mutually_exclusive_titles = { always = yes }
 	interface_priority = 112
-
+	
 	attacker_score_from_occupation_scale = 150
 	attacker_score_from_battles_scale = 150
 	defender_score_from_battles_scale = 150
@@ -409,6 +426,9 @@ fp2_expel_interloper = {
 			involvement = involved
 			is_struggle_type = iberian_struggle
 			has_struggle_phase_parameter = unlocks_iberian_reclamation_casus_belli
+		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
 		}
 	}
 
@@ -429,7 +449,21 @@ fp2_expel_interloper = {
 	target_de_jure_regions_above = yes
 	ignore_effect = change_title_holder
 
-	ai_score_mult = { value = fp2_expel_interloper_ai_targeting_value }
+	ai_score_mult = {
+		value = fp2_expel_interloper_ai_targeting_value
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 
 	valid_to_start = {
 		scope:target = {
@@ -557,7 +591,7 @@ fp2_expel_interloper = {
 
 		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
-
+		
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_med_effect = yes }
 		
@@ -712,7 +746,7 @@ fp2_expel_interloper = {
 
 		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
-
+			
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_med_effect = yes }
 
@@ -792,6 +826,9 @@ fp2_mediterranean_conquest_cb = {
 		completely_controls = title:d_mallorca # Losing control means losing legitimacy
 		completely_controls = title:d_sardinia
 		completely_controls = title:d_sicily
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
+		}
 	}
 
 	allowed_against_character = {
@@ -810,6 +847,18 @@ fp2_mediterranean_conquest_cb = {
 	ai_score_mult = {
 		value = viking_conquest_ai_score_value
 		multiply = struggle_wars_prioritise_struggle_targets_value # AI in struggles act insularly for wars that don't have a familial or legal basis.
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
 	}
 
 	valid_to_start = {
@@ -863,7 +912,7 @@ fp2_mediterranean_conquest_cb = {
 
 		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
-
+		
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:attacker = { accolade_attacker_war_end_glory_gain_low_effect = yes }
 

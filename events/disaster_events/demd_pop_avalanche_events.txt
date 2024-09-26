@@ -21,7 +21,7 @@ demd_pop_avalanche.1001 = {
 					
 					holder = {
 						send_interface_message = {
-							type = event_steward_task_bad
+							type = msg_steward_task_bad
 							title = demd_minor_avalanche
 							desc = demd_minor_avalanche_desc
 							right_icon = scope:county
@@ -35,7 +35,7 @@ demd_pop_avalanche.1001 = {
 					
 					holder = {
 						send_interface_message = {
-							type = event_steward_task_bad
+							type = msg_steward_task_bad
 							title = demd_moderate_avalanche
 							desc = demd_moderate_avalanche_desc
 							right_icon = scope:county
@@ -48,7 +48,7 @@ demd_pop_avalanche.1001 = {
 				10 = {						
 					holder = {
 						send_interface_message = {
-							type = event_steward_task_bad
+							type = msg_steward_task_bad
 							title = demd_severe_avalanche
 							desc = demd_severe_avalanche_desc
 							right_icon = scope:county

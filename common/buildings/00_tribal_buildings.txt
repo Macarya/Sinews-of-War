@@ -93,6 +93,12 @@ tribe_01 = {
 		defender_holding_advantage = 2
 	}
 	
+	province_culture_modifier = {
+		parameter = tribal_holding_stationed_bonus
+		stationed_maa_damage_mult = normal_maa_damage_tier_1
+		stationed_maa_toughness_mult = normal_maa_toughness_tier_1
+	}
+	
 	next_building = tribe_02
 
 	type_icon = "icon_building_longhouses.dds"
@@ -201,6 +207,12 @@ tribe_02 = {
 		is_coastal = yes
 		defender_holding_advantage = 3
 	}
+
+	province_culture_modifier = {
+		parameter = tribal_holding_stationed_bonus
+		stationed_maa_damage_mult = normal_maa_damage_tier_2
+		stationed_maa_toughness_mult = normal_maa_toughness_tier_2
+	}
 	
 	on_complete = {
 		apply_province_garrison = yes
@@ -240,6 +252,7 @@ longhouses_01 = {
 	ai_value = {
 		base = 1
 		ai_tier_1_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -271,6 +284,7 @@ longhouses_02 = {
 	
 	ai_value = {
 		base = 1
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -311,6 +325,7 @@ war_camps_01 = {
 	ai_value = {
 		base = 1
 		ai_tier_1_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = {
 			factor = 0.5
 			NOR = {
@@ -362,6 +377,7 @@ war_camps_02 = {
 	
 	ai_value = {
 		base = 1
+		directive_to_build_military_modifier = yes
 	}
 	on_complete = { 
 		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
@@ -402,6 +418,7 @@ palisades_01 = {
 	ai_value = {
 		base = 1
 		ai_tier_1_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = {
 			factor = 0.5
 			NOR = {
@@ -452,6 +469,7 @@ palisades_02 = {
 	
 	ai_value = {
 		base = 1
+		directive_to_build_military_modifier = yes
 	}
 	on_complete = { 
 		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
@@ -487,6 +505,7 @@ market_villages_01 = {
 	ai_value = {
 		base = 1
 		ai_tier_1_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	on_complete = {
 		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
@@ -519,6 +538,7 @@ market_villages_02 = {
 	
 	ai_value = {
 		base = 1
+		directive_to_build_military_modifier = yes
 	}
 	on_complete = { 
 		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }

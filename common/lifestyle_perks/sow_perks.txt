@@ -25,9 +25,26 @@ prepared_conscription_perk = {
 
 	parent = enduring_hardships_perk
 	
-	character_modifier = {
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		invert_check = yes
 		levy_reinforcement_rate_friendly_territory = 0.5
 		army_maintenance_mult = -0.1
+	}
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		men_at_arms_recruitment_cost = -0.2
+	}
+	
+	effect = {
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_prepared_conscription_perk_effect
+			}
+		}
 	}
 }
 
@@ -39,23 +56,25 @@ soldiers_of_lesser_fortune_perk = {
 
 	parent = hard_rule_perk
 	
-	character_modifier = {
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		invert_check = yes
 		mercenary_hire_cost_mult = -0.2
 	}
-}
-
-kingsguard_perk = {
-	lifestyle = martial_lifestyle
-	tree = chivalry
-	position = { 2 3 }
-	icon = node_martial
-
-	parent = never_back_down_perk
-
-	character_modifier = {
-		knight_limit = 2
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		men_at_arms_recruitment_cost = -0.2
 	}
-	effect = { add_trait_force_tooltip = strong }
+	effect = {
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_soldiers_of_lesser_fortune_perk_effect
+			}
+		}
+	}
 }
 
 detailed_ledgers_perk = {
@@ -66,9 +85,26 @@ detailed_ledgers_perk = {
 	
 	parent = heregeld_perk
 	
-	character_modifier = {
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { is_landless_adventurer = yes }
+				desc = detailed_ledgers_perk_adventurer_name
+			}
+			desc = detailed_ledgers_perk_name
+		}
+	}
+	
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		invert_check = yes
 		republic_government_opinion = 10
 		republic_government_tax_contribution_mult = 0.15
+	}
+	
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		provisions_loss_mult = -0.25
 	}
 }
 
@@ -81,9 +117,32 @@ popular_figurehead_perk = {
 	
 	parent = organized_muster_rolls_perk
 	parent = centralization_perk
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { is_landless_adventurer = yes }
+				desc = popular_figurehead_perk_adventurer_name
+			}
+			desc = popular_figurehead_perk_name
+		}
+	}
 	
-	character_modifier = {
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		invert_check = yes
 		county_opinion_add = 20
+	}
+
+	effect = {
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_popular_figurehead_perk_effect
+			}
+		}
 	}
 }
 
@@ -96,9 +155,40 @@ divided_attention_perk = {
 	icon = node_stewardship
 	
 	parent = popular_figurehead_perk
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { is_landless_adventurer = yes }
+				desc = divided_attention_perk_adventurer_name
+			}
+			desc = divided_attention_perk_name
+		}
+	}
 	
-	character_modifier = {
+	government_character_modifier = {
+		flag = government_is_administrative
+		domicile_build_speed = -0.1
+	}
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		invert_check = yes
 		domain_limit = 1
+	}
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		domicile_monthly_gold_add = 0.5
+	}
+
+	effect = {
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_divided_attention_perk_effect
+			}
+		}
 	}
 }
 
@@ -110,8 +200,39 @@ likable_perk = {
 	icon = node_stewardship
 	
 	parent = chains_of_loyalty_perk
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { is_landless_adventurer = yes }
+				desc = likable_perk_adventurer_name
+			}
+			desc = likable_perk_name
+		}
+	}
 	
-	character_modifier = {
+	effect = {
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_likable_perk_effect
+			}
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_likable_perk_2_effect
+			}
+		}
+	}
+	
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		invert_check = yes
 		direct_vassal_opinion = 10
 		liege_opinion = 10
 	}
@@ -126,9 +247,57 @@ positions_of_power_perk = {
 	icon = node_stewardship
 	
 	parent = likable_perk
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { is_landless_adventurer = yes }
+				desc = positions_of_power_perk_adventurer_name
+			}
+			desc = positions_of_power_perk_name
+		}
+	}
 	
-	character_modifier = {
+	government_character_modifier = {
+		flag = government_is_landless_adventurer
+		invert_check = yes
 		councillor_opinion = 10
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_ep3_dlc_trigger = yes
+				government_allows = administrative
+			}
+			custom_description_no_bullet = {
+				text = admin_positions_of_power_effect
+			}
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_positions_of_power1_perk
+			}
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_positions_of_power2_perk
+			}
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_positions_of_power3_perk
+			}
+		}
 	}
 }
 
@@ -140,8 +309,41 @@ prophet_perk = {
 	
 	parent = religious_icon_perk
 	
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { is_landless_adventurer = yes }
+				desc = prophet_perk_adventurer_name
+			}
+			desc = prophet_perk_name
+		}
+	}
+	
 	character_modifier = {
 		monthly_piety_gain_per_knight_mult = 0.01
-		faith_creation_piety_cost_mult = -0.3
+		faith_creation_piety_cost_mult = -0.25
+	}
+	
+	effect = {
+		if = {
+			limit = {
+				government_allows = state_faith
+			}
+			custom_description_no_bullet = {
+				text = cheaper_change_state_faith_cost_effect
+			}
+		}
+
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}	
+			custom_tooltip = {
+				text = adventurer_prophet_perk_effect
+			}	
+			custom_tooltip = {
+				text = adventurer_prophet_perk_2_effect
+			}
+		}
 	}
 }

@@ -11,3 +11,8 @@ In county UI add blue to word with tooltip
 
 Idea: link persecution to cultural acceptance and fervor if different faith
 
+Fix building flag (buildings and script_values\demd_population_building_edict_values.txt)
+
+Verify and fix if needed ai weight for regiment (00_men_at_arms_values.bak)
+
+Verify cleaning up Sow flavor content 

@@ -50,6 +50,18 @@
 				add = -1
 			}
 		}
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
 	}
 
 	allowed_for_character = {
@@ -61,6 +73,9 @@
 				target = title:d_sunni.holder
 				value >= 1
 			}
+		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
 		}
 	}
 
@@ -708,6 +723,21 @@ fp3_turkic_invasion_cb = {
 	on_primary_defender_death = inherit
 	attacker_allies_inherit = no
 	defender_allies_inherit = no
+
+	ai_score_mult = {
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 }
 
 fp3_seljuk_invasion_cb = {
@@ -809,51 +839,20 @@ fp3_seljuk_invasion_cb = {
 					holder = scope:attacker
 					change = scope:change
 				}
-				every_in_de_facto_hierarchy = {
+				every_in_de_jure_hierarchy = {
 					limit = {
-						tier >= tier_county
+						tier = tier_county
+						holder ?= {
+							OR = {
+								this = scope:defender
+								target_is_liege_or_above = scope:defender
+							}
+						}
 						target_is_de_jure_liege_or_above = scope:target_title
 					}
 					change_title_holder = {
 						holder = scope:attacker
 						change = scope:change
-					}
-				}
-				hidden_effect = {
-					every_in_de_facto_hierarchy = {
-						limit = {
-							tier = tier_barony
-							is_capital_barony = no
-						}
-						create_character = {
-							age = { 20 50 }
-							employer = scope:attacker
-							random_traits = yes
-							culture = scope:attacker.culture
-							faith = scope:attacker.faith
-							gender_female_chance = {
-								if = {
-									limit = {
-										scope:attacker.faith = { has_doctrine = doctrine_gender_male_dominated }
-									}
-									add = 0
-								}
-								else_if = {
-									limit = {
-										scope:attacker.faith = { has_doctrine = doctrine_gender_female_dominated }
-									}
-									add = 100
-								}
-								else = {
-									add = 50
-								}
-							}
-							save_scope_as = new_barony_holder
-						}
-						change_title_holder = {
-							holder = scope:new_barony_holder
-							change = scope:change
-						}
 					}
 				}
 			}
@@ -951,6 +950,21 @@ fp3_seljuk_invasion_cb = {
 	transfer_behavior = transfer
 	should_invalidate = {}
 	truce_days = 3650
+
+	ai_score_mult = {
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 }
 
 fp3_free_house_member_cb = {
@@ -993,6 +1007,9 @@ fp3_free_house_member_cb = {
 		OR = {
 			government_has_flag = government_is_clan
 			has_perk = thicker_than_water_perk
+		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
 		}
 	}
 	allowed_for_character_display_regardless = {
@@ -1122,6 +1139,9 @@ fp3_unify_house_cb = {
 		OR = {
 			government_has_flag = government_is_clan
 			has_perk = thicker_than_water_perk
+		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
 		}
 	}
 	allowed_for_character_display_regardless = {
@@ -1271,6 +1291,21 @@ fp3_unify_house_cb = {
 	on_primary_defender_death = invalidate
 	attacker_allies_inherit = no
 	defender_allies_inherit = no
+
+	ai_score_mult = {
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 }
 
 fp3_zanj_rebellion_war = {
@@ -1541,9 +1576,8 @@ fp3_zanj_rebellion_war = {
 
 	on_defeat = {
 		demd_vigor_defender_victory_effect_target = yes
-
 		# Legitimacy
-		add_legitimacy_attacker_victory_effect = yes
+		add_legitimacy_attacker_defeat_effect = yes
 		
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_med_effect = yes }

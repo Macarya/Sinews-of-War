@@ -27,8 +27,6 @@ culture_has_archer_maa = {
 		has_innovation = innovation_repeating_crossbow #Chu-ko-nu Archers
 		has_innovation = innovation_bamboo_bows #Paiks
 		has_cultural_parameter = unlock_maa_vigmen
-		# SoW
-		has_cultural_parameter = unlock_maa_psiloi
 	}
 }
 
@@ -54,10 +52,6 @@ culture_has_heavy_infantry_maa = {
 		has_cultural_parameter = unlock_maa_zbrojnosh
 		has_innovation = innovation_sarawit #Sarawit - Later Era MAA
 		has_innovation = innovation_legionnaires #Praetorian
-		
-		# SoW
-		has_cultural_parameter = unlock_maa_agrarii_milites
-		has_cultural_parameter = unlock_maa_skoutatoi
 	}
 }
 
@@ -105,9 +99,6 @@ culture_has_heavy_cavalry_maa = {
 		has_cultural_parameter = unlock_maa_monaspa
 		has_cultural_parameter = unlock_maa_tarkhan
 		has_innovation = innovation_valets #Gendarme - Later Era MAA
-		
-		# SoW
-		has_cultural_parameter = unlock_maa_armati_milites
 	}
 }
 

@@ -252,6 +252,11 @@ march_contract_taxes_tooltip = {
 	multiply = 100
 	multiply = -1
 }
+castellan_contract_levies = 0.5
+castellan_contract_levies_tooltip = {
+	value = castellan_contract_levies
+	multiply = 100
+}
 palatinate_contract_taxes = -0.2
 palatinate_contract_levies = -0.2
 palatinate_contract_taxes_tooltip = {
@@ -581,13 +586,28 @@ theocratic_tax_rate_contract = {
 clan_manpower_rate = {
 	value = 0.2
 	if = {
-		limit = { exists = scope:liege:tax_collector }
+		limit = { exists = scope:tax_collector }
 		add = 1
 	}
 	if = {
 		limit = { exists = scope:tax_collector }
 		add = clan_government_levies_default
 		multiply = clan_government_tax_collector_aptitude_multiplier
+	}
+	multiply = {
+		value = 1
+		if = {
+			limit = { vassal_contract_has_flag = vassal_contract_jizya_special_rights }  
+			add = -0.4
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = vassal_contract_iqta_special_rights }  
+			add = -0.5
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = vassal_contract_ghazi_special_rights }  
+			add = -0.25
+		}
 	}
 }
 
@@ -597,6 +617,18 @@ clan_tax_rate = {
 		limit = { exists = scope:tax_collector }
 		add = clan_government_tax_default
 		multiply = clan_government_tax_collector_aptitude_multiplier
+	}
+	multiply = {
+		value = 1
+		# Special Contract
+		if = {
+			limit = { vassal_contract_has_flag = vassal_contract_jizya_special_rights }  
+			add = 0.4
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = vassal_contract_iqta_special_rights }  
+			add = -0.5
+		}
 	}
 }
 
@@ -680,5 +712,52 @@ demd_feudal_manpower_rate = {
 	}
 }
 
+administrative_tax_rate = {
+	value = 0.1
+}
 
+administrative_levies_rate = {
+	value = 0.1
+}
 
+administrative_food_rate = {
+	value = 0.1	
+	multiply = {
+		value = 1
+		if = {
+			limit = { vassal_contract_has_flag = admin_theme_civilian }  
+			add = 0.5
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = admin_martial_obligation_bonus }  
+			add = -0.75
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = admin_theme_frontier }  
+			add = -0.4
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = admin_theme_imperial }  
+			add = 0.1
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = admin_theme_naval }  
+			add = -0.2
+		}
+	}
+}
+
+administrative_manpower_rate = {
+	value = 0.3	
+	multiply = {
+		value = 1
+		if = {
+			limit = { vassal_contract_has_flag = admin_theme_civilian }  
+			add = -0.75
+		}
+		else_if = {
+			limit = { vassal_contract_has_flag = admin_theme_military }  
+			add = 0.75
+		}
+	}
+}

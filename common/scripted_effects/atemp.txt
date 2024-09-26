@@ -1,0 +1,39 @@
+demd_imperial_decay_war_end_effect_by_tier = {
+	if = {
+		limit = { scope:winner.highest_held_title_tier = tier_empire }
+		scope:winner.primary_title = { 
+			save_scope_as = empire_title
+			demd_alter_imperial_decay_CB = { operation = subtract amount = $amount$ } 
+		}
+		
+		every_player = {
+			limit = { is_vassal_of = scope:winner }
+			send_interface_message = {
+				type = msg_steward_task_good	
+				title = demd_imperial_decay_war_won_$amount$	
+				desc = demd_imperial_decay_war_won_$amount$_desc
+				left_icon = scope:loser
+				right_icon = scope:winner					
+			}
+		}
+		
+	}
+	if = {
+		limit = { scope:loser.highest_held_title_tier = tier_empire }
+		scope:loser.primary_title = { 
+			save_scope_as = empire_title
+			demd_alter_imperial_decay_CB = { operation = add amount = $amount$ } 
+		}
+		
+		every_player = {
+			limit = { is_vassal_of = scope:loser }
+			send_interface_message = {
+				type = msg_steward_task_bad	
+				title = demd_imperial_decay_war_won_$amount$	
+				desc = demd_imperial_decay_war_won_$amount$_desc
+				left_icon = scope:loser
+				right_icon = scope:winner					
+			}
+		}		
+	}
+}

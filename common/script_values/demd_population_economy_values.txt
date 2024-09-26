@@ -756,6 +756,7 @@ manpower_mult = {
 	add = manpower_tribal_mult
 	add = building_manpower_bonus
 	add = vigor_manpower_mult
+	add = manpower_contract_mult
 }
 
 vigor_manpower_mult = {
@@ -772,6 +773,29 @@ manpower_tribal_mult = {
 	if = {
 		limit = { county.title_province = { has_holding_type = tribal_holding } }
 		value = 0.65
+	}
+	else = {
+		value = 0 
+	}
+}
+
+manpower_contract_mult = {
+
+	if = {
+		limit = { scope:holder.vassal_contract_has_flag = admin_theme_military }
+		value = 0.2
+	}
+	else_if = {
+		limit = { scope:holder.vassal_contract_has_flag = admin_theme_civilian }
+		value = -0.2
+	}
+	else_if = {
+		limit = { scope:holder.vassal_contract_has_flag = has_march_contract }
+		value = 0.2
+	}
+	else_if = {
+		limit = { scope:holder.vassal_contract_has_flag = has_castellan_contract }
+		value = 0.2
 	}
 	else = {
 		value = 0 

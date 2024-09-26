@@ -22,9 +22,7 @@ demd_trade_node_struggle_world_europe_west_britannia = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -85,8 +83,6 @@ demd_trade_node_struggle_world_europe_west_britannia = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -178,8 +174,6 @@ demd_trade_node_struggle_world_europe_west_britannia = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -285,9 +279,7 @@ demd_trade_node_struggle_world_europe_west_germania = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -348,8 +340,6 @@ demd_trade_node_struggle_world_europe_west_germania = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -441,8 +431,6 @@ demd_trade_node_struggle_world_europe_west_germania = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -548,9 +536,7 @@ demd_trade_node_struggle_world_europe_west_francia = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -611,8 +597,6 @@ demd_trade_node_struggle_world_europe_west_francia = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -704,8 +688,6 @@ demd_trade_node_struggle_world_europe_west_francia = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -811,9 +793,7 @@ demd_trade_node_struggle_world_europe_west_iberia = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -874,8 +854,6 @@ demd_trade_node_struggle_world_europe_west_iberia = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -967,8 +945,6 @@ demd_trade_node_struggle_world_europe_west_iberia = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -1074,9 +1050,7 @@ demd_trade_node_struggle_world_europe_north = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -1137,8 +1111,6 @@ demd_trade_node_struggle_world_europe_north = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -1230,8 +1202,6 @@ demd_trade_node_struggle_world_europe_north = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -1337,9 +1307,7 @@ demd_trade_node_struggle_world_europe_south_east = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -1400,8 +1368,6 @@ demd_trade_node_struggle_world_europe_south_east = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -1493,8 +1459,6 @@ demd_trade_node_struggle_world_europe_south_east = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -1600,9 +1564,7 @@ demd_trade_node_struggle_world_europe_south_italy = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -1663,8 +1625,6 @@ demd_trade_node_struggle_world_europe_south_italy = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -1756,8 +1716,6 @@ demd_trade_node_struggle_world_europe_south_italy = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -1863,9 +1821,7 @@ demd_trade_node_struggle_world_europe_east = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -1926,8 +1882,6 @@ demd_trade_node_struggle_world_europe_east = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -2019,8 +1973,6 @@ demd_trade_node_struggle_world_europe_east = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -2126,9 +2078,7 @@ demd_trade_node_struggle_world_asia_minor = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -2189,8 +2139,6 @@ demd_trade_node_struggle_world_asia_minor = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -2282,8 +2230,6 @@ demd_trade_node_struggle_world_asia_minor = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -2389,9 +2335,7 @@ demd_trade_node_struggle_world_middle_east_jerusalem = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -2452,8 +2396,6 @@ demd_trade_node_struggle_world_middle_east_jerusalem = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -2545,8 +2487,6 @@ demd_trade_node_struggle_world_middle_east_jerusalem = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -2652,9 +2592,7 @@ demd_trade_node_struggle_world_middle_east_arabia = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -2715,8 +2653,6 @@ demd_trade_node_struggle_world_middle_east_arabia = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -2808,8 +2744,6 @@ demd_trade_node_struggle_world_middle_east_arabia = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -2915,9 +2849,7 @@ demd_trade_node_struggle_world_middle_east_persia = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -2978,8 +2910,6 @@ demd_trade_node_struggle_world_middle_east_persia = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -3071,8 +3001,6 @@ demd_trade_node_struggle_world_middle_east_persia = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -3178,9 +3106,7 @@ demd_trade_node_struggle_world_india_deccan = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -3241,8 +3167,6 @@ demd_trade_node_struggle_world_india_deccan = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -3334,8 +3258,6 @@ demd_trade_node_struggle_world_india_deccan = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -3441,9 +3363,7 @@ demd_trade_node_struggle_world_india_bengal = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -3504,8 +3424,6 @@ demd_trade_node_struggle_world_india_bengal = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -3597,8 +3515,6 @@ demd_trade_node_struggle_world_india_bengal = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -3704,9 +3620,7 @@ demd_trade_node_struggle_world_india_rajastan = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -3767,8 +3681,6 @@ demd_trade_node_struggle_world_india_rajastan = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -3860,8 +3772,6 @@ demd_trade_node_struggle_world_india_rajastan = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -3967,9 +3877,7 @@ demd_trade_node_struggle_world_africa_north_west = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -4030,8 +3938,6 @@ demd_trade_node_struggle_world_africa_north_west = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -4123,8 +4029,6 @@ demd_trade_node_struggle_world_africa_north_west = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -4230,9 +4134,7 @@ demd_trade_node_struggle_world_africa_north_east = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -4293,8 +4195,6 @@ demd_trade_node_struggle_world_africa_north_east = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -4386,8 +4286,6 @@ demd_trade_node_struggle_world_africa_north_east = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -4493,9 +4391,7 @@ demd_trade_node_struggle_world_africa_sahara = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -4556,8 +4452,6 @@ demd_trade_node_struggle_world_africa_sahara = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -4649,8 +4543,6 @@ demd_trade_node_struggle_world_africa_sahara = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -4756,9 +4648,7 @@ demd_trade_node_struggle_world_africa_west = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -4819,8 +4709,6 @@ demd_trade_node_struggle_world_africa_west = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -4912,8 +4800,6 @@ demd_trade_node_struggle_world_africa_west = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -5019,9 +4905,7 @@ demd_trade_node_struggle_world_africa_east = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -5082,8 +4966,6 @@ demd_trade_node_struggle_world_africa_east = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -5175,8 +5057,6 @@ demd_trade_node_struggle_world_africa_east = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -5282,9 +5162,7 @@ demd_trade_node_struggle_world_steppe_tarim = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -5345,8 +5223,6 @@ demd_trade_node_struggle_world_steppe_tarim = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -5438,8 +5314,6 @@ demd_trade_node_struggle_world_steppe_tarim = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -5545,9 +5419,7 @@ demd_trade_node_struggle_world_steppe_west = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -5608,8 +5480,6 @@ demd_trade_node_struggle_world_steppe_west = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -5701,8 +5571,6 @@ demd_trade_node_struggle_world_steppe_west = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -5808,9 +5676,7 @@ demd_trade_node_struggle_world_steppe_east = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -5871,8 +5737,6 @@ demd_trade_node_struggle_world_steppe_east = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -5964,8 +5828,6 @@ demd_trade_node_struggle_world_steppe_east = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -6071,9 +5933,7 @@ demd_trade_node_struggle_world_tibet = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -6134,8 +5994,6 @@ demd_trade_node_struggle_world_tibet = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -6227,8 +6085,6 @@ demd_trade_node_struggle_world_tibet = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -6334,9 +6190,7 @@ demd_trade_node_struggle_world_burma = {
 	start_phase = demd_trade_node_struggle_phase_opportunity
 	
 	phase_list = {
-		demd_trade_node_struggle_phase_opportunity = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_opportunity_bg.dds"
-			
+		demd_trade_node_struggle_phase_opportunity = {			
 			future_phases = {
 				demd_trade_node_struggle_phase_disorder = {
 					catalysts = {
@@ -6397,8 +6251,6 @@ demd_trade_node_struggle_world_burma = {
 		}
 		
 		demd_trade_node_struggle_phase_disorder = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_hostility_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {
@@ -6490,8 +6342,6 @@ demd_trade_node_struggle_world_burma = {
 		}
 
 		demd_trade_node_struggle_phase_stability = {
-			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_compromise_bg.dds"
-			
 			future_phases = {
 				demd_trade_node_struggle_phase_opportunity = {
 					catalysts = {

@@ -1,5 +1,7 @@
 ﻿demd_trade_node_struggle_end_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	
 	ai_check_interval = 0
 
@@ -25,7 +27,9 @@
 }
 
 demd_trade_node_struggle_seize_control_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	
 	ai_check_interval = 360
 

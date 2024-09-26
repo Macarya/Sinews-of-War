@@ -15,8 +15,8 @@ demd_add_pillar_bonuses = {
 
 	if = {
 		limit = { has_cultural_pillar = martial_custom_female_only }
-		change_variable = { name = manpower_cultural_production_mult add = 0.15 }
 		change_variable = { name = birth_rate_cultural_production_mult add = -0.15 }
+		change_variable = { name = manpower_cultural_production_mult add = 0.15 }
 	}
 
 }

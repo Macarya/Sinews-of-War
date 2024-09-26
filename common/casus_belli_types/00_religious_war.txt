@@ -7,7 +7,7 @@
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
 	mutually_exclusive_titles = { always = yes }
-
+	
 	attacker_score_from_occupation_scale = 150
 	attacker_score_from_battles_scale = 150
 	defender_score_from_battles_scale = 150
@@ -17,6 +17,9 @@
 		scope:attacker.faith = {
 			NOT = { has_doctrine_parameter = unreformed }
 			NOT = { has_doctrine_parameter = holy_wars_forbidden }
+		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
 		}
 	}
 
@@ -205,6 +208,20 @@
 
 		# AI in struggles act insularly for wars that don't have a familial or legal basis.
 		multiply = struggle_wars_prioritise_struggle_targets_value
+		# Tell the Romans to stop going adventuring into the steppe for no gods-damned reason.
+		multiply = byzantium_conquests_ai_score_value
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
 	}
 
 	cost = {
@@ -261,7 +278,7 @@
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
 		
-		#EP2 accolade glory gain from winning against higher ranked enemy
+		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 		
 		#EP2 accolade glory gain from winning against higher ranked enemy
@@ -272,6 +289,9 @@
 			save_scope_as = change
 			add_claim_on_loss = yes
 		}
+
+		# EP3 Laamp possibility warning
+		scope:defender = { ep3_war_loss_adventurer_tt_effect = yes }
 
 		# go through the dejure hierarchy under target titles, transfer titles with same or worse tolerance holders (their religion equaly or less tolerated than the defender's),
 		# take the holder as vassal otherwise and don't go deeper
@@ -398,8 +418,8 @@
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 accolade glory gain for winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
@@ -489,7 +509,7 @@
 	use_de_jure_wargoal_only = yes
 
 	attacker_wargoal_percentage = 0.8
-
+	
 	max_defender_score_from_occupation = 150
 	max_attacker_score_from_occupation = 150
 
@@ -505,7 +525,7 @@ religious_war = {
 	combine_into_one = yes
 	should_show_war_goal_subview = yes
 	mutually_exclusive_titles = { always = yes }
-
+	
 	attacker_score_from_occupation_scale = 150
 	attacker_score_from_battles_scale = 150
 	defender_score_from_battles_scale = 150
@@ -601,6 +621,26 @@ religious_war = {
 	valid_to_start = {
 		scope:target = {
 			tier = tier_duchy
+		}
+		scope:target = {
+			trigger_if = {
+				limit = {
+					scope:attacker = {
+						is_ai = yes
+					}
+				}
+				any_in_de_jure_hierarchy = {
+					continue = { tier > tier_county }
+					count >= 2
+					tier = tier_county
+					holder ?= {
+						OR = {
+							this = scope:defender
+							is_vassal_or_below_of = scope:defender
+						}
+					}
+				}
+			}
 		}
 		# Filter for struggles
 		trigger_if = {
@@ -773,8 +813,8 @@ religious_war = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 accolade glory gain for winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
@@ -785,6 +825,9 @@ religious_war = {
 			save_scope_as = change
 			add_claim_on_loss = yes
 		}
+
+		# EP3 Laamp possibility warning
+		scope:defender = { ep3_war_loss_adventurer_tt_effect = yes }
 
 		# go through the dejure hierarchy under target titles, transfer titles with same or worse tolerance holders (their religion equaly or less tolerated than the defender's),
 		# take the holder as vassal otherwise and don't go deeper
@@ -915,8 +958,8 @@ religious_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 accolade glory gain for winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
@@ -1006,7 +1049,7 @@ religious_war = {
 	use_de_jure_wargoal_only = yes
 
 	attacker_wargoal_percentage = 0.8
-
+	
 	max_defender_score_from_occupation = 150
 	max_attacker_score_from_occupation = 150
 
@@ -1036,6 +1079,22 @@ religious_war = {
 
 		# AI in struggles act insularly for wars that don't have a familial or legal basis.
 		multiply = struggle_wars_prioritise_struggle_targets_value
+		# Tell the Romans to stop going adventuring into the steppe for no gods-damned reason.
+		multiply = byzantium_conquests_ai_score_value
+		multiply = muslim_invasions_prefer_nonmuslims_ai_score_value
+
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
 	}
 }
 
@@ -1127,10 +1186,10 @@ major_religious_war = {
 				text = declared_major_religious_war_flag_tt
 				OR = {
 					has_character_flag = bonus_major_holy_war
-				NOT = { has_character_flag = declared_major_religious_war_flag }
+					NOT = { has_character_flag = declared_major_religious_war_flag }
+				}
 			}
 		}
-	}
 	}
 
 	allowed_against_character = {
@@ -1170,6 +1229,26 @@ major_religious_war = {
 		}
 		are_holy_wars_disabled_by_struggle_conciliation_trigger = no # Disabled against other involved faiths in FP2 Conciliation ending
 
+		scope:target = {
+			trigger_if = {
+				limit = {
+					scope:attacker = {
+						is_ai = yes
+					}
+				}
+				any_in_de_jure_hierarchy = {
+					continue = { tier > tier_county }
+					count >= 5
+					tier = tier_county
+					holder ?= {
+						OR = {
+							this = scope:defender
+							is_vassal_or_below_of = scope:defender
+						}
+					}
+				}
+			}
+		}
 	}
 
 	should_invalidate = {
@@ -1327,6 +1406,10 @@ major_religious_war = {
 			save_scope_as = change
 			add_claim_on_loss = yes
 		}
+
+		# EP3 Laamp possibility warning
+		scope:defender = { ep3_war_loss_adventurer_tt_effect = yes }
+
 		# go through the dejure hierarchy under target titles, transfer titles with same or worse tolerance holders (their religion equaly or less tolerated than the defender's),
 		# take the holder as vassal otherwise and don't go deeper
 		every_in_list = {
@@ -1456,8 +1539,8 @@ major_religious_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 accolade glory gain for winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
@@ -1547,7 +1630,7 @@ major_religious_war = {
 	use_de_jure_wargoal_only = yes
 
 	attacker_wargoal_percentage = 0.8
-
+	
 	max_defender_score_from_occupation = 150
 	max_attacker_score_from_occupation = 150
 
@@ -1577,6 +1660,22 @@ major_religious_war = {
 
 		# AI in struggles act insularly for wars that don't have a familial or legal basis.
 		multiply = struggle_wars_prioritise_struggle_targets_value
+		# Tell the Romans to stop going adventuring into the steppe for no gods-damned reason.
+		multiply = byzantium_conquests_ai_score_value
+		multiply = muslim_invasions_prefer_nonmuslims_ai_score_value
+
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
 	}
 }
 
@@ -1588,7 +1687,7 @@ excommunication_war = {
 
 	# Already defined in 00_casus_belli_groups.txt
 	# allowed_for_character = {}
-
+	
 	attacker_score_from_battles_scale = 150
 	defender_score_from_battles_scale = 150
 
@@ -1607,7 +1706,7 @@ excommunication_war = {
 			#We can't DoW our own liege
 			NOR = {
 				liege = scope:defender
-				#No pot calling the kettle black
+			#No pot calling the kettle black
 				has_trait = excommunicated
 			}
 
@@ -1645,8 +1744,8 @@ excommunication_war = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 Accolade glory gain from winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 Accolade glory gain from winning against higher ranked enemy
@@ -1666,9 +1765,12 @@ excommunication_war = {
 			LOSER = scope:defender
 		}
 
+		# EP3 Laamp possibility warning
+		scope:defender = { ep3_war_loss_adventurer_tt_effect = yes }
+
 		#This is ddown here in it's own section to control how the tooltips are ordered.
 		scope:defender = {
-			depose = yes
+			depose_effect = { DEPOSER = scope:attacker }
 		}
 
 		# Truce
@@ -1731,8 +1833,8 @@ excommunication_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 Accolade glory gain for winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 Accolade glory gain for winning against higher ranked enemy
@@ -1822,7 +1924,7 @@ excommunication_war = {
 	use_de_jure_wargoal_only = yes
 
 	attacker_wargoal_percentage = 0.8
-
+	
 	max_defender_score_from_occupation = 150
 	max_attacker_score_from_occupation = 150
 	max_attacker_score_from_battles = 100
@@ -1850,6 +1952,19 @@ excommunication_war = {
 				limit = {  religious_war_vassals_constraints = yes }
 				add = -1000
 			}
+		}
+
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
 		}
 	}
 }
@@ -1942,8 +2057,8 @@ flowery_war_cb = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 Accolade glory gain from winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 Accolade glory gain from winning against higher ranked enemy
@@ -2426,8 +2541,8 @@ flowery_war_cb = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 Accolade glory gain from winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 Accolade glory gain from winning against higher ranked enemy
@@ -2919,6 +3034,18 @@ flowery_war_cb = {
 				add = -1000
 			}
 		}
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
 	}
 }
 
@@ -3010,6 +3137,38 @@ undirected_great_holy_war = {
 			save_scope_as = the_ghw
 		}
 		force_truce_GHW_defenders_effect = yes
+		on_declared_war = yes
+		#Tell non diverting-players about the crazy 4th crusade plan
+		if = {
+			limit = {
+				scope:attacker.faith = { this = faith:catholic }
+				exists = global_var:byz_claimant_champion
+				global_var:byz_claimant_champion = {
+					is_alive = yes
+					is_ruler = yes
+					any_character_war = {
+						using_cb = crusading_claim_cb
+					}
+				}
+			}
+			global_var:byz_claimant_champion = {
+				random_character_war = {
+					limit = {
+						using_cb = crusading_claim_cb
+					}
+					save_scope_as = redirected_crusade
+				}
+			}
+			every_player = {
+			 	limit = {
+			 		NOT = {
+			 			is_attacker_in_war = scope:redirected_crusade
+			 		}
+			 		ep3_frankokratia_notification_recipient_trigger = yes
+			 	}
+			 	trigger_event = ep3_frankokratia_events.0031
+			}
+		}
 		every_player = { #Fluff for attackers/defenders
 			limit = {
 				scope:attacker.faith.great_holy_war = {
@@ -3021,13 +3180,11 @@ undirected_great_holy_war = {
 			}
 			trigger_event = great_holy_war.0051
 		}
-		on_declared_war = yes
 		scope:attacker.faith.great_holy_war = {
 			divide_war_chest = {
 				fraction = ghw_war_start_handout_percentage
 			}
 		}
-
 		# First of the Crusader Kings achievement tracking.
 		if = {
 			limit = {
@@ -3102,8 +3259,8 @@ undirected_great_holy_war = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 Accolade glory gain to the holy knights of the faith head
+		
+		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 Accolade glory gain to the holy knights of the faith head
@@ -3193,7 +3350,7 @@ undirected_great_holy_war = {
 					location = scope:ghw_sponsor.capital_province
 					template = new_commander_character
 					faith = scope:the_faith
-					culture = scope:ghw_sponsor
+					culture = scope:ghw_sponsor.culture
 					save_scope_as = title_recipient
 					gender_female_chance = {
 						if = {
@@ -3216,11 +3373,21 @@ undirected_great_holy_war = {
 			if = { #Check if Recipient is landless to give him the Crusader King buff.
 				limit = {
 					exists = scope:title_recipient
-					scope:title_recipient = { is_ruler = no }
+					scope:title_recipient = {
+						OR = {
+							is_ruler = no
+							government_has_flag = government_is_landless_adventurer
+						}
+					}
 				}
 				scope:title_recipient = {
 					add_character_flag = {
 						flag = ghw_recipient_will_be_crusader_king
+					}
+					# Laamps don't get to keep the trait if they pass on their chosen kingdom.
+					if = {
+						limit = { government_has_flag = government_is_landless_adventurer }
+						add_character_flag = laamp_is_crusader_king
 					}
 				}
 			}
@@ -3370,8 +3537,8 @@ undirected_great_holy_war = {
 					add_trait = crusader_king
 					remove_character_flag = ghw_recipient_will_be_crusader_king
 					add_realm_law_skip_effects = crown_authority_1
-
-					if = { # Set the appropriate Succession Law
+					# Set the appropriate Succession Law
+					if = {
 						limit = {
 							can_have_single_heir_succession_law_trigger = yes
 							NOT = {
@@ -3398,7 +3565,7 @@ undirected_great_holy_war = {
 						}
 						add_realm_law_skip_effects = partition_succession_law
 					}
-
+					
 					spawn_army = { # Spawn a temporary army so that the Crusader King isn't helpless, symbolizing Crusaders staying behind
 						levies = {
 							value = 100
@@ -3434,12 +3601,19 @@ undirected_great_holy_war = {
 					add_gold = 500 # Some extra plunder
 					add_prestige = 500
 					add_piety = 500
+					# Plus if we're gallowsbait, remove most/all of it.
+					absolve_crusaders_of_gallowsbait_effect = yes
 				}
 			}
 			scope:attacker.faith.great_holy_war = { #Give Prestige/Piety modifier to Dynasty/House of the winners' Beneficiaries (only if they gained any land in the GHW).
 				every_pledged_attacker = {
 					limit = { exists = ghw_beneficiary }
 					ghw_beneficiary = { trigger_event = great_holy_war.0061 }
+					# Plus if we're gallowsbait, remove most/all of it — provided we turned up.
+					if = {
+						limit = { has_trait = faith_warrior }
+						absolve_crusaders_of_gallowsbait_effect = yes
+					}
 				}
 				if = { #Chance to switch-play to Crusader King.
 					limit = {
@@ -3536,8 +3710,8 @@ undirected_great_holy_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 Accolade glory gain to the noble native defenders
+		
+		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 Accolade glory gain to the noble native defenders
@@ -3711,7 +3885,7 @@ directed_great_holy_war = {
 		scope:attacker.faith = {
 			NOR = {
 				# No active GHW already.
-				exists = great_holy_war
+				exists = great_holy_war 
 
 				# If GHWs have just been unlocked, AI rulers will wait a little bit before declaring them.
 				trigger_if = {
@@ -3804,7 +3978,7 @@ directed_great_holy_war = {
 				limit = {
 					faith = scope:attacker.faith
 					is_ai = yes
-					is_landed = yes
+					is_playable_character = yes
 					highest_held_title_tier >= tier_county
 					NOT = { this = scope:ghw_sponsor }
 					exists = scope:attacker.faith.great_holy_war
@@ -3816,7 +3990,7 @@ directed_great_holy_war = {
 				limit = {
 					faith = scope:defender.faith
 					is_ai = yes
-					is_landed = yes
+					is_playable_character = yes
 					highest_held_title_tier >= tier_county
 					exists = scope:attacker.faith.great_holy_war
 					NOT = { scope:attacker.faith.great_holy_war = { has_pledged_defender = prev } }
@@ -3864,8 +4038,8 @@ directed_great_holy_war = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 Accolade glory gain to the holy warriors of the faith head
+		
+		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 Accolade glory gain to the holy warriors of the faith head
@@ -4059,8 +4233,8 @@ directed_great_holy_war = {
 
 	on_defeat = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 Accolade glory gain to the noble native defenders
+		
+		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
 
 		#EP2 Accolade glory gain to the noble native defenders

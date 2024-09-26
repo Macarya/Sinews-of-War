@@ -35,11 +35,14 @@ food_to_liege_rate = {
 			limit = { has_government = theocracy_government }
 			value = theocratic_tax_rate
 		}
+		else_if = {
+			limit = { government_has_flag = government_is_administrative }
+			value = administrative_food_rate
+		}
 		else = {
 			value = normal_tax
 		}
 	}
-	multiply = 0.5
 }
 
 free_manpower_to_liege_rate = {
@@ -62,6 +65,10 @@ free_manpower_to_liege_rate = {
 	else_if = {
 		limit = { has_government = republic_government }
 		value = republic_manpower_rate
+	}
+	else_if = {
+		limit = { government_has_flag = government_is_administrative }
+		value = administrative_manpower_rate
 	}
 	else = {
 		value = normal_manpower_rate

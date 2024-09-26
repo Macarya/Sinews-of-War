@@ -98,6 +98,7 @@ get_artifact_quality_effect = {
 						exists = court_owner
 						court_owner = {
 							has_royal_court = yes
+							has_dlc_feature = royal_court
 							amenity_level = { type = court_lodging_standards value > low_amenity_level }
 						}
 					}
@@ -162,6 +163,30 @@ get_artifact_quality_effect = {
 							}
 						}
 
+						if = {
+							limit = {
+								OR = {
+									ep1_character_had_or_has_inspiration_type_trigger = { TYPE = weapon }
+									ep1_character_had_or_has_inspiration_type_trigger = { TYPE = smith }
+									ep1_character_had_or_has_inspiration_type_trigger = { TYPE = armor }
+								}
+								court_owner ?= {
+									is_landless_adventurer = yes
+									has_perk = divided_attention_perk
+								}
+							}
+							add = 40
+						}
+						if = {
+							limit = {
+								ep1_character_had_or_has_inspiration_type_trigger = { TYPE = book }
+								court_owner ?= {
+									is_landless_adventurer = yes
+									has_perk = divided_attention_perk
+								}
+							}
+							add = 80
+						}
 						# Bonus quality from Cultural Traditions
 						if = {
 							limit = {
@@ -199,15 +224,12 @@ get_artifact_quality_effect = {
 							limit = {
 								has_character_flag = local_artisan
 							}
-							max = {
-								value = 20
-								add = culture.demd_vigor_local_artisan_artifact_quality_max
-							}
+							add = -10
 						}
 						# Other inspiration owners get a small bonus in quality to help distinguish them from 'local artisans'
 						else = {
 							add = {
-								value = 10
+								value = 20
 								add = culture.demd_vigor_artisan_quality_bonus
 							}
 						}
@@ -396,6 +418,30 @@ get_artifact_quality_effect = {
 							}
 						}
 						add = 20
+					}
+					
+					# Bonus from Estates
+					if = {
+						limit = {
+							exists = court_owner
+							court_owner = {
+								domicile ?= {
+									has_domicile_parameter = estate_improved_inspirations_2
+								}
+							}
+						}
+						add = 10
+					}
+					else_if = {
+						limit = {
+							exists = court_owner
+							court_owner = {
+								domicile ?= {
+									has_domicile_parameter = estate_improved_inspirations_1
+								}
+							}
+						}
+						add = 5
 					}
 				}
 
@@ -987,6 +1033,7 @@ successful_popular_revolt_outcome_effect = {
 					change = scope:change_three
 				}
 				send_interface_toast = {
+					type = event_toast_effect_good
 					title = POPULIST_FACTION_INDEPENDENCE_TITLE
 					custom_tooltip = POPULIST_FACTION_INDEPENDENCE_DESC
 					left_icon = $FACTION_LEADER$
@@ -1063,6 +1110,36 @@ successful_popular_revolt_outcome_effect = {
 					add_gold = 50
 				}
 			}
+		}
+	}
+}
+
+create_popular_revolt_title_effect = {
+	$FACTION$ = {
+		ordered_faction_county_member = {
+			limit = {
+				faith = $FACTION_LEADER$.faith
+				culture = $FACTION_LEADER$.culture
+			}
+			alternative_limit = {
+				always = yes
+			}
+
+			order_by = total_county_levies
+
+			save_scope_as = base_county
+		}
+		$FACTION_LEADER$.culture = { save_scope_as = founder_culture }
+		create_dynamic_title = {
+			tier = $TIER$
+			name = FACTION_POPULIST_CREATED_TITLE_NAME
+		}
+		scope:new_title = {
+			set_variable = {
+				name = faction
+				value = $FACTION$
+			}
+			set_color_from_title = scope:base_county
 		}
 	}
 }

@@ -8,8 +8,13 @@
 demd_add_tradition_bonuses = {
 
 	if = {
+		limit = { has_cultural_tradition = tradition_only_the_strong }
+		change_variable = { name = manpower_cultural_production_mult add = -0.20 }
+	}
+
+	if = {
 		limit = { has_cultural_tradition = tradition_strength_in_numbers }
-		change_variable = { name = manpower_cultural_production_mult add = 0.15 }
+		change_variable = { name = manpower_cultural_production_mult add = 0.20 }
 	}
 
 	if = {
@@ -18,28 +23,8 @@ demd_add_tradition_bonuses = {
 	}
 
 	if = {
-		limit = { has_cultural_tradition = tradition_only_the_strong }
-		change_variable = { name = manpower_cultural_production_mult add = -0.20 }
-	}
-
-	if = {
 		limit = { has_cultural_tradition = tradition_hird }
 		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
-	}
-
-	if = {
-		limit = { has_cultural_tradition = tradition_culture_blending }
-		change_variable = { name = vigor_cultural_production_mult add = -5.00 }
-	}
-
-	if = {
-		limit = { has_cultural_tradition = tradition_isolationist }
-		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
-	}
-
-	if = {
-		limit = { has_cultural_tradition = tradition_agrarian }
-		change_variable = { name = food_cultural_production_mult add = 0.10 }
 	}
 
 	if = {
@@ -70,8 +55,28 @@ demd_add_tradition_bonuses = {
 	}
 
 	if = {
+		limit = { has_cultural_tradition = tradition_culture_blending }
+		change_variable = { name = vigor_cultural_production_mult add = -5.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_isolationist }
+		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_agrarian }
+		change_variable = { name = food_cultural_production_mult add = 0.10 }
+	}
+
+	if = {
 		limit = { has_cultural_tradition = tradition_byzantine_succession }
 		change_variable = { name = vigor_cultural_production_mult add = -4.00 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_artisans }
+		change_variable = { name = trade_value_cultural_production_mult add = 0.10 }
 	}
 
 	if = {
@@ -95,23 +100,8 @@ demd_add_tradition_bonuses = {
 	}
 
 	if = {
-		limit = { has_cultural_tradition = tradition_artisans }
-		change_variable = { name = trade_value_cultural_production_mult add = 0.10 }
-	}
-
-	if = {
 		limit = { has_cultural_tradition = tradition_fp2_malleable_subjects }
 		change_variable = { name = vigor_cultural_production_mult add = -3.00 }
-	}
-
-	if = {
-		limit = { has_cultural_tradition = tradition_warrior_bishops }
-		change_variable = { name = vigor_cultural_production_mult add = 3.00 }
-	}
-
-	if = {
-		limit = { has_cultural_tradition = tradition_ottonian_reforms }
-		change_variable = { name = vigor_cultural_production_mult add = 2.00 }
 	}
 
 }

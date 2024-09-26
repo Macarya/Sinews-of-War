@@ -63,7 +63,7 @@ demd_debug_startup = {
 				county = { save_scope_as = problem_county }
 				every_player = {
 					send_interface_message = {
-						type = event_court_chaplain_task_bad
+						type = msg_court_chaplain_task_bad
 						title = demd_debug_county_pixels
 						desc = demd_debug_county_pixels_desc
 						right_icon = scope:problem_county
@@ -75,7 +75,7 @@ demd_debug_startup = {
 				county = { save_scope_as = problem_county }
 				every_player = {
 					send_interface_message = {
-						type = event_court_chaplain_task_bad
+						type = msg_court_chaplain_task_bad
 						title = demd_debug_county_list
 						desc = demd_debug_county_list_desc
 						right_icon = scope:problem_county
@@ -87,7 +87,7 @@ demd_debug_startup = {
 				county = { save_scope_as = problem_county }
 				every_player = {
 					send_interface_message = {
-						type = event_court_chaplain_task_bad
+						type = msg_court_chaplain_task_bad
 						title = demd_debug_county_node
 						desc = demd_debug_county_node_desc
 						right_icon = scope:problem_county

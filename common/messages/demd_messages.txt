@@ -27,7 +27,6 @@ msg_flood_bad = {
 	#tooltip = "My Tooltip"
 	style = bad
 	soundeffect = @msg_bad_soundeffect
-	
 }
 
 msg_flood_good = {
@@ -38,5 +37,4 @@ msg_flood_good = {
 	#tooltip = "My Tooltip"
 	style = good
 	soundeffect = @msg_good_soundeffect
-	
 }

@@ -110,10 +110,11 @@ innovation_advanced_bowmaking = {
 
 	unlock_maa = crossbowmen
 	unlock_building = workshops_01	
-	maa_upgrade = {
-		type = archers
-		damage = 3
-	}
+	#maa_upgrade = {
+	#	type = archers
+	#	damage = 3
+	#}
+
 	custom = eligible_accolade_crossbower_attribute
 
 	flag = global_regular
@@ -148,7 +149,6 @@ innovation_windmills = {
 	county_modifier = {
 		building_slot_add = 1
 	}
-	custom = unlock_high_medieval_economic_buildings
 
 	custom = doctrine_parameter_demd_meta_food_mult_2
 	custom = doctrine_parameter_demd_meta_food_districts_mult_3

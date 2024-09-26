@@ -6,6 +6,9 @@
 
 	allowed_for_character = {
 		has_any_artifact_claim = yes
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
+		}
 	}
 	allowed_against_character = {
 		scope:attacker = {
@@ -27,7 +30,7 @@
 						}
 					}
 				}
-				AND = {
+				AND ?= {
 					exists = scope:attacker.house
 					house = {
 						any_house_claimed_artifact = {
@@ -93,18 +96,15 @@
 			desc = artifact_war_victory_desc
 		}
 	}
-	
+
 	on_victory = {
 		demd_vigor_attacker_victory_effect_no_target = yes
-		scope:attacker = { show_pow_release_message_effect = yes }
-			
-		# Legitimacy
-		add_legitimacy_attacker_victory_effect = yes
-		
-		# transfer artifacts
 		scope:attacker = {
 
 			show_pow_release_message_effect = yes
+			
+			# Legitimacy
+			add_legitimacy_attacker_victory_effect = yes
 
 			#EP2 accolade glory gain for winning against higher ranked enemy
 			accolade_attacker_war_end_glory_gain_med_effect = yes
@@ -146,9 +146,7 @@
 				}
 			}
 			if = {
-				limit = {
-					exists = scope:attacker.house
-				}
+				limit = { exists = house }
 				house = {
 					every_house_claimed_artifact = {
 						limit = {
@@ -263,15 +261,15 @@
 	on_defeat = {
 		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
-
+		
 		demd_vigor_defender_victory_effect_no_target = yes		
 		#EP2 accolade glory gain for winning against higher ranked enemy
 		scope:defender = { accolade_defender_war_end_glory_gain_med_effect = yes }
+
 		scope:attacker = {
 			show_pow_release_message_effect = yes
 
 			every_personal_claimed_artifact = {
-				limit = {
 					artifact_owner = {
 						is_ruler = yes
 						target_is_same_character_or_above = scope:defender
@@ -427,6 +425,9 @@ reclaim_relic_artifact_war = {
 			highest_held_title_tier >= tier_duchy
 			is_ai = no
 		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
+		}
 	}
 	allowed_against_character = {
 		custom_tooltip = { # The custom_tooltip is here for error suppression
@@ -495,7 +496,7 @@ reclaim_relic_artifact_war = {
 	on_victory = {
 		demd_vigor_attacker_victory_effect_no_target = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
-
+		
 		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
@@ -632,7 +633,7 @@ reclaim_relic_artifact_war = {
 	on_defeat = {
 		demd_vigor_defender_victory_effect_no_target = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
-
+		
 		# Legitimacy
 		add_legitimacy_attacker_defeat_effect = yes
 
@@ -735,7 +736,7 @@ reclaim_relic_artifact_war = {
 	max_ai_diplo_distance_to_title = 500
 
 	should_show_war_goal_subview = no
-	
+
 	ai_score = {
 		value = relic_artifact_war_ai_score_value
 	}

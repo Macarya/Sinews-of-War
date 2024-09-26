@@ -157,14 +157,14 @@ court_warlike = {
 	level_perk = {
 		court_grandeur = 7
 		owner_modifier = {
-			pursue_efficiency = 0.1
+			pursue_efficiency = 0.15
 		}
 	}
 	
 	level_perk = {
 		court_grandeur = 10
 		owner_modifier = {
-			counter_efficiency = 0.1
+			counter_efficiency = 0.2
 		}
 	}
 

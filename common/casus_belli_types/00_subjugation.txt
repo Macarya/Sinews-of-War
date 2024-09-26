@@ -2,7 +2,7 @@
 	icon = vassalization
 	group = subjugation
 	ai_only_against_neighbors = yes
-
+	
 	attacker_score_from_occupation_scale = 150
 	attacker_score_from_battles_scale = 150
 	defender_score_from_battles_scale = 150
@@ -20,6 +20,9 @@
 			house ?= {
 				has_variable = subjugations_expanded
 			}
+		}
+		NOT = {
+			government_has_flag = government_is_landless_adventurer
 		}
 	}
 	
@@ -41,65 +44,65 @@
 			trigger_else = {
 				trigger_if = {
 					limit = {
-					government_has_flag = government_is_tribal
-					scope:defender = {
 						government_has_flag = government_is_tribal
-					}
-				}
-				trigger_if = {
-					limit = {
-						culture = {
-							has_cultural_parameter = cb_lower_prestige_level_requirement
+						scope:defender = {
+							government_has_flag = government_is_tribal
 						}
 					}
-					prestige_level >= 1
-				}
-				trigger_else = {
-					prestige_level >= 2
-				}
-			}
-			trigger_else_if = {
-				limit = {
-					faith.religious_head = scope:attacker
-					exists = scope:defender.faith.religious_head
-					scope:defender.faith.religious_head = scope:attacker.faith.religious_head
-					scope:attacker.faith = { has_doctrine = doctrine_temporal_head }
-				}
-				trigger_if = {
-					limit = {
-						OR = {
+					trigger_if = {
+						limit = {
 							culture = {
-								has_cultural_parameter = cb_lower_piety_level_requirement
+								has_cultural_parameter = cb_lower_prestige_level_requirement
 							}
-							# Iberian Struggle Hostility Reward
-							AND = {
-								exists = house
-								house = {
-									OR = {
-										has_house_modifier = fp2_struggle_hostility_house_faith_modifier
-										has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+						}
+						prestige_level >= 1
+					}
+					trigger_else = {
+						prestige_level >= 2
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						faith.religious_head = scope:attacker
+						exists = scope:defender.faith.religious_head
+						scope:defender.faith.religious_head = scope:attacker.faith.religious_head
+						scope:attacker.faith = { has_doctrine = doctrine_temporal_head }
+					}
+					trigger_if = {
+						limit = {
+							OR = {
+								culture = {
+									has_cultural_parameter = cb_lower_piety_level_requirement
+								}
+								# Iberian Struggle Hostility Reward
+								AND = {
+									exists = house
+									house = {
+										OR = {
+											has_house_modifier = fp2_struggle_hostility_house_faith_modifier
+											has_house_modifier = fp2_struggle_hostility_house_combined_modifier
+										}
 									}
 								}
 							}
 						}
+						piety_level >= 2
 					}
-					piety_level >= 2
+					trigger_else = {
+						piety_level >= 3
+					}
 				}
 				trigger_else = {
-					piety_level >= 3
-				}
-			}
-			trigger_else = {
-				trigger_if = {
-					limit = {
+					trigger_if = {
+						limit = {
 							government_has_flag = government_is_clan
 							house ?= {
 								has_house_unity_stage = antagonistic
 							}
-						culture = {
-							has_cultural_parameter = cb_lower_prestige_level_requirement
+							culture = {
+								has_cultural_parameter = cb_lower_prestige_level_requirement
+							}
 						}
-					}
 						prestige_level >= 2
 					}
 					trigger_else_if = {
@@ -116,23 +119,23 @@
 								}
 							}
 						}
-					prestige_level >= 3
+						prestige_level >= 3
+					}
+					trigger_else = {
+						prestige_level >= 4
+					}
 				}
-				trigger_else = {
-					prestige_level >= 4
-				}
-			}
-			custom_description = {
-				text = has_used_lifetime_subjugation
-				subject = scope:attacker
-				NOT = {
-					scope:attacker = {
-						has_character_flag = used_lifetime_subjugation
+				custom_description = {
+					text = has_used_lifetime_subjugation
+					subject = scope:attacker
+					NOT = {
+						scope:attacker = {
+							has_character_flag = used_lifetime_subjugation
+						}
 					}
 				}
 			}
 		}
-	}
 	}
 	
 	allowed_against_character = {
@@ -297,8 +300,8 @@
 	on_victory = {
 		demd_vigor_attacker_victory_effect_no_target = yes
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		#EP2 accolade glory gain for winning against higher ranked enemy
+		
+		# Legitimacy
 		add_legitimacy_attacker_victory_effect = yes
 
 		#EP2 accolade glory gain for winning against higher ranked enemy
@@ -539,4 +542,19 @@
 	attacker_wargoal_percentage = 0.8
 	
 	max_ai_diplo_distance_to_title = 500
+
+	ai_score_mult = {
+		#Declaring war on the frankokratia leader can really ruin the whole thing
+		if = {
+			limit = {
+				scope:defender = {
+					any_owned_story = {
+						story_type = frankokratia_story
+						NOT = { has_variable = franko_war_complete }
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
 }

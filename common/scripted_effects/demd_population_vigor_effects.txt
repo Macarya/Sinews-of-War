@@ -232,7 +232,7 @@ demd_vigor_same_culture_effect_by_tier = {
 				NOT = { this = scope:attacker }
 			}
 			send_interface_message = {
-				type = event_steward_task_bad	
+				type = msg_steward_task_bad	
 				title = demd_vigor_war_lost_$amount$	
 				desc = demd_vigor_war_lost_$amount$_desc
 				left_icon = scope:attacker
@@ -252,7 +252,7 @@ demd_vigor_war_end_effect_by_tier = {
 			NOT = { this = scope:winner }
 		}
 		send_interface_message = {
-			type = event_steward_task_good	
+			type = msg_steward_task_good	
 			title = demd_vigor_war_won_$amount$	
 			desc = demd_vigor_war_won_$amount$_desc
 			left_icon = scope:loser
@@ -265,7 +265,7 @@ demd_vigor_war_end_effect_by_tier = {
 			NOT = { this = scope:loser }
 		}
 		send_interface_message = {
-			type = event_steward_task_bad	
+			type = msg_steward_task_bad	
 			title = demd_vigor_war_lost_$amount$	
 			desc = demd_vigor_war_lost_$amount$_desc
 			left_icon = scope:loser
@@ -285,7 +285,7 @@ demd_imperial_decay_war_end_effect_by_tier = {
 		every_player = {
 			limit = { is_vassal_of = scope:winner }
 			send_interface_message = {
-				type = event_steward_task_good	
+				type = msg_steward_task_good	
 				title = demd_imperial_decay_war_won_$amount$	
 				desc = demd_imperial_decay_war_won_$amount$_desc
 				left_icon = scope:loser
@@ -304,7 +304,7 @@ demd_imperial_decay_war_end_effect_by_tier = {
 		every_player = {
 			limit = { is_vassal_of = scope:loser }
 			send_interface_message = {
-				type = event_steward_task_bad	
+				type = msg_steward_task_bad	
 				title = demd_imperial_decay_war_won_$amount$	
 				desc = demd_imperial_decay_war_won_$amount$_desc
 				left_icon = scope:loser

@@ -105,7 +105,7 @@ innovation_plate_armor = {
 	}
 	maa_upgrade = {
 		type = heavy_cavalry
-		toughness = 3
+		toughness = 6
 	}
 
 	flag = global_regular

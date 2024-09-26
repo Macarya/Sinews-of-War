@@ -218,7 +218,7 @@ tradition_fp2_strategy_gamers = {
 					limit = {
 						any_character_artifact = { has_variable = can_be_used_for_board_games }
 					}
-					add = 25
+					add = 100
 				}
 			}
 		}
@@ -345,8 +345,8 @@ tradition_fp2_ritualised_friendship = {
 	}
 
 	character_modifier = {
-		scheme_power_against_friend_add = 20
-		scheme_power_against_best_friend_add = 40
+		scheme_phase_duration_against_friend_add = 20
+		scheme_phase_duration_against_best_friend_add = 40
 	}
 	
 	cost = {

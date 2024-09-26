@@ -4,49 +4,7 @@
 # Must be overwritten by patch for other maps!
 #############################################
 
-demd_preprocess_map = { # 5 traditions
-	title:c_rothenburg.holder = { get_title = title:b_freising } 
-	culture:anglo_saxon = { # 4 traditions
-		add_culture_tradition = tradition_stalwart_defenders
-		remove_variable = tradition_cooldown
-		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
-	}
-	culture:franconian = { 
-		remove_culture_tradition = tradition_castle_keepers
-		add_culture_tradition = tradition_ruling_caste
-		add_culture_tradition = tradition_warrior_bishops 
-		remove_variable = tradition_cooldown
-		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
-	}
-	culture:saxon = { # 4 traditions
-		remove_culture_tradition = tradition_stand_and_fight
-		add_culture_tradition = tradition_ottonian_reforms
-		add_culture_tradition = tradition_warrior_bishops	
-		remove_variable = tradition_cooldown
-		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
-	}	
-	culture:bavarian = { # 5 traditions
-		remove_culture_tradition = tradition_stand_and_fight
-		add_culture_tradition = tradition_ottonian_reforms
-		add_culture_tradition = tradition_warrior_bishops 
-		remove_variable = tradition_cooldown
-		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }	
-	}	
-	culture:swabian = { # 4 traditions
-		add_culture_tradition = tradition_warrior_bishops 
-		remove_variable = tradition_cooldown
-		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
-	}
-	culture:cisalpine = { # 5 traditions
-		add_culture_tradition = tradition_metal_craftsmanship
-		remove_variable = tradition_cooldown
-		if = { limit = { NOT = { has_innovation = innovation_motte } } add_innovation = innovation_motte }
-	}
-	culture:italian = { # 5 traditions
-		remove_variable = tradition_cooldown
-	}
-
-    
+demd_preprocess_map = {    
 	# Give it to everyone by default
 	every_religion_global = {
 		every_faith = { 

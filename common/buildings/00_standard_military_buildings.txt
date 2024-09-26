@@ -57,6 +57,7 @@ wind_furnace_01 = {
 		base = 100
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 
 		modifier = {
 			factor = 0
@@ -100,6 +101,7 @@ wind_furnace_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -141,6 +143,7 @@ wind_furnace_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -179,6 +182,7 @@ wind_furnace_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -217,6 +221,7 @@ wind_furnace_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -255,6 +260,7 @@ wind_furnace_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -293,6 +299,7 @@ wind_furnace_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -329,6 +336,7 @@ wind_furnace_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -369,6 +377,7 @@ workshops_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = {
 			factor = 0
 			building_farm_estates_requirement_terrain = yes
@@ -418,6 +427,7 @@ workshops_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -464,6 +474,7 @@ workshops_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -506,6 +517,7 @@ workshops_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -549,6 +561,7 @@ workshops_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -592,6 +605,7 @@ workshops_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -635,6 +649,7 @@ workshops_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -676,6 +691,7 @@ workshops_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -717,6 +733,7 @@ horse_pastures_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_stacking_bonus_camel_farms_modifier = yes
 		ai_stacking_bonus_hillside_grazing_modifier = yes
 		ai_stacking_bonus_stables_modifier = yes
@@ -800,6 +817,7 @@ horse_pastures_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -848,6 +866,7 @@ horse_pastures_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -892,6 +911,7 @@ horse_pastures_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -936,6 +956,7 @@ horse_pastures_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -980,6 +1001,7 @@ horse_pastures_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1024,6 +1046,7 @@ horse_pastures_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1066,6 +1089,7 @@ horse_pastures_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1102,6 +1126,7 @@ hillside_grazing_01 = {
 		base = 11 # Little nudge
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_stacking_bonus_camel_farms_modifier = yes
 		ai_stacking_bonus_horse_pastures_modifier = yes
 		ai_stacking_bonus_stables_modifier = yes
@@ -1168,6 +1193,7 @@ hillside_grazing_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -1213,6 +1239,7 @@ hillside_grazing_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1254,6 +1281,7 @@ hillside_grazing_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1295,6 +1323,7 @@ hillside_grazing_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1336,6 +1365,7 @@ hillside_grazing_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1377,6 +1407,7 @@ hillside_grazing_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1416,6 +1447,7 @@ hillside_grazing_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1431,7 +1463,12 @@ warrior_lodges_01 = {
 		}
 	}
 	can_construct_potential = {
-		building_warrior_lodges_requirement_terrain = yes
+		OR = {
+			building_warrior_lodges_requirement_terrain = yes
+			scope:holder.culture ?= {
+				has_cultural_parameter = warrior_lodges_lift_restrictions
+			}
+		}
 	}
 
 	can_construct_showing_failures_only = {
@@ -1456,6 +1493,7 @@ warrior_lodges_01 = {
 		base = 11 # Little nudge
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_stacking_bonus_military_camps_modifier = yes
 		ai_stacking_bonus_smiths_modifier = yes
 		ai_stacking_bonus_wind_furnaces_modifier = yes
@@ -1540,6 +1578,7 @@ warrior_lodges_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -1590,6 +1629,7 @@ warrior_lodges_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1636,6 +1676,7 @@ warrior_lodges_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1682,6 +1723,7 @@ warrior_lodges_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1728,6 +1770,7 @@ warrior_lodges_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1774,6 +1817,7 @@ warrior_lodges_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1818,6 +1862,7 @@ warrior_lodges_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -1858,6 +1903,7 @@ military_camps_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_stacking_bonus_warrior_lodges_modifier = yes
 		ai_stacking_bonus_outposts_modifier = yes
 		ai_anti_synergy_armored_infantry_modifier = yes
@@ -1960,8 +2006,22 @@ military_camps_02 = {
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder.culture = {
-			has_innovation = innovation_barracks
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_military_camps
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_barracks
+			}
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_military_camps
+			}
 		}
 	}
 
@@ -1988,6 +2048,7 @@ military_camps_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -2013,9 +2074,24 @@ military_camps_03 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_burhs
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_military_camps
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_military_camps
+			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
 		}
 	}
 
@@ -2044,6 +2120,7 @@ military_camps_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_03
@@ -2065,9 +2142,24 @@ military_camps_04 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_burhs
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_military_camps
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_military_camps
+			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
 		}
 	}
 
@@ -2098,6 +2190,7 @@ military_camps_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_04
@@ -2119,9 +2212,27 @@ military_camps_05 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_castle_baileys
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_military_camps
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_military_camps
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
 		}
 	}
 
@@ -2155,6 +2266,7 @@ military_camps_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_05
@@ -2176,9 +2288,27 @@ military_camps_06 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_military_camps
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_military_camps
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
 		}
 	}
 
@@ -2213,6 +2343,7 @@ military_camps_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_06
@@ -2234,9 +2365,27 @@ military_camps_07 = {
 	}
 	
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_military_camps
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_military_camps
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
 		}
 	}
 	
@@ -2264,7 +2413,6 @@ military_camps_07 = {
 		stationed_archers_toughness_mult = normal_maa_toughness_tier_5
 		stationed_skirmishers_toughness_mult = normal_maa_toughness_tier_5
 		travel_danger = -7
-		levy_reinforcement_rate = 0.05
 	}
 	
 	next_building = military_camps_08
@@ -2272,6 +2420,7 @@ military_camps_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_07
@@ -2293,9 +2442,27 @@ military_camps_08 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_military_camps
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_military_camps
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
 		}
 	}
 
@@ -2323,12 +2490,12 @@ military_camps_08 = {
 		stationed_archers_toughness_mult = normal_maa_toughness_tier_6
 		stationed_skirmishers_toughness_mult = normal_maa_toughness_tier_6
 		travel_danger = -8
-		levy_reinforcement_rate = 0.05
 	}
 	
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_08
@@ -2380,6 +2547,7 @@ regimental_grounds_01 = {
 		base = 13 # One of the best buildings, a slight nudge
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = {
 			add = -99
 			has_building_or_higher = city_01
@@ -2448,6 +2616,7 @@ regimental_grounds_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -2485,6 +2654,7 @@ regimental_grounds_03 = {
 	
 	cost_gold = expensive_building_tier_3_cost
 	
+	levy = excellent_building_levy_tier_3
 	
 	character_modifier = {
 		men_at_arms_maintenance = good_building_maa_maintenance_tier_3
@@ -2506,6 +2676,7 @@ regimental_grounds_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_03
@@ -2561,6 +2732,7 @@ regimental_grounds_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_04
@@ -2617,6 +2789,7 @@ regimental_grounds_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_05
@@ -2673,6 +2846,7 @@ regimental_grounds_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_06
@@ -2730,6 +2904,7 @@ regimental_grounds_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_07
@@ -2785,6 +2960,7 @@ regimental_grounds_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	on_complete = { 
 		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
@@ -2840,20 +3016,13 @@ outposts_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_skirmisher_modifier = yes
 		ai_archer_modifier = yes
 		ai_stacking_bonus_warrior_lodges_modifier = yes
 		ai_stacking_bonus_military_camps_modifier = yes
 		ai_anti_synergy_armored_infantry_modifier = yes
 		ai_anti_synergy_cavalry_modifier = yes
-		ai_outposts_improvement_from_culture_modifier = yes
-		modifier = {
-			factor = 0
-			building_barracks_requirement_terrain = yes
-			NOT = {
-				has_building_or_higher = barracks_01
-			}
-		}
 		modifier = {
 			factor = 0
 			building_camel_farms_requirement_terrain = yes
@@ -2951,6 +3120,7 @@ outposts_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -3011,6 +3181,7 @@ outposts_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -3067,6 +3238,7 @@ outposts_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -3124,6 +3296,7 @@ outposts_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -3181,6 +3354,7 @@ outposts_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -3238,6 +3412,7 @@ outposts_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -3294,6 +3469,7 @@ outposts_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -3325,6 +3501,13 @@ barracks_01 = {
 		monthly_piety = 0.1
 	}
 	
+	province_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus
+		stationed_heavy_infantry_damage_mult = -0.20
+		stationed_pikemen_damage_mult = -0.20
+		stationed_maa_damage_mult = low_maa_damage_tier_1
+	}
+	
 	next_building = barracks_02
 	
 	type_icon = "icon_building_barracks.dds"
@@ -3333,12 +3516,11 @@ barracks_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_anti_synergy_cavalry_modifier = yes
 		ai_anti_synergy_light_infantry_modifier = yes
 		ai_heavy_infantry_modifier = yes
 		ai_pikemen_modifier = yes
-		ai_barracks_improvement_from_culture_modifier = yes
-
 		modifier = {
 			add = non_stationed_maa_bonus
 			has_stationed_regiment = yes
@@ -3374,8 +3556,22 @@ barracks_02 = {
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder.culture = {
-			has_innovation = innovation_barracks
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_barracks
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_barracks
+			}
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_barracks
+			}
 		}
 	}
 
@@ -3394,6 +3590,13 @@ barracks_02 = {
 	character_culture_modifier = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.2
+	}
+
+	province_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus
+		stationed_heavy_infantry_damage_mult = -0.30
+		stationed_pikemen_damage_mult = -0.30
+		stationed_maa_damage_mult = low_maa_damage_tier_2
 	}
 	
 	next_building = barracks_03
@@ -3422,9 +3625,24 @@ barracks_03 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_burhs
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_barracks
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_barracks
+			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
 		}
 	}
 	
@@ -3450,12 +3668,22 @@ barracks_03 = {
 	county_modifier = {
 		build_speed = -0.02
 	}
+
+	province_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus
+		stationed_heavy_infantry_damage_mult = -0.40
+		stationed_pikemen_damage_mult = -0.40
+		stationed_heavy_infantry_toughness_mult = -0.20
+		stationed_pikemen_toughness_mult = -0.20
+		stationed_maa_damage_mult = low_maa_damage_tier_3
+	}
 	
 	next_building = barracks_04
 	
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_03
@@ -3473,9 +3701,24 @@ barracks_04 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_burhs
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_barracks
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_barracks
+			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
 		}
 	}
 
@@ -3496,9 +3739,14 @@ barracks_04 = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.4
 	}
-	
-	county_modifier = {
-		build_speed = -0.02
+
+	province_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus
+		stationed_heavy_infantry_damage_mult = -0.50
+		stationed_pikemen_damage_mult = -0.50
+		stationed_heavy_infantry_toughness_mult = -0.30
+		stationed_pikemen_toughness_mult = -0.30
+		stationed_maa_damage_mult = low_maa_damage_tier_4
 	}
 	
 	next_building = barracks_05
@@ -3506,6 +3754,7 @@ barracks_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_04
@@ -3523,9 +3772,27 @@ barracks_05 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_castle_baileys
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_barracks
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_barracks
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
 		}
 	}
 
@@ -3535,6 +3802,12 @@ barracks_05 = {
 	
 	cost_gold = normal_building_tier_5_cost
 	
+	
+	county_modifier = {
+		levy_reinforcement_rate = normal_levy_reinforcement_rate_tier_2
+		levy_size = 0.01
+		garrison_size = 0.01
+	}
 	province_modifier = {
 		stationed_heavy_infantry_damage_mult = high_maa_damage_tier_5
 		stationed_pikemen_damage_mult = high_maa_damage_tier_5
@@ -3542,9 +3815,19 @@ barracks_05 = {
 		stationed_pikemen_toughness_mult = high_maa_toughness_tier_3
 		travel_danger = -5
 	}
+
 	character_culture_modifier = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.5
+	}
+
+	province_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus
+		stationed_heavy_infantry_damage_mult = -0.60
+		stationed_pikemen_damage_mult = -0.60
+		stationed_heavy_infantry_toughness_mult = -0.40
+		stationed_pikemen_toughness_mult = -0.40
+		stationed_maa_damage_mult = low_maa_damage_tier_5
 	}
 	
 	next_building = barracks_06
@@ -3552,6 +3835,7 @@ barracks_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_05
@@ -3569,9 +3853,27 @@ barracks_06 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_barracks
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_barracks
+			}
 		scope:holder.culture = {
 			has_innovation = innovation_castle_baileys
+		}
+			building_requirement_castle_city_church = { LEVEL = 02 }
 		}
 	}
 	
@@ -3582,7 +3884,9 @@ barracks_06 = {
 	cost_gold = normal_building_tier_6_cost
 	
 	county_modifier = {
-		build_speed = -0.02
+		levy_reinforcement_rate = normal_levy_reinforcement_rate_tier_3
+		levy_size = 0.02
+		garrison_size = 0.02
 	}
 	province_modifier = {
 		stationed_heavy_infantry_damage_mult = high_maa_damage_tier_6
@@ -3595,12 +3899,22 @@ barracks_06 = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.6
 	}
+
+	province_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus
+		stationed_heavy_infantry_damage_mult = -0.70
+		stationed_pikemen_damage_mult = -0.70
+		stationed_heavy_infantry_toughness_mult = -0.50
+		stationed_pikemen_toughness_mult = -0.50
+		stationed_maa_damage_mult = low_maa_damage_tier_6
+	}
 	
 	next_building = barracks_07
 	
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_06
@@ -3618,9 +3932,27 @@ barracks_07 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_barracks
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_barracks
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
 		}
 	}
 	
@@ -3631,8 +3963,11 @@ barracks_07 = {
 	cost_gold = normal_building_tier_7_cost
 	
 	county_modifier = {
-		build_speed = -0.02
+		levy_reinforcement_rate = normal_levy_reinforcement_rate_tier_4
+		levy_size = 0.03
+		garrison_size = 0.03
 	}
+
 	province_modifier = {
 		stationed_heavy_infantry_damage_mult = high_maa_damage_tier_7
 		stationed_pikemen_damage_mult = high_maa_damage_tier_7
@@ -3640,20 +3975,27 @@ barracks_07 = {
 		stationed_pikemen_toughness_mult = high_maa_toughness_tier_5
 		travel_danger = -7
 	}
+
 	character_culture_modifier = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.7
 	}
-	
-	province_modifier = {
-		levy_reinforcement_rate = 0.05
+
+	province_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus
+		stationed_heavy_infantry_damage_mult = -0.80
+		stationed_pikemen_damage_mult = -0.80
+		stationed_heavy_infantry_toughness_mult = -0.60
+		stationed_pikemen_toughness_mult = -0.60
+		stationed_maa_damage_mult = low_maa_damage_tier_7
 	}
-	
+
 	next_building = barracks_08
 	
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_07
@@ -3671,9 +4013,27 @@ barracks_08 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_barracks
+					}
+				}
+			}
 		scope:holder.culture = {
 			has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_barracks
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
 		}
 	}
 	
@@ -3684,8 +4044,11 @@ barracks_08 = {
 	cost_gold = normal_building_tier_8_cost
 	
 	county_modifier = {
-		build_speed = -0.02
+		levy_reinforcement_rate = normal_levy_reinforcement_rate_tier_5
+		levy_size = 0.04
+		garrison_size = 0.04
 	}
+
 	province_modifier = {
 		stationed_heavy_infantry_damage_mult = high_maa_damage_tier_8
 		stationed_pikemen_damage_mult = high_maa_damage_tier_8
@@ -3693,18 +4056,25 @@ barracks_08 = {
 		stationed_pikemen_toughness_mult = high_maa_toughness_tier_6
 		travel_danger = -8
 	}
+
 	character_culture_modifier = {
 		parameter = building_barracks_piety_bonuses
 		monthly_piety = 0.8
 	}
-	
-	province_modifier = {
-		levy_reinforcement_rate = 0.05
+
+	province_culture_modifier = {
+		parameter = strength_in_numbers_maa_limit_bonus
+		stationed_heavy_infantry_damage_mult = -0.90
+		stationed_pikemen_damage_mult = -0.90
+		stationed_heavy_infantry_toughness_mult = -0.70
+		stationed_pikemen_toughness_mult = -0.70
+		stationed_maa_damage_mult = low_maa_damage_tier_7
 	}
 	
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_08
@@ -3730,7 +4100,7 @@ camel_farms_01 = {
 	cost_gold = normal_building_tier_1_cost
 	
 	character_modifier = {
-		knight_effectiveness_mult = demd_building_knight_eff_level_1
+		knight_effectiveness_mult = high_knight_effectiveness_mult_tier_1
 	}
 	
 	province_modifier = {
@@ -3749,6 +4119,7 @@ camel_farms_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_stacking_bonus_stables_modifier = yes
 		ai_stacking_bonus_horse_pastures_modifier = yes
 		ai_stacking_bonus_hillside_grazing_modifier = yes
@@ -3759,7 +4130,6 @@ camel_farms_01 = {
 				has_building_or_higher = regimental_grounds_01
 			}
 		}
-		
 		modifier = { # It now has a small economic component; build it last
 			add = -3
 			has_building_or_higher = city_01
@@ -3807,7 +4177,7 @@ camel_farms_02 = {
 	cost_gold = normal_building_tier_2_cost
 	
 	character_modifier = {
-		knight_effectiveness_mult = demd_building_knight_eff_level_2
+		knight_effectiveness_mult = high_knight_effectiveness_mult_tier_2
 	}
 	
 	province_modifier = {
@@ -3827,6 +4197,7 @@ camel_farms_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -3860,7 +4231,7 @@ camel_farms_03 = {
 	cost_gold = normal_building_tier_3_cost
 	
 	character_modifier = {
-		knight_effectiveness_mult = demd_building_knight_eff_level_3
+		knight_effectiveness_mult = high_knight_effectiveness_mult_tier_3
 	}
 	
 	province_modifier = {
@@ -3884,6 +4255,7 @@ camel_farms_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_03
@@ -3914,7 +4286,7 @@ camel_farms_04 = {
 	cost_gold = normal_building_tier_4_cost
 	
 	character_modifier = {
-		knight_effectiveness_mult = demd_building_knight_eff_level_4
+		knight_effectiveness_mult = high_knight_effectiveness_mult_tier_4
 	}
 	
 	province_modifier = {
@@ -3938,6 +4310,7 @@ camel_farms_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_04
@@ -3968,7 +4341,7 @@ camel_farms_05 = {
 	cost_gold = normal_building_tier_5_cost
 	
 	character_modifier = {
-		knight_effectiveness_mult = demd_building_knight_eff_level_5
+		knight_effectiveness_mult = high_knight_effectiveness_mult_tier_5
 	}
 	
 	province_modifier = {
@@ -3992,6 +4365,7 @@ camel_farms_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_05
@@ -4022,7 +4396,7 @@ camel_farms_06 = {
 	cost_gold = normal_building_tier_6_cost
 	
 	character_modifier = {
-		knight_effectiveness_mult = demd_building_knight_eff_level_6
+		knight_effectiveness_mult = high_knight_effectiveness_mult_tier_6
 	}
 	
 	province_modifier = {
@@ -4047,6 +4421,7 @@ camel_farms_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_06
@@ -4077,7 +4452,7 @@ camel_farms_07 = {
 	cost_gold = normal_building_tier_7_cost
 	
 	character_modifier = {
-		knight_effectiveness_mult = demd_building_knight_eff_level_7
+		knight_effectiveness_mult = high_knight_effectiveness_mult_tier_7
 	}
 	
 	province_modifier = {
@@ -4102,6 +4477,7 @@ camel_farms_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_07
@@ -4131,6 +4507,7 @@ camel_farms_08 = {
 
 	cost_gold = normal_building_tier_8_cost
 	
+	levy = small_building_levy_tier_8
 	character_modifier = {
 		knight_effectiveness_mult = demd_building_knight_eff_level_8
 	}
@@ -4157,6 +4534,7 @@ camel_farms_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_08
@@ -4204,6 +4582,7 @@ stables_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_stacking_bonus_camel_farms_modifier = yes
 		ai_stacking_bonus_horse_pastures_modifier = yes
 		ai_stacking_bonus_hillside_grazing_modifier = yes
@@ -4291,8 +4670,22 @@ stables_02 = {
 	can_construct_potential = {
 		building_stables_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder.culture = {
-			has_innovation = innovation_barracks
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_stables
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_barracks
+			}
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_stables
+			}
 		}
 	}
 
@@ -4320,6 +4713,7 @@ stables_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -4336,9 +4730,24 @@ stables_03 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_burhs
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_stables
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_stables
+			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
 		}
 	}
 
@@ -4368,6 +4777,7 @@ stables_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4380,9 +4790,24 @@ stables_04 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_burhs
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_stables
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_stables
+			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
 		}
 	}
 
@@ -4412,6 +4837,7 @@ stables_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4424,9 +4850,27 @@ stables_05 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_castle_baileys
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_stables
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_stables
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
 		}
 	}
 
@@ -4459,6 +4903,7 @@ stables_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4471,9 +4916,27 @@ stables_06 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_stables
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_stables
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
 		}
 	}
 
@@ -4506,6 +4969,7 @@ stables_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4518,9 +4982,27 @@ stables_07 = {
 	}
 	
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_stables
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_stables
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
 		}
 	}
 	
@@ -4553,6 +5035,7 @@ stables_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4565,9 +5048,27 @@ stables_08 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_stables
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_stables
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
 		}
 	}
 
@@ -4598,6 +5099,7 @@ stables_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		
 	}
 }
@@ -4644,6 +5146,7 @@ smiths_01 = {
 		base = 10
 		ai_tier_1_building_modifier = yes
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		ai_stacking_bonus_warrior_lodges_modifier = yes
 		ai_stacking_bonus_wind_furnaces_modifier = yes
 		ai_anti_synergy_cavalry_modifier = yes
@@ -4739,8 +5242,22 @@ smiths_02 = {
 	can_construct_potential = {
 		building_smiths_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder.culture = {
-			has_innovation = innovation_barracks
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_smiths
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_barracks
+			}
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_smiths
+			}
 		}
 	}
 
@@ -4766,6 +5283,7 @@ smiths_02 = {
 	ai_value = {
 		base = 9
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 		modifier = { # Fill all building slots before going for upgrades
 			factor = 0
 			free_building_slots > 0 years_from_game_start > 0.01
@@ -4786,9 +5304,24 @@ smiths_03 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_burhs
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_smiths
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_smiths
+			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
 		}
 	}
 
@@ -4815,6 +5348,7 @@ smiths_03 = {
 	ai_value = {
 		base = 8
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4831,9 +5365,24 @@ smiths_04 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 02 }
-		scope:holder.culture = {
-			has_innovation = innovation_burhs
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_smiths
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_smiths
+			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
 		}
 	}
 
@@ -4860,6 +5409,7 @@ smiths_04 = {
 	ai_value = {
 		base = 7
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4872,9 +5422,27 @@ smiths_05 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_castle_baileys
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_smiths
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_smiths
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_burhs
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
 		}
 	}
 
@@ -4901,6 +5469,7 @@ smiths_05 = {
 	ai_value = {
 		base = 6
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4913,9 +5482,27 @@ smiths_06 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 03 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_smiths
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_smiths
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 02 }
 		}
 	}
 
@@ -4942,6 +5529,7 @@ smiths_06 = {
 	ai_value = {
 		base = 5
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4954,9 +5542,27 @@ smiths_07 = {
 	}
 	
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_smiths
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_smiths
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
 		}
 	}
 	
@@ -4983,6 +5589,7 @@ smiths_07 = {
 	ai_value = {
 		base = 4
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
 
@@ -4995,9 +5602,27 @@ smiths_08 = {
 	}
 
 	can_construct = {
-		building_requirement_castle_city_church = { LEVEL = 04 }
-		scope:holder.culture = {
-			has_innovation = innovation_royal_armory
+		trigger_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_parameter = next_level_smiths
+					}
+				}
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_royal_armory
+			}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+		}
+		trigger_else = {
+			culture = {
+				has_cultural_parameter = next_level_smiths
+			}
+			scope:holder.culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			building_requirement_castle_city_church = { LEVEL = 03 }
 		}
 	}
 
@@ -5022,5 +5647,6 @@ smiths_08 = {
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
+		directive_to_build_military_modifier = yes
 	}
 }
