@@ -5,82 +5,6 @@
 # It should never be manually edited.
 #############################################
 
-ruler_pulse = {
-	set_variable = { name = temp value = ruler_knight_capacity }
-	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_big
-	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_medium
-	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_small
-	while = {
-		limit = { var:temp > 25 }
-		add_character_modifier = demd_char_knight_capacity_modifier_big
-		change_variable = { name = temp subtract = 25 }
-	}
-	while = {
-		limit = { var:temp > 5 }
-		add_character_modifier = demd_char_knight_capacity_modifier_medium
-		change_variable = { name = temp subtract = 5 }
-	}
-	while = {
-		limit = { var:temp > 1 }
-		add_character_modifier = demd_char_knight_capacity_modifier_small
-		change_variable = { name = temp subtract = 1 }
-	}
-	set_variable = {
-		name = ruler_manpower
-		value = ruler_manpower
-	}
-	set_variable = {
-		name = regiment_capacity
-		value = total_regiment_capacity
-	}
-	set_variable = { name = temp value = var:regiment_capacity }
-	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_big
-	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_medium
-	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_small
-	while = {
-		limit = { var:temp > 25 }
-		add_character_modifier = demd_char_regiment_capacity_modifier_big
-		change_variable = { name = temp subtract = 25 }
-	}
-	while = {
-		limit = { var:temp > 5 }
-		add_character_modifier = demd_char_regiment_capacity_modifier_medium
-		change_variable = { name = temp subtract = 5 }
-	}
-	while = {
-		limit = { var:temp > 1 }
-		add_character_modifier = demd_char_regiment_capacity_modifier_small
-		change_variable = { name = temp subtract = 1 }
-	}
-	save_scope_as = usurper
-	if = {
-		limit = { 
-			domain_limit_available > 0 
-			is_ai = yes 
-			has_realm_law_flag = title_revocation_allowed
-		}
-		every_held_title = {
-			limit = { tier = tier_county }
-			every_county_province = {
-				limit = { 
-					has_holding = yes
-					province_owner = { has_same_government = scope:usurper }
-					NOT = { province_owner = scope:usurper }					
-					barony = { is_leased_out = no }
-				}
-				scope:usurper = { add_to_variable_list = { name = temp target = prev } }
-			}
-		}
-		ordered_in_list = {
-			variable = temp
-			order_by = monthly_income
-			position = 0		
-			scope:usurper = { get_title = prev.barony }
-		}
-		clear_variable_list = temp
-	}	
-}
-
 trade_node_pulse = {
 	save_scope_as = trade_node
 	var:node_owner = {
@@ -195,6 +119,82 @@ trade_node_pulse = {
     			}
     		}		
     	}
+	}	
+}
+
+ruler_pulse = {
+	set_variable = { name = temp value = ruler_knight_capacity }
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_big
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_medium
+	remove_all_character_modifier_instances = demd_char_knight_capacity_modifier_small
+	while = {
+		limit = { var:temp > 25 }
+		add_character_modifier = demd_char_knight_capacity_modifier_big
+		change_variable = { name = temp subtract = 25 }
+	}
+	while = {
+		limit = { var:temp > 5 }
+		add_character_modifier = demd_char_knight_capacity_modifier_medium
+		change_variable = { name = temp subtract = 5 }
+	}
+	while = {
+		limit = { var:temp > 1 }
+		add_character_modifier = demd_char_knight_capacity_modifier_small
+		change_variable = { name = temp subtract = 1 }
+	}
+	set_variable = {
+		name = ruler_manpower
+		value = ruler_manpower
+	}
+	set_variable = {
+		name = regiment_capacity
+		value = total_regiment_capacity
+	}
+	set_variable = { name = temp value = var:regiment_capacity }
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_big
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_medium
+	remove_all_character_modifier_instances = demd_char_regiment_capacity_modifier_small
+	while = {
+		limit = { var:temp > 25 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_big
+		change_variable = { name = temp subtract = 25 }
+	}
+	while = {
+		limit = { var:temp > 5 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_medium
+		change_variable = { name = temp subtract = 5 }
+	}
+	while = {
+		limit = { var:temp > 1 }
+		add_character_modifier = demd_char_regiment_capacity_modifier_small
+		change_variable = { name = temp subtract = 1 }
+	}
+	save_scope_as = usurper
+	if = {
+		limit = { 
+			domain_limit_available > 0 
+			is_ai = yes 
+			has_realm_law_flag = title_revocation_allowed
+		}
+		every_held_title = {
+			limit = { tier = tier_county }
+			every_county_province = {
+				limit = { 
+					has_holding = yes
+					province_owner = { has_same_government = scope:usurper }
+					NOT = { province_owner = scope:usurper }					
+					barony = { is_leased_out = no }
+				}
+				scope:usurper = { add_to_variable_list = { name = temp target = prev } }
+			}
+		}
+		ordered_in_list = {
+			variable = temp
+			order_by = monthly_income
+			position = 0		
+			scope:usurper = { get_title = prev.barony }
+		}
+		clear_variable_list = temp
 	}	
 }
 

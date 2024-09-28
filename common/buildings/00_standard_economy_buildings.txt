@@ -146,6 +146,8 @@ caravanserai_01 = {
 		development_growth = normal_building_development_growth_tier_1
 		travel_danger = -1
 	}
+
+	flag = demd_caravanserai
 	
 	next_building = caravanserai_02
 
@@ -220,6 +222,8 @@ caravanserai_02 = {
 		men_at_arms_maintenance = normal_building_maa_maintenance_tier_2
 		mercenary_hire_cost_mult = normal_building_maa_maintenance_tier_2
 	}
+
+	flag = demd_caravanserai
 	
 	next_building = caravanserai_03
 	ai_value = {
@@ -270,6 +274,8 @@ caravanserai_03 = {
 		mercenary_hire_cost_mult = normal_building_maa_maintenance_tier_3
 	}
 	
+	flag = demd_caravanserai
+
 	next_building = caravanserai_04
 	ai_value = {
 		base = 8
@@ -316,6 +322,8 @@ caravanserai_04 = {
 		mercenary_hire_cost_mult = normal_building_maa_maintenance_tier_4
 	}
 	
+	flag = demd_caravanserai
+	
 	next_building = caravanserai_05
 	ai_value = {
 		base = 7
@@ -361,6 +369,8 @@ caravanserai_05 = {
 		men_at_arms_maintenance = normal_building_maa_maintenance_tier_5
 		mercenary_hire_cost_mult = normal_building_maa_maintenance_tier_5
 	}
+	
+	flag = demd_caravanserai
 	
 	next_building = caravanserai_06
 	ai_value = {
@@ -409,6 +419,8 @@ caravanserai_06 = {
 		#small artifact quality bonus if TIT-40761 gets implemented
 	}
 	
+	flag = demd_caravanserai
+	
 	next_building = caravanserai_07
 	ai_value = {
 		base = 5
@@ -456,6 +468,8 @@ caravanserai_07 = {
 		mercenary_hire_cost_mult = normal_building_maa_maintenance_tier_7
 	}
 	
+	flag = demd_caravanserai
+	
 	next_building = caravanserai_08
 	ai_value = {
 		base = 4
@@ -502,6 +516,8 @@ caravanserai_08 = {
 		men_at_arms_maintenance = normal_building_maa_maintenance_tier_8
 		mercenary_hire_cost_mult = normal_building_maa_maintenance_tier_8
 	}
+	
+	flag = demd_caravanserai
 	
 	ai_value = {
 		base = 3
@@ -608,6 +624,8 @@ watermills_01 = {
 		development_growth = good_building_development_growth_tier_1
 	}
 	
+	flag = demd_watermills
+
 	next_building = watermills_02
 
 	type_icon = "icon_building_watermills.dds"
@@ -698,6 +716,8 @@ watermills_02 = {
 		development_growth = good_building_development_growth_tier_2
 	}
 	
+	flag = demd_watermills
+
 	next_building = watermills_03
 	ai_value = {
 		base = 9
@@ -780,6 +800,8 @@ watermills_03 = {
 		tax_mult = normal_building_tax_mult_tier_1
 	}
 	
+	flag = demd_watermills
+
 	next_building = watermills_04
 	ai_value = {
 		base = 8
@@ -858,6 +880,8 @@ watermills_04 = {
 		tax_mult = normal_building_tax_mult_tier_2
 	}
 	
+	flag = demd_watermills
+
 	next_building = watermills_05
 	ai_value = {
 		base = 7
@@ -914,6 +938,8 @@ watermills_05 = {
 		tax_mult = normal_building_tax_mult_tier_3
 	}
 	
+	flag = demd_watermills
+
 	next_building = watermills_06
 	ai_value = {
 		base = 6
@@ -973,6 +999,8 @@ watermills_06 = {
 		tax_mult = normal_building_tax_mult_tier_4
 	}
 	
+	flag = demd_watermills
+
 	next_building = watermills_07
 	ai_value = {
 		base = 5
@@ -1032,6 +1060,8 @@ watermills_07 = {
 		tax_mult = normal_building_tax_mult_tier_5
 	}
 	
+	flag = demd_watermills
+
 	next_building = watermills_08
 	ai_value = {
 		base = 4
@@ -1091,6 +1121,8 @@ watermills_08 = {
 		tax_mult = normal_building_tax_mult_tier_6
 	}
 	
+	flag = demd_watermills
+
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
@@ -1196,6 +1228,8 @@ windmills_01 = {
 		development_growth = good_building_development_growth_tier_1
 	}
 	
+	flag = demd_windmills
+
 	next_building = windmills_02
 
 	type_icon = "icon_building_windmills.dds"
@@ -1290,6 +1324,8 @@ windmills_02 = {
 		development_growth = good_building_development_growth_tier_2
 	}
 	
+	flag = demd_windmills
+
 	next_building = windmills_03
 	ai_value = {
 		base = 9
@@ -1366,6 +1402,8 @@ windmills_03 = {
 		development_growth = good_building_development_growth_tier_3
 	}
 	
+	flag = demd_windmills
+
 	next_building = windmills_04
 	ai_value = {
 		base = 8
@@ -1436,6 +1474,8 @@ windmills_04 = {
 		development_growth = good_building_development_growth_tier_4
 	}
 	
+	flag = demd_windmills
+
 	next_building = windmills_05
 	ai_value = {
 		base = 7
@@ -1490,6 +1530,8 @@ windmills_05 = {
 		development_growth = good_building_development_growth_tier_5
 	}
 	
+	flag = demd_windmills
+
 	next_building = windmills_06
 	ai_value = {
 		base = 6
@@ -1547,6 +1589,8 @@ windmills_06 = {
 		development_growth = good_building_development_growth_tier_6
 	}
 	
+	flag = demd_windmills
+
 	next_building = windmills_07
 	ai_value = {
 		base = 5
@@ -1604,6 +1648,8 @@ windmills_07 = {
 		development_growth = good_building_development_growth_tier_7
 	}
 	
+	flag = demd_windmills
+
 	next_building = windmills_08
 	ai_value = {
 		base = 4
@@ -1661,6 +1707,8 @@ windmills_08 = {
 		development_growth = good_building_development_growth_tier_8
 	}
 	
+	flag = demd_windmills
+
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
@@ -1771,10 +1819,6 @@ common_tradeport_01 = {
 	}
 	flag = demd_tradeport
 	flag = demd_trade_power_building_01
-	on_complete = { 
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 common_tradeport_02 = {
@@ -1863,9 +1907,6 @@ common_tradeport_02 = {
 	}
 	flag = demd_tradeport
 	flag = demd_trade_power_building_02	
-	on_complete = { 
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
-	}
 }
 
 common_tradeport_03 = {
@@ -1938,9 +1979,6 @@ common_tradeport_03 = {
 	}
 	flag = demd_tradeport
 	flag = demd_trade_power_building_03	
-	on_complete = { 
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
-	}
 }
 
 common_tradeport_04 = {
@@ -2009,9 +2047,6 @@ common_tradeport_04 = {
 	}
 	flag = demd_tradeport
 	flag = demd_trade_power_building_04
-	on_complete = { 
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
-	}
 }
 
 common_tradeport_05 = {
@@ -2080,9 +2115,6 @@ common_tradeport_05 = {
 	}
 	flag = demd_tradeport
 	flag = demd_trade_power_building_05	
-	on_complete = { 
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
-	}
 }
 
 common_tradeport_06 = {
@@ -2151,9 +2183,6 @@ common_tradeport_06 = {
 	}
 	flag = demd_tradeport
 	flag = demd_trade_power_building_06	
-	on_complete = { 
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
-	}
 }
 
 common_tradeport_07 = {
@@ -2222,9 +2251,6 @@ common_tradeport_07 = {
 	}
 	flag = demd_tradeport
 	flag = demd_trade_power_building_07	
-	on_complete = { 
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
-	}
 }
 
 common_tradeport_08 = {
@@ -2293,9 +2319,6 @@ common_tradeport_08 = {
 	}
 	flag = demd_tradeport
 	flag = demd_trade_power_building_08	
-	on_complete = {
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
-	}
 }
 
 ### Pastures
@@ -2371,10 +2394,6 @@ pastures_01 = {
 	}
 	flag = demd_pastures
 	flag = demd_pastures_01	
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes # in case a building was deleted and replaced
-	}
 }
 
 pastures_02 = {
@@ -2429,7 +2448,6 @@ pastures_02 = {
 	}
 	flag = demd_pastures
 	flag = demd_pastures_02	
-	on_complete = { change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } }
 }
 
 pastures_03 = {
@@ -2484,7 +2502,6 @@ pastures_03 = {
 	}
 	flag = demd_pastures
 	flag = demd_pastures_03
-	on_complete = { change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } }
 }
 
 pastures_04 = {
@@ -2542,7 +2559,6 @@ pastures_04 = {
 	}
 	flag = demd_pastures
 	flag = demd_pastures_04
-	on_complete = { change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } }
 }
 
 pastures_05 = {
@@ -2601,7 +2617,6 @@ pastures_05 = {
 	}
 	flag = demd_pastures
 	flag = demd_pastures_05
-	on_complete = { change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } }
 }
 
 pastures_06 = {
@@ -2661,7 +2676,6 @@ pastures_06 = {
 	}
 	flag = demd_pastures
 	flag = demd_pastures_06
-	on_complete = { change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } }
 }
 
 pastures_07 = {
@@ -2721,7 +2735,6 @@ pastures_07 = {
 	}
 	flag = demd_pastures
 	flag = demd_pastures_07
-	on_complete = { change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } }
 }
 
 pastures_08 = {
@@ -2779,7 +2792,6 @@ pastures_08 = {
 	}
 	flag = demd_pastures
 	flag = demd_pastures_08
-	on_complete = { change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } }
 }
 
 ### hunting_grounds
@@ -2867,10 +2879,6 @@ hunting_grounds_01 = {
 	}
 	flag = demd_hunting_grounds
 	flag = demd_food_districts_building_01
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 hunting_grounds_02 = {
@@ -2943,9 +2951,6 @@ hunting_grounds_02 = {
 	}
 	flag = demd_hunting_grounds
 	flag = demd_food_districts_building_02
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 hunting_grounds_03 = {
@@ -3017,9 +3022,6 @@ hunting_grounds_03 = {
 	}
 	flag = demd_hunting_grounds
 	flag = demd_food_districts_building_03
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 hunting_grounds_04 = {
@@ -3091,9 +3093,6 @@ hunting_grounds_04 = {
 	}
 	flag = demd_hunting_grounds
 	flag = demd_food_districts_building_04
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 hunting_grounds_05 = {
@@ -3170,9 +3169,6 @@ hunting_grounds_05 = {
 	}
 	flag = demd_hunting_grounds
 	flag = demd_food_districts_building_05
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 hunting_grounds_06 = {
@@ -3249,9 +3245,6 @@ hunting_grounds_06 = {
 	}
 	flag = demd_hunting_grounds
 	flag = demd_food_districts_building_06
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 hunting_grounds_07 = {
@@ -3332,9 +3325,6 @@ hunting_grounds_07 = {
 	}
 	flag = demd_hunting_grounds
 	flag = demd_food_districts_building_07
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 hunting_grounds_08 = {
@@ -3413,9 +3403,6 @@ hunting_grounds_08 = {
 	}
 	flag = demd_hunting_grounds
 	flag = demd_food_districts_building_08
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 ### orchards
@@ -3474,10 +3461,6 @@ orchards_01 = {
 	}
 	flag = demd_orchards
 	flag = demd_food_districts_building_01
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 orchards_02 = {
@@ -3525,9 +3508,6 @@ orchards_02 = {
 	}
 	flag = demd_orchards
 	flag = demd_food_districts_building_02
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 orchards_03 = {
@@ -3576,9 +3556,6 @@ orchards_03 = {
 	}
 	flag = demd_orchards
 	flag = demd_food_districts_building_03
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 orchards_04 = {
@@ -3627,9 +3604,6 @@ orchards_04 = {
 	}
 	flag = demd_orchards
 	flag = demd_food_districts_building_04
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 orchards_05 = {
@@ -3679,9 +3653,6 @@ orchards_05 = {
 	}
 	flag = demd_orchards
 	flag = demd_food_districts_building_05
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 orchards_06 = {
@@ -3732,9 +3703,6 @@ orchards_06 = {
 	}
 	flag = demd_orchards
 	flag = demd_food_districts_building_06
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 orchards_07 = {
@@ -3788,9 +3756,6 @@ orchards_07 = {
 	}
 	flag = demd_orchards
 	flag = demd_food_districts_building_07
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 orchards_08 = {
@@ -3842,9 +3807,6 @@ orchards_08 = {
 	}
 	flag = demd_orchards
 	flag = demd_food_districts_building_08
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 ### farm estates
@@ -3904,10 +3866,6 @@ farm_estates_01 = {
 	}
 	flag = demd_farm_estates
 	flag = demd_food_districts_building_01
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 farm_estates_02 = {
@@ -3964,9 +3922,6 @@ farm_estates_02 = {
 	}
 	flag = demd_farm_estates
 	flag = demd_food_districts_building_02
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 farm_estates_03 = {
@@ -4023,9 +3978,6 @@ farm_estates_03 = {
 	}
 	flag = demd_farm_estates
 	flag = demd_food_districts_building_03
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 farm_estates_04 = {
@@ -4082,9 +4034,6 @@ farm_estates_04 = {
 	}
 	flag = demd_farm_estates
 	flag = demd_food_districts_building_04
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 farm_estates_05 = {
@@ -4139,9 +4088,6 @@ farm_estates_05 = {
 	}
 	flag = demd_farm_estates
 	flag = demd_food_districts_building_05
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 farm_estates_06 = {
@@ -4193,9 +4139,6 @@ farm_estates_06 = {
 	}
 	flag = demd_farm_estates
 	flag = demd_food_districts_building_06
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 farm_estates_07 = {
@@ -4248,9 +4191,6 @@ farm_estates_07 = {
 	}
 	flag = demd_farm_estates
 	flag = demd_food_districts_building_07
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 farm_estates_08 = {
@@ -4300,9 +4240,6 @@ farm_estates_08 = {
 	}
 	flag = demd_farm_estates
 	flag = demd_food_districts_building_08
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 ### cereal_fields
@@ -4377,10 +4314,6 @@ cereal_fields_01 = {
 	}
 	flag = demd_cereal_fields
 	flag = demd_food_districts_building_01	
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 cereal_fields_02 = {
@@ -4449,9 +4382,6 @@ cereal_fields_02 = {
 	}
 	flag = demd_cereal_fields
 	flag = demd_food_districts_building_02
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 cereal_fields_03 = {
@@ -4523,9 +4453,6 @@ cereal_fields_03 = {
 	}
 	flag = demd_cereal_fields
 	flag = demd_food_districts_building_03
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 cereal_fields_04 = {
@@ -4598,9 +4525,6 @@ cereal_fields_04 = {
 	}
 	flag = demd_cereal_fields
 	flag = demd_food_districts_building_04
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 cereal_fields_05 = {
@@ -4674,9 +4598,6 @@ cereal_fields_05 = {
 	}
 	flag = demd_cereal_fields
 	flag = demd_food_districts_building_05
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 cereal_fields_06 = {
@@ -4751,9 +4672,6 @@ cereal_fields_06 = {
 	}
 	flag = demd_cereal_fields
 	flag = demd_food_districts_building_06
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 cereal_fields_07 = {
@@ -4829,9 +4747,6 @@ cereal_fields_07 = {
 	}
 	flag = demd_cereal_fields
 	flag = demd_food_districts_building_07
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 cereal_fields_08 = {
@@ -4905,9 +4820,6 @@ cereal_fields_08 = {
 	}
 	flag = demd_cereal_fields
 	flag = demd_food_districts_building_08
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-	}
 }
 
 ### logging_camps
@@ -4971,10 +4883,6 @@ logging_camps_01 = {
 	}
 	flag = demd_logging_camps
 	flag = demd_goods_building_01
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 logging_camps_02 = {
@@ -5033,9 +4941,6 @@ logging_camps_02 = {
 	}
 	flag = demd_logging_camps
 	flag = demd_goods_building_02
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 logging_camps_03 = {
@@ -5092,9 +4997,6 @@ logging_camps_03 = {
 	}
 	flag = demd_logging_camps
 	flag = demd_goods_building_03
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 logging_camps_04 = {
@@ -5152,9 +5054,6 @@ logging_camps_04 = {
 	}
 	flag = demd_logging_camps
 	flag = demd_goods_building_04
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 logging_camps_05 = {
@@ -5213,9 +5112,6 @@ logging_camps_05 = {
 	}
 	flag = demd_logging_camps
 	flag = demd_goods_building_05
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 logging_camps_06 = {
@@ -5274,9 +5170,6 @@ logging_camps_06 = {
 	}
 	flag = demd_logging_camps
 	flag = demd_goods_building_06
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 logging_camps_07 = {
@@ -5335,9 +5228,6 @@ logging_camps_07 = {
 	}
 	flag = demd_logging_camps
 	flag = demd_goods_building_07
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 logging_camps_08 = {
@@ -5395,9 +5285,6 @@ logging_camps_08 = {
 	}
 	flag = demd_logging_camps
 	flag = demd_goods_building_08
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 ### peat_quarries
@@ -5445,10 +5332,6 @@ peat_quarries_01 = {
 	}
 	flag = demd_peat_quarries
 	flag = demd_goods_building_01
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 peat_quarries_02 = {
@@ -5501,9 +5384,6 @@ peat_quarries_02 = {
 	}
 	flag = demd_peat_quarries
 	flag = demd_goods_building_02
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 peat_quarries_03 = {
@@ -5556,9 +5436,6 @@ peat_quarries_03 = {
 	}
 	flag = demd_peat_quarries
 	flag = demd_goods_building_03
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 peat_quarries_04 = {
@@ -5612,9 +5489,6 @@ peat_quarries_04 = {
 	}
 	flag = demd_peat_quarries
 	flag = demd_goods_building_04
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 peat_quarries_05 = {
@@ -5669,9 +5543,6 @@ peat_quarries_05 = {
 	}
 	flag = demd_peat_quarries
 	flag = demd_goods_building_05
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 peat_quarries_06 = {
@@ -5727,9 +5598,6 @@ peat_quarries_06 = {
 	}
 	flag = demd_peat_quarries
 	flag = demd_goods_building_06
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 peat_quarries_07 = {
@@ -5785,9 +5653,6 @@ peat_quarries_07 = {
 	}
 	flag = demd_peat_quarries
 	flag = demd_goods_building_07
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 peat_quarries_08 = {
@@ -5841,9 +5706,6 @@ peat_quarries_08 = {
 	}
 	flag = demd_peat_quarries
 	flag = demd_goods_building_08
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 ### hill_farms
@@ -5908,10 +5770,6 @@ hill_farms_01 = {
 	}
 	flag = demd_hill_farms
 	flag = demd_food_districts_building_01
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 hill_farms_02 = {
@@ -5964,9 +5822,6 @@ hill_farms_02 = {
 	}
 	flag = demd_hill_farms
 	flag = demd_food_districts_building_02
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 hill_farms_03 = {
@@ -6022,9 +5877,6 @@ hill_farms_03 = {
 	}
 	flag = demd_hill_farms
 	flag = demd_food_districts_building_03
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 hill_farms_04 = {
@@ -6080,9 +5932,6 @@ hill_farms_04 = {
 	}
 	flag = demd_hill_farms
 	flag = demd_food_districts_building_04
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 hill_farms_05 = {
@@ -6139,9 +5988,6 @@ hill_farms_05 = {
 	}
 	flag = demd_hill_farms
 	flag = demd_food_districts_building_05
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 hill_farms_06 = {
@@ -6199,9 +6045,6 @@ hill_farms_06 = {
 	}
 	flag = demd_hill_farms
 	flag = demd_food_districts_building_06
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 hill_farms_07 = {
@@ -6259,9 +6102,6 @@ hill_farms_07 = {
 	}
 	flag = demd_hill_farms
 	flag = demd_food_districts_building_07
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 hill_farms_08 = {
@@ -6317,9 +6157,6 @@ hill_farms_08 = {
 	}
 	flag = demd_hill_farms
 	flag = demd_food_districts_building_08
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 ### elephant_pens
@@ -6374,10 +6211,6 @@ elephant_pens_01 = {
 	}
 	flag = demd_elephant_pens
 	flag = demd_elephant_pens_01
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 elephant_pens_02 = {
@@ -6429,9 +6262,6 @@ elephant_pens_02 = {
 	}
 	flag = demd_elephant_pens
 	flag = demd_elephant_pens_02
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-	}
 }
 
 elephant_pens_03 = {
@@ -6485,9 +6315,6 @@ elephant_pens_03 = {
 	}
 	flag = demd_elephant_pens
 	flag = demd_elephant_pens_03
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-	}
 }
 
 elephant_pens_04 = {
@@ -6540,9 +6367,6 @@ elephant_pens_04 = {
 	}
 	flag = demd_elephant_pens
 	flag = demd_elephant_pens_04
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-	}
 }
 
 elephant_pens_05 = {
@@ -6596,9 +6420,6 @@ elephant_pens_05 = {
 	}
 	flag = demd_elephant_pens
 	flag = demd_elephant_pens_05
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-	}
 }
 
 elephant_pens_06 = {
@@ -6652,9 +6473,6 @@ elephant_pens_06 = {
 	}
 	flag = demd_elephant_pens
 	flag = demd_elephant_pens_06
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-	}
 }
 
 elephant_pens_07 = {
@@ -6709,9 +6527,6 @@ elephant_pens_07 = {
 	}
 	flag = demd_elephant_pens
 	flag = demd_elephant_pens_07
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-	}
 }
 
 elephant_pens_08 = {
@@ -6764,9 +6579,6 @@ elephant_pens_08 = {
 	}
 	flag = demd_elephant_pens
 	flag = demd_elephant_pens_08
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-	}
 }
 
 ### plantations
@@ -6843,10 +6655,6 @@ plantations_01 = {
 	}
 	flag = demd_plantations
 	flag = demd_plantations_01
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 plantations_02 = {
@@ -6897,9 +6705,6 @@ plantations_02 = {
 	}
 	flag = demd_plantations
 	flag = demd_plantations_02
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 plantations_03 = {
@@ -6950,9 +6755,6 @@ plantations_03 = {
 	}
 	flag = demd_plantations
 	flag = demd_plantations_03
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 plantations_04 = {
@@ -7003,9 +6805,6 @@ plantations_04 = {
 	}
 	flag = demd_plantations
 	flag = demd_plantations_04
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 plantations_05 = {
@@ -7060,9 +6859,6 @@ plantations_05 = {
 	}
 	flag = demd_plantations
 	flag = demd_plantations_05
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 plantations_06 = {
@@ -7117,9 +6913,6 @@ plantations_06 = {
 	}
 	flag = demd_plantations
 	flag = demd_plantations_06
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 plantations_07 = {
@@ -7174,9 +6967,6 @@ plantations_07 = {
 	}
 	flag = demd_plantations
 	flag = demd_plantations_07
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 plantations_08 = {
@@ -7229,9 +7019,6 @@ plantations_08 = {
 	}
 	flag = demd_plantations
 	flag = demd_plantations_08
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 }
-	}
 }
 
 ### quarries
@@ -7293,10 +7080,6 @@ quarries_01 = {
 	}
 	flag = demd_quarries
 	flag = demd_quarries_01
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 quarries_02 = {
@@ -7353,9 +7136,6 @@ quarries_02 = {
 	}
 	flag = demd_quarries
 	flag = demd_quarries_02
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 quarries_03 = {
@@ -7414,9 +7194,6 @@ quarries_03 = {
 	}
 	flag = demd_quarries
 	flag = demd_quarries_03
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 quarries_04 = {
@@ -7476,9 +7253,6 @@ quarries_04 = {
 	}
 	flag = demd_quarries
 	flag = demd_quarries_04
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 quarries_05 = {
@@ -7538,9 +7312,6 @@ quarries_05 = {
 	}
 	flag = demd_quarries
 	flag = demd_quarries_05
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 quarries_06 = {
@@ -7600,9 +7371,6 @@ quarries_06 = {
 	}
 	flag = demd_quarries
 	flag = demd_quarries_06
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 quarries_07 = {
@@ -7665,9 +7433,6 @@ quarries_07 = {
 	}
 	flag = demd_quarries
 	flag = demd_quarries_07
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 quarries_08 = {
@@ -7729,9 +7494,6 @@ quarries_08 = {
 	}
 	flag = demd_quarries
 	flag = demd_quarries_08
-	on_complete = { 
-		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
-	}
 }
 
 
@@ -7787,11 +7549,8 @@ qanats_01 = {
 			scope:holder.capital_province = this
 		}
 	}
+	flag = demd_qanats
 	flag = demd_food_districts_building_01
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 qanats_02 = {
@@ -7840,11 +7599,8 @@ qanats_02 = {
 			scope:holder.capital_province = this
 		}
 	}
+	flag = demd_qanats
 	flag = demd_food_districts_building_02
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 qanats_03 = {
@@ -7894,11 +7650,8 @@ qanats_03 = {
 			scope:holder.capital_province = this
 		}
 	}
+	flag = demd_qanats
 	flag = demd_food_districts_building_03
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 qanats_04 = {
@@ -7948,11 +7701,8 @@ qanats_04 = {
 			scope:holder.capital_province = this
 		}
 	}
+	flag = demd_qanats
 	flag = demd_food_districts_building_04
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 qanats_05 = {
@@ -8004,11 +7754,8 @@ qanats_05 = {
 			scope:holder.capital_province = this
 		}
 	}
+	flag = demd_qanats
 	flag = demd_food_districts_building_05
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 qanats_06 = {
@@ -8060,11 +7807,8 @@ qanats_06 = {
 			scope:holder.capital_province = this
 		}
 	}
+	flag = demd_qanats
 	flag = demd_food_districts_building_06
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 qanats_07 = {
@@ -8119,11 +7863,8 @@ qanats_07 = {
 			scope:holder.capital_province = this
 		}
 	}
+	flag = demd_qanats
 	flag = demd_food_districts_building_07
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 qanats_08 = {
@@ -8177,11 +7918,8 @@ qanats_08 = {
 			scope:holder.capital_province = this
 		}
 	}
+	flag = demd_qanats
 	flag = demd_food_districts_building_08
-	on_complete = { 
-		change_variable = { name = building_food_districts_bonus add = demd_food_districts_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 # Murex Farms

@@ -1,4 +1,4 @@
-tradition_dummy_for_error_log = {
+﻿tradition_dummy_for_error_log = {
 	category = combat
 
 	layers = {

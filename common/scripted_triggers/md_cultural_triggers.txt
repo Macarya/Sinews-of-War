@@ -1,4 +1,4 @@
-# Cultural MAA triggers - Used in various places for triggers, AI weights, etc.
+﻿# Cultural MAA triggers - Used in various places for triggers, AI weights, etc.
 culture_will_have_skirmisher_maa = {
 	has_cultural_parameter = unlock_adaptive_militia_innovation
 }

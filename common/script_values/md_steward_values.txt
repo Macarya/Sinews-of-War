@@ -1,4 +1,4 @@
-steward_develop_county_monthly_increase = {
+﻿steward_develop_county_monthly_increase = {
 	add = stewardship
 	multiply = 0.1
 }

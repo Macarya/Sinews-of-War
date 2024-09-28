@@ -1,4 +1,4 @@
-demd_imperial_decay_war_end_effect_by_tier = {
+﻿demd_imperial_decay_war_end_effect_by_tier = {
 	if = {
 		limit = { scope:winner.highest_held_title_tier = tier_empire }
 		scope:winner.primary_title = { 

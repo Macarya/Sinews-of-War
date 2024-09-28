@@ -1658,10 +1658,6 @@ guild_halls_01 = {
 		}
 	}
 	flag = demd_guild_halls
-	on_complete = { 
-		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 guild_halls_02 = {
@@ -1705,9 +1701,6 @@ guild_halls_02 = {
 		}
 	}
 	flag = demd_guild_halls
-	on_complete = { 
-		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
-	}
 }
 
 guild_halls_03 = {
@@ -1762,9 +1755,6 @@ guild_halls_03 = {
 		}
 	}
 	flag = demd_guild_halls
-	on_complete = { 
-		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
-	}
 }
 
 guild_halls_04 = {
@@ -1820,9 +1810,6 @@ guild_halls_04 = {
 		}
 	}
 	flag = demd_guild_halls
-	on_complete = { 
-		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
-	}
 }
 
 guild_halls_05 = {
@@ -1877,9 +1864,6 @@ guild_halls_05 = {
 		}
 	}
 	flag = demd_guild_halls
-	on_complete = { 
-		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
-	}
 }
 
 guild_halls_06 = {
@@ -1934,9 +1918,6 @@ guild_halls_06 = {
 		}
 	}
 	flag = demd_guild_halls
-	on_complete = { 
-		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
-	}
 }
 
 guild_halls_07 = {
@@ -1991,9 +1972,6 @@ guild_halls_07 = {
 		}
 	}
 	flag = demd_guild_halls	
-	on_complete = { 
-		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
-	}
 }
 
 guild_halls_08 = {
@@ -2047,7 +2025,4 @@ guild_halls_08 = {
 		}
 	}
 	flag = demd_guild_halls	
-	on_complete = { 
-		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
-	}
 }

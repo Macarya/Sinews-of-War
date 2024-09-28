@@ -1,4 +1,4 @@
-get_artifact_quality_effect = {
+﻿get_artifact_quality_effect = {
 	if = {
 		limit = {
 			NOT = { exists = scope:quality }

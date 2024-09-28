@@ -1,4 +1,4 @@
-ai_general_building_modifier = {
+﻿ai_general_building_modifier = {
 	modifier = {
 		add = 15
 		scope:holder.capital_province = this

@@ -3299,11 +3299,7 @@ undirected_great_holy_war = {
 			}
 		}
 
-		scope:defender.faith = {		#needed for hold_court.6150
-			set_variable = {
-				name = 6150_lost_ghw_recently
-				years = 5
-			}
+		scope:defender.faith = {
 		}
 
 		hidden_effect = {
@@ -3745,10 +3741,6 @@ undirected_great_holy_war = {
 				change_fervor = {
 					value = demd_great_holy_war_loss
 					desc = fervor_loss_lost_great_holy_war
-				}
-				set_variable = {			#needed for hold_court.6150
-					name = 6150_lost_ghw_recently
-					years = 5
 				}
 			}
 		}

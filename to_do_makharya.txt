@@ -1,18 +1,29 @@
-Check tax/service edict having effect (and look into reduced delay)
-	done good
-	Delay?
-	
-In county UI add blue to word with tooltip
-	Done
-	Done Do it for imbricated tooltip 
-	Add info to popular opinion and vigor (maybe also fervor)
-		Pop opinion: manpower rate, migration pull, public order
-		Vigor: migration pull, public order
+﻿High Prio:
 
-Idea: link persecution to cultural acceptance and fervor if different faith
 
-Fix building flag (buildings and script_values\demd_population_building_edict_values.txt)
+Medium Prio:
 
-Verify and fix if needed ai weight for regiment (00_men_at_arms_values.bak)
+	Verify and fix if needed ai weight for regiment (00_men_at_arms_values.bak)
 
-Verify cleaning up Sow flavor content 
+
+
+Low prio:
+	Fix building flag (buildings and script_values\demd_population_building_edict_values.txt)
+
+	Verify cleaning up Sow flavor content 
+
+	Check tax/service edict having effect (and look into reduced delay)
+		done good
+		Delay?
+		
+	In county UI add blue to word with tooltip
+		Done
+		Done Do it for imbricated tooltip 
+		Add info to popular opinion and vigor (maybe also fervor)
+			Pop opinion: manpower rate, migration pull, public order
+			Vigor: migration pull, public order
+
+Idea: 
+	link persecution to cultural acceptance and fervor if different faith
+
+

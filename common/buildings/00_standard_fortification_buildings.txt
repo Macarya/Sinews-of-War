@@ -57,10 +57,6 @@ ramparts_01 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_01
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 ramparts_02 = {
@@ -124,9 +120,6 @@ ramparts_02 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_02
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ramparts_03 = {
@@ -194,9 +187,6 @@ ramparts_03 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_03
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ramparts_04 = {
@@ -267,9 +257,6 @@ ramparts_04 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_04
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ramparts_05 = {
@@ -340,9 +327,6 @@ ramparts_05 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_05
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ramparts_06 = {
@@ -413,9 +397,6 @@ ramparts_06 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_06
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ramparts_07 = {
@@ -486,9 +467,6 @@ ramparts_07 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_07
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ramparts_08 = {
@@ -558,9 +536,6 @@ ramparts_08 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_08
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ### curtain_walls
@@ -621,10 +596,6 @@ curtain_walls_01 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_01
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 curtain_walls_02 = {
@@ -692,9 +663,6 @@ curtain_walls_02 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_02
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 curtain_walls_03 = {
@@ -765,9 +733,6 @@ curtain_walls_03 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_03
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 curtain_walls_04 = {
@@ -838,9 +803,6 @@ curtain_walls_04 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_04
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 curtain_walls_05 = {
@@ -912,9 +874,6 @@ curtain_walls_05 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_05
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 curtain_walls_06 = {
@@ -987,9 +946,6 @@ curtain_walls_06 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_06
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 curtain_walls_07 = {
@@ -1062,9 +1018,6 @@ curtain_walls_07 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_07
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 curtain_walls_08 = {
@@ -1135,9 +1088,6 @@ curtain_walls_08 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_08
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ### watchtowers
@@ -1200,9 +1150,6 @@ watchtowers_01 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_01
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 watchtowers_02 = {
@@ -1272,9 +1219,6 @@ watchtowers_02 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_02
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 watchtowers_03 = {
@@ -1347,9 +1291,6 @@ watchtowers_03 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_03
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 watchtowers_04 = {
@@ -1423,9 +1364,6 @@ watchtowers_04 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_04
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 watchtowers_05 = {
@@ -1500,9 +1438,6 @@ watchtowers_05 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_05
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 watchtowers_06 = {
@@ -1578,9 +1513,6 @@ watchtowers_06 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_06
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 watchtowers_07 = {
@@ -1656,9 +1588,6 @@ watchtowers_07 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_07
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 watchtowers_08 = {
@@ -1732,9 +1661,6 @@ watchtowers_08 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_08
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 } 
-	}
 }
 
 ### hill_forts
@@ -1788,9 +1714,6 @@ hill_forts_01 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_01
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-	}
 }
 
 hill_forts_02 = {
@@ -1851,9 +1774,6 @@ hill_forts_02 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_02
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-	}
 }
 
 hill_forts_03 = {
@@ -1917,9 +1837,6 @@ hill_forts_03 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_03
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-	}
 }
 
 hill_forts_04 = {
@@ -1984,9 +1901,6 @@ hill_forts_04 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_04
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-	}
 }
 
 hill_forts_05 = {
@@ -2051,9 +1965,6 @@ hill_forts_05 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_05
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-	}
 }
 
 hill_forts_06 = {
@@ -2117,9 +2028,6 @@ hill_forts_06 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_06
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-	}
 }
 
 hill_forts_07 = {
@@ -2184,9 +2092,6 @@ hill_forts_07 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_07
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-	}
 }
 
 hill_forts_08 = {
@@ -2249,7 +2154,4 @@ hill_forts_08 = {
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_08
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-	}
 }

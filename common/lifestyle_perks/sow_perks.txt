@@ -1,4 +1,4 @@
-thriving_in_chaos_perk = {
+﻿thriving_in_chaos_perk = {
 	lifestyle = intrigue_lifestyle
 	tree = intimidation
 	position = { 2 1 }

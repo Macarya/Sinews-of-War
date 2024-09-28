@@ -5,7 +5,7 @@
 
 	desc = plague_seclude_court_decision_desc
 	selection_tooltip = plague_seclude_court_decision_tooltip
-	major = yes
+	decision_group_type = major
 	
 	ai_check_interval = 30
 	
@@ -38,7 +38,7 @@ plague_unseclude_court = {
 
 	desc = plague_seclude_court_decision_desc
 	selection_tooltip = plague_seclude_court_decision_tooltip
-	major = yes
+	decision_group_type = major
 	
 	ai_check_interval = 30
 	

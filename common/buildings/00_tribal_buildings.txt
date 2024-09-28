@@ -336,10 +336,6 @@ war_camps_01 = {
 			}
 		}
 	}
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 war_camps_02 = {
@@ -378,9 +374,6 @@ war_camps_02 = {
 	ai_value = {
 		base = 1
 		directive_to_build_military_modifier = yes
-	}
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
 	}
 }
 
@@ -429,10 +422,6 @@ palisades_01 = {
 }
 		}
 	}
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
-		reset_regular_building_vars = yes
-	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_01
 }
@@ -470,9 +459,6 @@ palisades_02 = {
 	ai_value = {
 		base = 1
 		directive_to_build_military_modifier = yes
-	}
-	on_complete = { 
-		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
 	}
 	flag = demd_public_order_building
 	flag = demd_public_order_building_02
@@ -539,8 +525,5 @@ market_villages_02 = {
 	ai_value = {
 		base = 1
 		directive_to_build_military_modifier = yes
-	}
-	on_complete = { 
-		change_variable = { name = building_trade_power_bonus add = demd_trade_power_building_01 }
 	}
 }

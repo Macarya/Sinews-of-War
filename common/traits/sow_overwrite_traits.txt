@@ -1,4 +1,4 @@
-murderer = {
+﻿murderer = {
 
 	general_opinion = -15
 	category = fame

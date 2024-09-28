@@ -1,4 +1,4 @@
-#############################################
+﻿#############################################
 # DEMD Population System
 # by Vertimnus
 # Do not edit without making corresponding edits to the metascript source code. Bad things will happen!
@@ -89,6 +89,30 @@ startup_building_food_districts_bonus = {
 		else_if = { limit = { has_building = plantations_07 } add = demd_food_districts_building_07 }
 		else = { add = demd_food_districts_building_08 }
 	}	
+	
+	# Qanats
+	if = { limit = { has_building_with_flag = flag = demd_qanats }
+		if = { limit = { has_building = qanats_01 } add = demd_food_districts_building_01 }
+		else_if = { limit = { has_building = qanats_02 } add = demd_food_districts_building_02 }
+		else_if = { limit = { has_building = qanats_03 } add = demd_food_districts_building_03 }
+		else_if = { limit = { has_building = qanats_04 } add = demd_food_districts_building_04 }
+		else_if = { limit = { has_building = qanats_05 } add = demd_food_districts_building_05 }
+		else_if = { limit = { has_building = qanats_06 } add = demd_food_districts_building_06 }
+		else_if = { limit = { has_building = qanats_07 } add = demd_food_districts_building_07 }
+		else = { add = demd_food_districts_building_08 }
+	}
+	
+	# Hunting Grounds
+	if = { limit = { has_building_with_flag = flag = demd_hunting_grounds }
+		if = { limit = { has_building = hunting_grounds_01 } add = demd_food_districts_building_01 }
+		else_if = { limit = { has_building = hunting_grounds_02 } add = demd_food_districts_building_02 }
+		else_if = { limit = { has_building = hunting_grounds_03 } add = demd_food_districts_building_03 }
+		else_if = { limit = { has_building = hunting_grounds_04 } add = demd_food_districts_building_04 }
+		else_if = { limit = { has_building = hunting_grounds_05 } add = demd_food_districts_building_05 }
+		else_if = { limit = { has_building = hunting_grounds_06 } add = demd_food_districts_building_06 }
+		else_if = { limit = { has_building = hunting_grounds_07 } add = demd_food_districts_building_07 }
+		else = { add = demd_food_districts_building_08 }
+	}
 }
 
 building_food_districts_bonus = {
@@ -145,17 +169,53 @@ startup_building_goods_bonus = {
 		else = { add = demd_goods_building_08 }
 	}	
 
-	# Hunting Grounds
-	if = { limit = { has_building_with_flag = demd_hunting_grounds }
-		if = { limit = { has_building = hunting_grounds_01 } add = demd_goods_building_01 }
-		else_if = { limit = { has_building = hunting_grounds_02 } add = demd_goods_building_02 }
-		else_if = { limit = { has_building = hunting_grounds_03 } add = demd_goods_building_03 }
-		else_if = { limit = { has_building = hunting_grounds_04 } add = demd_goods_building_04 }
-		else_if = { limit = { has_building = hunting_grounds_05 } add = demd_goods_building_05 }
-		else_if = { limit = { has_building = hunting_grounds_06 } add = demd_goods_building_06 }
-		else_if = { limit = { has_building = hunting_grounds_07 } add = demd_goods_building_07 }
+	# Watermills
+	if = { limit = { has_building_with_flag = demd_watermills }
+		if = { limit = { has_building = watermills_01 } add = demd_goods_building_01 }
+		else_if = { limit = { has_building = watermills_02 } add = demd_goods_building_02 }
+		else_if = { limit = { has_building = watermills_03 } add = demd_goods_building_03 }
+		else_if = { limit = { has_building = watermills_04 } add = demd_goods_building_04 }
+		else_if = { limit = { has_building = watermills_05 } add = demd_goods_building_05 }
+		else_if = { limit = { has_building = watermills_06 } add = demd_goods_building_06 }
+		else_if = { limit = { has_building = watermills_07 } add = demd_goods_building_07 }
 		else = { add = demd_goods_building_08 }
-	}	
+	}
+
+	# Windmills
+	if = { limit = { has_building_with_flag = demd_windmills }
+		if = { limit = { has_building = windmills_01 } add = demd_goods_building_01 }
+		else_if = { limit = { has_building = windmills_02 } add = demd_goods_building_02 }
+		else_if = { limit = { has_building = windmills_03 } add = demd_goods_building_03 }
+		else_if = { limit = { has_building = windmills_04 } add = demd_goods_building_04 }
+		else_if = { limit = { has_building = windmills_05 } add = demd_goods_building_05 }
+		else_if = { limit = { has_building = windmills_06 } add = demd_goods_building_06 }
+		else_if = { limit = { has_building = windmills_07 } add = demd_goods_building_07 }
+		else = { add = demd_goods_building_08 }
+	}
+
+	# Wind furnace
+	if = { limit = { has_building_with_flag = demd_wind_furnace }
+		if = { limit = { has_building = wind_furnace_01 } add = demd_goods_building_01 }
+		else_if = { limit = { has_building = wind_furnace_02 } add = demd_goods_building_02 }
+		else_if = { limit = { has_building = wind_furnace_03 } add = demd_goods_building_03 }
+		else_if = { limit = { has_building = wind_furnace_04 } add = demd_goods_building_04 }
+		else_if = { limit = { has_building = wind_furnace_05 } add = demd_goods_building_05 }
+		else_if = { limit = { has_building = wind_furnace_06 } add = demd_goods_building_06 }
+		else_if = { limit = { has_building = wind_furnace_07 } add = demd_goods_building_07 }
+		else = { add = demd_goods_building_08 }
+	}
+
+	# Blacksmiths
+	if = { limit = { has_building_with_flag = demd_blacksmiths }
+		if = { limit = { has_building = smiths_01 } add = demd_goods_building_01 }
+		else_if = { limit = { has_building = smiths_02 } add = demd_goods_building_02 }
+		else_if = { limit = { has_building = smiths_03 } add = demd_goods_building_03 }
+		else_if = { limit = { has_building = smiths_04 } add = demd_goods_building_04 }
+		else_if = { limit = { has_building = smiths_05 } add = demd_goods_building_05 }
+		else_if = { limit = { has_building = smiths_06 } add = demd_goods_building_06 }
+		else_if = { limit = { has_building = smiths_07 } add = demd_goods_building_07 }
+		else = { add = demd_goods_building_08 }
+	}
 }
 
 building_goods_bonus = {
@@ -282,6 +342,16 @@ startup_building_trade_power_bonus = {
 			else_if = { limit = { has_building = common_tradeport_07 } add = demd_trade_power_building_07 }
 			else = { add = demd_trade_power_building_08 }
 		}
+		if = { limit = { has_building_with_flag = demd_caravanserai}
+			if = { limit = { has_building = caravanserai_01 } add = demd_trade_power_building_01 }
+			else_if = { limit = { has_building = caravanserai_02 } add = demd_trade_power_building_02 }
+			else_if = { limit = { has_building = caravanserai_03 } add = demd_trade_power_building_03 }
+			else_if = { limit = { has_building = caravanserai_04 } add = demd_trade_power_building_04 }
+			else_if = { limit = { has_building = caravanserai_05 } add = demd_trade_power_building_05 }
+			else_if = { limit = { has_building = caravanserai_06 } add = demd_trade_power_building_06 }
+			else_if = { limit = { has_building = caravanserai_07 } add = demd_trade_power_building_07 }
+			else = { add = demd_trade_power_building_08 }
+		}
 	}
 	else = {
 		if = { limit = { has_building = market_villages_01 } add = demd_trade_power_building_01 }
@@ -348,6 +418,66 @@ startup_building_manpower_bonus = {
 			else = { add = demd_manpower_building_08 }
 		}	
 
+		# Horses Pasture/Herds
+		if = { limit = { has_building_with_flag = demd_horse_pastured }
+			if = { limit = { has_building = horse_pastures_01 } add = demd_manpower_building_01 }
+			else_if = { limit = { has_building = horse_pastures_02 } add = demd_manpower_building_02 }
+			else_if = { limit = { has_building = horse_pastures_03 } add = demd_manpower_building_03 }
+			else_if = { limit = { has_building = horse_pastures_04 } add = demd_manpower_building_04 }
+			else_if = { limit = { has_building = horse_pastures_05 } add = demd_manpower_building_05 }
+			else_if = { limit = { has_building = horse_pastures_06 } add = demd_manpower_building_06 }
+			else_if = { limit = { has_building = horse_pastures_07 } add = demd_manpower_building_07 }
+			else = { add = demd_manpower_building_08 }
+		}
+
+		# Hillside Grazing
+		if = { limit = { has_building_with_flag = demd_hillside_grazing }
+			if = { limit = { has_building = hillside_grazing_01 } add = demd_manpower_building_01 }
+			else_if = { limit = { has_building = hillside_grazing_02 } add = demd_manpower_building_02 }
+			else_if = { limit = { has_building = hillside_grazing_03 } add = demd_manpower_building_03 }
+			else_if = { limit = { has_building = hillside_grazing_04 } add = demd_manpower_building_04 }
+			else_if = { limit = { has_building = hillside_grazing_05 } add = demd_manpower_building_05 }
+			else_if = { limit = { has_building = hillside_grazing_06 } add = demd_manpower_building_06 }
+			else_if = { limit = { has_building = hillside_grazing_07 } add = demd_manpower_building_07 }
+			else = { add = demd_manpower_building_08 }
+		}
+
+		# Warrior Lodge
+		if = { limit = { has_building_with_flag = demd_warrior_lodge }
+			if = { limit = { has_building = warrior_lodges_01 } add = demd_manpower_building_01 }
+			else_if = { limit = { has_building = warrior_lodges_02 } add = demd_manpower_building_02 }
+			else_if = { limit = { has_building = warrior_lodges_03 } add = demd_manpower_building_03 }
+			else_if = { limit = { has_building = warrior_lodges_04 } add = demd_manpower_building_04 }
+			else_if = { limit = { has_building = warrior_lodges_05 } add = demd_manpower_building_05 }
+			else_if = { limit = { has_building = warrior_lodges_06 } add = demd_manpower_building_06 }
+			else_if = { limit = { has_building = warrior_lodges_07 } add = demd_manpower_building_07 }
+			else = { add = demd_manpower_building_08 }
+		}
+
+		#Outposts
+		if = { limit = { has_building_with_flag = demd_outposts }
+			if = { limit = { has_building = outposts_01 } add = demd_manpower_building_01 }
+			else_if = { limit = { has_building = outposts_02 } add = demd_manpower_building_02 }
+			else_if = { limit = { has_building = outposts_03 } add = demd_manpower_building_03 }
+			else_if = { limit = { has_building = outposts_04 } add = demd_manpower_building_04 }
+			else_if = { limit = { has_building = outposts_05 } add = demd_manpower_building_05 }
+			else_if = { limit = { has_building = outposts_06 } add = demd_manpower_building_06 }
+			else_if = { limit = { has_building = outposts_07 } add = demd_manpower_building_07 }
+			else = { add = demd_manpower_building_08 }
+		}
+
+		# Stables
+		if = { limit = { has_building_with_flag = demd_stables }
+			if = { limit = { has_building = stables_01 } add = demd_manpower_building_01 }
+			else_if = { limit = { has_building = stables_02 } add = demd_manpower_building_02 }
+			else_if = { limit = { has_building = stables_03 } add = demd_manpower_building_03 }
+			else_if = { limit = { has_building = stables_04 } add = demd_manpower_building_04 }
+			else_if = { limit = { has_building = stables_05 } add = demd_manpower_building_05 }
+			else_if = { limit = { has_building = stables_06 } add = demd_manpower_building_06 }
+			else_if = { limit = { has_building = stables_07 } add = demd_manpower_building_07 }
+			else = { add = demd_manpower_building_08 }
+		}
+
 		# Camel Farms
 		if = { limit = { has_building_with_flag = demd_camel_farms }
 			if = { limit = { has_building = camel_farms_01 } add = demd_manpower_building_01 }
@@ -369,6 +499,18 @@ startup_building_manpower_bonus = {
 			else_if = { limit = { has_building = elephant_pens_05 } add = demd_manpower_building_05 }
 			else_if = { limit = { has_building = elephant_pens_06 } add = demd_manpower_building_06 }
 			else_if = { limit = { has_building = elephant_pens_07 } add = demd_manpower_building_07 }
+			else = { add = demd_manpower_building_08 }
+		}
+		
+		# Workshops
+		if = { limit = { has_building_with_flag = demd_workshops }
+			if = { limit = { has_building = workshops_01 } add = demd_manpower_building_01 }
+			else_if = { limit = { has_building = workshops_02 } add = demd_manpower_building_02 }
+			else_if = { limit = { has_building = workshops_03 } add = demd_manpower_building_03 }
+			else_if = { limit = { has_building = workshops_04 } add = demd_manpower_building_04 }
+			else_if = { limit = { has_building = workshops_05 } add = demd_manpower_building_05 }
+			else_if = { limit = { has_building = workshops_06 } add = demd_manpower_building_06 }
+			else_if = { limit = { has_building = workshops_07 } add = demd_manpower_building_07 }
 			else = { add = demd_manpower_building_08 }
 		}
 	}

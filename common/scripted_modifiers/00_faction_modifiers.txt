@@ -1,4 +1,44 @@
-﻿
+﻿vigor_same_culture_faction_modifer = {
+	modifier = {
+		add = culture.demd_vigor_same_culture_faction_join_modifier
+		culture = $TARGET$.culture  
+	}
+}
+
+vigor_different_culture_faction_modifier = {
+	modifier = {
+		add = culture.demd_vigor_different_culture_faction_join_modifier		
+		NOT = { culture = $TARGET$.culture }
+	}
+}
+
+vigor_different_culture_vassal_faction_modifier = {
+	modifier = {
+		add = $TARGET$.culture.demd_vigor_different_culture_vassal_faction_join_modifier		
+		NOT = { culture = $TARGET$.culture }
+	}
+}
+
+demd_imperial_decay_independence_faction_modifier = {
+	modifier = {
+		highest_held_title_tier = tier_empire
+		add = $TARGET$.primary_title.demd_imperial_decay_independence_faction_join_modifier
+	}
+}
+
+demd_imperial_decay_claimant_faction_modifier = {
+	modifier = {
+		highest_held_title_tier = tier_empire
+		add = $TARGET$.primary_title.demd_imperial_decay_claimant_faction_join_modifier
+	}
+}
+
+demd_imperial_decay_fracture_faction_modifier = {
+	modifier = {
+		add = $TARGET$.primary_title.demd_imperial_decay_fracture_faction_join_modifier
+	}
+}
+
 intimidated_from_faction_modifier = {
 	modifier = {
 		desc = "FACTION_REASON_INTIMIDATED"
@@ -841,6 +881,19 @@ common_faction_modifiers = {
 			has_focus = stewardship_duty_focus
 		}
 	}
+	
+	# Vigor (same culture): -25 to +25 join chance depending on shared culture vigor
+	vigor_same_culture_faction_modifer = {
+		TARGET = $FACTION_TARGET$
+	}
+	
+	# Vigor (different culture): -50 to +50 join chance depending on relative culture vigors
+	vigor_different_culture_faction_modifier = {
+		TARGET = $FACTION_TARGET$
+	}	
+	vigor_different_culture_vassal_faction_modifier = {
+		TARGET = $FACTION_TARGET$
+	}
 
 	# Difficulty Settings
 	modifier = { # Easy
@@ -1248,7 +1301,7 @@ nation_fracturing_faction_modifiers = {
 						}
 					}
 				}
-				add = 20
+				add = 15
 			}
 			if =  {
 				limit =  {
@@ -1268,7 +1321,7 @@ nation_fracturing_faction_modifiers = {
 						}
 					}
 				}
-				add = 10
+				add = 5
 			}
 		}
 	}
@@ -1298,7 +1351,7 @@ nation_fracturing_faction_modifiers = {
 			}
 		}
 		add = {
-			value = 15
+			value = 10
 			if = {
 				limit = {
 					culture = {
@@ -1389,7 +1442,7 @@ nation_fracturing_faction_modifiers = {
 			if = {
 				limit = { $FACTION_TARGET$ = { has_variable =  recently_lost_wars } }
 				add = $FACTION_TARGET$.var:recently_lost_wars
-				multiply = 30
+				multiply = 15
 			}
 		}
 	}
@@ -1467,7 +1520,7 @@ nation_fracturing_faction_modifiers = {
 	# Less likely for elective title
 	modifier = {
 		desc = "FACTION_REASON_ELECTIVE_PRIMARY"
-		add = -100
+		add = -125
 	 	$FACTION_TARGET$.primary_title = {
 			has_order_of_succession = election
 		}
@@ -1756,7 +1809,7 @@ claimant_faction_modifiers = {
 		add = { # Claimant is too old
 			value = $FACTION_CLAIMANT$.age
 			subtract = 45
-			multiply = -4
+			multiply = -2
 		}
 		NOT = {	$FACTION_CLAIMANT$ = root }
 		$FACTION_CLAIMANT$.age > 45

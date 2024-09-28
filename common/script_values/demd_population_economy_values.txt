@@ -782,19 +782,18 @@ manpower_tribal_mult = {
 manpower_contract_mult = {
 
 	if = {
-		limit = { scope:holder.vassal_contract_has_flag = admin_theme_military }
-		value = 0.2
+		limit = { province_owner = {vassal_contract_has_flag = admin_theme_military } }
 	}
 	else_if = {
-		limit = { scope:holder.vassal_contract_has_flag = admin_theme_civilian }
+		limit = { province_owner = {vassal_contract_has_flag = admin_theme_civilian } }
 		value = -0.2
 	}
 	else_if = {
-		limit = { scope:holder.vassal_contract_has_flag = has_march_contract }
+		limit = { province_owner = {vassal_contract_has_flag = has_march_contract } }
 		value = 0.2
 	}
 	else_if = {
-		limit = { scope:holder.vassal_contract_has_flag = has_castellan_contract }
+		limit = { province_owner = {vassal_contract_has_flag = has_castellan_contract } }
 		value = 0.2
 	}
 	else = {

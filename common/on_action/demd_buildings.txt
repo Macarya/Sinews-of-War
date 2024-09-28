@@ -1,0 +1,11 @@
+﻿on_building_completed = { 
+	on_actions = { demd_building_recalculate_var }
+}
+
+demd_building_recalculate_var = {
+	effect = {
+		root = {
+			reset_regular_building_vars = yes
+		}
+	}
+}

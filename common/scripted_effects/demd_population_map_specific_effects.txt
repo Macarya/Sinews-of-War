@@ -1087,22 +1087,7 @@ demd_set_ancestral_faiths = {
 
 
 demd_add_special_buildings = {
-	# Episcopal Fortress Cities
-	province:2943 = { add_special_building = demd_walls_of_freising_01 }
-	province:2960 = { add_special_building = demd_walls_of_passau_01 }
-	province:2964 = { add_special_building = demd_walls_of_regensburg_01 }
-	province:2878 = { add_special_building = demd_walls_of_eichstatt_01 }
-	province:2975 = { add_special_building = demd_walls_of_salzburg_01 }
-	province:2778 = { add_special_building = demd_walls_of_augsburg_01 }
-	
-	# Other Fortifications
-	#province:3086 = { add_special_building_slot = demd_walls_of_vienna_01 }
-	province:3117 = { add_special_building = demd_schlossberg_01 }
-	province:3131 = { 
-		if = { limit = { current_year > 1000 } add_special_building = demd_ennsburg_01 }
-		else = { add_special_building_slot = demd_ennsburg_01 }
-	}
-	province:2877 = { add_special_building_slot = demd_nuremberg_castle_01 }
+
 }
 
 ##############################################################

@@ -7,7 +7,7 @@
 
 	desc = demd_trade_node_struggle_end_decision_desc
 	selection_tooltip = demd_trade_node_struggle_end_decision_tooltip
-	major = yes
+	decision_group_type = major
 	
 	is_shown = {
 		always = no
@@ -35,7 +35,7 @@ demd_trade_node_struggle_seize_control_decision = {
 
 	desc = demd_trade_node_struggle_seize_control_decision_desc
 	selection_tooltip = demd_trade_node_struggle_seize_control_decision_tooltip
-	major = yes
+	decision_group_type = major
 	
 	is_shown = {
 		exists = capital_county

@@ -194,7 +194,7 @@ wounded_recovery_pulse = {
 		}
 	}
 	random_events = {
-		600 = 0
+		400 = 0
 		400 = health.0001 #Recover from Wounded
 		200 = health.0002 #Recover from Severely Wounded
 		100 = health.0003 #Recover from Near Death

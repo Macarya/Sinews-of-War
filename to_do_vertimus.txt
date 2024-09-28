@@ -1,4 +1,4 @@
-Use character_culture_modifier to change building MaA bonuses to match the culture using them
+﻿Use character_culture_modifier to change building MaA bonuses to match the culture using them
 	- Gets around the AI's poor ability to manage buildings
 	
 Add back old MaA gradually

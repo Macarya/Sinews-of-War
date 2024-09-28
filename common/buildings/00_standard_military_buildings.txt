@@ -49,6 +49,8 @@ wind_furnace_01 = {
 		#knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_1
 	}
 	
+	flag = demd_wind_furnace
+
 	next_building = wind_furnace_02
 
 	type_icon = "icon_building_wind_furnaces.dds"
@@ -96,6 +98,8 @@ wind_furnace_02 = {
 		#knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_2
 	}
 	
+	flag = demd_wind_furnace
+
 	next_building = wind_furnace_03
 	
 	ai_value = {
@@ -138,6 +142,8 @@ wind_furnace_03 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_3
 	}
 	
+	flag = demd_wind_furnace
+
 	next_building = wind_furnace_04
 	
 	ai_value = {
@@ -177,6 +183,8 @@ wind_furnace_04 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_4
 	}
 	
+	flag = demd_wind_furnace
+
 	next_building = wind_furnace_05
 	
 	ai_value = {
@@ -216,6 +224,8 @@ wind_furnace_05 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_5
 	}
 	
+	flag = demd_wind_furnace
+
 	next_building = wind_furnace_06
 	
 	ai_value = {
@@ -255,6 +265,8 @@ wind_furnace_06 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_6
 	}
 	
+	flag = demd_wind_furnace
+
 	next_building = wind_furnace_07
 	
 	ai_value = {
@@ -294,6 +306,8 @@ wind_furnace_07 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_7
 	}
 	
+	flag = demd_wind_furnace
+
 	next_building = wind_furnace_08
 	
 	ai_value = {
@@ -333,6 +347,8 @@ wind_furnace_08 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_8
 	}
 	
+	flag = demd_wind_furnace
+
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
@@ -369,6 +385,8 @@ workshops_01 = {
 		archers_maintenance_mult = good_building_maa_maintenance_tier_1
 	}
 	
+	flag = demd_workshops
+
 	next_building = workshops_02
 
 	type_icon = "icon_building_workshops.dds"
@@ -422,6 +440,8 @@ workshops_02 = {
 		archers_maintenance_mult = good_building_maa_maintenance_tier_2
 	}
 	
+	flag = demd_workshops
+
 	next_building = workshops_03
 	
 	ai_value = {
@@ -469,6 +489,8 @@ workshops_03 = {
 		archers_maintenance_mult = good_building_maa_maintenance_tier_3
 	}
 	
+	flag = demd_workshops
+
 	next_building = workshops_04
 	
 	ai_value = {
@@ -512,6 +534,8 @@ workshops_04 = {
 		archers_maintenance_mult = good_building_maa_maintenance_tier_4
 	}
 	
+	flag = demd_workshops
+
 	next_building = workshops_05
 	
 	ai_value = {
@@ -556,6 +580,8 @@ workshops_05 = {
 		cultural_head_fascination_mult = 0.05
 	}
 	
+	flag = demd_workshops
+
 	next_building = workshops_06
 	
 	ai_value = {
@@ -600,6 +626,8 @@ workshops_06 = {
 		cultural_head_fascination_mult = 0.10
 	}
 	
+	flag = demd_workshops
+
 	next_building = workshops_07
 	
 	ai_value = {
@@ -644,6 +672,8 @@ workshops_07 = {
 		cultural_head_fascination_mult = 0.15
 	}
 	
+	flag = demd_workshops
+
 	next_building = workshops_08
 	
 	ai_value = {
@@ -688,6 +718,8 @@ workshops_08 = {
 		cultural_head_fascination_mult = 0.20
 	}
 	
+	flag = demd_workshops
+
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
@@ -724,6 +756,8 @@ horse_pastures_01 = {
 		stationed_archer_cavalry_screen_mult = normal_maa_screen_tier_1
 		stationed_archer_cavalry_pursuit_mult = normal_maa_pursuit_tier_1
 	}
+
+	flag = demd_horse_pastured
 	
 	next_building = horse_pastures_02
 
@@ -812,6 +846,8 @@ horse_pastures_02 = {
 		stationed_archer_cavalry_pursuit_mult = normal_maa_pursuit_tier_2
 	}
 	
+	flag = demd_horse_pastured
+	
 	next_building = horse_pastures_03
 	
 	ai_value = {
@@ -861,6 +897,8 @@ horse_pastures_03 = {
 		stationed_archer_cavalry_pursuit_mult = normal_maa_pursuit_tier_3
 	}
 	
+	flag = demd_horse_pastured
+	
 	next_building = horse_pastures_04
 	
 	ai_value = {
@@ -905,6 +943,8 @@ horse_pastures_04 = {
 		stationed_archer_cavalry_screen_mult = normal_maa_screen_tier_4
 		stationed_archer_cavalry_pursuit_mult = normal_maa_pursuit_tier_4
 	}
+	
+	flag = demd_horse_pastured
 	
 	next_building = horse_pastures_05
 	
@@ -951,6 +991,8 @@ horse_pastures_05 = {
 		stationed_archer_cavalry_pursuit_mult = normal_maa_pursuit_tier_5
 	}
 	
+	flag = demd_horse_pastured
+	
 	next_building = horse_pastures_06
 	
 	ai_value = {
@@ -995,6 +1037,8 @@ horse_pastures_06 = {
 		stationed_archer_cavalry_screen_mult = normal_maa_screen_tier_6
 		stationed_archer_cavalry_pursuit_mult = normal_maa_pursuit_tier_6
 	}
+	
+	flag = demd_horse_pastured
 	
 	next_building = horse_pastures_07
 	
@@ -1041,6 +1085,8 @@ horse_pastures_07 = {
 		stationed_archer_cavalry_pursuit_mult = normal_maa_pursuit_tier_7
 	}
 	
+	flag = demd_horse_pastured
+	
 	next_building = horse_pastures_08
 	
 	ai_value = {
@@ -1086,6 +1132,8 @@ horse_pastures_08 = {
 		stationed_archer_cavalry_pursuit_mult = normal_maa_pursuit_tier_8
 	}
 	
+	flag = demd_horse_pastured
+	
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
@@ -1117,6 +1165,8 @@ hillside_grazing_01 = {
 		monthly_income = super_poor_building_tax_tier_1
 
 	}
+	
+	flag = demd_hillside_grazing
 	
 	next_building = hillside_grazing_02
 
@@ -1188,6 +1238,8 @@ hillside_grazing_02 = {
 		monthly_income = super_poor_building_tax_tier_2
 	}
 	
+	flag = demd_hillside_grazing
+	
 	next_building = hillside_grazing_03
 	
 	ai_value = {
@@ -1234,6 +1286,8 @@ hillside_grazing_03 = {
 		stationed_maa_screen_add = 4
 	}
 	
+	flag = demd_hillside_grazing
+	
 	next_building = hillside_grazing_04
 	
 	ai_value = {
@@ -1275,6 +1329,8 @@ hillside_grazing_04 = {
 		monthly_income = super_poor_building_tax_tier_4
 		stationed_maa_screen_add = 6
 	}
+	
+	flag = demd_hillside_grazing
 	
 	next_building = hillside_grazing_05
 	
@@ -1318,6 +1374,8 @@ hillside_grazing_05 = {
 		stationed_maa_screen_add = 8
 	}
 	
+	flag = demd_hillside_grazing
+	
 	next_building = hillside_grazing_06
 	
 	ai_value = {
@@ -1359,6 +1417,8 @@ hillside_grazing_06 = {
 		monthly_income = super_poor_building_tax_tier_6
 		stationed_maa_screen_add = 12
 	}
+	
+	flag = demd_hillside_grazing
 	
 	next_building = hillside_grazing_07
 	
@@ -1402,6 +1462,8 @@ hillside_grazing_07 = {
 		stationed_maa_screen_add = 16
 	}
 	
+	flag = demd_hillside_grazing
+	
 	next_building = hillside_grazing_08
 	
 	ai_value = {
@@ -1444,6 +1506,8 @@ hillside_grazing_08 = {
 		stationed_maa_screen_add = 20
 	}
 	
+	flag = demd_hillside_grazing
+	
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
@@ -1484,6 +1548,8 @@ warrior_lodges_01 = {
 		stationed_heavy_infantry_damage_mult = normal_maa_damage_tier_1
 		travel_danger = -1
 	}
+	
+	flag = demd_warrior_lodge
 	
 	next_building = warrior_lodges_02
 
@@ -1573,6 +1639,8 @@ warrior_lodges_02 = {
 		travel_danger = -2
 	}
 	
+	flag = demd_warrior_lodge
+	
 	next_building = warrior_lodges_03
 	
 	ai_value = {
@@ -1624,6 +1692,8 @@ warrior_lodges_03 = {
 		travel_danger = -3
 	}
 	
+	flag = demd_warrior_lodge
+	
 	next_building = warrior_lodges_04
 	
 	ai_value = {
@@ -1652,6 +1722,8 @@ warrior_lodges_04 = {
 		}
 	}
 
+	flag = demd_warrior_lodge
+	
 	can_construct_showing_failures_only = {
 		building_requirement_tribal = no
 	}
@@ -1718,6 +1790,8 @@ warrior_lodges_05 = {
 		travel_danger = -5
 	}
 	
+	flag = demd_warrior_lodge
+	
 	next_building = warrior_lodges_06
 	
 	ai_value = {
@@ -1764,6 +1838,8 @@ warrior_lodges_06 = {
 		stationed_maa_pursuit_add = 12
 		travel_danger = -6
 	}
+	
+	flag = demd_warrior_lodge
 	
 	next_building = warrior_lodges_07
 	
@@ -1812,6 +1888,8 @@ warrior_lodges_07 = {
 		travel_danger = -7
 	}
 	
+	flag = demd_warrior_lodge
+	
 	next_building = warrior_lodges_08
 	
 	ai_value = {
@@ -1858,6 +1936,8 @@ warrior_lodges_08 = {
 		stationed_maa_pursuit_add = 20
 		travel_danger = -8
 	}
+	
+	flag = demd_warrior_lodge
 	
 	ai_value = {
 		base = 3
@@ -1989,10 +2069,6 @@ military_camps_01 = {
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_01
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 military_camps_02 = {
@@ -2056,9 +2132,6 @@ military_camps_02 = {
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_02
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 military_camps_03 = {
@@ -2124,9 +2197,6 @@ military_camps_03 = {
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_03
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 military_camps_04 = {
@@ -2194,9 +2264,6 @@ military_camps_04 = {
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_04
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 military_camps_05 = {
@@ -2270,9 +2337,6 @@ military_camps_05 = {
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_05
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 military_camps_06 = {
@@ -2347,9 +2411,6 @@ military_camps_06 = {
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_06
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 military_camps_07 = {
@@ -2424,9 +2485,6 @@ military_camps_07 = {
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_07
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 military_camps_08 = {
@@ -2499,9 +2557,6 @@ military_camps_08 = {
 	}
 	flag = demd_military_camps
 	flag = demd_manpower_building_08
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 ### regimental_grounds
@@ -2567,10 +2622,6 @@ regimental_grounds_01 = {
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_01
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
-		reset_regular_building_vars = yes
-	}
 }
 
 regimental_grounds_02 = {
@@ -2624,9 +2675,6 @@ regimental_grounds_02 = {
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_02
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 regimental_grounds_03 = {
@@ -2680,9 +2728,6 @@ regimental_grounds_03 = {
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_03
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 regimental_grounds_04 = {
@@ -2736,9 +2781,6 @@ regimental_grounds_04 = {
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_04
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 regimental_grounds_05 = {
@@ -2793,9 +2835,6 @@ regimental_grounds_05 = {
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_05
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 regimental_grounds_06 = {
@@ -2850,9 +2889,6 @@ regimental_grounds_06 = {
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_06
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 regimental_grounds_07 = {
@@ -2908,9 +2944,6 @@ regimental_grounds_07 = {
 	}
 	flag = demd_regimental_grounds
 	flag = demd_manpower_building_07
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 regimental_grounds_08 = {
@@ -2962,9 +2995,6 @@ regimental_grounds_08 = {
 		ai_general_building_modifier = yes
 		directive_to_build_military_modifier = yes
 	}
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 ### outposts
@@ -3007,6 +3037,8 @@ outposts_01 = {
 		monthly_income = super_poor_building_tax_tier_1
 		levy_size = 0.01
 	}
+	
+	flag = demd_outposts
 	
 	next_building = outposts_02
 
@@ -3115,6 +3147,8 @@ outposts_02 = {
 		levy_size = 0.02
 	}
 	
+	flag = demd_outposts
+	
 	next_building = outposts_03
 	
 	ai_value = {
@@ -3176,6 +3210,8 @@ outposts_03 = {
 		levy_size = 0.03
 	}
 	
+	flag = demd_outposts
+	
 	next_building = outposts_04
 	
 	ai_value = {
@@ -3232,6 +3268,8 @@ outposts_04 = {
 		monthly_income = super_poor_building_tax_tier_4
 		levy_size = 0.04
 	}
+	
+	flag = demd_outposts
 	
 	next_building = outposts_05
 	
@@ -3291,6 +3329,8 @@ outposts_05 = {
 		levy_size = 0.05
 	}
 	
+	flag = demd_outposts
+	
 	next_building = outposts_06
 	
 	ai_value = {
@@ -3348,6 +3388,8 @@ outposts_06 = {
 		monthly_income = super_poor_building_tax_tier_6
 		levy_size = 0.06
 	}
+	
+	flag = demd_outposts
 	
 	next_building = outposts_07
 	
@@ -3407,6 +3449,8 @@ outposts_07 = {
 		levy_size = 0.07
 	}
 	
+	flag = demd_outposts
+	
 	next_building = outposts_08
 	
 	ai_value = {
@@ -3465,6 +3509,8 @@ outposts_08 = {
 		monthly_income = super_poor_building_tax_tier_8
 		levy_size = 0.08
 	}
+	
+	flag = demd_outposts
 	
 	ai_value = {
 		base = 3
@@ -3543,10 +3589,6 @@ barracks_01 = {
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_01
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 barracks_02 = {
@@ -3611,9 +3653,6 @@ barracks_02 = {
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_02
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 barracks_03 = {
@@ -3687,9 +3726,6 @@ barracks_03 = {
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_03
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 barracks_04 = {
@@ -3758,9 +3794,6 @@ barracks_04 = {
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_04
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 barracks_05 = {
@@ -3839,9 +3872,6 @@ barracks_05 = {
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_05
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 barracks_06 = {
@@ -3918,9 +3948,6 @@ barracks_06 = {
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_06
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 barracks_07 = {
@@ -3999,9 +4026,6 @@ barracks_07 = {
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_07
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 barracks_08 = {
@@ -4078,9 +4102,6 @@ barracks_08 = {
 	}
 	flag = demd_barracks
 	flag = demd_manpower_building_08
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 ### camel_farms
@@ -4153,10 +4174,6 @@ camel_farms_01 = {
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_01
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-		reset_regular_building_vars = yes
-	}
 }
 
 camel_farms_02 = {
@@ -4205,9 +4222,6 @@ camel_farms_02 = {
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_02
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 camel_farms_03 = {
@@ -4259,9 +4273,6 @@ camel_farms_03 = {
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_03
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 camel_farms_04 = {
@@ -4314,9 +4325,6 @@ camel_farms_04 = {
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_04
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 camel_farms_05 = {
@@ -4369,9 +4377,6 @@ camel_farms_05 = {
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_05
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 camel_farms_06 = {
@@ -4425,9 +4430,6 @@ camel_farms_06 = {
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_06
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 camel_farms_07 = {
@@ -4481,9 +4483,6 @@ camel_farms_07 = {
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_07
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 camel_farms_08 = {
@@ -4538,9 +4537,6 @@ camel_farms_08 = {
 	}
 	flag = demd_camel_farms
 	flag = demd_manpower_building_08
-	on_complete = { 
-		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 } 
-	}
 }
 
 
@@ -4573,6 +4569,8 @@ stables_01 = {
 		stationed_heavy_cavalry_damage_mult = high_maa_damage_tier_1
 		stationed_light_cavalry_pursuit_mult = normal_maa_pursuit_tier_1
 	}
+	
+	flag = demd_stables
 	
 	next_building = stables_02
 
@@ -4708,6 +4706,8 @@ stables_02 = {
 		stationed_light_cavalry_pursuit_mult = normal_maa_pursuit_tier_2
 	}
 	
+	flag = demd_stables
+	
 	next_building = stables_03
 	
 	ai_value = {
@@ -4772,6 +4772,8 @@ stables_03 = {
 		stationed_heavy_cavalry_toughness_mult = high_maa_toughness_tier_1
 	}
 	
+	flag = demd_stables
+	
 	next_building = stables_04
 	
 	ai_value = {
@@ -4831,6 +4833,8 @@ stables_04 = {
 		stationed_light_cavalry_toughness_mult = high_maa_toughness_tier_2
 		stationed_heavy_cavalry_toughness_mult = high_maa_toughness_tier_2
 	}
+	
+	flag = demd_stables
 	
 	next_building = stables_05
 	
@@ -4898,6 +4902,8 @@ stables_05 = {
 		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_1
 	}
 	
+	flag = demd_stables
+	
 	next_building = stables_06
 	
 	ai_value = {
@@ -4964,6 +4970,8 @@ stables_06 = {
 		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_2
 	}
 	
+	flag = demd_stables
+	
 	next_building = stables_07
 	
 	ai_value = {
@@ -5018,6 +5026,8 @@ stables_07 = {
 		movement_speed = normal_movement_speed_tier_7
 		character_travel_speed_mult = normal_movement_speed_tier_7
 	}
+	
+	flag = demd_stables
 	
 	province_modifier = {
 		stationed_light_cavalry_toughness_mult = high_maa_toughness_tier_5
@@ -5096,6 +5106,8 @@ stables_08 = {
 		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_4
 	}
 	
+	flag = demd_stables
+	
 	ai_value = {
 		base = 3
 		ai_general_building_modifier = yes
@@ -5137,6 +5149,8 @@ smiths_01 = {
 	character_modifier = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_1
 	}
+	
+	flag = demd_blacksmiths
 	
 	next_building = smiths_02
 
@@ -5278,6 +5292,8 @@ smiths_02 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_2
 	}
 	
+	flag = demd_blacksmiths
+	
 	next_building = smiths_03
 	
 	ai_value = {
@@ -5343,6 +5359,8 @@ smiths_03 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_3
 	}
 	
+	flag = demd_blacksmiths
+	
 	next_building = smiths_04
 	
 	ai_value = {
@@ -5404,6 +5422,8 @@ smiths_04 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_4
 	}
 	
+	flag = demd_blacksmiths
+	
 	next_building = smiths_05
 	
 	ai_value = {
@@ -5463,6 +5483,8 @@ smiths_05 = {
 	character_modifier = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_5
 	}
+	
+	flag = demd_blacksmiths
 	
 	next_building = smiths_06
 	
@@ -5524,6 +5546,8 @@ smiths_06 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_6
 	}
 	
+	flag = demd_blacksmiths
+	
 	next_building = smiths_07
 	
 	ai_value = {
@@ -5584,6 +5608,8 @@ smiths_07 = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_7
 	}
 	
+	flag = demd_blacksmiths
+	
 	next_building = smiths_08
 	
 	ai_value = {
@@ -5643,6 +5669,8 @@ smiths_08 = {
 	character_modifier = {
 		knight_effectiveness_mult = normal_knight_effectiveness_mult_tier_8
 	}
+
+	flag = demd_blacksmiths
 	
 	ai_value = {
 		base = 3

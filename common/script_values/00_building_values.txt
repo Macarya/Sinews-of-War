@@ -111,14 +111,14 @@
 ############
 
 # Base
-@low_tax_mult_base = 0.02
-@normal_tax_mult_base = 0.04
-@good_tax_mult_base = 0.06
+@low_tax_mult_base = 0.01
+@normal_tax_mult_base = 0.02
+@good_tax_mult_base = 0.03
 
 # Scaling Increase
-@low_tax_mult_addition_per_tier = 0.01
-@normal_tax_mult_addition_per_tier = 0.02
-@good_tax_mult_addition_per_tier = 0.03
+@low_tax_mult_addition_per_tier = 0.005
+@normal_tax_mult_addition_per_tier = 0.01
+@good_tax_mult_addition_per_tier = 0.015
 
 ###############
 # MaA Bonuses #
@@ -126,54 +126,54 @@
 
 # Base Damage Mult
 @low_damage_mult_base = 0.10
-@normal_damage_mult_base = 0.15
-@high_damage_mult_base = 0.20
-@very_high_damage_mult_base = 0.30
+@normal_damage_mult_base = 0.20
+@high_damage_mult_base = 0.30
+@very_high_damage_mult_base = 0.40
 
 # Scaling Increase Damage Mult
 @low_damage_mult_addition_per_tier = 0.025
 @normal_damage_mult_addition_per_tier = 0.05
-@high_damage_mult_addition_per_tier = 0.10
-@very_high_damage_mult_addition_per_tier = 0.15
+@high_damage_mult_addition_per_tier = 0.075
+@very_high_damage_mult_addition_per_tier = 0.1
 
 
 # Base Toughness Mult
 @low_toughness_mult_base = 0.10
-@normal_toughness_mult_base = 0.15
-@high_toughness_mult_base = 0.20
-@very_high_toughness_mult_base = 0.30
+@normal_toughness_mult_base = 0.20
+@high_toughness_mult_base = 0.30
+@very_high_toughness_mult_base = 0.40
 
 # Scaling Increase Toughness Mult
 @low_toughness_mult_addition_per_tier = 0.025
 @normal_toughness_mult_addition_per_tier = 0.05
-@high_toughness_mult_addition_per_tier = 0.10
-@very_high_toughness_mult_addition_per_tier = 0.15
+@high_toughness_mult_addition_per_tier = 0.075
+@very_high_toughness_mult_addition_per_tier = 0.1
 
 
 # Base Screen Mult
 @low_screen_mult_base = 0.10
-@normal_screen_mult_base = 0.15
-@high_screen_mult_base = 0.20
-@very_high_screen_mult_base = 0.30
+@normal_screen_mult_base = 0.20
+@high_screen_mult_base = 0.30
+@very_high_screen_mult_base = 0.40
 
 # Scaling Increase Toughness Mult
 @low_screen_mult_addition_per_tier = 0.025
 @normal_screen_mult_addition_per_tier = 0.05
-@high_screen_mult_addition_per_tier = 0.10
-@very_high_screen_mult_addition_per_tier = 0.15
+@high_screen_mult_addition_per_tier = 0.075
+@very_high_screen_mult_addition_per_tier = 0.1
 
 
 # Base Pursuit Mult
 @low_pursuit_mult_base = 0.10
-@normal_pursuit_mult_base = 0.15
-@high_pursuit_mult_base = 0.20
-@very_high_pursuit_mult_base = 0.30
+@normal_pursuit_mult_base = 0.20
+@high_pursuit_mult_base = 0.30
+@very_high_pursuit_mult_base = 0.40
 
 # Scaling Increase Pursuit Mult
 @low_pursuit_mult_addition_per_tier = 0.025
 @normal_pursuit_mult_addition_per_tier = 0.05
-@high_pursuit_mult_addition_per_tier = 0.10
-@very_high_pursuit_mult_addition_per_tier = 0.15
+@high_pursuit_mult_addition_per_tier = 0.075
+@very_high_pursuit_mult_addition_per_tier = 0.1
 
 
 # Base Siege Value Mult 
@@ -206,11 +206,11 @@
 
 # Base Knight Effectiveness Value
 @normal_knight_effectiveness_mult_base = 0.01
-@high_knight_effectiveness_mult_base = 0.015
+@high_knight_effectiveness_mult_base = 0.02
 
 # Scaling Increase Knight Effectiveness
-@normal_knight_effectiveness_mult_addition_per_tier = 0.01
-@high_knight_effectiveness_mult_addition_per_tier = 0.015
+@normal_knight_effectiveness_mult_addition_per_tier = 0.005
+@high_knight_effectiveness_mult_addition_per_tier = 0.01
 
 ######################
 # Levy Reinforcement #
@@ -245,7 +245,7 @@
 @base_garrison_reinforcement_factor = 0.03
 
 # Scaling increase: at level 8, it takes a bit less than 1 year to completly refill a garrison
-@garrison_reinforcement_factor_addition_per_tier = 0.01
+@garrison_reinforcement_factor_addition_per_tier = 0.005
 
 
 # Tier values
@@ -301,9 +301,9 @@
 
 # We have four 'building cost classes', each one has a better scale than the others.
 @cheap_cost_scale_addition_per_tier = 50
-@normal_cost_scale_addition_per_tier = 100
-@expensive_cost_scale_addition_per_tier = 150
-@main_cost_scale_addition_per_tier = 150
+@normal_cost_scale_addition_per_tier = 75
+@expensive_cost_scale_addition_per_tier = 100
+@main_cost_scale_addition_per_tier = 200
 @tribal_cost_scale_addition_per_tier = 25
 
 #####################
