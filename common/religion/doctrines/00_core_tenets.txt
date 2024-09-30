@@ -1481,6 +1481,7 @@
 			ghw_no_hof_conversion_buffs_active = yes
 			bonus_holy_war_piety_active = yes
 			pilgrimage_decision_active = yes
+			demd_meta_manpower_mult_10 = yes
 			unlock_voluntary_laampdom_faith = yes
 		}
 	}

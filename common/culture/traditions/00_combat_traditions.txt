@@ -1251,12 +1251,8 @@ tradition_frugal_armorsmiths = {
 	character_modifier = {
 		army_maintenance_mult = -0.15
 		men_at_arms_recruitment_cost = -0.25
-knight_effectiveness_mult = -0.6
+		knight_effectiveness_mult = -0.5
 		maa_toughness_mult = -0.2
-		levy_toughness = -3
-		heavy_cavalry_toughness_add = -14
-		pikemen_toughness_add = -4
-		heavy_infantry_toughness_add = -4
 	}
 	
 	cost = {
@@ -1913,10 +1909,10 @@ tradition_hit_and_run = {
 
 	# Iberian: Concurso Tactics
 	character_modifier = {
-		skirmishers_damage_add = 2
-		skirmishers_screen_add = 4
-		light_cavalry_damage_add = 4
-		light_cavalry_screen_add = 4
+		skirmishers_damage_mult = 0.15
+		skirmishers_screen_mult = 0.15
+		light_cavalry_damage_mult = 0.15
+		light_cavalry_screen_mult = 0.15
 		retreat_losses = -0.1
 		hard_casualty_modifier = -0.1
 	}
@@ -2018,10 +2014,7 @@ tradition_stand_and_fight = {
 	
 	character_modifier = {
 		levy_toughness = 2
-		maa_toughness_mult = 0.2
-		heavy_infantry_toughness_add = 4
-		heavy_cavalry_toughness_add = 10
-		pikemen_toughness_add = 4
+		maa_toughness_mult = 0.25
 		hard_casualty_modifier = 0.4
 		defender_advantage = 8
 	}
@@ -2111,9 +2104,9 @@ tradition_adaptive_skirmishing = {
 	
 	character_modifier = {
 		enemy_terrain_advantage = -0.25
-		archers_toughness_add = 4
+		archers_toughness_mult = 0.25
 		archers_maintenance_mult = -0.05
-		skirmishers_toughness_add = 4
+		skirmishers_toughness_mult = 0.25
 		skirmishers_maintenance_mult = -0.05	
 	}
 	
@@ -2233,8 +2226,8 @@ tradition_formation_fighting = {
 	character_modifier = {
 		counter_efficiency = 0.15
 		pursue_efficiency = -0.15
-		archers_damage_add = 4
-		pikemen_toughness_add = 4
+		archers_damage_mult = 0.25
+		pikemen_toughness_mult = 0.25
 	}
 	
 	cost = {

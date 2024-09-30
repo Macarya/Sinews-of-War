@@ -1,16 +1,15 @@
-﻿High Prio:
-
+High Prio:
+	Reduce imperial MAA cap to 6
+	Work on MAA for landless and imperial
 
 Medium Prio:
-
 	Verify and fix if needed ai weight for regiment (00_men_at_arms_values.bak)
 
 
-
 Low prio:
-	Fix building flag (buildings and script_values\demd_population_building_edict_values.txt)
+	?Fix building flag (buildings and script_values\demd_population_building_edict_values.txt)
 
-	Verify cleaning up Sow flavor content 
+	?Verify cleaning up Sow flavor content 
 
 	Check tax/service edict having effect (and look into reduced delay)
 		done good
@@ -23,7 +22,11 @@ Low prio:
 			Pop opinion: manpower rate, migration pull, public order
 			Vigor: migration pull, public order
 
+	Add regiment capacity in imperail tab UI
+
 Idea: 
 	link persecution to cultural acceptance and fervor if different faith
+
+
 
 

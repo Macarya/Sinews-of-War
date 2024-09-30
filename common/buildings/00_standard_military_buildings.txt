@@ -1283,7 +1283,7 @@ hillside_grazing_03 = {
 		stationed_archer_cavalry_toughness_mult = low_maa_toughness_tier_2
 		stationed_archer_cavalry_damage_mult = normal_maa_damage_tier_3
 		monthly_income = super_poor_building_tax_tier_3
-		stationed_maa_screen_add = 4
+		stationed_maa_screen_mult = 0.1
 	}
 	
 	flag = demd_hillside_grazing
@@ -1327,7 +1327,7 @@ hillside_grazing_04 = {
 		stationed_archer_cavalry_toughness_mult = low_maa_toughness_tier_3
 		stationed_archer_cavalry_damage_mult = normal_maa_damage_tier_4
 		monthly_income = super_poor_building_tax_tier_4
-		stationed_maa_screen_add = 6
+		stationed_maa_screen_mult = 0.15
 	}
 	
 	flag = demd_hillside_grazing
@@ -1371,7 +1371,7 @@ hillside_grazing_05 = {
 		stationed_archer_cavalry_toughness_mult = low_maa_toughness_tier_4
 		stationed_archer_cavalry_damage_mult = normal_maa_damage_tier_5
 		monthly_income = super_poor_building_tax_tier_5
-		stationed_maa_screen_add = 8
+		stationed_maa_screen_mult = 0.2
 	}
 	
 	flag = demd_hillside_grazing
@@ -1415,7 +1415,7 @@ hillside_grazing_06 = {
 		stationed_archer_cavalry_toughness_mult = low_maa_toughness_tier_5
 		stationed_archer_cavalry_damage_mult = normal_maa_damage_tier_6
 		monthly_income = super_poor_building_tax_tier_6
-		stationed_maa_screen_add = 12
+		stationed_maa_screen_mult = 0.3
 	}
 	
 	flag = demd_hillside_grazing
@@ -1459,7 +1459,7 @@ hillside_grazing_07 = {
 		stationed_archer_cavalry_toughness_mult = low_maa_toughness_tier_6
 		stationed_archer_cavalry_damage_mult = normal_maa_damage_tier_7
 		monthly_income = super_poor_building_tax_tier_7
-		stationed_maa_screen_add = 16
+		stationed_maa_screen_mult = 0.4
 	}
 	
 	flag = demd_hillside_grazing
@@ -1503,7 +1503,7 @@ hillside_grazing_08 = {
 		stationed_archer_cavalry_toughness_mult = low_maa_toughness_tier_7
 		stationed_archer_cavalry_damage_mult = normal_maa_damage_tier_8
 		monthly_income = super_poor_building_tax_tier_8
-		stationed_maa_screen_add = 20
+		stationed_maa_screen_mult = 0.5
 	}
 	
 	flag = demd_hillside_grazing
@@ -1688,7 +1688,7 @@ warrior_lodges_03 = {
 		stationed_pikemen_damage_mult = normal_maa_damage_tier_3
 		stationed_heavy_infantry_toughness_mult = low_maa_toughness_tier_2
 		stationed_heavy_infantry_damage_mult = normal_maa_damage_tier_3
-		stationed_maa_pursuit_add = 4
+		stationed_maa_pursuit_mult = 0.1
 		travel_danger = -3
 	}
 	
@@ -1739,7 +1739,7 @@ warrior_lodges_04 = {
 		stationed_pikemen_damage_mult = normal_maa_damage_tier_4
 		stationed_heavy_infantry_toughness_mult = low_maa_toughness_tier_3
 		stationed_heavy_infantry_damage_mult = normal_maa_damage_tier_4
-		stationed_maa_pursuit_add = 6
+		stationed_maa_pursuit_mult = 0.15
 		travel_danger = -4
 	}
 	
@@ -1786,7 +1786,7 @@ warrior_lodges_05 = {
 		stationed_pikemen_damage_mult = normal_maa_damage_tier_5
 		stationed_heavy_infantry_toughness_mult = low_maa_toughness_tier_4
 		stationed_heavy_infantry_damage_mult = normal_maa_damage_tier_5
-		stationed_maa_pursuit_add = 8
+		stationed_maa_pursuit_mult = 0.2
 		travel_danger = -5
 	}
 	
@@ -1835,7 +1835,7 @@ warrior_lodges_06 = {
 		stationed_pikemen_damage_mult = normal_maa_damage_tier_6
 		stationed_heavy_infantry_toughness_mult = low_maa_toughness_tier_5
 		stationed_heavy_infantry_damage_mult = normal_maa_damage_tier_6
-		stationed_maa_pursuit_add = 12
+		stationed_maa_pursuit_mult = 0.3
 		travel_danger = -6
 	}
 	
@@ -1884,7 +1884,7 @@ warrior_lodges_07 = {
 		stationed_pikemen_damage_mult = normal_maa_damage_tier_7
 		stationed_heavy_infantry_toughness_mult = low_maa_toughness_tier_6
 		stationed_heavy_infantry_damage_mult = normal_maa_damage_tier_7
-		stationed_maa_pursuit_add = 16
+		stationed_maa_pursuit_mult = 0.4
 		travel_danger = -7
 	}
 	
@@ -1933,7 +1933,7 @@ warrior_lodges_08 = {
 		stationed_pikemen_damage_mult = normal_maa_damage_tier_8
 		stationed_heavy_infantry_toughness_mult = low_maa_toughness_tier_7
 		stationed_heavy_infantry_damage_mult = normal_maa_damage_tier_8
-		stationed_maa_pursuit_add = 20
+		stationed_maa_pursuit_mult = 0.5
 		travel_danger = -8
 	}
 	

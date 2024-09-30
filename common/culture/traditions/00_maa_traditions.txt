@@ -334,7 +334,7 @@ tradition_land_of_the_bow = {
 	}
 	character_modifier = {
 		defender_advantage = 5
-		archers_damage_add = 2
+		archers_damage_mult = 0.1
 	}
 	
 	cost = {
@@ -438,7 +438,7 @@ tradition_druzhina = {
 		knight_limit = 2
 		negate_prowess_penalty_add = 5
 		accolade_glory_gain_mult = 0.2
-		heavy_infantry_toughness_add = 2
+		heavy_infantry_toughness_mult = 0.1
 	}
 	
 	cost = {
@@ -517,9 +517,9 @@ tradition_hussar = { #Konni Raids
 		unlock_maa_hussar = yes
 	}
 	character_modifier = {
-		skirmishers_screen_add = 2
-		light_cavalry_damage_add = 6
-		light_cavalry_screen_add = 6
+		skirmishers_screen_mult = 0.1
+		light_cavalry_damage_mult = 0.2
+		light_cavalry_screen_mult = 0.2
 		retreat_losses = -0.1
 		hard_casualty_modifier = -0.1
 	}
@@ -710,7 +710,7 @@ tradition_bush_hunting = {
 		can_recruit_jungle_specialist = yes
 	}
 	character_modifier = {
-		archers_damage_add = 4
+		archers_damage_mult = 0.2
 		jungle_supply_limit_mult = 0.25
 		jungle_travel_danger = jungle_medium_danger_reduction
 	}
@@ -799,11 +799,11 @@ tradition_mobile_guards = {
 	}
 	character_modifier = {
 		maa_toughness_mult = 0.2
-		heavy_infantry_toughness_add = 4
+		heavy_infantry_toughness_mult = 0.1
 		heavy_infantry_maintenance_mult = 0.1
-		heavy_cavalry_toughness_add = 10
+		heavy_cavalry_toughness_mult = 0.1
 		heavy_cavalry_maintenance_mult = 0.1
-		pikemen_toughness_add = 6
+		pikemen_toughness_mult = 0.1
 		pikemen_maintenance_mult = 0.1
 		hard_casualty_modifier = 0.25
 	}
@@ -1042,8 +1042,8 @@ tradition_burman_royal_army = {
 		can_recruit_jungle_specialist = yes
 	}
 	character_modifier = {
-		elephant_cavalry_damage_add = 60
-		elephant_cavalry_toughness_add = 20
+		elephant_cavalry_damage_mult = 0.25
+		elephant_cavalry_toughness_mult = 0.25
 		jungle_travel_danger = jungle_medium_danger_reduction
 		accolade_glory_gain_mult = 0.1
 	}
@@ -1690,8 +1690,8 @@ tradition_polders = { #Dutch Unique Tradition, bonuses to buildings along coastl
 		coastal_holding_bonuses = yes
 	}
 	character_modifier = {
-		skirmishers_damage_add = 4
-		skirmishers_screen_add = 4
+		skirmishers_damage_mult = 0.2
+		skirmishers_screen_mult = 0.2
 		coastal_sea_travel_danger = low_sea_danger_reduction
 		wetlands_travel_danger = wetlands_medium_danger_reduction
 		floodplains_travel_danger = floodplains_medium_danger_reduction

@@ -213,7 +213,7 @@ onager = {
 	high_maintenance_cost = { gold = onager_high_maint_cost }
 	provision_cost = @provisions_cost_special_cheap
 	
-	stack = 10
+	stack = 100
 	allowed_in_hired_troops = no
 }
 
@@ -269,7 +269,7 @@ mangonel = {
 	high_maintenance_cost = { gold = mangonel_high_maint_cost }
 	provision_cost = @provisions_cost_special_moderate
 	
-	stack = 10
+	stack = 100
 	allowed_in_hired_troops = no
 }
 
@@ -326,7 +326,7 @@ trebuchet = {
 	high_maintenance_cost = { gold = trebuchet_high_maint_cost }
 	provision_cost = @provisions_cost_special_expensive
 	
-	stack = 10
+	stack = 100
 	allowed_in_hired_troops = no
 
 }
@@ -347,7 +347,7 @@ bombard = {
 	high_maintenance_cost = { gold = bombard_high_maint_cost }
 	provision_cost = @provisions_cost_special_bankrupting
 	
-	stack = 10
+	stack = 100
 	allowed_in_hired_troops = no
 }
 
