@@ -8,9 +8,14 @@
 #############################################
 
 culture_parameter_heritage_family_african:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the African [heritage_family|E]"
+culture_parameter_heritage_family_austroasiatic:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the Austroasiatic [heritage_family|E]"
+culture_parameter_heritage_family_austronesian:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the Austronesian [heritage_family|E]"
 culture_parameter_heritage_family_east_asian:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the East Asian [heritage_family|E]"
+culture_parameter_heritage_family_elamite:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the Elamite [heritage_family|E]"
 culture_parameter_heritage_family_eurasian:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the Eurasian [heritage_family|E]"
 culture_parameter_heritage_family_european:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the European [heritage_family|E]"
+culture_parameter_heritage_family_korean:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the Korean [heritage_family|E]"
+culture_parameter_heritage_family_kram_dai:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the Kram Dai [heritage_family|E]"
 culture_parameter_heritage_family_middle_eastern:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the Middle Eastern [heritage_family|E]"
 culture_parameter_heritage_family_native_american:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the Native American [heritage_family|E]"
 culture_parameter_heritage_family_south_asian:0 "#P +[EmptyScope.ScriptValue('same_heritage_family_cultural_acceptance')|0]#! [cultural_acceptance_baseline|E] with Cultures sharing the South Asian [heritage_family|E]"

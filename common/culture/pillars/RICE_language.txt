@@ -366,24 +366,24 @@ language_elamite = {
 			LANGUAGE = language_elamite
 		}
 	}
-	# parameters = {
-	# 	language_group_elamite = yes
-	# 	language_family_elamite = yes 		
-	# }
+	parameters = {
+	 	language_group_elamite = yes
+		language_family_elamite = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_elamite }
-			multiply = 10
+			multiply = same_language_choice_factor
 		}
-		# else_if = {
-		# 	limit = { has_cultural_parameter = language_group_elamite }
-		# 	multiply = 5
-		# }
-		# else_if = {
-		# 	limit = { has_cultural_parameter = language_family_elamite }
-		# 	multiply = 2.5
-		# }
+		else_if = {
+			limit = { has_cultural_parameter = language_group_elamite }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_elamite }
+			multiply = same_language_family_choice_factor
+		}
 	}
 	
 	color = { 0.8 0.2 0.4 }
@@ -397,11 +397,23 @@ language_korean = {
 			LANGUAGE = language_korean
 		}
 	}
+	parameters = {
+	 	language_group_korean = yes
+		language_family_korean = yes	
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_korean }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_korean }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_korean }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -415,11 +427,23 @@ language_vietnamese = {
 			LANGUAGE = language_vietnamese
 		}
 	}
+	parameters = {
+	 	language_group_vietic = yes
+		language_family_austroasiatic = yes	
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_vietnamese }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_vietic }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -433,11 +457,23 @@ language_malay = {
 			LANGUAGE = language_malay
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_malay }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -451,11 +487,23 @@ language_java = {
 			LANGUAGE = language_java
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_java }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -469,11 +517,23 @@ language_cham = {
 			LANGUAGE = language_cham
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_cham }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -487,11 +547,23 @@ language_central_luzon = {
 			LANGUAGE = language_central_luzon
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_central_luzon }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -505,11 +577,23 @@ language_filipino = {
 			LANGUAGE = language_filipino
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_filipino }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -523,11 +607,23 @@ language_khmer = {
 			LANGUAGE = language_khmer
 		}
 	}
+	parameters = {
+	 	language_group_khmer = yes
+		language_family_austroasiatic = yes	
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_khmer }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_khmer }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -541,11 +637,23 @@ language_yi = {
 			LANGUAGE = language_yi
 		}
 	}
+	parameters = {
+		language_group_tibeto_burman = yes
+		language_family_sino_tibetan = yes 
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_yi }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_tibeto_burman }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_sino_tibetan }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -560,11 +668,23 @@ language_bai = {
 			LANGUAGE = language_bai
 		}
 	}
+	parameters = {
+		language_group_sinitic = yes
+		language_family_sino_tibetan = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_bai }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_sinitic }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_sino_tibetan }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -579,14 +699,25 @@ language_pyu = {
 			LANGUAGE = language_pyu
 		}
 	}
+	parameters = {
+		language_group_pyu = yes
+		language_family_sino_tibetan = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_pyu }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_pyu }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_sino_tibetan }
+			multiply = same_language_family_choice_factor
 		}
 	}
-	
 	color = { 156 50 103 }
 }
 
@@ -597,11 +728,23 @@ language_makassar = {
 			LANGUAGE = language_makassar
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_makassar }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -615,11 +758,23 @@ language_bugis = {
 			LANGUAGE = language_bugis
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_bugis }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -633,11 +788,23 @@ language_sumatran = {
 			LANGUAGE = language_sumatran
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_sumatran }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -651,11 +818,23 @@ language_sunda = {
 			LANGUAGE = language_sunda
 		}
 	}
+	parameters = {
+		language_group_malayo_polynesian = yes
+		language_family_austronesian = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_sunda }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_malayo_polynesian }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_austronesian }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -669,11 +848,23 @@ language_tai = {
 			LANGUAGE = language_tai
 		}
 	}
+	parameters = {
+		language_group_kam_tai = yes
+		language_family_kram_dai = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_tai }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_kam_tai }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_kram_dai }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -687,11 +878,23 @@ language_yamato = {
 			LANGUAGE = language_yamato
 		}
 	}
+	parameters = {
+		language_group_japanese = yes
+		language_family_japonic = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_yamato }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_japanese }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_japonic }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -705,11 +908,23 @@ language_rufiji_ruvuma = {
 			LANGUAGE = language_rufiji_ruvuma
 		}
 	}
+	parameters = {
+		language_group_volta_congo = yes
+		language_family_atlantic_congo = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_rufiji_ruvuma }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_volta_congo }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_atlantic_congo }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
@@ -723,18 +938,28 @@ language_makua = {
 			LANGUAGE = language_makua
 		}
 	}
+	parameters = {
+		language_group_volta_congo = yes
+		language_family_atlantic_congo = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_makua }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_volta_congo }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_atlantic_congo }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	
 	color = { 180 208 58 }
 }
-
-
 
 language_sorbian = {
 	type = language
@@ -743,14 +968,25 @@ language_sorbian = {
 			LANGUAGE = language_sorbian
 		}
 	}
+	parameters = {
+		language_group_balto_slavic = yes
+		language_family_indo_european = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
 			limit = { has_cultural_pillar = language_sorbian }
-			multiply = 10
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_balto_slavic }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_indo_european }
+			multiply = same_language_family_choice_factor
 		}
 	}
-	
 	color = { 0.45 0.8 0.66 }
 }
 
@@ -762,11 +998,23 @@ language_african_romance = {
 			LANGUAGE = language_african_romance
 		}
 	}
+	parameters = {
+		language_group_romance = yes
+		language_family_indo_european = yes 		
+	}
 	ai_will_do = {
 		value = 10
 		if = {
-			limit = { has_cultural_pillar = language_african_romance }
-			multiply = 10
+			limit = { has_cultural_pillar = language_sorbian }
+			multiply = same_language_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_group_balto_slavic }
+			multiply = same_language_group_choice_factor
+		}
+		else_if = {
+			limit = { has_cultural_parameter = language_family_indo_european }
+			multiply = same_language_family_choice_factor
 		}
 	}
 	

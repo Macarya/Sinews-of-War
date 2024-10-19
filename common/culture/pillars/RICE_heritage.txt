@@ -29,7 +29,13 @@ heritage_east_bantu = {
 
 heritage_guanche = {
 	type = heritage
-	
+
+	is_shown = {
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_guanche
+		}
+	}
+	audio_parameter = mena
 	parameters = { 
 		heritage_group_berber = yes
 		heritage_family_middle_eastern = yes 
@@ -44,6 +50,10 @@ heritage_elamite = {
 		}
 	}
 	audio_parameter = mena
+	parameters = { 
+		heritage_group_elamite = yes
+		heritage_family_elamite = yes 
+	}
 }
 
 
@@ -54,7 +64,11 @@ heritage_vietic = {
 			HERITAGE = heritage_vietic
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_vietic = yes
+		heritage_family_austroasiatic = yes 
+	}
+	audio_parameter = mena
 }
 
 heritage_korean = {
@@ -64,7 +78,11 @@ heritage_korean = {
 			HERITAGE = heritage_korean
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_korean = yes
+		heritage_family_korean = yes 
+	}
+	audio_parameter = mena
 }
 
 heritage_malayic = {
@@ -74,7 +92,11 @@ heritage_malayic = {
 			HERITAGE = heritage_malayic
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_malayo_polynesian = yes
+		heritage_family_austronesian = yes 
+	}
+	audio_parameter = mena
 }
 
 heritage_south_bantu = {
@@ -99,7 +121,11 @@ heritage_chamic = {
 			HERITAGE = heritage_chamic
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_malayo_polynesian = yes
+		heritage_family_austronesian = yes 
+	}
+	audio_parameter = mena
 }
 
 heritage_filipino = {
@@ -108,6 +134,10 @@ heritage_filipino = {
 		heritage_is_shown_trigger = {
 			HERITAGE = heritage_filipino
 		}
+	}
+	parameters = { 
+		heritage_group_malayo_polynesian = yes
+		heritage_family_austronesian = yes 
 	}
 	audio_parameter = european
 }
@@ -119,7 +149,11 @@ heritage_yamato = {
 			HERITAGE = heritage_yamato
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_siberian = yes
+		heritage_family_eurasian = yes 
+	}
+	audio_parameter = mena
 }
 
 heritage_loloish = {
@@ -129,7 +163,11 @@ heritage_loloish = {
 			HERITAGE = heritage_loloish
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_siberian = yes
+		heritage_family_eurasian = yes 
+	}
+	audio_parameter = mena
 }
 
 heritage_khmer = {
@@ -139,7 +177,11 @@ heritage_khmer = {
 			HERITAGE = heritage_khmer
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_khmer = yes
+		heritage_family_austroasiatic = yes 
+	}
+	audio_parameter = mena
 }
 
 heritage_sulawesi = {
@@ -149,7 +191,11 @@ heritage_sulawesi = {
 			HERITAGE = heritage_sulawesi
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_malayo_polynesian = yes
+		heritage_family_austronesian = yes 
+	}
+	audio_parameter = mena
 }
 
 heritage_tai = {
@@ -159,5 +205,9 @@ heritage_tai = {
 			HERITAGE = heritage_tai
 		}
 	}
-	audio_parameter = european
+	parameters = { 
+		heritage_group_kam_tai = yes
+		heritage_family_kram_dai = yes 
+	}
+	audio_parameter = mena
 }

@@ -14,7 +14,6 @@
 
 heritage_iroquoian = {
 	type = heritage
-	type = heritage
 	is_shown = {
 		heritage_is_shown_trigger = {
 			HERITAGE = heritage_iroquoian
@@ -47,7 +46,7 @@ heritage_paleo_inuit = {
 	audio_parameter = european
 	parameters = { 
 		heritage_group_thule = yes
-		heritage_family_eurasian = yes 
+		heritage_family_native_american = yes 
 	}
 }
 
@@ -61,6 +60,6 @@ heritage_inuit = {
 	audio_parameter = european
 	parameters = { 
 		heritage_group_thule = yes
-		heritage_family_eurasian = yes 
+		heritage_family_native_american = yes 
 	}
 }
