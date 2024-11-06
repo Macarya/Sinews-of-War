@@ -8,6 +8,11 @@
 demd_add_tradition_bonuses = {
 
 	if = {
+		limit = { has_cultural_tradition = tradition_only_the_strong }
+		change_variable = { name = manpower_cultural_production_mult add = -0.20 }
+	}
+
+	if = {
 		limit = { has_cultural_tradition = tradition_strength_in_numbers }
 		change_variable = { name = manpower_cultural_production_mult add = 0.20 }
 	}
@@ -15,11 +20,6 @@ demd_add_tradition_bonuses = {
 	if = {
 		limit = { has_cultural_tradition = tradition_malleable_invaders }
 		change_variable = { name = vigor_cultural_production_mult add = -5.00 }
-	}
-
-	if = {
-		limit = { has_cultural_tradition = tradition_only_the_strong }
-		change_variable = { name = manpower_cultural_production_mult add = -0.20 }
 	}
 
 	if = {
@@ -75,16 +75,6 @@ demd_add_tradition_bonuses = {
 	}
 
 	if = {
-		limit = { has_cultural_tradition = tradition_artisans }
-		change_variable = { name = trade_value_cultural_production_mult add = 0.10 }
-	}
-
-	if = {
-		limit = { has_cultural_tradition = tradition_xenophilic }
-		change_variable = { name = vigor_cultural_production_mult add = -5.00 }
-	}
-
-	if = {
 		limit = { has_cultural_tradition = tradition_zealous_people }
 		change_variable = { name = vigor_cultural_production_mult add = 4.00 }
 	}
@@ -97,6 +87,16 @@ demd_add_tradition_bonuses = {
 	if = {
 		limit = { has_cultural_tradition = tradition_practiced_pirates }
 		change_variable = { name = trade_power_cultural_production_mult add = -0.15 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_artisans }
+		change_variable = { name = trade_value_cultural_production_mult add = 0.10 }
+	}
+
+	if = {
+		limit = { has_cultural_tradition = tradition_xenophilic }
+		change_variable = { name = vigor_cultural_production_mult add = -5.00 }
 	}
 
 	if = {

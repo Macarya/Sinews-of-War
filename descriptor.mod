@@ -11,5 +11,5 @@ tags={
 }
 name="Sinews of War - Dev Branch"
 picture="thumbnail.png"
-supported_version="1.13.*"
+supported_version="1.14.*"
 remote_file_id="3113107852"
