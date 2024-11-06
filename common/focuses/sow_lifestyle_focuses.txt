@@ -1,0 +1,225 @@
+martial_strategy_focus = {
+	lifestyle = martial_lifestyle
+	
+	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+	is_valid = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+
+	desc = {
+		desc = martial_strategy_focus_desc
+		desc = line_break
+	}
+	
+	modifier = {
+		martial = 4
+	}
+
+	auto_selection_weight = {
+		value = 11
+		if = {
+			limit = {
+				has_education_martial_trigger = yes
+			}
+			add = 1989
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}
+			multiply = 0
+		}
+	}
+}
+
+martial_chivalry_focus = {
+	lifestyle = martial_lifestyle
+	
+	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+	is_valid = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+
+	desc = {
+		desc = martial_chivalry_focus_desc
+		desc = line_break
+	}
+	
+	modifier = {
+		advantage = 2
+		prowess = 5
+		attraction_opinion = 10
+	}
+
+	auto_selection_weight = {
+		value = 11
+		if = {
+			limit = {
+				has_education_martial_trigger = yes
+			}
+			add = 1989
+		}
+		if = {
+			limit = {
+				has_trait = brave
+			}
+			multiply = 5
+		}
+		if = {
+			limit = {
+				has_trait = honest
+			}
+			multiply = 2
+		}
+		if = {
+			limit = {
+				has_trait = chaste
+			}
+			multiply = 1.5
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}
+			multiply = 0
+		}
+	}
+}
+
+stewardship_domain_focus = {
+	lifestyle = stewardship_lifestyle
+	
+	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+	is_valid = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+
+	desc = {
+		desc = stewardship_domain_focus_desc
+		desc = line_break
+	}
+	
+	modifier = {
+		stewardship = 4
+	}
+
+	auto_selection_weight = {
+		value = 11
+		if = {
+			limit = {
+				has_education_stewardship_trigger = yes
+			}
+			add = 1989
+		}
+		if = {
+			limit = {
+				has_trait = diligent
+			}
+			multiply = 2
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}
+			multiply = 0
+		}
+	}
+}
+
+stewardship_duty_focus = {
+	lifestyle = stewardship_lifestyle
+	
+	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+	is_valid = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+
+	desc = {
+		desc = stewardship_duty_focus_desc
+		desc = line_break
+	}
+	
+	modifier = {
+		stewardship = 1
+		courtier_and_guest_opinion = 10
+	}
+
+	auto_selection_weight = {
+		value = 11
+		if = {
+			limit = {
+				has_education_stewardship_trigger = yes
+			}
+			add = 1989
+		}
+		if = {
+			limit = {
+				has_trait = just
+			}
+			multiply = 5
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}
+			multiply = 0
+		}
+	}
+}
+
+learning_theology_focus = {
+	lifestyle = learning_lifestyle
+	
+	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+	is_valid = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+
+	desc = {
+		desc = learning_theology_focus_desc
+		desc = line_break
+	}
+	
+	modifier = {
+		religious_head_opinion = 10
+		monthly_piety = 1
+	}
+
+	auto_selection_weight = {
+		value = 11
+		if = {
+			limit = {
+				has_education_learning_trigger = yes
+			}
+			add = 1989
+		}
+		if = {
+			limit = {
+				has_trait = zealous
+			}
+			multiply = 5
+		}
+		if = {
+			limit = {
+				has_trait = cynical
+			}
+			multiply = 0
+		}
+		if = {
+			limit = {
+				government_has_flag = government_is_landless_adventurer
+			}
+			multiply = 0
+		}
+	}
+}
